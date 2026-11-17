@@ -26,7 +26,7 @@ npm run build
 
 Kontribusi dari teman-teman sangat diterima. Baca [panduan kontribusi](.github/CONTRIBUTING.md) untuk alur kerja, standar perubahan, dan cara mengirim pull request.
 
-Karena repository ini private, pemilik repository perlu mengundang kontributor melalui **Settings → Collaborators** terlebih dahulu. Setelah undangan diterima, kontributor dapat membuat branch, mengirim pull request, lalu berdiskusi sebelum perubahan digabungkan.
+Repository ini public, jadi siapa pun bisa melihat dan melakukan fork. Teman yang belum memiliki akses tulis bisa mengirim kontribusi lewat fork dan pull request. Jika ingin memberi akses tulis langsung, undang mereka melalui **Settings → Collaborators**.
 
 ## Catatan lisensi
 
