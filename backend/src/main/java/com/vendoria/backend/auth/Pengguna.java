@@ -32,7 +32,18 @@ public class Pengguna {
 	@Column(name = "status_verifikasi")
 	private String statusVerifikasi = "belum_diverifikasi";
 
+	// "sub" Google; null untuk akun email+password. Kolom ditambah oleh backend/db/add-google-sub.sql
+	@Column(name = "google_sub")
+	private String googleSub;
+
 	protected Pengguna() {
+	}
+
+	/** Akun baru dari login Google: tanpa nomor telepon; passwordHash acak yang tak diketahui siapa pun. */
+	static Pengguna dariGoogle(String nama, String email, String passwordHash, String googleSub) {
+		Pengguna p = new Pengguna(nama, email, null, passwordHash, "customer");
+		p.googleSub = googleSub;
+		return p;
 	}
 
 	Pengguna(String nama, String email, String noTelp, String passwordHash, String role) {
@@ -50,4 +61,5 @@ public class Pengguna {
 	public String getPasswordHash() { return passwordHash; }
 	public String getRole() { return role; }
 	public String getStatusVerifikasi() { return statusVerifikasi; }
+	public String getGoogleSub() { return googleSub; }
 }

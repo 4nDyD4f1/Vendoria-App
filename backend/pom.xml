@@ -47,10 +47,11 @@
 			<artifactId>spring-boot-starter-webmvc</artifactId>
 		</dependency>
 
-		<!-- hanya BCrypt; bukan Spring Security penuh (yang akan mengunci semua endpoint) -->
+		<!-- Spring Security + OAuth2 Login (Google). Di Boot 4 namanya spring-boot-starter-security-oauth2-client.
+		     Membawa spring-security-crypto (BCrypt) juga. Otorisasi tetap per-endpoint, lihat SecurityConfig. -->
 		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-crypto</artifactId>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security-oauth2-client</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.postgresql</groupId>

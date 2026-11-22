@@ -10,6 +10,11 @@ export default defineConfig({
   ],
   server: {
     // Backend Spring; same-origin di dev sehingga cookie sesi tidak kena aturan lintas-origin
-    proxy: { '/api': 'http://localhost:8080' },
+    // /oauth2 memulai login Google; /login/oauth2 hanya untuk callback (jangan proxy '/login': itu halaman React)
+    proxy: {
+      '/api': 'http://localhost:8080',
+      '/oauth2': 'http://localhost:8080',
+      '/login/oauth2': 'http://localhost:8080',
+    },
   },
 })

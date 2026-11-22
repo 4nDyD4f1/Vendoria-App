@@ -13,6 +13,13 @@ interface PenggunaRepository extends JpaRepository<Pengguna, Long> {
 	@Query("select p from Pengguna p where lower(p.email) = :email")
 	Optional<Pengguna> findByEmail(String email);
 
+	Optional<Pengguna> findByGoogleSub(String googleSub);
+
+	@Modifying
+	@Transactional
+	@Query(value = "update pengguna set google_sub = :sub, updated_at = now() where user_id = :id", nativeQuery = true)
+	int linkGoogle(Long id, String sub);
+
 	// native karena updated_at tidak dipetakan di entity; DB tidak punya trigger untuknya
 	@Modifying
 	@Transactional

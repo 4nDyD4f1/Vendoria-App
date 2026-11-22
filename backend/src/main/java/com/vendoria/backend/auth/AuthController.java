@@ -21,7 +21,8 @@ import jakarta.validation.Valid;
 @RequestMapping("/api/auth")
 class AuthController {
 
-	private static final String SESSION_USER_ID = "user_id";
+	// Kunci sesi login. Dipakai juga oleh GoogleLoginSuccessHandler agar login Google = sesi yang sama dengan login password.
+	static final String SESSION_USER_ID = "user_id";
 
 	private final AuthService service;
 	private final AuthThrottle throttle;
