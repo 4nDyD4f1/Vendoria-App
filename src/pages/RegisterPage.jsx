@@ -1,6 +1,31 @@
 import React, { useState } from 'react';
 import { Eye, EyeOff, User, Sparkles, ArrowRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import AuthLayout from '../components/AuthLayout';
+import { useAuth } from '../AuthContext';
+
+// Email wajib berbentuk example@mail.com (ada domain + TLD). WhatsApp wajib 08xxxxxxxxxx, bukan +62/62.
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[A-Za-z]{2,}$/;
+const PHONE_RE = /^08\d{8,11}$/;
+const cleanPhone = (v) => v.replace(/[\s-]/g, ''); // izinkan "0812-3456-7890" / "0812 3456 7890"
+
+const validate = ({ fullName, email, whatsapp, password, agreedToTerms }) => {
+  const errors = {};
+  if (!fullName.trim()) errors.fullName = 'Nama wajib diisi';
+  else if (fullName.trim().length > 120) errors.fullName = 'Nama maksimal 120 karakter';
+
+  if (!EMAIL_RE.test(email.trim())) errors.email = 'Format email harus seperti example@mail.com';
+
+  const wa = cleanPhone(whatsapp);
+  if (/^(\+|62)/.test(wa)) errors.whatsapp = 'Gunakan format 08xxxx, bukan +62 atau 62';
+  else if (!PHONE_RE.test(wa)) errors.whatsapp = 'Nomor WhatsApp harus diawali 08 dan 10–13 digit';
+
+  if (password.length < 8) errors.password = 'Kata sandi minimal 8 karakter';
+  else if (password.length > 72) errors.password = 'Kata sandi maksimal 72 karakter';
+
+  if (!agreedToTerms) errors.terms = 'Setujui Syarat & Ketentuan untuk melanjutkan';
+  return errors;
+};
 
 const RegisterPage = () => {
   const [accountType, setAccountType] = useState('customer');
@@ -10,6 +35,18 @@ const RegisterPage = () => {
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [agreedToTerms, setAgreedToTerms] = useState(false);
+  const [touched, setTouched] = useState({});
+  const [serverError, setServerError] = useState('');
+  const [submitting, setSubmitting] = useState(false);
+  const { register } = useAuth();
+  const navigate = useNavigate();
+
+  const errors = validate({ fullName, email, whatsapp, password, agreedToTerms });
+  const touch = (field) => setTouched((t) => ({ ...t, [field]: true }));
+  const fieldError = (field) =>
+    touched[field] && errors[field] ? (
+      <p className="text-xs text-red-500 mt-1">{errors[field]}</p>
+    ) : null;
 
   const getPasswordStrength = (pwd) => {
     let score = 0;
@@ -22,9 +59,28 @@ const RegisterPage = () => {
 
   const strength = getPasswordStrength(password);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // handle registration
+    setTouched({ fullName: true, email: true, whatsapp: true, password: true, terms: true });
+    if (Object.keys(errors).length > 0) return;
+    setServerError('');
+    setSubmitting(true);
+    try {
+      // daftar lalu otomatis login, kemudian ke beranda
+      await register({
+        role: accountType,
+        nama: fullName.trim(),
+        email: email.trim(),
+        no_telp: cleanPhone(whatsapp),
+        password,
+      });
+      navigate('/');
+    } catch (err) {
+      const detail = Object.values(err.errors ?? {}).join(', ');
+      setServerError(detail ? `${err.message}: ${detail}` : err.message); // mis. 409 "Email sudah terdaftar"
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -44,7 +100,7 @@ const RegisterPage = () => {
           </p>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form onSubmit={handleSubmit} noValidate className="space-y-6">
           {/* Step 1 - Account Type */}
           <div>
             <p className="text-sm font-semibold text-[#3C2415] mb-3">1. Pilih Jenis Akun</p>
@@ -114,6 +170,7 @@ const RegisterPage = () => {
                 type="text"
                 value={fullName}
                 onChange={(e) => setFullName(e.target.value)}
+                onBlur={() => touch('fullName')}
                 placeholder={
                   accountType === 'customer'
                     ? 'Masukkan nama lengkap'
@@ -121,6 +178,7 @@ const RegisterPage = () => {
                 }
                 className="w-full px-4 py-3 rounded-xl border border-[#E8DDD0] bg-white text-sm text-[#3C2415] placeholder:text-[#3C2415]/40 focus:outline-none focus:ring-2 focus:ring-[#3C2415]/20 focus:border-[#3C2415]"
               />
+              {fieldError('fullName')}
             </div>
 
             {/* Email + WhatsApp */}
@@ -133,9 +191,11 @@ const RegisterPage = () => {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
+                  onBlur={() => touch('email')}
                   placeholder="nama@email.com"
                   className="w-full px-4 py-3 rounded-xl border border-[#E8DDD0] bg-white text-sm text-[#3C2415] placeholder:text-[#3C2415]/40 focus:outline-none focus:ring-2 focus:ring-[#3C2415]/20 focus:border-[#3C2415]"
                 />
+                {fieldError('email')}
               </div>
               <div>
                 <label className="block text-sm font-medium text-[#3C2415] mb-1.5">
@@ -145,9 +205,11 @@ const RegisterPage = () => {
                   type="tel"
                   value={whatsapp}
                   onChange={(e) => setWhatsapp(e.target.value)}
+                  onBlur={() => touch('whatsapp')}
                   placeholder="08xx-xxxx-xxxx"
                   className="w-full px-4 py-3 rounded-xl border border-[#E8DDD0] bg-white text-sm text-[#3C2415] placeholder:text-[#3C2415]/40 focus:outline-none focus:ring-2 focus:ring-[#3C2415]/20 focus:border-[#3C2415]"
                 />
+                {fieldError('whatsapp')}
               </div>
             </div>
 
@@ -159,6 +221,7 @@ const RegisterPage = () => {
                   type={showPassword ? 'text' : 'password'}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
+                  onBlur={() => touch('password')}
                   placeholder="Buat kata sandi"
                   className="w-full px-4 py-3 rounded-xl border border-[#E8DDD0] bg-white text-sm text-[#3C2415] placeholder:text-[#3C2415]/40 focus:outline-none focus:ring-2 focus:ring-[#3C2415]/20 focus:border-[#3C2415] pr-12"
                 />
@@ -192,6 +255,7 @@ const RegisterPage = () => {
               <p className="text-xs text-[#3C2415]/50 mt-1.5">
                 Gunakan 8+ karakter, huruf besar, angka, simbol
               </p>
+              {fieldError('password')}
             </div>
           </div>
 
@@ -215,13 +279,21 @@ const RegisterPage = () => {
               Vendoria.
             </span>
           </label>
+          {fieldError('terms')}
+
+          {serverError && (
+            <p role="alert" className="text-sm text-red-600 bg-red-50 border border-red-200 rounded-xl px-4 py-3">
+              {serverError}
+            </p>
+          )}
 
           {/* Submit */}
           <button
             type="submit"
-            className="w-full py-3.5 bg-[#3C2415] text-white rounded-xl font-semibold text-sm hover:bg-[#3C2415]/90 transition-colors flex items-center justify-center gap-2"
+            disabled={submitting}
+            className="w-full py-3.5 bg-[#3C2415] text-white rounded-xl font-semibold text-sm hover:bg-[#3C2415]/90 transition-colors flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
           >
-            Buat Akun Sekarang
+            {submitting ? 'Memproses...' : 'Buat Akun Sekarang'}
             <ArrowRight size={16} />
           </button>
         </form>

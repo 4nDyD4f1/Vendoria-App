@@ -8,4 +8,8 @@ export default defineConfig({
     tailwindcss(),
     react(),
   ],
+  server: {
+    // Backend Spring; same-origin di dev sehingga cookie sesi tidak kena aturan lintas-origin
+    proxy: { '/api': 'http://localhost:8080' },
+  },
 })

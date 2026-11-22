@@ -1,20 +1,30 @@
 import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import {
   Search,
   Bell,
   Heart,
   ShoppingCart,
   User,
+  LogOut,
   Menu,
   X
 } from 'lucide-react';
 import VendoriaLogo from './VendoriaLogo';
+import { useAuth } from '../AuthContext';
 
-export default function Navbar({ isLoggedIn = true }) {
+export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
+  const { user, loading, logout } = useAuth();
   const currentPath = location.pathname;
+
+  const handleLogout = async () => {
+    setMobileOpen(false);
+    await logout();
+    navigate('/');
+  };
 
   const navLinks = [
     { label: 'Beranda', href: '/' },
@@ -59,7 +69,7 @@ export default function Navbar({ isLoggedIn = true }) {
 
         {/* ================= 3. RIGHT ICONS & PROFILE ================= */}
         <div className="hidden lg:flex items-center gap-5">
-          {isLoggedIn ? (
+          {loading ? null : user ? (
             <>
               {/* Search Icon */}
               <Link 
@@ -114,6 +124,16 @@ export default function Navbar({ isLoggedIn = true }) {
                   Profil
                 </span>
               </Link>
+
+              <button
+                type="button"
+                onClick={handleLogout}
+                className="text-[#35261F] hover:opacity-75 transition-opacity"
+                title="Keluar"
+                aria-label="Keluar"
+              >
+                <LogOut size={18} strokeWidth={1.8} />
+              </button>
             </>
           ) : (
             <div className="flex items-center gap-4">
@@ -163,23 +183,43 @@ export default function Navbar({ isLoggedIn = true }) {
             ))}
           </div>
 
-          <div className="pt-3 border-t border-[#EBE2D9] flex items-center justify-between">
-            <Link
-              to="/kyc"
-              onClick={() => setMobileOpen(false)}
-              className="flex items-center gap-2 text-xs font-bold text-[#35261F]"
-            >
-              <span className="w-7 h-7 rounded-full bg-[#EFE6DD] flex items-center justify-center">
-                <User size={14} />
-              </span>
-              <span>Profil Saya</span>
-            </Link>
-            <div className="flex items-center gap-3 text-[#35261F]">
-              <Link to="/catalog" onClick={() => setMobileOpen(false)}><Search size={18} /></Link>
-              <Link to="/catalog" onClick={() => setMobileOpen(false)}><Bell size={18} /></Link>
-              <Link to="/catalog" onClick={() => setMobileOpen(false)}><ShoppingCart size={18} /></Link>
+          {loading ? null : user ? (
+            <div className="pt-3 border-t border-[#EBE2D9] flex items-center justify-between">
+              <Link
+                to="/kyc"
+                onClick={() => setMobileOpen(false)}
+                className="flex items-center gap-2 text-xs font-bold text-[#35261F]"
+              >
+                <span className="w-7 h-7 rounded-full bg-[#EFE6DD] flex items-center justify-center">
+                  <User size={14} />
+                </span>
+                <span>Profil Saya</span>
+              </Link>
+              <div className="flex items-center gap-3 text-[#35261F]">
+                <Link to="/catalog" onClick={() => setMobileOpen(false)}><Search size={18} /></Link>
+                <Link to="/catalog" onClick={() => setMobileOpen(false)}><Bell size={18} /></Link>
+                <Link to="/catalog" onClick={() => setMobileOpen(false)}><ShoppingCart size={18} /></Link>
+                <button type="button" onClick={handleLogout} aria-label="Keluar"><LogOut size={18} /></button>
+              </div>
             </div>
-          </div>
+          ) : (
+            <div className="pt-3 border-t border-[#EBE2D9] flex items-center gap-4">
+              <Link
+                to="/login"
+                onClick={() => setMobileOpen(false)}
+                className="text-[13px] font-semibold text-[#35261F] hover:opacity-80 transition-opacity"
+              >
+                Masuk
+              </Link>
+              <Link
+                to="/register"
+                onClick={() => setMobileOpen(false)}
+                className="bg-[#35261F] hover:bg-[#231813] text-white px-5 py-2 rounded-full text-[13px] font-semibold transition-all shadow-xs"
+              >
+                Daftar
+              </Link>
+            </div>
+          )}
         </div>
       )}
     </header>

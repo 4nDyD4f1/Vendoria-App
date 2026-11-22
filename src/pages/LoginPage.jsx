@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Eye, EyeOff, ArrowRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import AuthLayout from '../components/AuthLayout';
+import { useAuth } from '../AuthContext';
 
 const LoginPage = () => {
   const [email, setEmail] = useState('');
@@ -9,12 +11,25 @@ const LoginPage = () => {
   const [rememberMe, setRememberMe] = useState(false);
   const [activeTab, setActiveTab] = useState('masuk');
   const [touched, setTouched] = useState({ email: false, password: false });
+  const [error, setError] = useState('');
+  const [submitting, setSubmitting] = useState(false);
+  const { login } = useAuth();
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setTouched({ email: true, password: true });
     if (!email || !password) return;
-    // handle login
+    setError('');
+    setSubmitting(true);
+    try {
+      await login(email.trim(), password);
+      navigate('/');
+    } catch (err) {
+      setError(err.message); // 401 salah kredensial, 429 terlalu banyak percobaan, dll.
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -24,7 +39,7 @@ const LoginPage = () => {
     >
       <div className="w-full max-w-md mx-auto">
         {/* Tab Switcher */}
-        <div className="flex rounded-xl overflow-hidden border border-[#E8DDD0] mb-8">
+        {/* <div className="flex rounded-xl overflow-hidden border border-[#E8DDD0] mb-8">
           <button
             onClick={() => setActiveTab('masuk')}
             className={`flex-1 py-3 text-sm font-semibold transition-colors ${
@@ -45,7 +60,7 @@ const LoginPage = () => {
           >
             Daftar Akun
           </button>
-        </div>
+        </div> */}
 
         {/* Section Header */}
         <div className="mb-6">
@@ -124,12 +139,19 @@ const LoginPage = () => {
             <span className="text-xs text-[#3C2415]/50">Sesi 30 hari</span>
           </div>
 
+          {error && (
+            <p role="alert" className="text-sm text-red-600 bg-red-50 border border-red-200 rounded-xl px-4 py-3">
+              {error}
+            </p>
+          )}
+
           {/* Submit */}
           <button
             type="submit"
-            className="w-full py-3.5 bg-[#3C2415] text-white rounded-xl font-semibold text-sm hover:bg-[#3C2415]/90 transition-colors flex items-center justify-center gap-2"
+            disabled={submitting}
+            className="w-full py-3.5 bg-[#3C2415] text-white rounded-xl font-semibold text-sm hover:bg-[#3C2415]/90 transition-colors flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
           >
-            Masuk Sekarang
+            {submitting ? 'Memproses...' : 'Masuk Sekarang'}
             <ArrowRight size={16} />
           </button>
         </form>
