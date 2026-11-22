@@ -41,7 +41,7 @@ export default function AuthLayout({
       <main className="flex-1 flex items-center justify-center px-4 py-10 lg:py-16">
         <div className="w-full max-w-5xl rounded-2xl shadow-xl overflow-hidden flex flex-col lg:flex-row">
           {/* ======== LEFT – info panel ======== */}
-          <div className="relative w-full lg:w-[420px] shrink-0 bg-gradient-to-br from-brown-800 to-brown-900 text-white p-8 lg:p-10 flex flex-col justify-between rounded-2xl lg:rounded-r-none">
+          <div className="relative w-full lg:w-[420px] shrink-0 bg-gradient-to-br from-brown-800 to-brown-900 p-8 lg:p-10 flex flex-col justify-between rounded-2xl lg:rounded-r-none">
             {/* Logo */}
             <div>
               <a href="/" className="flex items-center gap-2 mb-8">

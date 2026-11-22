@@ -1,19 +1,49 @@
 import React, { useState } from 'react';
 import { Eye, EyeOff, ArrowLeft } from 'lucide-react';
+import { Navigate, useLocation, useNavigate } from 'react-router-dom';
 import AuthLayout from '../components/AuthLayout';
 import { StepIndicator } from './ForgotPasswordPage';
+import { api } from '../api';
 
 const ResetPasswordPage = () => {
   const [newPassword, setNewPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [showNewPassword, setShowNewPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [touched, setTouched] = useState(false);
+  const [error, setError] = useState('');
+  const [submitting, setSubmitting] = useState(false);
+  const navigate = useNavigate();
+  const resetToken = useLocation().state?.resetToken;
 
-  const handleSubmit = (e) => {
+  // Dibuka tanpa lewat verifikasi OTP: tidak ada izin reset
+  if (!resetToken) return <Navigate to="/forgot-password" replace />;
+
+  const passwordError =
+    newPassword.length < 8
+      ? 'Kata sandi minimal 8 karakter'
+      : newPassword.length > 72
+      ? 'Kata sandi maksimal 72 karakter'
+      : '';
+  const confirmError = newPassword !== confirmPassword ? 'Konfirmasi kata sandi tidak sama' : '';
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!newPassword || !confirmPassword) return;
-    if (newPassword !== confirmPassword) return;
-    // handle reset password
+    setTouched(true);
+    if (passwordError || confirmError) return;
+    setError('');
+    setSubmitting(true);
+    try {
+      await api('/api/auth/reset-password', {
+        method: 'POST',
+        body: { reset_token: resetToken, password: newPassword },
+      });
+      navigate('/login', { replace: true, state: { message: 'Kata sandi berhasil diubah. Silakan masuk dengan kata sandi baru.' } });
+    } catch (err) {
+      setError(err.message); // mis. sesi reset kedaluwarsa
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -35,7 +65,7 @@ const ResetPasswordPage = () => {
           </p>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-5">
+        <form onSubmit={handleSubmit} noValidate className="space-y-5">
           {/* New Password */}
           <div>
             <label className="block text-sm font-medium text-[#3C2415] mb-1.5">
@@ -57,6 +87,7 @@ const ResetPasswordPage = () => {
                 {showNewPassword ? <EyeOff size={18} /> : <Eye size={18} />}
               </button>
             </div>
+            {touched && passwordError && <p className="text-xs text-red-500 mt-1">{passwordError}</p>}
           </div>
 
           {/* Confirm Password */}
@@ -80,14 +111,22 @@ const ResetPasswordPage = () => {
                 {showConfirmPassword ? <EyeOff size={18} /> : <Eye size={18} />}
               </button>
             </div>
+            {touched && confirmError && <p className="text-xs text-red-500 mt-1">{confirmError}</p>}
           </div>
+
+          {error && (
+            <p role="alert" className="text-sm text-red-600 bg-red-50 border border-red-200 rounded-xl px-4 py-3">
+              {error}
+            </p>
+          )}
 
           {/* Submit */}
           <button
             type="submit"
-            className="w-full py-3.5 bg-[#3C2415] text-white rounded-xl font-semibold text-sm hover:bg-[#3C2415]/90 transition-colors"
+            disabled={submitting}
+            className="w-full py-3.5 bg-[#3C2415] text-white rounded-xl font-semibold text-sm hover:bg-[#3C2415]/90 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
           >
-            Simpan &amp; Kembali ke Masuk
+            {submitting ? 'Menyimpan...' : 'Simpan & Kembali ke Masuk'}
           </button>
         </form>
 

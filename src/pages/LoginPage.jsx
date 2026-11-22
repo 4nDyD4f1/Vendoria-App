@@ -1,6 +1,25 @@
 import React, { useState } from 'react';
 import { Eye, EyeOff, ArrowRight } from 'lucide-react';
+import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import AuthLayout from '../components/AuthLayout';
+import { useAuth } from '../AuthContext';
+
+// Logo "G" Google (warna resmi)
+const GoogleIcon = () => (
+  <svg width="22" height="22" viewBox="0 0 48 48" aria-hidden="true">
+    <path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 8 3l5.7-5.7C34 6.1 29.3 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.6-.4-3.9z" />
+    <path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 8 3l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z" />
+    <path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z" />
+    <path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.6-.4-3.9z" />
+  </svg>
+);
+
+// Kode ?error=... dari backend setelah login Google gagal
+const GOOGLE_ERRORS = {
+  google: 'Login dengan Google gagal atau dibatalkan. Silakan coba lagi.',
+  email_belum_terverifikasi: 'Email akun Google Anda belum terverifikasi.',
+  akun_google_berbeda: 'Email ini sudah tertaut ke akun Google yang lain.',
+};
 
 const LoginPage = () => {
   const [email, setEmail] = useState('');
@@ -9,12 +28,27 @@ const LoginPage = () => {
   const [rememberMe, setRememberMe] = useState(false);
   const [activeTab, setActiveTab] = useState('masuk');
   const [touched, setTouched] = useState({ email: false, password: false });
+  const [searchParams] = useSearchParams();
+  const [error, setError] = useState(() => GOOGLE_ERRORS[searchParams.get('error')] ?? '');
+  const [submitting, setSubmitting] = useState(false);
+  const { login } = useAuth();
+  const navigate = useNavigate();
+  const notice = useLocation().state?.message; // mis. dari halaman reset password
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setTouched({ email: true, password: true });
     if (!email || !password) return;
-    // handle login
+    setError('');
+    setSubmitting(true);
+    try {
+      await login(email.trim(), password);
+      navigate('/');
+    } catch (err) {
+      setError(err.message); // 401 salah kredensial, 429 terlalu banyak percobaan, dll.
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -24,7 +58,7 @@ const LoginPage = () => {
     >
       <div className="w-full max-w-md mx-auto">
         {/* Tab Switcher */}
-        <div className="flex rounded-xl overflow-hidden border border-[#E8DDD0] mb-8">
+        {/* <div className="flex rounded-xl overflow-hidden border border-[#E8DDD0] mb-8">
           <button
             onClick={() => setActiveTab('masuk')}
             className={`flex-1 py-3 text-sm font-semibold transition-colors ${
@@ -45,7 +79,7 @@ const LoginPage = () => {
           >
             Daftar Akun
           </button>
-        </div>
+        </div> */}
 
         {/* Section Header */}
         <div className="mb-6">
@@ -57,6 +91,12 @@ const LoginPage = () => {
             Akses dashboard dan kelola penyewaanmu dengan aman.
           </p>
         </div>
+
+        {notice && (
+          <p role="status" className="mb-5 text-sm text-green-700 bg-green-50 border border-green-200 rounded-xl px-4 py-3">
+            {notice}
+          </p>
+        )}
 
         <form onSubmit={handleSubmit} className="space-y-5">
           {/* Email */}
@@ -121,15 +161,22 @@ const LoginPage = () => {
               />
               <span className="text-sm text-[#3C2415]">Ingat saya di perangkat ini</span>
             </label>
-            <span className="text-xs text-[#3C2415]/50">Sesi 30 hari</span>
+            {/* <span className="text-xs text-[#3C2415]/50">Sesi 30 hari</span> */}
           </div>
+
+          {error && (
+            <p role="alert" className="text-sm text-red-600 bg-red-50 border border-red-200 rounded-xl px-4 py-3">
+              {error}
+            </p>
+          )}
 
           {/* Submit */}
           <button
             type="submit"
-            className="w-full py-3.5 bg-[#3C2415] text-white rounded-xl font-semibold text-sm hover:bg-[#3C2415]/90 transition-colors flex items-center justify-center gap-2"
+            disabled={submitting}
+            className="w-full py-3.5 bg-[#3C2415] text-white rounded-xl font-semibold text-sm hover:bg-[#3C2415]/90 transition-colors flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
           >
-            Masuk Sekarang
+            {submitting ? 'Memproses...' : 'Masuk Sekarang'}
             <ArrowRight size={16} />
           </button>
         </form>
@@ -137,12 +184,24 @@ const LoginPage = () => {
         {/* Divider */}
         <div className="flex items-center gap-3 my-6">
           <div className="flex-1 h-px bg-[#E8DDD0]" />
-          <span className="text-xs text-[#3C2415]/50">atau masuk cepat dengan demo</span>
+          <span className="text-xs text-[#3C2415]/50">atau masuk cepat dengan </span>
           <div className="flex-1 h-px bg-[#E8DDD0]" />
         </div>
 
+        {/* Button OAuth 2.0 Google: link biasa (navigasi penuh), bukan fetch -- alur OAuth memindahkan browser ke Google */}
+        <div className="flex justify-center mb-6">
+          <a
+            href="/oauth2/authorization/google"
+            aria-label="Masuk dengan Google"
+            title="Masuk dengan Google"
+            className="w-12 h-12 rounded-xl border border-[#E8DDD0] bg-white hover:bg-[#F0E8DE] transition-colors flex items-center justify-center"
+          >
+            <GoogleIcon />
+          </a>
+        </div>
+
         {/* Demo Buttons */}
-        <div className="grid grid-cols-3 gap-3 mb-6">
+        {/* <div className="grid grid-cols-3 gap-3 mb-6">
           {['Customer Demo', 'Vendor Demo', 'Admin Demo'].map((label) => (
             <button
               key={label}
@@ -151,7 +210,7 @@ const LoginPage = () => {
               {label}
             </button>
           ))}
-        </div>
+        </div> */}
 
         {/* Bottom Link */}
         <p className="text-center text-sm text-[#3C2415]/60">

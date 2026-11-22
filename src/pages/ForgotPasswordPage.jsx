@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { ArrowRight, ArrowLeft } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import AuthLayout from '../components/AuthLayout';
+import { api } from '../api';
+import { EMAIL_RE } from '../validation';
 
 const StepIndicator = ({ currentStep }) => {
   const steps = [1, 2, 3];
@@ -33,12 +36,28 @@ const StepIndicator = ({ currentStep }) => {
 };
 
 const ForgotPasswordPage = () => {
-  const [contact, setContact] = useState('');
+  const [email, setEmail] = useState('');
+  const [touched, setTouched] = useState(false);
+  const [error, setError] = useState('');
+  const [submitting, setSubmitting] = useState(false);
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const emailInvalid = !EMAIL_RE.test(email.trim());
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!contact) return;
-    // handle send code
+    setTouched(true);
+    if (emailInvalid) return;
+    setError('');
+    setSubmitting(true);
+    try {
+      await api('/api/auth/forgot-password', { method: 'POST', body: { email: email.trim() } });
+      navigate('/otp-verification', { state: { email: email.trim() } });
+    } catch (err) {
+      setError(err.message); // 404 email tidak terdaftar, 429 terlalu sering, 502/503 email gagal
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -56,31 +75,42 @@ const ForgotPasswordPage = () => {
           </p>
           <h2 className="text-2xl font-bold text-[#3C2415] mb-1">Lupa kata sandi?</h2>
           <p className="text-sm text-[#3C2415]/60">
-            Kami akan mengirim kode verifikasi ke kontak terdaftar.
+            Kami akan mengirim kode verifikasi ke email terdaftar.
           </p>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-5">
-          {/* Contact Input */}
+        <form onSubmit={handleSubmit} noValidate className="space-y-5">
+          {/* Email Input */}
           <div>
             <label className="block text-sm font-medium text-[#3C2415] mb-1.5">
-              Email atau Nomor WhatsApp
+              Email
             </label>
             <input
-              type="text"
-              value={contact}
-              onChange={(e) => setContact(e.target.value)}
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              onBlur={() => setTouched(true)}
               placeholder="nama@email.com"
               className="w-full px-4 py-3 rounded-xl border border-[#E8DDD0] bg-white text-sm text-[#3C2415] placeholder:text-[#3C2415]/40 focus:outline-none focus:ring-2 focus:ring-[#3C2415]/20 focus:border-[#3C2415]"
             />
+            {touched && emailInvalid && (
+              <p className="text-xs text-red-500 mt-1">Format email harus seperti example@mail.com</p>
+            )}
           </div>
+
+          {error && (
+            <p role="alert" className="text-sm text-red-600 bg-red-50 border border-red-200 rounded-xl px-4 py-3">
+              {error}
+            </p>
+          )}
 
           {/* Submit */}
           <button
             type="submit"
-            className="w-full py-3.5 bg-[#3C2415] text-white rounded-xl font-semibold text-sm hover:bg-[#3C2415]/90 transition-colors flex items-center justify-center gap-2"
+            disabled={submitting}
+            className="w-full py-3.5 bg-[#3C2415] text-white rounded-xl font-semibold text-sm hover:bg-[#3C2415]/90 transition-colors flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
           >
-            Kirim Kode
+            {submitting ? 'Mengirim...' : 'Kirim Kode'}
             <ArrowRight size={16} />
           </button>
         </form>

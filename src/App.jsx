@@ -16,12 +16,14 @@ import VendorProfilePage from './pages/VendorProfilePage';
 import VendorListPage from './pages/VendorListPage';
 import OrdersPage from './pages/OrdersPage';
 import HowToRentPage from './pages/HowToRentPage';
+import RequireAuth from './components/RequireAuth';
+import { AuthProvider } from './AuthContext';
 
-// Layout wrapper for standard public/logged-in pages
-function MainLayout({ children, isLoggedIn = true }) {
+// Layout wrapper for standard public/logged-in pages (Navbar membaca status login dari AuthContext)
+function MainLayout({ children }) {
   return (
     <div className="min-h-screen flex flex-col bg-[#FAF6F1]">
-      <Navbar isLoggedIn={isLoggedIn} />
+      <Navbar />
       <main className="flex-1">
         {children}
       </main>
@@ -32,6 +34,7 @@ function MainLayout({ children, isLoggedIn = true }) {
 
 function App() {
   return (
+    <AuthProvider>
     <Router>
       <Routes>
         {/* Auth Pages (AuthLayout handles its own header & footer) */}
@@ -43,68 +46,71 @@ function App() {
 
         {/* Public Landing Page */}
         <Route path="/" element={
-          <MainLayout isLoggedIn={true}>
+          <MainLayout>
             <HomePage />
           </MainLayout>
         } />
 
         {/* Catalog & Products (Logged In views as shown in designs) */}
         <Route path="/catalog" element={
-          <MainLayout isLoggedIn={true}>
+          <MainLayout>
             <CatalogPage />
           </MainLayout>
         } />
         <Route path="/product/:id" element={
-          <MainLayout isLoggedIn={true}>
+          <MainLayout>
             <ProductDetailPage />
           </MainLayout>
         } />
         <Route path="/vendor" element={
-          <MainLayout isLoggedIn={true}>
+          <MainLayout>
             <VendorListPage />
           </MainLayout>
         } />
         <Route path="/vendor/:id" element={
-          <MainLayout isLoggedIn={true}>
+          <MainLayout>
             <VendorProfilePage />
           </MainLayout>
         } />
         <Route path="/cara-sewa" element={
-          <MainLayout isLoggedIn={true}>
+          <MainLayout>
             <HowToRentPage />
           </MainLayout>
         } />
         <Route path="/pesanan" element={
-          <MainLayout isLoggedIn={true}>
-            <OrdersPage />
+          <MainLayout>
+            <RequireAuth>
+              <OrdersPage />
+            </RequireAuth>
           </MainLayout>
         } />
 
         {/* KYC Verification Flow Pages */}
         <Route path="/kyc" element={
-          <MainLayout isLoggedIn={true}>
+          <MainLayout>
             <KycPage />
           </MainLayout>
         } />
         <Route path="/kyc-pending" element={
-          <MainLayout isLoggedIn={true}>
+          <MainLayout>
             <KycPendingPage />
           </MainLayout>
         } />
         <Route path="/kyc-rejected" element={
-          <MainLayout isLoggedIn={true}>
+          <MainLayout>
             <KycRejectedPage />
           </MainLayout>
         } />
 
         {/* Fallback to Home */}
         <Route path="*" element={
-          <MainLayout isLoggedIn={false}>
+          <MainLayout>
             <HomePage />
           </MainLayout>
         } />
       </Routes>
     </Router>
+    </AuthProvider>
   );
 }
 
