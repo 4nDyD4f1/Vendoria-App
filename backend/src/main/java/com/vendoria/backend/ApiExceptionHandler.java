@@ -30,9 +30,9 @@ class ApiExceptionHandler {
 	@ExceptionHandler(MethodArgumentNotValidException.class)
 	ResponseEntity<Map<String, Object>> invalid(MethodArgumentNotValidException e) {
 		Map<String, String> errors = new LinkedHashMap<>();
-		// nama field di JSON memakai snake_case (no_telp), di Java noTelp
-		e.getBindingResult().getFieldErrors()
-				.forEach(f -> errors.putIfAbsent(f.getField().replace("noTelp", "no_telp"), f.getDefaultMessage()));
+		// nama field di JSON memakai snake_case (no_telp, reset_token), di Java camelCase
+		e.getBindingResult().getFieldErrors().forEach(f -> errors.putIfAbsent(
+				f.getField().replace("noTelp", "no_telp").replace("resetToken", "reset_token"), f.getDefaultMessage()));
 		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(Map.of("message", "Data tidak valid", "errors", errors));
 	}
 }

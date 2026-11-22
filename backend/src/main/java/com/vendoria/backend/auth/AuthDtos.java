@@ -24,6 +24,25 @@ final class AuthDtos {
 	record LoginRequest(@NotBlank String email, @NotBlank String password) {
 	}
 
+	record ForgotRequest(@NotBlank @Email @Size(max = 255) String email) {
+	}
+
+	record VerifyOtpRequest(
+			@NotBlank @Email @Size(max = 255) String email,
+			@NotBlank @Pattern(regexp = "\\d{6}", message = "harus 6 digit angka") String otp) {
+	}
+
+	record ResetRequest(
+			@JsonProperty("reset_token") @NotBlank @Size(max = 100) String resetToken,
+			@NotBlank @Size(min = 8, max = 72) String password) {
+	}
+
+	record MessageResponse(String message) {
+	}
+
+	record ResetTokenResponse(@JsonProperty("reset_token") String resetToken) {
+	}
+
 	record UserResponse(
 			@JsonProperty("user_id") Long userId,
 			String nama,

@@ -59,7 +59,7 @@ class AuthService {
 				.orElseThrow(() -> new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Sesi tidak valid"));
 	}
 
-	private static String normalize(String email) {
+	static String normalize(String email) {
 		return email.trim().toLowerCase(Locale.ROOT);
 	}
 

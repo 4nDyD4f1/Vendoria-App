@@ -3,9 +3,9 @@ import { Eye, EyeOff, User, Sparkles, ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import AuthLayout from '../components/AuthLayout';
 import { useAuth } from '../AuthContext';
+import { EMAIL_RE } from '../validation';
 
-// Email wajib berbentuk example@mail.com (ada domain + TLD). WhatsApp wajib 08xxxxxxxxxx, bukan +62/62.
-const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[A-Za-z]{2,}$/;
+// WhatsApp wajib 08xxxxxxxxxx, bukan +62/62.
 const PHONE_RE = /^08\d{8,11}$/;
 const cleanPhone = (v) => v.replace(/[\s-]/g, ''); // izinkan "0812-3456-7890" / "0812 3456 7890"
 

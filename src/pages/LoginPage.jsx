@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Eye, EyeOff, ArrowRight } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import AuthLayout from '../components/AuthLayout';
 import { useAuth } from '../AuthContext';
 
@@ -15,6 +15,7 @@ const LoginPage = () => {
   const [submitting, setSubmitting] = useState(false);
   const { login } = useAuth();
   const navigate = useNavigate();
+  const notice = useLocation().state?.message; // mis. dari halaman reset password
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -72,6 +73,12 @@ const LoginPage = () => {
             Akses dashboard dan kelola penyewaanmu dengan aman.
           </p>
         </div>
+
+        {notice && (
+          <p role="status" className="mb-5 text-sm text-green-700 bg-green-50 border border-green-200 rounded-xl px-4 py-3">
+            {notice}
+          </p>
+        )}
 
         <form onSubmit={handleSubmit} className="space-y-5">
           {/* Email */}
@@ -136,7 +143,7 @@ const LoginPage = () => {
               />
               <span className="text-sm text-[#3C2415]">Ingat saya di perangkat ini</span>
             </label>
-            <span className="text-xs text-[#3C2415]/50">Sesi 30 hari</span>
+            {/* <span className="text-xs text-[#3C2415]/50">Sesi 30 hari</span> */}
           </div>
 
           {error && (
