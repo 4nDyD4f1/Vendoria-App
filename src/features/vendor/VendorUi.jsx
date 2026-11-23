@@ -28,7 +28,7 @@ export function Modal({ title, onClose, children, narrow = false }) {
   useEffect(() => {
     const trigger = document.activeElement;
     const previousOverflow = document.body.style.overflow;
-    const background = [...document.querySelectorAll('.vendor-workspace > .vendor-sidebar, .vendor-workspace > .vendor-shell')].map(element => [element, element.inert]);
+    const background = [...document.querySelectorAll('.vendor-workspace > :not(.v-modal-backdrop)')].map(element => [element, element.inert]);
     background.forEach(([element]) => { element.inert = true; });
     document.body.style.overflow = 'hidden';
     ref.current.querySelector('button, input, select, textarea')?.focus();

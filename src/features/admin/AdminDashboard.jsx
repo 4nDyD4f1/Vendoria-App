@@ -29,13 +29,13 @@ export default function AdminDashboard({ data, name }) {
   const pending = data.kyc.filter(item => item.status === 'Menunggu').length;
   const openClaims = data.claims.filter(item => ['Diajukan', 'Ditinjau'].includes(item.status)).length;
   const payoutRequests = data.payouts.filter(item => item.status === 'Diajukan').length;
-  const activeVendors = data.vendors.filter(item => item.status === 'Aktif').length;
+  const activeVendors = data.vendors.filter(item => item.status === 'Aktif' && item.businessStatus === 'Aktif').length;
   const stats = [
     ['KYC Menunggu', pending, 'Perlu ditinjau', Bell],
     ['Klaim Terbuka', openClaims, 'Menunggu keputusan', CalendarDays],
     ['GMV Bulan Ini', 'Rp76,5 jt', '30 hari terakhir', Sparkles],
     ['Deposit Ditahan di Escrow', 'Rp14,2 jt', 'Aman di rekening escrow', Lock],
-    ['Vendor Aktif', activeVendors, 'Terverifikasi KYC', Users],
+    ['Vendor Aktif', activeVendors, 'Akun dan bisnis aktif', Users],
   ];
   const actions = [
     [`Tinjau ${pending} pengajuan KYC`, 'Antrean verifikasi identitas customer dan vendor', '/admin/kyc'],

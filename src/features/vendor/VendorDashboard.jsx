@@ -1,30 +1,35 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowDownLeft, ArrowRight, ArrowUpRight, CalendarDays, Check, ClipboardList, PackageCheck, Plus, Truck } from 'lucide-react';
-import { money, shortDate } from './vendorData';
-import { EmptyState, PageHeading, Status } from './VendorUi';
+import { money } from './vendorData';
+import { vendorAssets } from './vendorAssets';
 
-export default function VendorDashboard({ data }) {
-  const [period, setPeriod] = useState(6);
-  const completed = data.orders.filter(order => order.status === 'Selesai' && order.start.startsWith('2026-11'));
-  const income = completed.reduce((total, order) => total + Number(order.total), 0);
-  const active = data.orders.filter(order => ['Menunggu', 'Dikonfirmasi', 'Berlangsung'].includes(order.status));
-  const available = data.catalog.filter(item => item.status === 'Aktif').reduce((total, item) => total + Number(item.stock), 0);
-  const upcoming = data.handovers.filter(item => item.status !== 'Selesai').sort((a, b) => a.date.localeCompare(b.date));
-  const months = [['Jun', 8300000], ['Jul', 12700000], ['Agu', 9500000], ['Sep', 14200000], ['Okt', 11900000], ['Nov', income]].slice(-period);
-  const max = Math.max(15000000, ...months.map(item => item[1]));
+// Financial/rating examples from Figma belong to the existing frontend preview.
+const preview = { balance: 18400000, rating: '4.8 / 5.0', orders: 198, weeks: [0, 0, 0, 4200000, 0, 3950000, 0, 18400000] };
+const compactMoney = value => `Rp${new Intl.NumberFormat('id-ID', { maximumFractionDigits: 1 }).format(value / 1000000)} jt`;
+
+export default function VendorDashboard({ data, business }) {
+  const pending = data.orders.filter(order => order.status === 'Menunggu').length;
+  const rented = data.orders.filter(order => order.status === 'Berlangsung').length;
+  const confirmed = data.orders.filter(order => order.status === 'Dikonfirmasi').length;
+  const inspections = data.handovers.filter(item => item.type === 'Pengembalian' && item.status === 'Menunggu inspeksi').length;
+  const claims = data.claims.filter(item => item.status === 'Ditinjau').length;
   const metrics = [
-    { label: 'Pendapatan sewa', value: money(income), detail: `${completed.length} pesanan selesai`, icon: ArrowDownLeft, to: '/vendor/pencairan' },
-    { label: 'Pesanan aktif', value: active.length, detail: `${data.orders.filter(order => order.status === 'Menunggu').length} menunggu konfirmasi`, icon: ClipboardList, to: '/vendor/pesanan' },
-    { label: 'Unit tersedia', value: available, detail: `${data.catalog.filter(item => item.status === 'Aktif').length} alat di katalog aktif`, icon: PackageCheck, to: '/vendor/katalog' },
-    { label: 'Jadwal serah terima', value: upcoming.length, detail: 'Pengiriman & pengembalian', icon: Truck, to: '/vendor/serah-terima' },
+    { label: 'Pesanan Baru', value: pending, detail: 'Perlu diproses', icon: vendorAssets.bell, to: '/vendor/pesanan' },
+    { label: 'Sedang Disewa', value: rented, detail: 'Masa sewa berjalan', icon: vendorAssets.calendar, to: '/vendor/pesanan' },
+    { label: 'Dana Siap Dicairkan', value: compactMoney(preview.balance), detail: 'Saldo tersedia', icon: vendorAssets.balance, to: '/vendor/pencairan' },
+    { label: 'Rating', value: preview.rating, detail: `${preview.orders}+ pesanan`, icon: vendorAssets.rating, to: '/vendor/profil-bisnis' },
   ];
-  return <>
-    <PageHeading eyebrow="WORKSPACE VENDOR" title="Ringkasan operasional" description="Semua yang perlu Anda siapkan untuk pesanan berikutnya."><span className="v-date-pill"><CalendarDays size={16} />November 2026</span><Link className="v-button v-button-primary" to="/vendor/katalog/tambah"><Plus size={17} />Tambah alat</Link></PageHeading>
-    <div className="v-metrics">{metrics.map(({ label, value, detail, icon: Icon, to }) => <Link to={to} className="v-metric" key={label}><div><span>{label}</span><Icon size={19} strokeWidth={1.5} /></div><strong>{value}</strong><p>{detail}<ArrowUpRight size={15} /></p></Link>)}</div>
-    <div className="v-dashboard-grid"><section className="v-card v-revenue-card"><div className="v-card-heading"><div><h2>Pendapatan sewa</h2><p>Ringkasan transaksi yang telah selesai.</p></div><select aria-label="Periode grafik pendapatan" value={period} onChange={event => setPeriod(Number(event.target.value))}><option value={6}>6 bulan terakhir</option><option value={3}>3 bulan terakhir</option></select></div><div className="v-chart-total"><strong>{money(income)}</strong><span>November 2026</span></div><figure className="v-revenue-chart"><figcaption className="v-sr-only">Pendapatan bulanan pada data contoh. {months.map(([month, amount]) => `${month}: ${money(amount)}`).join('. ')}</figcaption><div className="v-chart-labels" aria-hidden="true">{[max, max * .6667, max * .3333, 0].map(value => <span key={value}>{Math.round(value / 1000000)} jt</span>)}</div><div className="v-chart-plot">{months.map(([month, amount], index) => <div className="v-chart-column" key={month}><button type="button" className={`v-chart-bar${index === months.length - 1 ? ' is-current' : ''}`} style={{ height: `${Math.max(2, amount / max * 100)}%` }} aria-label={`${month}: ${money(amount)}`}><span className="v-chart-tooltip">{money(amount)}</span></button><span className="v-chart-month">{month}</span></div>)}</div></figure></section>
-    <section className="v-card v-schedule-card"><div className="v-card-heading"><div><h2>Jadwal terdekat</h2><p>Persiapkan alat dan tim Anda.</p></div><Link className="v-icon-button" to="/vendor/serah-terima" aria-label="Lihat semua jadwal"><ArrowUpRight size={18} /></Link></div><div className="v-schedule-list">{upcoming.length ? upcoming.slice(0, 3).map(item => <Link className="v-schedule-item" to={`/vendor/serah-terima/${item.id}`} key={item.id}><div className="v-schedule-date"><strong>{Number(item.date.slice(-2))}</strong><span>{new Intl.DateTimeFormat('id-ID', { month: 'short' }).format(new Date(`${item.date}T00:00:00`))}</span></div><div><small>{item.type}</small><strong>{item.customer}</strong><span>{item.order} · {item.pic}</span></div><ArrowRight size={16} /></Link>) : <EmptyState title="Semua jadwal selesai" description="Jadwal serah terima baru akan muncul di sini." />}</div><Link to="/vendor/serah-terima/tambah" className="v-schedule-add"><Plus size={16} />Jadwalkan serah terima</Link></section></div>
-    <section className="v-card"><div className="v-card-heading v-card-heading-padded"><div><h2>Pesanan terbaru</h2><p>Pantau pesanan dari masuk hingga selesai.</p></div><Link className="v-text-link" to="/vendor/pesanan">Semua pesanan<ArrowRight size={15} /></Link></div><div className="v-table-scroll" tabIndex={0} role="region" aria-label="Tabel pesanan terbaru"><table className="v-table"><caption className="v-sr-only">Pesanan terbaru pada data contoh</caption><thead><tr><th scope="col">No. pesanan</th><th scope="col">Pelanggan & perlengkapan</th><th scope="col">Tanggal sewa</th><th scope="col">Total sewa</th><th scope="col">Status</th><th scope="col"><span className="v-sr-only">Detail</span></th></tr></thead><tbody>{data.orders.slice(0, 4).map(order => <tr key={order.id}><td><Link className="v-record-id" to={`/vendor/pesanan/${order.id}`}>{order.id}</Link></td><td><div className="v-stacked-cell"><strong>{order.customer}</strong><small>{order.equipment}</small></div></td><td>{shortDate(order.start)}</td><td className="v-number">{money(order.total)}</td><td><Status>{order.status}</Status></td><td><Link className="v-icon-button" aria-label={`Detail ${order.id}`} to={`/vendor/pesanan/${order.id}`}><ArrowUpRight size={17} /></Link></td></tr>)}</tbody></table></div>{!data.orders.length && <EmptyState title="Belum ada pesanan" />}</section>
-    <div className="v-dashboard-footer"><Check size={14} /><span>Data contoh untuk pratinjau antarmuka.</span><Link to="/vendor/profil-bisnis">Kelola profil bisnis<ArrowRight size={14} /></Link></div>
-  </>;
+  const actions = [
+    { title: `Serah terima ${confirmed} pesanan terkonfirmasi`, detail: 'Unggah 4 foto kondisi awal lalu mulai masa sewa', to: '/vendor/serah-terima' },
+    { title: `Inspeksi ${inspections} pengembalian`, detail: 'Konfirmasi kondisi barang agar deposit dirilis', to: '/vendor/serah-terima' },
+    { title: `Tanggapi ${claims} klaim terbuka`, detail: 'Unggah bukti serah terima dan balas pesan Admin', to: '/vendor/klaim' },
+    { title: `Ajukan pencairan ${compactMoney(preview.balance)}`, detail: 'Saldo dari transaksi yang telah selesai', to: '/vendor/pencairan' },
+  ];
+  return <div className="vp-dashboard" data-figma-node="86:2">
+    <div className="vp-welcome"><div><p className="vp-eyebrow">PORTAL VENDOR</p><h1>Selamat datang, {business.name}</h1><p className="vp-welcome-description">Berikut ringkasan aktivitas yang perlu diperhatikan hari ini.</p></div><Link className="vp-verified" to="/vendor/kyc" aria-label="Lihat status verifikasi pada data contoh">Terverifikasi</Link></div>
+    <div className="vp-metrics">{metrics.map(metric => <Link className="vp-metric" to={metric.to} key={metric.label}><span className="vp-metric-label">{metric.label}</span><strong>{metric.value}</strong><p>{metric.detail}</p><span className="vp-metric-icon"><img src={metric.icon} alt="" /></span></Link>)}</div>
+    <div className="vp-dashboard-grid">
+      <section className="vp-priorities" aria-labelledby="vp-priority-title"><p className="vp-eyebrow">PRIORITAS HARI INI</p><h2 id="vp-priority-title">Perlu Tindakan</h2><ol className="vp-action-list">{actions.map((action, index) => <li key={action.title}><span className="vp-action-number" aria-hidden="true">{index + 1}</span><div><strong>{action.title}</strong><p>{action.detail}</p></div><Link to={action.to} aria-label={`Buka: ${action.title}`}>Buka<img src={vendorAssets.arrow} alt="" /></Link></li>)}</ol></section>
+      <section className="vp-weekly" aria-labelledby="vp-weekly-title"><p className="vp-eyebrow">8 MINGGU TERAKHIR</p><h2 id="vp-weekly-title">Pendapatan Mingguan</h2><figure><figcaption className="v-sr-only">Pendapatan mingguan pada data contoh. {preview.weeks.map((amount, index) => `Minggu ${index + 1}: ${money(amount)}`).join('. ')}</figcaption><div className="vp-week-chart">{preview.weeks.map((amount, index) => <button type="button" key={index} className="vp-week-bar" style={{ height: `${Math.max(6, amount / preview.balance * 100)}%` }} aria-label={`${index === 7 ? 'Minggu ini' : `${7 - index} minggu lalu`}: ${money(amount)} (data contoh)`}><span>{money(amount)}</span></button>)}</div><div className="vp-week-labels" aria-hidden="true"><span>8 minggu lalu</span><span>Minggu ini</span></div></figure></section>
+    </div>
+  </div>;
 }

@@ -7,6 +7,7 @@ import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import ForgotPasswordPage from './pages/ForgotPasswordPage';
 import OtpVerificationPage from './pages/OtpVerificationPage';
+import TwoFactorVerificationPage from './pages/TwoFactorVerificationPage';
 import ResetPasswordPage from './pages/ResetPasswordPage';
 import VendorListPage from './pages/VendorListPage';
 import { AuthProvider } from './AuthContext';
@@ -45,6 +46,7 @@ function App() {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/forgot-password" element={<ForgotPasswordPage />} />
         <Route path="/otp-verification" element={<OtpVerificationPage />} />
+        <Route path="/two-factor-verification" element={<TwoFactorVerificationPage />} />
         <Route path="/reset-password" element={<ResetPasswordPage />} />
 
         {/* The existing directory has no corresponding Figma frame. */}

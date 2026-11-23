@@ -49,6 +49,7 @@ function NativeField({ node, ancestors, props }) {
     if (/^\+62 812-9876-5432$/.test(example)) initial = context.user.no_telp || '';
   }
   const googleEmail = !context.preview && context.user?.akun_google && example === 'bagas.arya@ipb.ac.id'; // email akun Google dikelola Google
+  const { error, hint, ...profileOptions } = context.profileFields?.[node.id] || {};
   const value = context.fields[key] ?? initial;
   const multiline = /Text ?Area/i.test(name) || example.length > 130;
   const classes = nodeClass(node);
@@ -64,8 +65,11 @@ function NativeField({ node, ancestors, props }) {
     value,
     min: number ? 0 : date && /selesai/i.test(label) ? context.rentalDates.start : undefined,
     autoComplete: password ? 'new-password' : 'off',
-    disabled: googleEmail || undefined,
     title: googleEmail ? 'Email dikelola oleh akun Google dan tidak dapat diubah' : undefined,
+    ...profileOptions,
+    disabled: googleEmail || profileOptions.disabled || undefined,
+    'aria-invalid': error ? true : undefined,
+    'aria-describedby': error || hint ? `field-note-${node.id}` : undefined,
     onChange: event => {
       context.setFields(current => ({ ...current, [key]: event.target.value }));
       if (date && (context.screen.key.startsWith('product') || context.screen.key === 'checkout')) context.setRentalDates(current => ({ ...current, [/selesai|akhir/i.test(label) ? 'end' : 'start']: event.target.value }));
@@ -73,7 +77,7 @@ function NativeField({ node, ancestors, props }) {
     },
     onKeyDown: event => { if (search && event.key === 'Enter') { event.preventDefault(); context.search(); } },
   });
-  return <div {...props} className={`${props.className} design-input${date ? ' design-date-field' : ''}${date && !value ? ' design-date-empty' : ''}`} style={{ ...props.style, ...(classes.includes('absolute') ? {} : { flexShrink: 1 }) }}>{input}</div>;
+  return <div {...props} className={`${props.className} design-input${date ? ' design-date-field' : ''}${date && !value ? ' design-date-empty' : ''}`} style={{ ...props.style, ...(classes.includes('absolute') ? {} : { flexShrink: 1 }) }}>{input}{(error || hint) && <small id={`field-note-${node.id}`} className={error ? 'account-field-error' : 'account-field-hint'}>{error || hint}</small>}</div>;
 }
 
 function NativeSelect({ node, ancestors, props }) {
@@ -198,8 +202,8 @@ export default function DesignNode({ node, ancestors = [], insideControl = false
     }
     tag = target ? 'a' : 'button';
     if (target) props.href = context.href(target);
-    else props.type = 'button';
-    props['aria-label'] = name.includes(' - ') ? name.split(' - ')[1] : label || 'Buka pilihan';
+    else props.type = context.submitNodeId === node.id ? 'submit' : 'button';
+    props['aria-label'] = context.controlLabels?.[node.id] ?? (name.includes(' - ') ? name.split(' - ')[1] : label || 'Buka pilihan');
     if (context.screen.key === 'catalog' && label.trim() === 'Lihat' && ancestors.some(ancestor => ancestor.name === 'ProductCard')) {
       // The full-card link is the single keyboard destination for this product.
       props.tabIndex = -1;
@@ -208,7 +212,7 @@ export default function DesignNode({ node, ancestors = [], insideControl = false
     if (context.screen.key === 'rental-faq' && label.trim().endsWith('?')) props['aria-expanded'] = context.faqExpanded[node.id] ?? ancestors.at(-1)?.children?.some(child => child.name === 'Paragraph');
     if (name === 'Tab') { props.role = 'tab'; props['aria-selected'] = /bg-\[#3a2a21\]/.test(classes) || Boolean(pressed); }
     if (isSwitch) { props.role = 'switch'; props['aria-checked'] = context.fields[node.id] ?? true; props.className += ' design-switch'; }
-    props.onClick = event => {
+    if (props.type !== 'submit') props.onClick = event => {
       if (target && (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey)) return;
       event.preventDefault();
       event.stopPropagation();

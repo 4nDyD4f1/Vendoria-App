@@ -3,6 +3,7 @@ import { Eye, EyeOff, ArrowRight } from 'lucide-react';
 import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import AuthLayout from '../components/AuthLayout';
 import { useAuth } from '../AuthContext';
+import { authDestination } from '../authDestination';
 
 // Logo "G" Google (warna resmi)
 const GoogleIcon = () => (
@@ -43,7 +44,7 @@ const LoginPage = () => {
     setSubmitting(true);
     try {
       const user = await login(email.trim(), password);
-      navigate(user.role === 'admin' ? '/admin' : '/'); // admin langsung ke workspace-nya
+      navigate(user.two_factor_required ? '/two-factor-verification' : authDestination(user.role), { replace: true });
     } catch (err) {
       setError(err.message); // 401 salah kredensial, 429 terlalu banyak percobaan, dll.
     } finally {
