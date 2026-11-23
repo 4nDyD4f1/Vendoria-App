@@ -1,0 +1,2438 @@
+{
+  "tag": "div",
+  "style": 0,
+  "id": "103:7616",
+  "name": "pesanan saya",
+  "children": [
+    {
+      "tag": "div",
+      "style": 336,
+      "id": "103:7672",
+      "name": "Page",
+      "children": [
+        {
+          "tag": "div",
+          "style": 260,
+          "id": "103:7674",
+          "name": "Breadcrumb",
+          "children": [
+            {
+              "tag": "div",
+              "style": 261,
+              "id": "103:7675",
+              "name": "Text",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 228,
+                  "id": "103:7676",
+                  "name": "Link",
+                  "children": [
+                    {
+                      "tag": "p",
+                      "style": 70,
+                      "id": "103:7677",
+                      "children": [
+                        "Beranda"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "style": 112,
+                  "id": "103:7679",
+                  "name": "Icon",
+                  "children": [
+                    {
+                      "tag": "img",
+                      "style": 7,
+                      "props": {
+                        "alt": "",
+                        "src": "/assets/figma/0a496288f6a1ee034b30.svg"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "style": 228,
+              "id": "103:7681",
+              "name": "Text",
+              "children": [
+                {
+                  "tag": "p",
+                  "style": 177,
+                  "id": "103:7683",
+                  "children": [
+                    "Pesanan Saya"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "div",
+          "style": 2363,
+          "id": "103:7685",
+          "name": "Section",
+          "children": [
+            {
+              "tag": "div",
+              "style": 2364,
+              "id": "103:7686",
+              "name": "Container",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 1133,
+                  "id": "103:7687",
+                  "name": "Heading 1",
+                  "children": [
+                    {
+                      "tag": "p",
+                      "style": 268,
+                      "id": "103:7688",
+                      "children": [
+                        "Pesanan Saya"
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 2365,
+                      "id": "103:7690",
+                      "name": "Text",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 2366,
+                          "id": "103:7691",
+                          "children": [
+                            "8 Transaksi"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "style": 2367,
+                  "id": "103:7692",
+                  "name": "Paragraph",
+                  "children": [
+                    {
+                      "tag": "p",
+                      "style": 154,
+                      "id": "103:7693",
+                      "children": [
+                        "Pantau pembayaran, masa sewa, hingga pengembalian deposit."
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "div",
+          "style": 93,
+          "id": "103:8008",
+          "name": "Container",
+          "children": [
+            {
+              "tag": "div",
+              "style": 2368,
+              "id": "103:7696",
+              "name": "Tabs",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 95,
+                  "id": "103:7697",
+                  "name": "Tab",
+                  "children": [
+                    {
+                      "tag": "p",
+                      "style": 96,
+                      "id": "103:7698",
+                      "children": [
+                        "Semua (8)"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "style": 97,
+                  "id": "103:7700",
+                  "name": "Tab",
+                  "children": [
+                    {
+                      "tag": "p",
+                      "style": 98,
+                      "id": "103:7701",
+                      "children": [
+                        "Menunggu Pembayaran (1)"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "style": 97,
+                  "id": "103:7702",
+                  "name": "Tab",
+                  "children": [
+                    {
+                      "tag": "p",
+                      "style": 98,
+                      "id": "103:7703",
+                      "children": [
+                        "Menunggu Verifikasi (0)"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "style": 97,
+                  "id": "103:7704",
+                  "name": "Tab",
+                  "children": [
+                    {
+                      "tag": "p",
+                      "style": 98,
+                      "id": "103:7705",
+                      "children": [
+                        "Terkonfirmasi (2)"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "style": 97,
+                  "id": "103:7706",
+                  "name": "Tab",
+                  "children": [
+                    {
+                      "tag": "p",
+                      "style": 98,
+                      "id": "103:7707",
+                      "children": [
+                        "Sedang Disewa (1)"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "style": 97,
+                  "id": "103:7708",
+                  "name": "Tab",
+                  "children": [
+                    {
+                      "tag": "p",
+                      "style": 98,
+                      "id": "103:7709",
+                      "children": [
+                        "Selesai (1)"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "style": 97,
+                  "id": "103:7710",
+                  "name": "Tab",
+                  "children": [
+                    {
+                      "tag": "p",
+                      "style": 98,
+                      "id": "103:7711",
+                      "children": [
+                        "Dalam Klaim (1)"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "style": 97,
+                  "id": "103:7712",
+                  "name": "Tab",
+                  "children": [
+                    {
+                      "tag": "p",
+                      "style": 98,
+                      "id": "103:7713",
+                      "children": [
+                        "Dibatalkan (2)"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "div",
+          "style": 2369,
+          "id": "103:7714",
+          "name": "Container",
+          "children": [
+            {
+              "tag": "div",
+              "style": 2370,
+              "id": "103:7715",
+              "name": "Article",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 615,
+                  "id": "103:7716",
+                  "name": "Container",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 15,
+                      "id": "103:7717",
+                      "name": "Container",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 228,
+                          "id": "103:7718",
+                          "name": "Bold Text",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 175,
+                              "id": "103:7719",
+                              "children": [
+                                "#VND-261011-8227"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 2371,
+                          "id": "103:7721",
+                          "name": "StatusChip",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 105,
+                              "id": "103:7722",
+                              "children": [
+                                "Terkonfirmasi"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 228,
+                      "id": "103:7723",
+                      "name": "Small",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 617,
+                          "id": "103:7724",
+                          "children": [
+                            "4 menit lalu"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "style": 2372,
+                  "id": "103:7726",
+                  "name": "Container",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 2373,
+                      "id": "103:7727",
+                      "name": "Container",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 2374,
+                          "id": "103:7728",
+                          "name": "Image (Tenda Roder Transparan VIP 10x20m)",
+                          "children": [
+                            {
+                              "tag": "img",
+                              "style": 2218,
+                              "props": {
+                                "alt": "",
+                                "src": "/assets/figma/576509bf7aca3c5445d4.png"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 202,
+                          "id": "103:7729",
+                          "name": "Small",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 2375,
+                              "id": "103:7730",
+                              "children": [
+                                "1 jenis alat"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 2376,
+                      "id": "103:7732",
+                      "name": "Container",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 151,
+                          "id": "103:7733",
+                          "name": "Heading 3",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 222,
+                              "id": "103:7734",
+                              "children": [
+                                "Festival Musik 2026"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 2377,
+                          "id": "103:7736",
+                          "name": "Paragraph",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 112,
+                              "id": "103:7737",
+                              "name": "Icon",
+                              "children": [
+                                {
+                                  "tag": "img",
+                                  "style": 7,
+                                  "props": {
+                                    "alt": "",
+                                    "src": "/assets/figma/201e1ad4c345c1b2303d.svg"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "p",
+                              "style": 378,
+                              "id": "103:7740",
+                              "children": [
+                                "Roder Bogor Tenda Megah"
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 115,
+                              "id": "103:7746",
+                              "name": "Italic Text:margin",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 116,
+                                  "id": "103:7741",
+                                  "name": "Italic Text"
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 112,
+                              "id": "103:7742",
+                              "name": "Icon",
+                              "children": [
+                                {
+                                  "tag": "img",
+                                  "style": 7,
+                                  "props": {
+                                    "alt": "",
+                                    "src": "/assets/figma/52c266a6d9e9da28fa94.svg"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "p",
+                              "style": 378,
+                              "id": "103:7745",
+                              "children": [
+                                "Bogor"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 2378,
+                          "id": "103:7747",
+                          "name": "Paragraph",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 2379,
+                              "id": "103:7748",
+                              "name": "Text",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 112,
+                                  "id": "103:7749",
+                                  "name": "Icon",
+                                  "children": [
+                                    {
+                                      "tag": "img",
+                                      "style": 7,
+                                      "props": {
+                                        "alt": "",
+                                        "src": "/assets/figma/3fcd183d31b38b33f6dd.svg"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "p",
+                                  "style": 2380,
+                                  "id": "103:7752",
+                                  "children": [
+                                    "11 Okt 2026 - 11 Okt 2026"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 2381,
+                              "id": "103:7753",
+                              "name": "Text",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 177,
+                                  "id": "103:7754",
+                                  "children": [
+                                    "1 Hari"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 2382,
+                      "id": "103:7755",
+                      "name": "Container",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 2383,
+                          "id": "103:7756",
+                          "name": "Small",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 2235,
+                              "id": "103:7757",
+                              "children": [
+                                "Total Sewa"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 2384,
+                          "id": "103:7758",
+                          "name": "Bold Text",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 2385,
+                              "id": "103:7759",
+                              "children": [
+                                "Rp3.200.000"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 2386,
+                          "id": "103:7761",
+                          "name": "Small",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 2235,
+                              "id": "103:7762",
+                              "children": [
+                                "Deposit Rp1.500.000"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "style": 2387,
+                  "id": "103:7763",
+                  "name": "Container",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 803,
+                      "id": "103:7764",
+                      "name": "Button",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 40,
+                          "id": "103:7765",
+                          "children": [
+                            "Hubungi PIC"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 2388,
+                      "id": "103:7767",
+                      "name": "Button",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 40,
+                          "id": "103:7768",
+                          "children": [
+                            "Detail"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 2389,
+                      "id": "103:7769",
+                      "name": "Button",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 145,
+                          "id": "103:7770",
+                          "children": [
+                            "Surat Jalan"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "style": 2390,
+              "id": "103:7771",
+              "name": "Article",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 615,
+                  "id": "103:7772",
+                  "name": "Container",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 15,
+                      "id": "103:7773",
+                      "name": "Container",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 228,
+                          "id": "103:7774",
+                          "name": "Bold Text",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 175,
+                              "id": "103:7775",
+                              "children": [
+                                "#VND-261012-5373"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 2391,
+                          "id": "103:7776",
+                          "name": "StatusChip",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 682,
+                              "id": "103:7777",
+                              "children": [
+                                "Menunggu Pembayaran"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 228,
+                      "id": "103:7778",
+                      "name": "Small",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 617,
+                          "id": "103:7779",
+                          "children": [
+                            "12 menit lalu"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "style": 2372,
+                  "id": "103:7780",
+                  "name": "Container",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 2373,
+                      "id": "103:7781",
+                      "name": "Container",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 2374,
+                          "id": "103:7782",
+                          "name": "Image (Tenda Roder Transparan VIP 10x20m)",
+                          "children": [
+                            {
+                              "tag": "img",
+                              "style": 2218,
+                              "props": {
+                                "alt": "",
+                                "src": "/assets/figma/576509bf7aca3c5445d4.png"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 202,
+                          "id": "103:7783",
+                          "name": "Small",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 2375,
+                              "id": "103:7784",
+                              "children": [
+                                "1 jenis alat"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 2376,
+                      "id": "103:7785",
+                      "name": "Container",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 151,
+                          "id": "103:7786",
+                          "name": "Heading 3",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 222,
+                              "id": "103:7787",
+                              "children": [
+                                "Konser Amal Nusantara"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 2377,
+                          "id": "103:7788",
+                          "name": "Paragraph",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 112,
+                              "id": "103:7789",
+                              "name": "Icon",
+                              "children": [
+                                {
+                                  "tag": "img",
+                                  "style": 7,
+                                  "props": {
+                                    "alt": "",
+                                    "src": "/assets/figma/201e1ad4c345c1b2303d.svg"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "p",
+                              "style": 378,
+                              "id": "103:7792",
+                              "children": [
+                                "Roder Bogor Tenda Megah"
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 115,
+                              "id": "103:7798",
+                              "name": "Italic Text:margin",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 116,
+                                  "id": "103:7793",
+                                  "name": "Italic Text"
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 112,
+                              "id": "103:7794",
+                              "name": "Icon",
+                              "children": [
+                                {
+                                  "tag": "img",
+                                  "style": 7,
+                                  "props": {
+                                    "alt": "",
+                                    "src": "/assets/figma/52c266a6d9e9da28fa94.svg"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "p",
+                              "style": 378,
+                              "id": "103:7797",
+                              "children": [
+                                "Bogor"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 2378,
+                          "id": "103:7799",
+                          "name": "Paragraph",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 2392,
+                              "id": "103:7800",
+                              "name": "Text",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 112,
+                                  "id": "103:7801",
+                                  "name": "Icon",
+                                  "children": [
+                                    {
+                                      "tag": "img",
+                                      "style": 7,
+                                      "props": {
+                                        "alt": "",
+                                        "src": "/assets/figma/3fcd183d31b38b33f6dd.svg"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "p",
+                                  "style": 2380,
+                                  "id": "103:7804",
+                                  "children": [
+                                    "12 Okt 2026 - 14 Okt 2026"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 2393,
+                              "id": "103:7805",
+                              "name": "Text",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 177,
+                                  "id": "103:7806",
+                                  "children": [
+                                    "3 Hari"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 2382,
+                      "id": "103:7807",
+                      "name": "Container",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 2383,
+                          "id": "103:7808",
+                          "name": "Small",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 2235,
+                              "id": "103:7809",
+                              "children": [
+                                "Total Sewa"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 2384,
+                          "id": "103:7810",
+                          "name": "Bold Text",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 2385,
+                              "id": "103:7811",
+                              "children": [
+                                "Rp9.600.000"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 2386,
+                          "id": "103:7812",
+                          "name": "Small",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 2235,
+                              "id": "103:7813",
+                              "children": [
+                                "Deposit Rp1.500.000"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "style": 2387,
+                  "id": "103:7814",
+                  "name": "Container",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 2394,
+                      "id": "103:7827",
+                      "name": "Text:align",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 261,
+                          "id": "103:7815",
+                          "name": "Text",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 30,
+                              "id": "103:7816",
+                              "name": "Icon",
+                              "children": [
+                                {
+                                  "tag": "img",
+                                  "style": 7,
+                                  "props": {
+                                    "alt": "",
+                                    "src": "/assets/figma/1869513d2b6eb26997c7.svg"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "p",
+                              "style": 2395,
+                              "id": "103:7819",
+                              "children": [
+                                "23:47:56"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 803,
+                      "id": "103:7821",
+                      "name": "Button",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 40,
+                          "id": "103:7822",
+                          "children": [
+                            "Batalkan Pesanan"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 2388,
+                      "id": "103:7823",
+                      "name": "Button",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 40,
+                          "id": "103:7824",
+                          "children": [
+                            "Detail"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 2389,
+                      "id": "103:7825",
+                      "name": "Button",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 145,
+                          "id": "103:7826",
+                          "children": [
+                            "Bayar Deposit"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "style": 2396,
+              "id": "103:7828",
+              "name": "Article",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 615,
+                  "id": "103:7829",
+                  "name": "Container",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 15,
+                      "id": "103:7830",
+                      "name": "Container",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 228,
+                          "id": "103:7831",
+                          "name": "Bold Text",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 175,
+                              "id": "103:7832",
+                              "children": [
+                                "#VND-261012-8821"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 2397,
+                          "id": "103:7833",
+                          "name": "StatusChip",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 712,
+                              "id": "103:7834",
+                              "children": [
+                                "Dibatalkan"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 228,
+                      "id": "103:7835",
+                      "name": "Small",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 617,
+                          "id": "103:7836",
+                          "children": [
+                            "1 hari lalu"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "style": 2372,
+                  "id": "103:7837",
+                  "name": "Container",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 2373,
+                      "id": "103:7838",
+                      "name": "Container",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 2374,
+                          "id": "103:7839",
+                          "name": "Image (Tenda Roder Transparan VIP 10x20m)",
+                          "children": [
+                            {
+                              "tag": "img",
+                              "style": 2218,
+                              "props": {
+                                "alt": "",
+                                "src": "/assets/figma/576509bf7aca3c5445d4.png"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 202,
+                          "id": "103:7840",
+                          "name": "Small",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 2375,
+                              "id": "103:7841",
+                              "children": [
+                                "3 jenis alat"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 2376,
+                      "id": "103:7842",
+                      "name": "Container",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 151,
+                          "id": "103:7843",
+                          "name": "Heading 3",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 222,
+                              "id": "103:7844",
+                              "children": [
+                                "Festival Musik & Seni Budaya Bogor 2026"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 2377,
+                          "id": "103:7845",
+                          "name": "Paragraph",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 112,
+                              "id": "103:7846",
+                              "name": "Icon",
+                              "children": [
+                                {
+                                  "tag": "img",
+                                  "style": 7,
+                                  "props": {
+                                    "alt": "",
+                                    "src": "/assets/figma/201e1ad4c345c1b2303d.svg"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "p",
+                              "style": 378,
+                              "id": "103:7849",
+                              "children": [
+                                "Roder Bogor Tenda Megah +1 vendor"
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 115,
+                              "id": "103:7855",
+                              "name": "Italic Text:margin",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 116,
+                                  "id": "103:7850",
+                                  "name": "Italic Text"
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 112,
+                              "id": "103:7851",
+                              "name": "Icon",
+                              "children": [
+                                {
+                                  "tag": "img",
+                                  "style": 7,
+                                  "props": {
+                                    "alt": "",
+                                    "src": "/assets/figma/52c266a6d9e9da28fa94.svg"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "p",
+                              "style": 378,
+                              "id": "103:7854",
+                              "children": [
+                                "Bogor"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 2378,
+                          "id": "103:7856",
+                          "name": "Paragraph",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 2392,
+                              "id": "103:7857",
+                              "name": "Text",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 112,
+                                  "id": "103:7858",
+                                  "name": "Icon",
+                                  "children": [
+                                    {
+                                      "tag": "img",
+                                      "style": 7,
+                                      "props": {
+                                        "alt": "",
+                                        "src": "/assets/figma/3fcd183d31b38b33f6dd.svg"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "p",
+                                  "style": 2380,
+                                  "id": "103:7861",
+                                  "children": [
+                                    "12 Okt 2026 - 14 Okt 2026"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 2393,
+                              "id": "103:7862",
+                              "name": "Text",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 177,
+                                  "id": "103:7863",
+                                  "children": [
+                                    "3 Hari"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 2382,
+                      "id": "103:7864",
+                      "name": "Container",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 2383,
+                          "id": "103:7865",
+                          "name": "Small",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 2235,
+                              "id": "103:7866",
+                              "children": [
+                                "Total Sewa"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 2384,
+                          "id": "103:7867",
+                          "name": "Bold Text",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 2385,
+                              "id": "103:7868",
+                              "children": [
+                                "Rp21.450.000"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 2386,
+                          "id": "103:7869",
+                          "name": "Small",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 2235,
+                              "id": "103:7870",
+                              "children": [
+                                "Deposit Rp3.300.000"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "style": 2398,
+                  "id": "103:7871",
+                  "name": "Container",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 2388,
+                      "id": "103:7872",
+                      "name": "Button",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 40,
+                          "id": "103:7873",
+                          "children": [
+                            "Detail"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "style": 2399,
+              "id": "103:7874",
+              "name": "Article",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 615,
+                  "id": "103:7875",
+                  "name": "Container",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 15,
+                      "id": "103:7876",
+                      "name": "Container",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 228,
+                          "id": "103:7877",
+                          "name": "Bold Text",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 175,
+                              "id": "103:7878",
+                              "children": [
+                                "#VND-261005-7712"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 2371,
+                          "id": "103:7879",
+                          "name": "StatusChip",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 105,
+                              "id": "103:7880",
+                              "children": [
+                                "Terkonfirmasi"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 228,
+                      "id": "103:7881",
+                      "name": "Small",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 617,
+                          "id": "103:7882",
+                          "children": [
+                            "5 hari lalu"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "style": 2372,
+                  "id": "103:7883",
+                  "name": "Container",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 2373,
+                      "id": "103:7884",
+                      "name": "Container",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 2374,
+                          "id": "103:7885",
+                          "name": "Image (Set Line Array 5000W + Digital Mixer 32-Channel)",
+                          "children": [
+                            {
+                              "tag": "img",
+                              "style": 2218,
+                              "props": {
+                                "alt": "",
+                                "src": "/assets/figma/ef7ab9de942bbd25adf4.png"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 202,
+                          "id": "103:7886",
+                          "name": "Small",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 2375,
+                              "id": "103:7887",
+                              "children": [
+                                "2 jenis alat"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 2376,
+                      "id": "103:7888",
+                      "name": "Container",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 151,
+                          "id": "103:7889",
+                          "name": "Heading 3",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 222,
+                              "id": "103:7890",
+                              "children": [
+                                "Seminar Nasional Teknologi Pangan"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 2377,
+                          "id": "103:7891",
+                          "name": "Paragraph",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 112,
+                              "id": "103:7892",
+                              "name": "Icon",
+                              "children": [
+                                {
+                                  "tag": "img",
+                                  "style": 7,
+                                  "props": {
+                                    "alt": "",
+                                    "src": "/assets/figma/201e1ad4c345c1b2303d.svg"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "p",
+                              "style": 378,
+                              "id": "103:7895",
+                              "children": [
+                                "Karya Audio Pro Bogor"
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 115,
+                              "id": "103:7901",
+                              "name": "Italic Text:margin",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 116,
+                                  "id": "103:7896",
+                                  "name": "Italic Text"
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 112,
+                              "id": "103:7897",
+                              "name": "Icon",
+                              "children": [
+                                {
+                                  "tag": "img",
+                                  "style": 7,
+                                  "props": {
+                                    "alt": "",
+                                    "src": "/assets/figma/52c266a6d9e9da28fa94.svg"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "p",
+                              "style": 378,
+                              "id": "103:7900",
+                              "children": [
+                                "Bogor"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 2378,
+                          "id": "103:7902",
+                          "name": "Paragraph",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 2400,
+                              "id": "103:7903",
+                              "name": "Text",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 112,
+                                  "id": "103:7904",
+                                  "name": "Icon",
+                                  "children": [
+                                    {
+                                      "tag": "img",
+                                      "style": 7,
+                                      "props": {
+                                        "alt": "",
+                                        "src": "/assets/figma/3fcd183d31b38b33f6dd.svg"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "p",
+                                  "style": 2380,
+                                  "id": "103:7907",
+                                  "children": [
+                                    "18 Okt 2026 - 19 Okt 2026"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 2401,
+                              "id": "103:7908",
+                              "name": "Text",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 177,
+                                  "id": "103:7909",
+                                  "children": [
+                                    "2 Hari"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 2382,
+                      "id": "103:7910",
+                      "name": "Container",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 2383,
+                          "id": "103:7911",
+                          "name": "Small",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 2235,
+                              "id": "103:7912",
+                              "children": [
+                                "Total Sewa"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 2384,
+                          "id": "103:7913",
+                          "name": "Bold Text",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 2385,
+                              "id": "103:7914",
+                              "children": [
+                                "Rp5.000.000"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 2386,
+                          "id": "103:7915",
+                          "name": "Small",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 2235,
+                              "id": "103:7916",
+                              "children": [
+                                "Deposit Rp1.400.000"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "style": 2387,
+                  "id": "103:7917",
+                  "name": "Container",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 803,
+                      "id": "103:7918",
+                      "name": "Button",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 40,
+                          "id": "103:7919",
+                          "children": [
+                            "Hubungi PIC"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 2388,
+                      "id": "103:7920",
+                      "name": "Button",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 40,
+                          "id": "103:7921",
+                          "children": [
+                            "Detail"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 2389,
+                      "id": "103:7922",
+                      "name": "Button",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 145,
+                          "id": "103:7923",
+                          "children": [
+                            "Surat Jalan"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "style": 2402,
+              "id": "103:7924",
+              "name": "Article",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 615,
+                  "id": "103:7925",
+                  "name": "Container",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 15,
+                      "id": "103:7926",
+                      "name": "Container",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 228,
+                          "id": "103:7927",
+                          "name": "Bold Text",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 175,
+                              "id": "103:7928",
+                              "children": [
+                                "#VND-260928-4019"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 616,
+                          "id": "103:7929",
+                          "name": "StatusChip",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 177,
+                              "id": "103:7930",
+                              "children": [
+                                "Sedang Disewa"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 228,
+                      "id": "103:7931",
+                      "name": "Small",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 617,
+                          "id": "103:7932",
+                          "children": [
+                            "7 hari lalu"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "style": 2372,
+                  "id": "103:7933",
+                  "name": "Container",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 2373,
+                      "id": "103:7934",
+                      "name": "Container",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 2374,
+                          "id": "103:7935",
+                          "name": "Image (Tenda Roder Transparan VIP 10x20m)",
+                          "children": [
+                            {
+                              "tag": "img",
+                              "style": 2218,
+                              "props": {
+                                "alt": "",
+                                "src": "/assets/figma/576509bf7aca3c5445d4.png"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 202,
+                          "id": "103:7936",
+                          "name": "Small",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 2375,
+                              "id": "103:7937",
+                              "children": [
+                                "2 jenis alat"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 2376,
+                      "id": "103:7938",
+                      "name": "Container",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 151,
+                          "id": "103:7939",
+                          "name": "Heading 3",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 222,
+                              "id": "103:7940",
+                              "children": [
+                                "Festival Musik & Seni Budaya Bogor 2026"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 2377,
+                          "id": "103:7941",
+                          "name": "Paragraph",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 112,
+                              "id": "103:7942",
+                              "name": "Icon",
+                              "children": [
+                                {
+                                  "tag": "img",
+                                  "style": 7,
+                                  "props": {
+                                    "alt": "",
+                                    "src": "/assets/figma/201e1ad4c345c1b2303d.svg"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "p",
+                              "style": 378,
+                              "id": "103:7945",
+                              "children": [
+                                "Roder Bogor Tenda Megah"
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 115,
+                              "id": "103:7951",
+                              "name": "Italic Text:margin",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 116,
+                                  "id": "103:7946",
+                                  "name": "Italic Text"
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 112,
+                              "id": "103:7947",
+                              "name": "Icon",
+                              "children": [
+                                {
+                                  "tag": "img",
+                                  "style": 7,
+                                  "props": {
+                                    "alt": "",
+                                    "src": "/assets/figma/52c266a6d9e9da28fa94.svg"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "p",
+                              "style": 378,
+                              "id": "103:7950",
+                              "children": [
+                                "Bogor"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 2378,
+                          "id": "103:7952",
+                          "name": "Paragraph",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 2403,
+                              "id": "103:7953",
+                              "name": "Text",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 112,
+                                  "id": "103:7954",
+                                  "name": "Icon",
+                                  "children": [
+                                    {
+                                      "tag": "img",
+                                      "style": 7,
+                                      "props": {
+                                        "alt": "",
+                                        "src": "/assets/figma/3fcd183d31b38b33f6dd.svg"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "p",
+                                  "style": 2380,
+                                  "id": "103:7957",
+                                  "children": [
+                                    "27 Sep 2026 - 28 Sep 2026"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 2401,
+                              "id": "103:7958",
+                              "name": "Text",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 177,
+                                  "id": "103:7959",
+                                  "children": [
+                                    "2 Hari"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 2382,
+                      "id": "103:7960",
+                      "name": "Container",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 2383,
+                          "id": "103:7961",
+                          "name": "Small",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 2235,
+                              "id": "103:7962",
+                              "children": [
+                                "Total Sewa"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 2384,
+                          "id": "103:7963",
+                          "name": "Bold Text",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 2385,
+                              "id": "103:7964",
+                              "children": [
+                                "Rp10.600.000"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 2386,
+                          "id": "103:7965",
+                          "name": "Small",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 2235,
+                              "id": "103:7966",
+                              "children": [
+                                "Deposit Rp2.300.000"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "style": 2387,
+                  "id": "103:7967",
+                  "name": "Container",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 803,
+                      "id": "103:7968",
+                      "name": "Button",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 40,
+                          "id": "103:7969",
+                          "children": [
+                            "Ajukan Kendala / Klaim"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 803,
+                      "id": "103:7970",
+                      "name": "Button",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 40,
+                          "id": "103:7971",
+                          "children": [
+                            "SOP & Detail"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 2389,
+                      "id": "103:7972",
+                      "name": "Button",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 145,
+                          "id": "103:7973",
+                          "children": [
+                            "Foto Pengembalian"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "div",
+          "style": 2404,
+          "id": "103:7974",
+          "name": "Container",
+          "children": [
+            {
+              "tag": "div",
+              "style": 228,
+              "id": "103:7975",
+              "name": "Small",
+              "children": [
+                {
+                  "tag": "p",
+                  "style": 1839,
+                  "id": "103:7976",
+                  "children": [
+                    "Menampilkan 1–5 dari 8"
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "style": 131,
+              "id": "103:7978",
+              "name": "Pagination",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 326,
+                  "id": "103:7979",
+                  "name": "Button - Sebelumnya",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 327,
+                      "id": "103:7980",
+                      "name": "Icon",
+                      "children": [
+                        {
+                          "tag": "img",
+                          "style": 7,
+                          "props": {
+                            "alt": "",
+                            "src": "/assets/figma/0e5242ff283ce6688f14.svg"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "style": 328,
+                  "id": "103:7982",
+                  "name": "Button",
+                  "children": [
+                    {
+                      "tag": "p",
+                      "style": 329,
+                      "id": "103:7983",
+                      "children": [
+                        "1"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "style": 330,
+                  "id": "103:7984",
+                  "name": "Button",
+                  "children": [
+                    {
+                      "tag": "p",
+                      "style": 331,
+                      "id": "103:7985",
+                      "children": [
+                        "2"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "style": 330,
+                  "id": "103:7986",
+                  "name": "Button - Berikutnya",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 327,
+                      "id": "103:7987",
+                      "name": "Icon",
+                      "children": [
+                        {
+                          "tag": "img",
+                          "style": 7,
+                          "props": {
+                            "alt": "",
+                            "src": "/assets/figma/333e9ac4561e4ac8aaa4.svg"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "div",
+          "style": 275,
+          "id": "103:8007",
+          "name": "Section:margin",
+          "children": [
+            {
+              "tag": "div",
+              "style": 2405,
+              "id": "103:7989",
+              "name": "Section",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 15,
+                  "id": "103:7990",
+                  "name": "Text",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 169,
+                      "id": "103:7991",
+                      "name": "Icon",
+                      "children": [
+                        {
+                          "tag": "img",
+                          "style": 7,
+                          "props": {
+                            "alt": "",
+                            "src": "/assets/figma/43eb6d3525bea2985fa7.svg"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "p",
+                      "style": 540,
+                      "id": "103:7994",
+                      "children": [
+                        "Deposit tersimpan di escrow"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "style": 15,
+                  "id": "103:7995",
+                  "name": "Text",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 169,
+                      "id": "103:7996",
+                      "name": "Icon",
+                      "children": [
+                        {
+                          "tag": "img",
+                          "style": 7,
+                          "props": {
+                            "alt": "",
+                            "src": "/assets/figma/9f3c5020c0b1f5118dfa.svg"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "p",
+                      "style": 540,
+                      "id": "103:7999",
+                      "children": [
+                        "Inspeksi dua arah dengan foto"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "style": 15,
+                  "id": "103:8000",
+                  "name": "Text",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 169,
+                      "id": "103:8001",
+                      "name": "Icon",
+                      "children": [
+                        {
+                          "tag": "img",
+                          "style": 7,
+                          "props": {
+                            "alt": "",
+                            "src": "/assets/figma/76ef8cd9509d1855baf1.svg"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "p",
+                      "style": 540,
+                      "id": "103:8004",
+                      "children": [
+                        "Tim resolusi siap membantu"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

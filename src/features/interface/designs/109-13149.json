@@ -1,0 +1,680 @@
+{
+  "tag": "div",
+  "style": 0,
+  "id": "109:13149",
+  "name": "wishlist kosong",
+  "children": [
+    {
+      "tag": "div",
+      "style": 335,
+      "id": "109:13151",
+      "name": "Body",
+      "children": [
+        {
+          "tag": "div",
+          "style": 336,
+          "id": "109:13205",
+          "name": "Page",
+          "children": [
+            {
+              "tag": "div",
+              "style": 260,
+              "id": "109:13207",
+              "name": "Breadcrumb",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 261,
+                  "id": "109:13208",
+                  "name": "Text",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 228,
+                      "id": "109:13209",
+                      "name": "Link",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 70,
+                          "id": "109:13210",
+                          "children": [
+                            "Beranda"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 112,
+                      "id": "109:13212",
+                      "name": "Icon",
+                      "children": [
+                        {
+                          "tag": "img",
+                          "style": 7,
+                          "props": {
+                            "alt": "",
+                            "src": "/assets/figma/0a496288f6a1ee034b30.svg"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "style": 228,
+                  "id": "109:13214",
+                  "name": "Text",
+                  "children": [
+                    {
+                      "tag": "p",
+                      "style": 177,
+                      "id": "109:13216",
+                      "children": [
+                        "Wishlist"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "style": 2177,
+              "id": "109:13218",
+              "name": "Section",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 2605,
+                  "id": "109:13219",
+                  "name": "Container",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 1133,
+                      "id": "109:13220",
+                      "name": "Heading 1",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 268,
+                          "id": "109:13221",
+                          "children": [
+                            "Wishlist Alat Event"
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 2606,
+                          "id": "109:13223",
+                          "name": "Text",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 2366,
+                              "id": "109:13224",
+                              "children": [
+                                "0 Unit"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 2607,
+                      "id": "109:13225",
+                      "name": "Paragraph",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 154,
+                          "id": "109:13226",
+                          "children": [
+                            "Simpan alat favorit, bandingkan, lalu sewa sekaligus dalam satu pesanan."
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "style": 198,
+              "id": "109:13302",
+              "name": "EmptyState:margin",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 2608,
+                  "id": "109:13229",
+                  "name": "EmptyState",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 1755,
+                      "id": "109:13242",
+                      "name": "Text:margin",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 2609,
+                          "id": "109:13230",
+                          "name": "Text",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 2610,
+                              "id": "109:13231",
+                              "name": "Icon",
+                              "children": [
+                                {
+                                  "tag": "img",
+                                  "style": 7,
+                                  "props": {
+                                    "alt": "",
+                                    "src": "/assets/figma/23bfcb6a409a40cc5b50.svg"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 2611,
+                      "id": "109:13233",
+                      "name": "Heading 3",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 2612,
+                          "id": "109:13234",
+                          "children": [
+                            "Wishlist masih kosong"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 2613,
+                      "id": "109:13244",
+                      "name": "Paragraph:margin",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 2614,
+                          "id": "109:13236",
+                          "name": "Paragraph",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 879,
+                              "id": "109:13237",
+                              "children": [
+                                "Tekan ikon hati pada alat yang kamu suka untuk menyimpannya di sini."
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 2615,
+                      "id": "109:13245",
+                      "name": "Container",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 2616,
+                          "id": "109:13239",
+                          "name": "Button",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 145,
+                              "id": "109:13240",
+                              "children": [
+                                "Jelajahi Katalog"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "style": 2617,
+              "id": "109:13246",
+              "name": "Section",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 1685,
+                  "id": "109:13247",
+                  "name": "Container",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 2618,
+                      "id": "109:13248",
+                      "name": "Container",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 47,
+                          "id": "109:13249",
+                          "name": "Heading 2",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 89,
+                              "id": "109:13250",
+                              "children": [
+                                "Pelengkap Acara Anda"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 2619,
+                          "id": "109:13252",
+                          "name": "Paragraph",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 114,
+                              "id": "109:13253",
+                              "children": [
+                                "Rekomendasi alat yang sering disewa bersama pilihanmu."
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 2620,
+                      "id": "109:13255",
+                      "name": "Container",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 16,
+                          "id": "109:13256",
+                          "name": "Button - Sebelumnya",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 17,
+                              "id": "109:13257",
+                              "name": "Icon",
+                              "children": [
+                                {
+                                  "tag": "img",
+                                  "style": 7,
+                                  "props": {
+                                    "alt": "",
+                                    "src": "/assets/figma/55bee23fe6beb94ba385.svg"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 16,
+                          "id": "109:13259",
+                          "name": "Button - Berikutnya",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 17,
+                              "id": "109:13260",
+                              "name": "Icon",
+                              "children": [
+                                {
+                                  "tag": "img",
+                                  "style": 7,
+                                  "props": {
+                                    "alt": "",
+                                    "src": "/assets/figma/a9d830035d91856eae9f.svg"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "style": 262,
+                  "id": "109:13300",
+                  "name": "Container:margin",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 2621,
+                      "id": "109:13263",
+                      "name": "Container",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 2622,
+                          "id": "109:13264",
+                          "name": "Container",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 2623,
+                              "id": "109:13265",
+                              "name": "Image (Tenda Roder Transparan VIP 10x20m)",
+                              "children": [
+                                {
+                                  "tag": "img",
+                                  "style": 2218,
+                                  "props": {
+                                    "alt": "",
+                                    "src": "/assets/figma/576509bf7aca3c5445d4.png"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 2624,
+                              "id": "109:13266",
+                              "name": "Container",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 151,
+                                  "id": "109:13267",
+                                  "name": "Text",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 108,
+                                      "id": "109:13268",
+                                      "children": [
+                                        "TENDA & KANOPI"
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 202,
+                                  "id": "109:13270",
+                                  "name": "Bold Text",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 76,
+                                      "id": "109:13271",
+                                      "children": [
+                                        "Tenda Roder Transparan VIP 10x20m"
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 462,
+                                  "id": "109:13273",
+                                  "name": "Small",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 2625,
+                                      "id": "109:13274",
+                                      "children": [
+                                        "Rp3.200.000/hari"
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 2626,
+                              "id": "109:13276",
+                              "name": "Button",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 40,
+                                  "id": "109:13277",
+                                  "children": [
+                                    "+ Tambah"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 2627,
+                          "id": "109:13278",
+                          "name": "Container",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 2623,
+                              "id": "109:13279",
+                              "name": "Image (Set Line Array 5000W + Digital Mixer 32-Channel)",
+                              "children": [
+                                {
+                                  "tag": "img",
+                                  "style": 2218,
+                                  "props": {
+                                    "alt": "",
+                                    "src": "/assets/figma/ef7ab9de942bbd25adf4.png"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 2628,
+                              "id": "109:13280",
+                              "name": "Container",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 151,
+                                  "id": "109:13281",
+                                  "name": "Text",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 108,
+                                      "id": "109:13282",
+                                      "children": [
+                                        "SOUND SYSTEM"
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 202,
+                                  "id": "109:13283",
+                                  "name": "Bold Text",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 2629,
+                                      "id": "109:13284",
+                                      "children": [
+                                        "Set Line Array 5000W + Digital Mixer 32-Channel"
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 462,
+                                  "id": "109:13285",
+                                  "name": "Small",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 2625,
+                                      "id": "109:13286",
+                                      "children": [
+                                        "Rp1.850.000/hari"
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 2626,
+                              "id": "109:13287",
+                              "name": "Button",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 40,
+                                  "id": "109:13288",
+                                  "children": [
+                                    "+ Tambah"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 2630,
+                          "id": "109:13289",
+                          "name": "Container",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 2623,
+                              "id": "109:13290",
+                              "name": "Image (Pelaminan Modern Minimalis Floral)",
+                              "children": [
+                                {
+                                  "tag": "img",
+                                  "style": 2218,
+                                  "props": {
+                                    "alt": "",
+                                    "src": "/assets/figma/cc2495d9b6ee3ef89529.png"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 2624,
+                              "id": "109:13291",
+                              "name": "Container",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 151,
+                                  "id": "109:13292",
+                                  "name": "Text",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 108,
+                                      "id": "109:13293",
+                                      "children": [
+                                        "DEKORASI & PELAMINAN"
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 202,
+                                  "id": "109:13294",
+                                  "name": "Bold Text",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 76,
+                                      "id": "109:13295",
+                                      "children": [
+                                        "Pelaminan Modern Minimalis Floral"
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 462,
+                                  "id": "109:13296",
+                                  "name": "Small",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 2625,
+                                      "id": "109:13297",
+                                      "children": [
+                                        "Rp4.500.000/hari"
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 2626,
+                              "id": "109:13298",
+                              "name": "Button",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 40,
+                                  "id": "109:13299",
+                                  "children": [
+                                    "+ Tambah"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

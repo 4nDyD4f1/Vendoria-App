@@ -1,0 +1,296 @@
+{
+  "tag": "div",
+  "style": 2828,
+  "id": "109:21500",
+  "name": "Menu",
+  "children": [
+    {
+      "tag": "div",
+      "style": 787,
+      "id": "109:21501",
+      "name": "Container",
+      "children": [
+        {
+          "tag": "div",
+          "style": 256,
+          "id": "109:21502",
+          "name": "Bold Text",
+          "children": [
+            {
+              "tag": "p",
+              "style": 788,
+              "id": "109:21503",
+              "children": [
+                "Notifikasi"
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "div",
+          "style": 789,
+          "id": "109:21505",
+          "name": "Button",
+          "children": [
+            {
+              "tag": "p",
+              "style": 790,
+              "id": "109:21506",
+              "children": [
+                "Tandai dibaca"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "div",
+      "style": 2829,
+      "id": "109:21508",
+      "name": "Menu Item",
+      "children": [
+        {
+          "tag": "div",
+          "style": 151,
+          "id": "109:21509",
+          "name": "Bold Text",
+          "children": [
+            {
+              "tag": "p",
+              "style": 418,
+              "id": "109:21510",
+              "children": [
+                "KYC ditolak"
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "div",
+          "style": 792,
+          "id": "109:21512",
+          "name": "Small",
+          "children": [
+            {
+              "tag": "p",
+              "style": 70,
+              "id": "109:21513",
+              "children": [
+                "Foto KTP kurang jelas. Silakan ajukan ulang verifikasi."
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "div",
+          "style": 794,
+          "id": "109:21515",
+          "name": "Small",
+          "children": [
+            {
+              "tag": "p",
+              "style": 70,
+              "id": "109:21516",
+              "children": [
+                "9 menit lalu"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "div",
+      "style": 2830,
+      "id": "109:21517",
+      "name": "Menu Item",
+      "children": [
+        {
+          "tag": "div",
+          "style": 151,
+          "id": "109:21518",
+          "name": "Bold Text",
+          "children": [
+            {
+              "tag": "p",
+              "style": 418,
+              "id": "109:21519",
+              "children": [
+                "KYC terverifikasi"
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "div",
+          "style": 792,
+          "id": "109:21520",
+          "name": "Small",
+          "children": [
+            {
+              "tag": "p",
+              "style": 70,
+              "id": "109:21521",
+              "children": [
+                "Identitas Anda telah diverifikasi. Booking alat kini aktif."
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "div",
+          "style": 794,
+          "id": "109:21522",
+          "name": "Small",
+          "children": [
+            {
+              "tag": "p",
+              "style": 70,
+              "id": "109:21523",
+              "children": [
+                "9 menit lalu"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "div",
+      "style": 2831,
+      "id": "109:21524",
+      "name": "Menu Item",
+      "children": [
+        {
+          "tag": "div",
+          "style": 151,
+          "id": "109:21525",
+          "name": "Bold Text",
+          "children": [
+            {
+              "tag": "p",
+              "style": 418,
+              "id": "109:21526",
+              "children": [
+                "Dokumen KYC diterima"
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "div",
+          "style": 792,
+          "id": "109:21527",
+          "name": "Small",
+          "children": [
+            {
+              "tag": "p",
+              "style": 70,
+              "id": "109:21528",
+              "children": [
+                "Dokumen sedang ditinjau, estimasi maksimal 1 x 24 jam."
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "div",
+          "style": 794,
+          "id": "109:21529",
+          "name": "Small",
+          "children": [
+            {
+              "tag": "p",
+              "style": 70,
+              "id": "109:21530",
+              "children": [
+                "9 menit lalu"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "div",
+      "style": 2832,
+      "id": "109:21531",
+      "name": "Menu Item",
+      "children": [
+        {
+          "tag": "div",
+          "style": 151,
+          "id": "109:21532",
+          "name": "Bold Text",
+          "children": [
+            {
+              "tag": "p",
+              "style": 418,
+              "id": "109:21533",
+              "children": [
+                "Selamat datang di Vendoria"
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "div",
+          "style": 792,
+          "id": "109:21534",
+          "name": "Small",
+          "children": [
+            {
+              "tag": "p",
+              "style": 70,
+              "id": "109:21535",
+              "children": [
+                "Akun Anda aktif. Lengkapi verifikasi KYC untuk mulai menyewa."
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "div",
+          "style": 794,
+          "id": "109:21536",
+          "name": "Small",
+          "children": [
+            {
+              "tag": "p",
+              "style": 70,
+              "id": "109:21537",
+              "children": [
+                "10 menit lalu"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "div",
+      "style": 2833,
+      "id": "109:21538",
+      "name": "Container",
+      "children": [
+        {
+          "tag": "div",
+          "style": 789,
+          "id": "109:21539",
+          "name": "Button",
+          "children": [
+            {
+              "tag": "p",
+              "style": 790,
+              "id": "109:21540",
+              "children": [
+                "Lihat semua notifikasi"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

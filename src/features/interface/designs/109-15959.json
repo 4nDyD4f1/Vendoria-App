@@ -1,0 +1,660 @@
+{
+  "tag": "div",
+  "style": 0,
+  "id": "109:15959",
+  "name": "pengaturan akun-5",
+  "children": [
+    {
+      "tag": "div",
+      "style": 1,
+      "id": "109:15960",
+      "name": "Body",
+      "children": [
+        {
+          "tag": "div",
+          "style": 513,
+          "id": "109:16018",
+          "name": "Account",
+          "children": [
+            {
+              "tag": "div",
+              "style": 260,
+              "id": "109:16019",
+              "name": "Breadcrumb",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 261,
+                  "id": "109:16020",
+                  "name": "Text",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 228,
+                      "id": "109:16021",
+                      "name": "Link",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 70,
+                          "id": "109:16022",
+                          "children": [
+                            "Beranda"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 112,
+                      "id": "109:16024",
+                      "name": "Icon",
+                      "children": [
+                        {
+                          "tag": "img",
+                          "style": 7,
+                          "props": {
+                            "alt": "",
+                            "src": "/assets/figma/0a496288f6a1ee034b30.svg"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "style": 228,
+                  "id": "109:16026",
+                  "name": "Text",
+                  "children": [
+                    {
+                      "tag": "p",
+                      "style": 177,
+                      "id": "109:16028",
+                      "children": [
+                        "Akun Saya"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "style": 822,
+              "id": "109:16108",
+              "name": "Section:margin",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 515,
+                  "id": "109:16030",
+                  "name": "Section",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 2660,
+                      "id": "109:16031",
+                      "name": "Text",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 824,
+                          "id": "109:16032",
+                          "name": "Icon",
+                          "children": [
+                            {
+                              "tag": "img",
+                              "style": 7,
+                              "props": {
+                                "alt": "",
+                                "src": "/assets/figma/9bbc1282ad46bd5f817d.svg"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 2661,
+                      "id": "109:16035",
+                      "name": "Container",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 151,
+                          "id": "109:16036",
+                          "name": "Heading 1",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 827,
+                              "id": "109:16037",
+                              "children": [
+                                "Bagas Arya Pratama"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 828,
+                          "id": "109:16039",
+                          "name": "Paragraph",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 829,
+                              "id": "109:16040",
+                              "children": [
+                                "bagas.arya@ipb.ac.id "
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 2662,
+                              "id": "109:16041",
+                              "name": "Italic Text"
+                            },
+                            {
+                              "tag": "p",
+                              "style": 2663,
+                              "id": "109:16042",
+                              "children": [
+                                " +62 812-9876-5432 "
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 2664,
+                              "id": "109:16043",
+                              "name": "Italic Text"
+                            },
+                            {
+                              "tag": "p",
+                              "style": 2665,
+                              "id": "109:16044",
+                              "children": [
+                                " Bergabung 14 Mar 2026"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 457,
+                          "id": "109:16045",
+                          "name": "Container",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 2666,
+                              "id": "109:16046",
+                              "name": "Text",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 65,
+                                  "id": "109:16047",
+                                  "name": "Icon",
+                                  "children": [
+                                    {
+                                      "tag": "img",
+                                      "style": 7,
+                                      "props": {
+                                        "alt": "",
+                                        "src": "/assets/figma/172c9a75726be72eb823.svg"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "p",
+                                  "style": 105,
+                                  "id": "109:16050",
+                                  "children": [
+                                    "KYC Terverifikasi"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 2667,
+                              "id": "109:16051",
+                              "name": "Text",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 65,
+                                  "id": "109:16052",
+                                  "name": "Icon",
+                                  "children": [
+                                    {
+                                      "tag": "img",
+                                      "style": 7,
+                                      "props": {
+                                        "alt": "",
+                                        "src": "/assets/figma/2761a2f2ee3f7f08753c.svg"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "p",
+                                  "style": 177,
+                                  "id": "109:16054",
+                                  "children": [
+                                    "Kredibilitas 98%"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 2668,
+                              "id": "109:16055",
+                              "name": "Text",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 65,
+                                  "id": "109:16056",
+                                  "name": "Icon",
+                                  "children": [
+                                    {
+                                      "tag": "img",
+                                      "style": 7,
+                                      "props": {
+                                        "alt": "",
+                                        "src": "/assets/figma/5d3e72932e6b268680fc.svg"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "p",
+                                  "style": 105,
+                                  "id": "109:16059",
+                                  "children": [
+                                    "Escrow Aktif"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 2388,
+                      "id": "109:16060",
+                      "name": "Button",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 40,
+                          "id": "109:16061",
+                          "children": [
+                            "Keluar"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "style": 93,
+              "id": "109:16110",
+              "name": "Container",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 2669,
+                  "id": "109:16063",
+                  "name": "Tabs",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 97,
+                      "id": "109:16064",
+                      "name": "Tab",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 98,
+                          "id": "109:16065",
+                          "children": [
+                            "Profil"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 97,
+                      "id": "109:16067",
+                      "name": "Tab",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 98,
+                          "id": "109:16068",
+                          "children": [
+                            "Keamanan"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 97,
+                      "id": "109:16069",
+                      "name": "Tab",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 98,
+                          "id": "109:16070",
+                          "children": [
+                            "KYC"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 97,
+                      "id": "109:16071",
+                      "name": "Tab",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 98,
+                          "id": "109:16072",
+                          "children": [
+                            "Alamat Acara (3)"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 95,
+                      "id": "109:16073",
+                      "name": "Tab",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 96,
+                          "id": "109:16074",
+                          "children": [
+                            "Rekening Refund"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "style": 2357,
+              "id": "109:16075",
+              "name": "Section",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 1361,
+                  "id": "109:16076",
+                  "name": "Container",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 256,
+                      "id": "109:16077",
+                      "name": "Heading 2",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 89,
+                          "id": "109:16078",
+                          "children": [
+                            "Rekening Refund Escrow"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 1362,
+                      "id": "109:16080",
+                      "name": "Button",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 122,
+                          "id": "109:16081",
+                          "name": "Icon",
+                          "children": [
+                            {
+                              "tag": "img",
+                              "style": 7,
+                              "props": {
+                                "alt": "",
+                                "src": "/assets/figma/c273ea3f3b34f192dde7.svg"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "p",
+                          "style": 145,
+                          "id": "109:16083",
+                          "children": [
+                            "Tambah Rekening"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "style": 275,
+                  "id": "109:16099",
+                  "name": "Container:margin",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 2698,
+                      "id": "109:16084",
+                      "name": "Container",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 2394,
+                          "id": "109:16095",
+                          "name": "Text:align",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 2699,
+                              "id": "109:16085",
+                              "name": "Text",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 151,
+                                  "id": "109:16086",
+                                  "name": "Bold Text",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 788,
+                                      "id": "109:16087",
+                                      "children": [
+                                        "BCA 8830-•••••-7992"
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 202,
+                                  "id": "109:16089",
+                                  "name": "Small",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 70,
+                                      "id": "109:16090",
+                                      "children": [
+                                        "a.n. Bagas Arya Pratama"
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 2700,
+                          "id": "109:16091",
+                          "name": "Text",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 105,
+                              "id": "109:16092",
+                              "children": [
+                                "Tervalidasi"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 2701,
+                          "id": "109:16093",
+                          "name": "Text",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 177,
+                              "id": "109:16094",
+                              "children": [
+                                "Utama"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "style": 2702,
+                  "id": "109:16096",
+                  "name": "Container",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 860,
+                      "id": "109:16097",
+                      "name": "Button",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 40,
+                          "id": "109:16098",
+                          "children": [
+                            "Riwayat Refund"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "style": 275,
+              "id": "109:16109",
+              "name": "Section:margin",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 2405,
+                  "id": "109:16101",
+                  "name": "Section",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 15,
+                      "id": "109:16102",
+                      "name": "Text",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 169,
+                          "id": "109:16103",
+                          "name": "Icon",
+                          "children": [
+                            {
+                              "tag": "img",
+                              "style": 7,
+                              "props": {
+                                "alt": "",
+                                "src": "/assets/figma/59b8e0acfdd4d22b6f49.svg"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "p",
+                          "style": 540,
+                          "id": "109:16105",
+                          "children": [
+                            "1 alat tersimpan di wishlist"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 2678,
+                      "id": "109:16106",
+                      "name": "Button",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 145,
+                          "id": "109:16107",
+                          "children": [
+                            "Buka Wishlist"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

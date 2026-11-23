@@ -1,0 +1,916 @@
+{
+  "tag": "div",
+  "style": 0,
+  "id": "109:15463",
+  "name": "pengaturan akun-4",
+  "children": [
+    {
+      "tag": "div",
+      "style": 335,
+      "id": "109:15465",
+      "name": "Body",
+      "children": [
+        {
+          "tag": "div",
+          "style": 336,
+          "id": "109:15521",
+          "name": "Page",
+          "children": [
+            {
+              "tag": "div",
+              "style": 260,
+              "id": "109:15523",
+              "name": "Breadcrumb",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 261,
+                  "id": "109:15524",
+                  "name": "Text",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 228,
+                      "id": "109:15525",
+                      "name": "Link",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 70,
+                          "id": "109:15526",
+                          "children": [
+                            "Beranda"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 112,
+                      "id": "109:15528",
+                      "name": "Icon",
+                      "children": [
+                        {
+                          "tag": "img",
+                          "style": 7,
+                          "props": {
+                            "alt": "",
+                            "src": "/assets/figma/0a496288f6a1ee034b30.svg"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "style": 228,
+                  "id": "109:15530",
+                  "name": "Text",
+                  "children": [
+                    {
+                      "tag": "p",
+                      "style": 177,
+                      "id": "109:15532",
+                      "children": [
+                        "Akun Saya"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "style": 822,
+              "id": "109:15646",
+              "name": "Section:margin",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 515,
+                  "id": "109:15534",
+                  "name": "Section",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 2660,
+                      "id": "109:15535",
+                      "name": "Text",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 824,
+                          "id": "109:15536",
+                          "name": "Icon",
+                          "children": [
+                            {
+                              "tag": "img",
+                              "style": 7,
+                              "props": {
+                                "alt": "",
+                                "src": "/assets/figma/9bbc1282ad46bd5f817d.svg"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 2661,
+                      "id": "109:15539",
+                      "name": "Container",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 151,
+                          "id": "109:15540",
+                          "name": "Heading 1",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 827,
+                              "id": "109:15541",
+                              "children": [
+                                "Bagas Arya Pratama"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 828,
+                          "id": "109:15543",
+                          "name": "Paragraph",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 829,
+                              "id": "109:15544",
+                              "children": [
+                                "bagas.arya@ipb.ac.id "
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 2662,
+                              "id": "109:15545",
+                              "name": "Italic Text"
+                            },
+                            {
+                              "tag": "p",
+                              "style": 2663,
+                              "id": "109:15546",
+                              "children": [
+                                " +62 812-9876-5432 "
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 2664,
+                              "id": "109:15547",
+                              "name": "Italic Text"
+                            },
+                            {
+                              "tag": "p",
+                              "style": 2665,
+                              "id": "109:15548",
+                              "children": [
+                                " Bergabung 14 Mar 2026"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 457,
+                          "id": "109:15549",
+                          "name": "Container",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 2666,
+                              "id": "109:15550",
+                              "name": "Text",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 65,
+                                  "id": "109:15551",
+                                  "name": "Icon",
+                                  "children": [
+                                    {
+                                      "tag": "img",
+                                      "style": 7,
+                                      "props": {
+                                        "alt": "",
+                                        "src": "/assets/figma/172c9a75726be72eb823.svg"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "p",
+                                  "style": 105,
+                                  "id": "109:15554",
+                                  "children": [
+                                    "KYC Terverifikasi"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 2667,
+                              "id": "109:15555",
+                              "name": "Text",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 65,
+                                  "id": "109:15556",
+                                  "name": "Icon",
+                                  "children": [
+                                    {
+                                      "tag": "img",
+                                      "style": 7,
+                                      "props": {
+                                        "alt": "",
+                                        "src": "/assets/figma/2761a2f2ee3f7f08753c.svg"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "p",
+                                  "style": 177,
+                                  "id": "109:15558",
+                                  "children": [
+                                    "Kredibilitas 98%"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 2668,
+                              "id": "109:15559",
+                              "name": "Text",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 65,
+                                  "id": "109:15560",
+                                  "name": "Icon",
+                                  "children": [
+                                    {
+                                      "tag": "img",
+                                      "style": 7,
+                                      "props": {
+                                        "alt": "",
+                                        "src": "/assets/figma/5d3e72932e6b268680fc.svg"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "p",
+                                  "style": 105,
+                                  "id": "109:15563",
+                                  "children": [
+                                    "Escrow Aktif"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 2388,
+                      "id": "109:15564",
+                      "name": "Button",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 40,
+                          "id": "109:15565",
+                          "children": [
+                            "Keluar"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "style": 93,
+              "id": "109:15648",
+              "name": "Container",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 2669,
+                  "id": "109:15567",
+                  "name": "Tabs",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 97,
+                      "id": "109:15568",
+                      "name": "Tab",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 98,
+                          "id": "109:15569",
+                          "children": [
+                            "Profil"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 97,
+                      "id": "109:15571",
+                      "name": "Tab",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 98,
+                          "id": "109:15572",
+                          "children": [
+                            "Keamanan"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 97,
+                      "id": "109:15573",
+                      "name": "Tab",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 98,
+                          "id": "109:15574",
+                          "children": [
+                            "KYC"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 95,
+                      "id": "109:15575",
+                      "name": "Tab",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 96,
+                          "id": "109:15576",
+                          "children": [
+                            "Alamat Acara (3)"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 97,
+                      "id": "109:15577",
+                      "name": "Tab",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 98,
+                          "id": "109:15578",
+                          "children": [
+                            "Rekening Refund"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "style": 47,
+              "id": "109:15579",
+              "name": "Section",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 1361,
+                  "id": "109:15580",
+                  "name": "Container",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 256,
+                      "id": "109:15581",
+                      "name": "Heading 2",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 89,
+                          "id": "109:15582",
+                          "children": [
+                            "Alamat Acara Tersimpan"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 1362,
+                      "id": "109:15584",
+                      "name": "Button",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 122,
+                          "id": "109:15585",
+                          "name": "Icon",
+                          "children": [
+                            {
+                              "tag": "img",
+                              "style": 7,
+                              "props": {
+                                "alt": "",
+                                "src": "/assets/figma/c273ea3f3b34f192dde7.svg"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "p",
+                          "style": 145,
+                          "id": "109:15587",
+                          "children": [
+                            "Tambah Alamat"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "style": 198,
+                  "id": "109:15638",
+                  "name": "Container:margin",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 2689,
+                      "id": "109:15588",
+                      "name": "Container",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 2690,
+                          "id": "109:15589",
+                          "name": "Article",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 2691,
+                              "id": "109:15590",
+                              "name": "Text",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 105,
+                                  "id": "109:15591",
+                                  "children": [
+                                    "Alamat Utama"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 202,
+                              "id": "109:15592",
+                              "name": "Heading 3",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 222,
+                                  "id": "109:15593",
+                                  "children": [
+                                    "Gedung Alumni IPB & Plaza Outdoor"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 1366,
+                              "id": "109:15595",
+                              "name": "Paragraph",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 2692,
+                                  "id": "109:15596",
+                                  "children": [
+                                    "Jl. Raya Dramaga, Babakan, Kec. Dramaga, Kabupaten Bogor 16680"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 1652,
+                              "id": "109:15598",
+                              "name": "Small",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 2693,
+                                  "id": "109:15599",
+                                  "children": [
+                                    "Catatan: Truk masuk lewat gerbang barat. Loading maksimal pukul 07.00."
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 2694,
+                              "id": "109:15607",
+                              "name": "Container:margin",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 2015,
+                                  "id": "109:15601",
+                                  "name": "Container",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 1369,
+                                      "id": "109:15602",
+                                      "name": "Button",
+                                      "children": [
+                                        {
+                                          "tag": "p",
+                                          "style": 696,
+                                          "id": "109:15603",
+                                          "children": [
+                                            "Edit"
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 1369,
+                                      "id": "109:15605",
+                                      "name": "Button",
+                                      "children": [
+                                        {
+                                          "tag": "p",
+                                          "style": 696,
+                                          "id": "109:15606",
+                                          "children": [
+                                            "Hapus"
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 2695,
+                          "id": "109:15608",
+                          "name": "Article",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 2696,
+                              "id": "109:15609",
+                              "name": "Text",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 177,
+                                  "id": "109:15610",
+                                  "children": [
+                                    "Alternatif"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 202,
+                              "id": "109:15611",
+                              "name": "Heading 3",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 222,
+                                  "id": "109:15612",
+                                  "children": [
+                                    "Aula Sekolah Vokasi IPB"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 1366,
+                              "id": "109:15613",
+                              "name": "Paragraph",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 2582,
+                                  "id": "109:15614",
+                                  "children": [
+                                    "Jl. Kumbang No. 14, Bogor Tengah, Kota Bogor"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 1652,
+                              "id": "109:15615",
+                              "name": "Small",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 184,
+                                  "id": "109:15616",
+                                  "children": [
+                                    "Catatan: Lift barang tersedia di lantai dasar."
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 2694,
+                              "id": "109:15622",
+                              "name": "Container:margin",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 2015,
+                                  "id": "109:15617",
+                                  "name": "Container",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 1369,
+                                      "id": "109:15618",
+                                      "name": "Button",
+                                      "children": [
+                                        {
+                                          "tag": "p",
+                                          "style": 696,
+                                          "id": "109:15619",
+                                          "children": [
+                                            "Edit"
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 1369,
+                                      "id": "109:15620",
+                                      "name": "Button",
+                                      "children": [
+                                        {
+                                          "tag": "p",
+                                          "style": 696,
+                                          "id": "109:15621",
+                                          "children": [
+                                            "Hapus"
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 2697,
+                          "id": "109:15623",
+                          "name": "Article",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 2696,
+                              "id": "109:15624",
+                              "name": "Text",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 177,
+                                  "id": "109:15625",
+                                  "children": [
+                                    "Alternatif"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 202,
+                              "id": "109:15626",
+                              "name": "Heading 3",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 222,
+                                  "id": "109:15627",
+                                  "children": [
+                                    "Taman Budaya Bogor"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 1366,
+                              "id": "109:15628",
+                              "name": "Paragraph",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 2582,
+                                  "id": "109:15629",
+                                  "children": [
+                                    "Jl. Pajajaran, Bogor Timur, Kota Bogor"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 1652,
+                              "id": "109:15630",
+                              "name": "Small",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 184,
+                                  "id": "109:15631",
+                                  "children": [
+                                    "Catatan: Wajib lapor ke satpam sebelum bongkar muat."
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 2694,
+                              "id": "109:15637",
+                              "name": "Container:margin",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 2015,
+                                  "id": "109:15632",
+                                  "name": "Container",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 1369,
+                                      "id": "109:15633",
+                                      "name": "Button",
+                                      "children": [
+                                        {
+                                          "tag": "p",
+                                          "style": 696,
+                                          "id": "109:15634",
+                                          "children": [
+                                            "Edit"
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 1369,
+                                      "id": "109:15635",
+                                      "name": "Button",
+                                      "children": [
+                                        {
+                                          "tag": "p",
+                                          "style": 696,
+                                          "id": "109:15636",
+                                          "children": [
+                                            "Hapus"
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "style": 275,
+              "id": "109:15647",
+              "name": "Section:margin",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 2405,
+                  "id": "109:15639",
+                  "name": "Section",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 15,
+                      "id": "109:15640",
+                      "name": "Text",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 169,
+                          "id": "109:15641",
+                          "name": "Icon",
+                          "children": [
+                            {
+                              "tag": "img",
+                              "style": 7,
+                              "props": {
+                                "alt": "",
+                                "src": "/assets/figma/59b8e0acfdd4d22b6f49.svg"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "p",
+                          "style": 540,
+                          "id": "109:15643",
+                          "children": [
+                            "1 alat tersimpan di wishlist"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 2678,
+                      "id": "109:15644",
+                      "name": "Button",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 145,
+                          "id": "109:15645",
+                          "children": [
+                            "Buka Wishlist"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

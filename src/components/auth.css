@@ -1,0 +1,126 @@
+.vendoria-auth { background: #fdf8f1; color: #3a2a21; }
+.vendoria-auth .auth-main { width: 100%; max-width: 1280px; margin: 0 auto; padding: 48px 40px 64px; }
+.vendoria-auth .auth-card { display: grid; grid-template-columns: minmax(0, 489.27fr) minmax(0, 622.73fr); gap: 24px; padding: 32px; border-radius: 32px; background: #f5ede8; }
+.vendoria-auth .auth-aside { position: relative; isolation: isolate; overflow: hidden; display: flex; flex-direction: column; gap: 24px; min-height: 611px; padding: 32px; border-radius: 24px; background: #3a2a21; color: #fdf8f1; }
+.vendoria-auth .auth-aside::after { content: ''; position: absolute; z-index: -1; width: 300px; height: 300px; right: -80px; bottom: -100px; border: .667px solid #fdf8f114; border-radius: 50%; box-shadow: 0 0 0 55px #fdf8f105, 0 0 0 110px #fdf8f105; }
+.vendoria-auth.auth-login .auth-aside { min-height: 689.73px; }
+.vendoria-auth.auth-register .auth-aside { min-height: 782.73px; }
+.vendoria-auth .auth-brand { display: flex; align-items: center; gap: 10px; min-height: 40px; font-size: 27px; font-weight: 500; letter-spacing: -.945px; }
+.vendoria-auth .auth-brand img { flex: 0 0 40px; }
+.vendoria-auth .auth-badge { align-self: flex-start; display: inline-flex; align-items: center; gap: 6px; max-width: 100%; padding: 7px 12px; border-radius: 999px; background: #fdf8f11a; color: #f5ede8; font-size: 10px; line-height: 22px; letter-spacing: .4px; }
+.vendoria-auth .auth-badge svg { flex-shrink: 0; }
+.vendoria-auth .auth-aside h1 { margin: 0; max-width: 420px; font-size: 34px; line-height: 44px; letter-spacing: -1.19px; font-weight: 400; text-wrap: balance; }
+.vendoria-auth .auth-features { display: grid; gap: 16px; }
+.vendoria-auth .auth-feature { display: flex; align-items: center; gap: 16px; }
+.vendoria-auth .auth-feature-icon { flex: 0 0 40px; height: 40px; display: grid; place-items: center; border-radius: 50%; background: #ede1d9; color: #3a2a21; }
+.vendoria-auth .auth-feature h3 { margin: 0; font-size: 12px; line-height: 22px; font-weight: 500; }
+.vendoria-auth .auth-feature p { margin: 0; color: #fdf8f1a6; font-size: 10px; line-height: 18px; }
+.vendoria-auth .auth-aside blockquote { margin: auto 0 0; padding: 20px; border-radius: 18px; background: #fdf8f112; }
+.vendoria-auth .auth-aside blockquote p { margin: 0; color: #eee2da; font-size: 12px; line-height: 22px; font-weight: 400; }
+.vendoria-auth .auth-aside blockquote strong { display: block; padding-top: 7px; font-size: 10px; font-weight: 500; line-height: 22px; }
+.vendoria-auth .auth-section { min-width: 0; padding: 40px; display: flex; flex-direction: column; justify-content: center; align-items: center; border-radius: 24px; background: #fff; }
+.vendoria-auth .auth-content { width: 100%; }
+.vendoria-auth .auth-heading { margin-bottom: 24px; }
+.vendoria-auth .auth-eyebrow { margin: 0; color: #6f6058; font-size: 10px; font-weight: 500; line-height: 22px; letter-spacing: 1px; }
+.vendoria-auth .auth-heading h2 { margin: 6px 0 8px; font-size: 32px; line-height: 39px; letter-spacing: -1.12px; font-weight: 400; }
+.vendoria-auth .auth-heading > p:last-child { margin: 0; color: #6f6058; font-size: 12px; line-height: 22px; }
+.vendoria-auth .auth-tabs { display: flex; width: fit-content; margin: 0 auto 24px; padding: 4px; border-radius: 999px; background: #f5ede8; font-size: 11px; }
+.vendoria-auth .auth-tabs > * { padding: 7px 22px; border-radius: 999px; color: #6f6058; }
+.vendoria-auth .auth-tabs [aria-current] { background: #3a2a21; color: #fff; }
+.vendoria-auth .auth-form { display: grid; gap: 16px; }
+.vendoria-auth .auth-field { min-width: 0; }
+.vendoria-auth .auth-field > label, .vendoria-auth .auth-field-heading { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; font-size: 10px; line-height: 22px; color: #6f6058; }
+.vendoria-auth .auth-field-heading a { font-size: 10px; color: #3a2a21; text-decoration: underline; }
+.vendoria-auth .auth-input-wrap { position: relative; }
+.vendoria-auth .auth-input { display: block; width: 100%; min-width: 0; height: 48px; padding: 13px 16px; border: 1px solid transparent; border-radius: 999px; outline: none; background: #f5ede8; color: #3a2a21; font: inherit; font-size: 12px; line-height: 22px; transition: border-color .15s, box-shadow .15s; }
+.vendoria-auth .auth-input::placeholder { color: #9b8d85; opacity: 1; }
+.vendoria-auth .auth-input:focus { border-color: #8b7567; box-shadow: 0 0 0 3px #3a2a2114; }
+.vendoria-auth .auth-input[aria-invalid=true] { border-color: #bf4848; }
+.vendoria-auth .auth-input-wrap .auth-input { padding-right: 48px; }
+.vendoria-auth .auth-eye { position: absolute; right: 10px; top: 4px; display: grid; place-items: center; width: 40px; height: 40px; padding: 0; color: #6f6058; background: transparent; border: 0; border-radius: 50%; cursor: pointer; }
+.vendoria-auth button:focus-visible, .vendoria-auth a:focus-visible { outline: 2px solid #9b7962; outline-offset: 3px; }
+.vendoria-auth .auth-check { display: flex; align-items: center; gap: 8px; font-size: 10px; line-height: 22px; cursor: pointer; }
+.vendoria-auth .auth-check input { width: 13px; height: 13px; flex-shrink: 0; accent-color: #3a2a21; }
+.vendoria-auth .auth-submit { display: flex; align-items: center; justify-content: center; gap: 9px; width: 100%; min-height: 48px; padding: 10px 24px; border: 0; border-radius: 999px; background: #3a2a21; color: white; font: inherit; font-size: 13px; line-height: 22px; font-weight: 500; cursor: pointer; }
+.vendoria-auth .auth-submit:hover:not(:disabled) { background: #523d30; }
+.vendoria-auth .auth-submit:disabled { opacity: .5; cursor: wait; }
+.vendoria-auth .auth-divider { display: flex; align-items: center; gap: 10px; padding: 24px 0 16px; color: #6f6058; font-size: 10px; line-height: 22px; }
+.vendoria-auth .auth-divider::before, .vendoria-auth .auth-divider::after { content: ''; flex: 1; height: 1px; background: #ede1d9; }
+.vendoria-auth .auth-google { display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 42px; border: .667px solid #ede1d9; border-radius: 999px; font-size: 11px; }
+.vendoria-auth .auth-google:hover { background: #fdf8f1; }
+.vendoria-auth .auth-bottom { margin: 24px 0 0; font-size: 10px; line-height: 22px; text-align: center; color: #6f6058; }
+.vendoria-auth .auth-bottom a { font-weight: 500; color: #3a2a21; text-decoration: underline; }
+.vendoria-auth .auth-steps { display: flex; align-items: center; justify-content: center; margin-bottom: 32px; }
+.vendoria-auth .auth-step { display: grid; place-items: center; flex: 0 0 29px; height: 29px; border-radius: 50%; background: #ede1d9; font-size: 10px; line-height: 22px; }
+.vendoria-auth .auth-step.is-complete { background: #3a2a21; color: #fff; }
+.vendoria-auth .auth-step-line { width: 70px; height: 1px; background: #ede1d9; }
+.vendoria-auth .auth-back { display: flex; align-items: center; justify-content: center; gap: 4px; width: fit-content; margin: 20px auto 0; font-size: 10px; line-height: 22px; text-decoration: underline; }
+.vendoria-auth .auth-error { margin: 4px 0 0; color: #b43434; font-size: 11px; line-height: 18px; }
+.vendoria-auth .auth-alert, .vendoria-auth .auth-notice { margin: 0; padding: 10px 14px; border-radius: 12px; font-size: 12px; line-height: 20px; overflow-wrap: anywhere; }
+.vendoria-auth .auth-alert { border: 1px solid #f4cccc; background: #fff2f2; color: #ac2929; }
+.vendoria-auth .auth-notice { border: 1px solid #cbe4d3; background: #eff9f2; color: #256d3d; }
+.vendoria-auth .auth-heading + .auth-notice { margin-bottom: 16px; }
+.vendoria-auth .auth-role-label, .vendoria-auth .auth-identity-title { margin: 0 0 8px; font-size: 11px; line-height: 22px; font-weight: 400; }
+.vendoria-auth .auth-role-options, .vendoria-auth .auth-field-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.vendoria-auth .auth-role { display: flex; align-items: center; gap: 10px; min-height: 63.33px; padding: 12px 14px; border: .667px solid #ede1d9; border-radius: 16px; color: #3a2a21; background: #fff; text-align: left; cursor: pointer; }
+.vendoria-auth .auth-role[aria-pressed=true] { background: #f5ede8; border-color: #6f6058; }
+.vendoria-auth .auth-role svg { flex: 0 0 18px; }
+.vendoria-auth .auth-role strong, .vendoria-auth .auth-role small { display: block; font-size: 10px; line-height: 22px; font-weight: 400; }
+.vendoria-auth .auth-role small { color: #6f6058; }
+.vendoria-auth .auth-identity { display: grid; gap: 16px; }
+.vendoria-auth .auth-identity-title { margin-bottom: -8px; }
+.vendoria-auth .auth-strength { display: flex; align-items: center; gap: 8px; margin-top: 12px; }
+.vendoria-auth .auth-strength-bars { display: flex; gap: 4px; flex: 0 0 124px; }
+.vendoria-auth .auth-strength-bars > div { flex: 1; height: 3px; border-radius: 3px; }
+.vendoria-auth .auth-strength p { margin: 0; color: #6f6058; font-size: 10px; line-height: 18px; }
+.vendoria-auth .auth-terms { font-size: 10px; align-items: flex-start; }
+.vendoria-auth .auth-terms input { margin-top: 4px; }
+.vendoria-auth .auth-otp-boxes { display: flex; justify-content: center; gap: 10px; margin: 8px 0 0; }
+.vendoria-auth .auth-otp-boxes input { width: 52px; height: 52px; padding: 0; text-align: center; border-radius: 14px; font-size: 22px; }
+.vendoria-auth .auth-otp-boxes input::placeholder { color: transparent; }
+.vendoria-auth .auth-otp-timer { display: flex; align-items: center; justify-content: center; gap: 6px; color: #6f6058; font-size: 10px; line-height: 20px; text-align: center; }
+.vendoria-auth .auth-otp-timer [role=timer] { font-variant-numeric: tabular-nums; }
+.vendoria-auth .auth-resend { margin: 0; font-size: 10px; text-align: center; color: #6f6058; }
+.vendoria-auth .auth-resend button { background: none; border: 0; padding: 0; font: inherit; color: #3a2a21; text-decoration: underline; cursor: pointer; }
+.vendoria-auth .auth-resend button:disabled { opacity: .5; cursor: not-allowed; }
+.vendoria-auth .auth-security { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 8px; margin: 24px 0 0; font-size: 10px; line-height: 22px; color: #6f6058; }
+.vendoria-auth .auth-footer { padding: 64px 40px 48px; border-radius: 32px 32px 0 0; background: #3a2a21; color: #cbbab0; }
+.vendoria-auth .auth-footer-columns { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1.2fr; gap: 40px; max-width: 1200px; margin: auto; font-size: 10px; line-height: 22px; }
+.vendoria-auth .auth-footer .auth-brand { color: #fdf8f1; min-height: 46px; align-items: flex-start; }
+.vendoria-auth .auth-footer-description { max-width: 340px; margin: 0; padding: 20px 0; }
+.vendoria-auth .auth-footer-badge { display: inline-flex; align-items: center; gap: 6px; padding: 7px 10px; border-radius: 999px; color: #fdf8f1; background: #fdf8f117; }
+.vendoria-auth .auth-footer h3 { margin: 0 0 17px; padding-top: 6px; color: #fdf8f1; font-size: 11px; line-height: 26px; font-weight: 500; }
+.vendoria-auth .auth-footer-columns > div > a { display: block; padding-bottom: 8px; }
+.vendoria-auth .auth-footer-columns > div > p:not(.auth-footer-description) { margin: 0 0 8px; }
+.vendoria-auth .auth-footer-bottom { display: flex; justify-content: space-between; gap: 24px; max-width: 1200px; margin: 48px auto 0; padding-top: 24px; border-top: .667px solid #fdf8f11f; color: #a9958a; font-size: 10px; line-height: 22px; }
+.vendoria-auth .auth-footer-bottom > div { display: flex; flex-wrap: wrap; gap: 16px; color: #cbbab0; }
+@media (max-width: 1023px) {
+  .vendoria-auth .auth-main { padding: 32px 24px 48px; }
+  .vendoria-auth .auth-card { padding: 24px; gap: 20px; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); }
+  .vendoria-auth .auth-aside, .vendoria-auth .auth-section { padding: 24px; }
+  .vendoria-auth .auth-aside h1 { font-size: 28px; line-height: 38px; }
+  .vendoria-auth .auth-heading h2 { font-size: 27px; line-height: 35px; }
+  .vendoria-auth .auth-role-options, .vendoria-auth .auth-field-row { grid-template-columns: 1fr; gap: 12px; }
+  .vendoria-auth .auth-role { min-height: 60px; }
+  .vendoria-auth .auth-strength { flex-wrap: wrap; }
+  .vendoria-auth .auth-footer-columns { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 719px) {
+  .vendoria-auth .auth-main { padding: 24px 16px 32px; }
+  .vendoria-auth .auth-card { grid-template-columns: minmax(0, 1fr); padding: 12px; gap: 12px; border-radius: 24px; }
+  .vendoria-auth .auth-aside { min-height: auto !important; gap: 18px; padding: 24px; border-radius: 18px; }
+  .vendoria-auth .auth-aside h1 { font-size: 26px; line-height: 35px; text-wrap: initial; }
+  .vendoria-auth .auth-aside blockquote { margin-top: 8px; }
+  .vendoria-auth .auth-section { padding: 28px 20px; border-radius: 18px; }
+  .vendoria-auth .auth-heading h2 { font-size: 26px; line-height: 34px; letter-spacing: -.8px; }
+  .vendoria-auth .auth-role-options { gap: 8px; }
+  .vendoria-auth .auth-role { padding: 10px 12px; }
+  .vendoria-auth .auth-otp-boxes { gap: 6px; }
+  .vendoria-auth .auth-otp-boxes input { width: min(42px, 15%); height: 48px; }
+  .vendoria-auth .auth-security { column-gap: 6px; row-gap: 0; font-size: 9px; }
+  .vendoria-auth .auth-security > span[aria-hidden] { display: none; }
+  .vendoria-auth .auth-footer { padding: 40px 24px 32px; border-radius: 24px 24px 0 0; }
+  .vendoria-auth .auth-footer-columns { gap: 28px 20px; }
+  .vendoria-auth .auth-footer-columns > div:first-child, .vendoria-auth .auth-footer-columns > div:last-child { grid-column: 1 / -1; }
+  .vendoria-auth .auth-footer-bottom { flex-direction: column; gap: 12px; margin-top: 28px; }
+}

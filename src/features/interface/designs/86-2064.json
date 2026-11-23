@@ -1,0 +1,1424 @@
+{
+  "tag": "div",
+  "style": 0,
+  "id": "86:2064",
+  "name": "Klaim",
+  "children": [
+    {
+      "tag": "div",
+      "style": 611,
+      "id": "86:2066",
+      "name": "Body",
+      "children": [
+        {
+          "tag": "div",
+          "style": 2,
+          "id": "86:2067",
+          "name": "Header",
+          "children": [
+            {
+              "tag": "div",
+              "style": 573,
+              "id": "86:2068",
+              "name": "Container",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 4,
+                  "id": "86:2069",
+                  "name": "Button - Ke halaman utama",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 5,
+                      "id": "86:2071",
+                      "name": "Logo",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 6,
+                          "id": "86:2072",
+                          "name": "Image - Vendoria",
+                          "children": [
+                            {
+                              "tag": "img",
+                              "style": 7,
+                              "props": {
+                                "alt": "",
+                                "src": "/assets/figma/2b594d62c2dd20b4f7bf.svg"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 8,
+                          "id": "86:2076",
+                          "name": "Bold Text",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 9,
+                              "id": "86:2077",
+                              "children": [
+                                "Vendoria"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "style": 10,
+                  "id": "86:2079",
+                  "name": "Navigation - Navigasi utama",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 13,
+                      "id": "86:2080",
+                      "name": "Button",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 14,
+                          "id": "86:2081",
+                          "children": [
+                            "Dashboard"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 13,
+                      "id": "86:2083",
+                      "name": "Button",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 14,
+                          "id": "86:2084",
+                          "children": [
+                            "Katalog"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 13,
+                      "id": "86:2085",
+                      "name": "Button",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 14,
+                          "id": "86:2086",
+                          "children": [
+                            "Pesanan"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 13,
+                      "id": "86:2087",
+                      "name": "Button",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 14,
+                          "id": "86:2088",
+                          "children": [
+                            "Serah Terima"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 11,
+                      "id": "86:2089",
+                      "name": "Button",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 12,
+                          "id": "86:2090",
+                          "children": [
+                            "Klaim"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 13,
+                      "id": "86:2091",
+                      "name": "Button",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 14,
+                          "id": "86:2092",
+                          "children": [
+                            "Pencairan"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "style": 15,
+                  "id": "86:2093",
+                  "name": "Container",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 16,
+                      "id": "86:2094",
+                      "name": "Button - Cari",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 17,
+                          "id": "86:2095",
+                          "name": "Icon",
+                          "children": [
+                            {
+                              "tag": "img",
+                              "style": 7,
+                              "props": {
+                                "alt": "",
+                                "src": "/assets/figma/c1d7196b97050c3bbaa5.svg"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 16,
+                      "id": "86:2099",
+                      "name": "Button - Notifikasi, 2 belum dibaca",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 17,
+                          "id": "86:2100",
+                          "name": "Icon",
+                          "children": [
+                            {
+                              "tag": "img",
+                              "style": 7,
+                              "props": {
+                                "alt": "",
+                                "src": "/assets/figma/5e58b1dfe325cc4bf6b1.svg"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 18,
+                          "id": "86:2103",
+                          "name": "Italic Text",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 19,
+                              "id": "86:2104",
+                              "children": [
+                                "2"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 20,
+                      "id": "86:2106",
+                      "name": "Text"
+                    },
+                    {
+                      "tag": "div",
+                      "style": 21,
+                      "id": "86:2108",
+                      "name": "Button",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 22,
+                          "id": "86:2109",
+                          "name": "Text",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 23,
+                              "id": "86:2110",
+                              "name": "Icon",
+                              "children": [
+                                {
+                                  "tag": "img",
+                                  "style": 7,
+                                  "props": {
+                                    "alt": "",
+                                    "src": "/assets/figma/1c1da491232764684201.svg"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 8,
+                          "id": "86:2113",
+                          "name": "Bold Text",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 24,
+                              "id": "86:2114",
+                              "children": [
+                                "Roder Bogor"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "div",
+          "style": 574,
+          "id": "86:2116",
+          "name": "Page",
+          "children": [
+            {
+              "tag": "div",
+              "style": 47,
+              "id": "86:2118",
+              "name": "Head",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 49,
+                  "id": "86:2130",
+                  "name": "Container",
+                  "children": [
+                    {
+                      "tag": "p",
+                      "style": 87,
+                      "id": "86:2120",
+                      "children": [
+                        "PORTAL VENDOR"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "style": 612,
+                  "id": "86:2122",
+                  "name": "Heading 1",
+                  "children": [
+                    {
+                      "tag": "p",
+                      "style": 578,
+                      "id": "86:2123",
+                      "children": [
+                        "Klaim"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "style": 579,
+                  "id": "86:2125",
+                  "name": "Paragraph",
+                  "children": [
+                    {
+                      "tag": "p",
+                      "style": 154,
+                      "id": "86:2126",
+                      "children": [
+                        "Tanggapi klaim dan kirim bukti.."
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "style": 581,
+              "id": "86:2240",
+              "name": "DataTable:margin",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 716,
+                  "id": "86:2131",
+                  "name": "DataTable",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 717,
+                      "id": "86:2132",
+                      "name": "Table",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 718,
+                          "id": "86:2135",
+                          "name": "Header Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 622,
+                              "id": "86:2136",
+                              "children": [
+                                "ID"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 719,
+                          "id": "86:2138",
+                          "name": "Header Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 622,
+                              "id": "86:2139",
+                              "children": [
+                                "Pesanan"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 720,
+                          "id": "86:2140",
+                          "name": "Header Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 622,
+                              "id": "86:2141",
+                              "children": [
+                                "Jenis"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 721,
+                          "id": "86:2142",
+                          "name": "Header Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 625,
+                              "id": "86:2143",
+                              "children": [
+                                "Nominal"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 722,
+                          "id": "86:2144",
+                          "name": "Header Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 622,
+                              "id": "86:2145",
+                              "children": [
+                                "Status"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 723,
+                          "id": "86:2148",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 418,
+                              "id": "86:2149",
+                              "children": [
+                                "#KLM-884"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 724,
+                          "id": "86:2150",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 540,
+                              "id": "86:2151",
+                              "children": [
+                                "#VND-260901-1920"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 725,
+                          "id": "86:2152",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 540,
+                              "id": "86:2153",
+                              "children": [
+                                "Kerusakan Barang"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 726,
+                          "id": "86:2154",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 636,
+                              "id": "86:2155",
+                              "children": [
+                                "Rp450.000"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 727,
+                          "id": "86:2156",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 728,
+                              "id": "86:2157",
+                              "name": "StatusChip",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 682,
+                                  "id": "86:2158",
+                                  "children": [
+                                    "Ditinjau"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 729,
+                          "id": "86:2160",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 418,
+                              "id": "86:2161",
+                              "children": [
+                                "#KLM-883"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 730,
+                          "id": "86:2162",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 540,
+                              "id": "86:2163",
+                              "children": [
+                                "#VND-260930-6120"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 731,
+                          "id": "86:2164",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 540,
+                              "id": "86:2165",
+                              "children": [
+                                "Keterlambatan Pembayaran / Barang Tidak Kembali"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 732,
+                          "id": "86:2166",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 636,
+                              "id": "86:2167",
+                              "children": [
+                                "Rp1.500.000"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 733,
+                          "id": "86:2168",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 734,
+                              "id": "86:2169",
+                              "name": "StatusChip",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 682,
+                                  "id": "86:2170",
+                                  "children": [
+                                    "Diajukan"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 735,
+                          "id": "86:2172",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 418,
+                              "id": "86:2173",
+                              "children": [
+                                "#KLM-881"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 736,
+                          "id": "86:2174",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 540,
+                              "id": "86:2175",
+                              "children": [
+                                "#VND-260922-9054"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 737,
+                          "id": "86:2176",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 540,
+                              "id": "86:2177",
+                              "children": [
+                                "Kerusakan Barang"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 738,
+                          "id": "86:2178",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 636,
+                              "id": "86:2179",
+                              "children": [
+                                "Rp400.000"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 739,
+                          "id": "86:2180",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 734,
+                              "id": "86:2181",
+                              "name": "StatusChip",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 682,
+                                  "id": "86:2182",
+                                  "children": [
+                                    "Diajukan"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 740,
+                          "id": "86:2184",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 418,
+                              "id": "86:2185",
+                              "children": [
+                                "#KLM-880"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 741,
+                          "id": "86:2186",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 540,
+                              "id": "86:2187",
+                              "children": [
+                                "#VND-260915-7701"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 742,
+                          "id": "86:2188",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 540,
+                              "id": "86:2189",
+                              "children": [
+                                "Kerusakan Barang"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 743,
+                          "id": "86:2190",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 636,
+                              "id": "86:2191",
+                              "children": [
+                                "Rp900.000"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 744,
+                          "id": "86:2192",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 745,
+                              "id": "86:2193",
+                              "name": "StatusChip",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 682,
+                                  "id": "86:2194",
+                                  "children": [
+                                    "Disetujui Sebagian"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 746,
+                          "id": "86:2196",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 418,
+                              "id": "86:2197",
+                              "children": [
+                                "#KLM-879"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 747,
+                          "id": "86:2198",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 540,
+                              "id": "86:2199",
+                              "children": [
+                                "#VND-260910-5530"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 748,
+                          "id": "86:2200",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 540,
+                              "id": "86:2201",
+                              "children": [
+                                "Kehilangan Item"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 749,
+                          "id": "86:2202",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 636,
+                              "id": "86:2203",
+                              "children": [
+                                "Rp250.000"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 750,
+                          "id": "86:2204",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 751,
+                              "id": "86:2205",
+                              "name": "StatusChip",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 712,
+                                  "id": "86:2206",
+                                  "children": [
+                                    "Ditolak"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "div",
+          "style": 610,
+          "id": "86:2242",
+          "name": "Footer",
+          "children": [
+            {
+              "tag": "div",
+              "style": 226,
+              "id": "86:2243",
+              "name": "Container",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 151,
+                  "id": "86:2244",
+                  "name": "Container",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 227,
+                      "id": "86:2261",
+                      "name": "Container",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 5,
+                          "id": "86:2245",
+                          "name": "Logo",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 6,
+                              "id": "86:2246",
+                              "name": "Image - Vendoria",
+                              "children": [
+                                {
+                                  "tag": "img",
+                                  "style": 7,
+                                  "props": {
+                                    "alt": "",
+                                    "src": "/assets/figma/610475d5fd36fdf7f1c2.svg"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 228,
+                              "id": "86:2250",
+                              "name": "Bold Text",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 229,
+                                  "id": "86:2251",
+                                  "children": [
+                                    "Vendoria"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 230,
+                      "id": "86:2252",
+                      "name": "Paragraph",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 231,
+                          "id": "86:2253",
+                          "children": [
+                            "Marketplace rental perlengkapan event terpercaya dengan jaminan inspeksi kondisi terverifikasi."
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 232,
+                      "id": "86:2262",
+                      "name": "Container",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 233,
+                          "id": "86:2255",
+                          "name": "Text",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 30,
+                              "id": "86:2256",
+                              "name": "Icon",
+                              "children": [
+                                {
+                                  "tag": "img",
+                                  "style": 7,
+                                  "props": {
+                                    "alt": "",
+                                    "src": "/assets/figma/e43267a969ccb40636b3.svg"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "p",
+                              "style": 234,
+                              "id": "86:2259",
+                              "children": [
+                                "Kondisi terverifikasi & tepat waktu"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "style": 235,
+                  "id": "86:2263",
+                  "name": "Container",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 236,
+                      "id": "86:2264",
+                      "name": "Heading 4",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 237,
+                          "id": "86:2265",
+                          "children": [
+                            "Sewa Alat"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 238,
+                      "id": "86:2267",
+                      "name": "Link$1",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 239,
+                          "id": "86:2268",
+                          "children": [
+                            "Audio & Sound System"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 240,
+                      "id": "86:2269",
+                      "name": "Link$1",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 239,
+                          "id": "86:2270",
+                          "children": [
+                            "Stage Lighting & LED"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 240,
+                      "id": "86:2271",
+                      "name": "Link$1",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 239,
+                          "id": "86:2272",
+                          "children": [
+                            "Tenda & Kanopi"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 240,
+                      "id": "86:2273",
+                      "name": "Link$1",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 239,
+                          "id": "86:2274",
+                          "children": [
+                            "Panggung & Genset"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 241,
+                      "id": "86:2275",
+                      "name": "Link$1",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 239,
+                          "id": "86:2276",
+                          "children": [
+                            "Furnitur & Dekorasi"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "style": 242,
+                  "id": "86:2283",
+                  "name": "Container",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 243,
+                      "id": "86:2284",
+                      "name": "Heading 4",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 237,
+                          "id": "86:2285",
+                          "children": [
+                            "Bantuan & Panduan"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 244,
+                      "id": "86:2286",
+                      "name": "Link$1",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 239,
+                          "id": "86:2287",
+                          "children": [
+                            "Cara Pemesanan"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 245,
+                      "id": "86:2288",
+                      "name": "Link$1",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 239,
+                          "id": "86:2289",
+                          "children": [
+                            "Verifikasi KTP & KYC"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 245,
+                      "id": "86:2290",
+                      "name": "Link$1",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 239,
+                          "id": "86:2291",
+                          "children": [
+                            "Panduan Serah Terima"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 245,
+                      "id": "86:2292",
+                      "name": "Link$1",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 239,
+                          "id": "86:2293",
+                          "children": [
+                            "Kebijakan Pengembalian"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 246,
+                      "id": "86:2294",
+                      "name": "Link",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 239,
+                          "id": "86:2295",
+                          "children": [
+                            "Pusat Bantuan Pelanggan"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "style": 247,
+                  "id": "86:2302",
+                  "name": "Container",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 248,
+                      "id": "86:2303",
+                      "name": "Heading 4",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 237,
+                          "id": "86:2304",
+                          "children": [
+                            "Kontak Operasional"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 249,
+                      "id": "86:2305",
+                      "name": "Paragraph",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 250,
+                          "id": "86:2306",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 251,
+                              "children": [
+                                "Jl. Pajajaran No. 88"
+                              ]
+                            },
+                            {
+                              "tag": "p",
+                              "style": 252,
+                              "children": [
+                                "Baranangsiang, Kota Bogor"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 253,
+                      "id": "86:2307",
+                      "name": "Paragraph",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 250,
+                          "id": "86:2308",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 251,
+                              "children": [
+                                "halo@vendoria.id"
+                              ]
+                            },
+                            {
+                              "tag": "p",
+                              "style": 252,
+                              "children": [
+                                "+62 812-8800-4420"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "style": 254,
+              "id": "86:2322",
+              "name": "Container:margin",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 255,
+                  "id": "86:2312",
+                  "name": "Container",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 256,
+                      "id": "86:2313",
+                      "name": "Text",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 257,
+                          "id": "86:2314",
+                          "children": [
+                            "© 2025 Vendoria Indonesia. Hak Cipta Dilindungi."
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 258,
+                      "id": "86:2315",
+                      "name": "Text",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 256,
+                          "id": "86:2316",
+                          "name": "Link",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 239,
+                              "id": "86:2317",
+                              "children": [
+                                "Syarat & Ketentuan"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 256,
+                          "id": "86:2318",
+                          "name": "Link",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 239,
+                              "id": "86:2319",
+                              "children": [
+                                "Kebijakan Privasi"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 256,
+                          "id": "86:2320",
+                          "name": "Link",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 239,
+                              "id": "86:2321",
+                              "children": [
+                                "Gabung Vendor Mitra"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -45,7 +45,7 @@ const RegisterPage = () => {
   const touch = (field) => setTouched((t) => ({ ...t, [field]: true }));
   const fieldError = (field) =>
     touched[field] && errors[field] ? (
-      <p className="text-xs text-red-500 mt-1">{errors[field]}</p>
+      <p id={`register-${field}-error`} className="auth-error">{errors[field]}</p>
     ) : null;
 
   const getPasswordStrength = (pwd) => {
@@ -84,227 +84,59 @@ const RegisterPage = () => {
   };
 
   return (
-    <AuthLayout
-      badgeText="Bergabung dengan Ekosistem Vendoria"
-      heading="Mulai sewa atau sewakan alat event dengan standar keamanan baru."
-    >
-      <div className="w-full max-w-md mx-auto">
-        {/* Section Header */}
-        <div className="mb-6">
-          <p className="text-xs font-semibold tracking-widest text-[#3C2415]/60 uppercase mb-1">
-            LANGKAH PENDAFTARAN
-          </p>
-          <h2 className="text-2xl font-bold text-[#3C2415] mb-1">Buat Akun Vendoria</h2>
-          <p className="text-sm text-[#3C2415]/60">
-            Isi data berikut untuk memulai pengalaman penyewaan yang aman.
-          </p>
-        </div>
-
-        <form onSubmit={handleSubmit} noValidate className="space-y-6">
-          {/* Step 1 - Account Type */}
+    <AuthLayout variant="register" badgeText="Bergabung dengan Ekosistem Vendoria" heading="Mulai sewa atau sewakan alat event dengan standar keamanan baru.">
+      <div className="auth-content">
+        <div className="auth-heading"><p className="auth-eyebrow">LANGKAH PENDAFTARAN</p><h2>Buat Akun Vendoria</h2><p>Mulai perjalanan event yang lebih aman dan terorganisir.</p></div>
+        <form onSubmit={handleSubmit} noValidate className="auth-form">
           <div>
-            <p className="text-sm font-semibold text-[#3C2415] mb-3">1. Pilih Jenis Akun</p>
-            <div className="grid grid-cols-2 gap-3">
-              <button
-                type="button"
-                onClick={() => setAccountType('customer')}
-                className={`flex flex-col items-center gap-2 p-4 rounded-xl border-2 transition-all ${
-                  accountType === 'customer'
-                    ? 'border-[#3C2415] bg-[#FAF6F1]'
-                    : 'border-[#E8DDD0] bg-white hover:border-[#3C2415]/30'
-                }`}
-              >
-                <div
-                  className={`w-10 h-10 rounded-full flex items-center justify-center ${
-                    accountType === 'customer'
-                      ? 'bg-[#3C2415] text-white'
-                      : 'bg-[#F0E8DE] text-[#3C2415]'
-                  }`}
-                >
-                  <User size={18} />
-                </div>
-                <span className="text-sm font-semibold text-[#3C2415]">Customer / Penyewa</span>
-                <span className="text-xs text-[#3C2415]/50 text-center">
-                  Saya ingin menyewa alat event
-                </span>
-              </button>
-
-              <button
-                type="button"
-                onClick={() => setAccountType('vendor')}
-                className={`flex flex-col items-center gap-2 p-4 rounded-xl border-2 transition-all ${
-                  accountType === 'vendor'
-                    ? 'border-[#3C2415] bg-[#FAF6F1]'
-                    : 'border-[#E8DDD0] bg-white hover:border-[#3C2415]/30'
-                }`}
-              >
-                <div
-                  className={`w-10 h-10 rounded-full flex items-center justify-center ${
-                    accountType === 'vendor'
-                      ? 'bg-[#3C2415] text-white'
-                      : 'bg-[#F0E8DE] text-[#3C2415]'
-                  }`}
-                >
-                  <Sparkles size={18} />
-                </div>
-                <span className="text-sm font-semibold text-[#3C2415]">Vendor Penyedia</span>
-                <span className="text-xs text-[#3C2415]/50 text-center">
-                  Saya ingin menyewakan alat
-                </span>
-              </button>
+            <p className="auth-role-label" id="register-role-label">1. Pilih Jenis Akun</p>
+            <div className="auth-role-options" role="group" aria-labelledby="register-role-label">
+              <button type="button" onClick={() => setAccountType('customer')} aria-pressed={accountType === 'customer'} className="auth-role"><User size={18} strokeWidth={1.6} /><span><strong>Customer / Penyewa</strong><small>Saya ingin menyewa alat event</small></span></button>
+              <button type="button" onClick={() => setAccountType('vendor')} aria-pressed={accountType === 'vendor'} className="auth-role"><Sparkles size={18} strokeWidth={1.6} /><span><strong>Vendor Penyedia</strong><small>Saya ingin menyewakan alat</small></span></button>
             </div>
           </div>
-
-          {/* Step 2 - Identity */}
-          <div className="space-y-4">
-            <p className="text-sm font-semibold text-[#3C2415]">2. Lengkapi Identitas Diri</p>
-
-            {/* Name */}
-            <div>
-              <label className="block text-sm font-medium text-[#3C2415] mb-1.5">
-                {accountType === 'customer'
-                  ? 'Nama Lengkap Sesuai KTP'
-                  : 'Nama Usaha / Pemilik'}
-              </label>
-              <input
-                type="text"
-                value={fullName}
-                onChange={(e) => setFullName(e.target.value)}
-                onBlur={() => touch('fullName')}
-                placeholder={
-                  accountType === 'customer'
-                    ? 'Masukkan nama lengkap'
-                    : 'Masukkan nama usaha atau pemilik'
-                }
-                className="w-full px-4 py-3 rounded-xl border border-[#E8DDD0] bg-white text-sm text-[#3C2415] placeholder:text-[#3C2415]/40 focus:outline-none focus:ring-2 focus:ring-[#3C2415]/20 focus:border-[#3C2415]"
-              />
+          <div className="auth-identity">
+            <p className="auth-identity-title">2. Lengkapi Identitas Diri</p>
+            <div className="auth-field">
+              <label htmlFor="register-name">{accountType === 'customer' ? 'Nama Lengkap Sesuai KTP' : 'Nama Usaha / Pemilik'}</label>
+              <input id="register-name" name="nama" autoComplete="name" type="text" value={fullName} onChange={(e) => setFullName(e.target.value)} onBlur={() => touch('fullName')} placeholder={accountType === 'customer' ? 'Masukkan nama lengkap' : 'Masukkan nama usaha atau pemilik'} className="auth-input" aria-invalid={Boolean(touched.fullName && errors.fullName)} aria-describedby={touched.fullName && errors.fullName ? 'register-fullName-error' : undefined} />
               {fieldError('fullName')}
             </div>
-
-            {/* Email + WhatsApp */}
-            <div className="grid grid-cols-2 gap-3">
-              <div>
-                <label className="block text-sm font-medium text-[#3C2415] mb-1.5">
-                  Email Aktif
-                </label>
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  onBlur={() => touch('email')}
-                  placeholder="nama@email.com"
-                  className="w-full px-4 py-3 rounded-xl border border-[#E8DDD0] bg-white text-sm text-[#3C2415] placeholder:text-[#3C2415]/40 focus:outline-none focus:ring-2 focus:ring-[#3C2415]/20 focus:border-[#3C2415]"
-                />
+            <div className="auth-field-row">
+              <div className="auth-field">
+                <label htmlFor="register-email">Email Aktif</label>
+                <input id="register-email" name="email" autoComplete="email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} onBlur={() => touch('email')} placeholder="nama@email.com" className="auth-input" aria-invalid={Boolean(touched.email && errors.email)} aria-describedby={touched.email && errors.email ? 'register-email-error' : undefined} />
                 {fieldError('email')}
               </div>
-              <div>
-                <label className="block text-sm font-medium text-[#3C2415] mb-1.5">
-                  Nomor WhatsApp
-                </label>
-                <input
-                  type="tel"
-                  value={whatsapp}
-                  onChange={(e) => setWhatsapp(e.target.value)}
-                  onBlur={() => touch('whatsapp')}
-                  placeholder="08xx-xxxx-xxxx"
-                  className="w-full px-4 py-3 rounded-xl border border-[#E8DDD0] bg-white text-sm text-[#3C2415] placeholder:text-[#3C2415]/40 focus:outline-none focus:ring-2 focus:ring-[#3C2415]/20 focus:border-[#3C2415]"
-                />
+              <div className="auth-field">
+                <label htmlFor="register-phone">Nomor WhatsApp</label>
+                <input id="register-phone" name="no_telp" autoComplete="tel" type="tel" value={whatsapp} onChange={(e) => setWhatsapp(e.target.value)} onBlur={() => touch('whatsapp')} placeholder="08xx-xxxx-xxxx" className="auth-input" aria-invalid={Boolean(touched.whatsapp && errors.whatsapp)} aria-describedby={touched.whatsapp && errors.whatsapp ? 'register-whatsapp-error' : undefined} />
                 {fieldError('whatsapp')}
               </div>
             </div>
-
-            {/* Password */}
-            <div>
-              <label className="block text-sm font-medium text-[#3C2415] mb-1.5">Kata Sandi</label>
-              <div className="relative">
-                <input
-                  type={showPassword ? 'text' : 'password'}
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  onBlur={() => touch('password')}
-                  placeholder="Buat kata sandi"
-                  className="w-full px-4 py-3 rounded-xl border border-[#E8DDD0] bg-white text-sm text-[#3C2415] placeholder:text-[#3C2415]/40 focus:outline-none focus:ring-2 focus:ring-[#3C2415]/20 focus:border-[#3C2415] pr-12"
-                />
-                <button
-                  type="button"
-                  onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-[#3C2415]/40 hover:text-[#3C2415] transition-colors"
-                >
-                  {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
-                </button>
+            <div className="auth-field">
+              <label htmlFor="register-password">Kata Sandi</label>
+              <div className="auth-input-wrap">
+                <input id="register-password" name="password" autoComplete="new-password" type={showPassword ? 'text' : 'password'} value={password} onChange={(e) => setPassword(e.target.value)} onBlur={() => touch('password')} placeholder="Minimal 8 karakter" className="auth-input" aria-invalid={Boolean(touched.password && errors.password)} aria-describedby={touched.password && errors.password ? 'register-password-hint register-password-error' : 'register-password-hint'} />
+                <button type="button" onClick={() => setShowPassword(!showPassword)} className="auth-eye" aria-label={showPassword ? 'Sembunyikan kata sandi' : 'Tampilkan kata sandi'} aria-pressed={showPassword}>{showPassword ? <EyeOff size={18} /> : <Eye size={18} />}</button>
               </div>
-              {/* Strength Indicator */}
-              <div className="flex gap-1.5 mt-2">
-                {[1, 2, 3, 4].map((level) => (
-                  <div
-                    key={level}
-                    className={`h-1 flex-1 rounded-full transition-colors ${
-                      password.length > 0 && strength >= level
-                        ? strength <= 1
-                          ? 'bg-red-400'
-                          : strength <= 2
-                          ? 'bg-orange-400'
-                          : strength <= 3
-                          ? 'bg-yellow-400'
-                          : 'bg-green-500'
-                        : 'bg-[#E8DDD0]'
-                    }`}
-                  />
-                ))}
+              <div className="auth-strength">
+                <div className="auth-strength-bars" aria-label={`Kekuatan kata sandi: ${strength} dari 4`}>
+                  {[1, 2, 3, 4].map((level) => <div key={level} className={password.length > 0 && strength >= level ? strength <= 1 ? 'bg-red-400' : strength <= 2 ? 'bg-orange-400' : strength <= 3 ? 'bg-yellow-400' : 'bg-green-500' : 'bg-[#E8DDD0]'} />)}
+                </div>
+                <p id="register-password-hint">Gunakan 8+ karakter, huruf besar, angka, simbol</p>
               </div>
-              <p className="text-xs text-[#3C2415]/50 mt-1.5">
-                Gunakan 8+ karakter, huruf besar, angka, simbol
-              </p>
               {fieldError('password')}
             </div>
           </div>
-
-          {/* Terms */}
-          <label className="flex items-start gap-2.5 cursor-pointer">
-            <input
-              type="checkbox"
-              checked={agreedToTerms}
-              onChange={(e) => setAgreedToTerms(e.target.checked)}
-              className="w-4 h-4 mt-0.5 rounded border-[#E8DDD0] text-[#3C2415] focus:ring-[#3C2415]/20 accent-[#3C2415]"
-            />
-            <span className="text-sm text-[#3C2415]/70 leading-snug">
-              Saya menyetujui{' '}
-              <a href="#" className="text-[#3C2415] font-semibold hover:underline">
-                Syarat &amp; Ketentuan
-              </a>{' '}
-              serta{' '}
-              <a href="#" className="text-[#3C2415] font-semibold hover:underline">
-                Kebijakan Privasi &amp; Deposit
-              </a>{' '}
-              Vendoria.
-            </span>
-          </label>
-          {fieldError('terms')}
-
-          {serverError && (
-            <p role="alert" className="text-sm text-red-600 bg-red-50 border border-red-200 rounded-xl px-4 py-3">
-              {serverError}
-            </p>
-          )}
-
-          {/* Submit */}
-          <button
-            type="submit"
-            disabled={submitting}
-            className="w-full py-3.5 bg-[#3C2415] text-white rounded-xl font-semibold text-sm hover:bg-[#3C2415]/90 transition-colors flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
-          >
-            {submitting ? 'Memproses...' : 'Buat Akun Sekarang'}
-            <ArrowRight size={16} />
-          </button>
+          <div>
+            <label className="auth-check auth-terms"><input type="checkbox" checked={agreedToTerms} onChange={(e) => setAgreedToTerms(e.target.checked)} aria-invalid={Boolean(touched.terms && errors.terms)} aria-describedby={touched.terms && errors.terms ? 'register-terms-error' : undefined} /><span>Saya menyetujui Syarat &amp; Ketentuan serta Kebijakan Privasi &amp; Deposit Vendoria.</span></label>
+            {fieldError('terms')}
+          </div>
+          {serverError && <p role="alert" className="auth-alert">{serverError}</p>}
+          <button type="submit" disabled={submitting} className="auth-submit">{submitting ? 'Memproses...' : 'Buat Akun Sekarang'}<ArrowRight size={18} /></button>
         </form>
-
-        {/* Bottom Link */}
-        <p className="text-center text-sm text-[#3C2415]/60 mt-6">
-          Sudah punya akun?{' '}
-          <a href="/login" className="text-[#3C2415] font-semibold hover:underline">
-            Masuk di sini
-          </a>
-        </p>
+        <p className="auth-bottom">Sudah punya akun? <a href="/login">Masuk di sini</a></p>
       </div>
     </AuthLayout>
   );

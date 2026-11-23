@@ -1,0 +1,154 @@
+@font-face{font-family:VendoriaPoppins;src:url('/assets/figma/poppins-regular.ttf') format('truetype');font-weight:400;font-display:swap}
+@font-face{font-family:VendoriaPoppins;src:url('/assets/figma/poppins-medium.ttf') format('truetype');font-weight:500;font-display:swap}
+@font-face{font-family:VendoriaPoppins;src:url('/assets/figma/poppins-semibold.ttf') format('truetype');font-weight:600;font-display:swap}
+@font-face{font-family:VendoriaPoppins;src:url('/assets/figma/poppins-bold.ttf') format('truetype');font-weight:700;font-display:swap}
+.vendoria-interface{--interface-ink:#3a2a21;--interface-muted:#6f6058;--interface-cream:#fdf8f1;--interface-card:#f5ede8;--interface-line:#ede1d9;font-family:VendoriaPoppins,Poppins,sans-serif;color:var(--interface-ink);background:var(--interface-cream);min-height:100vh;line-height:22px;position:relative}
+.vendoria-interface *{box-sizing:border-box}
+.vendoria-interface .design-surface{width:100%;max-width:1536px;margin-inline:auto}
+.vendoria-interface .design-surface.customer-surface{max-width:1280px}
+.vendoria-interface .design-surface>.design-node,.vendoria-interface .design-node[data-name=Body]{max-width:100%;width:100%}
+.vendoria-interface .design-node{min-width:0}
+.vendoria-interface .design-wide-block{width:100%!important;max-width:100%}
+.vendoria-interface .design-control{cursor:pointer;text-align:inherit;font-family:inherit;transition:background-color .15s,box-shadow .15s}
+.vendoria-interface .design-control:hover{filter:brightness(.97)}
+.vendoria-interface .design-control:focus-visible,.vendoria-interface input:focus-visible,.vendoria-interface select:focus-visible,.vendoria-interface textarea:focus-visible{outline:2px solid #a58163;outline-offset:3px}
+.vendoria-interface .design-input{font-family:inherit;color:inherit;outline:none;min-width:0;max-width:100%;text-align:inherit}
+.vendoria-interface .design-input::placeholder{color:inherit;opacity:.65}
+.vendoria-interface .design-native-input{background:transparent;border:0;width:100%;height:100%;font-family:inherit;color:inherit;outline:none}
+.vendoria-interface select.design-native-input{font-size:10px}
+@media(max-width:900px){
+  .vendoria-interface [data-node-id="84:3512"]{width:100%}
+  .vendoria-interface [data-node-id="84:3482"]{gap:8px!important}
+  .vendoria-interface [data-node-id="84:3505"]{justify-content:center}
+}
+.vendoria-interface .design-native-input::placeholder{color:inherit;opacity:.6}
+.vendoria-interface .design-date-field .design-native-input{padding:8px 12px;font-size:10px}
+.vendoria-interface .design-date-empty input:not(:focus){color:transparent}
+.vendoria-interface .design-date-empty input:not(:focus)::-webkit-calendar-picker-indicator{opacity:0}
+.vendoria-interface .design-checkbox{accent-color:var(--interface-ink);cursor:pointer;flex-shrink:0}
+.vendoria-interface .design-switch[aria-checked=false]{background:#d8c9c0!important}
+.vendoria-interface .design-switch[aria-checked=false]>div{transform:translateX(-16px)}
+.vendoria-interface [data-name=Footer]{width:100%;margin-top:auto}
+.vendoria-interface .design-table-scroll{overflow-x:auto;max-width:100%}
+.vendoria-interface .interface-header{position:relative;z-index:40;background:rgba(253,248,241,.97);border-bottom:1px solid rgba(237,225,217,.75);backdrop-filter:blur(12px)}
+.vendoria-interface .interface-header-inner{height:72px;max-width:1280px;padding:0 40px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.vendoria-interface .interface-brand{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.vendoria-interface .interface-brand img{width:40px;height:40px}
+.vendoria-interface .interface-brand>span{font-size:27px;font-weight:500;letter-spacing:-.945px}
+.vendoria-interface .interface-nav{display:flex;gap:4px;padding:4px;background:var(--interface-card);border-radius:999px;height:48px;align-items:center}
+.vendoria-interface .interface-nav button{padding:10px 20px;font-size:11px;line-height:22px;white-space:nowrap;border-radius:999px;cursor:pointer;color:var(--interface-muted)}
+.vendoria-interface .interface-nav button.is-current{background:var(--interface-ink);color:white}
+.vendoria-interface .interface-header-actions{display:flex;align-items:center;gap:8px}
+.vendoria-interface .interface-header-actions>button{width:40px;height:40px;display:grid;place-items:center;cursor:pointer;border-radius:20px}
+.vendoria-interface .interface-header-actions>button:hover{background:var(--interface-card)}
+.vendoria-interface .interface-bell{position:relative}
+.vendoria-interface .interface-bell>span{position:absolute;right:-3px;top:-5px;min-width:15px;height:15px;padding:0 4px;font-size:10px;line-height:15px;background:#9c3a30;color:white;border-radius:99px}
+.vendoria-interface .interface-profile-wrap{position:relative;border-left:1px solid var(--interface-line);padding-left:10px}
+.vendoria-interface .interface-profile{height:40px;display:flex;align-items:center;gap:7px;font-size:11px;font-weight:500;cursor:pointer}
+.vendoria-interface .interface-profile>span{width:30px;height:30px;border-radius:99px;background:var(--interface-line);display:grid;place-items:center;overflow:hidden}
+.vendoria-interface .interface-profile>span img{width:100%;height:100%;object-fit:cover}
+.vendoria-interface .interface-profile-menu{position:absolute;right:0;top:47px;background:white;border:1px solid var(--interface-line);border-radius:18px;padding:8px;box-shadow:0 15px 40px #3a2a2120;width:210px}
+.vendoria-interface .interface-profile-menu button{display:block;width:100%;padding:9px 12px;text-align:left;border-radius:9px;font-size:12px;cursor:pointer}
+.vendoria-interface .interface-profile-menu button:hover{background:var(--interface-card)}
+.vendoria-interface .interface-mobile-toggle{display:none;cursor:pointer}
+.vendoria-interface .interface-mobile-menu{display:flex;flex-direction:column;padding:16px 24px;gap:12px;border-top:1px solid var(--interface-line)}
+.vendoria-interface .interface-mobile-menu>button{text-align:left;cursor:pointer}
+.vendoria-interface .interface-toast{position:fixed;z-index:1000;bottom:24px;left:50%;transform:translateX(-50%);max-width:calc(100vw - 32px);background:#3a2a21;color:#fff;padding:12px 20px;border-radius:14px;box-shadow:0 8px 35px #0002;font-size:12px}
+.vendoria-interface .interface-notification-popup{position:absolute;z-index:55;top:64px;right:max(16px,calc((100vw - 1280px)/2 + 200px));width:400px;max-width:calc(100% - 32px);filter:drop-shadow(0 12px 25px #3a2a2120)}
+.vendoria-interface .interface-notification-popup>[data-name=Menu]{position:relative;left:auto;top:auto;width:100%}
+.vendoria-interface .interface-dialog-backdrop{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;background:#23181388;padding:24px}
+.vendoria-interface .interface-dialog{width:100%;max-width:540px;max-height:90vh;overflow:auto;background:#fdf8f1;border:1px solid #ede1d9;border-radius:24px;padding:28px;box-shadow:0 24px 80px #0003}
+.vendoria-interface .interface-dialog h2{font-size:24px;line-height:1.35;margin-bottom:14px}
+.vendoria-interface .interface-dialog p{font-size:13px;color:#6f6058}
+.vendoria-interface .interface-dialog button{padding:10px 18px;border-radius:999px;background:#3a2a21;color:#fff;margin-top:20px;cursor:pointer}
+.vendoria-interface .interface-dialog img{width:100%;height:auto;max-height:70vh;object-fit:contain}
+.vendoria-interface .interface-demo-note{position:fixed;right:12px;bottom:12px;z-index:50;display:flex;gap:12px;align-items:center;padding:6px 12px;border:1px solid #ede1d9;background:#fffef9e8;border-radius:99px;color:#6f6058;font-size:10px;line-height:18px;box-shadow:0 2px 12px #0001}
+.vendoria-interface .interface-demo-note button{cursor:pointer}
+.vendoria-interface .interface-read{opacity:.55}
+.vendoria-interface .interface-filter-active{background:#3a2a21!important;color:white!important}
+.vendoria-interface .interface-filter-active p{color:inherit!important}
+.vendoria-interface .interface-filter-idle p{color:#6f6058!important}
+.vendoria-interface.interface-review{padding:40px;max-width:1280px;margin:auto}
+.vendoria-interface.interface-review h1{font-size:38px;line-height:1.3;margin:24px 0 12px;letter-spacing:-1px}
+.vendoria-interface.interface-review p{max-width:800px;color:#6f6058;font-size:14px}
+.vendoria-interface.interface-review h2{font-size:24px;margin:36px 0 16px}
+.vendoria-interface .interface-review-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
+.vendoria-interface .interface-review-grid a{padding:20px;background:#f5ede8;border:1px solid #ede1d9;border-radius:18px;display:flex;flex-direction:column;gap:6px}
+.vendoria-interface .interface-review-grid small{font-size:11px;color:#6f6058;overflow-wrap:anywhere}
+@media(max-width:1100px){
+  .vendoria-interface .interface-header-inner{padding-inline:24px;gap:12px}
+  .vendoria-interface .interface-nav button{padding-inline:12px}
+  .vendoria-interface .interface-brand>span{font-size:23px}
+  .vendoria-interface .interface-header-actions>button{width:32px}
+}
+@media(max-width:900px){
+  .vendoria-interface .design-layout-block{height:auto!important;min-height:0!important}
+  .vendoria-interface .design-flow-block{position:relative!important;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;transform:none!important;height:auto!important;margin-bottom:8px}
+  .vendoria-interface .design-node[class*='flex-[']{flex:initial!important}
+  .vendoria-interface .design-node.h-full:not(img){height:auto!important}
+  .vendoria-interface .design-node[data-name='Image - QRIS']{position:relative!important;left:auto!important;top:auto!important;margin:20px auto}
+  .vendoria-interface .design-node p{max-width:100%;white-space:normal}
+  .vendoria-interface .design-node.flex:not(.flex-col){flex-wrap:wrap}
+  .vendoria-interface .design-node[data-name=Breadcrumb]{flex-wrap:wrap;height:auto;gap:5px}
+  .vendoria-interface .design-node[data-name=Breadcrumb] .design-node{flex-shrink:1}
+  .vendoria-interface .design-node[data-name^='Image - Kekuatan']{max-width:100%;flex-wrap:wrap}
+  .vendoria-interface .design-node[data-node-id='84:3845']{height:340px!important;overflow:hidden}
+  .vendoria-interface .design-node[data-node-id='84:3847']{left:42%!important;top:0!important;width:58%!important;height:320px!important}
+  .vendoria-interface .design-node[data-node-id='84:3847']>div{width:100%}
+  .vendoria-interface .design-node[data-node-id='84:3847'] [data-name^='Image']{width:100%!important;height:310px!important}
+  .vendoria-interface .interface-nav,.vendoria-interface .interface-header-actions{display:none}
+  .vendoria-interface .interface-mobile-toggle{display:block}
+  .vendoria-interface .design-node:not(img):not([data-name=Icon]):not([data-name=Checkbox]){max-width:100%}
+  .vendoria-interface .design-absolute-badge{position:relative!important;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;margin-top:8px}
+  .vendoria-interface .design-node[data-name=KycDetail]{position:relative!important;left:auto!important;top:auto!important;width:100%!important}
+  .vendoria-interface .design-node.design-grid{grid-template-columns:minmax(0,1fr)!important;grid-template-rows:none!important;grid-auto-rows:auto;height:auto!important;min-height:0!important;gap:20px}
+  .vendoria-interface .design-grid>.design-node{grid-column:auto!important;grid-row:auto!important;justify-self:stretch}
+  .vendoria-interface .design-grid.products-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:16px}
+  .vendoria-interface .design-node[data-name=Home],.vendoria-interface .design-node[data-name=Page]{height:auto!important;padding:20px}
+  .vendoria-interface .design-node[data-name=Body]{min-height:0!important}
+  .vendoria-interface .design-node[data-name=Section]{height:auto!important;min-height:0!important}
+  .vendoria-interface .design-node[data-name=Sidebar],.vendoria-interface .design-node[data-name=Sticky]{position:relative!important;top:auto!important;left:auto!important;width:100%!important}
+  .vendoria-interface .design-node[data-name^='Sticky placeholder']{display:none}
+  .vendoria-interface .design-node[data-name=Tabs]{overflow-x:auto;max-width:100%;justify-content:flex-start}
+  .vendoria-interface .design-node[data-name=Footer]{height:auto!important;padding:40px 24px}
+  .vendoria-interface .design-node[data-name=Footer]>.design-node{padding:0;height:auto!important}
+  .vendoria-interface .design-node[data-name=Footer] .design-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  .vendoria-interface .design-node[data-name=Footer] [data-name='Container:margin']{padding-top:28px}
+  .vendoria-interface .design-node[data-name=Header]{height:auto!important;overflow-x:auto}
+  .vendoria-interface .design-node[data-name=Header]>.design-node{min-width:1000px}
+  .vendoria-interface [data-name='Table'],.vendoria-interface [data-name='DataTable']{overflow-x:auto}
+  .vendoria-interface [data-name='Table']>.design-node{min-width:850px}
+  .vendoria-interface .design-node[data-name^='Heading 1'] p,.vendoria-interface .design-node[data-name^='Heading 1']>div{font-size:clamp(30px,6vw,48px)!important;line-height:1.12!important;white-space:normal!important;width:auto!important}
+  .vendoria-interface .design-node[data-name^='Heading 2'] p{white-space:normal!important;font-size:28px!important;line-height:1.25!important}
+}
+@media(max-width:540px){
+  .vendoria-interface .interface-header-inner{padding-inline:20px}
+  .vendoria-interface .design-node[data-name=Home],.vendoria-interface .design-node[data-name=Page]{padding:16px;gap:16px}
+  .vendoria-interface .design-node[data-name=Section]{padding:24px!important;border-radius:24px}
+  .vendoria-interface .design-grid.products-grid{grid-template-columns:minmax(0,1fr)!important}
+  .vendoria-interface .design-node[data-name=Footer] .design-grid{grid-template-columns:minmax(0,1fr)!important}
+  .vendoria-interface .design-node[data-name=Form]{width:100%!important;height:auto!important;grid-template-columns:minmax(0,1fr)!important;gap:10px}
+  .vendoria-interface .design-node[data-name=Form]>.design-node{grid-column:auto!important;grid-row:auto!important}
+  .vendoria-interface .design-node[data-name=Paragraph] p{width:auto!important;white-space:normal!important}
+  .vendoria-interface.interface-review{padding:24px}
+  .vendoria-interface.interface-review h1{font-size:30px}
+}
+@media print{.vendoria-interface .interface-header,.vendoria-interface .interface-demo-note,.vendoria-interface .design-control{display:none!important}}
+
+/* /akun: kepala profil dirancang untuk teks contoh (posisi & lebar tetap); dibuat mengalir agar data asli tidak bertumpuk/terpotong */
+.vendoria-interface [data-node-id="109:14204"]{grid-template-rows:auto auto auto!important}
+.vendoria-interface [data-node-id="109:14208"]{display:flex!important;flex-wrap:wrap;align-items:center;gap:2px 10px;max-width:none!important;height:auto!important}
+.vendoria-interface [data-node-id="109:14208"]>*{position:static!important;margin:0!important}
+.vendoria-interface [data-node-id="109:14208"]>[data-name="Italic Text"]{flex:none}
+.vendoria-interface [data-node-id="109:14214"]{flex-wrap:wrap}
+.vendoria-interface [data-node-id="109:14214"]>*{width:auto!important}
+
+/* /akun: panel menu bergeser masuk dari arah menu yang dipilih */
+.vendoria-interface .account-panel-viewport{width:100%;overflow-x:clip}
+.vendoria-interface .account-tab-panel{width:100%;min-width:0;animation:account-slide .34s cubic-bezier(.22,1,.36,1) both}
+@keyframes account-slide{from{opacity:0;transform:translateX(calc(32px * var(--account-slide-direction,1)))}to{opacity:1;transform:translateX(0)}}
+@media(prefers-reduced-motion:reduce){.vendoria-interface .account-tab-panel{animation:none}}
+.vendoria-interface .rental-tabs-wrap.account-tabs-wrap{justify-content:flex-start;padding:0 0 24px;min-height:0}
+.vendoria-interface .design-native-input:disabled{cursor:not-allowed;opacity:1;-webkit-text-fill-color:currentColor}
+.vendoria-interface .profile-incomplete{display:inline-block;margin-left:12px;vertical-align:middle;max-width:100%;font-size:12px;line-height:18px;font-weight:500;letter-spacing:0;color:#b33927;white-space:normal}
+.vendoria-interface .profile-incomplete-sep{margin-right:12px;font-size:20px;font-weight:300;color:#c9b8ab}

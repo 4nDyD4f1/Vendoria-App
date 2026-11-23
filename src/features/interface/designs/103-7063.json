@@ -1,0 +1,1146 @@
+{
+  "tag": "div",
+  "style": 0,
+  "id": "103:7063",
+  "name": "booking terkonfirmasi",
+  "children": [
+    {
+      "tag": "div",
+      "style": 1,
+      "id": "103:7064",
+      "name": "Body",
+      "children": [
+        {
+          "tag": "div",
+          "style": 336,
+          "id": "103:7119",
+          "name": "Page",
+          "children": [
+            {
+              "tag": "div",
+              "style": 260,
+              "id": "103:7121",
+              "name": "Breadcrumb",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 261,
+                  "id": "103:7122",
+                  "name": "Text",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 228,
+                      "id": "103:7123",
+                      "name": "Link",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 70,
+                          "id": "103:7124",
+                          "children": [
+                            "Beranda"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 112,
+                      "id": "103:7126",
+                      "name": "Icon",
+                      "children": [
+                        {
+                          "tag": "img",
+                          "style": 7,
+                          "props": {
+                            "alt": "",
+                            "src": "/assets/figma/0a496288f6a1ee034b30.svg"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "style": 261,
+                  "id": "103:7128",
+                  "name": "Text",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 228,
+                      "id": "103:7129",
+                      "name": "Link",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 70,
+                          "id": "103:7130",
+                          "children": [
+                            "Pesanan"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 112,
+                      "id": "103:7131",
+                      "name": "Icon",
+                      "children": [
+                        {
+                          "tag": "img",
+                          "style": 7,
+                          "props": {
+                            "alt": "",
+                            "src": "/assets/figma/0a496288f6a1ee034b30.svg"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "style": 228,
+                  "id": "103:7133",
+                  "name": "Text",
+                  "children": [
+                    {
+                      "tag": "p",
+                      "style": 177,
+                      "id": "103:7135",
+                      "children": [
+                        "Terkonfirmasi"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "style": 262,
+              "id": "103:7277",
+              "name": "Stepper:margin",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 2180,
+                  "id": "103:7137",
+                  "name": "Stepper",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 2276,
+                      "id": "103:7139",
+                      "name": "Button",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 2277,
+                          "id": "103:7140",
+                          "name": "Text",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 519,
+                              "id": "103:7141",
+                              "name": "Icon",
+                              "children": [
+                                {
+                                  "tag": "img",
+                                  "style": 7,
+                                  "props": {
+                                    "alt": "",
+                                    "src": "/assets/figma/d177885b2ed5ef86f352.svg"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 2184,
+                          "id": "103:7143",
+                          "name": "Italic Text",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 2185,
+                              "id": "103:7144",
+                              "name": "Small",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 2278,
+                                  "id": "103:7145",
+                                  "children": [
+                                    "Langkah 1"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "p",
+                              "style": 2279,
+                              "id": "103:7147",
+                              "children": [
+                                "Keranjang & Acara"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 2276,
+                      "id": "103:7150",
+                      "name": "Button",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 2277,
+                          "id": "103:7151",
+                          "name": "Text",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 519,
+                              "id": "103:7152",
+                              "name": "Icon",
+                              "children": [
+                                {
+                                  "tag": "img",
+                                  "style": 7,
+                                  "props": {
+                                    "alt": "",
+                                    "src": "/assets/figma/d177885b2ed5ef86f352.svg"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 2191,
+                          "id": "103:7154",
+                          "name": "Italic Text",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 2192,
+                              "id": "103:7155",
+                              "name": "Small",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 2278,
+                                  "id": "103:7156",
+                                  "children": [
+                                    "Langkah 2"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "p",
+                              "style": 2279,
+                              "id": "103:7157",
+                              "children": [
+                                "Bayar Deposit"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 2276,
+                      "id": "103:7159",
+                      "name": "Button",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 2277,
+                          "id": "103:7160",
+                          "name": "Text",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 519,
+                              "id": "103:7161",
+                              "name": "Icon",
+                              "children": [
+                                {
+                                  "tag": "img",
+                                  "style": 7,
+                                  "props": {
+                                    "alt": "",
+                                    "src": "/assets/figma/d177885b2ed5ef86f352.svg"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 2196,
+                          "id": "103:7163",
+                          "name": "Italic Text",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 2197,
+                              "id": "103:7164",
+                              "name": "Small",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 2278,
+                                  "id": "103:7165",
+                                  "children": [
+                                    "Langkah 3"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "p",
+                              "style": 2279,
+                              "id": "103:7166",
+                              "children": [
+                                "Verifikasi Bayar"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 2181,
+                      "id": "103:7168",
+                      "name": "Button",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 2182,
+                          "id": "103:7169",
+                          "name": "Text",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 2183,
+                              "id": "103:7170",
+                              "children": [
+                                "4"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 2200,
+                          "id": "103:7172",
+                          "name": "Italic Text",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 2201,
+                              "id": "103:7173",
+                              "name": "Small",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 1592,
+                                  "id": "103:7174",
+                                  "children": [
+                                    "Langkah 4"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "p",
+                              "style": 2186,
+                              "id": "103:7175",
+                              "children": [
+                                "Terkonfirmasi"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "style": 198,
+              "id": "103:7278",
+              "name": "Section:margin",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 2344,
+                  "id": "103:7176",
+                  "name": "Section",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 2345,
+                      "id": "103:7228",
+                      "name": "Text:margin",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 2346,
+                          "id": "103:7177",
+                          "name": "Text",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 2347,
+                              "id": "103:7178",
+                              "name": "Icon",
+                              "children": [
+                                {
+                                  "tag": "img",
+                                  "style": 7,
+                                  "props": {
+                                    "alt": "",
+                                    "src": "/assets/figma/cab2807b575f4e19b8fc.svg"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 2348,
+                      "id": "103:7180",
+                      "name": "Heading 1",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 2096,
+                          "id": "103:7181",
+                          "children": [
+                            "Booking Terkonfirmasi"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 2349,
+                      "id": "103:7183",
+                      "name": "Paragraph",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 2350,
+                          "id": "103:7184",
+                          "children": [
+                            "Deposit Rp1.500.000 aman di rekening escrow Vendoria. Vendor mulai menyiapkan armada."
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 2351,
+                      "id": "103:7185",
+                      "name": "Container",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 2352,
+                          "id": "103:7187",
+                          "children": [
+                            "Kode Booking"
+                          ]
+                        },
+                        {
+                          "tag": "p",
+                          "style": 2353,
+                          "id": "103:7189",
+                          "children": [
+                            "VND-261011-8227"
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 2354,
+                          "id": "103:7191",
+                          "name": "Button",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 30,
+                              "id": "103:7192",
+                              "name": "Icon",
+                              "children": [
+                                {
+                                  "tag": "img",
+                                  "style": 7,
+                                  "props": {
+                                    "alt": "",
+                                    "src": "/assets/figma/108883c3bd5bd79cf6ef.svg"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "p",
+                              "style": 40,
+                              "id": "103:7195",
+                              "children": [
+                                "Salin"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 2355,
+                      "id": "103:7197",
+                      "name": "Container",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 439,
+                          "id": "103:7198",
+                          "name": "Paragraph",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 256,
+                              "id": "103:7199",
+                              "name": "Text",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 378,
+                                  "id": "103:7200",
+                                  "children": [
+                                    "Acara"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 440,
+                              "id": "103:7201",
+                              "name": "Bold Text",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 441,
+                                  "id": "103:7202",
+                                  "children": [
+                                    "Festival Musik 2026"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 442,
+                          "id": "103:7203",
+                          "name": "Paragraph",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 256,
+                              "id": "103:7204",
+                              "name": "Text",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 378,
+                                  "id": "103:7205",
+                                  "children": [
+                                    "Tanggal"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 440,
+                              "id": "103:7206",
+                              "name": "Bold Text",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 441,
+                                  "id": "103:7207",
+                                  "children": [
+                                    "11 Okt 2026 - 11 Okt 2026"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 443,
+                          "id": "103:7208",
+                          "name": "Paragraph",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 256,
+                              "id": "103:7209",
+                              "name": "Text",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 378,
+                                  "id": "103:7210",
+                                  "children": [
+                                    "Lokasi"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 440,
+                              "id": "103:7211",
+                              "name": "Bold Text",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 441,
+                                  "id": "103:7212",
+                                  "children": [
+                                    "Gymnasium sekolah vokasi ipb"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 865,
+                          "id": "103:7213",
+                          "name": "Paragraph",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 256,
+                              "id": "103:7214",
+                              "name": "Text",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 378,
+                                  "id": "103:7215",
+                                  "children": [
+                                    "Deposit Escrow"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 440,
+                              "id": "103:7216",
+                              "name": "Bold Text",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 441,
+                                  "id": "103:7217",
+                                  "children": [
+                                    "Rp1.500.000"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 866,
+                          "id": "103:7218",
+                          "name": "Paragraph",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 256,
+                              "id": "103:7219",
+                              "name": "Text",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 378,
+                                  "id": "103:7220",
+                                  "children": [
+                                    "Sisa Pelunasan"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 440,
+                              "id": "103:7221",
+                              "name": "Bold Text",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 441,
+                                  "id": "103:7222",
+                                  "children": [
+                                    "Rp3.425.000"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 2356,
+                          "id": "103:7223",
+                          "name": "Paragraph",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 256,
+                              "id": "103:7224",
+                              "name": "Text",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 378,
+                                  "id": "103:7225",
+                                  "children": [
+                                    "PIC Vendor"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 440,
+                              "id": "103:7226",
+                              "name": "Bold Text",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 441,
+                                  "id": "103:7227",
+                                  "children": [
+                                    "Roder Bogor Tenda Megah"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "style": 2128,
+              "id": "103:7279",
+              "name": "Section:margin",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 2357,
+                  "id": "103:7229",
+                  "name": "Section",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 47,
+                      "id": "103:7230",
+                      "name": "Heading 2",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 89,
+                          "id": "103:7231",
+                          "children": [
+                            "Langkah Berikutnya"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 47,
+                      "id": "103:7233",
+                      "name": "Timeline",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 2358,
+                          "id": "103:7234",
+                          "name": "List Item",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 148,
+                              "id": "103:7236",
+                              "name": "Text",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 149,
+                                  "id": "103:7237",
+                                  "children": [
+                                    "01"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 2359,
+                              "id": "103:7239",
+                              "name": "Container",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 151,
+                                  "id": "103:7240",
+                                  "name": "Bold Text",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 152,
+                                      "id": "103:7241",
+                                      "children": [
+                                        "Vendor menyiapkan armada"
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 388,
+                                  "id": "103:7242",
+                                  "name": "Paragraph",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 378,
+                                      "id": "103:7243",
+                                      "children": [
+                                        "Vendor memeriksa dan mengemas alat sesuai pesanan."
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 155,
+                              "id": "103:7235",
+                              "name": "Text"
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 2358,
+                          "id": "103:7244",
+                          "name": "List Item",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 148,
+                              "id": "103:7246",
+                              "name": "Text",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 149,
+                                  "id": "103:7247",
+                                  "children": [
+                                    "02"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 2359,
+                              "id": "103:7248",
+                              "name": "Container",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 151,
+                                  "id": "103:7249",
+                                  "name": "Bold Text",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 152,
+                                      "id": "103:7250",
+                                      "children": [
+                                        "Pelunasan maksimal H-1"
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 388,
+                                  "id": "103:7251",
+                                  "name": "Paragraph",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 378,
+                                      "id": "103:7252",
+                                      "children": [
+                                        "Lunasi sisa Rp3.425.000 sebelum pengiriman."
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 155,
+                              "id": "103:7245",
+                              "name": "Text"
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 2358,
+                          "id": "103:7253",
+                          "name": "List Item",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 148,
+                              "id": "103:7255",
+                              "name": "Text",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 149,
+                                  "id": "103:7256",
+                                  "children": [
+                                    "03"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 2359,
+                              "id": "103:7257",
+                              "name": "Container",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 151,
+                                  "id": "103:7258",
+                                  "name": "Bold Text",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 152,
+                                      "id": "103:7259",
+                                      "children": [
+                                        "Serah terima & foto kondisi awal"
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 388,
+                                  "id": "103:7260",
+                                  "name": "Paragraph",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 378,
+                                      "id": "103:7261",
+                                      "children": [
+                                        "Unggah dan setujui foto kondisi awal bersama vendor."
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 155,
+                              "id": "103:7254",
+                              "name": "Text"
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 2360,
+                          "id": "103:7262",
+                          "name": "List Item",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 148,
+                              "id": "103:7263",
+                              "name": "Text",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 149,
+                                  "id": "103:7264",
+                                  "children": [
+                                    "04"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 2359,
+                              "id": "103:7265",
+                              "name": "Container",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 151,
+                                  "id": "103:7266",
+                                  "name": "Bold Text",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 152,
+                                      "id": "103:7267",
+                                      "children": [
+                                        "Pengembalian & rilis deposit"
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 388,
+                                  "id": "103:7268",
+                                  "name": "Paragraph",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 378,
+                                      "id": "103:7269",
+                                      "children": [
+                                        "Setelah inspeksi akhir, deposit dikembalikan ke rekening Anda."
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "style": 2361,
+              "id": "103:7270",
+              "name": "Container",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 2362,
+                  "id": "103:7271",
+                  "name": "Button",
+                  "children": [
+                    {
+                      "tag": "p",
+                      "style": 145,
+                      "id": "103:7272",
+                      "children": [
+                        "Lihat Pesanan Saya"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "style": 860,
+                  "id": "103:7273",
+                  "name": "Button",
+                  "children": [
+                    {
+                      "tag": "p",
+                      "style": 40,
+                      "id": "103:7274",
+                      "children": [
+                        "Cetak Invoice"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "style": 860,
+                  "id": "103:7275",
+                  "name": "Button",
+                  "children": [
+                    {
+                      "tag": "p",
+                      "style": 40,
+                      "id": "103:7276",
+                      "children": [
+                        "Kembali ke Beranda"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

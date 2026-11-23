@@ -1,0 +1,384 @@
+{
+  "tag": "div",
+  "style": 0,
+  "id": "109:20019",
+  "name": "kyc-2",
+  "children": [
+    {
+      "tag": "div",
+      "style": 335,
+      "id": "109:20021",
+      "name": "Body",
+      "children": [
+        {
+          "tag": "div",
+          "style": 2813,
+          "id": "109:20075",
+          "name": "Page",
+          "children": [
+            {
+              "tag": "div",
+              "style": 2814,
+              "id": "109:20076",
+              "name": "Kyc",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 869,
+                  "id": "109:20132",
+                  "name": "Container:margin",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 870,
+                      "id": "109:20077",
+                      "name": "Container",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 871,
+                          "id": "109:20109",
+                          "name": "Text:margin",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 872,
+                              "id": "109:20078",
+                              "name": "Text",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 873,
+                                  "id": "109:20079",
+                                  "name": "Icon",
+                                  "children": [
+                                    {
+                                      "tag": "img",
+                                      "style": 7,
+                                      "props": {
+                                        "alt": "",
+                                        "src": "/assets/figma/31aa597b095455d6d6f2.svg"
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 845,
+                          "id": "109:20113",
+                          "name": "Container",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 2815,
+                              "id": "109:20081",
+                              "name": "Container",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 2816,
+                                  "id": "109:20082",
+                                  "children": [
+                                    "DOKUMEN TERKIRIM"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 876,
+                          "id": "109:20084",
+                          "name": "Heading 1",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 877,
+                              "id": "109:20085",
+                              "children": [
+                                "Verifikasi KYC sedang ditinjau"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 2817,
+                          "id": "109:20087",
+                          "name": "Paragraph",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 2818,
+                              "id": "109:20088",
+                              "children": [
+                                "Dokumenmu telah terenkripsi dan masuk ke antrean verifikasi. Proses ini memerlukan waktu maksimal 1 × 24 jam."
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 880,
+                          "id": "109:20112",
+                          "name": "Container:margin",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 881,
+                              "id": "109:20090",
+                              "name": "Container",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 151,
+                                  "id": "109:20091",
+                                  "name": "Text",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 114,
+                                      "id": "109:20092",
+                                      "children": [
+                                        "Nama Pemohon "
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 47,
+                                      "id": "109:20094",
+                                      "name": "Bold Text",
+                                      "children": [
+                                        {
+                                          "tag": "p",
+                                          "style": 788,
+                                          "id": "109:20095",
+                                          "children": [
+                                            "Shofia Aziza Iman"
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 235,
+                                  "id": "109:20098",
+                                  "name": "Text",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 114,
+                                      "id": "109:20099",
+                                      "children": [
+                                        "Status "
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 47,
+                                      "id": "109:20100",
+                                      "name": "Bold Text",
+                                      "children": [
+                                        {
+                                          "tag": "p",
+                                          "style": 788,
+                                          "id": "109:20101",
+                                          "children": [
+                                            "Menunggu Verifikasi"
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 882,
+                          "id": "109:20114",
+                          "name": "Container",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 2819,
+                              "id": "109:20103",
+                              "name": "Button",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 145,
+                                  "id": "109:20104",
+                                  "children": [
+                                    "Lanjut ke Beranda"
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 41,
+                                  "id": "109:20106",
+                                  "name": "Icon",
+                                  "children": [
+                                    {
+                                      "tag": "img",
+                                      "style": 7,
+                                      "props": {
+                                        "alt": "",
+                                        "src": "/assets/figma/27257adb7779f3091966.svg"
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "style": 2820,
+                  "id": "109:20133",
+                  "name": "Container:margin",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 2767,
+                      "id": "109:20115",
+                      "name": "Container",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 2768,
+                          "id": "109:20116",
+                          "name": "Container",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 47,
+                              "id": "109:20117",
+                              "name": "Bold Text",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 418,
+                                  "id": "109:20118",
+                                  "children": [
+                                    "Mode Simulasi Pratinjau Status"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 47,
+                              "id": "109:20120",
+                              "name": "Small",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 70,
+                                  "id": "109:20121",
+                                  "children": [
+                                    "Lihat tampilan setiap status KYC"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 2769,
+                          "id": "109:20123",
+                          "name": "Container",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 2771,
+                              "id": "109:20124",
+                              "name": "Button",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 283,
+                                  "id": "109:20125",
+                                  "children": [
+                                    "Belum Terverifikasi"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 2770,
+                              "id": "109:20126",
+                              "name": "Button",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 287,
+                                  "id": "109:20127",
+                                  "children": [
+                                    "Menunggu Verifikasi"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 2771,
+                              "id": "109:20128",
+                              "name": "Button",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 283,
+                                  "id": "109:20129",
+                                  "children": [
+                                    "Terverifikasi"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 2771,
+                              "id": "109:20130",
+                              "name": "Button",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 283,
+                                  "id": "109:20131",
+                                  "children": [
+                                    "Ditolak"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

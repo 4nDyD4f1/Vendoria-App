@@ -103,105 +103,21 @@ const OtpVerificationPage = () => {
   };
 
   return (
-    <AuthLayout
-      badgeText="Pemulihan Akun Aman"
-      heading="Kembalikan akses akunmu dengan proses verifikasi yang terlindungi."
-    >
-      <div className="w-full max-w-md mx-auto">
+    <AuthLayout badgeText="Pemulihan Akun Aman" heading="Kembalikan akses akunmu dengan proses verifikasi yang terlindungi.">
+      <div className="auth-content">
         <StepIndicator currentStep={2} />
-
-        {/* Section Header */}
-        <div className="mb-6">
-          <p className="text-xs font-semibold tracking-widest text-[#3C2415]/60 uppercase mb-1">
-            PEMULIHAN AKUN
-          </p>
-          <h2 className="text-2xl font-bold text-[#3C2415] mb-1">Verifikasi kode OTP</h2>
-          <p className="text-sm text-[#3C2415]/60">
-            Masukkan kode 6 digit yang telah dikirim ke <span className="font-semibold text-[#3C2415]">{email}</span>.
-          </p>
-        </div>
-
-        <form onSubmit={handleSubmit} className="space-y-6">
-          {/* OTP Input Boxes */}
-          <div className="bg-[#FAF6F1] rounded-2xl p-6">
-            {/* Countdown kirim ulang */}
-            <div className="flex items-center justify-center gap-2 mb-5 text-xs text-[#3C2415]/60">
-              <Clock size={14} strokeWidth={1.8} />
-              {secondsLeft > 0 ? (
-                <>
-                  <span>Kirim ulang kode dalam</span>
-                  <span
-                    role="timer"
-                    aria-live="off"
-                    className="min-w-14 text-center px-3 py-1 rounded-full bg-white border border-[#E8DDD0] text-sm font-bold tabular-nums text-[#3C2415]"
-                  >
-                    {formatTime(secondsLeft)}
-                  </span>
-                </>
-              ) : (
-                <span>Belum menerima kode? Anda bisa mengirim ulang sekarang.</span>
-              )}
-            </div>
-            <div className="flex justify-center gap-3" onPaste={handlePaste}>
-              {otp.map((digit, index) => (
-                <input
-                  key={index}
-                  ref={(el) => (inputRefs.current[index] = el)}
-                  type="text"
-                  inputMode="numeric"
-                  maxLength={1}
-                  value={digit}
-                  onChange={(e) => handleChange(index, e.target.value)}
-                  onKeyDown={(e) => handleKeyDown(index, e)}
-                  placeholder="—"
-                  className="w-12 h-14 text-center text-xl font-bold text-[#3C2415] bg-white border-2 border-[#E8DDD0] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#3C2415]/20 focus:border-[#3C2415] placeholder:text-[#E8DDD0]"
-                />
-              ))}
-            </div>
+        <div className="auth-heading"><p className="auth-eyebrow">PEMULIHAN AKUN</p><h2>Verifikasi kode OTP</h2><p>Masukkan kode 6 digit yang telah dikirim ke <strong>{email}</strong>.</p></div>
+        <form onSubmit={handleSubmit} className="auth-form">
+          <div className="auth-otp-boxes" onPaste={handlePaste} role="group" aria-label="Kode OTP 6 digit">
+            {otp.map((digit, index) => <input key={index} ref={(el) => (inputRefs.current[index] = el)} type="text" inputMode="numeric" autoComplete={index === 0 ? 'one-time-code' : 'off'} maxLength={1} value={digit} onChange={(e) => handleChange(index, e.target.value)} onKeyDown={(e) => handleKeyDown(index, e)} aria-label={`Digit OTP ${index + 1}`} className="auth-input" />)}
           </div>
-
-          {error && (
-            <p role="alert" className="text-sm text-red-600 bg-red-50 border border-red-200 rounded-xl px-4 py-3">
-              {error}
-            </p>
-          )}
-          {info && (
-            <p role="status" className="text-sm text-green-700 bg-green-50 border border-green-200 rounded-xl px-4 py-3">
-              {info}
-            </p>
-          )}
-
-          {/* Submit */}
-          <button
-            type="submit"
-            disabled={submitting}
-            className="w-full py-3.5 bg-[#3C2415] text-white rounded-xl font-semibold text-sm hover:bg-[#3C2415]/90 transition-colors flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
-          >
-            {submitting ? 'Memverifikasi...' : 'Verifikasi OTP'}
-            <ArrowRight size={16} />
-          </button>
-
-          <p className="text-center text-sm text-[#3C2415]/60">
-            Belum menerima kode?{' '}
-            <button
-              type="button"
-              onClick={handleResend}
-              disabled={resending || secondsLeft > 0}
-              className="text-[#3C2415] font-semibold hover:underline disabled:opacity-50 disabled:cursor-not-allowed disabled:no-underline"
-            >
-              {resending ? 'Mengirim...' : 'Kirim ulang kode'}
-            </button>
-          </p>
+          <div className="auth-otp-timer"><Clock size={14} strokeWidth={1.6} />{secondsLeft > 0 ? <><span>Kirim ulang kode dalam</span><span role="timer" aria-live="off">{formatTime(secondsLeft)}</span></> : <span>Anda bisa mengirim ulang kode sekarang.</span>}</div>
+          {error && <p role="alert" className="auth-alert">{error}</p>}
+          {info && <p role="status" className="auth-notice">{info}</p>}
+          <button type="submit" disabled={submitting} className="auth-submit">{submitting ? 'Memverifikasi...' : 'Verifikasi OTP'}<ArrowRight size={18} /></button>
+          <p className="auth-resend">Belum menerima kode? <button type="button" onClick={handleResend} disabled={resending || secondsLeft > 0}>{resending ? 'Mengirim...' : 'Kirim ulang kode'}</button></p>
         </form>
-
-        {/* Back Link */}
-        <a
-          href="/login"
-          className="flex items-center justify-center gap-1.5 text-sm text-[#3C2415]/60 hover:text-[#3C2415] transition-colors mt-6"
-        >
-          <ArrowLeft size={14} />
-          Kembali ke Masuk
-        </a>
+        <a href="/login" className="auth-back"><ArrowLeft size={12} />Kembali ke Masuk</a>
       </div>
     </AuthLayout>
   );
