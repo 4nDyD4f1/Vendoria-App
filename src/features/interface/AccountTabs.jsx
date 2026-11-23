@@ -5,7 +5,7 @@ import DesignNode from './DesignNode';
 import { InterfaceContext } from './InterfaceContext';
 import { descendants, layoutStyle, nodeClass } from './designTree';
 import { screenByKey } from './screens';
-import AccountModal from './AccountModal';
+import { AccountAddressPanel, AccountRefundPanel } from './AccountBookPanels';
 import AccountSecurityPanel from './AccountSecurityPanel';
 import { accountFields, accountTabs, profileFieldIds, profileSaveId } from './accountDesign';
 import './account.css';
@@ -32,7 +32,6 @@ export default function AccountTabs({ loadDesign, initialTab, initialModal }) {
   const pages = trees.slice(0, accountTabs.length).map(pageOf);
   const [active, setActive] = useState(Math.max(0, accountTabs.findIndex(tab => tab.key === initialTab)));
   const [direction, setDirection] = useState(1);
-  const [modal, setModal] = useState(initialModal || null);
   const kycStatus = context.user?.status_verifikasi || 'belum_diverifikasi';
   const kycCopy = {
     terverifikasi: ['Terverifikasi', 'Identitas Anda terverifikasi. Booking alat aktif.'],
@@ -92,14 +91,6 @@ export default function AccountTabs({ loadDesign, initialTab, initialModal }) {
       }
       return context.formatText(text, ancestors);
     },
-    action: args => {
-      const label = args.label.trim();
-      if (label === 'Tambah Alamat' || label === 'Edit' && accountTabs[active].key === 'account-address') {
-        setModal('address');
-      } else if (label === 'Tambah Rekening') {
-        setModal('refund');
-      } else context.action(args);
-    },
   };
 
   return <div className={`${nodeClass(pages[0])} design-node account-tabs-page`} data-name="Account" data-kyc-status={kycStatus} style={layoutStyle(pages[0])}>
@@ -114,11 +105,13 @@ export default function AccountTabs({ loadDesign, initialTab, initialModal }) {
               <DesignNode node={accountFields(content)} ancestors={[page]} />
             </fieldset>
             {profileMessage && <p className={`account-profile-message${profileMessage.error ? ' account-profile-error' : ''}`} role={profileMessage.error ? 'alert' : 'status'}>{profileMessage.text}</p>}
-          </form> : accountTabs[active].key === 'account-security' ? <AccountSecurityPanel key={context.user?.user_id} content={content} page={page} /> : <DesignNode node={accountFields(content)} ancestors={[page]} />}
+          </form> : accountTabs[active].key === 'account-security' ? <AccountSecurityPanel key={context.user?.user_id} content={content} page={page} />
+            : accountTabs[active].key === 'account-address' ? <AccountAddressPanel key={context.user?.user_id} content={content} page={page} modalTree={trees[5]} initialModal={initialModal} />
+              : accountTabs[active].key === 'account-refund' ? <AccountRefundPanel key={context.user?.user_id} content={content} page={page} modalTree={trees[6]} initialModal={initialModal} />
+                : <DesignNode node={accountFields(content)} ancestors={[page]} />}
         </section>
       </div>
     </InterfaceContext.Provider>
     <DesignNode node={foot} ancestors={[pages[0]]} />
-    {modal && <AccountModal kind={modal} tree={trees[modal === 'address' ? 5 : 6]} onClose={() => setModal(null)} />}
   </div>;
 }

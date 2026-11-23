@@ -79,7 +79,7 @@ class AccountSecurityService {
 		if (challenge.purpose() == Purpose.PASSWORD) changePassword(user, challenge.newPasswordHash());
 		else if (repo.updateTwoFactor(user.getUserId(), user.getPasswordHash(), AuthService.normalize(user.getEmail()),
 				challenge.purpose() == Purpose.ENABLE) != 1) throw EmailOtpService.invalid();
-		return new VerifiedResponse(null, "/akun/keamanan");
+		return new VerifiedResponse(null, "vendor".equals(user.getRole()) ? "/vendor/keamanan" : "/akun/keamanan");
 	}
 
 	private AuthDtos.UserResponse establishSession(Pengguna user, HttpServletRequest request) {
