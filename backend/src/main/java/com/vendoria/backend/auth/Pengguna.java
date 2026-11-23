@@ -49,6 +49,12 @@ public class Pengguna {
 	@Column(name = "catatan_admin")
 	private String catatanAdmin;
 
+	@Column(name = "password_dibuat")
+	private Boolean passwordDibuat = true;
+
+	@Column(name = "two_factor_email")
+	private boolean twoFactorEmail;
+
 	@Column(name = "created_at", insertable = false, updatable = false)
 	private Instant createdAt;
 
@@ -68,6 +74,7 @@ public class Pengguna {
 	static Pengguna dariGoogle(String nama, String email, String passwordHash, String googleSub) {
 		Pengguna p = new Pengguna(nama, email, null, passwordHash, "customer");
 		p.googleSub = googleSub;
+		p.passwordDibuat = false;
 		return p;
 	}
 
@@ -90,5 +97,7 @@ public class Pengguna {
 	public String getFotoProfil() { return fotoProfil; }
 	public String getStatusAkun() { return statusAkun; }
 	public String getCatatanAdmin() { return catatanAdmin; }
+	public Boolean getPasswordDibuat() { return passwordDibuat; }
+	public boolean isTwoFactorEmail() { return twoFactorEmail; }
 	public Instant getCreatedAt() { return createdAt; }
 }

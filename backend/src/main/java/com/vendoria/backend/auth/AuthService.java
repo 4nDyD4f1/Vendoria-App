@@ -54,6 +54,7 @@ class AuthService {
 		if (!Pengguna.AKTIF.equals(p.getStatusAkun())) { // dicek setelah kata sandi benar: tak membocorkan email terdaftar
 			throw new ResponseStatusException(HttpStatus.FORBIDDEN, "Akun dinonaktifkan. Hubungi administrator");
 		}
+		if (p.getPasswordDibuat() == null) repo.confirmPasswordExists(p.getUserId(), p.getPasswordHash());
 		return UserResponse.from(p);
 	}
 

@@ -18,6 +18,12 @@ interface PenggunaRepository extends JpaRepository<Pengguna, Long> {
 
 	List<Pengguna> findByRoleOrderByUserIdDesc(String role);
 
+	@Modifying(clearAutomatically = true, flushAutomatically = true)
+	@Query(value = "update pengguna set nama = :nama, email = :email, no_telp = :noTelp, updated_at = now() "
+			+ "where user_id = :id and status_akun = 'Aktif' and (google_sub is null or lower(email) = :email) "
+			+ "and (two_factor_email = false or lower(email) = :email)", nativeQuery = true)
+	int updateProfile(Long id, String nama, String email, String noTelp);
+
 	// native karena updated_at tidak dipetakan di entity; kata sandi diubah terpisah lewat updatePassword
 	@Modifying
 	@Transactional
@@ -38,6 +44,24 @@ interface PenggunaRepository extends JpaRepository<Pengguna, Long> {
 	// native karena updated_at tidak dipetakan di entity; DB tidak punya trigger untuknya
 	@Modifying
 	@Transactional
-	@Query(value = "update pengguna set password_hash = :hash, updated_at = now() where user_id = :id", nativeQuery = true)
+	@Query(value = "update pengguna set password_hash = :hash, password_dibuat = true, updated_at = now() where user_id = :id", nativeQuery = true)
 	int updatePassword(Long id, String hash);
+
+	@Modifying(clearAutomatically = true, flushAutomatically = true)
+	@Transactional
+	@Query(value = "update pengguna set password_hash = :hash, password_dibuat = true, updated_at = now() "
+			+ "where user_id = :id and password_hash = :previousHash and status_akun = 'Aktif'", nativeQuery = true)
+	int changeOwnPassword(Long id, String previousHash, String hash);
+
+	@Modifying(clearAutomatically = true, flushAutomatically = true)
+	@Transactional
+	@Query(value = "update pengguna set two_factor_email = :enabled, updated_at = now() "
+			+ "where user_id = :id and password_hash = :hash and lower(email) = :email and status_akun = 'Aktif'", nativeQuery = true)
+	int updateTwoFactor(Long id, String hash, String email, boolean enabled);
+
+	@Modifying
+	@Transactional
+	@Query(value = "update pengguna set password_dibuat = true where user_id = :id and password_dibuat is null "
+			+ "and password_hash = :hash", nativeQuery = true)
+	int confirmPasswordExists(Long id, String hash);
 }

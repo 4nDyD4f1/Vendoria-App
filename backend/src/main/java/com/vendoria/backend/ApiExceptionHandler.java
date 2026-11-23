@@ -14,6 +14,17 @@ import org.springframework.web.server.ResponseStatusException;
 @RestControllerAdvice
 class ApiExceptionHandler {
 
+	@ExceptionHandler(org.springframework.web.multipart.MaxUploadSizeExceededException.class)
+	ResponseEntity<Map<String, Object>> uploadTooLarge() {
+		return ResponseEntity.status(HttpStatus.PAYLOAD_TOO_LARGE).body(Map.of("message", "Ukuran unggahan terlalu besar. Maksimal 5 MB per gambar"));
+	}
+
+	@ExceptionHandler({org.springframework.web.multipart.support.MissingServletRequestPartException.class,
+			org.springframework.http.converter.HttpMessageNotReadableException.class})
+	ResponseEntity<Map<String, Object>> malformedBody() {
+		return ResponseEntity.badRequest().body(Map.of("message", "Data pengajuan tidak lengkap atau tidak valid"));
+	}
+
 	@ExceptionHandler(ResponseStatusException.class)
 	ResponseEntity<Map<String, Object>> status(ResponseStatusException e) {
 		return ResponseEntity.status(e.getStatusCode()).body(Map.of("message", String.valueOf(e.getReason())));
