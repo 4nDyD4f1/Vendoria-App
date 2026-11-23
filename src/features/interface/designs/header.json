@@ -1,0 +1,310 @@
+{
+  "tag": "div",
+  "style": 2,
+  "id": "84:3403",
+  "name": "Header",
+  "children": [
+    {
+      "tag": "div",
+      "style": 3,
+      "id": "84:3404",
+      "name": "Container",
+      "children": [
+        {
+          "tag": "div",
+          "style": 4,
+          "id": "84:3405",
+          "name": "Button - Ke halaman utama",
+          "children": [
+            {
+              "tag": "div",
+              "style": 5,
+              "id": "84:3407",
+              "name": "Logo",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 6,
+                  "id": "84:3408",
+                  "name": "Image - Vendoria",
+                  "children": [
+                    {
+                      "tag": "img",
+                      "style": 7,
+                      "props": {
+                        "alt": "",
+                        "src": "/assets/figma/e290aac37b05d0237d85.svg"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "style": 8,
+                  "id": "84:3412",
+                  "name": "Bold Text",
+                  "children": [
+                    {
+                      "tag": "p",
+                      "style": 9,
+                      "id": "84:3413",
+                      "children": [
+                        "Vendoria"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "div",
+          "style": 10,
+          "id": "84:3415",
+          "name": "Navigation - Navigasi utama",
+          "children": [
+            {
+              "tag": "div",
+              "style": 11,
+              "id": "84:3416",
+              "name": "Button",
+              "children": [
+                {
+                  "tag": "p",
+                  "style": 12,
+                  "id": "84:3417",
+                  "children": [
+                    "Beranda"
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "style": 13,
+              "id": "84:3419",
+              "name": "Button",
+              "children": [
+                {
+                  "tag": "p",
+                  "style": 14,
+                  "id": "84:3420",
+                  "children": [
+                    "Katalog"
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "style": 13,
+              "id": "84:3421",
+              "name": "Button",
+              "children": [
+                {
+                  "tag": "p",
+                  "style": 14,
+                  "id": "84:3422",
+                  "children": [
+                    "Cara Sewa"
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "style": 13,
+              "id": "84:3423",
+              "name": "Button",
+              "children": [
+                {
+                  "tag": "p",
+                  "style": 14,
+                  "id": "84:3424",
+                  "children": [
+                    "Pesanan Saya"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "div",
+          "style": 15,
+          "id": "84:3425",
+          "name": "Container",
+          "children": [
+            {
+              "tag": "div",
+              "style": 16,
+              "id": "84:3426",
+              "name": "Button - Cari",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 17,
+                  "id": "84:3427",
+                  "name": "Icon",
+                  "children": [
+                    {
+                      "tag": "img",
+                      "style": 7,
+                      "props": {
+                        "alt": "",
+                        "src": "/assets/figma/c1d7196b97050c3bbaa5.svg"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "style": 16,
+              "id": "84:3431",
+              "name": "Button - Notifikasi, 3 belum dibaca",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 17,
+                  "id": "84:3432",
+                  "name": "Icon",
+                  "children": [
+                    {
+                      "tag": "img",
+                      "style": 7,
+                      "props": {
+                        "alt": "",
+                        "src": "/assets/figma/5e58b1dfe325cc4bf6b1.svg"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "style": 18,
+                  "id": "84:3435",
+                  "name": "Italic Text",
+                  "children": [
+                    {
+                      "tag": "p",
+                      "style": 19,
+                      "id": "84:3436",
+                      "children": [
+                        "3"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "style": 16,
+              "id": "84:3438",
+              "name": "Button - Wishlist, 5 alat",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 17,
+                  "id": "84:3439",
+                  "name": "Icon",
+                  "children": [
+                    {
+                      "tag": "img",
+                      "style": 7,
+                      "props": {
+                        "alt": "",
+                        "src": "/assets/figma/e6cccecccd20dda86b7d.svg"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "style": 16,
+              "id": "84:3441",
+              "name": "Button - Keranjang, 0 item",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 17,
+                  "id": "84:3442",
+                  "name": "Icon",
+                  "children": [
+                    {
+                      "tag": "img",
+                      "style": 7,
+                      "props": {
+                        "alt": "",
+                        "src": "/assets/figma/a79a399d1b58440d40ce.svg"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "style": 20,
+              "id": "84:3446",
+              "name": "Text"
+            },
+            {
+              "tag": "div",
+              "style": 21,
+              "id": "84:3448",
+              "name": "Button",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 22,
+                  "id": "84:3449",
+                  "name": "Text",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 23,
+                      "id": "84:3450",
+                      "name": "Icon",
+                      "children": [
+                        {
+                          "tag": "img",
+                          "style": 7,
+                          "props": {
+                            "alt": "",
+                            "src": "/assets/figma/1c1da491232764684201.svg"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "style": 8,
+                  "id": "84:3453",
+                  "name": "Bold Text",
+                  "children": [
+                    {
+                      "tag": "p",
+                      "style": 24,
+                      "id": "84:3454",
+                      "children": [
+                        "Profil"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

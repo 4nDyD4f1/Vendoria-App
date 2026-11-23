@@ -1,0 +1,132 @@
+import { useEffect, useRef, useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Bell, Building2, Check, ClipboardList, CreditCard, FileCheck2, FolderTree, Package, Search, ShieldCheck, Users, X } from 'lucide-react';
+import WorkspaceResource from '../vendor/VendorResource';
+import VendorProfileMenu from '../vendor/VendorProfileMenu';
+import { VendorNotifications } from '../vendor/VendorActivity';
+import { EmptyState, PageHeading } from '../vendor/VendorUi';
+import { WorkspaceResourceContext } from '../shared/workspaceResource';
+import WorkspaceFooter from '../shared/WorkspaceFooter';
+import { useAuth } from '../../AuthContext';
+import AdminDashboard from './AdminDashboard';
+import AdminReports from './AdminReports';
+import AdminSearch from './AdminSearch';
+import AdminReviewDialog from './AdminReviewDialog';
+import { adminInitialData, adminNotifications, adminResources, resolveAdminResource } from './adminData';
+import { deleteAdministrator, listAdministrators, saveAdministrator } from './administratorsApi';
+import '../interface/interface.css';
+import '../vendor/vendor.css';
+import './admin.css';
+import './admin-shell.css';
+
+// Menu atas sesuai desain Figma. Halaman turunan (kategori, pencairan, pengguna/*) menyalakan menu induknya.
+const nav = [['Dashboard', '', []], ['Verifikasi KYC', 'kyc', ['kyc']], ['Kelola Klaim', 'klaim', ['klaim']], ['Kelola Katalog', 'katalog', ['katalog', 'kategori']], ['Laporan', 'laporan', ['laporan']], ['Pengguna', 'pengguna/customer', ['pengguna']]];
+const isActive = (path, route, prefixes) => route === '' ? path === '' || path === 'dashboard' : prefixes.some(prefix => path === prefix || path.startsWith(`${prefix}/`));
+const pageTitles = { '': 'Dashboard', dashboard: 'Dashboard', laporan: 'Laporan transaksi', pencarian: 'Pencarian' };
+const resourceIcons = { kyc: FileCheck2, claims: ClipboardList, catalog: Package, categories: FolderTree, customers: Users, vendors: Building2, administrators: ShieldCheck, payouts: CreditCard };
+
+export default function AdminWorkspace() {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const path = location.pathname.replace(/^\/admin\/?/, '').replace(/\/$/, '');
+  const resolved = resolveAdminResource(location.pathname);
+  const [data, setData] = useState(() => structuredClone(adminInitialData));
+  const [notifications, setNotifications] = useState(() => structuredClone(adminNotifications));
+  const [action, setAction] = useState(null);
+  const [toast, setToast] = useState('');
+  const { user } = useAuth();
+  const owner = { name: user?.nama || 'Admin', email: user?.email, foto_profil: user?.foto_profil };
+  const timer = useRef(null);
+  const objectUrls = useRef([]);
+  const counters = useRef(Object.fromEntries(Object.entries(adminInitialData).map(([key, rows]) => [key, Math.max(0, ...rows.map(row => Number(row.id.match(/(\d+)$/)?.[1] || 0)))])));
+  const unread = notifications.filter(item => !item.read).length;
+  const title = resolved ? adminResources[resolved.key].title : pageTitles[path] || (path.startsWith('notifikasi') ? 'Notifikasi' : 'Halaman admin');
+  const viewData = { ...data, categories: data.categories.map(category => ({ ...category, count: data.catalog.filter(item => item.category === category.name).length })) };
+  const categoryOptions = [...new Set([...data.categories.map(item => item.name), ...data.catalog.map(item => item.category)])];
+  const resourceConfig = Object.fromEntries(Object.entries(adminResources).map(([key, resource]) => [key, { ...resource, icon: resourceIcons[key], fields: resource.fields.map(field => key === 'catalog' && field.key === 'category' ? { ...field, options: categoryOptions } : field) }]));
+
+  useEffect(() => { const previous = document.title; document.title = `${title} — Admin Vendoria`; window.scrollTo(0, 0); return () => { document.title = previous; }; }, [location.pathname, title]);
+  useEffect(() => () => { clearTimeout(timer.current); objectUrls.current.forEach(url => URL.revokeObjectURL(url)); }, []);
+
+  const notify = message => { setToast(message); clearTimeout(timer.current); timer.current = setTimeout(() => setToast(''), 4500); };
+  // Administrator = data nyata dari backend; dimuat saat workspace dibuka (untuk pencarian) dan dimuat ulang tiap halamannya dibuka.
+  const onAdminPage = resolved?.key === 'administrators';
+  const loadAdministrators = async () => {
+    try { const administrators = await listAdministrators(); setData(current => ({ ...current, administrators })); }
+    catch (error) { if (onAdminPage) notify(error.message); }
+  };
+  useEffect(() => {
+    let stale = false;
+    listAdministrators().then(administrators => { if (!stale) setData(current => ({ ...current, administrators })); }, error => { if (!stale && onAdminPage) notify(error.message); });
+    return () => { stale = true; };
+  }, [onAdminPage]); // eslint-disable-line react-hooks/exhaustive-deps
+  const saveAdmin = async record => {
+    const saved = await saveAdministrator(record); // menolak (throw) bila gagal: form menampilkan pesannya
+    setData(current => ({ ...current, administrators: record.id ? current.administrators.map(item => item.id === saved.id ? saved : item) : [saved, ...current.administrators] }));
+    notify(`Administrator ${record.id ? 'diperbarui' : 'ditambahkan'}.`);
+  };
+  const removeAdmins = async ids => {
+    const results = await Promise.allSettled(ids.map(deleteAdministrator));
+    const failed = results.find(result => result.status === 'rejected');
+    await loadAdministrators(); // sebagian bisa berhasil: tampilkan keadaan sebenarnya
+    notify(failed ? failed.reason.message : `${ids.length} administrator dihapus.`);
+  };
+  const save = (key, record) => {
+    if (key === 'administrators') return saveAdmin(record);
+    const resource = adminResources[key];
+    const updated = Boolean(record.id);
+    const next = { ...record, id: record.id || (resource.numericIds ? String(++counters.current[key]) : `${resource.prefix}-${String(++counters.current[key]).padStart(3, '0')}`) };
+    setData(current => ({ ...current, [key]: updated ? current[key].map(item => item.id === next.id ? next : item) : [next, ...current[key]] }));
+    notify(`${resource.singular[0].toUpperCase() + resource.singular.slice(1)} ${updated ? 'diperbarui' : 'ditambahkan'} pada data contoh.`);
+  };
+  const remove = (key, ids) => { if (key === 'administrators') return removeAdmins(ids); setData(current => ({ ...current, [key]: current[key].filter(item => !ids.includes(item.id)) })); notify(`${ids.length} data dihapus dari pratinjau.`); };
+  const upload = file => { const url = URL.createObjectURL(file); objectUrls.current.push(url); return url; };
+  const routeRecord = resolved?.key === 'catalog' && resolved.segments[2] === 'suspend' ? data.catalog.find(item => item.id === resolved.segments[1]) : null;
+  const routeAction = routeRecord ? { resourceKey: 'catalog', id: routeRecord.id, title: 'Tangguhkan alat', nextStatus: 'Ditangguhkan', requiresNote: true } : null;
+  const activeAction = (action?.path === location.pathname ? action : null) || routeAction;
+  const reviewRecord = activeAction && data[activeAction.resourceKey].find(item => item.id === activeAction.id);
+  const closeReview = () => { setAction(null); if (routeAction) navigate(`/admin/katalog/${routeAction.id}`, { replace: true }); };
+  const renderActions = (key, record) => {
+    const choices = key === 'kyc' && record.status === 'Menunggu' ? [['Setujui KYC', 'Terverifikasi', false], ['Tolak KYC', 'Ditolak', true]]
+      : key === 'claims' && ['Diajukan', 'Ditinjau'].includes(record.status) ? [['Setujui klaim', 'Disetujui', false], ['Tolak klaim', 'Ditolak', true]]
+        : key === 'catalog' ? record.status === 'Ditangguhkan' ? [['Aktifkan alat', 'Aktif', false]] : [...(record.status === 'Menunggu review' ? [['Setujui alat', 'Aktif', false]] : []), ['Tangguhkan alat', 'Ditangguhkan', true]] : [];
+    return choices.map(([label, nextStatus, requiresNote]) => <button className={`v-button ${requiresNote ? 'v-button-danger' : 'v-button-secondary'}`} type="button" key={label} onClick={() => setAction({ path: location.pathname, resourceKey: key, id: record.id, title: label, nextStatus, requiresNote })}>{requiresNote ? <X size={16} /> : <Check size={16} />}{label}</button>);
+  };
+
+  let content;
+  if (resolved) content = <WorkspaceResource key={resolved.key} resourceKey={resolved.key} segments={resolved.segments} data={viewData} onSave={save} onDelete={remove} onUpload={upload} />;
+  else if (!path || path === 'dashboard') content = <AdminDashboard data={viewData} name={owner.name} />;
+  else if (path === 'laporan') content = <AdminReports />;
+  else if (path === 'pencarian') content = <AdminSearch key={location.search} data={viewData} />;
+  else if (['notifikasi', 'notifikasi-menu'].includes(path)) content = <VendorNotifications notifications={notifications} onRead={ids => setNotifications(current => current.map(item => ids.includes(item.id) ? { ...item, read: true } : item))} onDelete={id => { setNotifications(current => current.filter(item => item.id !== id)); notify('Notifikasi dihapus dari pratinjau.'); }} />;
+  else content = <><PageHeading title="Halaman tidak ditemukan" /><section className="v-card"><EmptyState title="Alamat workspace tidak tersedia" description="Gunakan menu di samping untuk membuka halaman admin."><Link className="v-button v-button-primary" to="/admin">Kembali ke dashboard</Link></EmptyState></section></>;
+
+  const userCounts = { customers: data.customers.length, vendors: data.vendors.length, administrators: data.administrators.length };
+  const listView = resolved && !resolved.segments[1];
+  const subTabs = !listView && path !== 'laporan' ? null
+    : ['customers', 'vendors', 'administrators'].includes(resolved?.key) ? [[`Customer (${userCounts.customers})`, '/admin/pengguna/customer', 'customers'], [`Vendor (${userCounts.vendors})`, '/admin/pengguna/vendor', 'vendors'], [`Admin (${userCounts.administrators})`, '/admin/pengguna/admin', 'administrators']]
+      : ['catalog', 'categories'].includes(resolved?.key) ? [['Alat', '/admin/katalog', 'catalog'], ['Kategori', '/admin/kategori', 'categories']]
+        : path === 'laporan' || resolved?.key === 'payouts' ? [['Transaksi', '/admin/laporan', null], ['Pencairan dana', '/admin/laporan/pencairan', 'payouts']] : null;
+
+  return <div className="vendor-workspace admin-workspace">
+    <a className="v-skip-link" href="#admin-main">Langsung ke konten</a>
+    <header className="a-header"><div className="a-header-inner">
+      <Link className="a-logo" to="/admin" aria-label="Vendoria, ke dashboard admin"><img src="/assets/figma/e290aac37b05d0237d85.svg" alt="" /><span>Vendoria</span></Link>
+      <nav className="a-nav" aria-label="Menu admin">{nav.map(([label, route, prefixes]) => { const active = isActive(path, route, prefixes); return <Link key={label} to={`/admin${route ? `/${route}` : ''}`} className={active ? 'is-active' : undefined} aria-current={active ? 'page' : undefined}>{label}{route === 'kyc' && data.kyc.some(item => item.status === 'Menunggu') && <small>{data.kyc.filter(item => item.status === 'Menunggu').length}</small>}</Link>; })}</nav>
+      <div className="a-header-actions">
+        <Link to="/admin/pencarian" className="a-icon-button" aria-label="Cari di workspace admin"><Search size={18} strokeWidth={1.6} /></Link>
+        <Link to="/admin/notifikasi" className="a-icon-button a-bell" aria-label={`Notifikasi, ${unread} belum dibaca`}><Bell size={18} strokeWidth={1.6} />{unread > 0 && <span>{unread}</span>}</Link>
+        <span className="a-divider" aria-hidden="true" />
+        <VendorProfileMenu owner={owner} roleLabel="Administrator" menuLabel="Menu akun admin" />
+      </div>
+    </div></header>
+    {!onAdminPage && <div className="v-preview-strip"><span><i />Pratinjau frontend</span><p>Data contoh · Perubahan akan kembali saat halaman dimuat ulang.</p></div>}
+    <main id="admin-main" className="a-main" tabIndex={-1}>
+      {subTabs && <nav className="a-tabs" aria-label="Bagian halaman">{subTabs.map(([label, to]) => { const here = to === `/admin${path ? `/${path}` : ''}`; return <Link key={to} to={to} className={here ? 'is-active' : undefined} aria-current={here ? 'page' : undefined}>{label}</Link>; })}</nav>}
+      <WorkspaceResourceContext.Provider value={{ resources: resourceConfig, rootPath: '/admin', renderActions }}>{content}</WorkspaceResourceContext.Provider>
+    </main>
+    <WorkspaceFooter />
+    {activeAction && reviewRecord && <AdminReviewDialog key={`${activeAction.resourceKey}:${activeAction.id}:${activeAction.nextStatus}`} action={activeAction} record={reviewRecord} onClose={closeReview} onConfirm={note => { setData(current => ({ ...current, [activeAction.resourceKey]: current[activeAction.resourceKey].map(item => item.id === activeAction.id ? { ...item, status: activeAction.nextStatus, notes: note || item.notes } : item) })); notify(`Status diubah menjadi ${activeAction.nextStatus} pada data contoh.`); closeReview(); }} />}
+    {toast && <div className="v-toast" role="status">{toast}<button type="button" aria-label="Tutup pemberitahuan" onClick={() => setToast('')}><X size={15} /></button></div>}
+  </div>;
+}

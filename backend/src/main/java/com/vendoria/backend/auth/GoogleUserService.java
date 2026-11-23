@@ -33,6 +33,13 @@ class GoogleUserService {
 		this.repo = repo;
 	}
 
+	/** Simpan foto profil Google (hanya URL https yang wajar); dipanggil tiap login supaya ikut berganti bila foto diubah. */
+	void perbaruiFoto(Pengguna p, String url) {
+		if (url != null && url.startsWith("https://") && url.length() <= 500 && !url.equals(p.getFotoProfil())) {
+			repo.updateFoto(p.getUserId(), url);
+		}
+	}
+
 	Pengguna findOrCreate(String sub, String email, boolean emailVerified, String name) {
 		// 1. Sudah pernah login dengan Google: cukup dari sub.
 		Optional<Pengguna> bySub = repo.findByGoogleSub(sub);

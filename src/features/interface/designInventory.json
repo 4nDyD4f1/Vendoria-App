@@ -1,0 +1,352 @@
+[
+  {
+    "id": "84:3400",
+    "name": "beranda",
+    "source": "https://www.figma.com/design/aHGtGh4ajUerZbtffpERKm/Vendoria?node-id=84-3400"
+  },
+  {
+    "id": "84:4705",
+    "name": "katalog",
+    "source": "https://www.figma.com/design/aHGtGh4ajUerZbtffpERKm/Vendoria?node-id=84-4705"
+  },
+  {
+    "id": "84:6113",
+    "name": "detail katalog-1",
+    "source": "https://www.figma.com/design/aHGtGh4ajUerZbtffpERKm/Vendoria?node-id=84-6113"
+  },
+  {
+    "id": "84:7295",
+    "name": "detail katalog-2",
+    "source": "https://www.figma.com/design/aHGtGh4ajUerZbtffpERKm/Vendoria?node-id=84-7295"
+  },
+  {
+    "id": "84:9589",
+    "name": "detail katalog-3",
+    "source": "https://www.figma.com/design/aHGtGh4ajUerZbtffpERKm/Vendoria?node-id=84-9589"
+  },
+  {
+    "id": "84:10958",
+    "name": "detail katalog-4",
+    "source": "https://www.figma.com/design/aHGtGh4ajUerZbtffpERKm/Vendoria?node-id=84-10958"
+  },
+  {
+    "id": "85:13250",
+    "name": "profil vendor",
+    "source": "https://www.figma.com/design/aHGtGh4ajUerZbtffpERKm/Vendoria?node-id=85-13250"
+  },
+  {
+    "id": "86:2",
+    "name": "Dashboard",
+    "source": "https://www.figma.com/design/aHGtGh4ajUerZbtffpERKm/Vendoria?node-id=86-2"
+  },
+  {
+    "id": "86:600",
+    "name": "Serah Terima",
+    "source": "https://www.figma.com/design/aHGtGh4ajUerZbtffpERKm/Vendoria?node-id=86-600"
+  },
+  {
+    "id": "86:986",
+    "name": "Katalog",
+    "source": "https://www.figma.com/design/aHGtGh4ajUerZbtffpERKm/Vendoria?node-id=86-986"
+  },
+  {
+    "id": "86:1524",
+    "name": "Pesanan",
+    "source": "https://www.figma.com/design/aHGtGh4ajUerZbtffpERKm/Vendoria?node-id=86-1524"
+  },
+  {
+    "id": "86:2064",
+    "name": "Klaim",
+    "source": "https://www.figma.com/design/aHGtGh4ajUerZbtffpERKm/Vendoria?node-id=86-2064"
+  },
+  {
+    "id": "86:2538",
+    "name": "Pencairan dana",
+    "source": "https://www.figma.com/design/aHGtGh4ajUerZbtffpERKm/Vendoria?node-id=86-2538"
+  },
+  {
+    "id": "86:2951",
+    "name": "Search",
+    "source": "https://www.figma.com/design/aHGtGh4ajUerZbtffpERKm/Vendoria?node-id=86-2951"
+  },
+  {
+    "id": "86:3594",
+    "name": "Tombol Notifikasi",
+    "source": "https://www.figma.com/design/aHGtGh4ajUerZbtffpERKm/Vendoria?node-id=86-3594"
+  },
+  {
+    "id": "86:4914",
+    "name": "Notifikasi",
+    "source": "https://www.figma.com/design/aHGtGh4ajUerZbtffpERKm/Vendoria?node-id=86-4914"
+  },
+  {
+    "id": "86:5438",
+    "name": "Profil",
+    "source": "https://www.figma.com/design/aHGtGh4ajUerZbtffpERKm/Vendoria?node-id=86-5438"
+  },
+  {
+    "id": "86:5903",
+    "name": "Profil bisnis",
+    "source": "https://www.figma.com/design/aHGtGh4ajUerZbtffpERKm/Vendoria?node-id=86-5903"
+  },
+  {
+    "id": "86:6337",
+    "name": "Lihat detail KYC",
+    "source": "https://www.figma.com/design/aHGtGh4ajUerZbtffpERKm/Vendoria?node-id=86-6337"
+  },
+  {
+    "id": "86:6680",
+    "name": "Keamanan",
+    "source": "https://www.figma.com/design/aHGtGh4ajUerZbtffpERKm/Vendoria?node-id=86-6680"
+  },
+  {
+    "id": "89:2",
+    "name": "Dashboard",
+    "source": "https://www.figma.com/design/aHGtGh4ajUerZbtffpERKm/Vendoria?node-id=89-2"
+  },
+  {
+    "id": "89:898",
+    "name": "Verif kyc",
+    "source": "https://www.figma.com/design/aHGtGh4ajUerZbtffpERKm/Vendoria?node-id=89-898"
+  },
+  {
+    "id": "89:1645",
+    "name": "Klaim",
+    "source": "https://www.figma.com/design/aHGtGh4ajUerZbtffpERKm/Vendoria?node-id=89-1645"
+  },
+  {
+    "id": "89:3424",
+    "name": "Kelola katalog - alat",
+    "source": "https://www.figma.com/design/aHGtGh4ajUerZbtffpERKm/Vendoria?node-id=89-3424"
+  },
+  {
+    "id": "89:4216",
+    "name": "Laporan",
+    "source": "https://www.figma.com/design/aHGtGh4ajUerZbtffpERKm/Vendoria?node-id=89-4216"
+  },
+  {
+    "id": "89:5198",
+    "name": "pengguna - cust",
+    "source": "https://www.figma.com/design/aHGtGh4ajUerZbtffpERKm/Vendoria?node-id=89-5198"
+  },
+  {
+    "id": "89:5923",
+    "name": "Katalog - kategori",
+    "source": "https://www.figma.com/design/aHGtGh4ajUerZbtffpERKm/Vendoria?node-id=89-5923"
+  },
+  {
+    "id": "89:6402",
+    "name": "Laporan - pencairan",
+    "source": "https://www.figma.com/design/aHGtGh4ajUerZbtffpERKm/Vendoria?node-id=89-6402"
+  },
+  {
+    "id": "89:6950",
+    "name": "pengguna - vendor",
+    "source": "https://www.figma.com/design/aHGtGh4ajUerZbtffpERKm/Vendoria?node-id=89-6950"
+  },
+  {
+    "id": "89:7828",
+    "name": "pengguna - admin",
+    "source": "https://www.figma.com/design/aHGtGh4ajUerZbtffpERKm/Vendoria?node-id=89-7828"
+  },
+  {
+    "id": "89:8305",
+    "name": "edit katalog",
+    "source": "https://www.figma.com/design/aHGtGh4ajUerZbtffpERKm/Vendoria?node-id=89-8305"
+  },
+  {
+    "id": "89:9351",
+    "name": "lihat katalog",
+    "source": "https://www.figma.com/design/aHGtGh4ajUerZbtffpERKm/Vendoria?node-id=89-9351"
+  },
+  {
+    "id": "92:3",
+    "name": "suspend",
+    "source": "https://www.figma.com/design/aHGtGh4ajUerZbtffpERKm/Vendoria?node-id=92-3"
+  },
+  {
+    "id": "92:856",
+    "name": "lihat katalog 2",
+    "source": "https://www.figma.com/design/aHGtGh4ajUerZbtffpERKm/Vendoria?node-id=92-856"
+  },
+  {
+    "id": "92:2052",
+    "name": "edit katalog 2",
+    "source": "https://www.figma.com/design/aHGtGh4ajUerZbtffpERKm/Vendoria?node-id=92-2052"
+  },
+  {
+    "id": "92:3104",
+    "name": "tambah katalog",
+    "source": "https://www.figma.com/design/aHGtGh4ajUerZbtffpERKm/Vendoria?node-id=92-3104"
+  },
+  {
+    "id": "92:4071",
+    "name": "Kategori Katalog",
+    "source": "https://www.figma.com/design/aHGtGh4ajUerZbtffpERKm/Vendoria?node-id=92-4071"
+  },
+  {
+    "id": "92:5382",
+    "name": "Lihat Katalog",
+    "source": "https://www.figma.com/design/aHGtGh4ajUerZbtffpERKm/Vendoria?node-id=92-5382"
+  },
+  {
+    "id": "101:2",
+    "name": "kontak vendor",
+    "source": "https://www.figma.com/design/aHGtGh4ajUerZbtffpERKm/Vendoria?node-id=101-2"
+  },
+  {
+    "id": "101:1144",
+    "name": "cara sewa-1",
+    "source": "https://www.figma.com/design/aHGtGh4ajUerZbtffpERKm/Vendoria?node-id=101-1144"
+  },
+  {
+    "id": "101:1785",
+    "name": "cara sewa-2",
+    "source": "https://www.figma.com/design/aHGtGh4ajUerZbtffpERKm/Vendoria?node-id=101-1785"
+  },
+  {
+    "id": "101:2289",
+    "name": "cara sewa-3",
+    "source": "https://www.figma.com/design/aHGtGh4ajUerZbtffpERKm/Vendoria?node-id=101-2289"
+  },
+  {
+    "id": "103:3688",
+    "name": "keranjang & checkout",
+    "source": "https://www.figma.com/design/aHGtGh4ajUerZbtffpERKm/Vendoria?node-id=103-3688"
+  },
+  {
+    "id": "103:4479",
+    "name": "pembayaran bank",
+    "source": "https://www.figma.com/design/aHGtGh4ajUerZbtffpERKm/Vendoria?node-id=103-4479"
+  },
+  {
+    "id": "103:5173",
+    "name": "pembayaran qr",
+    "source": "https://www.figma.com/design/aHGtGh4ajUerZbtffpERKm/Vendoria?node-id=103-5173"
+  },
+  {
+    "id": "103:5827",
+    "name": "pembayaran e wallet",
+    "source": "https://www.figma.com/design/aHGtGh4ajUerZbtffpERKm/Vendoria?node-id=103-5827"
+  },
+  {
+    "id": "103:6500",
+    "name": "konfirmasi bayar",
+    "source": "https://www.figma.com/design/aHGtGh4ajUerZbtffpERKm/Vendoria?node-id=103-6500"
+  },
+  {
+    "id": "103:7063",
+    "name": "booking terkonfirmasi",
+    "source": "https://www.figma.com/design/aHGtGh4ajUerZbtffpERKm/Vendoria?node-id=103-7063"
+  },
+  {
+    "id": "103:7616",
+    "name": "pesanan saya",
+    "source": "https://www.figma.com/design/aHGtGh4ajUerZbtffpERKm/Vendoria?node-id=103-7616"
+  },
+  {
+    "id": "103:8519",
+    "name": "detail pesanan-1",
+    "source": "https://www.figma.com/design/aHGtGh4ajUerZbtffpERKm/Vendoria?node-id=103-8519"
+  },
+  {
+    "id": "103:9459",
+    "name": "detail pesanan-2",
+    "source": "https://www.figma.com/design/aHGtGh4ajUerZbtffpERKm/Vendoria?node-id=103-9459"
+  },
+  {
+    "id": "106:10412",
+    "name": "detail pesanan-3",
+    "source": "https://www.figma.com/design/aHGtGh4ajUerZbtffpERKm/Vendoria?node-id=106-10412"
+  },
+  {
+    "id": "106:11374",
+    "name": "klaim-1",
+    "source": "https://www.figma.com/design/aHGtGh4ajUerZbtffpERKm/Vendoria?node-id=106-11374"
+  },
+  {
+    "id": "106:11949",
+    "name": "klaim-2",
+    "source": "https://www.figma.com/design/aHGtGh4ajUerZbtffpERKm/Vendoria?node-id=106-11949"
+  },
+  {
+    "id": "106:12530",
+    "name": "klaim-3",
+    "source": "https://www.figma.com/design/aHGtGh4ajUerZbtffpERKm/Vendoria?node-id=106-12530"
+  },
+  {
+    "id": "109:13149",
+    "name": "wishlist kosong",
+    "source": "https://www.figma.com/design/aHGtGh4ajUerZbtffpERKm/Vendoria?node-id=109-13149"
+  },
+  {
+    "id": "109:13575",
+    "name": "wishlist",
+    "source": "https://www.figma.com/design/aHGtGh4ajUerZbtffpERKm/Vendoria?node-id=109-13575"
+  },
+  {
+    "id": "109:14128",
+    "name": "pengaturan akun-1",
+    "source": "https://www.figma.com/design/aHGtGh4ajUerZbtffpERKm/Vendoria?node-id=109-14128"
+  },
+  {
+    "id": "109:14600",
+    "name": "pengaturan akun-2",
+    "source": "https://www.figma.com/design/aHGtGh4ajUerZbtffpERKm/Vendoria?node-id=109-14600"
+  },
+  {
+    "id": "109:15059",
+    "name": "pengaturan akun-3",
+    "source": "https://www.figma.com/design/aHGtGh4ajUerZbtffpERKm/Vendoria?node-id=109-15059"
+  },
+  {
+    "id": "109:15463",
+    "name": "pengaturan akun-4",
+    "source": "https://www.figma.com/design/aHGtGh4ajUerZbtffpERKm/Vendoria?node-id=109-15463"
+  },
+  {
+    "id": "109:15959",
+    "name": "pengaturan akun-5",
+    "source": "https://www.figma.com/design/aHGtGh4ajUerZbtffpERKm/Vendoria?node-id=109-15959"
+  },
+  {
+    "id": "109:16389",
+    "name": "tambah alamat",
+    "source": "https://www.figma.com/design/aHGtGh4ajUerZbtffpERKm/Vendoria?node-id=109-16389"
+  },
+  {
+    "id": "109:16970",
+    "name": "tambah rekeningrefund",
+    "source": "https://www.figma.com/design/aHGtGh4ajUerZbtffpERKm/Vendoria?node-id=109-16970"
+  },
+  {
+    "id": "109:18000",
+    "name": "detail notifikasi",
+    "source": "https://www.figma.com/design/aHGtGh4ajUerZbtffpERKm/Vendoria?node-id=109-18000"
+  },
+  {
+    "id": "109:19307",
+    "name": "kyc-1",
+    "source": "https://www.figma.com/design/aHGtGh4ajUerZbtffpERKm/Vendoria?node-id=109-19307"
+  },
+  {
+    "id": "109:20019",
+    "name": "kyc-2",
+    "source": "https://www.figma.com/design/aHGtGh4ajUerZbtffpERKm/Vendoria?node-id=109-20019"
+  },
+  {
+    "id": "109:20373",
+    "name": "kyc-3",
+    "source": "https://www.figma.com/design/aHGtGh4ajUerZbtffpERKm/Vendoria?node-id=109-20373"
+  },
+  {
+    "id": "109:20729",
+    "name": "kyc-4",
+    "source": "https://www.figma.com/design/aHGtGh4ajUerZbtffpERKm/Vendoria?node-id=109-20729"
+  },
+  {
+    "id": "109:21462",
+    "name": "notifikasi",
+    "source": "https://www.figma.com/design/aHGtGh4ajUerZbtffpERKm/Vendoria?node-id=109-21462"
+  }
+]

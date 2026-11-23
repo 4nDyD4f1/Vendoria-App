@@ -1,0 +1,3975 @@
+{
+  "tag": "div",
+  "style": 0,
+  "id": "89:8305",
+  "name": "edit katalog",
+  "children": [
+    {
+      "tag": "div",
+      "style": 611,
+      "id": "89:8307",
+      "name": "Body",
+      "children": [
+        {
+          "tag": "div",
+          "style": 2,
+          "id": "89:8308",
+          "name": "Header",
+          "children": [
+            {
+              "tag": "div",
+              "style": 573,
+              "id": "89:8309",
+              "name": "Container",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 4,
+                  "id": "89:8310",
+                  "name": "Button - Ke halaman utama",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 5,
+                      "id": "89:8312",
+                      "name": "Logo",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 6,
+                          "id": "89:8313",
+                          "name": "Image - Vendoria",
+                          "children": [
+                            {
+                              "tag": "img",
+                              "style": 7,
+                              "props": {
+                                "alt": "",
+                                "src": "/assets/figma/795d216e0381613c07ef.svg"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 8,
+                          "id": "89:8317",
+                          "name": "Bold Text",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 9,
+                              "id": "89:8318",
+                              "children": [
+                                "Vendoria"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "style": 10,
+                  "id": "89:8320",
+                  "name": "Navigation - Navigasi utama",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 13,
+                      "id": "89:8321",
+                      "name": "Button",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 14,
+                          "id": "89:8322",
+                          "children": [
+                            "Dashboard"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 13,
+                      "id": "89:8324",
+                      "name": "Button",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 14,
+                          "id": "89:8325",
+                          "children": [
+                            "Verifikasi KYC"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 13,
+                      "id": "89:8326",
+                      "name": "Button",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 14,
+                          "id": "89:8327",
+                          "children": [
+                            "Kelola Klaim"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 11,
+                      "id": "89:8328",
+                      "name": "Button",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 12,
+                          "id": "89:8329",
+                          "children": [
+                            "Kelola Katalog"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 13,
+                      "id": "89:8330",
+                      "name": "Button",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 14,
+                          "id": "89:8331",
+                          "children": [
+                            "Laporan"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 13,
+                      "id": "89:8332",
+                      "name": "Button",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 14,
+                          "id": "89:8333",
+                          "children": [
+                            "Pengguna"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "style": 15,
+                  "id": "89:8334",
+                  "name": "Container",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 16,
+                      "id": "89:8335",
+                      "name": "Button - Cari",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 17,
+                          "id": "89:8336",
+                          "name": "Icon",
+                          "children": [
+                            {
+                              "tag": "img",
+                              "style": 7,
+                              "props": {
+                                "alt": "",
+                                "src": "/assets/figma/c1d7196b97050c3bbaa5.svg"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 16,
+                      "id": "89:8340",
+                      "name": "Button - Notifikasi, 3 belum dibaca",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 17,
+                          "id": "89:8341",
+                          "name": "Icon",
+                          "children": [
+                            {
+                              "tag": "img",
+                              "style": 7,
+                              "props": {
+                                "alt": "",
+                                "src": "/assets/figma/5e58b1dfe325cc4bf6b1.svg"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 18,
+                          "id": "89:8344",
+                          "name": "Italic Text",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 19,
+                              "id": "89:8345",
+                              "children": [
+                                "3"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 20,
+                      "id": "89:8347",
+                      "name": "Text"
+                    },
+                    {
+                      "tag": "div",
+                      "style": 21,
+                      "id": "89:8349",
+                      "name": "Button",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 22,
+                          "id": "89:8350",
+                          "name": "Text",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 23,
+                              "id": "89:8351",
+                              "name": "Icon",
+                              "children": [
+                                {
+                                  "tag": "img",
+                                  "style": 7,
+                                  "props": {
+                                    "alt": "",
+                                    "src": "/assets/figma/1c1da491232764684201.svg"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 8,
+                          "id": "89:8354",
+                          "name": "Bold Text",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 24,
+                              "id": "89:8355",
+                              "children": [
+                                "Admin"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "div",
+          "style": 574,
+          "id": "89:8357",
+          "name": "Page",
+          "children": [
+            {
+              "tag": "div",
+              "style": 260,
+              "id": "89:8359",
+              "name": "Breadcrumb",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 261,
+                  "id": "89:8360",
+                  "name": "Text",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 228,
+                      "id": "89:8361",
+                      "name": "Link",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 70,
+                          "id": "89:8362",
+                          "children": [
+                            "Dashboard"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 112,
+                      "id": "89:8364",
+                      "name": "Icon",
+                      "children": [
+                        {
+                          "tag": "img",
+                          "style": 7,
+                          "props": {
+                            "alt": "",
+                            "src": "/assets/figma/0a496288f6a1ee034b30.svg"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "style": 261,
+                  "id": "89:8366",
+                  "name": "Text",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 228,
+                      "id": "89:8367",
+                      "name": "Link",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 70,
+                          "id": "89:8368",
+                          "children": [
+                            "Kelola Katalog"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 112,
+                      "id": "89:8369",
+                      "name": "Icon",
+                      "children": [
+                        {
+                          "tag": "img",
+                          "style": 7,
+                          "props": {
+                            "alt": "",
+                            "src": "/assets/figma/0a496288f6a1ee034b30.svg"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "style": 228,
+                  "id": "89:8371",
+                  "name": "Text",
+                  "children": [
+                    {
+                      "tag": "p",
+                      "style": 177,
+                      "id": "89:8373",
+                      "children": [
+                        "Edit Alat"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "style": 1541,
+              "id": "89:8375",
+              "name": "Container",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 16,
+                  "id": "89:8376",
+                  "name": "Button - Kembali",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 17,
+                      "id": "89:8377",
+                      "name": "Icon",
+                      "children": [
+                        {
+                          "tag": "img",
+                          "style": 7,
+                          "props": {
+                            "alt": "",
+                            "src": "/assets/figma/55bee23fe6beb94ba385.svg"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "style": 1542,
+                  "id": "89:8379",
+                  "name": "Container",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 47,
+                      "id": "89:8380",
+                      "name": "Heading 1",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 268,
+                          "id": "89:8381",
+                          "children": [
+                            "Edit Alat"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 1543,
+                      "id": "89:8383",
+                      "name": "Paragraph",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 378,
+                          "id": "89:8384",
+                          "children": [
+                            "Set Line Array 5000W + Digital Mixer 32-Channel"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "style": 1544,
+              "id": "89:8774",
+              "name": "Container:margin",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 1545,
+                  "id": "89:8386",
+                  "name": "Container",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 1546,
+                      "id": "89:8387",
+                      "name": "Container",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 1547,
+                          "id": "89:8388",
+                          "name": "Section",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 151,
+                              "id": "89:8389",
+                              "name": "Heading 2",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 89,
+                                  "id": "89:8390",
+                                  "children": [
+                                    "Info Dasar"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 843,
+                              "id": "89:8428",
+                              "name": "Container:margin",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 1548,
+                                  "id": "89:8392",
+                                  "name": "Container",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 47,
+                                      "id": "89:8393",
+                                      "name": "Text",
+                                      "children": [
+                                        {
+                                          "tag": "p",
+                                          "style": 622,
+                                          "id": "89:8394",
+                                          "children": [
+                                            "Vendor Pemilik *"
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 770,
+                                      "id": "89:8401",
+                                      "name": "Container:margin",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 848,
+                                          "id": "89:8395",
+                                          "name": "Container",
+                                          "children": [
+                                            {
+                                              "tag": "div",
+                                              "style": 1549,
+                                              "id": "89:8396",
+                                              "name": "Text Input - Vendor Pemilik",
+                                              "children": [
+                                                {
+                                                  "tag": "p",
+                                                  "style": 841,
+                                                  "id": "89:8397",
+                                                  "children": [
+                                                    "Karya Audio Pro Bogor · Bogor"
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "tag": "div",
+                                              "style": 1550,
+                                              "id": "89:8398",
+                                              "name": "Icon",
+                                              "children": [
+                                                {
+                                                  "tag": "img",
+                                                  "style": 7,
+                                                  "props": {
+                                                    "alt": "",
+                                                    "src": "/assets/figma/65ce1b1b989bf3b25b74.svg"
+                                                  }
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 768,
+                              "id": "89:8429",
+                              "name": "Fld:margin",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 1548,
+                                  "id": "89:8402",
+                                  "name": "Fld",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 47,
+                                      "id": "89:8403",
+                                      "name": "Text",
+                                      "children": [
+                                        {
+                                          "tag": "p",
+                                          "style": 622,
+                                          "id": "89:8404",
+                                          "children": [
+                                            "Nama Alat *"
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 770,
+                                      "id": "89:8408",
+                                      "name": "Container:margin",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 771,
+                                          "id": "89:8405",
+                                          "name": "Container",
+                                          "children": [
+                                            {
+                                              "tag": "div",
+                                              "style": 1551,
+                                              "id": "89:8406",
+                                              "name": "Text Input",
+                                              "children": [
+                                                {
+                                                  "tag": "p",
+                                                  "style": 841,
+                                                  "id": "89:8407",
+                                                  "children": [
+                                                    "Set Line Array 5000W + Digital Mixer 32-Channel"
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 1552,
+                              "id": "89:8430",
+                              "name": "Fld:margin",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 1548,
+                                  "id": "89:8409",
+                                  "name": "Fld",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 47,
+                                      "id": "89:8410",
+                                      "name": "Text",
+                                      "children": [
+                                        {
+                                          "tag": "p",
+                                          "style": 622,
+                                          "id": "89:8411",
+                                          "children": [
+                                            "Kategori *"
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 1553,
+                                      "id": "89:8420",
+                                      "name": "Container:margin",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 1554,
+                                          "id": "89:8412",
+                                          "name": "Container",
+                                          "children": [
+                                            {
+                                              "tag": "div",
+                                              "style": 1555,
+                                              "id": "89:8413",
+                                              "name": "AdminCatalogForm",
+                                              "children": [
+                                                {
+                                                  "tag": "div",
+                                                  "style": 1556,
+                                                  "id": "89:8414",
+                                                  "name": "Container",
+                                                  "children": [
+                                                    {
+                                                      "tag": "p",
+                                                      "style": 1557,
+                                                      "id": "89:8415",
+                                                      "children": [
+                                                        "Sound system"
+                                                      ]
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "tag": "div",
+                                                  "style": 1558,
+                                                  "id": "89:8417",
+                                                  "name": "Container",
+                                                  "children": [
+                                                    {
+                                                      "tag": "div",
+                                                      "style": 54,
+                                                      "id": "89:8418",
+                                                      "name": "Icon",
+                                                      "children": [
+                                                        {
+                                                          "tag": "img",
+                                                          "style": 7,
+                                                          "props": {
+                                                            "alt": "",
+                                                            "src": "/assets/figma/35b22210e9192bf1c276.svg"
+                                                          }
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 893,
+                              "id": "89:8431",
+                              "name": "Fld:margin",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 1559,
+                                  "id": "89:8421",
+                                  "name": "Fld",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 47,
+                                      "id": "89:8422",
+                                      "name": "Text",
+                                      "children": [
+                                        {
+                                          "tag": "p",
+                                          "style": 622,
+                                          "id": "89:8423",
+                                          "children": [
+                                            "Deskripsi"
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 770,
+                                      "id": "89:8427",
+                                      "name": "Container:margin",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 1068,
+                                          "id": "89:8424",
+                                          "name": "Container",
+                                          "children": [
+                                            {
+                                              "tag": "div",
+                                              "style": 1560,
+                                              "id": "89:8425",
+                                              "name": "Text Area",
+                                              "children": [
+                                                {
+                                                  "tag": "p",
+                                                  "style": 841,
+                                                  "id": "89:8426",
+                                                  "children": [
+                                                    "Paket audio profesional yang sudah diuji fungsi sebelum keluar gudang. Cocok untuk seminar, pernikahan, hingga konser skala menengah dengan karakter suara jernih dan headroom yang aman."
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1561,
+                          "id": "89:8432",
+                          "name": "Section",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 151,
+                              "id": "89:8433",
+                              "name": "Heading 2",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 89,
+                                  "id": "89:8434",
+                                  "children": [
+                                    "Harga & Stok"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 1562,
+                              "id": "89:8435",
+                              "name": "Container",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 838,
+                                  "id": "89:8478",
+                                  "name": "Fld:margin",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 1563,
+                                      "id": "89:8436",
+                                      "name": "Fld",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 47,
+                                          "id": "89:8437",
+                                          "name": "Text",
+                                          "children": [
+                                            {
+                                              "tag": "p",
+                                              "style": 622,
+                                              "id": "89:8438",
+                                              "children": [
+                                                "Harga sewa per hari (Rp) *"
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "tag": "div",
+                                          "style": 770,
+                                          "id": "89:8442",
+                                          "name": "Container:margin",
+                                          "children": [
+                                            {
+                                              "tag": "div",
+                                              "style": 771,
+                                              "id": "89:8439",
+                                              "name": "Container",
+                                              "children": [
+                                                {
+                                                  "tag": "div",
+                                                  "style": 1564,
+                                                  "id": "89:8440",
+                                                  "name": "Number Input",
+                                                  "children": [
+                                                    {
+                                                      "tag": "p",
+                                                      "style": 841,
+                                                      "id": "89:8441",
+                                                      "children": [
+                                                        "1850000"
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 842,
+                                  "id": "89:8479",
+                                  "name": "Fld:margin",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 1563,
+                                      "id": "89:8443",
+                                      "name": "Fld",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 47,
+                                          "id": "89:8444",
+                                          "name": "Text",
+                                          "children": [
+                                            {
+                                              "tag": "p",
+                                              "style": 622,
+                                              "id": "89:8445",
+                                              "children": [
+                                                "Deposit jaminan (Rp) *"
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "tag": "div",
+                                          "style": 770,
+                                          "id": "89:8449",
+                                          "name": "Container:margin",
+                                          "children": [
+                                            {
+                                              "tag": "div",
+                                              "style": 771,
+                                              "id": "89:8446",
+                                              "name": "Container",
+                                              "children": [
+                                                {
+                                                  "tag": "div",
+                                                  "style": 1564,
+                                                  "id": "89:8447",
+                                                  "name": "Number Input",
+                                                  "children": [
+                                                    {
+                                                      "tag": "p",
+                                                      "style": 841,
+                                                      "id": "89:8448",
+                                                      "children": [
+                                                        "1000000"
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 843,
+                                  "id": "89:8480",
+                                  "name": "Fld:margin",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 1563,
+                                      "id": "89:8450",
+                                      "name": "Fld",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 47,
+                                          "id": "89:8451",
+                                          "name": "Text",
+                                          "children": [
+                                            {
+                                              "tag": "p",
+                                              "style": 622,
+                                              "id": "89:8452",
+                                              "children": [
+                                                "Stok total (unit) *"
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "tag": "div",
+                                          "style": 770,
+                                          "id": "89:8456",
+                                          "name": "Container:margin",
+                                          "children": [
+                                            {
+                                              "tag": "div",
+                                              "style": 771,
+                                              "id": "89:8453",
+                                              "name": "Container",
+                                              "children": [
+                                                {
+                                                  "tag": "div",
+                                                  "style": 1564,
+                                                  "id": "89:8454",
+                                                  "name": "Number Input",
+                                                  "children": [
+                                                    {
+                                                      "tag": "p",
+                                                      "style": 841,
+                                                      "id": "89:8455",
+                                                      "children": [
+                                                        "3"
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 1565,
+                                  "id": "89:8481",
+                                  "name": "Fld:margin",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 1563,
+                                      "id": "89:8457",
+                                      "name": "Fld",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 47,
+                                          "id": "89:8458",
+                                          "name": "Text",
+                                          "children": [
+                                            {
+                                              "tag": "p",
+                                              "style": 622,
+                                              "id": "89:8459",
+                                              "children": [
+                                                "Maks. unit per transaksi"
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "tag": "div",
+                                          "style": 770,
+                                          "id": "89:8463",
+                                          "name": "Container:margin",
+                                          "children": [
+                                            {
+                                              "tag": "div",
+                                              "style": 771,
+                                              "id": "89:8460",
+                                              "name": "Container",
+                                              "children": [
+                                                {
+                                                  "tag": "div",
+                                                  "style": 1564,
+                                                  "id": "89:8461",
+                                                  "name": "Number Input",
+                                                  "children": [
+                                                    {
+                                                      "tag": "p",
+                                                      "style": 841,
+                                                      "id": "89:8462",
+                                                      "children": [
+                                                        "3"
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 768,
+                                  "id": "89:8482",
+                                  "name": "Fld:margin",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 1563,
+                                      "id": "89:8464",
+                                      "name": "Fld",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 47,
+                                          "id": "89:8465",
+                                          "name": "Text",
+                                          "children": [
+                                            {
+                                              "tag": "p",
+                                              "style": 622,
+                                              "id": "89:8466",
+                                              "children": [
+                                                "Minimal hari sewa"
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "tag": "div",
+                                          "style": 770,
+                                          "id": "89:8470",
+                                          "name": "Container:margin",
+                                          "children": [
+                                            {
+                                              "tag": "div",
+                                              "style": 771,
+                                              "id": "89:8467",
+                                              "name": "Container",
+                                              "children": [
+                                                {
+                                                  "tag": "div",
+                                                  "style": 1564,
+                                                  "id": "89:8468",
+                                                  "name": "Number Input",
+                                                  "children": [
+                                                    {
+                                                      "tag": "p",
+                                                      "style": 841,
+                                                      "id": "89:8469",
+                                                      "children": [
+                                                        "1"
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 1566,
+                                  "id": "89:8483",
+                                  "name": "Fld:margin",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 1563,
+                                      "id": "89:8471",
+                                      "name": "Fld",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 47,
+                                          "id": "89:8472",
+                                          "name": "Text",
+                                          "children": [
+                                            {
+                                              "tag": "p",
+                                              "style": 622,
+                                              "id": "89:8473",
+                                              "children": [
+                                                "Maksimal hari sewa"
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "tag": "div",
+                                          "style": 770,
+                                          "id": "89:8477",
+                                          "name": "Container:margin",
+                                          "children": [
+                                            {
+                                              "tag": "div",
+                                              "style": 771,
+                                              "id": "89:8474",
+                                              "name": "Container",
+                                              "children": [
+                                                {
+                                                  "tag": "div",
+                                                  "style": 1564,
+                                                  "id": "89:8475",
+                                                  "name": "Number Input",
+                                                  "children": [
+                                                    {
+                                                      "tag": "p",
+                                                      "style": 841,
+                                                      "id": "89:8476",
+                                                      "children": [
+                                                        "14"
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1567,
+                          "id": "89:8484",
+                          "name": "Section",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 151,
+                              "id": "89:8485",
+                              "name": "Heading 2",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 89,
+                                  "id": "89:8486",
+                                  "children": [
+                                    "Spesifikasi"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 1568,
+                              "id": "89:8487",
+                              "name": "Container",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 1569,
+                                  "id": "89:8505",
+                                  "name": "Fld:margin",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 1570,
+                                      "id": "89:8488",
+                                      "name": "Fld",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 47,
+                                          "id": "89:8489",
+                                          "name": "Text",
+                                          "children": [
+                                            {
+                                              "tag": "p",
+                                              "style": 622,
+                                              "id": "89:8490",
+                                              "children": [
+                                                "Nama spesifikasi"
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "tag": "div",
+                                          "style": 770,
+                                          "id": "89:8494",
+                                          "name": "Container:margin",
+                                          "children": [
+                                            {
+                                              "tag": "div",
+                                              "style": 771,
+                                              "id": "89:8491",
+                                              "name": "Container",
+                                              "children": [
+                                                {
+                                                  "tag": "div",
+                                                  "style": 1571,
+                                                  "id": "89:8492",
+                                                  "name": "Text Input",
+                                                  "children": [
+                                                    {
+                                                      "tag": "p",
+                                                      "style": 841,
+                                                      "id": "89:8493",
+                                                      "children": [
+                                                        "Komponen Speaker & Daya"
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 1572,
+                                  "id": "89:8506",
+                                  "name": "Fld:margin",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 1570,
+                                      "id": "89:8495",
+                                      "name": "Fld",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 47,
+                                          "id": "89:8496",
+                                          "name": "Text",
+                                          "children": [
+                                            {
+                                              "tag": "p",
+                                              "style": 622,
+                                              "id": "89:8497",
+                                              "children": [
+                                                "Nilai"
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "tag": "div",
+                                          "style": 770,
+                                          "id": "89:8501",
+                                          "name": "Container:margin",
+                                          "children": [
+                                            {
+                                              "tag": "div",
+                                              "style": 771,
+                                              "id": "89:8498",
+                                              "name": "Container",
+                                              "children": [
+                                                {
+                                                  "tag": "div",
+                                                  "style": 1571,
+                                                  "id": "89:8499",
+                                                  "name": "Text Input",
+                                                  "children": [
+                                                    {
+                                                      "tag": "p",
+                                                      "style": 841,
+                                                      "id": "89:8500",
+                                                      "children": [
+                                                        "Line array 2x12 inci dengan subwoofer 18 inci · Power amplifier class-D total 5.000 Watt · Stand dan rigging gantung bersertifikat · Kabel speakON dan XLR lengkap"
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 1573,
+                                  "id": "89:8507",
+                                  "name": "Button - Hapus baris:margin",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 16,
+                                      "id": "89:8502",
+                                      "name": "Button - Hapus baris",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 436,
+                                          "id": "89:8503",
+                                          "name": "Icon",
+                                          "children": [
+                                            {
+                                              "tag": "img",
+                                              "style": 7,
+                                              "props": {
+                                                "alt": "",
+                                                "src": "/assets/figma/225b3e3fb14affdc9bd8.svg"
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 1574,
+                              "id": "89:8508",
+                              "name": "Container",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 1569,
+                                  "id": "89:8524",
+                                  "name": "Fld:margin",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 1575,
+                                      "id": "89:8514",
+                                      "name": "Fld",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 771,
+                                          "id": "89:8511",
+                                          "name": "Container",
+                                          "children": [
+                                            {
+                                              "tag": "div",
+                                              "style": 1571,
+                                              "id": "89:8512",
+                                              "name": "Text Input",
+                                              "children": [
+                                                {
+                                                  "tag": "p",
+                                                  "style": 841,
+                                                  "id": "89:8513",
+                                                  "children": [
+                                                    "Mixing Console & Mikrofon"
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 1572,
+                                  "id": "89:8525",
+                                  "name": "Fld:margin",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 1575,
+                                      "id": "89:8520",
+                                      "name": "Fld",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 771,
+                                          "id": "89:8517",
+                                          "name": "Container",
+                                          "children": [
+                                            {
+                                              "tag": "div",
+                                              "style": 1571,
+                                              "id": "89:8518",
+                                              "name": "Text Input",
+                                              "children": [
+                                                {
+                                                  "tag": "p",
+                                                  "style": 841,
+                                                  "id": "89:8519",
+                                                  "children": [
+                                                    "Digital mixer 32 channel dengan efek bawaan · 2 mikrofon wireless dan 2 kabel · DI box dan multicore stage box · Monitor stage dan intercom teknisi"
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 1573,
+                                  "id": "89:8526",
+                                  "name": "Button - Hapus baris:margin",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 16,
+                                      "id": "89:8521",
+                                      "name": "Button - Hapus baris",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 436,
+                                          "id": "89:8522",
+                                          "name": "Icon",
+                                          "children": [
+                                            {
+                                              "tag": "img",
+                                              "style": 7,
+                                              "props": {
+                                                "alt": "",
+                                                "src": "/assets/figma/225b3e3fb14affdc9bd8.svg"
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 1367,
+                              "id": "89:8540",
+                              "name": "Container:margin",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 1576,
+                                  "id": "89:8527",
+                                  "name": "Container",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 1577,
+                                      "id": "89:8528",
+                                      "name": "Button",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 30,
+                                          "id": "89:8529",
+                                          "name": "Icon",
+                                          "children": [
+                                            {
+                                              "tag": "img",
+                                              "style": 7,
+                                              "props": {
+                                                "alt": "",
+                                                "src": "/assets/figma/b7dd14673398bb2c3777.svg"
+                                              }
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "tag": "p",
+                                          "style": 40,
+                                          "id": "89:8531",
+                                          "children": [
+                                            "Tambah Spesifikasi"
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 893,
+                              "id": "89:8541",
+                              "name": "Fld:margin",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 1548,
+                                  "id": "89:8533",
+                                  "name": "Fld",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 47,
+                                      "id": "89:8534",
+                                      "name": "Text",
+                                      "children": [
+                                        {
+                                          "tag": "p",
+                                          "style": 622,
+                                          "id": "89:8535",
+                                          "children": [
+                                            "Kebutuhan daya listrik"
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 770,
+                                      "id": "89:8539",
+                                      "name": "Container:margin",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 771,
+                                          "id": "89:8536",
+                                          "name": "Container",
+                                          "children": [
+                                            {
+                                              "tag": "div",
+                                              "style": 1551,
+                                              "id": "89:8537",
+                                              "name": "Text Input",
+                                              "children": [
+                                                {
+                                                  "tag": "p",
+                                                  "style": 841,
+                                                  "id": "89:8538",
+                                                  "children": [
+                                                    "Minimal 6.000 Watt"
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1578,
+                          "id": "89:8542",
+                          "name": "Section",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 151,
+                              "id": "89:8543",
+                              "name": "Heading 2",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 89,
+                                  "id": "89:8544",
+                                  "children": [
+                                    "Kondisi"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 1579,
+                              "id": "89:8545",
+                              "name": "Container",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 838,
+                                  "id": "89:8563",
+                                  "name": "Fld:margin",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 1563,
+                                      "id": "89:8546",
+                                      "name": "Fld",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 47,
+                                          "id": "89:8547",
+                                          "name": "Text",
+                                          "children": [
+                                            {
+                                              "tag": "p",
+                                              "style": 622,
+                                              "id": "89:8548",
+                                              "children": [
+                                                "Grade"
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "tag": "div",
+                                          "style": 1553,
+                                          "id": "89:8556",
+                                          "name": "Container:margin",
+                                          "children": [
+                                            {
+                                              "tag": "div",
+                                              "style": 1554,
+                                              "id": "89:8549",
+                                              "name": "Container",
+                                              "children": [
+                                                {
+                                                  "tag": "div",
+                                                  "style": 1580,
+                                                  "id": "89:8550",
+                                                  "name": "AdminCatalogForm",
+                                                  "children": [
+                                                    {
+                                                      "tag": "div",
+                                                      "style": 1581,
+                                                      "id": "89:8551",
+                                                      "name": "Container",
+                                                      "children": [
+                                                        {
+                                                          "tag": "p",
+                                                          "style": 1557,
+                                                          "id": "89:8552",
+                                                          "children": [
+                                                            "Grade A - Seperti baru"
+                                                          ]
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "tag": "div",
+                                                      "style": 1582,
+                                                      "id": "89:8553",
+                                                      "name": "Container",
+                                                      "children": [
+                                                        {
+                                                          "tag": "div",
+                                                          "style": 54,
+                                                          "id": "89:8554",
+                                                          "name": "Icon",
+                                                          "children": [
+                                                            {
+                                                              "tag": "img",
+                                                              "style": 7,
+                                                              "props": {
+                                                                "alt": "",
+                                                                "src": "/assets/figma/35b22210e9192bf1c276.svg"
+                                                              }
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 842,
+                                  "id": "89:8564",
+                                  "name": "Fld:margin",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 1563,
+                                      "id": "89:8557",
+                                      "name": "Fld",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 47,
+                                          "id": "89:8558",
+                                          "name": "Text",
+                                          "children": [
+                                            {
+                                              "tag": "p",
+                                              "style": 622,
+                                              "id": "89:8559",
+                                              "children": [
+                                                "Tanggal QC terakhir"
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "tag": "div",
+                                          "style": 770,
+                                          "id": "89:8562",
+                                          "name": "Container:margin",
+                                          "children": [
+                                            {
+                                              "tag": "div",
+                                              "style": 771,
+                                              "id": "89:8560",
+                                              "name": "Container",
+                                              "children": [
+                                                {
+                                                  "tag": "div",
+                                                  "style": 1583,
+                                                  "id": "89:8561",
+                                                  "name": "Date Picker"
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 768,
+                              "id": "89:8572",
+                              "name": "Fld:margin",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 1559,
+                                  "id": "89:8565",
+                                  "name": "Fld",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 47,
+                                      "id": "89:8566",
+                                      "name": "Text",
+                                      "children": [
+                                        {
+                                          "tag": "p",
+                                          "style": 622,
+                                          "id": "89:8567",
+                                          "children": [
+                                            "Catatan inspeksi"
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 770,
+                                      "id": "89:8571",
+                                      "name": "Container:margin",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 1068,
+                                          "id": "89:8568",
+                                          "name": "Container",
+                                          "children": [
+                                            {
+                                              "tag": "div",
+                                              "style": 1560,
+                                              "id": "89:8569",
+                                              "name": "Text Area",
+                                              "children": [
+                                                {
+                                                  "tag": "p",
+                                                  "style": 841,
+                                                  "id": "89:8570",
+                                                  "children": [
+                                                    "Seperti baru, tanpa cacat fungsi maupun kosmetik."
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1584,
+                          "id": "89:8573",
+                          "name": "Section",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 151,
+                              "id": "89:8574",
+                              "name": "Heading 2",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 89,
+                                  "id": "89:8575",
+                                  "children": [
+                                    "Foto"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 388,
+                              "id": "89:8576",
+                              "name": "Paragraph",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 1585,
+                                  "id": "89:8577",
+                                  "children": [
+                                    "Foto pertama menjadi foto utama (maks. 4). Pilih dari galeri kategori atau unggah sendiri."
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 1586,
+                              "id": "89:8616",
+                              "name": "Container:margin",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 1587,
+                                  "id": "89:8578",
+                                  "name": "Container",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 1588,
+                                      "id": "89:8579",
+                                      "name": "Text",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 1589,
+                                          "id": "89:8580",
+                                          "name": "Image (Foto 1)",
+                                          "children": [
+                                            {
+                                              "tag": "img",
+                                              "style": 103,
+                                              "props": {
+                                                "alt": "",
+                                                "src": "/assets/figma/ef7ab9de942bbd25adf4.png"
+                                              }
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "tag": "div",
+                                          "style": 1590,
+                                          "id": "89:8581",
+                                          "name": "Button - Hapus foto 1",
+                                          "children": [
+                                            {
+                                              "tag": "div",
+                                              "style": 519,
+                                              "id": "89:8582",
+                                              "name": "Icon",
+                                              "children": [
+                                                {
+                                                  "tag": "img",
+                                                  "style": 7,
+                                                  "props": {
+                                                    "alt": "",
+                                                    "src": "/assets/figma/1ff56d36e5d72ee9a452.svg"
+                                                  }
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "tag": "div",
+                                          "style": 1591,
+                                          "id": "89:8584",
+                                          "name": "Small",
+                                          "children": [
+                                            {
+                                              "tag": "p",
+                                              "style": 1592,
+                                              "id": "89:8585",
+                                              "children": [
+                                                "Utama"
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 1593,
+                                      "id": "89:8587",
+                                      "name": "Text",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 1589,
+                                          "id": "89:8588",
+                                          "name": "Image (Foto 2)",
+                                          "children": [
+                                            {
+                                              "tag": "img",
+                                              "style": 103,
+                                              "props": {
+                                                "alt": "",
+                                                "src": "/assets/figma/94b47c178c9659129042.png"
+                                              }
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "tag": "div",
+                                          "style": 1590,
+                                          "id": "89:8589",
+                                          "name": "Button - Hapus foto 2",
+                                          "children": [
+                                            {
+                                              "tag": "div",
+                                              "style": 519,
+                                              "id": "89:8590",
+                                              "name": "Icon",
+                                              "children": [
+                                                {
+                                                  "tag": "img",
+                                                  "style": 7,
+                                                  "props": {
+                                                    "alt": "",
+                                                    "src": "/assets/figma/1ff56d36e5d72ee9a452.svg"
+                                                  }
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 1594,
+                                      "id": "89:8592",
+                                      "name": "Text",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 1589,
+                                          "id": "89:8593",
+                                          "name": "Image (Foto 3)",
+                                          "children": [
+                                            {
+                                              "tag": "img",
+                                              "style": 103,
+                                              "props": {
+                                                "alt": "",
+                                                "src": "/assets/figma/c7db477ef2aa220e1b87.png"
+                                              }
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "tag": "div",
+                                          "style": 1590,
+                                          "id": "89:8594",
+                                          "name": "Button - Hapus foto 3",
+                                          "children": [
+                                            {
+                                              "tag": "div",
+                                              "style": 519,
+                                              "id": "89:8595",
+                                              "name": "Icon",
+                                              "children": [
+                                                {
+                                                  "tag": "img",
+                                                  "style": 7,
+                                                  "props": {
+                                                    "alt": "",
+                                                    "src": "/assets/figma/1ff56d36e5d72ee9a452.svg"
+                                                  }
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 1595,
+                                      "id": "89:8597",
+                                      "name": "Text",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 1589,
+                                          "id": "89:8598",
+                                          "name": "Image (Foto 4)",
+                                          "children": [
+                                            {
+                                              "tag": "img",
+                                              "style": 103,
+                                              "props": {
+                                                "alt": "",
+                                                "src": "/assets/figma/1e22d8bce7566cabde4a.png"
+                                              }
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "tag": "div",
+                                          "style": 1590,
+                                          "id": "89:8599",
+                                          "name": "Button - Hapus foto 4",
+                                          "children": [
+                                            {
+                                              "tag": "div",
+                                              "style": 519,
+                                              "id": "89:8600",
+                                              "name": "Icon",
+                                              "children": [
+                                                {
+                                                  "tag": "img",
+                                                  "style": 7,
+                                                  "props": {
+                                                    "alt": "",
+                                                    "src": "/assets/figma/1ff56d36e5d72ee9a452.svg"
+                                                  }
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 420,
+                              "id": "89:8602",
+                              "name": "Text",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 1596,
+                                  "id": "89:8603",
+                                  "children": [
+                                    "Galeri kategori"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 1597,
+                              "id": "89:8617",
+                              "name": "Container:margin",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 1598,
+                                  "id": "89:8605",
+                                  "name": "Container",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 1599,
+                                      "id": "89:8606",
+                                      "name": "Button",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 1600,
+                                          "id": "89:8607",
+                                          "name": "Image",
+                                          "children": [
+                                            {
+                                              "tag": "img",
+                                              "style": 103,
+                                              "props": {
+                                                "alt": "",
+                                                "src": "/assets/figma/142459706edb112861e4.png"
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 1601,
+                                      "id": "89:8608",
+                                      "name": "Button",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 1600,
+                                          "id": "89:8609",
+                                          "name": "Image",
+                                          "children": [
+                                            {
+                                              "tag": "img",
+                                              "style": 103,
+                                              "props": {
+                                                "alt": "",
+                                                "src": "/assets/figma/6f61878311f3bba314e5.png"
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 1602,
+                                      "id": "89:8610",
+                                      "name": "Button",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 1600,
+                                          "id": "89:8611",
+                                          "name": "Image",
+                                          "children": [
+                                            {
+                                              "tag": "img",
+                                              "style": 103,
+                                              "props": {
+                                                "alt": "",
+                                                "src": "/assets/figma/5adfed9d2e59a9026980.png"
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 1603,
+                                      "id": "89:8612",
+                                      "name": "Button",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 1600,
+                                          "id": "89:8613",
+                                          "name": "Image",
+                                          "children": [
+                                            {
+                                              "tag": "img",
+                                              "style": 103,
+                                              "props": {
+                                                "alt": "",
+                                                "src": "/assets/figma/849dca60a0fb935f508d.png"
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 1604,
+                                      "id": "89:8614",
+                                      "name": "Button",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 1600,
+                                          "id": "89:8615",
+                                          "name": "Image",
+                                          "children": [
+                                            {
+                                              "tag": "img",
+                                              "style": 103,
+                                              "props": {
+                                                "alt": "",
+                                                "src": "/assets/figma/269cc03384e163fb67a0.png"
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1605,
+                          "id": "89:8618",
+                          "name": "Section",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 151,
+                              "id": "89:8619",
+                              "name": "Heading 2",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 89,
+                                  "id": "89:8620",
+                                  "children": [
+                                    "Logistik"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 1606,
+                              "id": "89:8621",
+                              "name": "Text",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 1596,
+                                  "id": "89:8622",
+                                  "children": [
+                                    "Area layanan *"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 457,
+                              "id": "89:8623",
+                              "name": "Container",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 1021,
+                                  "id": "89:8624",
+                                  "name": "Button",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 1022,
+                                      "id": "89:8625",
+                                      "children": [
+                                        "Bogor"
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 1023,
+                                  "id": "89:8627",
+                                  "name": "Button",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 1024,
+                                      "id": "89:8628",
+                                      "children": [
+                                        "Depok"
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 1023,
+                                  "id": "89:8629",
+                                  "name": "Button",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 1024,
+                                      "id": "89:8630",
+                                      "children": [
+                                        "Jakarta"
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 1023,
+                                  "id": "89:8631",
+                                  "name": "Button",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 1024,
+                                      "id": "89:8632",
+                                      "children": [
+                                        "Tangerang"
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 1023,
+                                  "id": "89:8633",
+                                  "name": "Button",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 1024,
+                                      "id": "89:8634",
+                                      "children": [
+                                        "Bekasi"
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 1021,
+                                  "id": "89:8635",
+                                  "name": "Button",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 1022,
+                                      "id": "89:8636",
+                                      "children": [
+                                        "Jabodetabek"
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 1209,
+                              "id": "89:8637",
+                              "name": "Label",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 1066,
+                                  "id": "89:8638",
+                                  "name": "Checkbox",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 1607,
+                                      "id": "89:8639",
+                                      "name": "Container",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 339,
+                                          "id": "89:8640",
+                                          "name": "Icon",
+                                          "children": [
+                                            {
+                                              "tag": "img",
+                                              "style": 7,
+                                              "props": {
+                                                "alt": "",
+                                                "src": "/assets/figma/7cab9db0624cdf083f75.svg"
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "p",
+                                  "style": 540,
+                                  "id": "89:8642",
+                                  "children": [
+                                    "Teknisi tersedia (pasang & bongkar)"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 893,
+                              "id": "89:8654",
+                              "name": "Fld:margin",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 1548,
+                                  "id": "89:8643",
+                                  "name": "Fld",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 47,
+                                      "id": "89:8644",
+                                      "name": "Text",
+                                      "children": [
+                                        {
+                                          "tag": "p",
+                                          "style": 622,
+                                          "id": "89:8645",
+                                          "children": [
+                                            "Transport"
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 1553,
+                                      "id": "89:8653",
+                                      "name": "Container:margin",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 1554,
+                                          "id": "89:8646",
+                                          "name": "Container",
+                                          "children": [
+                                            {
+                                              "tag": "div",
+                                              "style": 1555,
+                                              "id": "89:8647",
+                                              "name": "AdminCatalogForm",
+                                              "children": [
+                                                {
+                                                  "tag": "div",
+                                                  "style": 1556,
+                                                  "id": "89:8648",
+                                                  "name": "Container",
+                                                  "children": [
+                                                    {
+                                                      "tag": "p",
+                                                      "style": 1557,
+                                                      "id": "89:8649",
+                                                      "children": [
+                                                        "Gratis area Bogor Kota"
+                                                      ]
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "tag": "div",
+                                                  "style": 1558,
+                                                  "id": "89:8650",
+                                                  "name": "Container",
+                                                  "children": [
+                                                    {
+                                                      "tag": "div",
+                                                      "style": 54,
+                                                      "id": "89:8651",
+                                                      "name": "Icon",
+                                                      "children": [
+                                                        {
+                                                          "tag": "img",
+                                                          "style": 7,
+                                                          "props": {
+                                                            "alt": "",
+                                                            "src": "/assets/figma/35b22210e9192bf1c276.svg"
+                                                          }
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 1608,
+                      "id": "89:8655",
+                      "name": "Sidebar",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 151,
+                          "id": "89:8656",
+                          "name": "Heading 3",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 222,
+                              "id": "89:8657",
+                              "children": [
+                                "Pratinjau"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1609,
+                          "id": "89:8659",
+                          "name": "Container",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 294,
+                              "id": "89:8661",
+                              "name": "Container",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 295,
+                                  "id": "89:8662",
+                                  "name": "Image (Set Line Array 5000W + Digital Mixer 32-Channel)",
+                                  "children": [
+                                    {
+                                      "tag": "img",
+                                      "style": 103,
+                                      "props": {
+                                        "alt": "",
+                                        "src": "/assets/figma/d23545582fd9ed63c52c.png"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 104,
+                                  "id": "89:8663",
+                                  "name": "Text",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 105,
+                                      "id": "89:8664",
+                                      "children": [
+                                        "Tersedia"
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 1610,
+                                  "id": "89:8665",
+                                  "name": "Button - Simpan ke wishlist",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 23,
+                                      "id": "89:8666",
+                                      "name": "Icon",
+                                      "children": [
+                                        {
+                                          "tag": "img",
+                                          "style": 7,
+                                          "props": {
+                                            "alt": "",
+                                            "src": "/assets/figma/59b8e0acfdd4d22b6f49.svg"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 107,
+                              "id": "89:8668",
+                              "name": "Container",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 47,
+                                  "id": "89:8669",
+                                  "name": "Text",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 108,
+                                      "id": "89:8670",
+                                      "children": [
+                                        "SOUND SYSTEM"
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 1611,
+                                  "id": "89:8672",
+                                  "name": "Heading 3",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 1612,
+                                      "id": "89:8673",
+                                      "children": [
+                                        "Set Line Array 5000W + Digital Mixer 32-Channel"
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 1613,
+                                  "id": "89:8674",
+                                  "name": "Paragraph",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 112,
+                                      "id": "89:8675",
+                                      "name": "Icon",
+                                      "children": [
+                                        {
+                                          "tag": "img",
+                                          "style": 7,
+                                          "props": {
+                                            "alt": "",
+                                            "src": "/assets/figma/201e1ad4c345c1b2303d.svg"
+                                          }
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 1614,
+                                      "id": "89:8678",
+                                      "name": "Text",
+                                      "children": [
+                                        {
+                                          "tag": "p",
+                                          "style": 114,
+                                          "id": "89:8679",
+                                          "children": [
+                                            "Karya Audio Pro Bogor"
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 1613,
+                                  "id": "89:8681",
+                                  "name": "Paragraph",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 112,
+                                      "id": "89:8682",
+                                      "name": "Icon",
+                                      "children": [
+                                        {
+                                          "tag": "img",
+                                          "style": 7,
+                                          "props": {
+                                            "alt": "",
+                                            "src": "/assets/figma/8a28d13ca888aef0d650.svg"
+                                          }
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "p",
+                                      "style": 114,
+                                      "id": "89:8684",
+                                      "children": [
+                                        "0 (0)"
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 115,
+                                      "id": "89:8690",
+                                      "name": "Italic Text:margin",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 116,
+                                          "id": "89:8685",
+                                          "name": "Italic Text"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 112,
+                                      "id": "89:8686",
+                                      "name": "Icon",
+                                      "children": [
+                                        {
+                                          "tag": "img",
+                                          "style": 7,
+                                          "props": {
+                                            "alt": "",
+                                            "src": "/assets/figma/52c266a6d9e9da28fa94.svg"
+                                          }
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "p",
+                                      "style": 114,
+                                      "id": "89:8689",
+                                      "children": [
+                                        "Bogor"
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 1615,
+                                  "id": "89:8691",
+                                  "name": "Container",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 118,
+                                      "id": "89:8693",
+                                      "children": [
+                                        "Rp1.850.000"
+                                      ]
+                                    },
+                                    {
+                                      "tag": "p",
+                                      "style": 119,
+                                      "id": "89:8696",
+                                      "children": [
+                                        "/hari"
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 1616,
+                                      "id": "89:8697",
+                                      "name": "Button",
+                                      "children": [
+                                        {
+                                          "tag": "p",
+                                          "style": 121,
+                                          "id": "89:8698",
+                                          "children": [
+                                            "Lihat"
+                                          ]
+                                        },
+                                        {
+                                          "tag": "div",
+                                          "style": 122,
+                                          "id": "89:8700",
+                                          "name": "Icon",
+                                          "children": [
+                                            {
+                                              "tag": "img",
+                                              "style": 7,
+                                              "props": {
+                                                "alt": "",
+                                                "src": "/assets/figma/d726860310cb75f7b844.svg"
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 462,
+                          "id": "89:8706",
+                          "name": "Container",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 800,
+                              "id": "89:8707",
+                              "name": "Text",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 1596,
+                                  "id": "89:8708",
+                                  "children": [
+                                    "Kelengkapan data (8/8)"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 770,
+                              "id": "89:8742",
+                              "name": "List:margin",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 1617,
+                                  "id": "89:8709",
+                                  "name": "List",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 455,
+                                      "id": "89:8710",
+                                      "name": "List Item",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 112,
+                                          "id": "89:8711",
+                                          "name": "Icon",
+                                          "children": [
+                                            {
+                                              "tag": "img",
+                                              "style": 7,
+                                              "props": {
+                                                "alt": "",
+                                                "src": "/assets/figma/d3ccb084f2ecc01f6931.svg"
+                                              }
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "tag": "p",
+                                          "style": 1618,
+                                          "id": "89:8713",
+                                          "children": [
+                                            "Vendor pemilik dipilih"
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 456,
+                                      "id": "89:8714",
+                                      "name": "List Item",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 112,
+                                          "id": "89:8715",
+                                          "name": "Icon",
+                                          "children": [
+                                            {
+                                              "tag": "img",
+                                              "style": 7,
+                                              "props": {
+                                                "alt": "",
+                                                "src": "/assets/figma/d3ccb084f2ecc01f6931.svg"
+                                              }
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "tag": "p",
+                                          "style": 1618,
+                                          "id": "89:8717",
+                                          "children": [
+                                            "Nama alat (min. 5 karakter)"
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 457,
+                                      "id": "89:8718",
+                                      "name": "List Item",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 112,
+                                          "id": "89:8719",
+                                          "name": "Icon",
+                                          "children": [
+                                            {
+                                              "tag": "img",
+                                              "style": 7,
+                                              "props": {
+                                                "alt": "",
+                                                "src": "/assets/figma/d3ccb084f2ecc01f6931.svg"
+                                              }
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "tag": "p",
+                                          "style": 1618,
+                                          "id": "89:8721",
+                                          "children": [
+                                            "Kategori dipilih"
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 1209,
+                                      "id": "89:8722",
+                                      "name": "List Item",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 112,
+                                          "id": "89:8723",
+                                          "name": "Icon",
+                                          "children": [
+                                            {
+                                              "tag": "img",
+                                              "style": 7,
+                                              "props": {
+                                                "alt": "",
+                                                "src": "/assets/figma/d3ccb084f2ecc01f6931.svg"
+                                              }
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "tag": "p",
+                                          "style": 1618,
+                                          "id": "89:8725",
+                                          "children": [
+                                            "Harga & deposit terisi"
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 1211,
+                                      "id": "89:8726",
+                                      "name": "List Item",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 112,
+                                          "id": "89:8727",
+                                          "name": "Icon",
+                                          "children": [
+                                            {
+                                              "tag": "img",
+                                              "style": 7,
+                                              "props": {
+                                                "alt": "",
+                                                "src": "/assets/figma/d3ccb084f2ecc01f6931.svg"
+                                              }
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "tag": "p",
+                                          "style": 1618,
+                                          "id": "89:8729",
+                                          "children": [
+                                            "Stok dan batas sewa valid"
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 1213,
+                                      "id": "89:8730",
+                                      "name": "List Item",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 112,
+                                          "id": "89:8731",
+                                          "name": "Icon",
+                                          "children": [
+                                            {
+                                              "tag": "img",
+                                              "style": 7,
+                                              "props": {
+                                                "alt": "",
+                                                "src": "/assets/figma/d3ccb084f2ecc01f6931.svg"
+                                              }
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "tag": "p",
+                                          "style": 1618,
+                                          "id": "89:8733",
+                                          "children": [
+                                            "Minimal satu spesifikasi"
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 1619,
+                                      "id": "89:8734",
+                                      "name": "List Item",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 112,
+                                          "id": "89:8735",
+                                          "name": "Icon",
+                                          "children": [
+                                            {
+                                              "tag": "img",
+                                              "style": 7,
+                                              "props": {
+                                                "alt": "",
+                                                "src": "/assets/figma/d3ccb084f2ecc01f6931.svg"
+                                              }
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "tag": "p",
+                                          "style": 1618,
+                                          "id": "89:8737",
+                                          "children": [
+                                            "Minimal satu foto"
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 1620,
+                                      "id": "89:8738",
+                                      "name": "List Item",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 112,
+                                          "id": "89:8739",
+                                          "name": "Icon",
+                                          "children": [
+                                            {
+                                              "tag": "img",
+                                              "style": 7,
+                                              "props": {
+                                                "alt": "",
+                                                "src": "/assets/figma/d3ccb084f2ecc01f6931.svg"
+                                              }
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "tag": "p",
+                                          "style": 1618,
+                                          "id": "89:8741",
+                                          "children": [
+                                            "Area layanan dipilih"
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1552,
+                          "id": "89:8772",
+                          "name": "Fld:margin",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 1621,
+                              "id": "89:8743",
+                              "name": "Fld",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 47,
+                                  "id": "89:8744",
+                                  "name": "Text",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 622,
+                                      "id": "89:8745",
+                                      "children": [
+                                        "Status Awal"
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 1553,
+                                  "id": "89:8753",
+                                  "name": "Container:margin",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 1554,
+                                      "id": "89:8746",
+                                      "name": "Container",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 1622,
+                                          "id": "89:8747",
+                                          "name": "AdminCatalogForm",
+                                          "children": [
+                                            {
+                                              "tag": "div",
+                                              "style": 1623,
+                                              "id": "89:8748",
+                                              "name": "Container",
+                                              "children": [
+                                                {
+                                                  "tag": "p",
+                                                  "style": 1557,
+                                                  "id": "89:8749",
+                                                  "children": [
+                                                    "Aktif"
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "tag": "div",
+                                              "style": 1624,
+                                              "id": "89:8750",
+                                              "name": "Container",
+                                              "children": [
+                                                {
+                                                  "tag": "div",
+                                                  "style": 54,
+                                                  "id": "89:8751",
+                                                  "name": "Icon",
+                                                  "children": [
+                                                    {
+                                                      "tag": "img",
+                                                      "style": 7,
+                                                      "props": {
+                                                        "alt": "",
+                                                        "src": "/assets/figma/35b22210e9192bf1c276.svg"
+                                                      }
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1211,
+                          "id": "89:8754",
+                          "name": "Label",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 1066,
+                              "id": "89:8755",
+                              "name": "Checkbox",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 1607,
+                                  "id": "89:8756",
+                                  "name": "Container",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 339,
+                                      "id": "89:8757",
+                                      "name": "Icon",
+                                      "children": [
+                                        {
+                                          "tag": "img",
+                                          "style": 7,
+                                          "props": {
+                                            "alt": "",
+                                            "src": "/assets/figma/7cab9db0624cdf083f75.svg"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "p",
+                              "style": 540,
+                              "id": "89:8759",
+                              "children": [
+                                "Tampilkan di katalog publik"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1625,
+                          "id": "89:8760",
+                          "name": "Container",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 41,
+                              "id": "89:8761",
+                              "name": "Icon",
+                              "children": [
+                                {
+                                  "tag": "img",
+                                  "style": 7,
+                                  "props": {
+                                    "alt": "",
+                                    "src": "/assets/figma/402b8d5756592057058c.svg"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 228,
+                              "id": "89:8764",
+                              "name": "Text",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 70,
+                                  "id": "89:8766",
+                                  "children": [
+                                    "Alat ini ditambahkan oleh Admin atas nama vendor."
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1626,
+                          "id": "89:8767",
+                          "name": "Container",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 1627,
+                              "id": "89:8768",
+                              "name": "Button",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 145,
+                                  "id": "89:8769",
+                                  "children": [
+                                    "Simpan Perubahan"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 1628,
+                              "id": "89:8770",
+                              "name": "Button",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 1075,
+                                  "props": {
+                                    "aria-hidden": true
+                                  }
+                                },
+                                {
+                                  "tag": "p",
+                                  "style": 40,
+                                  "id": "89:8771",
+                                  "children": [
+                                    "Batal"
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 1037
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "div",
+          "style": 610,
+          "id": "89:8775",
+          "name": "Footer",
+          "children": [
+            {
+              "tag": "div",
+              "style": 226,
+              "id": "89:8776",
+              "name": "Container",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 151,
+                  "id": "89:8777",
+                  "name": "Container",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 227,
+                      "id": "89:8793",
+                      "name": "Container",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 5,
+                          "id": "89:8778",
+                          "name": "Logo",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 6,
+                              "id": "89:8779",
+                              "name": "Image - Vendoria",
+                              "children": [
+                                {
+                                  "tag": "img",
+                                  "style": 7,
+                                  "props": {
+                                    "alt": "",
+                                    "src": "/assets/figma/99f729440d4864ad6ebc.svg"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 228,
+                              "id": "89:8783",
+                              "name": "Bold Text",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 229,
+                                  "id": "89:8784",
+                                  "children": [
+                                    "Vendoria"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 230,
+                      "id": "89:8785",
+                      "name": "Paragraph",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 231,
+                          "id": "89:8786",
+                          "children": [
+                            "Marketplace rental perlengkapan event terpercaya dengan jaminan inspeksi kondisi terverifikasi."
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 232,
+                      "id": "89:8794",
+                      "name": "Container",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 233,
+                          "id": "89:8787",
+                          "name": "Text",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 30,
+                              "id": "89:8788",
+                              "name": "Icon",
+                              "children": [
+                                {
+                                  "tag": "img",
+                                  "style": 7,
+                                  "props": {
+                                    "alt": "",
+                                    "src": "/assets/figma/e43267a969ccb40636b3.svg"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "p",
+                              "style": 234,
+                              "id": "89:8791",
+                              "children": [
+                                "Kondisi terverifikasi & tepat waktu"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "style": 235,
+                  "id": "89:8795",
+                  "name": "Container",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 236,
+                      "id": "89:8796",
+                      "name": "Heading 4",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 237,
+                          "id": "89:8797",
+                          "children": [
+                            "Sewa Alat"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 238,
+                      "id": "89:8799",
+                      "name": "Link$1",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 239,
+                          "id": "89:8800",
+                          "children": [
+                            "Audio & Sound System"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 240,
+                      "id": "89:8801",
+                      "name": "Link$1",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 239,
+                          "id": "89:8802",
+                          "children": [
+                            "Stage Lighting & LED"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 240,
+                      "id": "89:8803",
+                      "name": "Link$1",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 239,
+                          "id": "89:8804",
+                          "children": [
+                            "Tenda & Kanopi"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 240,
+                      "id": "89:8805",
+                      "name": "Link$1",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 239,
+                          "id": "89:8806",
+                          "children": [
+                            "Panggung & Genset"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 241,
+                      "id": "89:8807",
+                      "name": "Link$1",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 239,
+                          "id": "89:8808",
+                          "children": [
+                            "Furnitur & Dekorasi"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "style": 242,
+                  "id": "89:8815",
+                  "name": "Container",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 243,
+                      "id": "89:8816",
+                      "name": "Heading 4",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 237,
+                          "id": "89:8817",
+                          "children": [
+                            "Bantuan & Panduan"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 244,
+                      "id": "89:8818",
+                      "name": "Link$1",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 239,
+                          "id": "89:8819",
+                          "children": [
+                            "Cara Pemesanan"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 245,
+                      "id": "89:8820",
+                      "name": "Link$1",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 239,
+                          "id": "89:8821",
+                          "children": [
+                            "Verifikasi KTP & KYC"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 245,
+                      "id": "89:8822",
+                      "name": "Link$1",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 239,
+                          "id": "89:8823",
+                          "children": [
+                            "Panduan Serah Terima"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 245,
+                      "id": "89:8824",
+                      "name": "Link$1",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 239,
+                          "id": "89:8825",
+                          "children": [
+                            "Kebijakan Pengembalian"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 246,
+                      "id": "89:8826",
+                      "name": "Link",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 239,
+                          "id": "89:8827",
+                          "children": [
+                            "Pusat Bantuan Pelanggan"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "style": 247,
+                  "id": "89:8834",
+                  "name": "Container",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 248,
+                      "id": "89:8835",
+                      "name": "Heading 4",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 237,
+                          "id": "89:8836",
+                          "children": [
+                            "Kontak Operasional"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 249,
+                      "id": "89:8837",
+                      "name": "Paragraph",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 250,
+                          "id": "89:8838",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 251,
+                              "children": [
+                                "Jl. Pajajaran No. 88"
+                              ]
+                            },
+                            {
+                              "tag": "p",
+                              "style": 252,
+                              "children": [
+                                "Baranangsiang, Kota Bogor"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 253,
+                      "id": "89:8839",
+                      "name": "Paragraph",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 250,
+                          "id": "89:8840",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 251,
+                              "children": [
+                                "halo@vendoria.id"
+                              ]
+                            },
+                            {
+                              "tag": "p",
+                              "style": 252,
+                              "children": [
+                                "+62 812-8800-4420"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "style": 254,
+              "id": "89:8854",
+              "name": "Container:margin",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 255,
+                  "id": "89:8844",
+                  "name": "Container",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 256,
+                      "id": "89:8845",
+                      "name": "Text",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 257,
+                          "id": "89:8846",
+                          "children": [
+                            "© 2025 Vendoria Indonesia. Hak Cipta Dilindungi."
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 258,
+                      "id": "89:8847",
+                      "name": "Text",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 256,
+                          "id": "89:8848",
+                          "name": "Link",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 239,
+                              "id": "89:8849",
+                              "children": [
+                                "Syarat & Ketentuan"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 256,
+                          "id": "89:8850",
+                          "name": "Link",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 239,
+                              "id": "89:8851",
+                              "children": [
+                                "Kebijakan Privasi"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 256,
+                          "id": "89:8852",
+                          "name": "Link",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 239,
+                              "id": "89:8853",
+                              "children": [
+                                "Gabung Vendor Mitra"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

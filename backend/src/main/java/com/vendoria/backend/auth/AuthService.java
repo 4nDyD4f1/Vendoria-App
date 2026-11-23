@@ -51,6 +51,9 @@ class AuthService {
 			throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Email atau kata sandi salah");
 		}
 		throttle.recordSuccess(email);
+		if (!Pengguna.AKTIF.equals(p.getStatusAkun())) { // dicek setelah kata sandi benar: tak membocorkan email terdaftar
+			throw new ResponseStatusException(HttpStatus.FORBIDDEN, "Akun dinonaktifkan. Hubungi administrator");
+		}
 		return UserResponse.from(p);
 	}
 

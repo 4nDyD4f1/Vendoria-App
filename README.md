@@ -13,6 +13,12 @@ npm run dev
 
 Vite akan menampilkan alamat lokal yang bisa dibuka di browser.
 
+## Interface Figma
+
+Buka `/interface-review` untuk meninjau 70 layar dan varian desain Vendoria. Daftar rute, batas simulasi frontend, screenshot desktop/mobile, dan hasil pemeriksaan tersedia di [dokumentasi penyesuaian interface](docs/interface-adjustment/README.md).
+
+Jalankan `npm run verify:interface` untuk memeriksa cakupan desain, aset lokal, dan perlindungan halaman autentikasi.
+
 ## Pemeriksaan
 
 Sebelum mengirim perubahan, jalankan:

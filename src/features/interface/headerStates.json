@@ -1,0 +1,352 @@
+{
+  "84:3400": {
+    "unread": 3,
+    "cart": 0,
+    "active": "Beranda"
+  },
+  "84:4705": {
+    "unread": 3,
+    "cart": 0,
+    "active": "Katalog"
+  },
+  "84:6113": {
+    "unread": 3,
+    "cart": 0,
+    "active": "Katalog"
+  },
+  "84:7295": {
+    "unread": 3,
+    "cart": 0,
+    "active": "Katalog"
+  },
+  "84:9589": {
+    "unread": 3,
+    "cart": 0,
+    "active": "Beranda"
+  },
+  "84:10958": {
+    "unread": 3,
+    "cart": 0,
+    "active": "Katalog"
+  },
+  "85:13250": {
+    "unread": 3,
+    "cart": 0,
+    "active": ""
+  },
+  "86:2": {
+    "unread": 2,
+    "cart": 0,
+    "active": "Dashboard"
+  },
+  "86:600": {
+    "unread": 2,
+    "cart": 0,
+    "active": "Serah Terima"
+  },
+  "86:986": {
+    "unread": 2,
+    "cart": 0,
+    "active": "Katalog"
+  },
+  "86:1524": {
+    "unread": 2,
+    "cart": 0,
+    "active": "Pesanan"
+  },
+  "86:2064": {
+    "unread": 2,
+    "cart": 0,
+    "active": "Klaim"
+  },
+  "86:2538": {
+    "unread": 2,
+    "cart": 0,
+    "active": "Pencairan"
+  },
+  "86:2951": {
+    "unread": 2,
+    "cart": 0,
+    "active": "Dashboard"
+  },
+  "86:3594": {
+    "unread": 2,
+    "cart": 0,
+    "active": "Dashboard"
+  },
+  "86:4914": {
+    "unread": 0,
+    "cart": 0,
+    "active": ""
+  },
+  "86:5438": {
+    "unread": 0,
+    "cart": 0,
+    "active": ""
+  },
+  "86:5903": {
+    "unread": 0,
+    "cart": 0,
+    "active": ""
+  },
+  "86:6337": {
+    "unread": 0,
+    "cart": 0,
+    "active": ""
+  },
+  "86:6680": {
+    "unread": 0,
+    "cart": 0,
+    "active": ""
+  },
+  "89:2": {
+    "unread": 3,
+    "cart": 0,
+    "active": "Dashboard"
+  },
+  "89:898": {
+    "unread": 3,
+    "cart": 0,
+    "active": "Verifikasi KYC"
+  },
+  "89:1645": {
+    "unread": 3,
+    "cart": 0,
+    "active": "Kelola Klaim"
+  },
+  "89:3424": {
+    "unread": 3,
+    "cart": 0,
+    "active": "Kelola Katalog"
+  },
+  "89:4216": {
+    "unread": 3,
+    "cart": 0,
+    "active": "Laporan"
+  },
+  "89:5198": {
+    "unread": 3,
+    "cart": 0,
+    "active": "Pengguna"
+  },
+  "89:5923": {
+    "unread": 3,
+    "cart": 0,
+    "active": "Kelola Katalog"
+  },
+  "89:6402": {
+    "unread": 3,
+    "cart": 0,
+    "active": "Laporan"
+  },
+  "89:6950": {
+    "unread": 3,
+    "cart": 0,
+    "active": "Pengguna"
+  },
+  "89:7828": {
+    "unread": 3,
+    "cart": 0,
+    "active": "Pengguna"
+  },
+  "89:8305": {
+    "unread": 3,
+    "cart": 0,
+    "active": "Kelola Katalog"
+  },
+  "89:9351": {
+    "unread": 3,
+    "cart": 0,
+    "active": "Kelola Katalog"
+  },
+  "92:3": {
+    "unread": 2,
+    "cart": 0,
+    "active": "Kelola Katalog"
+  },
+  "92:856": {
+    "unread": 2,
+    "cart": 0,
+    "active": "Kelola Katalog"
+  },
+  "92:2052": {
+    "unread": 2,
+    "cart": 0,
+    "active": "Kelola Katalog"
+  },
+  "92:3104": {
+    "unread": 2,
+    "cart": 0,
+    "active": "Kelola Katalog"
+  },
+  "92:4071": {
+    "unread": 2,
+    "cart": 0,
+    "active": "Kelola Katalog"
+  },
+  "92:5382": {
+    "unread": 2,
+    "cart": 0,
+    "active": ""
+  },
+  "101:2": {
+    "unread": 3,
+    "cart": 0,
+    "active": ""
+  },
+  "101:1144": {
+    "unread": 3,
+    "cart": 0,
+    "active": "Cara Sewa"
+  },
+  "101:1785": {
+    "unread": 3,
+    "cart": 0,
+    "active": "Cara Sewa"
+  },
+  "101:2289": {
+    "unread": 3,
+    "cart": 0,
+    "active": "Cara Sewa"
+  },
+  "103:3688": {
+    "unread": 5,
+    "cart": 1,
+    "active": ""
+  },
+  "103:4479": {
+    "unread": 6,
+    "cart": 0,
+    "active": ""
+  },
+  "103:5173": {
+    "unread": 6,
+    "cart": 0,
+    "active": ""
+  },
+  "103:5827": {
+    "unread": 6,
+    "cart": 0,
+    "active": ""
+  },
+  "103:6500": {
+    "unread": 7,
+    "cart": 0,
+    "active": ""
+  },
+  "103:7063": {
+    "unread": 9,
+    "cart": 0,
+    "active": ""
+  },
+  "103:7616": {
+    "unread": 9,
+    "cart": 0,
+    "active": "Pesanan Saya"
+  },
+  "103:8519": {
+    "unread": 9,
+    "cart": 0,
+    "active": "Pesanan Saya"
+  },
+  "103:9459": {
+    "unread": 10,
+    "cart": 0,
+    "active": "Pesanan Saya"
+  },
+  "106:10412": {
+    "unread": 13,
+    "cart": 0,
+    "active": "Pesanan Saya"
+  },
+  "106:11374": {
+    "unread": 13,
+    "cart": 0,
+    "active": "Pesanan Saya"
+  },
+  "106:11949": {
+    "unread": 14,
+    "cart": 0,
+    "active": ""
+  },
+  "106:12530": {
+    "unread": 15,
+    "cart": 0,
+    "active": ""
+  },
+  "109:13149": {
+    "unread": 15,
+    "cart": 0,
+    "active": ""
+  },
+  "109:13575": {
+    "unread": 15,
+    "cart": 0,
+    "active": ""
+  },
+  "109:14128": {
+    "unread": 15,
+    "cart": 2,
+    "active": ""
+  },
+  "109:14600": {
+    "unread": 15,
+    "cart": 2,
+    "active": ""
+  },
+  "109:15059": {
+    "unread": 15,
+    "cart": 2,
+    "active": ""
+  },
+  "109:15463": {
+    "unread": 15,
+    "cart": 2,
+    "active": ""
+  },
+  "109:15959": {
+    "unread": 15,
+    "cart": 2,
+    "active": ""
+  },
+  "109:16389": {
+    "unread": 15,
+    "cart": 2,
+    "active": ""
+  },
+  "109:16970": {
+    "unread": 15,
+    "cart": 2,
+    "active": ""
+  },
+  "109:18000": {
+    "unread": 15,
+    "cart": 2,
+    "active": ""
+  },
+  "109:19307": {
+    "unread": 1,
+    "cart": 0,
+    "active": ""
+  },
+  "109:20019": {
+    "unread": 2,
+    "cart": 0,
+    "active": ""
+  },
+  "109:20373": {
+    "unread": 3,
+    "cart": 0,
+    "active": ""
+  },
+  "109:20729": {
+    "unread": 4,
+    "cart": 0,
+    "active": ""
+  },
+  "109:21462": {
+    "unread": 4,
+    "cart": 0,
+    "active": ""
+  }
+}

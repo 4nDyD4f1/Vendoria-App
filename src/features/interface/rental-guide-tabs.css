@@ -1,0 +1,16 @@
+.vendoria-interface .rental-tabs-wrap{width:100%;display:flex;justify-content:center;padding-top:24px;min-height:78px}
+.vendoria-interface .rental-tabs-scroll{max-width:100%;overflow-x:auto;border-radius:999px;scrollbar-width:none}
+.vendoria-interface .rental-tabs-scroll::-webkit-scrollbar{display:none}
+.vendoria-interface .rental-tabs{position:relative;display:flex;align-items:center;isolation:isolate;width:max-content;padding:6px;background:var(--interface-card);border-radius:999px;gap:2px}
+.vendoria-interface .rental-tabs-indicator{position:absolute;left:0;top:6px;bottom:6px;background:var(--interface-ink);border-radius:999px;pointer-events:none;z-index:-1;transition:transform .34s cubic-bezier(.22,1,.36,1),width .34s cubic-bezier(.22,1,.36,1)}
+.vendoria-interface .rental-tabs button{position:relative;border:0;border-radius:999px;padding:10px 20px;background:transparent;color:var(--interface-muted);font:inherit;font-size:11px;line-height:22px;white-space:nowrap;cursor:pointer;transition:color .2s}
+.vendoria-interface .rental-tabs button[aria-selected=true]{color:#fff}
+.vendoria-interface .rental-tabs button:hover:not([aria-selected=true]){color:var(--interface-ink)}
+.vendoria-interface .rental-tabs button:focus-visible,.vendoria-interface .rental-tab-panel:focus-visible{outline:2px solid #a58163;outline-offset:-2px}
+.vendoria-interface .rental-panel-viewport{width:100%;overflow:hidden}
+.vendoria-interface .rental-tab-panel{width:100%;min-width:0}
+.vendoria-interface .rental-tab-panel:not([hidden]){animation:rental-content-slide .34s cubic-bezier(.22,1,.36,1) both}
+@keyframes rental-content-slide{from{opacity:0;transform:translateX(calc(32px * var(--rental-slide-direction,1)))}to{opacity:1;transform:translateX(0)}}
+@media(max-width:900px){.vendoria-interface .rental-guide-page [data-node-id='101:1239'],.vendoria-interface .rental-guide-page [data-name='Heading 1']{height:auto!important}.vendoria-interface .rental-guide-page [data-node-id='101:1214']{width:max-content!important;flex-wrap:nowrap!important;margin-inline:auto}}
+@media(max-width:540px){.vendoria-interface .rental-tabs-wrap{padding-top:8px;min-height:62px}.vendoria-interface .rental-tabs button{padding-inline:15px}.vendoria-interface .rental-guide-page{row-gap:0!important}}
+@media(prefers-reduced-motion:reduce){.vendoria-interface .rental-tabs-indicator{transition:none}.vendoria-interface .rental-tab-panel:not([hidden]){animation:none}.vendoria-interface .rental-tabs-scroll{scroll-behavior:auto}}

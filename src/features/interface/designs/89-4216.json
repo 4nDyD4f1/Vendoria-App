@@ -1,0 +1,3664 @@
+{
+  "tag": "div",
+  "style": 0,
+  "id": "89:4216",
+  "name": "Laporan",
+  "children": [
+    {
+      "tag": "div",
+      "style": 572,
+      "id": "89:4217",
+      "name": "Body",
+      "children": [
+        {
+          "tag": "div",
+          "style": 2,
+          "id": "89:4219",
+          "name": "Header",
+          "children": [
+            {
+              "tag": "div",
+              "style": 573,
+              "id": "89:4220",
+              "name": "Container",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 4,
+                  "id": "89:4221",
+                  "name": "Button - Ke halaman utama",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 5,
+                      "id": "89:4223",
+                      "name": "Logo",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 6,
+                          "id": "89:4224",
+                          "name": "Image - Vendoria",
+                          "children": [
+                            {
+                              "tag": "img",
+                              "style": 7,
+                              "props": {
+                                "alt": "",
+                                "src": "/assets/figma/95886d2661f0c5c11123.svg"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 8,
+                          "id": "89:4228",
+                          "name": "Bold Text",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 9,
+                              "id": "89:4229",
+                              "children": [
+                                "Vendoria"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "style": 10,
+                  "id": "89:4231",
+                  "name": "Navigation - Navigasi utama",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 13,
+                      "id": "89:4232",
+                      "name": "Button",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 14,
+                          "id": "89:4233",
+                          "children": [
+                            "Dashboard"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 13,
+                      "id": "89:4235",
+                      "name": "Button",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 14,
+                          "id": "89:4236",
+                          "children": [
+                            "Verifikasi KYC"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 13,
+                      "id": "89:4237",
+                      "name": "Button",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 14,
+                          "id": "89:4238",
+                          "children": [
+                            "Kelola Klaim"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 13,
+                      "id": "89:4239",
+                      "name": "Button",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 14,
+                          "id": "89:4240",
+                          "children": [
+                            "Kelola Katalog"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 11,
+                      "id": "89:4241",
+                      "name": "Button",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 12,
+                          "id": "89:4242",
+                          "children": [
+                            "Laporan"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 13,
+                      "id": "89:4243",
+                      "name": "Button",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 14,
+                          "id": "89:4244",
+                          "children": [
+                            "Pengguna"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "style": 15,
+                  "id": "89:4245",
+                  "name": "Container",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 16,
+                      "id": "89:4246",
+                      "name": "Button - Cari",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 17,
+                          "id": "89:4247",
+                          "name": "Icon",
+                          "children": [
+                            {
+                              "tag": "img",
+                              "style": 7,
+                              "props": {
+                                "alt": "",
+                                "src": "/assets/figma/c1d7196b97050c3bbaa5.svg"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 16,
+                      "id": "89:4251",
+                      "name": "Button - Notifikasi, 3 belum dibaca",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 17,
+                          "id": "89:4252",
+                          "name": "Icon",
+                          "children": [
+                            {
+                              "tag": "img",
+                              "style": 7,
+                              "props": {
+                                "alt": "",
+                                "src": "/assets/figma/5e58b1dfe325cc4bf6b1.svg"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 18,
+                          "id": "89:4255",
+                          "name": "Italic Text",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 19,
+                              "id": "89:4256",
+                              "children": [
+                                "3"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 20,
+                      "id": "89:4258",
+                      "name": "Text"
+                    },
+                    {
+                      "tag": "div",
+                      "style": 21,
+                      "id": "89:4260",
+                      "name": "Button",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 22,
+                          "id": "89:4261",
+                          "name": "Text",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 23,
+                              "id": "89:4262",
+                              "name": "Icon",
+                              "children": [
+                                {
+                                  "tag": "img",
+                                  "style": 7,
+                                  "props": {
+                                    "alt": "",
+                                    "src": "/assets/figma/1c1da491232764684201.svg"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 8,
+                          "id": "89:4265",
+                          "name": "Bold Text",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 24,
+                              "id": "89:4266",
+                              "children": [
+                                "Admin"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "div",
+          "style": 574,
+          "id": "89:4268",
+          "name": "Page",
+          "children": [
+            {
+              "tag": "div",
+              "style": 1168,
+              "id": "89:4270",
+              "name": "Head",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 1169,
+                  "id": "89:4271",
+                  "name": "Container",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 49,
+                      "id": "89:4282",
+                      "name": "Container",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 87,
+                          "id": "89:4272",
+                          "children": [
+                            "PANEL ADMIN"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 1170,
+                      "id": "89:4274",
+                      "name": "Heading 1",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 578,
+                          "id": "89:4275",
+                          "children": [
+                            "Laporan Transaksi"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 579,
+                      "id": "89:4277",
+                      "name": "Paragraph",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 154,
+                          "id": "89:4278",
+                          "children": [
+                            "Pantau nilai sewa, deposit escrow, dan pencairan dana vendor."
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "style": 93,
+              "id": "89:4654",
+              "name": "Container",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 1171,
+                  "id": "89:4296",
+                  "name": "Tabs",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 95,
+                      "id": "89:4297",
+                      "name": "Tab",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 96,
+                          "id": "89:4298",
+                          "children": [
+                            "Transaksi"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 97,
+                      "id": "89:4300",
+                      "name": "Tab",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 98,
+                          "id": "89:4301",
+                          "children": [
+                            "Pencairan Vendor (4)"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "style": 198,
+              "id": "89:4650",
+              "name": "Container:margin",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 582,
+                  "id": "89:4328",
+                  "name": "Container",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 583,
+                      "id": "89:4329",
+                      "name": "Stat",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 151,
+                          "id": "89:4334",
+                          "name": "Small",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 70,
+                              "id": "89:4335",
+                              "children": [
+                                "Total Transaksi"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 202,
+                          "id": "89:4337",
+                          "name": "Bold Text",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 533,
+                              "id": "89:4338",
+                              "children": [
+                                "19"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 584,
+                          "id": "89:4340",
+                          "name": "Paragraph",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 585,
+                              "id": "89:4341",
+                              "children": [
+                                "Sesuai filter"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 586,
+                          "id": "89:4330",
+                          "name": "Text",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 17,
+                              "id": "89:4331",
+                              "name": "Icon",
+                              "children": [
+                                {
+                                  "tag": "img",
+                                  "style": 7,
+                                  "props": {
+                                    "alt": "",
+                                    "src": "/assets/figma/64d004cb460bd6421b37.svg"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 587,
+                      "id": "89:4343",
+                      "name": "Stat",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 151,
+                          "id": "89:4348",
+                          "name": "Small",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 70,
+                              "id": "89:4349",
+                              "children": [
+                                "Total Sewa"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 202,
+                          "id": "89:4350",
+                          "name": "Bold Text",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 533,
+                              "id": "89:4351",
+                              "children": [
+                                "Rp76,5 jt"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 584,
+                          "id": "89:4352",
+                          "name": "Paragraph",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 585,
+                              "id": "89:4353",
+                              "children": [
+                                "Tidak termasuk batal"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 586,
+                          "id": "89:4344",
+                          "name": "Text",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 17,
+                              "id": "89:4345",
+                              "name": "Icon",
+                              "children": [
+                                {
+                                  "tag": "img",
+                                  "style": 7,
+                                  "props": {
+                                    "alt": "",
+                                    "src": "/assets/figma/2d6c82006961f892c218.svg"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 588,
+                      "id": "89:4354",
+                      "name": "Stat",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 151,
+                          "id": "89:4359",
+                          "name": "Small",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 70,
+                              "id": "89:4360",
+                              "children": [
+                                "Deposit Ditahan"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 202,
+                          "id": "89:4361",
+                          "name": "Bold Text",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 533,
+                              "id": "89:4362",
+                              "children": [
+                                "Rp7,2 jt"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 584,
+                          "id": "89:4363",
+                          "name": "Paragraph",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 585,
+                              "id": "89:4364",
+                              "children": [
+                                "Di escrow"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 586,
+                          "id": "89:4355",
+                          "name": "Text",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 17,
+                              "id": "89:4356",
+                              "name": "Icon",
+                              "children": [
+                                {
+                                  "tag": "img",
+                                  "style": 7,
+                                  "props": {
+                                    "alt": "",
+                                    "src": "/assets/figma/d4d20379d857fb5713e5.svg"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 589,
+                      "id": "89:4365",
+                      "name": "Stat",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 151,
+                          "id": "89:4369",
+                          "name": "Small",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 70,
+                              "id": "89:4370",
+                              "children": [
+                                "Dana Dicairkan"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 202,
+                          "id": "89:4371",
+                          "name": "Bold Text",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 533,
+                              "id": "89:4372",
+                              "children": [
+                                "Rp25,5 jt"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 584,
+                          "id": "89:4373",
+                          "name": "Paragraph",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 585,
+                              "id": "89:4374",
+                              "children": [
+                                "Ke vendor"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 586,
+                          "id": "89:4366",
+                          "name": "Text",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 17,
+                              "id": "89:4367",
+                              "name": "Icon",
+                              "children": [
+                                {
+                                  "tag": "img",
+                                  "style": 7,
+                                  "props": {
+                                    "alt": "",
+                                    "src": "/assets/figma/f6c3b4794a3fd266566b.svg"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "style": 198,
+              "id": "89:4651",
+              "name": "Container:margin",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 1172,
+                  "id": "89:4375",
+                  "name": "Container",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 1173,
+                      "id": "89:4376",
+                      "name": "Section",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 195,
+                          "id": "89:4377",
+                          "name": "Container",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 1174,
+                              "id": "89:4378",
+                              "name": "Container",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 49,
+                                  "id": "89:4384",
+                                  "name": "Container",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 87,
+                                      "id": "89:4379",
+                                      "children": [
+                                        "TREN"
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 1175,
+                                  "id": "89:4380",
+                                  "name": "Heading 2",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 89,
+                                      "id": "89:4381",
+                                      "children": [
+                                        "Pendapatan Sewa"
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 198,
+                          "id": "89:4406",
+                          "name": "LineChart:margin",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 1176,
+                              "id": "89:4385",
+                              "name": "LineChart",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 926,
+                                  "id": "89:4386",
+                                  "name": "Vector",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 1177,
+                                      "children": [
+                                        {
+                                          "tag": "img",
+                                          "style": 928,
+                                          "props": {
+                                            "alt": "",
+                                            "src": "/assets/figma/db45e3f451cc90bc0397.svg"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 929,
+                                  "id": "89:4387",
+                                  "name": "Vector",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 1177,
+                                      "children": [
+                                        {
+                                          "tag": "img",
+                                          "style": 928,
+                                          "props": {
+                                            "alt": "",
+                                            "src": "/assets/figma/db45e3f451cc90bc0397.svg"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 930,
+                                  "id": "89:4388",
+                                  "name": "Vector",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 1177,
+                                      "children": [
+                                        {
+                                          "tag": "img",
+                                          "style": 928,
+                                          "props": {
+                                            "alt": "",
+                                            "src": "/assets/figma/db45e3f451cc90bc0397.svg"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 931,
+                                  "id": "89:4389",
+                                  "name": "Vector",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 1177,
+                                      "children": [
+                                        {
+                                          "tag": "img",
+                                          "style": 928,
+                                          "props": {
+                                            "alt": "",
+                                            "src": "/assets/figma/db45e3f451cc90bc0397.svg"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 1178,
+                                  "id": "89:4390",
+                                  "name": "Vector",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 1179,
+                                      "children": [
+                                        {
+                                          "tag": "img",
+                                          "style": 928,
+                                          "props": {
+                                            "alt": "",
+                                            "src": "/assets/figma/16d9ac193d0259a0a9dd.svg"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 1180,
+                                  "id": "89:4391",
+                                  "name": "Group",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 1181,
+                                      "id": "89:4392",
+                                      "name": "Vector",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 944,
+                                          "children": [
+                                            {
+                                              "tag": "img",
+                                              "style": 928,
+                                              "props": {
+                                                "alt": "",
+                                                "src": "/assets/figma/2c0cc356f3ef24e0556d.svg"
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "p",
+                                      "style": 1182,
+                                      "id": "89:4393",
+                                      "children": [
+                                        "-4m"
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 1183,
+                                  "id": "89:4394",
+                                  "name": "Group",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 1184,
+                                      "id": "89:4395",
+                                      "name": "Vector",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 944,
+                                          "children": [
+                                            {
+                                              "tag": "img",
+                                              "style": 928,
+                                              "props": {
+                                                "alt": "",
+                                                "src": "/assets/figma/2c0cc356f3ef24e0556d.svg"
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "p",
+                                      "style": 1185,
+                                      "id": "89:4396",
+                                      "children": [
+                                        "-3m"
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 1186,
+                                  "id": "89:4397",
+                                  "name": "Group",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 1187,
+                                      "id": "89:4398",
+                                      "name": "Vector",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 944,
+                                          "children": [
+                                            {
+                                              "tag": "img",
+                                              "style": 928,
+                                              "props": {
+                                                "alt": "",
+                                                "src": "/assets/figma/2c0cc356f3ef24e0556d.svg"
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "p",
+                                      "style": 1188,
+                                      "id": "89:4399",
+                                      "children": [
+                                        "-2m"
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 1189,
+                                  "id": "89:4400",
+                                  "name": "Group",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 1190,
+                                      "id": "89:4401",
+                                      "name": "Vector",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 944,
+                                          "children": [
+                                            {
+                                              "tag": "img",
+                                              "style": 928,
+                                              "props": {
+                                                "alt": "",
+                                                "src": "/assets/figma/2c0cc356f3ef24e0556d.svg"
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "p",
+                                      "style": 1191,
+                                      "id": "89:4402",
+                                      "children": [
+                                        "-1m"
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 1192,
+                                  "id": "89:4403",
+                                  "name": "Group",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 1193,
+                                      "id": "89:4404",
+                                      "name": "Vector",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 944,
+                                          "children": [
+                                            {
+                                              "tag": "img",
+                                              "style": 928,
+                                              "props": {
+                                                "alt": "",
+                                                "src": "/assets/figma/2c0cc356f3ef24e0556d.svg"
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "p",
+                                      "style": 1194,
+                                      "id": "89:4405",
+                                      "children": [
+                                        "Ini"
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 1195,
+                      "id": "89:4407",
+                      "name": "Section",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 195,
+                          "id": "89:4408",
+                          "name": "Container",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 1196,
+                              "id": "89:4409",
+                              "name": "Container",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 49,
+                                  "id": "89:4414",
+                                  "name": "Container",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 87,
+                                      "id": "89:4410",
+                                      "children": [
+                                        "KOMPOSISI"
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 1197,
+                                  "id": "89:4411",
+                                  "name": "Heading 2",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 89,
+                                      "id": "89:4412",
+                                      "children": [
+                                        "Per Kategori"
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 198,
+                          "id": "89:4462",
+                          "name": "Donut:margin",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 1198,
+                              "id": "89:4415",
+                              "name": "Donut",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 1199,
+                                  "id": "89:4416",
+                                  "name": "Image - Transaksi per kategori",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 1200,
+                                      "id": "89:4417",
+                                      "name": "Vector",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 1201,
+                                          "children": [
+                                            {
+                                              "tag": "img",
+                                              "style": 928,
+                                              "props": {
+                                                "alt": "",
+                                                "src": "/assets/figma/48da3fdf49384fc3fcb5.svg"
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 1202,
+                                      "id": "89:4418",
+                                      "props": {
+                                        "style": {
+                                          "containerType": "size"
+                                        }
+                                      },
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 1203,
+                                          "children": [
+                                            {
+                                              "tag": "div",
+                                              "style": 1204,
+                                              "name": "Vector",
+                                              "children": [
+                                                {
+                                                  "tag": "div",
+                                                  "style": 1201,
+                                                  "children": [
+                                                    {
+                                                      "tag": "img",
+                                                      "style": 928,
+                                                      "props": {
+                                                        "alt": "",
+                                                        "src": "/assets/figma/9586810b09be4b367b98.svg"
+                                                      }
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 1202,
+                                      "id": "89:4419",
+                                      "props": {
+                                        "style": {
+                                          "containerType": "size"
+                                        }
+                                      },
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 1203,
+                                          "children": [
+                                            {
+                                              "tag": "div",
+                                              "style": 1204,
+                                              "name": "Vector",
+                                              "children": [
+                                                {
+                                                  "tag": "div",
+                                                  "style": 1201,
+                                                  "children": [
+                                                    {
+                                                      "tag": "img",
+                                                      "style": 928,
+                                                      "props": {
+                                                        "alt": "",
+                                                        "src": "/assets/figma/84d0be396aa03eda6ac0.svg"
+                                                      }
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 1202,
+                                      "id": "89:4420",
+                                      "props": {
+                                        "style": {
+                                          "containerType": "size"
+                                        }
+                                      },
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 1203,
+                                          "children": [
+                                            {
+                                              "tag": "div",
+                                              "style": 1204,
+                                              "name": "Vector",
+                                              "children": [
+                                                {
+                                                  "tag": "div",
+                                                  "style": 1201,
+                                                  "children": [
+                                                    {
+                                                      "tag": "img",
+                                                      "style": 928,
+                                                      "props": {
+                                                        "alt": "",
+                                                        "src": "/assets/figma/d36f554c6c8c39844ad5.svg"
+                                                      }
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 1202,
+                                      "id": "89:4421",
+                                      "props": {
+                                        "style": {
+                                          "containerType": "size"
+                                        }
+                                      },
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 1203,
+                                          "children": [
+                                            {
+                                              "tag": "div",
+                                              "style": 1204,
+                                              "name": "Vector",
+                                              "children": [
+                                                {
+                                                  "tag": "div",
+                                                  "style": 1201,
+                                                  "children": [
+                                                    {
+                                                      "tag": "img",
+                                                      "style": 928,
+                                                      "props": {
+                                                        "alt": "",
+                                                        "src": "/assets/figma/5310e4264d1d2f0ff303.svg"
+                                                      }
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 1202,
+                                      "id": "89:4422",
+                                      "props": {
+                                        "style": {
+                                          "containerType": "size"
+                                        }
+                                      },
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 1203,
+                                          "children": [
+                                            {
+                                              "tag": "div",
+                                              "style": 1204,
+                                              "name": "Vector",
+                                              "children": [
+                                                {
+                                                  "tag": "div",
+                                                  "style": 1201,
+                                                  "children": [
+                                                    {
+                                                      "tag": "img",
+                                                      "style": 928,
+                                                      "props": {
+                                                        "alt": "",
+                                                        "src": "/assets/figma/00ab6a0e83d940f61bb4.svg"
+                                                      }
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 1202,
+                                      "id": "89:4423",
+                                      "props": {
+                                        "style": {
+                                          "containerType": "size"
+                                        }
+                                      },
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 1203,
+                                          "children": [
+                                            {
+                                              "tag": "div",
+                                              "style": 1204,
+                                              "name": "Vector",
+                                              "children": [
+                                                {
+                                                  "tag": "div",
+                                                  "style": 1201,
+                                                  "children": [
+                                                    {
+                                                      "tag": "img",
+                                                      "style": 928,
+                                                      "props": {
+                                                        "alt": "",
+                                                        "src": "/assets/figma/c552914f60fbc0f68e0f.svg"
+                                                      }
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "p",
+                                      "style": 1205,
+                                      "id": "89:4424",
+                                      "children": [
+                                        "Rp76,5 jt"
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 1206,
+                                  "id": "89:4425",
+                                  "name": "List",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 455,
+                                      "id": "89:4426",
+                                      "name": "List Item",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 969,
+                                          "id": "89:4427",
+                                          "name": "Italic Text"
+                                        },
+                                        {
+                                          "tag": "p",
+                                          "style": 540,
+                                          "id": "89:4428",
+                                          "children": [
+                                            "Tenda & kanopi"
+                                          ]
+                                        },
+                                        {
+                                          "tag": "div",
+                                          "style": 490,
+                                          "id": "89:4431",
+                                          "name": "Bold Text:align",
+                                          "children": [
+                                            {
+                                              "tag": "div",
+                                              "style": 228,
+                                              "id": "89:4429",
+                                              "name": "Bold Text",
+                                              "children": [
+                                                {
+                                                  "tag": "p",
+                                                  "style": 135,
+                                                  "id": "89:4430",
+                                                  "children": [
+                                                    "52%"
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 456,
+                                      "id": "89:4432",
+                                      "name": "List Item",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 1207,
+                                          "id": "89:4433",
+                                          "name": "Italic Text"
+                                        },
+                                        {
+                                          "tag": "p",
+                                          "style": 540,
+                                          "id": "89:4434",
+                                          "children": [
+                                            "Sound system"
+                                          ]
+                                        },
+                                        {
+                                          "tag": "div",
+                                          "style": 490,
+                                          "id": "89:4437",
+                                          "name": "Bold Text:align",
+                                          "children": [
+                                            {
+                                              "tag": "div",
+                                              "style": 228,
+                                              "id": "89:4435",
+                                              "name": "Bold Text",
+                                              "children": [
+                                                {
+                                                  "tag": "p",
+                                                  "style": 135,
+                                                  "id": "89:4436",
+                                                  "children": [
+                                                    "18%"
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 457,
+                                      "id": "89:4438",
+                                      "name": "List Item",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 1208,
+                                          "id": "89:4439",
+                                          "name": "Italic Text"
+                                        },
+                                        {
+                                          "tag": "p",
+                                          "style": 540,
+                                          "id": "89:4440",
+                                          "children": [
+                                            "Lighting & FX"
+                                          ]
+                                        },
+                                        {
+                                          "tag": "div",
+                                          "style": 490,
+                                          "id": "89:4443",
+                                          "name": "Bold Text:align",
+                                          "children": [
+                                            {
+                                              "tag": "div",
+                                              "style": 228,
+                                              "id": "89:4441",
+                                              "name": "Bold Text",
+                                              "children": [
+                                                {
+                                                  "tag": "p",
+                                                  "style": 135,
+                                                  "id": "89:4442",
+                                                  "children": [
+                                                    "7%"
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 1209,
+                                      "id": "89:4444",
+                                      "name": "List Item",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 1210,
+                                          "id": "89:4445",
+                                          "name": "Italic Text"
+                                        },
+                                        {
+                                          "tag": "p",
+                                          "style": 540,
+                                          "id": "89:4446",
+                                          "children": [
+                                            "Dekorasi & pelaminan"
+                                          ]
+                                        },
+                                        {
+                                          "tag": "div",
+                                          "style": 490,
+                                          "id": "89:4449",
+                                          "name": "Bold Text:align",
+                                          "children": [
+                                            {
+                                              "tag": "div",
+                                              "style": 228,
+                                              "id": "89:4447",
+                                              "name": "Bold Text",
+                                              "children": [
+                                                {
+                                                  "tag": "p",
+                                                  "style": 135,
+                                                  "id": "89:4448",
+                                                  "children": [
+                                                    "8%"
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 1211,
+                                      "id": "89:4450",
+                                      "name": "List Item",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 1212,
+                                          "id": "89:4451",
+                                          "name": "Italic Text"
+                                        },
+                                        {
+                                          "tag": "p",
+                                          "style": 540,
+                                          "id": "89:4452",
+                                          "children": [
+                                            "Kursi & meja"
+                                          ]
+                                        },
+                                        {
+                                          "tag": "div",
+                                          "style": 490,
+                                          "id": "89:4455",
+                                          "name": "Bold Text:align",
+                                          "children": [
+                                            {
+                                              "tag": "div",
+                                              "style": 228,
+                                              "id": "89:4453",
+                                              "name": "Bold Text",
+                                              "children": [
+                                                {
+                                                  "tag": "p",
+                                                  "style": 135,
+                                                  "id": "89:4454",
+                                                  "children": [
+                                                    "6%"
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 1213,
+                                      "id": "89:4456",
+                                      "name": "List Item",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 1214,
+                                          "id": "89:4457",
+                                          "name": "Italic Text"
+                                        },
+                                        {
+                                          "tag": "p",
+                                          "style": 540,
+                                          "id": "89:4458",
+                                          "children": [
+                                            "Panggung"
+                                          ]
+                                        },
+                                        {
+                                          "tag": "div",
+                                          "style": 490,
+                                          "id": "89:4461",
+                                          "name": "Bold Text:align",
+                                          "children": [
+                                            {
+                                              "tag": "div",
+                                              "style": 228,
+                                              "id": "89:4459",
+                                              "name": "Bold Text",
+                                              "children": [
+                                                {
+                                                  "tag": "p",
+                                                  "style": 135,
+                                                  "id": "89:4460",
+                                                  "children": [
+                                                    "9%"
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "style": 198,
+              "id": "89:4652",
+              "name": "DataTable:margin",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 1215,
+                  "id": "89:4463",
+                  "name": "DataTable",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 1216,
+                      "id": "89:4464",
+                      "name": "Table",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 1217,
+                          "id": "89:4467",
+                          "name": "Header Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 622,
+                              "id": "89:4468",
+                              "children": [
+                                "Tanggal"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1218,
+                          "id": "89:4470",
+                          "name": "Header Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 622,
+                              "id": "89:4471",
+                              "children": [
+                                "Kode"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1219,
+                          "id": "89:4472",
+                          "name": "Header Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 622,
+                              "id": "89:4473",
+                              "children": [
+                                "Customer"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1220,
+                          "id": "89:4474",
+                          "name": "Header Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 622,
+                              "id": "89:4475",
+                              "children": [
+                                "Vendor"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1221,
+                          "id": "89:4476",
+                          "name": "Header Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 625,
+                              "id": "89:4477",
+                              "children": [
+                                "Nominal Sewa"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1222,
+                          "id": "89:4478",
+                          "name": "Header Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 625,
+                              "id": "89:4479",
+                              "children": [
+                                "Deposit"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1223,
+                          "id": "89:4480",
+                          "name": "Header Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 622,
+                              "id": "89:4481",
+                              "children": [
+                                "Status Deposit"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1224,
+                          "id": "89:4482",
+                          "name": "Header Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 622,
+                              "id": "89:4483",
+                              "children": [
+                                "Pencairan"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1225,
+                          "id": "89:4486",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 540,
+                              "id": "89:4487",
+                              "children": [
+                                "21 Nov 2026"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1226,
+                          "id": "89:4488",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 540,
+                              "id": "89:4489",
+                              "children": [
+                                "#VND-261012-8821"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1227,
+                          "id": "89:4490",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 540,
+                              "id": "89:4491",
+                              "children": [
+                                "Bagas Arya Pratama"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1228,
+                          "id": "89:4492",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 540,
+                              "id": "89:4493",
+                              "children": [
+                                "Roder Bogor Tenda Megah"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1229,
+                          "id": "89:4494",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 636,
+                              "id": "89:4495",
+                              "children": [
+                                "Rp21.450.000"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1230,
+                          "id": "89:4496",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 636,
+                              "id": "89:4497",
+                              "children": [
+                                "Rp3.300.000"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1231,
+                          "id": "89:4498",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 681,
+                              "id": "89:4499",
+                              "name": "StatusChip",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 682,
+                                  "id": "89:4500",
+                                  "children": [
+                                    "Menunggu"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1232,
+                          "id": "89:4501",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 540,
+                              "id": "89:4502",
+                              "children": [
+                                "—"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1233,
+                          "id": "89:4504",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 540,
+                              "id": "89:4505",
+                              "children": [
+                                "20 Nov 2026"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1234,
+                          "id": "89:4506",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 540,
+                              "id": "89:4507",
+                              "children": [
+                                "#VND-261120-1000"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1235,
+                          "id": "89:4508",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 540,
+                              "id": "89:4509",
+                              "children": [
+                                "Siti Rahmawati"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1236,
+                          "id": "89:4510",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 540,
+                              "id": "89:4511",
+                              "children": [
+                                "Karya Audio Pro Bogor"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1237,
+                          "id": "89:4512",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 636,
+                              "id": "89:4513",
+                              "children": [
+                                "Rp600.000"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1238,
+                          "id": "89:4514",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 636,
+                              "id": "89:4515",
+                              "children": [
+                                "Rp250.000"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1239,
+                          "id": "89:4516",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 702,
+                              "id": "89:4517",
+                              "name": "StatusChip",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 105,
+                                  "id": "89:4518",
+                                  "children": [
+                                    "Dirilis"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1240,
+                          "id": "89:4519",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 681,
+                              "id": "89:4520",
+                              "name": "StatusChip",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 682,
+                                  "id": "89:4521",
+                                  "children": [
+                                    "Menunggu"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1241,
+                          "id": "89:4523",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 540,
+                              "id": "89:4524",
+                              "children": [
+                                "18 Nov 2026"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1242,
+                          "id": "89:4525",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 540,
+                              "id": "89:4526",
+                              "children": [
+                                "#VND-261118-1737"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1243,
+                          "id": "89:4527",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 540,
+                              "id": "89:4528",
+                              "children": [
+                                "Bagas Arya Pratama"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1244,
+                          "id": "89:4529",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 540,
+                              "id": "89:4530",
+                              "children": [
+                                "Roder Bogor Tenda Megah"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1245,
+                          "id": "89:4531",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 636,
+                              "id": "89:4532",
+                              "children": [
+                                "Rp1.000.000"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1246,
+                          "id": "89:4533",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 636,
+                              "id": "89:4534",
+                              "children": [
+                                "Rp400.000"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1247,
+                          "id": "89:4535",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 702,
+                              "id": "89:4536",
+                              "name": "StatusChip",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 105,
+                                  "id": "89:4537",
+                                  "children": [
+                                    "Dirilis"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1248,
+                          "id": "89:4538",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 1249,
+                              "id": "89:4539",
+                              "name": "StatusChip",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 105,
+                                  "id": "89:4540",
+                                  "children": [
+                                    "Dicairkan"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1250,
+                          "id": "89:4542",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 540,
+                              "id": "89:4543",
+                              "children": [
+                                "17 Nov 2026"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1251,
+                          "id": "89:4544",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 540,
+                              "id": "89:4545",
+                              "children": [
+                                "#VND-261005-7712"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1252,
+                          "id": "89:4546",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 540,
+                              "id": "89:4547",
+                              "children": [
+                                "Bagas Arya Pratama"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1253,
+                          "id": "89:4548",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 540,
+                              "id": "89:4549",
+                              "children": [
+                                "Karya Audio Pro Bogor"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1254,
+                          "id": "89:4550",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 636,
+                              "id": "89:4551",
+                              "children": [
+                                "Rp5.000.000"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1255,
+                          "id": "89:4552",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 636,
+                              "id": "89:4553",
+                              "children": [
+                                "Rp1.400.000"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1256,
+                          "id": "89:4554",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 691,
+                              "id": "89:4555",
+                              "name": "StatusChip",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 682,
+                                  "id": "89:4556",
+                                  "children": [
+                                    "Ditahan"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1257,
+                          "id": "89:4557",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 540,
+                              "id": "89:4558",
+                              "children": [
+                                "—"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1258,
+                          "id": "89:4560",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 540,
+                              "id": "89:4561",
+                              "children": [
+                                "16 Nov 2026"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1259,
+                          "id": "89:4562",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 540,
+                              "id": "89:4563",
+                              "children": [
+                                "#VND-261116-2474"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1260,
+                          "id": "89:4564",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 540,
+                              "id": "89:4565",
+                              "children": [
+                                "Anisa Putri"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1261,
+                          "id": "89:4566",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 540,
+                              "id": "89:4567",
+                              "children": [
+                                "Luminary Stage Lighting Bogor"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1262,
+                          "id": "89:4568",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 636,
+                              "id": "89:4569",
+                              "children": [
+                                "Rp1.350.000"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1263,
+                          "id": "89:4570",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 636,
+                              "id": "89:4571",
+                              "children": [
+                                "Rp550.000"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1264,
+                          "id": "89:4572",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 702,
+                              "id": "89:4573",
+                              "name": "StatusChip",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 105,
+                                  "id": "89:4574",
+                                  "children": [
+                                    "Dirilis"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1265,
+                          "id": "89:4575",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 1249,
+                              "id": "89:4576",
+                              "name": "StatusChip",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 105,
+                                  "id": "89:4577",
+                                  "children": [
+                                    "Dicairkan"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1266,
+                          "id": "89:4579",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 540,
+                              "id": "89:4580",
+                              "children": [
+                                "15 Nov 2026"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1267,
+                          "id": "89:4581",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 540,
+                              "id": "89:4582",
+                              "children": [
+                                "#VND-260928-4019"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1268,
+                          "id": "89:4583",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 540,
+                              "id": "89:4584",
+                              "children": [
+                                "Bagas Arya Pratama"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1269,
+                          "id": "89:4585",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 540,
+                              "id": "89:4586",
+                              "children": [
+                                "Roder Bogor Tenda Megah"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1270,
+                          "id": "89:4587",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 636,
+                              "id": "89:4588",
+                              "children": [
+                                "Rp10.600.000"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1271,
+                          "id": "89:4589",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 636,
+                              "id": "89:4590",
+                              "children": [
+                                "Rp2.300.000"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1272,
+                          "id": "89:4591",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 691,
+                              "id": "89:4592",
+                              "name": "StatusChip",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 682,
+                                  "id": "89:4593",
+                                  "children": [
+                                    "Ditahan"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1273,
+                          "id": "89:4594",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 540,
+                              "id": "89:4595",
+                              "children": [
+                                "—"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1274,
+                          "id": "89:4597",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 540,
+                              "id": "89:4598",
+                              "children": [
+                                "14 Nov 2026"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1275,
+                          "id": "89:4599",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 540,
+                              "id": "89:4600",
+                              "children": [
+                                "#VND-261114-3211"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1276,
+                          "id": "89:4601",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 540,
+                              "id": "89:4602",
+                              "children": [
+                                "Rizky Hidayat"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1277,
+                          "id": "89:4603",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 540,
+                              "id": "89:4604",
+                              "children": [
+                                "Estetik Rental Pesta"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1278,
+                          "id": "89:4605",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 636,
+                              "id": "89:4606",
+                              "children": [
+                                "Rp1.750.000"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1279,
+                          "id": "89:4607",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 636,
+                              "id": "89:4608",
+                              "children": [
+                                "Rp700.000"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1280,
+                          "id": "89:4609",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 691,
+                              "id": "89:4610",
+                              "name": "StatusChip",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 682,
+                                  "id": "89:4611",
+                                  "children": [
+                                    "Ditahan"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1281,
+                          "id": "89:4612",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 540,
+                              "id": "89:4613",
+                              "children": [
+                                "—"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1282,
+                          "id": "89:4615",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 540,
+                              "id": "89:4616",
+                              "children": [
+                                "12 Nov 2026"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1283,
+                          "id": "89:4617",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 540,
+                              "id": "89:4618",
+                              "children": [
+                                "#VND-261112-3948"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1284,
+                          "id": "89:4619",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 540,
+                              "id": "89:4620",
+                              "children": [
+                                "Maya Lestari"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1285,
+                          "id": "89:4621",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 540,
+                              "id": "89:4622",
+                              "children": [
+                                "Soundzilla Pro Sound"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1286,
+                          "id": "89:4623",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 636,
+                              "id": "89:4624",
+                              "children": [
+                                "Rp2.100.000"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1287,
+                          "id": "89:4625",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 636,
+                              "id": "89:4626",
+                              "children": [
+                                "Rp850.000"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1288,
+                          "id": "89:4627",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 1289,
+                              "id": "89:4628",
+                              "name": "StatusChip",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 177,
+                                  "id": "89:4629",
+                                  "children": [
+                                    "Dikembalikan"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1290,
+                          "id": "89:4630",
+                          "name": "Table Cell",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 540,
+                              "id": "89:4631",
+                              "children": [
+                                "—"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "style": 1166,
+              "id": "89:4632",
+              "name": "Container",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 131,
+                  "id": "89:4636",
+                  "name": "Pagination",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 326,
+                      "id": "89:4637",
+                      "name": "Button - Sebelumnya",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 327,
+                          "id": "89:4638",
+                          "name": "Icon",
+                          "children": [
+                            {
+                              "tag": "img",
+                              "style": 7,
+                              "props": {
+                                "alt": "",
+                                "src": "/assets/figma/0e5242ff283ce6688f14.svg"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 328,
+                      "id": "89:4640",
+                      "name": "Button",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 329,
+                          "id": "89:4641",
+                          "children": [
+                            "1"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 330,
+                      "id": "89:4642",
+                      "name": "Button",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 331,
+                          "id": "89:4643",
+                          "children": [
+                            "2"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 330,
+                      "id": "89:4644",
+                      "name": "Button",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 331,
+                          "id": "89:4645",
+                          "children": [
+                            "3"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 330,
+                      "id": "89:4646",
+                      "name": "Button - Berikutnya",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 327,
+                          "id": "89:4647",
+                          "name": "Icon",
+                          "children": [
+                            {
+                              "tag": "img",
+                              "style": 7,
+                              "props": {
+                                "alt": "",
+                                "src": "/assets/figma/333e9ac4561e4ac8aaa4.svg"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "div",
+          "style": 610,
+          "id": "89:4655",
+          "name": "Footer",
+          "children": [
+            {
+              "tag": "div",
+              "style": 226,
+              "id": "89:4656",
+              "name": "Container",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 151,
+                  "id": "89:4657",
+                  "name": "Container",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 227,
+                      "id": "89:4673",
+                      "name": "Container",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 5,
+                          "id": "89:4658",
+                          "name": "Logo",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 6,
+                              "id": "89:4659",
+                              "name": "Image - Vendoria",
+                              "children": [
+                                {
+                                  "tag": "img",
+                                  "style": 7,
+                                  "props": {
+                                    "alt": "",
+                                    "src": "/assets/figma/4c030ec8b16a8244b3af.svg"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 228,
+                              "id": "89:4663",
+                              "name": "Bold Text",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 229,
+                                  "id": "89:4664",
+                                  "children": [
+                                    "Vendoria"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 230,
+                      "id": "89:4665",
+                      "name": "Paragraph",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 231,
+                          "id": "89:4666",
+                          "children": [
+                            "Marketplace rental perlengkapan event terpercaya dengan jaminan inspeksi kondisi terverifikasi."
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 232,
+                      "id": "89:4674",
+                      "name": "Container",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 233,
+                          "id": "89:4667",
+                          "name": "Text",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 30,
+                              "id": "89:4668",
+                              "name": "Icon",
+                              "children": [
+                                {
+                                  "tag": "img",
+                                  "style": 7,
+                                  "props": {
+                                    "alt": "",
+                                    "src": "/assets/figma/e43267a969ccb40636b3.svg"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "p",
+                              "style": 234,
+                              "id": "89:4671",
+                              "children": [
+                                "Kondisi terverifikasi & tepat waktu"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "style": 235,
+                  "id": "89:4675",
+                  "name": "Container",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 236,
+                      "id": "89:4676",
+                      "name": "Heading 4",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 237,
+                          "id": "89:4677",
+                          "children": [
+                            "Sewa Alat"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 238,
+                      "id": "89:4679",
+                      "name": "Link$1",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 239,
+                          "id": "89:4680",
+                          "children": [
+                            "Audio & Sound System"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 240,
+                      "id": "89:4681",
+                      "name": "Link$1",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 239,
+                          "id": "89:4682",
+                          "children": [
+                            "Stage Lighting & LED"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 240,
+                      "id": "89:4683",
+                      "name": "Link$1",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 239,
+                          "id": "89:4684",
+                          "children": [
+                            "Tenda & Kanopi"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 240,
+                      "id": "89:4685",
+                      "name": "Link$1",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 239,
+                          "id": "89:4686",
+                          "children": [
+                            "Panggung & Genset"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 241,
+                      "id": "89:4687",
+                      "name": "Link$1",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 239,
+                          "id": "89:4688",
+                          "children": [
+                            "Furnitur & Dekorasi"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "style": 242,
+                  "id": "89:4695",
+                  "name": "Container",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 243,
+                      "id": "89:4696",
+                      "name": "Heading 4",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 237,
+                          "id": "89:4697",
+                          "children": [
+                            "Bantuan & Panduan"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 244,
+                      "id": "89:4698",
+                      "name": "Link$1",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 239,
+                          "id": "89:4699",
+                          "children": [
+                            "Cara Pemesanan"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 245,
+                      "id": "89:4700",
+                      "name": "Link$1",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 239,
+                          "id": "89:4701",
+                          "children": [
+                            "Verifikasi KTP & KYC"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 245,
+                      "id": "89:4702",
+                      "name": "Link$1",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 239,
+                          "id": "89:4703",
+                          "children": [
+                            "Panduan Serah Terima"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 245,
+                      "id": "89:4704",
+                      "name": "Link$1",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 239,
+                          "id": "89:4705",
+                          "children": [
+                            "Kebijakan Pengembalian"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 246,
+                      "id": "89:4706",
+                      "name": "Link",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 239,
+                          "id": "89:4707",
+                          "children": [
+                            "Pusat Bantuan Pelanggan"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "style": 247,
+                  "id": "89:4714",
+                  "name": "Container",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 248,
+                      "id": "89:4715",
+                      "name": "Heading 4",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 237,
+                          "id": "89:4716",
+                          "children": [
+                            "Kontak Operasional"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 249,
+                      "id": "89:4717",
+                      "name": "Paragraph",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 250,
+                          "id": "89:4718",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 251,
+                              "children": [
+                                "Jl. Pajajaran No. 88"
+                              ]
+                            },
+                            {
+                              "tag": "p",
+                              "style": 252,
+                              "children": [
+                                "Baranangsiang, Kota Bogor"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 253,
+                      "id": "89:4719",
+                      "name": "Paragraph",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 250,
+                          "id": "89:4720",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 251,
+                              "children": [
+                                "halo@vendoria.id"
+                              ]
+                            },
+                            {
+                              "tag": "p",
+                              "style": 252,
+                              "children": [
+                                "+62 812-8800-4420"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "style": 254,
+              "id": "89:4734",
+              "name": "Container:margin",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 255,
+                  "id": "89:4724",
+                  "name": "Container",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 256,
+                      "id": "89:4725",
+                      "name": "Text",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 257,
+                          "id": "89:4726",
+                          "children": [
+                            "© 2025 Vendoria Indonesia. Hak Cipta Dilindungi."
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 258,
+                      "id": "89:4727",
+                      "name": "Text",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 256,
+                          "id": "89:4728",
+                          "name": "Link",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 239,
+                              "id": "89:4729",
+                              "children": [
+                                "Syarat & Ketentuan"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 256,
+                          "id": "89:4730",
+                          "name": "Link",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 239,
+                              "id": "89:4731",
+                              "children": [
+                                "Kebijakan Privasi"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 256,
+                          "id": "89:4732",
+                          "name": "Link",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 239,
+                              "id": "89:4733",
+                              "children": [
+                                "Gabung Vendor Mitra"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

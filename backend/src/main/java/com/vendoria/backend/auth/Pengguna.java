@@ -1,5 +1,7 @@
 package com.vendoria.backend.auth;
 
+import java.time.Instant;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -7,7 +9,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-// created_at/updated_at sengaja tidak dipetakan: diisi default now() oleh database.
+// created_at hanya dibaca (diisi default now() oleh database); updated_at sengaja tidak dipetakan.
 @Entity
 @Table(name = "pengguna")
 public class Pengguna {
@@ -36,7 +38,30 @@ public class Pengguna {
 	@Column(name = "google_sub")
 	private String googleSub;
 
+	// URL foto profil (https) dari akun Google; null bila tak ada. Kolom ditambah oleh backend/db/add-foto-profil.sql
+	@Column(name = "foto_profil")
+	private String fotoProfil;
+
+	// "Aktif" | "Nonaktif"; akun Nonaktif tidak bisa login. Kolom ditambah oleh backend/db/add-administrator.sql
+	@Column(name = "status_akun")
+	private String statusAkun = AKTIF;
+
+	@Column(name = "catatan_admin")
+	private String catatanAdmin;
+
+	@Column(name = "created_at", insertable = false, updatable = false)
+	private Instant createdAt;
+
+	static final String AKTIF = "Aktif";
+
 	protected Pengguna() {
+	}
+
+	static Pengguna admin(String nama, String email, String passwordHash, String status, String catatan) {
+		Pengguna p = new Pengguna(nama, email, null, passwordHash, "admin");
+		p.statusAkun = status;
+		p.catatanAdmin = catatan;
+		return p;
 	}
 
 	/** Akun baru dari login Google: tanpa nomor telepon; passwordHash acak yang tak diketahui siapa pun. */
@@ -62,4 +87,8 @@ public class Pengguna {
 	public String getRole() { return role; }
 	public String getStatusVerifikasi() { return statusVerifikasi; }
 	public String getGoogleSub() { return googleSub; }
+	public String getFotoProfil() { return fotoProfil; }
+	public String getStatusAkun() { return statusAkun; }
+	public String getCatatanAdmin() { return catatanAdmin; }
+	public Instant getCreatedAt() { return createdAt; }
 }

@@ -1,0 +1,808 @@
+{
+  "tag": "div",
+  "style": 0,
+  "id": "101:2289",
+  "name": "cara sewa-3",
+  "children": [
+    {
+      "tag": "div",
+      "style": 335,
+      "id": "101:2291",
+      "name": "Body",
+      "children": [
+        {
+          "tag": "div",
+          "style": 336,
+          "id": "101:2345",
+          "name": "Page",
+          "children": [
+            {
+              "tag": "div",
+              "style": 260,
+              "id": "101:2347",
+              "name": "Breadcrumb",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 261,
+                  "id": "101:2348",
+                  "name": "Text",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 228,
+                      "id": "101:2349",
+                      "name": "Link",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 70,
+                          "id": "101:2350",
+                          "children": [
+                            "Beranda"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 112,
+                      "id": "101:2352",
+                      "name": "Icon",
+                      "children": [
+                        {
+                          "tag": "img",
+                          "style": 7,
+                          "props": {
+                            "alt": "",
+                            "src": "/assets/figma/0a496288f6a1ee034b30.svg"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "style": 228,
+                  "id": "101:2354",
+                  "name": "Text",
+                  "children": [
+                    {
+                      "tag": "p",
+                      "style": 177,
+                      "id": "101:2356",
+                      "children": [
+                        "Panduan"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "style": 262,
+              "id": "101:2463",
+              "name": "Section:margin",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 2092,
+                  "id": "101:2358",
+                  "name": "Section",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 845,
+                      "id": "101:2384",
+                      "name": "Container",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 2093,
+                          "id": "101:2359",
+                          "name": "Text",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 339,
+                              "id": "101:2360",
+                              "name": "Icon",
+                              "children": [
+                                {
+                                  "tag": "img",
+                                  "style": 7,
+                                  "props": {
+                                    "alt": "",
+                                    "src": "/assets/figma/f1912f13345495c2b511.svg"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "p",
+                              "style": 2094,
+                              "id": "101:2363",
+                              "children": [
+                                "Pusat Edukasi & Keamanan Transaksi"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 2095,
+                      "id": "101:2364",
+                      "name": "Heading 1",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 2096,
+                          "id": "101:2365",
+                          "children": [
+                            "Panduan & Standar Sewa Terpercaya"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 1553,
+                      "id": "101:2382",
+                      "name": "Paragraph:margin",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 2097,
+                          "id": "101:2368",
+                          "children": [
+                            "Pelajari alur sewa, kebijakan deposit, dan perlindungan yang membuat setiap transaksi di Vendoria aman untuk penyewa maupun vendor."
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 2098,
+                      "id": "101:2370",
+                      "name": "Container",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 2099,
+                          "id": "101:2371",
+                          "name": "Text",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 339,
+                              "id": "101:2372",
+                              "name": "Icon",
+                              "children": [
+                                {
+                                  "tag": "img",
+                                  "style": 7,
+                                  "props": {
+                                    "alt": "",
+                                    "src": "/assets/figma/6d19314d61f6f1f70949.svg"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "p",
+                              "style": 875,
+                              "id": "101:2375",
+                              "children": [
+                                "100% Escrow Aman"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 2100,
+                          "id": "101:2376",
+                          "name": "Text",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 339,
+                              "id": "101:2377",
+                              "name": "Icon",
+                              "children": [
+                                {
+                                  "tag": "img",
+                                  "style": 7,
+                                  "props": {
+                                    "alt": "",
+                                    "src": "/assets/figma/2cd3a4f1948d051731f3.svg"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "p",
+                              "style": 875,
+                              "id": "101:2380",
+                              "children": [
+                                "Rilis Deposit 3 Jam"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "style": 2101,
+              "id": "101:2385",
+              "name": "Container",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 2102,
+                  "id": "101:2386",
+                  "name": "Tabs",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 97,
+                      "id": "101:2387",
+                      "name": "Tab",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 98,
+                          "id": "101:2388",
+                          "children": [
+                            "Cara Sewa"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 97,
+                      "id": "101:2390",
+                      "name": "Tab",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 98,
+                          "id": "101:2391",
+                          "children": [
+                            "Pusat Bantuan & FAQ"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 95,
+                      "id": "101:2392",
+                      "name": "Tab",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 96,
+                          "id": "101:2393",
+                          "children": [
+                            "Kebijakan Deposit & Proteksi"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "style": 198,
+              "id": "101:2465",
+              "name": "Section:margin",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 263,
+                  "id": "101:2394",
+                  "name": "Section",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 49,
+                      "id": "101:2462",
+                      "name": "Container",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 87,
+                          "id": "101:2395",
+                          "children": [
+                            "KEBIJAKAN DEPOSIT & PROTEKSI"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 2103,
+                      "id": "101:2396",
+                      "name": "Heading 2",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 89,
+                          "id": "101:2397",
+                          "children": [
+                            "Bagaimana deposit Anda diperlakukan"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 2146,
+                      "id": "101:2460",
+                      "name": "Container:margin",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 2158,
+                          "id": "101:2399",
+                          "name": "Container",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 2159,
+                              "id": "101:2400",
+                              "name": "Container",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 2131,
+                                  "id": "101:2401",
+                                  "name": "Text",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 17,
+                                      "id": "101:2402",
+                                      "name": "Icon",
+                                      "children": [
+                                        {
+                                          "tag": "img",
+                                          "style": 7,
+                                          "props": {
+                                            "alt": "",
+                                            "src": "/assets/figma/d4d20379d857fb5713e5.svg"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 202,
+                                  "id": "101:2405",
+                                  "name": "Heading 3",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 222,
+                                      "id": "101:2406",
+                                      "children": [
+                                        "Ditahan di Escrow"
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 218,
+                                  "id": "101:2408",
+                                  "name": "Paragraph",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 223,
+                                      "id": "101:2409",
+                                      "children": [
+                                        "Deposit tidak langsung diterima vendor. Dana aman di rekening bersama selama masa sewa."
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 2160,
+                              "id": "101:2410",
+                              "name": "Container",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 2131,
+                                  "id": "101:2411",
+                                  "name": "Text",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 17,
+                                      "id": "101:2412",
+                                      "name": "Icon",
+                                      "children": [
+                                        {
+                                          "tag": "img",
+                                          "style": 7,
+                                          "props": {
+                                            "alt": "",
+                                            "src": "/assets/figma/69091a5c7df904e2282f.svg"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 202,
+                                  "id": "101:2415",
+                                  "name": "Heading 3",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 222,
+                                      "id": "101:2416",
+                                      "children": [
+                                        "Rilis 3 Jam"
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 218,
+                                  "id": "101:2417",
+                                  "name": "Paragraph",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 223,
+                                      "id": "101:2418",
+                                      "children": [
+                                        "Setelah foto pengembalian valid tanpa klaim, deposit dikembalikan otomatis maksimal 3 jam."
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 2161,
+                              "id": "101:2419",
+                              "name": "Container",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 2131,
+                                  "id": "101:2420",
+                                  "name": "Text",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 17,
+                                      "id": "101:2421",
+                                      "name": "Icon",
+                                      "children": [
+                                        {
+                                          "tag": "img",
+                                          "style": 7,
+                                          "props": {
+                                            "alt": "",
+                                            "src": "/assets/figma/054c19ffb74468ec1e7a.svg"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 202,
+                                  "id": "101:2424",
+                                  "name": "Heading 3",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 222,
+                                      "id": "101:2425",
+                                      "children": [
+                                        "Dibekukan Saat Klaim"
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 218,
+                                  "id": "101:2426",
+                                  "name": "Paragraph",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 223,
+                                      "id": "101:2427",
+                                      "children": [
+                                        "Bila klaim diajukan, nominal sengketa dibekukan hingga Admin memutuskan."
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 2162,
+                      "id": "101:2461",
+                      "name": "Container:margin",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 2163,
+                          "id": "101:2428",
+                          "name": "Container",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 2164,
+                              "id": "101:2429",
+                              "name": "Container",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 2165,
+                                  "id": "101:2430",
+                                  "name": "Text",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 2166,
+                                      "id": "101:2431",
+                                      "children": [
+                                        "Skenario"
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 235,
+                                  "id": "101:2433",
+                                  "name": "Text",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 2166,
+                                      "id": "101:2434",
+                                      "children": [
+                                        "Perlakuan Deposit"
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 2164,
+                              "id": "101:2435",
+                              "name": "Container",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 2167,
+                                  "id": "101:2436",
+                                  "name": "Text",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 2168,
+                                      "id": "101:2437",
+                                      "name": "Italic Text"
+                                    },
+                                    {
+                                      "tag": "p",
+                                      "style": 135,
+                                      "id": "101:2438",
+                                      "children": [
+                                        "Sewa selesai tanpa kendala"
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 235,
+                                  "id": "101:2439",
+                                  "name": "Text",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 378,
+                                      "id": "101:2440",
+                                      "children": [
+                                        "100% deposit dikembalikan otomatis maksimal 3 jam setelah foto pengembalian valid."
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 2164,
+                              "id": "101:2441",
+                              "name": "Container",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 2167,
+                                  "id": "101:2442",
+                                  "name": "Text",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 2169,
+                                      "id": "101:2443",
+                                      "name": "Italic Text"
+                                    },
+                                    {
+                                      "tag": "p",
+                                      "style": 135,
+                                      "id": "101:2444",
+                                      "children": [
+                                        "Klaim vendor disetujui"
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 235,
+                                  "id": "101:2445",
+                                  "name": "Text",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 378,
+                                      "id": "101:2446",
+                                      "children": [
+                                        "Deposit dipotong sesuai nilai klaim yang diputuskan Admin, sisanya dikembalikan."
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 2164,
+                              "id": "101:2447",
+                              "name": "Container",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 2167,
+                                  "id": "101:2448",
+                                  "name": "Text",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 2168,
+                                      "id": "101:2449",
+                                      "name": "Italic Text"
+                                    },
+                                    {
+                                      "tag": "p",
+                                      "style": 135,
+                                      "id": "101:2450",
+                                      "children": [
+                                        "Vendor membatalkan pesanan"
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 235,
+                                  "id": "101:2451",
+                                  "name": "Text",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 378,
+                                      "id": "101:2452",
+                                      "children": [
+                                        "100% deposit dikembalikan beserta kompensasi prioritas pada pemesanan berikutnya."
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 2170,
+                              "id": "101:2453",
+                              "name": "Container",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 2167,
+                                  "id": "101:2454",
+                                  "name": "Text",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 2171,
+                                      "id": "101:2455",
+                                      "name": "Italic Text"
+                                    },
+                                    {
+                                      "tag": "p",
+                                      "style": 135,
+                                      "id": "101:2456",
+                                      "children": [
+                                        "Pembatalan oleh customer"
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 235,
+                                  "id": "101:2457",
+                                  "name": "Text",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 378,
+                                      "id": "101:2458",
+                                      "children": [
+                                        "Sebelum H-3 dikembalikan 100%. H-3 sampai H-1 dipotong 25%. Hari H tidak dapat dikembalikan."
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1437 @@
+{
+  "tag": "div",
+  "style": 0,
+  "id": "101:1144",
+  "name": "cara sewa-1",
+  "children": [
+    {
+      "tag": "div",
+      "style": 335,
+      "id": "101:1146",
+      "name": "Body",
+      "children": [
+        {
+          "tag": "div",
+          "style": 336,
+          "id": "101:1200",
+          "name": "Page",
+          "children": [
+            {
+              "tag": "div",
+              "style": 260,
+              "id": "101:1202",
+              "name": "Breadcrumb",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 261,
+                  "id": "101:1203",
+                  "name": "Text",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 228,
+                      "id": "101:1204",
+                      "name": "Link",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 70,
+                          "id": "101:1205",
+                          "children": [
+                            "Beranda"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 112,
+                      "id": "101:1207",
+                      "name": "Icon",
+                      "children": [
+                        {
+                          "tag": "img",
+                          "style": 7,
+                          "props": {
+                            "alt": "",
+                            "src": "/assets/figma/0a496288f6a1ee034b30.svg"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "style": 228,
+                  "id": "101:1209",
+                  "name": "Text",
+                  "children": [
+                    {
+                      "tag": "p",
+                      "style": 177,
+                      "id": "101:1211",
+                      "children": [
+                        "Panduan"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "style": 262,
+              "id": "101:1401",
+              "name": "Section:margin",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 2092,
+                  "id": "101:1213",
+                  "name": "Section",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 845,
+                      "id": "101:1239",
+                      "name": "Container",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 2093,
+                          "id": "101:1214",
+                          "name": "Text",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 339,
+                              "id": "101:1215",
+                              "name": "Icon",
+                              "children": [
+                                {
+                                  "tag": "img",
+                                  "style": 7,
+                                  "props": {
+                                    "alt": "",
+                                    "src": "/assets/figma/f1912f13345495c2b511.svg"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "p",
+                              "style": 2094,
+                              "id": "101:1218",
+                              "children": [
+                                "Pusat Edukasi & Keamanan Transaksi"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 2095,
+                      "id": "101:1219",
+                      "name": "Heading 1",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 2096,
+                          "id": "101:1220",
+                          "children": [
+                            "Panduan & Standar Sewa Terpercaya"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 1553,
+                      "id": "101:1237",
+                      "name": "Paragraph:margin",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 2097,
+                          "id": "101:1223",
+                          "children": [
+                            "Pelajari alur sewa, kebijakan deposit, dan perlindungan yang membuat setiap transaksi di Vendoria aman untuk penyewa maupun vendor."
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 2098,
+                      "id": "101:1225",
+                      "name": "Container",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 2099,
+                          "id": "101:1226",
+                          "name": "Text",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 339,
+                              "id": "101:1227",
+                              "name": "Icon",
+                              "children": [
+                                {
+                                  "tag": "img",
+                                  "style": 7,
+                                  "props": {
+                                    "alt": "",
+                                    "src": "/assets/figma/6d19314d61f6f1f70949.svg"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "p",
+                              "style": 875,
+                              "id": "101:1230",
+                              "children": [
+                                "100% Escrow Aman"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 2100,
+                          "id": "101:1231",
+                          "name": "Text",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 339,
+                              "id": "101:1232",
+                              "name": "Icon",
+                              "children": [
+                                {
+                                  "tag": "img",
+                                  "style": 7,
+                                  "props": {
+                                    "alt": "",
+                                    "src": "/assets/figma/20158234b6976a4da760.svg"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "p",
+                              "style": 875,
+                              "id": "101:1235",
+                              "children": [
+                                "Rilis Deposit 3 Jam"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "style": 2101,
+              "id": "101:1240",
+              "name": "Container",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 2102,
+                  "id": "101:1241",
+                  "name": "Tabs",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 95,
+                      "id": "101:1242",
+                      "name": "Tab",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 96,
+                          "id": "101:1243",
+                          "children": [
+                            "Cara Sewa"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 97,
+                      "id": "101:1245",
+                      "name": "Tab",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 98,
+                          "id": "101:1246",
+                          "children": [
+                            "Pusat Bantuan & FAQ"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 97,
+                      "id": "101:1247",
+                      "name": "Tab",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 98,
+                          "id": "101:1248",
+                          "children": [
+                            "Kebijakan Deposit & Proteksi"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "style": 198,
+              "id": "101:1403",
+              "name": "Section:margin",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 263,
+                  "id": "101:1249",
+                  "name": "Section",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 49,
+                      "id": "101:1335",
+                      "name": "Container",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 87,
+                          "id": "101:1250",
+                          "children": [
+                            "ALUR SEWA TERSTANDARISASI"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 2103,
+                      "id": "101:1251",
+                      "name": "Heading 2",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 89,
+                          "id": "101:1252",
+                          "children": [
+                            "Cara Sewa Alat Event di Vendoria"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 2104,
+                      "id": "101:1254",
+                      "name": "Timeline",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 2105,
+                          "id": "101:1255",
+                          "name": "List Item",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 148,
+                              "id": "101:1257",
+                              "name": "Text",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 149,
+                                  "id": "101:1258",
+                                  "children": [
+                                    "01"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 2106,
+                              "id": "101:1260",
+                              "name": "Container",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 151,
+                                  "id": "101:1261",
+                                  "name": "Bold Text",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 152,
+                                      "id": "101:1262",
+                                      "children": [
+                                        "Cari & Tentukan Perlengkapan"
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 388,
+                                  "id": "101:1264",
+                                  "name": "Paragraph",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 1585,
+                                      "id": "101:1265",
+                                      "children": [
+                                        "Cari berdasarkan kata kunci dan kategori, lalu pilih tanggal sewa di halaman detail alat."
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 2107,
+                                  "id": "101:1266",
+                                  "name": "Guide",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 177,
+                                      "id": "101:1267",
+                                      "children": [
+                                        "Cari & Jadwal"
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 2108,
+                                  "id": "101:1268",
+                                  "name": "Guide",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 41,
+                                      "id": "101:1269",
+                                      "name": "Icon",
+                                      "children": [
+                                        {
+                                          "tag": "img",
+                                          "style": 7,
+                                          "props": {
+                                            "alt": "",
+                                            "src": "/assets/figma/402b8d5756592057058c.svg"
+                                          }
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 228,
+                                      "id": "101:1272",
+                                      "name": "Text",
+                                      "children": [
+                                        {
+                                          "tag": "p",
+                                          "style": 70,
+                                          "id": "101:1274",
+                                          "children": [
+                                            "Tips: pilih tanggal acara di halaman detail alat untuk memastikan jadwal bebas bentrok."
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 2109,
+                              "id": "101:1256",
+                              "name": "Text"
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 2105,
+                          "id": "101:1275",
+                          "name": "List Item",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 148,
+                              "id": "101:1277",
+                              "name": "Text",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 149,
+                                  "id": "101:1278",
+                                  "children": [
+                                    "02"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 2110,
+                              "id": "101:1279",
+                              "name": "Container",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 151,
+                                  "id": "101:1280",
+                                  "name": "Bold Text",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 152,
+                                      "id": "101:1281",
+                                      "children": [
+                                        "Pesan & Bayar Deposit Escrow"
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 388,
+                                  "id": "101:1282",
+                                  "name": "Paragraph",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 378,
+                                      "id": "101:1283",
+                                      "children": [
+                                        "Isi detail acara, lalu bayar deposit maksimal 24 jam setelah pesanan dibuat."
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 2111,
+                                  "id": "101:1284",
+                                  "name": "Guide",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 177,
+                                      "id": "101:1285",
+                                      "children": [
+                                        "Dana Tertahan Aman"
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 2112,
+                                  "id": "101:1286",
+                                  "name": "Guide",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 2113,
+                                      "id": "101:1287",
+                                      "name": "Container",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 47,
+                                          "id": "101:1288",
+                                          "name": "Small",
+                                          "children": [
+                                            {
+                                              "tag": "p",
+                                              "style": 70,
+                                              "id": "101:1289",
+                                              "children": [
+                                                "Biaya Sewa Unit"
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "tag": "div",
+                                          "style": 47,
+                                          "id": "101:1290",
+                                          "name": "Bold Text",
+                                          "children": [
+                                            {
+                                              "tag": "p",
+                                              "style": 135,
+                                              "id": "101:1291",
+                                              "children": [
+                                                "Diteruskan pasca acara"
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 2114,
+                                      "id": "101:1292",
+                                      "name": "Container",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 47,
+                                          "id": "101:1293",
+                                          "name": "Small",
+                                          "children": [
+                                            {
+                                              "tag": "p",
+                                              "style": 70,
+                                              "id": "101:1294",
+                                              "children": [
+                                                "Deposit Jaminan"
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "tag": "div",
+                                          "style": 47,
+                                          "id": "101:1295",
+                                          "name": "Bold Text",
+                                          "children": [
+                                            {
+                                              "tag": "p",
+                                              "style": 135,
+                                              "id": "101:1296",
+                                              "children": [
+                                                "100% Refundable instan"
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 2109,
+                              "id": "101:1276",
+                              "name": "Text"
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 2115,
+                          "id": "101:1297",
+                          "name": "List Item",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 148,
+                              "id": "101:1299",
+                              "name": "Text",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 149,
+                                  "id": "101:1300",
+                                  "children": [
+                                    "03"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 2116,
+                              "id": "101:1301",
+                              "name": "Container",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 151,
+                                  "id": "101:1302",
+                                  "name": "Bold Text",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 152,
+                                      "id": "101:1303",
+                                      "children": [
+                                        "Serah Terima & Dokumentasi Foto 2 Arah"
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 388,
+                                  "id": "101:1304",
+                                  "name": "Paragraph",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 378,
+                                      "id": "101:1305",
+                                      "children": [
+                                        "Penyewa dan vendor memeriksa unit bersama dan mengunggah foto kondisi."
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 2117,
+                                  "id": "101:1306",
+                                  "name": "Guide",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 177,
+                                      "id": "101:1307",
+                                      "children": [
+                                        "Inspeksi 4 Sudut"
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 2118,
+                                  "id": "101:1308",
+                                  "name": "Guide",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 2119,
+                                      "id": "101:1309",
+                                      "name": "Text",
+                                      "children": [
+                                        {
+                                          "tag": "p",
+                                          "style": 78,
+                                          "id": "101:1310",
+                                          "children": [
+                                            "Tampak Depan"
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 2119,
+                                      "id": "101:1311",
+                                      "name": "Text",
+                                      "children": [
+                                        {
+                                          "tag": "p",
+                                          "style": 78,
+                                          "id": "101:1312",
+                                          "children": [
+                                            "Port & Kabel"
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 2119,
+                                      "id": "101:1313",
+                                      "name": "Text",
+                                      "children": [
+                                        {
+                                          "tag": "p",
+                                          "style": 78,
+                                          "id": "101:1314",
+                                          "children": [
+                                            "Uji Fungsi Nyala"
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 2119,
+                                      "id": "101:1315",
+                                      "name": "Text",
+                                      "children": [
+                                        {
+                                          "tag": "p",
+                                          "style": 78,
+                                          "id": "101:1316",
+                                          "children": [
+                                            "Hardcase / Tas"
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 2120,
+                              "id": "101:1298",
+                              "name": "Text"
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 2121,
+                          "id": "101:1317",
+                          "name": "List Item",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 148,
+                              "id": "101:1318",
+                              "name": "Text",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 149,
+                                  "id": "101:1319",
+                                  "children": [
+                                    "04"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 2122,
+                              "id": "101:1320",
+                              "name": "Container",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 151,
+                                  "id": "101:1321",
+                                  "name": "Bold Text",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 152,
+                                      "id": "101:1322",
+                                      "children": [
+                                        "Selesai Acara, Ulasan & Rilis Deposit"
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 388,
+                                  "id": "101:1323",
+                                  "name": "Paragraph",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 378,
+                                      "id": "101:1324",
+                                      "children": [
+                                        "Kembalikan alat, unggah foto pengembalian, lalu beri ulasan."
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 2123,
+                                  "id": "101:1325",
+                                  "name": "Guide",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 177,
+                                      "id": "101:1326",
+                                      "children": [
+                                        "Pelepasan Otomatis"
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 2108,
+                                  "id": "101:1327",
+                                  "name": "Guide",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 41,
+                                      "id": "101:1328",
+                                      "name": "Icon",
+                                      "children": [
+                                        {
+                                          "tag": "img",
+                                          "style": 7,
+                                          "props": {
+                                            "alt": "",
+                                            "src": "/assets/figma/f6c3b4794a3fd266566b.svg"
+                                          }
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 228,
+                                      "id": "101:1330",
+                                      "name": "Text",
+                                      "children": [
+                                        {
+                                          "tag": "p",
+                                          "style": 70,
+                                          "id": "101:1332",
+                                          "children": [
+                                            "Tanpa klaim, deposit dikirim ke rekening Anda maksimal 3 jam setelah foto pengembalian valid."
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "style": 198,
+              "id": "101:1404",
+              "name": "Section:margin",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 2124,
+                  "id": "101:1336",
+                  "name": "Section",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 73,
+                      "id": "101:1337",
+                      "name": "Feature",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 74,
+                          "id": "101:1338",
+                          "name": "Text",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 17,
+                              "id": "101:1339",
+                              "name": "Icon",
+                              "children": [
+                                {
+                                  "tag": "img",
+                                  "style": 7,
+                                  "props": {
+                                    "alt": "",
+                                    "src": "/assets/figma/a6276e591b3344916234.svg"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 2125,
+                          "id": "101:1342",
+                          "name": "Container",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 47,
+                              "id": "101:1343",
+                              "name": "Bold Text",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 76,
+                                  "id": "101:1344",
+                                  "children": [
+                                    "Inspeksi Digital 100% Sah"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 77,
+                              "id": "101:1345",
+                              "name": "Small",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 78,
+                                  "id": "101:1346",
+                                  "children": [
+                                    "Foto bertanda waktu menjadi bukti kondisi barang"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 2126,
+                      "id": "101:1347",
+                      "name": "Feature",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 74,
+                          "id": "101:1348",
+                          "name": "Text",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 17,
+                              "id": "101:1349",
+                              "name": "Icon",
+                              "children": [
+                                {
+                                  "tag": "img",
+                                  "style": 7,
+                                  "props": {
+                                    "alt": "",
+                                    "src": "/assets/figma/054c19ffb74468ec1e7a.svg"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 2127,
+                          "id": "101:1352",
+                          "name": "Container",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 47,
+                              "id": "101:1353",
+                              "name": "Bold Text",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 76,
+                                  "id": "101:1354",
+                                  "children": [
+                                    "Proteksi Sengketa Terpadu"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 77,
+                              "id": "101:1355",
+                              "name": "Small",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 78,
+                                  "id": "101:1356",
+                                  "children": [
+                                    "Mediasi Admin dan dana dibekukan sampai keputusan"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "style": 2128,
+              "id": "101:1405",
+              "name": "Container:margin",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 2129,
+                  "id": "101:1357",
+                  "name": "Container",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 2130,
+                      "id": "101:1358",
+                      "name": "Container",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 2131,
+                          "id": "101:1359",
+                          "name": "Text",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 17,
+                              "id": "101:1360",
+                              "name": "Icon",
+                              "children": [
+                                {
+                                  "tag": "img",
+                                  "style": 7,
+                                  "props": {
+                                    "alt": "",
+                                    "src": "/assets/figma/a85b66be90276d2b9c60.svg"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 202,
+                          "id": "101:1362",
+                          "name": "Heading 3",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 222,
+                              "id": "101:1363",
+                              "children": [
+                                "Verifikasi Sound & Audio"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 218,
+                          "id": "101:1365",
+                          "name": "Paragraph",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 2132,
+                              "id": "101:1366",
+                              "children": [
+                                "Uji dengar, cek channel mixer, dan kondisi kabel sebelum menerima paket audio."
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 2133,
+                      "id": "101:1367",
+                      "name": "Container",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 2131,
+                          "id": "101:1368",
+                          "name": "Text",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 17,
+                              "id": "101:1369",
+                              "name": "Icon",
+                              "children": [
+                                {
+                                  "tag": "img",
+                                  "style": 7,
+                                  "props": {
+                                    "alt": "",
+                                    "src": "/assets/figma/054c19ffb74468ec1e7a.svg"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 202,
+                          "id": "101:1372",
+                          "name": "Heading 3",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 222,
+                              "id": "101:1373",
+                              "children": [
+                                "Inspeksi Modul Visual & Rigging"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 218,
+                          "id": "101:1374",
+                          "name": "Paragraph",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 2132,
+                              "id": "101:1375",
+                              "children": [
+                                "Periksa baut, safety cable, dan kestabilan rangka untuk lighting dan panggung."
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 2134,
+                      "id": "101:1376",
+                      "name": "Container",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 2131,
+                          "id": "101:1377",
+                          "name": "Text",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 17,
+                              "id": "101:1378",
+                              "name": "Icon",
+                              "children": [
+                                {
+                                  "tag": "img",
+                                  "style": 7,
+                                  "props": {
+                                    "alt": "",
+                                    "src": "/assets/figma/1bf2848bdda952d11601.svg"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 202,
+                          "id": "101:1381",
+                          "name": "Heading 3",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 222,
+                              "id": "101:1382",
+                              "children": [
+                                "Genset & Pasokan Kelistrikan"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 218,
+                          "id": "101:1383",
+                          "name": "Paragraph",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 2132,
+                              "id": "101:1384",
+                              "children": [
+                                "Pastikan kapasitas kVA, bahan bakar, dan titik distribusi daya sesuai beban."
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "style": 567,
+              "id": "101:1406",
+              "name": "Section:margin",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 2135,
+                  "id": "101:1385",
+                  "name": "Section",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 2136,
+                      "id": "101:1386",
+                      "name": "Container",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 47,
+                          "id": "101:1387",
+                          "name": "Heading 2",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 2137,
+                              "id": "101:1388",
+                              "children": [
+                                "Mulai Eksplorasi Alat Event"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 2138,
+                          "id": "101:1389",
+                          "name": "Paragraph",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 2139,
+                              "id": "101:1390",
+                              "children": [
+                                "Temukan perlengkapan dari vendor terverifikasi dengan deposit yang kami jaga."
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 90,
+                      "id": "101:1393",
+                      "name": "Container",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 2140,
+                          "id": "101:1394",
+                          "name": "Button",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 40,
+                              "id": "101:1395",
+                              "children": [
+                                "Buka Katalog Alat"
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 41,
+                              "id": "101:1396",
+                              "name": "Icon",
+                              "children": [
+                                {
+                                  "tag": "img",
+                                  "style": 7,
+                                  "props": {
+                                    "alt": "",
+                                    "src": "/assets/figma/b14ac0d50d7e8cc7e387.svg"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 2141,
+                          "id": "101:1399",
+                          "name": "Button",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 1075,
+                              "props": {
+                                "aria-hidden": true
+                              }
+                            },
+                            {
+                              "tag": "p",
+                              "style": 2142,
+                              "id": "101:1400",
+                              "children": [
+                                "Lihat Syarat & Ketentuan"
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 2143
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

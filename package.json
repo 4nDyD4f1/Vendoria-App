@@ -7,6 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "oxlint",
+    "verify:interface": "node scripts/verify-interface.mjs",
     "preview": "vite preview"
   },
   "dependencies": {

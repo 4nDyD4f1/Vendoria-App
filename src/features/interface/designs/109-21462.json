@@ -1,0 +1,1720 @@
+{
+  "tag": "div",
+  "style": 0,
+  "id": "109:21462",
+  "name": "notifikasi",
+  "children": [
+    {
+      "tag": "div",
+      "style": 335,
+      "id": "109:21464",
+      "name": "Body",
+      "children": [
+        {
+          "tag": "div",
+          "style": 336,
+          "id": "109:21559",
+          "name": "Page",
+          "children": [
+            {
+              "tag": "div",
+              "style": 260,
+              "id": "109:21561",
+              "name": "Container",
+              "children": [
+                {
+                  "tag": "p",
+                  "style": 70,
+                  "id": "109:21562",
+                  "children": [
+                    "Beranda"
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "style": 112,
+                  "id": "109:21563",
+                  "name": "Icon",
+                  "children": [
+                    {
+                      "tag": "img",
+                      "style": 7,
+                      "props": {
+                        "alt": "",
+                        "src": "/assets/figma/0a496288f6a1ee034b30.svg"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "tag": "p",
+                  "style": 70,
+                  "id": "109:21565",
+                  "children": [
+                    "Akun Saya"
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "style": 112,
+                  "id": "109:21566",
+                  "name": "Icon",
+                  "children": [
+                    {
+                      "tag": "img",
+                      "style": 7,
+                      "props": {
+                        "alt": "",
+                        "src": "/assets/figma/0a496288f6a1ee034b30.svg"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "style": 228,
+                  "id": "109:21568",
+                  "name": "Bold Text",
+                  "children": [
+                    {
+                      "tag": "p",
+                      "style": 177,
+                      "id": "109:21569",
+                      "children": [
+                        "Verifikasi KYC"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "style": 2821,
+              "id": "109:21571",
+              "name": "Container",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 2763,
+                  "id": "109:21572",
+                  "name": "Container",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 49,
+                      "id": "109:21583",
+                      "name": "Container",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 87,
+                          "id": "109:21573",
+                          "children": [
+                            "KEAMANAN IDENTITAS"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 2764,
+                      "id": "109:21575",
+                      "name": "Heading 1",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 578,
+                          "id": "109:21576",
+                          "children": [
+                            "Verifikasi KYC Identitas"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 2765,
+                      "id": "109:21578",
+                      "name": "Paragraph",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 154,
+                          "id": "109:21579",
+                          "children": [
+                            "Selesaikan verifikasi untuk mulai booking alat dengan aman."
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "style": 2766,
+                  "id": "109:21584",
+                  "name": "Text",
+                  "children": [
+                    {
+                      "tag": "p",
+                      "style": 177,
+                      "id": "109:21585",
+                      "children": [
+                        "Peran: Customer / Penyewa"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "style": 275,
+              "id": "109:21814",
+              "name": "Container:margin",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 2767,
+                  "id": "109:21586",
+                  "name": "Container",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 2768,
+                      "id": "109:21587",
+                      "name": "Container",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 47,
+                          "id": "109:21588",
+                          "name": "Bold Text",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 418,
+                              "id": "109:21589",
+                              "children": [
+                                "Mode Simulasi Pratinjau Status"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 47,
+                          "id": "109:21590",
+                          "name": "Small",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 70,
+                              "id": "109:21591",
+                              "children": [
+                                "Lihat tampilan setiap status KYC"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 2769,
+                      "id": "109:21592",
+                      "name": "Container",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 2771,
+                          "id": "109:21593",
+                          "name": "Button",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 283,
+                              "id": "109:21594",
+                              "children": [
+                                "Belum Terverifikasi"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 2771,
+                          "id": "109:21596",
+                          "name": "Button",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 283,
+                              "id": "109:21597",
+                              "children": [
+                                "Menunggu Verifikasi"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 2771,
+                          "id": "109:21598",
+                          "name": "Button",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 283,
+                              "id": "109:21599",
+                              "children": [
+                                "Terverifikasi"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 2770,
+                          "id": "109:21600",
+                          "name": "Button",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 287,
+                              "id": "109:21601",
+                              "children": [
+                                "Ditolak"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "style": 275,
+              "id": "109:21815",
+              "name": "Alert:margin",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 2822,
+                  "id": "109:21602",
+                  "name": "Alert",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 41,
+                      "id": "109:21603",
+                      "name": "Icon",
+                      "children": [
+                        {
+                          "tag": "img",
+                          "style": 7,
+                          "props": {
+                            "alt": "",
+                            "src": "/assets/figma/33d1780b0c2995ad5e59.svg"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 2823,
+                      "id": "109:21606",
+                      "name": "Text",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 47,
+                          "id": "109:21607",
+                          "name": "Bold Text",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 2824,
+                              "id": "109:21608",
+                              "children": [
+                                "Dokumen perlu diajukan ulang"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 2557,
+                          "id": "109:21610",
+                          "name": "Small",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 2825,
+                              "id": "109:21611",
+                              "children": [
+                                "Foto KTP kurang jelas. Pastikan seluruh sudut dokumen terlihat."
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 2826,
+                      "id": "109:21613",
+                      "name": "Button",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 2827,
+                          "id": "109:21614",
+                          "children": [
+                            "Ajukan Ulang"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "style": 2128,
+              "id": "109:21816",
+              "name": "Container:margin",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 2772,
+                  "id": "109:21615",
+                  "name": "Container",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 2773,
+                      "id": "109:21616",
+                      "name": "Section",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 2774,
+                          "id": "109:21617",
+                          "name": "Container",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 2775,
+                              "id": "109:21618",
+                              "name": "Text",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 2776,
+                                  "id": "109:21619",
+                                  "children": [
+                                    "1"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 2777,
+                              "id": "109:21620",
+                              "name": "Container",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 47,
+                                  "id": "109:21621",
+                                  "name": "Heading 3",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 222,
+                                      "id": "109:21622",
+                                      "children": [
+                                        "Data Pribadi Sesuai KTP"
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 2619,
+                                  "id": "109:21624",
+                                  "name": "Paragraph",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 114,
+                                      "id": "109:21625",
+                                      "children": [
+                                        "Pastikan seluruh data sama dengan dokumen resmi."
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 198,
+                          "id": "109:21720",
+                          "name": "Container:margin",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 2778,
+                              "id": "109:21626",
+                              "name": "Container",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 838,
+                                  "id": "109:21641",
+                                  "name": "Field:margin",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 2779,
+                                      "id": "109:21627",
+                                      "name": "Field",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 47,
+                                          "id": "109:21628",
+                                          "name": "Text",
+                                          "children": [
+                                            {
+                                              "tag": "p",
+                                              "style": 622,
+                                              "id": "109:21629",
+                                              "children": [
+                                                "Nama Lengkap"
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "tag": "div",
+                                          "style": 770,
+                                          "id": "109:21633",
+                                          "name": "Container:margin",
+                                          "children": [
+                                            {
+                                              "tag": "div",
+                                              "style": 771,
+                                              "id": "109:21630",
+                                              "name": "Container",
+                                              "children": [
+                                                {
+                                                  "tag": "div",
+                                                  "style": 2780,
+                                                  "id": "109:21631",
+                                                  "name": "Text Input",
+                                                  "children": [
+                                                    {
+                                                      "tag": "p",
+                                                      "style": 773,
+                                                      "id": "109:21632",
+                                                      "children": [
+                                                        "Bagas Arya Pratama"
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 842,
+                                  "id": "109:21642",
+                                  "name": "Field:margin",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 2779,
+                                      "id": "109:21634",
+                                      "name": "Field",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 47,
+                                          "id": "109:21635",
+                                          "name": "Text",
+                                          "children": [
+                                            {
+                                              "tag": "p",
+                                              "style": 622,
+                                              "id": "109:21636",
+                                              "children": [
+                                                "NIK (16 digit)"
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "tag": "div",
+                                          "style": 770,
+                                          "id": "109:21640",
+                                          "name": "Container:margin",
+                                          "children": [
+                                            {
+                                              "tag": "div",
+                                              "style": 771,
+                                              "id": "109:21637",
+                                              "name": "Container",
+                                              "children": [
+                                                {
+                                                  "tag": "div",
+                                                  "style": 2780,
+                                                  "id": "109:21638",
+                                                  "name": "Text Input",
+                                                  "children": [
+                                                    {
+                                                      "tag": "p",
+                                                      "style": 773,
+                                                      "id": "109:21639",
+                                                      "children": [
+                                                        "3271000000000000"
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 2778,
+                          "id": "109:21643",
+                          "name": "Container",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 838,
+                              "id": "109:21657",
+                              "name": "Field:margin",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 2779,
+                                  "id": "109:21644",
+                                  "name": "Field",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 47,
+                                      "id": "109:21645",
+                                      "name": "Text",
+                                      "children": [
+                                        {
+                                          "tag": "p",
+                                          "style": 622,
+                                          "id": "109:21646",
+                                          "children": [
+                                            "Tempat Lahir"
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 770,
+                                      "id": "109:21650",
+                                      "name": "Container:margin",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 771,
+                                          "id": "109:21647",
+                                          "name": "Container",
+                                          "children": [
+                                            {
+                                              "tag": "div",
+                                              "style": 2780,
+                                              "id": "109:21648",
+                                              "name": "Text Input",
+                                              "children": [
+                                                {
+                                                  "tag": "p",
+                                                  "style": 773,
+                                                  "id": "109:21649",
+                                                  "children": [
+                                                    "Bogor"
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 842,
+                              "id": "109:21658",
+                              "name": "Field:margin",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 2779,
+                                  "id": "109:21651",
+                                  "name": "Field",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 47,
+                                      "id": "109:21652",
+                                      "name": "Text",
+                                      "children": [
+                                        {
+                                          "tag": "p",
+                                          "style": 622,
+                                          "id": "109:21653",
+                                          "children": [
+                                            "Tanggal Lahir"
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 770,
+                                      "id": "109:21656",
+                                      "name": "Container:margin",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 771,
+                                          "id": "109:21654",
+                                          "name": "Container",
+                                          "children": [
+                                            {
+                                              "tag": "div",
+                                              "style": 2781,
+                                              "id": "109:21655",
+                                              "name": "Date Picker"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 47,
+                          "id": "109:21659",
+                          "name": "Field",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 47,
+                              "id": "109:21660",
+                              "name": "Text",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 622,
+                                  "id": "109:21661",
+                                  "children": [
+                                    "Alamat Lengkap"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 770,
+                              "id": "109:21665",
+                              "name": "Container:margin",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 771,
+                                  "id": "109:21662",
+                                  "name": "Container",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 2782,
+                                      "id": "109:21663",
+                                      "name": "Text Input",
+                                      "children": [
+                                        {
+                                          "tag": "p",
+                                          "style": 773,
+                                          "id": "109:21664",
+                                          "children": [
+                                            "Masukkan alamat sesuai KTP"
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 581,
+                          "id": "109:21721",
+                          "name": "Horizontal Rule:margin",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 2783,
+                              "id": "109:21666",
+                              "name": "Horizontal Rule"
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 2784,
+                          "id": "109:21667",
+                          "name": "Container",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 2775,
+                              "id": "109:21668",
+                              "name": "Text",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 2776,
+                                  "id": "109:21669",
+                                  "children": [
+                                    "2"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 2785,
+                              "id": "109:21670",
+                              "name": "Container",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 47,
+                                  "id": "109:21671",
+                                  "name": "Heading 3",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 222,
+                                      "id": "109:21672",
+                                      "children": [
+                                        "Unggah Dokumen Verifikasi"
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 2619,
+                                  "id": "109:21673",
+                                  "name": "Paragraph",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 114,
+                                      "id": "109:21674",
+                                      "children": [
+                                        "Format JPG/PNG, maksimal 5MB per file."
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 198,
+                          "id": "109:21723",
+                          "name": "Container:margin",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 2786,
+                              "id": "109:21675",
+                              "name": "Container",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 2787,
+                                  "id": "109:21676",
+                                  "name": "UploadTile",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 2788,
+                                      "id": "109:21677",
+                                      "name": "Button - Unggah Foto e-KTP Fisik Asli",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 41,
+                                          "id": "109:21678",
+                                          "name": "Icon",
+                                          "children": [
+                                            {
+                                              "tag": "img",
+                                              "style": 7,
+                                              "props": {
+                                                "alt": "",
+                                                "src": "/assets/figma/a6276e591b3344916234.svg"
+                                              }
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "tag": "p",
+                                          "style": 2312,
+                                          "id": "109:21682",
+                                          "children": [
+                                            "Foto e-KTP Fisik Asli"
+                                          ]
+                                        },
+                                        {
+                                          "tag": "p",
+                                          "style": 1688,
+                                          "id": "109:21684",
+                                          "children": [
+                                            "Klik untuk mengunggah"
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 2789,
+                                  "id": "109:21685",
+                                  "name": "UploadTile",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 2788,
+                                      "id": "109:21686",
+                                      "name": "Button - Unggah Swafoto Memegang KTP",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 41,
+                                          "id": "109:21687",
+                                          "name": "Icon",
+                                          "children": [
+                                            {
+                                              "tag": "img",
+                                              "style": 7,
+                                              "props": {
+                                                "alt": "",
+                                                "src": "/assets/figma/1e075e66bb07b64c6824.svg"
+                                              }
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "tag": "p",
+                                          "style": 2312,
+                                          "id": "109:21691",
+                                          "children": [
+                                            "Swafoto Memegang KTP"
+                                          ]
+                                        },
+                                        {
+                                          "tag": "p",
+                                          "style": 1688,
+                                          "id": "109:21693",
+                                          "children": [
+                                            "Klik untuk mengunggah"
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 2790,
+                          "id": "109:21694",
+                          "name": "Label",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 1066,
+                              "id": "109:21695",
+                              "name": "Checkbox"
+                            },
+                            {
+                              "tag": "div",
+                              "style": 228,
+                              "id": "109:21699",
+                              "name": "Text",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 66,
+                                  "id": "109:21700",
+                                  "children": [
+                                    "Saya menyatakan data yang diberikan benar dan menyetujui pemrosesan sesuai UU PDP."
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 2791,
+                          "id": "109:21725",
+                          "name": "Container:margin",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 333,
+                              "id": "109:21701",
+                              "name": "Container",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 41,
+                                  "id": "109:21702",
+                                  "name": "Icon",
+                                  "children": [
+                                    {
+                                      "tag": "img",
+                                      "style": 7,
+                                      "props": {
+                                        "alt": "",
+                                        "src": "/assets/figma/d4d20379d857fb5713e5.svg"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 2792,
+                                  "id": "109:21705",
+                                  "name": "Text",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 47,
+                                      "id": "109:21706",
+                                      "name": "Bold Text",
+                                      "children": [
+                                        {
+                                          "tag": "p",
+                                          "style": 143,
+                                          "id": "109:21707",
+                                          "children": [
+                                            "Dokumen dienkripsi AES-256"
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 47,
+                                      "id": "109:21709",
+                                      "name": "Small",
+                                      "children": [
+                                        {
+                                          "tag": "p",
+                                          "style": 70,
+                                          "id": "109:21710",
+                                          "children": [
+                                            "Hanya tim verifikasi resmi Vendoria yang dapat mengakses data ini."
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 2793,
+                          "id": "109:21711",
+                          "name": "Container",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 1362,
+                              "id": "109:21712",
+                              "name": "Button",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 145,
+                                  "id": "109:21713",
+                                  "children": [
+                                    "Kirim Dokumen untuk Verifikasi"
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 41,
+                                  "id": "109:21715",
+                                  "name": "Icon",
+                                  "children": [
+                                    {
+                                      "tag": "img",
+                                      "style": 7,
+                                      "props": {
+                                        "alt": "",
+                                        "src": "/assets/figma/27257adb7779f3091966.svg"
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 860,
+                              "id": "109:21718",
+                              "name": "Button",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 40,
+                                  "id": "109:21719",
+                                  "children": [
+                                    "Simpan Draf"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 2794,
+                      "id": "109:21812",
+                      "name": "Sticky placeholder – Kyc"
+                    },
+                    {
+                      "tag": "div",
+                      "style": 2795,
+                      "id": "109:21727",
+                      "name": "Sidebar",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 2282,
+                          "id": "109:21728",
+                          "name": "Container",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 47,
+                              "id": "109:21729",
+                              "name": "Heading 3",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 222,
+                                  "id": "109:21730",
+                                  "children": [
+                                    "Panduan Foto KTP & Swafoto"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 2796,
+                              "id": "109:21769",
+                              "name": "Container:margin",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 2797,
+                                  "id": "109:21731",
+                                  "name": "Container",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 2798,
+                                      "id": "109:21732",
+                                      "name": "Container",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 2799,
+                                          "id": "109:21733",
+                                          "name": "Text",
+                                          "children": [
+                                            {
+                                              "tag": "div",
+                                              "style": 17,
+                                              "id": "109:21734",
+                                              "name": "Icon",
+                                              "children": [
+                                                {
+                                                  "tag": "img",
+                                                  "style": 7,
+                                                  "props": {
+                                                    "alt": "",
+                                                    "src": "/assets/figma/c1ee76dd35da0fd5adae.svg"
+                                                  }
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "tag": "div",
+                                          "style": 2800,
+                                          "id": "109:21736",
+                                          "name": "Bold Text",
+                                          "children": [
+                                            {
+                                              "tag": "p",
+                                              "style": 143,
+                                              "id": "109:21737",
+                                              "children": [
+                                                "Foto yang benar"
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "tag": "div",
+                                          "style": 47,
+                                          "id": "109:21738",
+                                          "name": "Small",
+                                          "children": [
+                                            {
+                                              "tag": "p",
+                                              "style": 2801,
+                                              "id": "109:21739",
+                                              "children": [
+                                                "Terang, fokus, semua sudut terlihat"
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 2802,
+                                      "id": "109:21741",
+                                      "name": "Container",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 2803,
+                                          "id": "109:21742",
+                                          "name": "Text",
+                                          "children": [
+                                            {
+                                              "tag": "div",
+                                              "style": 17,
+                                              "id": "109:21743",
+                                              "name": "Icon",
+                                              "children": [
+                                                {
+                                                  "tag": "img",
+                                                  "style": 7,
+                                                  "props": {
+                                                    "alt": "",
+                                                    "src": "/assets/figma/d7bc90c7093cc603a465.svg"
+                                                  }
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "tag": "div",
+                                          "style": 2800,
+                                          "id": "109:21745",
+                                          "name": "Bold Text",
+                                          "children": [
+                                            {
+                                              "tag": "p",
+                                              "style": 143,
+                                              "id": "109:21746",
+                                              "children": [
+                                                "Hindari"
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "tag": "div",
+                                          "style": 47,
+                                          "id": "109:21747",
+                                          "name": "Small",
+                                          "children": [
+                                            {
+                                              "tag": "p",
+                                              "style": 2801,
+                                              "id": "109:21748",
+                                              "children": [
+                                                "Buram, silau, atau terpotong"
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 2804,
+                              "id": "109:21750",
+                              "name": "Heading 4",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 2805,
+                                  "id": "109:21751",
+                                  "children": [
+                                    "Checklist lolos cepat"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 2806,
+                              "id": "109:21753",
+                              "name": "Paragraph",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 122,
+                                  "id": "109:21754",
+                                  "name": "Icon",
+                                  "children": [
+                                    {
+                                      "tag": "img",
+                                      "style": 7,
+                                      "props": {
+                                        "alt": "",
+                                        "src": "/assets/figma/168e696eb5fbef015234.svg"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "p",
+                                  "style": 114,
+                                  "id": "109:21756",
+                                  "children": [
+                                    "Data terbaca dengan jelas"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 2807,
+                              "id": "109:21757",
+                              "name": "Paragraph",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 122,
+                                  "id": "109:21758",
+                                  "name": "Icon",
+                                  "children": [
+                                    {
+                                      "tag": "img",
+                                      "style": 7,
+                                      "props": {
+                                        "alt": "",
+                                        "src": "/assets/figma/168e696eb5fbef015234.svg"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "p",
+                                  "style": 114,
+                                  "id": "109:21760",
+                                  "children": [
+                                    "Wajah tidak tertutup"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 2807,
+                              "id": "109:21761",
+                              "name": "Paragraph",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 122,
+                                  "id": "109:21762",
+                                  "name": "Icon",
+                                  "children": [
+                                    {
+                                      "tag": "img",
+                                      "style": 7,
+                                      "props": {
+                                        "alt": "",
+                                        "src": "/assets/figma/168e696eb5fbef015234.svg"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "p",
+                                  "style": 114,
+                                  "id": "109:21764",
+                                  "children": [
+                                    "KTP asli, bukan fotokopi"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 2807,
+                              "id": "109:21765",
+                              "name": "Paragraph",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 122,
+                                  "id": "109:21766",
+                                  "name": "Icon",
+                                  "children": [
+                                    {
+                                      "tag": "img",
+                                      "style": 7,
+                                      "props": {
+                                        "alt": "",
+                                        "src": "/assets/figma/168e696eb5fbef015234.svg"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "p",
+                                  "style": 114,
+                                  "id": "109:21768",
+                                  "children": [
+                                    "Latar belakang netral"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 1677,
+                          "id": "109:21775",
+                          "name": "Container",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 47,
+                              "id": "109:21776",
+                              "name": "Heading 3",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 222,
+                                  "id": "109:21777",
+                                  "children": [
+                                    "Mengapa KYC diwajibkan?"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 2808,
+                              "id": "109:21778",
+                              "name": "Feature",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 74,
+                                  "id": "109:21779",
+                                  "name": "Text",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 17,
+                                      "id": "109:21780",
+                                      "name": "Icon",
+                                      "children": [
+                                        {
+                                          "tag": "img",
+                                          "style": 7,
+                                          "props": {
+                                            "alt": "",
+                                            "src": "/assets/figma/054c19ffb74468ec1e7a.svg"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 2809,
+                                  "id": "109:21783",
+                                  "name": "Container",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 47,
+                                      "id": "109:21784",
+                                      "name": "Bold Text",
+                                      "children": [
+                                        {
+                                          "tag": "p",
+                                          "style": 76,
+                                          "id": "109:21785",
+                                          "children": [
+                                            "Mencegah penipuan"
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 77,
+                                      "id": "109:21787",
+                                      "name": "Small",
+                                      "children": [
+                                        {
+                                          "tag": "p",
+                                          "style": 78,
+                                          "id": "109:21788",
+                                          "children": [
+                                            "Identitas setiap pengguna terlindungi"
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 2810,
+                              "id": "109:21789",
+                              "name": "Feature",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 74,
+                                  "id": "109:21790",
+                                  "name": "Text",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 17,
+                                      "id": "109:21791",
+                                      "name": "Icon",
+                                      "children": [
+                                        {
+                                          "tag": "img",
+                                          "style": 7,
+                                          "props": {
+                                            "alt": "",
+                                            "src": "/assets/figma/d4d20379d857fb5713e5.svg"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 2811,
+                                  "id": "109:21794",
+                                  "name": "Container",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 47,
+                                      "id": "109:21795",
+                                      "name": "Bold Text",
+                                      "children": [
+                                        {
+                                          "tag": "p",
+                                          "style": 76,
+                                          "id": "109:21796",
+                                          "children": [
+                                            "Menjaga dana escrow"
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 77,
+                                      "id": "109:21797",
+                                      "name": "Small",
+                                      "children": [
+                                        {
+                                          "tag": "p",
+                                          "style": 78,
+                                          "id": "109:21798",
+                                          "children": [
+                                            "Transaksi terhubung ke pemilik sah"
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 2810,
+                              "id": "109:21799",
+                              "name": "Feature",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 74,
+                                  "id": "109:21800",
+                                  "name": "Text",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 17,
+                                      "id": "109:21801",
+                                      "name": "Icon",
+                                      "children": [
+                                        {
+                                          "tag": "img",
+                                          "style": 7,
+                                          "props": {
+                                            "alt": "",
+                                            "src": "/assets/figma/2d6c82006961f892c218.svg"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 2812,
+                                  "id": "109:21804",
+                                  "name": "Container",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 47,
+                                      "id": "109:21805",
+                                      "name": "Bold Text",
+                                      "children": [
+                                        {
+                                          "tag": "p",
+                                          "style": 76,
+                                          "id": "109:21806",
+                                          "children": [
+                                            "Membangun kepercayaan"
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 77,
+                                      "id": "109:21807",
+                                      "name": "Small",
+                                      "children": [
+                                        {
+                                          "tag": "p",
+                                          "style": 78,
+                                          "id": "109:21808",
+                                          "children": [
+                                            "Ekosistem vendor yang terverifikasi"
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

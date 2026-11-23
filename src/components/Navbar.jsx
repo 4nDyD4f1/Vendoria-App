@@ -19,6 +19,7 @@ export default function Navbar() {
   const navigate = useNavigate();
   const { user, loading, logout } = useAuth();
   const currentPath = location.pathname;
+  const firstName = user?.nama?.trim().split(/\s+/)[0] || 'Profil';
 
   const handleLogout = async () => {
     setMobileOpen(false);
@@ -29,7 +30,6 @@ export default function Navbar() {
   const navLinks = [
     { label: 'Beranda', href: '/' },
     { label: 'Katalog', href: '/catalog' },
-    { label: 'Vendor', href: '/vendor' },
     { label: 'Cara Sewa', href: '/cara-sewa' },
     { label: 'Pesanan Saya', href: '/pesanan' },
   ];
@@ -117,11 +117,11 @@ export default function Navbar() {
                 to="/kyc" 
                 className="flex items-center gap-2.5 rounded-full hover:opacity-80 transition-opacity cursor-pointer"
               >
-                <span className="w-8 h-8 rounded-full bg-[#EFE6DD] flex items-center justify-center text-[#35261F]">
-                  <User size={16} strokeWidth={1.8} />
+                <span className="w-8 h-8 rounded-full bg-[#EFE6DD] flex items-center justify-center text-[#35261F] overflow-hidden">
+                  {user.foto_profil ? <img src={user.foto_profil} alt="" referrerPolicy="no-referrer" className="w-full h-full object-cover" /> : <User size={16} strokeWidth={1.8} />}
                 </span>
                 <span className="text-[13px] font-semibold text-[#35261F]">
-                  Profil
+                  {firstName}
                 </span>
               </Link>
 
@@ -190,10 +190,10 @@ export default function Navbar() {
                 onClick={() => setMobileOpen(false)}
                 className="flex items-center gap-2 text-xs font-bold text-[#35261F]"
               >
-                <span className="w-7 h-7 rounded-full bg-[#EFE6DD] flex items-center justify-center">
-                  <User size={14} />
+                <span className="w-7 h-7 rounded-full bg-[#EFE6DD] flex items-center justify-center overflow-hidden">
+                  {user.foto_profil ? <img src={user.foto_profil} alt="" referrerPolicy="no-referrer" className="w-full h-full object-cover" /> : <User size={14} />}
                 </span>
-                <span>Profil Saya</span>
+                <span>{firstName}</span>
               </Link>
               <div className="flex items-center gap-3 text-[#35261F]">
                 <Link to="/catalog" onClick={() => setMobileOpen(false)}><Search size={18} /></Link>

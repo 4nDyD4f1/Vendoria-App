@@ -104,4 +104,19 @@ class GoogleUserServiceTest {
 		verify(repo, never()).saveAndFlush(any());
 		verify(repo, never()).linkGoogle(any(), any());
 	}
+
+	@Test
+	void fotoProfilHanyaDisimpanBilaHttpsDanBerubah() {
+		Pengguna p = mock(Pengguna.class);
+		when(p.getUserId()).thenReturn(7L);
+		when(p.getFotoProfil()).thenReturn("https://lama/a.jpg");
+
+		service.perbaruiFoto(p, "javascript:alert(1)");
+		service.perbaruiFoto(p, null);
+		service.perbaruiFoto(p, "https://lama/a.jpg");
+		verify(repo, never()).updateFoto(any(), any());
+
+		service.perbaruiFoto(p, "https://baru/b.jpg");
+		verify(repo).updateFoto(7L, "https://baru/b.jpg");
+	}
 }

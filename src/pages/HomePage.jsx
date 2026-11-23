@@ -43,10 +43,10 @@ export default function HomePage() {
             {/* Left Content */}
             <div className="lg:col-span-7 flex flex-col justify-center">
               {/* Badge */}
-              <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-xs border border-white/10 px-3.5 py-1.5 rounded-full text-xs font-medium w-fit mb-6 text-[#E8DDD0]">
+              {/* <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-xs border border-white/10 px-3.5 py-1.5 rounded-full text-xs font-medium w-fit mb-6 text-[#E8DDD0]">
                 <Sparkles size={13} className="text-[#C4A882]" />
                 <span>Selamat datang di Vendoria</span>
-              </div>
+              </div> */}
 
               {/* Title */}
               <h1 className="text-3xl sm:text-5xl lg:text-[50px] font-bold leading-[1.12] tracking-tight mb-4 text-white">

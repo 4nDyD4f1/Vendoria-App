@@ -45,6 +45,7 @@ class GoogleLoginSuccessHandler implements AuthenticationSuccessHandler {
 		try {
 			Pengguna user = users.findOrCreate(google.getSubject(), google.getEmail(),
 					Boolean.TRUE.equals(google.getEmailVerified()), google.getFullName());
+			users.perbaruiFoto(user, google.getPicture());
 			session.setAttribute(AuthController.SESSION_USER_ID, user.getUserId());
 			response.sendRedirect(frontendUrl + "/");
 		} catch (GoogleLoginException e) {

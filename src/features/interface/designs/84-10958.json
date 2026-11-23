@@ -1,0 +1,3273 @@
+{
+  "tag": "div",
+  "style": 0,
+  "id": "84:10958",
+  "name": "detail katalog-4",
+  "children": [
+    {
+      "tag": "div",
+      "style": 335,
+      "id": "84:10960",
+      "name": "Body",
+      "children": [
+        {
+          "tag": "div",
+          "style": 336,
+          "id": "84:11014",
+          "name": "Page",
+          "children": [
+            {
+              "tag": "div",
+              "style": 260,
+              "id": "84:11016",
+              "name": "Breadcrumb",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 261,
+                  "id": "84:11017",
+                  "name": "Text",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 228,
+                      "id": "84:11018",
+                      "name": "Link",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 70,
+                          "id": "84:11019",
+                          "children": [
+                            "Beranda"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 112,
+                      "id": "84:11021",
+                      "name": "Icon",
+                      "children": [
+                        {
+                          "tag": "img",
+                          "style": 7,
+                          "props": {
+                            "alt": "",
+                            "src": "/assets/figma/0a496288f6a1ee034b30.svg"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "style": 261,
+                  "id": "84:11023",
+                  "name": "Text",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 228,
+                      "id": "84:11024",
+                      "name": "Link",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 70,
+                          "id": "84:11025",
+                          "children": [
+                            "Katalog"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 112,
+                      "id": "84:11026",
+                      "name": "Icon",
+                      "children": [
+                        {
+                          "tag": "img",
+                          "style": 7,
+                          "props": {
+                            "alt": "",
+                            "src": "/assets/figma/0a496288f6a1ee034b30.svg"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "style": 261,
+                  "id": "84:11028",
+                  "name": "Text",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 228,
+                      "id": "84:11029",
+                      "name": "Link",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 70,
+                          "id": "84:11030",
+                          "children": [
+                            "Tenda & kanopi"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 112,
+                      "id": "84:11031",
+                      "name": "Icon",
+                      "children": [
+                        {
+                          "tag": "img",
+                          "style": 7,
+                          "props": {
+                            "alt": "",
+                            "src": "/assets/figma/0a496288f6a1ee034b30.svg"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "style": 228,
+                  "id": "84:11033",
+                  "name": "Text",
+                  "children": [
+                    {
+                      "tag": "p",
+                      "style": 177,
+                      "id": "84:11035",
+                      "children": [
+                        "Tenda Roder Transparan VIP 10x20m"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "style": 337,
+              "id": "84:11037",
+              "name": "Container",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 338,
+                  "id": "84:11038",
+                  "name": "Text",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 339,
+                      "id": "84:11039",
+                      "name": "Icon",
+                      "children": [
+                        {
+                          "tag": "img",
+                          "style": 7,
+                          "props": {
+                            "alt": "",
+                            "src": "/assets/figma/e27a0a37fa67db8e3e56.svg"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "p",
+                      "style": 105,
+                      "id": "84:11041",
+                      "children": [
+                        "Stok Tersedia (Sisa 2 Unit)"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "style": 340,
+                  "id": "84:11042",
+                  "name": "Text",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 339,
+                      "id": "84:11043",
+                      "name": "Icon",
+                      "children": [
+                        {
+                          "tag": "img",
+                          "style": 7,
+                          "props": {
+                            "alt": "",
+                            "src": "/assets/figma/4181f7d536f054816ceb.svg"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "p",
+                      "style": 177,
+                      "id": "84:11046",
+                      "children": [
+                        "Bogor & Jabodetabek"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "style": 341,
+              "id": "84:11487",
+              "name": "Container:margin",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 504,
+                  "id": "84:11047",
+                  "name": "Container",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 505,
+                      "id": "84:11048",
+                      "name": "Container",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 344,
+                          "id": "84:11049",
+                          "name": "Container",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 345,
+                              "id": "84:11050",
+                              "name": "Container",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 346,
+                                  "id": "84:11051",
+                                  "name": "Image (Tenda Roder Transparan VIP 10x20m - Tampak Depan)",
+                                  "children": [
+                                    {
+                                      "tag": "img",
+                                      "style": 103,
+                                      "props": {
+                                        "alt": "",
+                                        "src": "/assets/figma/b200cbed4b9a5e230f3a.png"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 347,
+                                  "id": "84:11052",
+                                  "name": "Text",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 339,
+                                      "id": "84:11053",
+                                      "name": "Icon",
+                                      "children": [
+                                        {
+                                          "tag": "img",
+                                          "style": 7,
+                                          "props": {
+                                            "alt": "",
+                                            "src": "/assets/figma/e27a0a37fa67db8e3e56.svg"
+                                          }
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "p",
+                                      "style": 105,
+                                      "id": "84:11055",
+                                      "children": [
+                                        "Inspeksi Siap Pakai • Grade A"
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 348,
+                                  "id": "84:11056",
+                                  "name": "Container",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 349,
+                                      "id": "84:11057",
+                                      "name": "Button - Perbesar foto",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 23,
+                                          "id": "84:11058",
+                                          "name": "Icon",
+                                          "children": [
+                                            {
+                                              "tag": "img",
+                                              "style": 7,
+                                              "props": {
+                                                "alt": "",
+                                                "src": "/assets/figma/0a827850f7630be0f111.svg"
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 349,
+                                      "id": "84:11061",
+                                      "name": "Button - Layar penuh",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 23,
+                                          "id": "84:11062",
+                                          "name": "Icon",
+                                          "children": [
+                                            {
+                                              "tag": "img",
+                                              "style": 7,
+                                              "props": {
+                                                "alt": "",
+                                                "src": "/assets/figma/367cafc1ff57d1de60b2.svg"
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 350,
+                              "id": "84:11064",
+                              "name": "Paragraph",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 114,
+                                  "id": "84:11065",
+                                  "children": [
+                                    "Foto Asli Vendor Terverifikasi • Unit #BOG-945"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 351,
+                              "id": "84:11085",
+                              "name": "Container:margin",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 352,
+                                  "id": "84:11067",
+                                  "name": "Container",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 353,
+                                      "id": "84:11068",
+                                      "name": "Button",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 354,
+                                          "id": "84:11069",
+                                          "name": "Image (Tampak Depan)",
+                                          "children": [
+                                            {
+                                              "tag": "img",
+                                              "style": 355,
+                                              "props": {
+                                                "alt": "",
+                                                "src": "/assets/figma/576509bf7aca3c5445d4.png"
+                                              }
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "tag": "div",
+                                          "style": 356,
+                                          "id": "84:11070",
+                                          "name": "Small",
+                                          "children": [
+                                            {
+                                              "tag": "p",
+                                              "style": 357,
+                                              "id": "84:11071",
+                                              "children": [
+                                                "Tampak Depan"
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 358,
+                                      "id": "84:11072",
+                                      "name": "Button",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 354,
+                                          "id": "84:11073",
+                                          "name": "Image (Port & Kabel)",
+                                          "children": [
+                                            {
+                                              "tag": "img",
+                                              "style": 355,
+                                              "props": {
+                                                "alt": "",
+                                                "src": "/assets/figma/765d7e2687689c766b69.png"
+                                              }
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "tag": "div",
+                                          "style": 356,
+                                          "id": "84:11074",
+                                          "name": "Small",
+                                          "children": [
+                                            {
+                                              "tag": "p",
+                                              "style": 357,
+                                              "id": "84:11075",
+                                              "children": [
+                                                "Port & Kabel"
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 359,
+                                      "id": "84:11076",
+                                      "name": "Button",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 354,
+                                          "id": "84:11077",
+                                          "name": "Image (Uji Fungsi Nyala)",
+                                          "children": [
+                                            {
+                                              "tag": "img",
+                                              "style": 355,
+                                              "props": {
+                                                "alt": "",
+                                                "src": "/assets/figma/be4ee735c0ebed0a0f56.png"
+                                              }
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "tag": "div",
+                                          "style": 356,
+                                          "id": "84:11078",
+                                          "name": "Small",
+                                          "children": [
+                                            {
+                                              "tag": "p",
+                                              "style": 357,
+                                              "id": "84:11079",
+                                              "children": [
+                                                "Uji Fungsi Nyala"
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 360,
+                                      "id": "84:11080",
+                                      "name": "Button",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 354,
+                                          "id": "84:11081",
+                                          "name": "Image (Hardcase / Tas)",
+                                          "children": [
+                                            {
+                                              "tag": "img",
+                                              "style": 355,
+                                              "props": {
+                                                "alt": "",
+                                                "src": "/assets/figma/997b8fa0cb270cf17815.png"
+                                              }
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "tag": "div",
+                                          "style": 356,
+                                          "id": "84:11082",
+                                          "name": "Small",
+                                          "children": [
+                                            {
+                                              "tag": "p",
+                                              "style": 357,
+                                              "id": "84:11083",
+                                              "children": [
+                                                "Hardcase / Tas"
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 361,
+                          "id": "84:11086",
+                          "name": "Container",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 362,
+                              "id": "84:11087",
+                              "name": "Text",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 112,
+                                  "id": "84:11088",
+                                  "name": "Icon",
+                                  "children": [
+                                    {
+                                      "tag": "img",
+                                      "style": 7,
+                                      "props": {
+                                        "alt": "",
+                                        "src": "/assets/figma/d3ccb084f2ecc01f6931.svg"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "p",
+                                  "style": 66,
+                                  "id": "84:11090",
+                                  "children": [
+                                    "Rangka Aluminium"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 362,
+                              "id": "84:11091",
+                              "name": "Text",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 112,
+                                  "id": "84:11092",
+                                  "name": "Icon",
+                                  "children": [
+                                    {
+                                      "tag": "img",
+                                      "style": 7,
+                                      "props": {
+                                        "alt": "",
+                                        "src": "/assets/figma/d3ccb084f2ecc01f6931.svg"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "p",
+                                  "style": 66,
+                                  "id": "84:11094",
+                                  "children": [
+                                    "Atap Anti-UV"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 362,
+                              "id": "84:11095",
+                              "name": "Text",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 112,
+                                  "id": "84:11096",
+                                  "name": "Icon",
+                                  "children": [
+                                    {
+                                      "tag": "img",
+                                      "style": 7,
+                                      "props": {
+                                        "alt": "",
+                                        "src": "/assets/figma/d3ccb084f2ecc01f6931.svg"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "p",
+                                  "style": 66,
+                                  "id": "84:11098",
+                                  "children": [
+                                    "Dinding Bongkar-Pasang"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 362,
+                              "id": "84:11099",
+                              "name": "Text",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 112,
+                                  "id": "84:11100",
+                                  "name": "Icon",
+                                  "children": [
+                                    {
+                                      "tag": "img",
+                                      "style": 7,
+                                      "props": {
+                                        "alt": "",
+                                        "src": "/assets/figma/d3ccb084f2ecc01f6931.svg"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "p",
+                                  "style": 66,
+                                  "id": "84:11102",
+                                  "children": [
+                                    "Pasang Oleh Tim"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 363,
+                          "id": "84:11103",
+                          "name": "Container",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 364,
+                              "id": "84:11104",
+                              "name": "Text",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 41,
+                                  "id": "84:11105",
+                                  "name": "Icon",
+                                  "children": [
+                                    {
+                                      "tag": "img",
+                                      "style": 7,
+                                      "props": {
+                                        "alt": "",
+                                        "src": "/assets/figma/53f13cab39eb5fb9de05.svg"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "p",
+                                  "style": 365,
+                                  "id": "84:11107",
+                                  "children": [
+                                    "Setup Cepat & Perhitungan Beban Angin"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 261,
+                              "id": "84:11109",
+                              "name": "Button",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 366,
+                                  "id": "84:11110",
+                                  "children": [
+                                    "Detail teknis"
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 30,
+                                  "id": "84:11112",
+                                  "name": "Icon",
+                                  "children": [
+                                    {
+                                      "tag": "img",
+                                      "style": 7,
+                                      "props": {
+                                        "alt": "",
+                                        "src": "/assets/figma/19c4a7c24c17f6f04307.svg"
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 367,
+                          "id": "84:11348",
+                          "name": "Section:margin",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 506,
+                              "id": "84:11115",
+                              "name": "Section",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 93,
+                                  "id": "84:11170",
+                                  "name": "Container",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 369,
+                                      "id": "84:11116",
+                                      "name": "Tabs",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 97,
+                                          "id": "84:11117",
+                                          "name": "Tab",
+                                          "children": [
+                                            {
+                                              "tag": "p",
+                                              "style": 98,
+                                              "id": "84:11118",
+                                              "children": [
+                                                "Deskripsi & Spesifikasi"
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "tag": "div",
+                                          "style": 97,
+                                          "id": "84:11120",
+                                          "name": "Tab",
+                                          "children": [
+                                            {
+                                              "tag": "p",
+                                              "style": 98,
+                                              "id": "84:11121",
+                                              "children": [
+                                                "Kondisi Barang & SOP Serah Terima"
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "tag": "div",
+                                          "style": 97,
+                                          "id": "84:11122",
+                                          "name": "Tab",
+                                          "children": [
+                                            {
+                                              "tag": "p",
+                                              "style": 98,
+                                              "id": "84:11123",
+                                              "children": [
+                                                "Ulasan Penyewa (91)"
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "tag": "div",
+                                          "style": 95,
+                                          "id": "84:11124",
+                                          "name": "Tab",
+                                          "children": [
+                                            {
+                                              "tag": "p",
+                                              "style": 96,
+                                              "id": "84:11125",
+                                              "children": [
+                                                "Kebijakan Deposit & Klaim"
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 507,
+                                  "id": "84:11126",
+                                  "name": "Container",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 151,
+                                      "id": "84:11127",
+                                      "name": "Heading 2",
+                                      "children": [
+                                        {
+                                          "tag": "p",
+                                          "style": 89,
+                                          "id": "84:11128",
+                                          "children": [
+                                            "Kebijakan deposit & klaim"
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 508,
+                                      "id": "84:11130",
+                                      "name": "Container",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 509,
+                                          "id": "84:11131",
+                                          "name": "Container",
+                                          "children": [
+                                            {
+                                              "tag": "div",
+                                              "style": 374,
+                                              "id": "84:11150",
+                                              "name": "Heading 3:margin",
+                                              "children": [
+                                                {
+                                                  "tag": "div",
+                                                  "style": 375,
+                                                  "id": "84:11132",
+                                                  "name": "Heading 3",
+                                                  "children": [
+                                                    {
+                                                      "tag": "p",
+                                                      "style": 222,
+                                                      "id": "84:11133",
+                                                      "children": [
+                                                        "Deposit Escrow"
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "tag": "div",
+                                              "style": 376,
+                                              "id": "84:11135",
+                                              "name": "Paragraph",
+                                              "children": [
+                                                {
+                                                  "tag": "div",
+                                                  "style": 377,
+                                                  "id": "84:11139",
+                                                  "name": "Icon:margin",
+                                                  "children": [
+                                                    {
+                                                      "tag": "div",
+                                                      "style": 122,
+                                                      "id": "84:11136",
+                                                      "name": "Icon",
+                                                      "children": [
+                                                        {
+                                                          "tag": "img",
+                                                          "style": 7,
+                                                          "props": {
+                                                            "alt": "",
+                                                            "src": "/assets/figma/168e696eb5fbef015234.svg"
+                                                          }
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "tag": "p",
+                                                  "style": 510,
+                                                  "id": "84:11138",
+                                                  "children": [
+                                                    "Deposit Rp1.500.000 per unit ditahan di rekening bersama"
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "tag": "div",
+                                              "style": 379,
+                                              "id": "84:11140",
+                                              "name": "Paragraph",
+                                              "children": [
+                                                {
+                                                  "tag": "div",
+                                                  "style": 377,
+                                                  "id": "84:11144",
+                                                  "name": "Icon:margin",
+                                                  "children": [
+                                                    {
+                                                      "tag": "div",
+                                                      "style": 122,
+                                                      "id": "84:11141",
+                                                      "name": "Icon",
+                                                      "children": [
+                                                        {
+                                                          "tag": "img",
+                                                          "style": 7,
+                                                          "props": {
+                                                            "alt": "",
+                                                            "src": "/assets/figma/168e696eb5fbef015234.svg"
+                                                          }
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "tag": "p",
+                                                  "style": 510,
+                                                  "id": "84:11143",
+                                                  "children": [
+                                                    "Dikembalikan 100% maksimal 3 jam setelah foto pengembalian valid"
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "tag": "div",
+                                              "style": 380,
+                                              "id": "84:11145",
+                                              "name": "Paragraph",
+                                              "children": [
+                                                {
+                                                  "tag": "div",
+                                                  "style": 377,
+                                                  "id": "84:11149",
+                                                  "name": "Icon:margin",
+                                                  "children": [
+                                                    {
+                                                      "tag": "div",
+                                                      "style": 122,
+                                                      "id": "84:11146",
+                                                      "name": "Icon",
+                                                      "children": [
+                                                        {
+                                                          "tag": "img",
+                                                          "style": 7,
+                                                          "props": {
+                                                            "alt": "",
+                                                            "src": "/assets/figma/168e696eb5fbef015234.svg"
+                                                          }
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "tag": "p",
+                                                  "style": 510,
+                                                  "id": "84:11148",
+                                                  "children": [
+                                                    "Dibekukan hanya bila ada klaim yang sedang ditinjau"
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "tag": "div",
+                                          "style": 511,
+                                          "id": "84:11151",
+                                          "name": "Container",
+                                          "children": [
+                                            {
+                                              "tag": "div",
+                                              "style": 374,
+                                              "id": "84:11169",
+                                              "name": "Heading 3:margin",
+                                              "children": [
+                                                {
+                                                  "tag": "div",
+                                                  "style": 375,
+                                                  "id": "84:11152",
+                                                  "name": "Heading 3",
+                                                  "children": [
+                                                    {
+                                                      "tag": "p",
+                                                      "style": 222,
+                                                      "id": "84:11153",
+                                                      "children": [
+                                                        "Klaim & Mediasi"
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "tag": "div",
+                                              "style": 376,
+                                              "id": "84:11154",
+                                              "name": "Paragraph",
+                                              "children": [
+                                                {
+                                                  "tag": "div",
+                                                  "style": 377,
+                                                  "id": "84:11158",
+                                                  "name": "Icon:margin",
+                                                  "children": [
+                                                    {
+                                                      "tag": "div",
+                                                      "style": 122,
+                                                      "id": "84:11155",
+                                                      "name": "Icon",
+                                                      "children": [
+                                                        {
+                                                          "tag": "img",
+                                                          "style": 7,
+                                                          "props": {
+                                                            "alt": "",
+                                                            "src": "/assets/figma/168e696eb5fbef015234.svg"
+                                                          }
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "tag": "p",
+                                                  "style": 378,
+                                                  "id": "84:11157",
+                                                  "children": [
+                                                    "Diajukan maksimal 3 hari setelah masa sewa"
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "tag": "div",
+                                              "style": 379,
+                                              "id": "84:11159",
+                                              "name": "Paragraph",
+                                              "children": [
+                                                {
+                                                  "tag": "div",
+                                                  "style": 377,
+                                                  "id": "84:11163",
+                                                  "name": "Icon:margin",
+                                                  "children": [
+                                                    {
+                                                      "tag": "div",
+                                                      "style": 122,
+                                                      "id": "84:11160",
+                                                      "name": "Icon",
+                                                      "children": [
+                                                        {
+                                                          "tag": "img",
+                                                          "style": 7,
+                                                          "props": {
+                                                            "alt": "",
+                                                            "src": "/assets/figma/168e696eb5fbef015234.svg"
+                                                          }
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "tag": "p",
+                                                  "style": 378,
+                                                  "id": "84:11162",
+                                                  "children": [
+                                                    "Wajib melampirkan minimal 2 foto bukti"
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "tag": "div",
+                                              "style": 380,
+                                              "id": "84:11164",
+                                              "name": "Paragraph",
+                                              "children": [
+                                                {
+                                                  "tag": "div",
+                                                  "style": 377,
+                                                  "id": "84:11168",
+                                                  "name": "Icon:margin",
+                                                  "children": [
+                                                    {
+                                                      "tag": "div",
+                                                      "style": 122,
+                                                      "id": "84:11165",
+                                                      "name": "Icon",
+                                                      "children": [
+                                                        {
+                                                          "tag": "img",
+                                                          "style": 7,
+                                                          "props": {
+                                                            "alt": "",
+                                                            "src": "/assets/figma/168e696eb5fbef015234.svg"
+                                                          }
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "tag": "p",
+                                                  "style": 510,
+                                                  "id": "84:11167",
+                                                  "children": [
+                                                    "Admin memutuskan: setujui, sebagian, atau tolak"
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 389,
+                          "id": "84:11171",
+                          "name": "Section",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 390,
+                              "id": "84:11172",
+                              "name": "Image (Roder Bogor Tenda Megah)",
+                              "children": [
+                                {
+                                  "tag": "img",
+                                  "style": 391,
+                                  "props": {
+                                    "alt": "",
+                                    "src": "/assets/figma/c103580721bd5ba94854.png"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 235,
+                              "id": "84:11173",
+                              "name": "Container",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 392,
+                                  "id": "84:11174",
+                                  "name": "Container",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 228,
+                                      "id": "84:11175",
+                                      "name": "Heading 3",
+                                      "children": [
+                                        {
+                                          "tag": "p",
+                                          "style": 222,
+                                          "id": "84:11176",
+                                          "children": [
+                                            "Roder Bogor Tenda Megah"
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 393,
+                                      "id": "84:11177",
+                                      "name": "Text",
+                                      "children": [
+                                        {
+                                          "tag": "p",
+                                          "style": 177,
+                                          "id": "84:11178",
+                                          "children": [
+                                            "Mitra Resmi sejak 2023"
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 394,
+                                  "id": "84:11179",
+                                  "name": "Paragraph",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 30,
+                                      "id": "84:11180",
+                                      "name": "Icon",
+                                      "children": [
+                                        {
+                                          "tag": "img",
+                                          "style": 7,
+                                          "props": {
+                                            "alt": "",
+                                            "src": "/assets/figma/73cadd8528850d47994e.svg"
+                                          }
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "p",
+                                      "style": 378,
+                                      "id": "84:11183",
+                                      "children": [
+                                        "198+ pesanan selesai"
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 395,
+                                  "id": "84:11184",
+                                  "name": "Paragraph",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 30,
+                                      "id": "84:11185",
+                                      "name": "Icon",
+                                      "children": [
+                                        {
+                                          "tag": "img",
+                                          "style": 7,
+                                          "props": {
+                                            "alt": "",
+                                            "src": "/assets/figma/79e21e7fbc3624eeeac9.svg"
+                                          }
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "p",
+                                      "style": 378,
+                                      "id": "84:11188",
+                                      "children": [
+                                        "Jl. Surya Kencana No. 140, Sukasari"
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 395,
+                                  "id": "84:11189",
+                                  "name": "Paragraph",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 30,
+                                      "id": "84:11190",
+                                      "name": "Icon",
+                                      "children": [
+                                        {
+                                          "tag": "img",
+                                          "style": 7,
+                                          "props": {
+                                            "alt": "",
+                                            "src": "/assets/figma/88d4c830c4b04671047b.svg"
+                                          }
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "p",
+                                      "style": 378,
+                                      "id": "84:11193",
+                                      "children": [
+                                        "Buka 07.00 - 21.00 WIB"
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 396,
+                                  "id": "84:11194",
+                                  "name": "Container",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 397,
+                                      "id": "84:11198",
+                                      "name": "Button",
+                                      "children": [
+                                        {
+                                          "tag": "p",
+                                          "style": 512,
+                                          "id": "84:11199",
+                                          "children": [
+                                            "Lihat Profil Vendor"
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 398,
+                          "id": "84:11204",
+                          "name": "Section",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 195,
+                              "id": "84:11205",
+                              "name": "Container",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 399,
+                                  "id": "84:11206",
+                                  "name": "Container",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 49,
+                                      "id": "84:11212",
+                                      "name": "Container",
+                                      "children": [
+                                        {
+                                          "tag": "p",
+                                          "style": 87,
+                                          "id": "84:11207",
+                                          "children": [
+                                            "DARI VENDOR YANG SAMA"
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 400,
+                                      "id": "84:11209",
+                                      "name": "Heading 2",
+                                      "children": [
+                                        {
+                                          "tag": "p",
+                                          "style": 89,
+                                          "id": "84:11210",
+                                          "children": [
+                                            "Alat Lain dari Vendor Ini"
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 134,
+                                  "id": "84:11213",
+                                  "name": "Link",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 135,
+                                      "id": "84:11214",
+                                      "children": [
+                                        "Lihat Semua (5)"
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 122,
+                                      "id": "84:11215",
+                                      "name": "Icon",
+                                      "children": [
+                                        {
+                                          "tag": "img",
+                                          "style": 7,
+                                          "props": {
+                                            "alt": "",
+                                            "src": "/assets/figma/d726860310cb75f7b844.svg"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 198,
+                              "id": "84:11347",
+                              "name": "Container:margin",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 401,
+                                  "id": "84:11218",
+                                  "name": "Container",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 293,
+                                      "id": "84:11219",
+                                      "name": "ProductCard",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 294,
+                                          "id": "84:11220",
+                                          "name": "Container",
+                                          "children": [
+                                            {
+                                              "tag": "div",
+                                              "style": 295,
+                                              "id": "84:11221",
+                                              "name": "Image (Tenda Dome Roder Premium 5x5m)",
+                                              "children": [
+                                                {
+                                                  "tag": "img",
+                                                  "style": 103,
+                                                  "props": {
+                                                    "alt": "",
+                                                    "src": "/assets/figma/59ce408da4c74e3c051f.png"
+                                                  }
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "tag": "div",
+                                              "style": 104,
+                                              "id": "84:11222",
+                                              "name": "Text",
+                                              "children": [
+                                                {
+                                                  "tag": "p",
+                                                  "style": 105,
+                                                  "id": "84:11223",
+                                                  "children": [
+                                                    "Tersedia"
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "tag": "div",
+                                              "style": 402,
+                                              "id": "84:11224",
+                                              "name": "Button - Simpan ke wishlist",
+                                              "children": [
+                                                {
+                                                  "tag": "div",
+                                                  "style": 23,
+                                                  "id": "84:11225",
+                                                  "name": "Icon",
+                                                  "children": [
+                                                    {
+                                                      "tag": "img",
+                                                      "style": 7,
+                                                      "props": {
+                                                        "alt": "",
+                                                        "src": "/assets/figma/59b8e0acfdd4d22b6f49.svg"
+                                                      }
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "tag": "div",
+                                          "style": 107,
+                                          "id": "84:11227",
+                                          "name": "Container",
+                                          "children": [
+                                            {
+                                              "tag": "div",
+                                              "style": 47,
+                                              "id": "84:11228",
+                                              "name": "Text",
+                                              "children": [
+                                                {
+                                                  "tag": "p",
+                                                  "style": 108,
+                                                  "id": "84:11229",
+                                                  "children": [
+                                                    "TENDA & KANOPI"
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "tag": "div",
+                                              "style": 403,
+                                              "id": "84:11231",
+                                              "name": "Heading 3",
+                                              "children": [
+                                                {
+                                                  "tag": "p",
+                                                  "style": 404,
+                                                  "id": "84:11232",
+                                                  "children": [
+                                                    "Tenda Dome Roder Premium 5x5m"
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "tag": "div",
+                                              "style": 405,
+                                              "id": "84:11233",
+                                              "name": "Paragraph",
+                                              "children": [
+                                                {
+                                                  "tag": "div",
+                                                  "style": 112,
+                                                  "id": "84:11234",
+                                                  "name": "Icon",
+                                                  "children": [
+                                                    {
+                                                      "tag": "img",
+                                                      "style": 7,
+                                                      "props": {
+                                                        "alt": "",
+                                                        "src": "/assets/figma/201e1ad4c345c1b2303d.svg"
+                                                      }
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "tag": "div",
+                                                  "style": 406,
+                                                  "id": "84:11237",
+                                                  "name": "Text",
+                                                  "children": [
+                                                    {
+                                                      "tag": "p",
+                                                      "style": 114,
+                                                      "id": "84:11238",
+                                                      "children": [
+                                                        "Roder Bogor Tenda Megah"
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "tag": "div",
+                                              "style": 405,
+                                              "id": "84:11239",
+                                              "name": "Paragraph",
+                                              "children": [
+                                                {
+                                                  "tag": "div",
+                                                  "style": 112,
+                                                  "id": "84:11240",
+                                                  "name": "Icon",
+                                                  "children": [
+                                                    {
+                                                      "tag": "img",
+                                                      "style": 7,
+                                                      "props": {
+                                                        "alt": "",
+                                                        "src": "/assets/figma/8a28d13ca888aef0d650.svg"
+                                                      }
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "tag": "p",
+                                                  "style": 114,
+                                                  "id": "84:11242",
+                                                  "children": [
+                                                    "4.8 (77)"
+                                                  ]
+                                                },
+                                                {
+                                                  "tag": "div",
+                                                  "style": 115,
+                                                  "id": "84:11248",
+                                                  "name": "Italic Text:margin",
+                                                  "children": [
+                                                    {
+                                                      "tag": "div",
+                                                      "style": 116,
+                                                      "id": "84:11243",
+                                                      "name": "Italic Text"
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "tag": "div",
+                                                  "style": 112,
+                                                  "id": "84:11244",
+                                                  "name": "Icon",
+                                                  "children": [
+                                                    {
+                                                      "tag": "img",
+                                                      "style": 7,
+                                                      "props": {
+                                                        "alt": "",
+                                                        "src": "/assets/figma/52c266a6d9e9da28fa94.svg"
+                                                      }
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "tag": "p",
+                                                  "style": 114,
+                                                  "id": "84:11247",
+                                                  "children": [
+                                                    "Bogor"
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "tag": "div",
+                                              "style": 407,
+                                              "id": "84:11249",
+                                              "name": "Container",
+                                              "children": [
+                                                {
+                                                  "tag": "p",
+                                                  "style": 118,
+                                                  "id": "84:11251",
+                                                  "children": [
+                                                    "Rp450.000"
+                                                  ]
+                                                },
+                                                {
+                                                  "tag": "p",
+                                                  "style": 125,
+                                                  "id": "84:11254",
+                                                  "children": [
+                                                    "/hari"
+                                                  ]
+                                                },
+                                                {
+                                                  "tag": "div",
+                                                  "style": 408,
+                                                  "id": "84:11255",
+                                                  "name": "Button",
+                                                  "children": [
+                                                    {
+                                                      "tag": "p",
+                                                      "style": 121,
+                                                      "id": "84:11256",
+                                                      "children": [
+                                                        "Lihat"
+                                                      ]
+                                                    },
+                                                    {
+                                                      "tag": "div",
+                                                      "style": 122,
+                                                      "id": "84:11257",
+                                                      "name": "Icon",
+                                                      "children": [
+                                                        {
+                                                          "tag": "img",
+                                                          "style": 7,
+                                                          "props": {
+                                                            "alt": "",
+                                                            "src": "/assets/figma/d726860310cb75f7b844.svg"
+                                                          }
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 304,
+                                      "id": "84:11263",
+                                      "name": "ProductCard",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 294,
+                                          "id": "84:11264",
+                                          "name": "Container",
+                                          "children": [
+                                            {
+                                              "tag": "div",
+                                              "style": 295,
+                                              "id": "84:11265",
+                                              "name": "Image (Tenda Sarnafil Putih 5x10m)",
+                                              "children": [
+                                                {
+                                                  "tag": "img",
+                                                  "style": 103,
+                                                  "props": {
+                                                    "alt": "",
+                                                    "src": "/assets/figma/9b2d50a453c95b3c855c.png"
+                                                  }
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "tag": "div",
+                                              "style": 104,
+                                              "id": "84:11266",
+                                              "name": "Text",
+                                              "children": [
+                                                {
+                                                  "tag": "p",
+                                                  "style": 105,
+                                                  "id": "84:11267",
+                                                  "children": [
+                                                    "Tersedia"
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "tag": "div",
+                                              "style": 402,
+                                              "id": "84:11268",
+                                              "name": "Button - Simpan ke wishlist",
+                                              "children": [
+                                                {
+                                                  "tag": "div",
+                                                  "style": 23,
+                                                  "id": "84:11269",
+                                                  "name": "Icon",
+                                                  "children": [
+                                                    {
+                                                      "tag": "img",
+                                                      "style": 7,
+                                                      "props": {
+                                                        "alt": "",
+                                                        "src": "/assets/figma/59b8e0acfdd4d22b6f49.svg"
+                                                      }
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "tag": "div",
+                                          "style": 107,
+                                          "id": "84:11271",
+                                          "name": "Container",
+                                          "children": [
+                                            {
+                                              "tag": "div",
+                                              "style": 47,
+                                              "id": "84:11272",
+                                              "name": "Text",
+                                              "children": [
+                                                {
+                                                  "tag": "p",
+                                                  "style": 108,
+                                                  "id": "84:11273",
+                                                  "children": [
+                                                    "TENDA & KANOPI"
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "tag": "div",
+                                              "style": 403,
+                                              "id": "84:11274",
+                                              "name": "Heading 3",
+                                              "children": [
+                                                {
+                                                  "tag": "p",
+                                                  "style": 404,
+                                                  "id": "84:11275",
+                                                  "children": [
+                                                    "Tenda Sarnafil Putih 5x10m"
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "tag": "div",
+                                              "style": 405,
+                                              "id": "84:11276",
+                                              "name": "Paragraph",
+                                              "children": [
+                                                {
+                                                  "tag": "div",
+                                                  "style": 112,
+                                                  "id": "84:11277",
+                                                  "name": "Icon",
+                                                  "children": [
+                                                    {
+                                                      "tag": "img",
+                                                      "style": 7,
+                                                      "props": {
+                                                        "alt": "",
+                                                        "src": "/assets/figma/201e1ad4c345c1b2303d.svg"
+                                                      }
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "tag": "div",
+                                                  "style": 406,
+                                                  "id": "84:11280",
+                                                  "name": "Text",
+                                                  "children": [
+                                                    {
+                                                      "tag": "p",
+                                                      "style": 114,
+                                                      "id": "84:11281",
+                                                      "children": [
+                                                        "Roder Bogor Tenda Megah"
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "tag": "div",
+                                              "style": 405,
+                                              "id": "84:11282",
+                                              "name": "Paragraph",
+                                              "children": [
+                                                {
+                                                  "tag": "div",
+                                                  "style": 112,
+                                                  "id": "84:11283",
+                                                  "name": "Icon",
+                                                  "children": [
+                                                    {
+                                                      "tag": "img",
+                                                      "style": 7,
+                                                      "props": {
+                                                        "alt": "",
+                                                        "src": "/assets/figma/8a28d13ca888aef0d650.svg"
+                                                      }
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "tag": "p",
+                                                  "style": 114,
+                                                  "id": "84:11285",
+                                                  "children": [
+                                                    "4.7 (53)"
+                                                  ]
+                                                },
+                                                {
+                                                  "tag": "div",
+                                                  "style": 115,
+                                                  "id": "84:11291",
+                                                  "name": "Italic Text:margin",
+                                                  "children": [
+                                                    {
+                                                      "tag": "div",
+                                                      "style": 116,
+                                                      "id": "84:11286",
+                                                      "name": "Italic Text"
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "tag": "div",
+                                                  "style": 112,
+                                                  "id": "84:11287",
+                                                  "name": "Icon",
+                                                  "children": [
+                                                    {
+                                                      "tag": "img",
+                                                      "style": 7,
+                                                      "props": {
+                                                        "alt": "",
+                                                        "src": "/assets/figma/52c266a6d9e9da28fa94.svg"
+                                                      }
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "tag": "p",
+                                                  "style": 114,
+                                                  "id": "84:11290",
+                                                  "children": [
+                                                    "Bogor"
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "tag": "div",
+                                              "style": 407,
+                                              "id": "84:11292",
+                                              "name": "Container",
+                                              "children": [
+                                                {
+                                                  "tag": "p",
+                                                  "style": 118,
+                                                  "id": "84:11294",
+                                                  "children": [
+                                                    "Rp900.000"
+                                                  ]
+                                                },
+                                                {
+                                                  "tag": "p",
+                                                  "style": 324,
+                                                  "id": "84:11296",
+                                                  "children": [
+                                                    "/hari"
+                                                  ]
+                                                },
+                                                {
+                                                  "tag": "div",
+                                                  "style": 408,
+                                                  "id": "84:11297",
+                                                  "name": "Button",
+                                                  "children": [
+                                                    {
+                                                      "tag": "p",
+                                                      "style": 121,
+                                                      "id": "84:11298",
+                                                      "children": [
+                                                        "Lihat"
+                                                      ]
+                                                    },
+                                                    {
+                                                      "tag": "div",
+                                                      "style": 122,
+                                                      "id": "84:11299",
+                                                      "name": "Icon",
+                                                      "children": [
+                                                        {
+                                                          "tag": "img",
+                                                          "style": 7,
+                                                          "props": {
+                                                            "alt": "",
+                                                            "src": "/assets/figma/d726860310cb75f7b844.svg"
+                                                          }
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 305,
+                                      "id": "84:11305",
+                                      "name": "ProductCard",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 294,
+                                          "id": "84:11306",
+                                          "name": "Container",
+                                          "children": [
+                                            {
+                                              "tag": "div",
+                                              "style": 295,
+                                              "id": "84:11307",
+                                              "name": "Image (Tenda Arabian Lengkap 10x10m)",
+                                              "children": [
+                                                {
+                                                  "tag": "img",
+                                                  "style": 103,
+                                                  "props": {
+                                                    "alt": "",
+                                                    "src": "/assets/figma/2eea443884ea57f58d37.png"
+                                                  }
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "tag": "div",
+                                              "style": 306,
+                                              "id": "84:11308",
+                                              "name": "Text",
+                                              "children": [
+                                                {
+                                                  "tag": "p",
+                                                  "style": 177,
+                                                  "id": "84:11309",
+                                                  "children": [
+                                                    "Sisa 1 Unit"
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "tag": "div",
+                                              "style": 402,
+                                              "id": "84:11310",
+                                              "name": "Button - Simpan ke wishlist",
+                                              "children": [
+                                                {
+                                                  "tag": "div",
+                                                  "style": 23,
+                                                  "id": "84:11311",
+                                                  "name": "Icon",
+                                                  "children": [
+                                                    {
+                                                      "tag": "img",
+                                                      "style": 7,
+                                                      "props": {
+                                                        "alt": "",
+                                                        "src": "/assets/figma/59b8e0acfdd4d22b6f49.svg"
+                                                      }
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "tag": "div",
+                                          "style": 107,
+                                          "id": "84:11313",
+                                          "name": "Container",
+                                          "children": [
+                                            {
+                                              "tag": "div",
+                                              "style": 47,
+                                              "id": "84:11314",
+                                              "name": "Text",
+                                              "children": [
+                                                {
+                                                  "tag": "p",
+                                                  "style": 108,
+                                                  "id": "84:11315",
+                                                  "children": [
+                                                    "TENDA & KANOPI"
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "tag": "div",
+                                              "style": 403,
+                                              "id": "84:11316",
+                                              "name": "Heading 3",
+                                              "children": [
+                                                {
+                                                  "tag": "p",
+                                                  "style": 404,
+                                                  "id": "84:11317",
+                                                  "children": [
+                                                    "Tenda Arabian Lengkap 10x10m"
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "tag": "div",
+                                              "style": 405,
+                                              "id": "84:11318",
+                                              "name": "Paragraph",
+                                              "children": [
+                                                {
+                                                  "tag": "div",
+                                                  "style": 112,
+                                                  "id": "84:11319",
+                                                  "name": "Icon",
+                                                  "children": [
+                                                    {
+                                                      "tag": "img",
+                                                      "style": 7,
+                                                      "props": {
+                                                        "alt": "",
+                                                        "src": "/assets/figma/201e1ad4c345c1b2303d.svg"
+                                                      }
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "tag": "div",
+                                                  "style": 406,
+                                                  "id": "84:11322",
+                                                  "name": "Text",
+                                                  "children": [
+                                                    {
+                                                      "tag": "p",
+                                                      "style": 114,
+                                                      "id": "84:11323",
+                                                      "children": [
+                                                        "Roder Bogor Tenda Megah"
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "tag": "div",
+                                              "style": 405,
+                                              "id": "84:11324",
+                                              "name": "Paragraph",
+                                              "children": [
+                                                {
+                                                  "tag": "div",
+                                                  "style": 112,
+                                                  "id": "84:11325",
+                                                  "name": "Icon",
+                                                  "children": [
+                                                    {
+                                                      "tag": "img",
+                                                      "style": 7,
+                                                      "props": {
+                                                        "alt": "",
+                                                        "src": "/assets/figma/8a28d13ca888aef0d650.svg"
+                                                      }
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "tag": "p",
+                                                  "style": 114,
+                                                  "id": "84:11327",
+                                                  "children": [
+                                                    "4.7 (36)"
+                                                  ]
+                                                },
+                                                {
+                                                  "tag": "div",
+                                                  "style": 115,
+                                                  "id": "84:11333",
+                                                  "name": "Italic Text:margin",
+                                                  "children": [
+                                                    {
+                                                      "tag": "div",
+                                                      "style": 116,
+                                                      "id": "84:11328",
+                                                      "name": "Italic Text"
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "tag": "div",
+                                                  "style": 112,
+                                                  "id": "84:11329",
+                                                  "name": "Icon",
+                                                  "children": [
+                                                    {
+                                                      "tag": "img",
+                                                      "style": 7,
+                                                      "props": {
+                                                        "alt": "",
+                                                        "src": "/assets/figma/52c266a6d9e9da28fa94.svg"
+                                                      }
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "tag": "p",
+                                                  "style": 114,
+                                                  "id": "84:11332",
+                                                  "children": [
+                                                    "Bogor"
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "tag": "div",
+                                              "style": 407,
+                                              "id": "84:11334",
+                                              "name": "Container",
+                                              "children": [
+                                                {
+                                                  "tag": "p",
+                                                  "style": 118,
+                                                  "id": "84:11336",
+                                                  "children": [
+                                                    "Rp2.400.000"
+                                                  ]
+                                                },
+                                                {
+                                                  "tag": "p",
+                                                  "style": 409,
+                                                  "id": "84:11338",
+                                                  "children": [
+                                                    "/hari"
+                                                  ]
+                                                },
+                                                {
+                                                  "tag": "div",
+                                                  "style": 408,
+                                                  "id": "84:11339",
+                                                  "name": "Button",
+                                                  "children": [
+                                                    {
+                                                      "tag": "p",
+                                                      "style": 121,
+                                                      "id": "84:11340",
+                                                      "children": [
+                                                        "Lihat"
+                                                      ]
+                                                    },
+                                                    {
+                                                      "tag": "div",
+                                                      "style": 122,
+                                                      "id": "84:11341",
+                                                      "name": "Icon",
+                                                      "children": [
+                                                        {
+                                                          "tag": "img",
+                                                          "style": 7,
+                                                          "props": {
+                                                            "alt": "",
+                                                            "src": "/assets/figma/d726860310cb75f7b844.svg"
+                                                          }
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 503,
+                      "id": "84:11349",
+                      "name": "Sidebar",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 151,
+                          "id": "84:11350",
+                          "name": "Text",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 108,
+                              "id": "84:11351",
+                              "children": [
+                                "TENDA & KANOPI"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 412,
+                          "id": "84:11352",
+                          "name": "Container",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 413,
+                              "id": "84:11353",
+                              "name": "Text",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 177,
+                                  "id": "84:11354",
+                                  "children": [
+                                    "Paket Pro"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 414,
+                              "id": "84:11355",
+                              "name": "Heading 1",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 415,
+                                  "id": "84:11356",
+                                  "children": [
+                                    "Tenda Roder Transparan VIP 10x20m"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 416,
+                          "id": "84:11358",
+                          "name": "Paragraph",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 417,
+                              "id": "84:11359",
+                              "name": "Stars",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 30,
+                                  "id": "84:11360",
+                                  "name": "Icon",
+                                  "children": [
+                                    {
+                                      "tag": "img",
+                                      "style": 7,
+                                      "props": {
+                                        "alt": "",
+                                        "src": "/assets/figma/ac6c446a8fc5d67dbd79.svg"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 30,
+                                  "id": "84:11362",
+                                  "name": "Icon",
+                                  "children": [
+                                    {
+                                      "tag": "img",
+                                      "style": 7,
+                                      "props": {
+                                        "alt": "",
+                                        "src": "/assets/figma/ac6c446a8fc5d67dbd79.svg"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 30,
+                                  "id": "84:11364",
+                                  "name": "Icon",
+                                  "children": [
+                                    {
+                                      "tag": "img",
+                                      "style": 7,
+                                      "props": {
+                                        "alt": "",
+                                        "src": "/assets/figma/ac6c446a8fc5d67dbd79.svg"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 30,
+                                  "id": "84:11366",
+                                  "name": "Icon",
+                                  "children": [
+                                    {
+                                      "tag": "img",
+                                      "style": 7,
+                                      "props": {
+                                        "alt": "",
+                                        "src": "/assets/figma/ac6c446a8fc5d67dbd79.svg"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 30,
+                                  "id": "84:11368",
+                                  "name": "Icon",
+                                  "children": [
+                                    {
+                                      "tag": "img",
+                                      "style": 7,
+                                      "props": {
+                                        "alt": "",
+                                        "src": "/assets/figma/ac6c446a8fc5d67dbd79.svg"
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 228,
+                              "id": "84:11370",
+                              "name": "Bold Text",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 418,
+                                  "id": "84:11371",
+                                  "children": [
+                                    "4.9"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "p",
+                              "style": 378,
+                              "id": "84:11373",
+                              "children": [
+                                "(91 ulasan)"
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 115,
+                              "id": "84:11378",
+                              "name": "Italic Text:margin",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 116,
+                                  "id": "84:11374",
+                                  "name": "Italic Text"
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 228,
+                              "id": "84:11375",
+                              "name": "Link",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 419,
+                                  "id": "84:11376",
+                                  "children": [
+                                    "Roder Bogor Tenda Megah"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 420,
+                          "id": "84:11379",
+                          "name": "Container",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 421,
+                              "id": "84:11380",
+                              "name": "Text",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 339,
+                                  "id": "84:11381",
+                                  "name": "Icon",
+                                  "children": [
+                                    {
+                                      "tag": "img",
+                                      "style": 7,
+                                      "props": {
+                                        "alt": "",
+                                        "src": "/assets/figma/3e45b2695fb6e318a4d8.svg"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "p",
+                                  "style": 105,
+                                  "id": "84:11384",
+                                  "children": [
+                                    "KYC Terverifikasi"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 422,
+                          "id": "84:11385",
+                          "name": "Container",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 423,
+                              "id": "84:11387",
+                              "children": [
+                                "Rp3.200.000"
+                              ]
+                            },
+                            {
+                              "tag": "p",
+                              "style": 424,
+                              "id": "84:11390",
+                              "children": [
+                                "/hari"
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 425,
+                              "id": "84:11392",
+                              "name": "Text",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 105,
+                                  "id": "84:11393",
+                                  "children": [
+                                    "Tersedia untuk tanggal pilihanmu"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 426,
+                          "id": "84:11485",
+                          "name": "Container:margin",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 427,
+                              "id": "84:11394",
+                              "name": "Container",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 151,
+                                  "id": "84:11395",
+                                  "name": "Label",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 428,
+                                      "id": "84:11396",
+                                      "name": "Small",
+                                      "children": [
+                                        {
+                                          "tag": "p",
+                                          "style": 70,
+                                          "id": "84:11397",
+                                          "children": [
+                                            "Mulai"
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 429,
+                                      "id": "84:11398",
+                                      "name": "Date Picker"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 235,
+                                  "id": "84:11401",
+                                  "name": "Label",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 428,
+                                      "id": "84:11402",
+                                      "name": "Small",
+                                      "children": [
+                                        {
+                                          "tag": "p",
+                                          "style": 70,
+                                          "id": "84:11403",
+                                          "children": [
+                                            "Selesai"
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 429,
+                                      "id": "84:11404",
+                                      "name": "Date Picker"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 430,
+                          "id": "84:11407",
+                          "name": "Paragraph",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 30,
+                              "id": "84:11408",
+                              "name": "Icon",
+                              "children": [
+                                {
+                                  "tag": "img",
+                                  "style": 7,
+                                  "props": {
+                                    "alt": "",
+                                    "src": "/assets/figma/7484df50a46ed3f8da2c.svg"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "p",
+                              "style": 378,
+                              "id": "84:11411",
+                              "children": [
+                                "Durasi: 3 Hari"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 431,
+                          "id": "84:11412",
+                          "name": "Container",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 228,
+                              "id": "84:11413",
+                              "name": "Text",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 432,
+                                  "id": "84:11414",
+                                  "children": [
+                                    {
+                                      "tag": "span",
+                                      "style": 386,
+                                      "children": [
+                                        "Jumlah unit "
+                                      ]
+                                    },
+                                    {
+                                      "tag": "span",
+                                      "style": 433,
+                                      "children": [
+                                        "(maks. 2 unit)"
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 434,
+                              "id": "84:11415",
+                              "name": "Container",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 435,
+                                  "id": "84:11416",
+                                  "name": "Button - Kurangi",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 436,
+                                      "id": "84:11417",
+                                      "name": "Icon",
+                                      "children": [
+                                        {
+                                          "tag": "img",
+                                          "style": 7,
+                                          "props": {
+                                            "alt": "",
+                                            "src": "/assets/figma/7b00beb65adc53ce1e94.svg"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 437,
+                                  "id": "84:11419",
+                                  "name": "Bold Text",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 24,
+                                      "id": "84:11420",
+                                      "children": [
+                                        "1"
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 435,
+                                  "id": "84:11421",
+                                  "name": "Button - Tambah",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 436,
+                                      "id": "84:11422",
+                                      "name": "Icon",
+                                      "children": [
+                                        {
+                                          "tag": "img",
+                                          "style": 7,
+                                          "props": {
+                                            "alt": "",
+                                            "src": "/assets/figma/b7dd14673398bb2c3777.svg"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 438,
+                          "id": "84:11424",
+                          "name": "Container",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 439,
+                              "id": "84:11425",
+                              "name": "Paragraph",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 256,
+                                  "id": "84:11426",
+                                  "name": "Text",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 378,
+                                      "id": "84:11427",
+                                      "children": [
+                                        "Biaya Sewa (3 hari x 1 unit)"
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 440,
+                                  "id": "84:11428",
+                                  "name": "Bold Text",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 441,
+                                      "id": "84:11429",
+                                      "children": [
+                                        "Rp9.600.000"
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 442,
+                              "id": "84:11430",
+                              "name": "Paragraph",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 256,
+                                  "id": "84:11431",
+                                  "name": "Text",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 378,
+                                      "id": "84:11432",
+                                      "children": [
+                                        "Deposit Jaminan Escrow"
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 440,
+                                  "id": "84:11433",
+                                  "name": "Bold Text",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 441,
+                                      "id": "84:11434",
+                                      "children": [
+                                        "Rp1.500.000"
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 443,
+                              "id": "84:11435",
+                              "name": "Paragraph",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 256,
+                                  "id": "84:11436",
+                                  "name": "Text",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 378,
+                                      "id": "84:11437",
+                                      "children": [
+                                        "Jasa Teknis & Transport Logistik"
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 440,
+                                  "id": "84:11438",
+                                  "name": "Bold Text",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 441,
+                                      "id": "84:11439",
+                                      "children": [
+                                        "Gratis Area Bogor Kota"
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 444,
+                              "id": "84:11440",
+                              "name": "Paragraph",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 256,
+                                  "id": "84:11441",
+                                  "name": "Text",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 135,
+                                      "id": "84:11442",
+                                      "children": [
+                                        "Total Bayar Sekarang"
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 440,
+                                  "id": "84:11443",
+                                  "name": "Bold Text",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 445,
+                                      "id": "84:11444",
+                                      "children": [
+                                        "Rp11.100.000"
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 446,
+                          "id": "84:11446",
+                          "name": "Container",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 447,
+                              "id": "84:11447",
+                              "name": "Icon",
+                              "children": [
+                                {
+                                  "tag": "img",
+                                  "style": 7,
+                                  "props": {
+                                    "alt": "",
+                                    "src": "/assets/figma/a3025dd83e626ed4e9ab.svg"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 228,
+                              "id": "84:11450",
+                              "name": "Text",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 448,
+                                  "id": "84:11452",
+                                  "children": [
+                                    "Deposit 100% dikembalikan otomatis ke rekening Anda setelah sewa selesai & foto serah terima tervalidasi maksimal 3 jam."
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 449,
+                          "id": "84:11453",
+                          "name": "Container",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 450,
+                              "id": "84:11454",
+                              "name": "Button",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 145,
+                                  "id": "84:11455",
+                                  "children": [
+                                    "Sewa Sekarang"
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 41,
+                                  "id": "84:11456",
+                                  "name": "Icon",
+                                  "children": [
+                                    {
+                                      "tag": "img",
+                                      "style": 7,
+                                      "props": {
+                                        "alt": "",
+                                        "src": "/assets/figma/27257adb7779f3091966.svg"
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 451,
+                              "id": "84:11459",
+                              "name": "Container",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 452,
+                                  "id": "84:11460",
+                                  "name": "Button",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 169,
+                                      "id": "84:11461",
+                                      "name": "Icon",
+                                      "children": [
+                                        {
+                                          "tag": "img",
+                                          "style": 7,
+                                          "props": {
+                                            "alt": "",
+                                            "src": "/assets/figma/aeb856f8a5004a2f5943.svg"
+                                          }
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "p",
+                                      "style": 40,
+                                      "id": "84:11465",
+                                      "children": [
+                                        "Tambah ke Keranjang"
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 453,
+                                  "id": "84:11466",
+                                  "name": "Button - Wishlist",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "style": 17,
+                                      "id": "84:11467",
+                                      "name": "Icon",
+                                      "children": [
+                                        {
+                                          "tag": "img",
+                                          "style": 7,
+                                          "props": {
+                                            "alt": "",
+                                            "src": "/assets/figma/ed71693c59edb321a845.svg"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 454,
+                          "id": "84:11469",
+                          "name": "Container",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 455,
+                              "id": "84:11470",
+                              "name": "Text",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 30,
+                                  "id": "84:11471",
+                                  "name": "Icon",
+                                  "children": [
+                                    {
+                                      "tag": "img",
+                                      "style": 7,
+                                      "props": {
+                                        "alt": "",
+                                        "src": "/assets/figma/24dd830a2fa063e13d28.svg"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "p",
+                                  "style": 114,
+                                  "id": "84:11474",
+                                  "children": [
+                                    "Vendor terverifikasi"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 456,
+                              "id": "84:11475",
+                              "name": "Text",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 30,
+                                  "id": "84:11476",
+                                  "name": "Icon",
+                                  "children": [
+                                    {
+                                      "tag": "img",
+                                      "style": 7,
+                                      "props": {
+                                        "alt": "",
+                                        "src": "/assets/figma/16557bf4e01cf46ff2bb.svg"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "p",
+                                  "style": 114,
+                                  "id": "84:11479",
+                                  "children": [
+                                    "Dana escrow aman"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 457,
+                              "id": "84:11480",
+                              "name": "Text",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 30,
+                                  "id": "84:11481",
+                                  "name": "Icon",
+                                  "children": [
+                                    {
+                                      "tag": "img",
+                                      "style": 7,
+                                      "props": {
+                                        "alt": "",
+                                        "src": "/assets/figma/f7290c3358bc95cbb0fa.svg"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "p",
+                                  "style": 114,
+                                  "id": "84:11484",
+                                  "children": [
+                                    "Bukti foto 2 arah"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

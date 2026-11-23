@@ -1,0 +1,964 @@
+{
+  "tag": "div",
+  "style": 0,
+  "id": "101:1785",
+  "name": "cara sewa-2",
+  "children": [
+    {
+      "tag": "div",
+      "style": 335,
+      "id": "101:1787",
+      "name": "Body",
+      "children": [
+        {
+          "tag": "div",
+          "style": 336,
+          "id": "101:1841",
+          "name": "Page",
+          "children": [
+            {
+              "tag": "div",
+              "style": 260,
+              "id": "101:1843",
+              "name": "Breadcrumb",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 261,
+                  "id": "101:1844",
+                  "name": "Text",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 228,
+                      "id": "101:1845",
+                      "name": "Link",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 70,
+                          "id": "101:1846",
+                          "children": [
+                            "Beranda"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 112,
+                      "id": "101:1848",
+                      "name": "Icon",
+                      "children": [
+                        {
+                          "tag": "img",
+                          "style": 7,
+                          "props": {
+                            "alt": "",
+                            "src": "/assets/figma/0a496288f6a1ee034b30.svg"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "style": 228,
+                  "id": "101:1850",
+                  "name": "Text",
+                  "children": [
+                    {
+                      "tag": "p",
+                      "style": 177,
+                      "id": "101:1852",
+                      "children": [
+                        "Panduan"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "style": 262,
+              "id": "101:1973",
+              "name": "Section:margin",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 2092,
+                  "id": "101:1854",
+                  "name": "Section",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 845,
+                      "id": "101:1880",
+                      "name": "Container",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 2093,
+                          "id": "101:1855",
+                          "name": "Text",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 339,
+                              "id": "101:1856",
+                              "name": "Icon",
+                              "children": [
+                                {
+                                  "tag": "img",
+                                  "style": 7,
+                                  "props": {
+                                    "alt": "",
+                                    "src": "/assets/figma/f1912f13345495c2b511.svg"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "p",
+                              "style": 2094,
+                              "id": "101:1859",
+                              "children": [
+                                "Pusat Edukasi & Keamanan Transaksi"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 2095,
+                      "id": "101:1860",
+                      "name": "Heading 1",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 2096,
+                          "id": "101:1861",
+                          "children": [
+                            "Panduan & Standar Sewa Terpercaya"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 1553,
+                      "id": "101:1878",
+                      "name": "Paragraph:margin",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 2097,
+                          "id": "101:1864",
+                          "children": [
+                            "Pelajari alur sewa, kebijakan deposit, dan perlindungan yang membuat setiap transaksi di Vendoria aman untuk penyewa maupun vendor."
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 2098,
+                      "id": "101:1866",
+                      "name": "Container",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 2099,
+                          "id": "101:1867",
+                          "name": "Text",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 339,
+                              "id": "101:1868",
+                              "name": "Icon",
+                              "children": [
+                                {
+                                  "tag": "img",
+                                  "style": 7,
+                                  "props": {
+                                    "alt": "",
+                                    "src": "/assets/figma/6d19314d61f6f1f70949.svg"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "p",
+                              "style": 875,
+                              "id": "101:1871",
+                              "children": [
+                                "100% Escrow Aman"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 2100,
+                          "id": "101:1872",
+                          "name": "Text",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 339,
+                              "id": "101:1873",
+                              "name": "Icon",
+                              "children": [
+                                {
+                                  "tag": "img",
+                                  "style": 7,
+                                  "props": {
+                                    "alt": "",
+                                    "src": "/assets/figma/d4e974e2e26313317429.svg"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "p",
+                              "style": 875,
+                              "id": "101:1876",
+                              "children": [
+                                "Rilis Deposit 3 Jam"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "style": 2101,
+              "id": "101:1881",
+              "name": "Container",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 2102,
+                  "id": "101:1882",
+                  "name": "Tabs",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 97,
+                      "id": "101:1883",
+                      "name": "Tab",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 98,
+                          "id": "101:1884",
+                          "children": [
+                            "Cara Sewa"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 95,
+                      "id": "101:1886",
+                      "name": "Tab",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 96,
+                          "id": "101:1887",
+                          "children": [
+                            "Pusat Bantuan & FAQ"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 97,
+                      "id": "101:1888",
+                      "name": "Tab",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 98,
+                          "id": "101:1889",
+                          "children": [
+                            "Kebijakan Deposit & Proteksi"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "style": 198,
+              "id": "101:1975",
+              "name": "Section:margin",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 263,
+                  "id": "101:1890",
+                  "name": "Section",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 2144,
+                      "id": "101:1891",
+                      "name": "Container",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 41,
+                          "id": "101:1892",
+                          "name": "Icon",
+                          "children": [
+                            {
+                              "tag": "img",
+                              "style": 7,
+                              "props": {
+                                "alt": "",
+                                "src": "/assets/figma/c1d7196b97050c3bbaa5.svg"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "style": 2145,
+                          "id": "101:1895",
+                          "name": "Text Input - Cari FAQ",
+                          "children": [
+                            {
+                              "tag": "p",
+                              "style": 278,
+                              "id": "101:1896",
+                              "children": [
+                                "Cari pertanyaan, mis. deposit atau klaim..."
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 2146,
+                      "id": "101:1968",
+                      "name": "Container:margin",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 2147,
+                          "id": "101:1897",
+                          "name": "Container",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 151,
+                              "id": "101:1898",
+                              "name": "Text",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 108,
+                                  "id": "101:1899",
+                                  "children": [
+                                    "PEMESANAN"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 2148,
+                              "id": "101:1901",
+                              "name": "Container",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 2149,
+                                  "id": "101:1902",
+                                  "name": "Button",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 76,
+                                      "id": "101:1903",
+                                      "children": [
+                                        "Bagaimana cara memesan alat?"
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 2150,
+                                      "id": "101:1907",
+                                      "name": "Icon:transform",
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "style": 2151,
+                                          "id": "101:1905",
+                                          "children": [
+                                            {
+                                              "tag": "div",
+                                              "style": 2152,
+                                              "children": [
+                                                {
+                                                  "tag": "div",
+                                                  "style": 2153,
+                                                  "name": "Icon",
+                                                  "children": [
+                                                    {
+                                                      "tag": "img",
+                                                      "style": 7,
+                                                      "props": {
+                                                        "alt": "",
+                                                        "src": "/assets/figma/ef3836265867b830a479.svg"
+                                                      }
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "style": 2154,
+                                  "id": "101:1908",
+                                  "name": "Paragraph",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 2155,
+                                      "id": "101:1909",
+                                      "children": [
+                                        "Pilih alat di katalog, tentukan tanggal sewa dan jumlah unit, lalu klik Sewa Sekarang. Isi detail acara di keranjang dan bayar deposit dalam 24 jam."
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 2156,
+                              "id": "101:1911",
+                              "name": "Container",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 2149,
+                                  "id": "101:1912",
+                                  "name": "Button",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 76,
+                                      "id": "101:1913",
+                                      "children": [
+                                        "Apakah saya bisa membatalkan pesanan?"
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 169,
+                                      "id": "101:1914",
+                                      "name": "Icon",
+                                      "children": [
+                                        {
+                                          "tag": "img",
+                                          "style": 7,
+                                          "props": {
+                                            "alt": "",
+                                            "src": "/assets/figma/ef3836265867b830a479.svg"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 2146,
+                      "id": "101:1969",
+                      "name": "Container:margin",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 2157,
+                          "id": "101:1916",
+                          "name": "Container",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 151,
+                              "id": "101:1917",
+                              "name": "Text",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 108,
+                                  "id": "101:1918",
+                                  "children": [
+                                    "DEPOSIT & ESCROW"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 2148,
+                              "id": "101:1919",
+                              "name": "Container",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 2149,
+                                  "id": "101:1920",
+                                  "name": "Button",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 76,
+                                      "id": "101:1921",
+                                      "children": [
+                                        "Apa itu deposit escrow?"
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 169,
+                                      "id": "101:1922",
+                                      "name": "Icon",
+                                      "children": [
+                                        {
+                                          "tag": "img",
+                                          "style": 7,
+                                          "props": {
+                                            "alt": "",
+                                            "src": "/assets/figma/ef3836265867b830a479.svg"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 2156,
+                              "id": "101:1924",
+                              "name": "Container",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 2149,
+                                  "id": "101:1925",
+                                  "name": "Button",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 76,
+                                      "id": "101:1926",
+                                      "children": [
+                                        "Kapan deposit saya kembali?"
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 169,
+                                      "id": "101:1927",
+                                      "name": "Icon",
+                                      "children": [
+                                        {
+                                          "tag": "img",
+                                          "style": 7,
+                                          "props": {
+                                            "alt": "",
+                                            "src": "/assets/figma/ef3836265867b830a479.svg"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 2146,
+                      "id": "101:1970",
+                      "name": "Container:margin",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 2157,
+                          "id": "101:1929",
+                          "name": "Container",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 151,
+                              "id": "101:1930",
+                              "name": "Text",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 108,
+                                  "id": "101:1931",
+                                  "children": [
+                                    "SERAH TERIMA"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 2148,
+                              "id": "101:1932",
+                              "name": "Container",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 2149,
+                                  "id": "101:1933",
+                                  "name": "Button",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 76,
+                                      "id": "101:1934",
+                                      "children": [
+                                        "Foto apa saja yang harus diambil?"
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 169,
+                                      "id": "101:1935",
+                                      "name": "Icon",
+                                      "children": [
+                                        {
+                                          "tag": "img",
+                                          "style": 7,
+                                          "props": {
+                                            "alt": "",
+                                            "src": "/assets/figma/ef3836265867b830a479.svg"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 2156,
+                              "id": "101:1937",
+                              "name": "Container",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 2149,
+                                  "id": "101:1938",
+                                  "name": "Button",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 76,
+                                      "id": "101:1939",
+                                      "children": [
+                                        "Bagaimana jika barang tiba terlambat?"
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 169,
+                                      "id": "101:1940",
+                                      "name": "Icon",
+                                      "children": [
+                                        {
+                                          "tag": "img",
+                                          "style": 7,
+                                          "props": {
+                                            "alt": "",
+                                            "src": "/assets/figma/ef3836265867b830a479.svg"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 2146,
+                      "id": "101:1971",
+                      "name": "Container:margin",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 2157,
+                          "id": "101:1942",
+                          "name": "Container",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 151,
+                              "id": "101:1943",
+                              "name": "Text",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 108,
+                                  "id": "101:1944",
+                                  "children": [
+                                    "KLAIM"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 2148,
+                              "id": "101:1945",
+                              "name": "Container",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 2149,
+                                  "id": "101:1946",
+                                  "name": "Button",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 76,
+                                      "id": "101:1947",
+                                      "children": [
+                                        "Berapa lama batas pengajuan klaim?"
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 169,
+                                      "id": "101:1948",
+                                      "name": "Icon",
+                                      "children": [
+                                        {
+                                          "tag": "img",
+                                          "style": 7,
+                                          "props": {
+                                            "alt": "",
+                                            "src": "/assets/figma/ef3836265867b830a479.svg"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 2156,
+                              "id": "101:1950",
+                              "name": "Container",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 2149,
+                                  "id": "101:1951",
+                                  "name": "Button",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 76,
+                                      "id": "101:1952",
+                                      "children": [
+                                        "Siapa yang memutuskan klaim?"
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 169,
+                                      "id": "101:1953",
+                                      "name": "Icon",
+                                      "children": [
+                                        {
+                                          "tag": "img",
+                                          "style": 7,
+                                          "props": {
+                                            "alt": "",
+                                            "src": "/assets/figma/ef3836265867b830a479.svg"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 2146,
+                      "id": "101:1972",
+                      "name": "Container:margin",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "style": 2157,
+                          "id": "101:1955",
+                          "name": "Container",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "style": 151,
+                              "id": "101:1956",
+                              "name": "Text",
+                              "children": [
+                                {
+                                  "tag": "p",
+                                  "style": 108,
+                                  "id": "101:1957",
+                                  "children": [
+                                    "KYC"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 2148,
+                              "id": "101:1958",
+                              "name": "Container",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 2149,
+                                  "id": "101:1959",
+                                  "name": "Button",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 76,
+                                      "id": "101:1960",
+                                      "children": [
+                                        "Mengapa harus verifikasi KYC?"
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 169,
+                                      "id": "101:1961",
+                                      "name": "Icon",
+                                      "children": [
+                                        {
+                                          "tag": "img",
+                                          "style": 7,
+                                          "props": {
+                                            "alt": "",
+                                            "src": "/assets/figma/ef3836265867b830a479.svg"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "style": 2156,
+                              "id": "101:1963",
+                              "name": "Container",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "style": 2149,
+                                  "id": "101:1964",
+                                  "name": "Button",
+                                  "children": [
+                                    {
+                                      "tag": "p",
+                                      "style": 76,
+                                      "id": "101:1965",
+                                      "children": [
+                                        "Berapa lama proses verifikasi?"
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "style": 169,
+                                      "id": "101:1966",
+                                      "name": "Icon",
+                                      "children": [
+                                        {
+                                          "tag": "img",
+                                          "style": 7,
+                                          "props": {
+                                            "alt": "",
+                                            "src": "/assets/figma/ef3836265867b830a479.svg"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

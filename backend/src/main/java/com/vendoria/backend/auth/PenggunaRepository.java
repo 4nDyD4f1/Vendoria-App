@@ -1,5 +1,6 @@
 package com.vendoria.backend.auth;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -15,10 +16,24 @@ interface PenggunaRepository extends JpaRepository<Pengguna, Long> {
 
 	Optional<Pengguna> findByGoogleSub(String googleSub);
 
+	List<Pengguna> findByRoleOrderByUserIdDesc(String role);
+
+	// native karena updated_at tidak dipetakan di entity; kata sandi diubah terpisah lewat updatePassword
+	@Modifying
+	@Transactional
+	@Query(value = "update pengguna set nama = :nama, email = :email, status_akun = :status, "
+			+ "catatan_admin = :catatan, updated_at = now() where user_id = :id and role = 'admin'", nativeQuery = true)
+	int updateAdmin(Long id, String nama, String email, String status, String catatan);
+
 	@Modifying
 	@Transactional
 	@Query(value = "update pengguna set google_sub = :sub, updated_at = now() where user_id = :id", nativeQuery = true)
 	int linkGoogle(Long id, String sub);
+
+	@Modifying
+	@Transactional
+	@Query(value = "update pengguna set foto_profil = :url, updated_at = now() where user_id = :id", nativeQuery = true)
+	int updateFoto(Long id, String url);
 
 	// native karena updated_at tidak dipetakan di entity; DB tidak punya trigger untuknya
 	@Modifying

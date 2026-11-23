@@ -1,0 +1,506 @@
+{
+  "tag": "div",
+  "style": 225,
+  "id": "84:4013",
+  "name": "Footer",
+  "children": [
+    {
+      "tag": "div",
+      "style": 226,
+      "id": "84:4014",
+      "name": "Container",
+      "children": [
+        {
+          "tag": "div",
+          "style": 151,
+          "id": "84:4015",
+          "name": "Container",
+          "children": [
+            {
+              "tag": "div",
+              "style": 227,
+              "id": "84:4031",
+              "name": "Container",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 5,
+                  "id": "84:4016",
+                  "name": "Logo",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 6,
+                      "id": "84:4017",
+                      "name": "Image - Vendoria",
+                      "children": [
+                        {
+                          "tag": "img",
+                          "style": 7,
+                          "props": {
+                            "alt": "",
+                            "src": "/assets/figma/99f729440d4864ad6ebc.svg"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "style": 228,
+                      "id": "84:4021",
+                      "name": "Bold Text",
+                      "children": [
+                        {
+                          "tag": "p",
+                          "style": 229,
+                          "id": "84:4022",
+                          "children": [
+                            "Vendoria"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "style": 230,
+              "id": "84:4023",
+              "name": "Paragraph",
+              "children": [
+                {
+                  "tag": "p",
+                  "style": 231,
+                  "id": "84:4024",
+                  "children": [
+                    "Marketplace rental perlengkapan event terpercaya dengan jaminan inspeksi kondisi terverifikasi."
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "style": 232,
+              "id": "84:4032",
+              "name": "Container",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 233,
+                  "id": "84:4025",
+                  "name": "Text",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "style": 30,
+                      "id": "84:4026",
+                      "name": "Icon",
+                      "children": [
+                        {
+                          "tag": "img",
+                          "style": 7,
+                          "props": {
+                            "alt": "",
+                            "src": "/assets/figma/e43267a969ccb40636b3.svg"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "p",
+                      "style": 234,
+                      "id": "84:4029",
+                      "children": [
+                        "Kondisi terverifikasi & tepat waktu"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "div",
+          "style": 235,
+          "id": "84:4033",
+          "name": "Container",
+          "children": [
+            {
+              "tag": "div",
+              "style": 236,
+              "id": "84:4034",
+              "name": "Heading 4",
+              "children": [
+                {
+                  "tag": "p",
+                  "style": 237,
+                  "id": "84:4035",
+                  "children": [
+                    "Sewa Alat"
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "style": 238,
+              "id": "84:4037",
+              "name": "Link",
+              "children": [
+                {
+                  "tag": "p",
+                  "style": 239,
+                  "id": "84:4038",
+                  "children": [
+                    "Audio & Sound System"
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "style": 240,
+              "id": "84:4039",
+              "name": "Link",
+              "children": [
+                {
+                  "tag": "p",
+                  "style": 239,
+                  "id": "84:4040",
+                  "children": [
+                    "Stage Lighting & LED"
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "style": 240,
+              "id": "84:4041",
+              "name": "Link",
+              "children": [
+                {
+                  "tag": "p",
+                  "style": 239,
+                  "id": "84:4042",
+                  "children": [
+                    "Tenda & Kanopi"
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "style": 240,
+              "id": "84:4043",
+              "name": "Link",
+              "children": [
+                {
+                  "tag": "p",
+                  "style": 239,
+                  "id": "84:4044",
+                  "children": [
+                    "Panggung & Genset"
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "style": 241,
+              "id": "84:4045",
+              "name": "Link",
+              "children": [
+                {
+                  "tag": "p",
+                  "style": 239,
+                  "id": "84:4046",
+                  "children": [
+                    "Furnitur & Dekorasi"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "div",
+          "style": 242,
+          "id": "84:4053",
+          "name": "Container",
+          "children": [
+            {
+              "tag": "div",
+              "style": 243,
+              "id": "84:4054",
+              "name": "Heading 4",
+              "children": [
+                {
+                  "tag": "p",
+                  "style": 237,
+                  "id": "84:4055",
+                  "children": [
+                    "Bantuan & Panduan"
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "style": 244,
+              "id": "84:4056",
+              "name": "Link",
+              "children": [
+                {
+                  "tag": "p",
+                  "style": 239,
+                  "id": "84:4057",
+                  "children": [
+                    "Cara Pemesanan"
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "style": 245,
+              "id": "84:4058",
+              "name": "Link",
+              "children": [
+                {
+                  "tag": "p",
+                  "style": 239,
+                  "id": "84:4059",
+                  "children": [
+                    "Verifikasi KTP & KYC"
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "style": 245,
+              "id": "84:4060",
+              "name": "Link",
+              "children": [
+                {
+                  "tag": "p",
+                  "style": 239,
+                  "id": "84:4061",
+                  "children": [
+                    "Panduan Serah Terima"
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "style": 245,
+              "id": "84:4062",
+              "name": "Link",
+              "children": [
+                {
+                  "tag": "p",
+                  "style": 239,
+                  "id": "84:4063",
+                  "children": [
+                    "Kebijakan Pengembalian"
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "style": 246,
+              "id": "84:4064",
+              "name": "Link",
+              "children": [
+                {
+                  "tag": "p",
+                  "style": 239,
+                  "id": "84:4065",
+                  "children": [
+                    "Pusat Bantuan Pelanggan"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "div",
+          "style": 247,
+          "id": "84:4072",
+          "name": "Container",
+          "children": [
+            {
+              "tag": "div",
+              "style": 248,
+              "id": "84:4073",
+              "name": "Heading 4",
+              "children": [
+                {
+                  "tag": "p",
+                  "style": 237,
+                  "id": "84:4074",
+                  "children": [
+                    "Kontak Operasional"
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "style": 249,
+              "id": "84:4075",
+              "name": "Paragraph",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 250,
+                  "id": "84:4076",
+                  "children": [
+                    {
+                      "tag": "p",
+                      "style": 251,
+                      "children": [
+                        "Jl. Pajajaran No. 88"
+                      ]
+                    },
+                    {
+                      "tag": "p",
+                      "style": 252,
+                      "children": [
+                        "Baranangsiang, Kota Bogor"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "style": 253,
+              "id": "84:4077",
+              "name": "Paragraph",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 250,
+                  "id": "84:4078",
+                  "children": [
+                    {
+                      "tag": "p",
+                      "style": 251,
+                      "children": [
+                        "halo@vendoria.id"
+                      ]
+                    },
+                    {
+                      "tag": "p",
+                      "style": 252,
+                      "children": [
+                        "+62 812-8800-4420"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "div",
+      "style": 254,
+      "id": "84:4092",
+      "name": "Container:margin",
+      "children": [
+        {
+          "tag": "div",
+          "style": 255,
+          "id": "84:4082",
+          "name": "Container",
+          "children": [
+            {
+              "tag": "div",
+              "style": 256,
+              "id": "84:4083",
+              "name": "Text",
+              "children": [
+                {
+                  "tag": "p",
+                  "style": 257,
+                  "id": "84:4084",
+                  "children": [
+                    "© 2025 Vendoria Indonesia. Hak Cipta Dilindungi."
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "style": 258,
+              "id": "84:4085",
+              "name": "Text",
+              "children": [
+                {
+                  "tag": "div",
+                  "style": 256,
+                  "id": "84:4086",
+                  "name": "Link",
+                  "children": [
+                    {
+                      "tag": "p",
+                      "style": 239,
+                      "id": "84:4087",
+                      "children": [
+                        "Syarat & Ketentuan"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "style": 256,
+                  "id": "84:4088",
+                  "name": "Link",
+                  "children": [
+                    {
+                      "tag": "p",
+                      "style": 239,
+                      "id": "84:4089",
+                      "children": [
+                        "Kebijakan Privasi"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "style": 256,
+                  "id": "84:4090",
+                  "name": "Link",
+                  "children": [
+                    {
+                      "tag": "p",
+                      "style": 239,
+                      "id": "84:4091",
+                      "children": [
+                        "Gabung Vendor Mitra"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
