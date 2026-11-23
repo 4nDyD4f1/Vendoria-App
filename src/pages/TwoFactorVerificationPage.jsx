@@ -100,7 +100,7 @@ export default function TwoFactorVerificationPage() {
         <p className="auth-resend">Belum menerima kode? <button type="button" onClick={handleResend} disabled={submitting || resending || secondsLeft > 0}>{resending ? 'Mengirim...' : 'Kirim ulang kode'}</button></p>
       </form>}
       {!challenge && error && <p role="alert" className="auth-alert">{error}</p>}
-      <Link to={user ? '/akun/keamanan' : '/login'} className="auth-back"><ArrowLeft size={12} />{user ? 'Kembali ke Keamanan' : 'Kembali ke Masuk'}</Link>
+      <Link to={user?.role === 'vendor' ? '/vendor/keamanan' : user ? '/akun/keamanan' : '/login'} className="auth-back"><ArrowLeft size={12} />{user ? 'Kembali ke Keamanan' : 'Kembali ke Masuk'}</Link>
     </div>
   </AuthLayout>;
 }

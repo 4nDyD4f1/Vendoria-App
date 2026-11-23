@@ -43,7 +43,8 @@ class ApiExceptionHandler {
 		Map<String, String> errors = new LinkedHashMap<>();
 		// nama field di JSON memakai snake_case (no_telp, reset_token), di Java camelCase
 		e.getBindingResult().getFieldErrors().forEach(f -> errors.putIfAbsent(
-				f.getField().replace("noTelp", "no_telp").replace("resetToken", "reset_token"), f.getDefaultMessage()));
+				f.getField().replace("noTelp", "no_telp").replace("resetToken", "reset_token").replace("namaVendor", "nama_vendor"),
+				f.getDefaultMessage()));
 		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(Map.of("message", "Data tidak valid", "errors", errors));
 	}
 }

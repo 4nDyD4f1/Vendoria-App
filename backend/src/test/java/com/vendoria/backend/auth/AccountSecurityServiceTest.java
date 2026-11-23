@@ -101,6 +101,11 @@ class AccountSecurityServiceTest {
 		String currentHash = user.getPasswordHash();
 		String currentEmail = user.getEmail();
 		verify(repo).updateTwoFactor(eq(7L), eq(currentHash), eq(currentEmail), eq(true));
+		now.addAndGet(EmailOtpService.COOLDOWN_MS);
+		when(user.isTwoFactorEmail()).thenReturn(true);
+		when(user.getRole()).thenReturn("vendor");
+		service.configure(request.getSession(), false);
+		assertEquals("/vendor/keamanan", service.verify(request, code()).redirect());
 	}
 
 	@Test
