@@ -1,0 +1,81 @@
+.vendor-orders .vendor-orders-status-tabs{width:100%;display:flex;justify-content:flex-start;margin:0 0 24px;padding:0;min-height:0}
+.vendor-orders .rental-tabs-scroll{max-width:100%;overflow-x:auto;scrollbar-width:none;border-radius:999px}
+.vendor-orders .rental-tabs-scroll::-webkit-scrollbar{display:none}
+.vendor-orders .rental-tabs{position:relative;isolation:isolate;display:flex;align-items:center;width:max-content;padding:6px;gap:2px;background:#f4eee8;border-radius:999px}
+.vendor-orders .rental-tabs-indicator{position:absolute;left:0;top:6px;bottom:6px;z-index:-1;background:#3a2a21;border-radius:999px;pointer-events:none;transition:transform .3s cubic-bezier(.22,1,.36,1),width .3s cubic-bezier(.22,1,.36,1)}
+.vendor-orders .rental-tabs button{position:relative;border:0;border-radius:999px;padding:11px 16px;background:transparent;color:#8a7567;font:inherit;font-size:11px;line-height:20px;white-space:nowrap;cursor:pointer}
+.vendor-orders .rental-tabs button[aria-selected=true]{color:white}
+.vendor-orders .rental-tabs button:focus-visible{outline:2px solid #a58163;outline-offset:-2px}
+
+.vendor-orders-toolbar{display:flex;gap:16px;align-items:center;justify-content:space-between;padding:22px 24px;border-bottom:1px solid var(--v-line)}
+.vendor-orders-toolbar>label{display:flex;align-items:center;gap:10px;min-width:0;flex:1;max-width:450px;background:#f8f4ef;border:1px solid transparent;border-radius:999px;padding:0 14px;min-height:42px;color:#8a7567}
+.vendor-orders-toolbar input{min-width:0;width:100%;border:0;background:transparent;outline:none;font:inherit;font-size:11px;padding:11px 0;color:#3a2a21}
+.vendor-orders-toolbar>label:focus-within{border-color:#a58163}
+
+.vendor-orders-subtext{display:block;font-size:9px;color:#8a7567;margin-top:4px;font-variant-numeric:tabular-nums}
+.vendor-orders-loading{padding:32px 24px;color:#8a7567;font-size:12px}
+.vendor-orders-error{padding:14px 18px;border-radius:14px;font-size:12px;line-height:1.7;margin-bottom:16px;background:#fcebea;color:#a33030}
+.vendor-orders-list-error{margin:20px 24px}
+
+.vendor-order-status{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:5px 10px;font-size:10px;line-height:16px;font-weight:500;white-space:nowrap;background:#f2eee9;color:#6d5947}
+.vendor-order-status>i{width:5px;height:5px;border-radius:50%;background:currentColor;flex:none}
+.vendor-order-status-menunggu_pembayaran,.vendor-order-status-menunggu_konfirmasi{background:#fbf2df;color:#8f6925}
+.vendor-order-status-dikonfirmasi{background:#edf2f7;color:#345b7c}
+.vendor-order-status-berjalan{background:#eef4ec;color:#3c6a38}
+.vendor-order-status-dikembalikan{background:#f3ede6;color:#73533a}
+.vendor-order-status-selesai{background:#e8f2e8;color:#2f6a3b}
+.vendor-order-status-dibatalkan{background:#fcebea;color:#a33030}
+
+.vendor-orders-row-actions{gap:8px}
+.vendor-orders-process-btn{min-height:34px!important;padding:6px 13px!important;font-size:11px!important;border-radius:8px!important}
+
+.vendor-orders-modal-backdrop{z-index:120}
+.vendor-workspace .vendor-orders-modal{width:820px;max-width:100%;max-height:calc(100dvh - 48px);display:flex;flex-direction:column;overflow:hidden;padding:28px;border-radius:24px}
+.vendor-orders-modal .v-modal-heading,.vendor-orders-modal>.vendor-orders-error,.vendor-orders-modal-actions{flex-shrink:0}
+.vendor-orders-modal .v-modal-heading{align-items:flex-start;margin-bottom:18px}
+.vendor-orders-modal .v-modal-heading h2{font-size:22px;line-height:1.35}
+.vendor-orders-modal-body{min-height:0;overflow-y:auto;overscroll-behavior:contain;padding-right:6px}
+.vendor-orders-summary-row{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:18px}
+.vendor-orders-summary-row>p{font-size:11px;color:#8a7567}
+
+.vendor-orders-details{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 20px;margin:0 0 22px;padding:18px;background:#fcf9f5;border:1px solid #f0e8df;border-radius:16px}
+.vendor-orders-details>div{min-width:0}
+.vendor-orders-detail-wide{grid-column:1/-1}
+.vendor-orders-details dt{font-size:10px;color:#8a7567;margin-bottom:3px}
+.vendor-orders-details dd{margin:0;font-size:12px;color:#3a2a21;overflow-wrap:anywhere}
+
+.vendor-orders-subsection{margin-top:20px}
+.vendor-orders-subsection h3{font-size:12px;font-weight:600;color:#5b493b;margin-bottom:10px}
+.vendor-orders-muted{font-size:11px;color:#8a7567}
+
+.vendor-orders-subtable-wrap{overflow-x:auto;border:1px solid var(--v-line);border-radius:12px}
+.vendor-orders-subtable{width:100%;border-collapse:collapse;font-size:11px;text-align:left}
+.vendor-orders-subtable th{background:#faf8f5;color:#8a7567;font-weight:500;font-size:10px;padding:10px 12px;border-bottom:1px solid var(--v-line)}
+.vendor-orders-subtable td{padding:11px 12px;border-bottom:1px solid #f3ede6;color:#4f3e32}
+.vendor-orders-subtable tbody tr:last-child td{border-bottom:0}
+
+.vendor-orders-list{list-style:none;padding:0;margin:0;border:1px solid var(--v-line);border-radius:12px;overflow:hidden}
+.vendor-orders-list>li{display:flex;justify-content:space-between;gap:14px;padding:12px 14px;border-bottom:1px solid #f3ede6;font-size:11px}
+.vendor-orders-list>li:last-child{border-bottom:0}
+.vendor-orders-list strong{display:block;font-weight:500;color:#3a2a21}
+.vendor-orders-list small{display:block;font-size:10px;color:#8a7567;margin-top:2px}
+.vendor-orders-list-right{text-align:right;flex-shrink:0}
+.vendor-orders-history-note{margin-top:5px!important;font-size:11px;color:#5b493b;white-space:pre-wrap}
+
+.vendor-orders-hint{margin-top:20px!important;padding:12px 14px;border-radius:12px;background:#f8f4ef;color:#6d5947;font-size:11px;line-height:1.6}
+.vendor-orders-note{margin-top:16px}
+.vendor-orders-note>span{font-size:11px;color:#5b493b;font-weight:500}
+.vendor-orders-note textarea{background:#fcf9f5;border:1px solid #ede1d9;border-radius:14px;padding:12px 14px;font-size:12px}
+
+.vendor-orders-modal-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:20px;padding-top:16px;border-top:1px solid #ede1d9}
+
+.vendor-orders-detail-page .vendor-orders-details{margin-bottom:24px}
+
+@media(max-width:640px){
+  .vendor-orders-toolbar{padding:18px;flex-wrap:wrap}
+  .vendor-orders-toolbar>label{flex-basis:100%;max-width:none}
+  .vendor-orders .rental-tabs button{padding-inline:13px}
+  .vendor-workspace .vendor-orders-modal{padding:20px}
+  .vendor-orders-details{grid-template-columns:minmax(0,1fr)}
+}
+@media(prefers-reduced-motion:reduce){.vendor-orders .rental-tabs-indicator{transition:none}}
