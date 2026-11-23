@@ -4,7 +4,7 @@ import { ArrowLeft, ChevronLeft, ChevronRight, Search, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export function Status({ children }) {
-  const tone = /^(Aktif|Selesai|Disetujui|Terverifikasi)$/.test(children) ? 'green' : /Menunggu|Ditinjau|Diproses|Diajukan|Perawatan/.test(children) ? 'amber' : /Dibatalkan|Ditolak/.test(children) ? 'red' : 'neutral';
+  const tone = /^(Aktif|Selesai|Disetujui|Terverifikasi)$/.test(children) ? 'green' : /Menunggu|Ditinjau|Diproses|Diajukan|Perawatan/.test(children) ? 'amber' : /Dibatalkan|Ditolak|Gagal/.test(children) ? 'red' : 'neutral';
   return <span className={`v-status v-status-${tone}`}><i aria-hidden="true" />{children}</span>;
 }
 
