@@ -28,7 +28,7 @@ function VolumeChart() {
 export default function AdminDashboard({ data, name }) {
   const pending = data.kyc.filter(item => item.status === 'Menunggu').length;
   const openClaims = data.claims.filter(item => ['Diajukan', 'Ditinjau'].includes(item.status)).length;
-  const payoutRequests = data.payouts.filter(item => item.status === 'Diajukan').length;
+  const payoutRequests = data.payouts.filter(item => item.status === 'Menunggu').length;
   const activeVendors = data.vendors.filter(item => item.status === 'Aktif' && item.businessStatus === 'Aktif').length;
   const stats = [
     ['KYC Menunggu', pending, 'Perlu ditinjau', Bell],

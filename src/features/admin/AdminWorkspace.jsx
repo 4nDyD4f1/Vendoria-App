@@ -14,6 +14,10 @@ import AdminSearch from './AdminSearch';
 import AdminReviewDialog from './AdminReviewDialog';
 import AdminKycPage from '../kyc/AdminKycPage';
 import AdminAccountPage from './AdminAccountPage';
+import AdminClaimsPage from './AdminClaimsPage';
+import { listClaims } from './claimsApi';
+import AdminPayoutsPage from './AdminPayoutsPage';
+import { listPayouts } from './reportsApi';
 import { listAccounts } from './accountsApi';
 import { listKyc, kycStatus } from '../kyc/kycApi';
 import { adminInitialData, adminNotifications, adminResources, resolveAdminResource } from './adminData';
@@ -59,6 +63,8 @@ export default function AdminWorkspace() {
   const onAdminPage = resolved?.key === 'administrators';
   const onCategoryPage = resolved?.key === 'categories';
   const onKycPage = resolved?.key === 'kyc';
+  const onClaimsPage = resolved?.key === 'claims';
+  const onPayoutsPage = resolved?.key === 'payouts';
   const onAccountPage = ['customers', 'vendors'].includes(resolved?.key);
   const accountsLoaded = useCallback(value => setData(current => ({ ...current, customers: value.customers, vendors: value.vendors })), []);
   useEffect(() => {
@@ -67,6 +73,20 @@ export default function AdminWorkspace() {
     listAccounts().then(value => { if (!lifecycle.signal.aborted) accountsLoaded(value); }).catch(() => {});
     return () => lifecycle.abort();
   }, [onAccountPage, accountsLoaded]);
+  const claimsLoaded = useCallback(claims => setData(current => ({ ...current, claims })), []);
+  useEffect(() => {
+    if (onClaimsPage) return;
+    const lifecycle = new AbortController();
+    listClaims().then(value => { if (!lifecycle.signal.aborted) claimsLoaded(value); }).catch(() => {});
+    return () => lifecycle.abort();
+  }, [onClaimsPage, claimsLoaded]);
+  const payoutsLoaded = useCallback(payouts => setData(current => ({ ...current, payouts })), []);
+  useEffect(() => {
+    if (onPayoutsPage) return;
+    const lifecycle = new AbortController();
+    listPayouts().then(value => { if (!lifecycle.signal.aborted) payoutsLoaded(value); }).catch(() => {});
+    return () => lifecycle.abort();
+  }, [onPayoutsPage, payoutsLoaded]);
   const kycLoaded = useCallback(value => {
     setKycPendingCount(value.counts.menunggu || 0);
     setData(current => ({ ...current, kyc: value.items.map(item => ({ id: String(item.kyc_id), name: item.nama, email: item.email, phone: item.no_telp || '', type: item.role === 'vendor' ? 'Vendor' : 'Customer', date: item.diajukan_pada.slice(0, 10), status: item.status === 'menunggu' ? 'Menunggu' : kycStatus[item.status] })) }));
@@ -117,7 +137,7 @@ export default function AdminWorkspace() {
     notify(failed ? failed.reason.message : `${ids.length} administrator dihapus.`);
   };
   const save = (key, record) => {
-    if (['kyc', 'customers', 'vendors'].includes(key)) return;
+    if (['kyc', 'claims', 'payouts', 'customers', 'vendors'].includes(key)) return;
     if (key === 'administrators') return saveAdmin(record);
     if (key === 'categories') return saveCategoryRecord(record);
     const resource = adminResources[key];
@@ -126,7 +146,7 @@ export default function AdminWorkspace() {
     setData(current => ({ ...current, [key]: updated ? current[key].map(item => item.id === next.id ? next : item) : [next, ...current[key]] }));
     notify(`${resource.singular[0].toUpperCase() + resource.singular.slice(1)} ${updated ? 'diperbarui' : 'ditambahkan'} pada data contoh.`);
   };
-  const remove = (key, ids) => { if (['kyc', 'customers', 'vendors'].includes(key)) return; if (key === 'administrators') return removeAdmins(ids); if (key === 'categories') return removeCategoryRecords(ids); setData(current => ({ ...current, [key]: current[key].filter(item => !ids.includes(item.id)) })); notify(`${ids.length} data dihapus dari pratinjau.`); };
+  const remove = (key, ids) => { if (['kyc', 'claims', 'payouts', 'customers', 'vendors'].includes(key)) return; if (key === 'administrators') return removeAdmins(ids); if (key === 'categories') return removeCategoryRecords(ids); setData(current => ({ ...current, [key]: current[key].filter(item => !ids.includes(item.id)) })); notify(`${ids.length} data dihapus dari pratinjau.`); };
   const upload = file => { const url = URL.createObjectURL(file); objectUrls.current.push(url); return url; };
   const routeRecord = resolved?.key === 'catalog' && resolved.segments[2] === 'suspend' ? data.catalog.find(item => item.id === resolved.segments[1]) : null;
   const routeAction = routeRecord ? { resourceKey: 'catalog', id: routeRecord.id, title: 'Tangguhkan alat', nextStatus: 'Ditangguhkan', requiresNote: true } : null;
@@ -134,13 +154,14 @@ export default function AdminWorkspace() {
   const reviewRecord = activeAction && data[activeAction.resourceKey].find(item => item.id === activeAction.id);
   const closeReview = () => { setAction(null); if (routeAction) navigate(`/admin/katalog/${routeAction.id}`, { replace: true }); };
   const renderActions = (key, record) => {
-    const choices = key === 'claims' && ['Diajukan', 'Ditinjau'].includes(record.status) ? [['Setujui klaim', 'Disetujui', false], ['Tolak klaim', 'Ditolak', true]]
-        : key === 'catalog' ? record.status === 'Ditangguhkan' ? [['Aktifkan alat', 'Aktif', false]] : [...(record.status === 'Menunggu review' ? [['Setujui alat', 'Aktif', false]] : []), ['Tangguhkan alat', 'Ditangguhkan', true]] : [];
+    const choices = key === 'catalog' ? record.status === 'Ditangguhkan' ? [['Aktifkan alat', 'Aktif', false]] : [...(record.status === 'Menunggu review' ? [['Setujui alat', 'Aktif', false]] : []), ['Tangguhkan alat', 'Ditangguhkan', true]] : [];
     return choices.map(([label, nextStatus, requiresNote]) => <button className={`v-button ${requiresNote ? 'v-button-danger' : 'v-button-secondary'}`} type="button" key={label} onClick={() => setAction({ path: location.pathname, resourceKey: key, id: record.id, title: label, nextStatus, requiresNote })}>{requiresNote ? <X size={16} /> : <Check size={16} />}{label}</button>);
   };
 
   let content;
   if (onKycPage) content = <AdminKycPage segments={resolved.segments} onLoaded={kycLoaded} />;
+  else if (onClaimsPage) content = <AdminClaimsPage segments={resolved.segments} onLoaded={claimsLoaded} />;
+  else if (onPayoutsPage) content = <AdminPayoutsPage segments={resolved.segments} onLoaded={payoutsLoaded} />;
   else if (onAccountPage) content = <AdminAccountPage key={resolved.key} resourceKey={resolved.key} segments={resolved.segments} onLoaded={accountsLoaded} notify={notify} />;
   else if (resolved) content = <WorkspaceResource key={resolved.key} resourceKey={resolved.key} segments={resolved.segments} data={viewData} onSave={save} onDelete={remove} onUpload={upload} />;
   else if (!path || path === 'dashboard') content = <AdminDashboard data={viewData} name={owner.name} />;
@@ -168,7 +189,7 @@ export default function AdminWorkspace() {
         <VendorProfileMenu owner={owner} roleLabel="Administrator" menuLabel="Menu akun admin" />
       </div>
     </div></header>
-    {!onAdminPage && !onCategoryPage && !onKycPage && !onAccountPage && <div className="v-preview-strip"><span><i />Pratinjau frontend</span><p>Data contoh · Perubahan akan kembali saat halaman dimuat ulang.</p></div>}
+    {!onAdminPage && !onCategoryPage && !onKycPage && !onClaimsPage && !onPayoutsPage && !onAccountPage && path !== 'laporan' && <div className="v-preview-strip"><span><i />Pratinjau frontend</span><p>Data contoh · Perubahan akan kembali saat halaman dimuat ulang.</p></div>}
     <main id="admin-main" className="a-main" tabIndex={-1}>
       {subTabs && <nav className="a-tabs" aria-label="Bagian halaman">{subTabs.map(([label, to, key]) => { const here = key ? key === resolved?.key : to === `/admin${path ? `/${path}` : ''}`; return <Link key={to} to={to} className={here ? 'is-active' : undefined} aria-current={here ? 'page' : undefined}>{label}</Link>; })}</nav>}
       <WorkspaceResourceContext.Provider value={{ resources: resourceConfig, rootPath: '/admin', renderActions }}>{content}</WorkspaceResourceContext.Provider>
