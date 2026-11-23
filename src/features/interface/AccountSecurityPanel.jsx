@@ -1,4 +1,5 @@
 import { useContext, useEffect, useRef, useState } from 'react';
+import { ShieldCheck } from 'lucide-react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { api } from '../../api';
 import DesignNode from './DesignNode';
@@ -53,10 +54,10 @@ export default function AccountSecurityPanel({ content, page }) {
 
   if (!security) return <p role={loadingError ? 'alert' : 'status'}>{loadingError || 'Memuat pengaturan keamanan…'}</p>;
   const create = security.password_dibuat !== true;
-  const [passwordSection, twoFactorSection] = content.children;
+  const [passwordSection] = content.children;
   const securityContext = {
     ...context, fields, setFields, submitNodeId: '109:14739',
-    controlLabels: { '109:14739': create ? 'Buat Password' : 'Perbarui Password', '109:14752': security.two_factor_email ? 'Nonaktifkan' : 'Aktifkan' },
+    controlLabels: { '109:14739': create ? 'Buat Password' : 'Perbarui Password' },
     hidden: { ...context.hidden, '109:14741': create },
     profileFields: {
       [passwordIds.current_password]: { required: !create, maxLength: 72, autoComplete: 'current-password' },
@@ -66,26 +67,38 @@ export default function AccountSecurityPanel({ content, page }) {
     formatText: (text, ancestors) => {
       if (text === 'Ubah Password' && create) return 'Buat Password';
       if (text === 'Perbarui Password') return busy ? 'Memproses…' : create ? 'Buat Password' : text;
-      if (text === 'Kode OTP dikirim ke WhatsApp setiap login dari perangkat baru.') return `Kode OTP dikirim ke email ${security.email} setiap kali login.`;
-      if (text === '2FA Aktif') return security.two_factor_email ? '2FA Email Aktif' : '2FA Email Nonaktif';
-      if (text === 'Nonaktifkan') return security.two_factor_email ? 'Nonaktifkan' : 'Aktifkan';
       return context.formatText(text, ancestors);
-    },
-    action: args => {
-      if (args.node.id === '109:14752') configureTwoFactor();
-      else context.action(args);
     },
   };
 
   return <InterfaceContext.Provider value={securityContext}>
-    <div className="account-security-grid" aria-busy={busy} data-two-factor={security.two_factor_email}>
+    <div className="account-security-grid" aria-busy={busy}>
       <form onSubmit={savePassword} aria-label={create ? 'Buat Password' : 'Ubah Password'} onChange={() => setMessage(null)}>
         <fieldset disabled={busy} className="account-profile-fields"><DesignNode node={accountFields(passwordSection)} ancestors={[page, content]} /></fieldset>
         {create && <p className="account-security-help">Verifikasi email diperlukan untuk membuat password.</p>}
       </form>
-      <div><fieldset disabled={busy} className="account-profile-fields"><DesignNode node={twoFactorSection} ancestors={[page, content]} /></fieldset>
-        <p className="account-security-help">Perubahan pengaturan dikonfirmasi melalui OTP email.</p>
-      </div>
+      <section className="account-security-card">
+        <div className="account-security-icon" aria-hidden="true"><ShieldCheck size={22} /></div>
+        <h2>Autentikasi dua langkah (OTP Email)</h2>
+        <p>Kode OTP dikirim ke email <strong>{security.email}</strong> setiap kali login.</p>
+        <div className="account-toggle-row">
+          <div>
+            <strong>Verifikasi OTP saat login</strong>
+            <small>{security.two_factor_email ? 'Aktif' : 'Belum diaktifkan'}</small>
+          </div>
+          <button
+            type="button"
+            className="account-switch"
+            role="switch"
+            disabled={busy}
+            aria-checked={security.two_factor_email}
+            aria-label="Autentikasi dua langkah via email"
+            onClick={configureTwoFactor}
+          >
+            <span />
+          </button>
+        </div>
+      </section>
     </div>
     {message && <p className={`account-profile-message${message.error ? ' account-profile-error' : ''}`} role={message.error ? 'alert' : 'status'}>{message.text}</p>}
   </InterfaceContext.Provider>;

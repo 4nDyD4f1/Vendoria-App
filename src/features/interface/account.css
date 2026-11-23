@@ -14,9 +14,20 @@
 .vendoria-interface .account-security-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;align-items:start}
 .vendoria-interface .account-security-grid>*,.vendoria-interface .account-security-grid form{min-width:0}
 .vendoria-interface .account-security-help{margin:12px 4px 0;font-size:12px;line-height:1.6;color:#78685c}
-.vendoria-interface .account-security-grid [data-node-id='109:14749']{display:inline-flex;align-items:center;justify-self:start;width:max-content!important;max-width:100%;height:auto!important;min-height:30px;padding:6px 12px;border-radius:999px;background:#e8f2e8;color:#2f6a3b}
-.vendoria-interface .account-security-grid [data-node-id='109:14749']>p{position:static!important;width:auto!important;margin:0;color:inherit;font-size:11px;font-weight:500;line-height:18px;white-space:nowrap}
-.vendoria-interface .account-security-grid[data-two-factor=false] [data-node-id='109:14749']{background:#fcebea;color:#a33030}
+.vendoria-interface .account-security-card{background:#fff;border:1px solid #e9e3dc;border-radius:14px;padding:26px;min-width:0}
+.vendoria-interface .account-security-icon{width:40px;height:40px;border-radius:10px;background:#f5eee5;color:#a2805f;display:grid;place-items:center;flex:none;margin-bottom:16px}
+.vendoria-interface .account-security-card h2{margin:0;font-size:14px;line-height:23px;font-weight:500;letter-spacing:-.2px;color:var(--interface-ink);text-wrap:balance}
+.vendoria-interface .account-security-card>p{margin:8px 0 0;color:#a18a73;font-size:11px;line-height:22px}
+.vendoria-interface .account-security-card>p strong{font-weight:700}
+.vendoria-interface .account-toggle-row{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-top:20px;border-top:1px solid #e9e3dc;margin-top:24px}
+.vendoria-interface .account-toggle-row strong{font-size:11px;font-weight:500;line-height:18px;color:var(--interface-ink);display:block}
+.vendoria-interface .account-toggle-row small{font-size:9px;line-height:16px;color:#a48d76;display:block;margin-top:4px}
+.vendoria-interface .account-switch{border:0;background:#e4d8cb;width:38px;height:22px;border-radius:99px;padding:3px;flex:none;cursor:pointer;transition:background-color .16s}
+.vendoria-interface .account-switch span{display:block;width:16px;height:16px;background:#fff;border-radius:50%;box-shadow:0 1px 3px #3a2a2110;transition:transform .16s}
+.vendoria-interface .account-switch[aria-checked=true]{background:#6c815e}
+.vendoria-interface .account-switch[aria-checked=true] span{transform:translateX(16px)}
+.vendoria-interface .account-switch:focus-visible{outline:2px solid #a58163;outline-offset:3px}
+.vendoria-interface .account-switch:disabled{opacity:.45;cursor:not-allowed}
 @media(max-width:900px){.vendoria-interface .account-security-grid{grid-template-columns:minmax(0,1fr)}}
 .vendoria-interface .account-tab-panel>[data-name=Section],.vendoria-interface .account-tab-panel>[data-name=Container]>[data-name=Section]{padding:28px!important;border:1px solid #ede1d980;border-radius:24px;min-width:0}
 .vendoria-interface .account-tab-panel [data-name='Heading 2']{height:auto!important;min-width:0}
@@ -44,10 +55,6 @@
 .vendoria-interface .account-tab-panel [data-name=Button]:hover{filter:none;box-shadow:0 3px 10px #3a2a210d;transform:translateY(-1px)}
 .vendoria-interface .account-tab-panel [data-name=Button]:active{transform:translateY(0)}
 .vendoria-interface .account-tab-panel [data-node-id='109:14716']{grid-template-columns:repeat(2,minmax(0,1fr))!important;grid-template-rows:auto!important;align-items:stretch;gap:24px}
-.vendoria-interface .account-tab-panel [data-node-id='109:14744']{gap:16px}
-.vendoria-interface .account-tab-panel [data-node-id='109:14744']>[data-name=Paragraph]{width:100%!important;max-width:100%;margin-top:-8px}
-.vendoria-interface .account-tab-panel [data-node-id='109:14744']>[data-name=Paragraph] p{font-size:12px;line-height:22px;white-space:normal}
-.vendoria-interface .account-tab-panel [data-node-id='109:14751']{width:100%!important;padding-top:4px;height:auto}
 .vendoria-interface .account-tab-panel [data-node-id='109:15175']{gap:16px}
 .vendoria-interface .account-tabs-page [data-node-id='109:15179']{width:max-content;max-width:100%}
 .vendoria-interface .account-tabs-page:not([data-kyc-status=terverifikasi]) :is([data-node-id='109:14215'],[data-node-id='109:15179']){background:#f4ead9}
@@ -97,6 +104,6 @@
 @keyframes account-modal-enter{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
 @keyframes account-modal-fade{from{opacity:0}to{opacity:1}}
 @media(max-width:900px){.vendoria-interface .account-tabs-page{padding:20px 20px 48px}.vendoria-interface .account-tab-panel [data-node-id='109:14716']{grid-template-columns:minmax(0,1fr)!important}.vendoria-interface .account-tab-panel [data-node-id='109:15588']{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
-@media(max-width:640px){.vendoria-interface .account-tabs-page{padding-bottom:40px}.vendoria-interface .account-tab-panel>[data-name=Section],.vendoria-interface .account-tab-panel>[data-name=Container]>[data-name=Section]{padding:22px!important}.vendoria-interface .account-tab-panel [data-name='Heading 2'] p{font-size:24px!important;line-height:1.35!important}.vendoria-interface .account-tab-panel [data-node-id='109:14248'],.vendoria-interface .account-tab-panel [data-node-id='109:15588']{grid-template-columns:minmax(0,1fr)!important;gap:20px}.vendoria-interface .account-tab-panel [data-node-id='109:15579']{padding:0!important}.vendoria-interface .account-tab-panel .profile-incomplete{display:block;margin:8px 0 0;max-width:28em}.vendoria-interface .account-tab-panel .profile-incomplete-sep{display:none}.vendoria-interface .account-tab-panel :is([data-node-id='109:15580'],[data-node-id='109:16076']){flex-direction:column;align-items:flex-start}.vendoria-interface .account-tab-panel [data-node-id='109:16084']>[data-name='Text:align']{flex-basis:100%}.vendoria-interface .account-modal-backdrop{padding:16px}.vendoria-interface .account-modal{padding:28px 24px 24px;border-radius:24px;max-height:calc(100dvh - 32px)}.vendoria-interface .account-modal h2{font-size:22px}.vendoria-interface .account-modal-actions [data-name=Button]{flex:1;min-width:0;padding-inline:16px}.vendoria-interface .account-modal-actions [data-name=Button] p{font-size:12px}}
-@media(prefers-reduced-motion:reduce){.vendoria-interface .account-modal,.vendoria-interface .account-modal-backdrop{animation:none}.vendoria-interface .account-tab-panel [data-name=Button],.vendoria-interface .account-tab-panel [data-name=Article]{transition:none;transform:none}}
+@media(max-width:640px){.vendoria-interface .account-tabs-page{padding-bottom:40px}.vendoria-interface .account-tab-panel>[data-name=Section],.vendoria-interface .account-tab-panel>[data-name=Container]>[data-name=Section]{padding:22px!important}.vendoria-interface .account-security-card{padding:22px}.vendoria-interface .account-tab-panel [data-name='Heading 2'] p{font-size:24px!important;line-height:1.35!important}.vendoria-interface .account-tab-panel [data-node-id='109:14248'],.vendoria-interface .account-tab-panel [data-node-id='109:15588']{grid-template-columns:minmax(0,1fr)!important;gap:20px}.vendoria-interface .account-tab-panel [data-node-id='109:15579']{padding:0!important}.vendoria-interface .account-tab-panel .profile-incomplete{display:block;margin:8px 0 0;max-width:28em}.vendoria-interface .account-tab-panel .profile-incomplete-sep{display:none}.vendoria-interface .account-tab-panel :is([data-node-id='109:15580'],[data-node-id='109:16076']){flex-direction:column;align-items:flex-start}.vendoria-interface .account-tab-panel [data-node-id='109:16084']>[data-name='Text:align']{flex-basis:100%}.vendoria-interface .account-modal-backdrop{padding:16px}.vendoria-interface .account-modal{padding:28px 24px 24px;border-radius:24px;max-height:calc(100dvh - 32px)}.vendoria-interface .account-modal h2{font-size:22px}.vendoria-interface .account-modal-actions [data-name=Button]{flex:1;min-width:0;padding-inline:16px}.vendoria-interface .account-modal-actions [data-name=Button] p{font-size:12px}}
+@media(prefers-reduced-motion:reduce){.vendoria-interface .account-modal,.vendoria-interface .account-modal-backdrop{animation:none}.vendoria-interface .account-tab-panel [data-name=Button],.vendoria-interface .account-tab-panel [data-name=Article],.vendoria-interface .account-switch,.vendoria-interface .account-switch span{transition:none;transform:none}}
 @media(max-width:640px){.vendoria-interface .account-tabs-page{padding:16px 16px 40px}.vendoria-interface .account-tabs-page [data-node-id='109:14290']>[data-name=Button]{width:100%}}
