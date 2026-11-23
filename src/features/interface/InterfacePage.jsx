@@ -18,6 +18,8 @@ import LiveWishlist from './LiveWishlist';
 import RentalGuideTabs from './RentalGuideTabs';
 import AccountTabs from './AccountTabs';
 import { accountTabs } from './accountDesign';
+import UserKycPage from '../kyc/UserKycPage';
+import RequireAuth from '../../components/RequireAuth';
 
 const loaders = import.meta.glob('./designs/[0-9]*.json', { import: 'default' });
 const loaded = new Map();
@@ -26,6 +28,7 @@ function loadDesign(nodeId) {
   return loaded.get(nodeId);
 }
 function ScreenContent({ screen, preview, initialRentalTab, initialAccountTab, initialAccountModal }) {
+  if (['kyc', 'kyc-pending', 'kyc-verified', 'kyc-rejected'].includes(screen.key) && !preview) return <RequireAuth><UserKycPage /></RequireAuth>;
   if (screen.key === 'account-profile' && !preview) return <AccountTabs loadDesign={loadDesign} initialTab={initialAccountTab} initialModal={initialAccountModal} />;
   if (screen.key === 'rental-guide' && !preview) return <RentalGuideTabs loadDesign={loadDesign} initialTab={initialRentalTab} />;
   if (screen.key === 'wishlist' || screen.key === 'wishlist-empty' && !preview) return <LiveWishlist loadDesign={loadDesign} />;
@@ -328,7 +331,7 @@ export default function InterfacePage() {
   if (!preview && ['rental-faq', 'rental-policy'].includes(screen.key)) return <Navigate to="/cara-sewa" replace state={{ rentalTab: screen.key }} />;
   // Menu akun berbagi satu path (/akun); alamat lama diarahkan ke sana dengan menu yang sesuai.
   if (!preview && ['account-add-address', 'account-add-refund'].includes(screen.key)) return <Navigate to="/akun" replace state={{ accountTab: screen.key === 'account-add-address' ? 'account-address' : 'account-refund', accountModal: screen.key === 'account-add-address' ? 'address' : 'refund' }} />;
-  if (!preview && accountTabs.some(tab => tab.key === screen.key) && screen.key !== 'account-profile') return <Navigate to="/akun" replace state={{ accountTab: screen.key }} />;
+  if (!preview && accountTabs.some(tab => tab.key === screen.key) && screen.key !== 'account-profile') return <Navigate to="/akun" replace state={{ ...location.state, accountTab: screen.key }} />;
   if (enforceAccess && screen.role && loading) return <div className="vendoria-interface p-10" role="status">Memuat halaman…</div>;
   if (enforceAccess && screen.role && !user) return <Navigate to="/login" replace />;
   if (enforceAccess && unauthorizedRole) return <div className="vendoria-interface p-10"><h1 className="text-2xl mb-4">Halaman khusus {screen.role}</h1><Link to="/">Kembali ke Beranda</Link></div>;

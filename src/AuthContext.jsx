@@ -16,7 +16,7 @@ export function AuthProvider({ children }) {
 
   const login = async (email, password) => {
     const u = await api('/api/auth/login', { method: 'POST', body: { email, password } });
-    setUser(u);
+    setUser(u.two_factor_required ? null : u);
     return u;
   };
 
@@ -34,8 +34,26 @@ export function AuthProvider({ children }) {
     }
   };
 
+  const updateProfile = async (data) => {
+    const updated = await api('/api/account/profile', { method: 'PUT', body: data });
+    setUser(updated);
+    return updated;
+  };
+
+  const verifyTwoFactor = async (otp) => {
+    const result = await api('/api/auth/two-factor/verify', { method: 'POST', body: { otp } });
+    if (result.user) setUser(result.user);
+    return result;
+  };
+
+  const refreshUser = async () => {
+    const updated = await api('/api/auth/me');
+    setUser(updated);
+    return updated;
+  };
+
   return (
-    <AuthContext.Provider value={{ user, loading, login, register, logout }}>
+    <AuthContext.Provider value={{ user, loading, login, register, logout, updateProfile, verifyTwoFactor, refreshUser }}>
       {children}
     </AuthContext.Provider>
   );

@@ -8,6 +8,14 @@ export const accountTabs = [
   { key: 'account-refund', label: 'Rekening Refund' },
 ];
 
+export const profileFieldIds = {
+  nama: '109:14253',
+  email: '109:14262',
+  no_telp: '109:14274',
+};
+
+export const profileSaveId = '109:14288';
+
 // Exported inputs keep their original IDs/values; add the visible label to their accessible name.
 export function accountFields(node, label = '') {
   if (!node || typeof node !== 'object') return node;
