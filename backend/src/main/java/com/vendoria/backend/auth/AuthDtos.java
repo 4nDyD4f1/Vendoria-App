@@ -1,5 +1,7 @@
 package com.vendoria.backend.auth;
 
+import java.time.Instant;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import jakarta.validation.constraints.Email;
@@ -37,6 +39,29 @@ final class AuthDtos {
 			@NotBlank @Size(min = 8, max = 72) String password) {
 	}
 
+	// password: wajib saat menambah, kosong (null) saat mengedit = kata sandi tidak diubah
+	record AdministratorRequest(
+			@NotBlank @Size(max = 120) String nama,
+			@NotBlank @Email @Size(max = 255) String email,
+			@NotBlank @Pattern(regexp = "Aktif|Nonaktif", message = "harus Aktif atau Nonaktif") String status,
+			@Size(max = 2000) String catatan,
+			@Size(min = 8, max = 72) String password) {
+	}
+
+	record AdministratorResponse(
+			@JsonProperty("user_id") Long userId,
+			String nama,
+			String email,
+			String status,
+			String catatan,
+			@JsonProperty("created_at") Instant createdAt) {
+
+		static AdministratorResponse from(Pengguna p) {
+			return new AdministratorResponse(p.getUserId(), p.getNama(), p.getEmail(),
+					p.getStatusAkun(), p.getCatatanAdmin(), p.getCreatedAt());
+		}
+	}
+
 	record MessageResponse(String message) {
 	}
 
@@ -49,11 +74,16 @@ final class AuthDtos {
 			String email,
 			@JsonProperty("no_telp") String noTelp,
 			String role,
-			@JsonProperty("status_verifikasi") String statusVerifikasi) {
+			@JsonProperty("status_verifikasi") String statusVerifikasi,
+			@JsonProperty("foto_profil") String fotoProfil,
+			@JsonProperty("created_at") Instant createdAt,
+			// true bila akun tertaut Google (google_sub terisi): email dikelola Google, tak boleh diubah di sini
+			@JsonProperty("akun_google") boolean akunGoogle) {
 
 		static UserResponse from(Pengguna p) {
 			return new UserResponse(p.getUserId(), p.getNama(), p.getEmail(), p.getNoTelp(), p.getRole(),
-					p.getStatusVerifikasi());
+					p.getStatusVerifikasi(), p.getFotoProfil(), p.getCreatedAt(),
+					p.getGoogleSub() != null);
 		}
 	}
 }
