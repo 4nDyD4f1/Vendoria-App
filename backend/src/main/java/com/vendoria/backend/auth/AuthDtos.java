@@ -24,6 +24,7 @@ final class AuthDtos {
 	}
 
 	record LoginRequest(@NotBlank String email, @NotBlank String password) {
+		@Override public String toString() { return "LoginRequest[REDACTED]"; }
 	}
 
 	record ForgotRequest(@NotBlank @Email @Size(max = 255) String email) {

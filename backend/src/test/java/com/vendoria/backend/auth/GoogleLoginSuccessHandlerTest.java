@@ -29,7 +29,8 @@ import com.vendoria.backend.auth.GoogleUserService.GoogleLoginException;
 class GoogleLoginSuccessHandlerTest {
 
 	private final GoogleUserService users = mock(GoogleUserService.class);
-	private final GoogleLoginSuccessHandler handler = new GoogleLoginSuccessHandler(users, "http://localhost:5173");
+	private final AccountSecurityService security = mock(AccountSecurityService.class);
+	private final GoogleLoginSuccessHandler handler = new GoogleLoginSuccessHandler(users, "http://localhost:5173", security);
 
 	private static OAuth2AuthenticationToken googleAuth() {
 		var token = new OidcIdToken("t", Instant.now(), Instant.now().plusSeconds(60),
@@ -43,6 +44,11 @@ class GoogleLoginSuccessHandlerTest {
 		Pengguna p = mock(Pengguna.class);
 		when(p.getUserId()).thenReturn(42L);
 		when(users.findOrCreate("S1", "budi@mail.com", true, "Budi")).thenReturn(p);
+		when(security.startLogin(eq(42L), any())).thenAnswer(invocation -> {
+			jakarta.servlet.http.HttpServletRequest request = invocation.getArgument(1);
+			request.getSession(true).setAttribute(AuthController.SESSION_USER_ID, 42L);
+			return AuthDtos.UserResponse.from(p);
+		});
 		var req = new MockHttpServletRequest();
 		req.getSession(true).setAttribute(HttpSessionSecurityContextRepository.SPRING_SECURITY_CONTEXT_KEY, "konteks-security");
 		var res = new MockHttpServletResponse();
@@ -52,6 +58,20 @@ class GoogleLoginSuccessHandlerTest {
 		assertEquals(42L, req.getSession().getAttribute(AuthController.SESSION_USER_ID)); // Long, sama seperti login password
 		assertNull(req.getSession().getAttribute(HttpSessionSecurityContextRepository.SPRING_SECURITY_CONTEXT_KEY));
 		assertEquals("http://localhost:5173/", res.getRedirectedUrl());
+	}
+
+	@Test
+	void akunDenganTwoFactorDiarahkanKeOtpTanpaSesiLogin() throws Exception {
+		Pengguna p = mock(Pengguna.class);
+		when(p.getUserId()).thenReturn(42L);
+		when(users.findOrCreate("S1", "budi@mail.com", true, "Budi")).thenReturn(p);
+		when(security.startLogin(eq(42L), any())).thenReturn(new AccountSecurityDtos.OtpResponse(
+				true, "budi@mail.com", "login", Instant.now().plusSeconds(600), Instant.now().plusSeconds(60)));
+		var request = new MockHttpServletRequest();
+		var response = new MockHttpServletResponse();
+		handler.onAuthenticationSuccess(request, response, googleAuth());
+		assertNull(request.getSession().getAttribute(AuthController.SESSION_USER_ID));
+		assertEquals("http://localhost:5173/two-factor-verification", response.getRedirectedUrl());
 	}
 
 	@Test

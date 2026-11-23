@@ -44,6 +44,16 @@ class ResendMailer {
 
 	/** idempotencyKey: sama untuk semua retry satu pengiriman, agar email tidak terkirim ganda. */
 	void sendOtp(String to, String otp, String idempotencyKey) {
+		send(to, otp, idempotencyKey, "reset kata sandi", "Reset kata sandi Vendoria",
+				"Gunakan kode berikut untuk mengatur ulang kata sandi Anda.");
+	}
+
+	void sendSecurityOtp(String to, String otp, String idempotencyKey, String purpose) {
+		send(to, otp, idempotencyKey, "keamanan akun", "Verifikasi keamanan Vendoria",
+				"Gunakan kode berikut untuk " + purpose + ".");
+	}
+
+	private void send(String to, String otp, String idempotencyKey, String subject, String heading, String instruction) {
 		if (apiKey.isBlank()) {
 			log.error("Variabel 'Resend' (API key) belum diisi");
 			throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE, "Layanan email belum dikonfigurasi");
@@ -51,9 +61,9 @@ class ResendMailer {
 		Map<String, Object> body = Map.of(
 				"from", from,
 				"to", List.of(to),
-				"subject", "Kode verifikasi reset kata sandi Vendoria",
-				"html", html(otp),
-				"text", "Kode verifikasi Vendoria Anda: " + otp + " (berlaku 10 menit). "
+				"subject", "Kode verifikasi " + subject + " Vendoria",
+				"html", html(otp, heading, instruction),
+				"text", instruction + " Kode verifikasi Vendoria Anda: " + otp + " (berlaku 10 menit). "
 						+ "Jika Anda tidak meminta ini, abaikan email ini.");
 
 		for (int attempt = 1; ; attempt++) {
@@ -90,10 +100,10 @@ class ResendMailer {
 		return new ResponseStatusException(HttpStatus.BAD_GATEWAY, "Gagal mengirim email. Coba lagi beberapa saat.");
 	}
 
-	private static String html(String otp) {
+	private static String html(String otp, String heading, String instruction) {
 		return "<div style=\"font-family:Arial,sans-serif;max-width:420px;margin:auto;color:#3C2415\">"
-				+ "<h2>Reset kata sandi Vendoria</h2>"
-				+ "<p>Gunakan kode berikut untuk mengatur ulang kata sandi Anda. Kode berlaku 10 menit.</p>"
+				+ "<h2>" + heading + "</h2>"
+				+ "<p>" + instruction + " Kode berlaku 10 menit.</p>"
 				+ "<p style=\"font-size:32px;font-weight:bold;letter-spacing:8px\">" + otp + "</p>"
 				+ "<p style=\"color:#888;font-size:12px\">Jika Anda tidak meminta ini, abaikan email ini. "
 				+ "Jangan bagikan kode kepada siapa pun.</p></div>";

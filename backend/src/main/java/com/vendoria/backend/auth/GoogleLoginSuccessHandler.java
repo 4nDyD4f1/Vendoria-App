@@ -29,10 +29,13 @@ class GoogleLoginSuccessHandler implements AuthenticationSuccessHandler {
 
 	private final GoogleUserService users;
 	private final String frontendUrl;
+	private final AccountSecurityService security;
 
-	GoogleLoginSuccessHandler(GoogleUserService users, @Value("${app.frontend-url}") String frontendUrl) {
+	GoogleLoginSuccessHandler(GoogleUserService users, @Value("${app.frontend-url}") String frontendUrl,
+			AccountSecurityService security) {
 		this.users = users;
 		this.frontendUrl = frontendUrl;
+		this.security = security;
 	}
 
 	@Override
@@ -46,15 +49,21 @@ class GoogleLoginSuccessHandler implements AuthenticationSuccessHandler {
 			Pengguna user = users.findOrCreate(google.getSubject(), google.getEmail(),
 					Boolean.TRUE.equals(google.getEmailVerified()), google.getFullName());
 			users.perbaruiFoto(user, google.getPicture());
-			session.setAttribute(AuthController.SESSION_USER_ID, user.getUserId());
-			response.sendRedirect(frontendUrl + "/");
+			Object result = security.startLogin(user.getUserId(), request);
+			response.sendRedirect(frontendUrl + (result instanceof AccountSecurityDtos.OtpResponse
+					? "/two-factor-verification" : AccountSecurityService.destination(user.getRole())));
 		} catch (GoogleLoginException e) {
-			session.invalidate();
+			invalidate(request);
 			response.sendRedirect(frontendUrl + "/login?error=" + e.code);
 		} catch (RuntimeException e) {
 			log.error("Login Google gagal saat menyimpan/mengambil user", e);
-			session.invalidate();
+			invalidate(request);
 			response.sendRedirect(frontendUrl + "/login?error=google");
 		}
+	}
+
+	private void invalidate(HttpServletRequest request) {
+		HttpSession session = request.getSession(false);
+		if (session != null) session.invalidate();
 	}
 }

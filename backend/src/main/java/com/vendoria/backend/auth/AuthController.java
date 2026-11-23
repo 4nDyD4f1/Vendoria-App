@@ -26,10 +26,12 @@ class AuthController {
 
 	private final AuthService service;
 	private final AuthThrottle throttle;
+	private final AccountSecurityService security;
 
-	AuthController(AuthService service, AuthThrottle throttle) {
+	AuthController(AuthService service, AuthThrottle throttle, AccountSecurityService security) {
 		this.service = service;
 		this.throttle = throttle;
+		this.security = security;
 	}
 
 	@PostMapping("/register")
@@ -40,15 +42,10 @@ class AuthController {
 	}
 
 	@PostMapping("/login")
-	UserResponse login(@Valid @RequestBody LoginRequest req, HttpServletRequest http) {
+	Object login(@Valid @RequestBody LoginRequest req, HttpServletRequest http) {
 		throttle.checkIp(http.getRemoteAddr());
 		UserResponse user = service.login(req);
-		HttpSession old = http.getSession(false);
-		if (old != null) {
-			old.invalidate(); // sesi baru setiap login: mencegah session fixation
-		}
-		http.getSession(true).setAttribute(SESSION_USER_ID, user.userId());
-		return user;
+		return security.startLogin(user.userId(), http);
 	}
 
 	@GetMapping("/me")
