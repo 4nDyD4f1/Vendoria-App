@@ -40,22 +40,6 @@ export const adminInitialData = {
   payouts: [], // data nyata dari backend (reportsApi.js), bukan data contoh
 };
 
-// Data contoh dashboard (dari desain Figma node 89:2); belum ada endpoint transaksi/laporan.
-export const dashboardTransactions = [
-  { id: '#261012-8821', customer: 'Bagas Arya Pratama', vendor: 'Roder Bogor Tenda Megah', total: 21450000, status: 'Menunggu Pembayaran' },
-  { id: '#261120-1000', customer: 'Siti Rahmawati', vendor: 'Karya Audio Pro Bogor', total: 600000, status: 'Selesai' },
-  { id: '#261118-1737', customer: 'Bagas Arya Pratama', vendor: 'Roder Bogor Tenda Megah', total: 1000000, status: 'Selesai' },
-  { id: '#261005-7712', customer: 'Bagas Arya Pratama', vendor: 'Karya Audio Pro Bogor', total: 5000000, status: 'Terkonfirmasi' },
-  { id: '#261116-2474', customer: 'Anisa Putri', vendor: 'Luminary Stage Lighting Bogor', total: 1350000, status: 'Selesai' },
-  { id: '#260928-4019', customer: 'Bagas Arya Pratama', vendor: 'Roder Bogor Tenda Megah', total: 10600000, status: 'Sedang Disewa' },
-];
-
-// value = nilai sewa (juta rupiah), count = jumlah transaksi
-export const weeklyVolume = [
-  { label: 'M-7', value: 24, count: 6 }, { label: 'M-6', value: 9, count: 3 }, { label: 'M-5', value: 11, count: 7 }, { label: 'M-4', value: 12, count: 7 },
-  { label: 'M-3', value: 17, count: 5 }, { label: 'M-2', value: 17, count: 7 }, { label: 'M-1', value: 8, count: 4 }, { label: 'Ini', value: 41, count: 10 },
-];
-
 export const adminNotifications = [
   { id: 1, title: 'Pengajuan KYC baru', body: 'Identitas Nadia Putri menunggu peninjauan.', time: '10 menit lalu', path: '/admin/kyc/KYC-1042', read: false },
   { id: 2, title: 'Klaim perlu ditinjau', body: 'Klaim KLM-891 memerlukan keputusan admin.', time: '30 menit lalu', path: '/admin/klaim/KLM-891', read: false },

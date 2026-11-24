@@ -186,7 +186,7 @@ export default function AdminWorkspace() {
         <VendorProfileMenu owner={owner} roleLabel="Administrator" menuLabel="Menu akun admin" />
       </div>
     </div></header>
-    {!onAdminPage && !onCategoryPage && !onKycPage && !onClaimsPage && !onCatalogPage && !onPayoutsPage && !onAccountPage && path !== 'laporan' && <div className="v-preview-strip"><span><i />Pratinjau frontend</span><p>Data contoh · Perubahan akan kembali saat halaman dimuat ulang.</p></div>}
+    {path.startsWith('notifikasi') && <div className="v-preview-strip"><span><i />Pratinjau frontend</span><p>Data contoh · Perubahan akan kembali saat halaman dimuat ulang.</p></div>}
     <main id="admin-main" className="a-main" tabIndex={-1}>
       {subTabs && <nav className="a-tabs" aria-label="Bagian halaman">{subTabs.map(([label, to, key]) => { const here = key ? key === resolved?.key : to === `/admin${path ? `/${path}` : ''}`; return <Link key={to} to={to} className={here ? 'is-active' : undefined} aria-current={here ? 'page' : undefined}>{label}</Link>; })}</nav>}
       <WorkspaceResourceContext.Provider value={{ resources: resourceConfig, rootPath: '/admin' }}>{content}</WorkspaceResourceContext.Provider>
