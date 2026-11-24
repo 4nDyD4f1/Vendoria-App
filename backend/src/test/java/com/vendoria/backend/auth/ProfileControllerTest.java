@@ -37,7 +37,7 @@ class ProfileControllerTest {
 	@Test
 	void getAndUpdateUseSessionIdentityEvenIfBodySuppliesAnotherUser() throws Exception {
 		var response = new UserResponse(7L, "Budi", "budi@example.com", "081234567890", "customer",
-				"belum_diverifikasi", null, null, false);
+				"belum_diverifikasi", null, null, false, null);
 		when(service.get(7L)).thenReturn(response);
 		when(service.update(eq(7L), any())).thenReturn(response);
 		mvc.perform(get("/api/account/profile").session(session()))

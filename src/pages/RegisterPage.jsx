@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Eye, EyeOff, User, Sparkles, ArrowRight } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import AuthLayout from '../components/AuthLayout';
 import { useAuth } from '../AuthContext';
 import { EMAIL_RE } from '../validation';
+import { authDestination } from '../authDestination';
 
 // WhatsApp wajib 08xxxxxxxxxx, bukan +62/62.
 const PHONE_RE = /^08\d{8,11}$/;
@@ -28,7 +29,8 @@ const validate = ({ fullName, email, whatsapp, password, agreedToTerms }) => {
 };
 
 const RegisterPage = () => {
-  const [accountType, setAccountType] = useState('customer');
+  const [searchParams] = useSearchParams();
+  const [accountType, setAccountType] = useState(() => searchParams.get('role') === 'vendor' ? 'vendor' : 'customer');
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
   const [whatsapp, setWhatsapp] = useState('');
@@ -66,15 +68,15 @@ const RegisterPage = () => {
     setServerError('');
     setSubmitting(true);
     try {
-      // daftar lalu otomatis login, kemudian ke beranda
-      await register({
+      // Daftar lalu otomatis login ke halaman sesuai peran akun dari server.
+      const user = await register({
         role: accountType,
         nama: fullName.trim(),
         email: email.trim(),
         no_telp: cleanPhone(whatsapp),
         password,
       });
-      navigate('/');
+      navigate(authDestination(user.role), { replace: true });
     } catch (err) {
       const detail = Object.values(err.errors ?? {}).join(', ');
       setServerError(detail ? `${err.message}: ${detail}` : err.message); // mis. 409 "Email sudah terdaftar"

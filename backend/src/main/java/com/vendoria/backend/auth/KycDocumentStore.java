@@ -36,19 +36,24 @@ import org.springframework.web.server.ResponseStatusException;
 
 import tools.jackson.databind.json.JsonMapper;
 
-/** File berada di luar public/static. Semua pembacaan dokumen harus melalui pemeriksaan sesi di KycService. */
+/**
+ * Dokumen dienkripsi AES-GCM di server lalu disimpan di Cloudinary sebagai berkas raw + authenticated (Cloudinary hanya melihat
+ * ciphertext). Kunci enkripsi tetap berkas lokal di root. Semua pembacaan dokumen harus melalui pemeriksaan sesi di KycService.
+ */
 @Component
 class KycDocumentStore {
 	private static final int MAX_FILE = 5 * 1024 * 1024;
 	private static final int MAX_STORED = 32 * 1024 * 1024;
 	private static final String PREFIX = "private://kyc/";
-	private final Path root;
+	private static final List<String> DOCUMENTS = List.of("identity", "ktp", "selfie");
+	private final BlobStore blobs;
 	private final SecretKeySpec key;
 	private final SecureRandom random = new SecureRandom();
 	private final JsonMapper json = JsonMapper.builder().build();
 
-	KycDocumentStore(@Value("${app.kyc.storage-root}") String storageRoot) {
-		root = Path.of(storageRoot).toAbsolutePath().normalize();
+	KycDocumentStore(BlobStore blobs, @Value("${app.kyc.storage-root}") String storageRoot) {
+		this.blobs = blobs;
+		Path root = Path.of(storageRoot).toAbsolutePath().normalize();
 		try {
 			boolean existed = Files.exists(root);
 			Files.createDirectories(root);
@@ -73,9 +78,6 @@ class KycDocumentStore {
 		String id = UUID.randomUUID().toString();
 		String locator = PREFIX + id;
 		try {
-			Path directory = directory(locator);
-			Files.createDirectory(directory);
-			restrict(directory);
 			write(locator, "identity", json.writeValueAsBytes(new KycDtos.StoredIdentity(identity, java.time.Instant.now().toString())));
 			write(locator, "ktp", first);
 			write(locator, "selfie", second);
@@ -93,8 +95,10 @@ class KycDocumentStore {
 
 	boolean available(String locator) {
 		if (!managed(locator)) return false;
-		Path directory = directory(locator);
-		return List.of("identity", "ktp", "selfie").stream().allMatch(name -> Files.isRegularFile(directory.resolve(name + ".enc")));
+		try {
+			for (String name : DOCUMENTS) if (!blobs.exists(BlobStore.Kind.KYC, id(locator) + "/" + name + ".enc")) return false;
+			return true;
+		} catch (IOException e) { return false; }
 	}
 
 	byte[] document(String locator, String kind) {
@@ -106,9 +110,7 @@ class KycDocumentStore {
 	void remove(String locator) {
 		if (!managed(locator)) return;
 		try {
-			Path directory = directory(locator);
-			for (String name : List.of("identity.enc", "ktp.enc", "selfie.enc")) Files.deleteIfExists(directory.resolve(name));
-			Files.deleteIfExists(directory);
+			for (String name : DOCUMENTS) blobs.delete(BlobStore.Kind.KYC, id(locator) + "/" + name + ".enc");
 		} catch (IOException e) { throw new IllegalStateException("Pembersihan pengajuan KYC gagal", e); }
 	}
 
@@ -141,16 +143,12 @@ class KycDocumentStore {
 		cipher.updateAAD((locator + ":" + name).getBytes(java.nio.charset.StandardCharsets.UTF_8));
 		ByteArrayOutputStream output = new ByteArrayOutputStream();
 		output.write(iv); output.write(cipher.doFinal(plaintext));
-		Path target = directory(locator).resolve(name + ".enc");
-		Files.write(target, output.toByteArray(), StandardOpenOption.CREATE_NEW);
-		restrict(target);
+		blobs.put(BlobStore.Kind.KYC, id(locator) + "/" + name + ".enc", output.toByteArray());
 	}
 
 	private byte[] read(String locator, String name) throws IOException, GeneralSecurityException {
-		Path target = directory(locator).resolve(name + ".enc");
-		long length = Files.size(target);
-		if (length < 28 || length > MAX_STORED) throw new IOException("Invalid document length");
-		byte[] bytes = Files.readAllBytes(target);
+		byte[] bytes = blobs.get(BlobStore.Kind.KYC, id(locator) + "/" + name + ".enc");
+		if (bytes.length < 28 || bytes.length > MAX_STORED) throw new IOException("Invalid document length");
 		Cipher cipher = Cipher.getInstance("AES/GCM/NoPadding");
 		cipher.init(Cipher.DECRYPT_MODE, key, new GCMParameterSpec(128, Arrays.copyOfRange(bytes, 0, 12)));
 		cipher.updateAAD((locator + ":" + name).getBytes(java.nio.charset.StandardCharsets.UTF_8));
@@ -162,9 +160,9 @@ class KycDocumentStore {
 		try { return UUID.fromString(locator.substring(PREFIX.length())).toString().equals(locator.substring(PREFIX.length())); }
 		catch (IllegalArgumentException e) { return false; }
 	}
-	private Path directory(String locator) {
+	private String id(String locator) {
 		if (!managed(locator)) throw new IllegalArgumentException("Invalid KYC locator");
-		return root.resolve(locator.substring(PREFIX.length()));
+		return locator.substring(PREFIX.length());
 	}
 	private static void restrict(Path path) throws IOException {
 		if (Files.getFileAttributeView(path, java.nio.file.attribute.PosixFileAttributeView.class) != null) {

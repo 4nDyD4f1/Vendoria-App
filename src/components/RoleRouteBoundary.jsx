@@ -1,0 +1,19 @@
+import { Navigate, useLocation } from 'react-router-dom';
+import { useAuth } from '../AuthContext';
+
+// Resolve the session before mounting a page outside the user's workspace.
+export default function RoleRouteBoundary({ children }) {
+  const { user, loading } = useAuth();
+  const { pathname } = useLocation();
+  if (loading) return <div className="p-10" role="status">Memuat akun...</div>;
+
+  if (user?.role === 'admin' && !/^\/admin(?:\/|$)/.test(pathname)) {
+    return <Navigate to="/admin" replace />;
+  }
+  const workspace = /^\/vendor\/[^/]+/.test(pathname)
+    && !/^\/vendor\/\d+(?:\/|$)/.test(pathname);
+  if (user?.role === 'vendor' && !workspace) {
+    return <Navigate to="/vendor/dashboard" replace />;
+  }
+  return children;
+}

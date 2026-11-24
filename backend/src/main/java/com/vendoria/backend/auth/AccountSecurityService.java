@@ -88,7 +88,7 @@ class AccountSecurityService {
 		HttpSession session = request.getSession(true);
 		session.setMaxInactiveInterval(30 * 24 * 60 * 60);
 		session.setAttribute(AuthController.SESSION_USER_ID, user.getUserId());
-		return AuthDtos.UserResponse.from(user);
+		return AuthDtos.UserResponse.from(user).withLoginEvent(AuthController.loginEvent(session));
 	}
 
 	private void changePassword(Pengguna user, String hash) {

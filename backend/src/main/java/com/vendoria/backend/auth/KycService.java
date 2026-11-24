@@ -54,6 +54,7 @@ class KycService {
 		jdbc.queryForObject("insert into kyc_verifikasi(user_id,jenis_dokumen,dokumen_url,status) "
 				+ "values (?,'KTP dan Swafoto',?,'menunggu') returning kyc_id", Long.class, actorId, locator);
 		jdbc.update("update pengguna set status_verifikasi='menunggu',updated_at=now() where user_id=?", actorId);
+		VendorBusinessPolicy.sync(jdbc, actorId);
 		return mine(actorId);
 	}
 
@@ -121,6 +122,7 @@ class KycService {
 		jdbc.update("update kyc_verifikasi set status=?,catatan_admin=?,diverifikasi_oleh=?,diputuskan_pada=now() where kyc_id=?",
 				decision.status(), note == null || note.isBlank() ? null : note, actorId, id);
 		jdbc.update("update pengguna set status_verifikasi=?,updated_at=now() where user_id=?", decision.status(), owner);
+		VendorBusinessPolicy.sync(jdbc, owner);
 		return detail(find(id, false));
 	}
 

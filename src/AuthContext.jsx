@@ -36,7 +36,7 @@ export function AuthProvider({ children }) {
 
   const updateProfile = async (data) => {
     const updated = await api('/api/account/profile', { method: 'PUT', body: data });
-    setUser(updated);
+    setUser(current => ({ ...updated, login_event: updated.login_event || current?.login_event }));
     return updated;
   };
 

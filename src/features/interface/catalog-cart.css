@@ -1,0 +1,21 @@
+.catalog-cart-wrap{position:relative;flex:none}
+.vendoria-interface .catalog-cart-button{position:relative;display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;min-width:42px;padding:0;border:1px solid #dfcbb9;border-radius:13px;background:#f9f1e8;color:#624734;cursor:pointer;transition:background .2s,color .2s,border-color .2s,transform .2s;text-decoration:none}
+.vendoria-interface .catalog-cart-button:hover{background:#3a2a21;color:white;border-color:#3a2a21;transform:translateY(-2px)}
+.catalog-cart-button:focus-visible,.live-catalog-cart:focus-visible{outline:2px solid #a58163;outline-offset:3px}
+.catalog-cart-plus{position:absolute;top:5px;right:4px;background:inherit;border-radius:50%;stroke-width:3}
+.vendoria-interface .catalog-cart-button.is-done{background:#eaf4e7;color:#41623c;border-color:#c9ddc4}
+.vendoria-interface .catalog-cart-button:disabled{opacity:.55;cursor:wait;transform:none}
+.catalog-cart-button.is-celebrating,.live-catalog-cart.is-celebrating{animation:catalog-cart-pop .65s cubic-bezier(.22,.68,.25,1.3)}
+.catalog-cart-burst{position:absolute;inset:0;pointer-events:none;border-radius:inherit}
+.catalog-cart-burst:before{content:"";position:absolute;inset:0;border:2px solid #91b481;border-radius:inherit;animation:catalog-cart-ring .65s ease-out both}
+.catalog-cart-burst i{--angle:calc(var(--spark)*45deg);position:absolute;left:50%;top:50%;width:5px;height:5px;border-radius:2px;background:#91b481;animation:catalog-cart-spark .65s ease-out both;transform:rotate(var(--angle)) translateY(-26px)}
+.catalog-cart-burst i:nth-child(2n){background:#d8ae78;width:4px;height:4px}
+.catalog-cart-feedback{position:absolute;z-index:5;right:0;bottom:calc(100% + 10px);width:max-content;max-width:min(220px,calc(100vw - 70px));padding:9px 12px;border:1px solid #e5c7c0;border-radius:10px;background:#fff7f4;color:#9c493c;box-shadow:0 6px 20px #3a2a2114;font-size:11px;line-height:1.6;overflow-wrap:anywhere;pointer-events:none}
+.catalog-cart-feedback.is-success{color:#41623c;border-color:#d5e6ce;background:#f1f8ee;animation:catalog-cart-notice 2.8s ease both}
+.live-catalog-cart{position:relative}
+.live-catalog-cart-error.is-success{color:#41623c}
+@keyframes catalog-cart-pop{0%,100%{transform:scale(1)}25%{transform:scale(.86) rotate(-9deg)}60%{transform:scale(1.16) rotate(5deg)}80%{transform:scale(.97)}}
+@keyframes catalog-cart-ring{0%{opacity:.7;transform:scale(.8)}100%{opacity:0;transform:scale(1.65)}}
+@keyframes catalog-cart-spark{0%{opacity:0;transform:rotate(var(--angle)) translateY(-12px) scale(.2)}25%{opacity:1}100%{opacity:0;transform:rotate(var(--angle)) translateY(-44px) scale(.5)}}
+@keyframes catalog-cart-notice{0%{opacity:0;transform:translateY(4px)}10%,85%{opacity:1;transform:translateY(0)}100%{opacity:0;visibility:hidden}}
+@media(prefers-reduced-motion:reduce){.catalog-cart-button,.live-catalog-cart{animation:none!important;transition:none!important}.catalog-cart-burst{display:none}.vendoria-interface .catalog-cart-button:hover{transform:none}}

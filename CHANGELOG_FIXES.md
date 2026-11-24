@@ -2,6 +2,20 @@
 
 Terbaru di atas. Cari riwayat dengan `grep -n -i "<gejala>" CHANGELOG_FIXES.md`.
 
+### Fix #2 — Create/update berfoto selalu "Terjadi kesalahan. Coba lagi." setelah migrasi ke Cloudinary: kredensial `.env` bawa spasi/CR
+
+| | |
+|---|---|
+| **Tanggal** | 2026-11-24 |
+| **File** | `backend/src/main/java/com/vendoria/backend/auth/CloudinaryBlobStore.java` |
+| **Masalah** | Setelah penyimpanan gambar (katalog, bukti serah-terima, KYC) dipindah ke Cloudinary, semua create/update yang mengunggah gambar gagal dengan pesan generik di frontend. |
+| **Akar** | Kesalahan sendiri pada migrasi Cloudinary. `.env` berformat CRLF; Spring membaca `CLOUDINARY_CLOUD_NAME` dengan panjang 10 (aslinya 8: ada spasi/CR di tepi). SDK melempar `RuntimeException` (bukan `IOException`), tak tertangkap store, jadi jadi 500 tanpa `message` dan frontend jatuh ke teks cadangan di `src/api.js`. Smoke test pertama lolos karena saya me-trim nilai `.env` sendiri, bukan lewat konfigurasi Spring. |
+| **Fix** | Kredensial di-`trim()`; semua `RuntimeException` dari SDK dibungkus jadi `IOException` (+ log `Cloudinary <aksi> gagal`) sehingga store membalas 503 "Penyimpanan ... tidak tersedia". |
+| **Verifikasi** | Test sementara dengan konteks Spring asli + `.env` asli: `cloud-name len=10 trimmedLen=8`, put/get/delete ke Cloudinary berhasil. Test terkait gambar: 34 lulus (3 unit store + KycDatabase 6, VendorCatalogDatabase 8, VendorHandoversDatabase 10, dst.), 0 gagal. Belum dicoba lewat UI. |
+| **Pelajaran** | Verifikasi integrasi eksternal lewat jalur konfigurasi yang sama dengan aplikasi, bukan parsing manual. Nilai dari `.env` bisa membawa CR/spasi; trim di titik konsumsi. Bungkus exception SDK agar jadi error yang bermakna, bukan 500 kosong. |
+| **Log Keyword** | `Terjadi kesalahan. Coba lagi.`, `cloud_name`, `Cloudinary upload gagal`, `.env CRLF` |
+| **Deploy** | Belum (lokal) |
+
 ### Fix #1 — Halaman admin blank setelah commit katalog: `content is not defined` + `options.map` undefined
 
 | | |

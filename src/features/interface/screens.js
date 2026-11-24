@@ -47,7 +47,6 @@ export const screens = [
   ['payment-bank', '/pembayaran/bank', '103:4479', 'Pembayaran virtual account'],
   ['payment-qr', '/pembayaran/qris', '103:5173', 'Pembayaran QRIS'],
   ['payment-wallet', '/pembayaran/e-wallet', '103:5827', 'Pembayaran e-wallet'],
-  ['payment-review', '/pembayaran/konfirmasi', '103:6500', 'Konfirmasi pembayaran'],
   ['booking-confirmed', '/booking/terkonfirmasi', '103:7063', 'Booking terkonfirmasi'],
   ['orders', '/pesanan', '103:7616', 'Pesanan saya', 'customer'],
   ['order-detail', '/pesanan/VND-261011-8227', '103:8519', 'Detail pesanan', 'customer'],

@@ -1,6 +1,8 @@
 package com.vendoria.backend.auth;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.http.CacheControl;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -49,16 +51,26 @@ class AuthController {
 	}
 
 	@GetMapping("/me")
-	UserResponse me(HttpServletRequest http) {
+	ResponseEntity<UserResponse> me(HttpServletRequest http) {
 		HttpSession session = http.getSession(false);
 		if (session == null || !(session.getAttribute(SESSION_USER_ID) instanceof Long id)) {
 			throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Belum login");
 		}
 		try {
-			return service.me(id);
+			return ResponseEntity.ok().cacheControl(CacheControl.noStore()).body(service.me(id).withLoginEvent(loginEvent(session)));
 		} catch (ResponseStatusException e) { // user sudah dihapus dari DB
 			session.invalidate();
 			throw e;
+		}
+	}
+
+	// A public notice identifier; never expose the authenticated HTTP session ID.
+	static String loginEvent(HttpSession session) {
+		synchronized (session) {
+			if (!(session.getAttribute("login_event") instanceof String)) {
+				session.setAttribute("login_event", java.util.UUID.randomUUID().toString());
+			}
+			return (String) session.getAttribute("login_event");
 		}
 	}
 

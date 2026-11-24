@@ -114,10 +114,6 @@ export default function AdminWorkspace() {
     listKyc({ status: 'semua', size: 100 }).then(value => { if (!lifecycle.signal.aborted) kycLoaded(value); }).catch(() => {});
     return () => { lifecycle.abort(); };
   }, [onKycPage, kycLoaded]);
-  const loadAdministrators = async () => {
-    try { const administrators = await listAdministrators(); setData(current => ({ ...current, administrators })); }
-    catch (error) { if (onAdminPage) notify(error.message); }
-  };
   useEffect(() => {
     let stale = false;
     listAdministrators().then(administrators => { if (!stale) setData(current => ({ ...current, administrators })); }, error => { if (!stale && onAdminPage) notify(error.message); });
@@ -142,16 +138,21 @@ export default function AdminWorkspace() {
     try { await deleteCategories(ids); notify(`${ids.length} kategori dihapus.`); }
     finally { await loadCategories(); } // gagal (mis. masih dipakai alat): pesan tampil di dialog hapus
   };
+  const loadAdministrators = async () => {
+    const administrators = await listAdministrators();
+    setData(current => ({ ...current, administrators }));
+  };
   const saveAdmin = async record => {
-    const saved = await saveAdministrator(record); // menolak (throw) bila gagal: form menampilkan pesannya
+    const saved = await saveAdministrator(record);
     setData(current => ({ ...current, administrators: record.id ? current.administrators.map(item => item.id === saved.id ? saved : item) : [saved, ...current.administrators] }));
     notify(`Administrator ${record.id ? 'diperbarui' : 'ditambahkan'}.`);
   };
   const removeAdmins = async ids => {
     const results = await Promise.allSettled(ids.map(deleteAdministrator));
+    await loadAdministrators();
     const failed = results.find(result => result.status === 'rejected');
-    await loadAdministrators(); // sebagian bisa berhasil: tampilkan keadaan sebenarnya
-    notify(failed ? failed.reason.message : `${ids.length} administrator dihapus.`);
+    if (failed) throw failed.reason;
+    notify(`${ids.length} administrator dihapus.`);
   };
   const save = (key, record) => {
     if (['kyc', 'claims', 'catalog', 'payouts', 'customers', 'vendors'].includes(key)) return;
@@ -170,7 +171,7 @@ export default function AdminWorkspace() {
   else if (onClaimsPage) content = <AdminClaimsPage segments={resolved.segments} onLoaded={claimsLoaded} />;
   else if (onCatalogPage) content = <AdminCatalogPage segments={resolved.segments} onLoaded={catalogLoaded} notify={notify} />;
   else if (onPayoutsPage) content = <AdminPayoutsPage segments={resolved.segments} onLoaded={payoutsLoaded} />;
-  else if (onAccountPage) content = <AdminAccountPage key={resolved.key} resourceKey={resolved.key} segments={resolved.segments} onLoaded={accountsLoaded} notify={notify} />;
+  else if (onAccountPage) content = <AdminAccountPage key={resolved.key} resourceKey={resolved.key} segments={resolved.segments} onLoaded={accountsLoaded} />;
   else if (resolved) content = <WorkspaceResource key={resolved.key} resourceKey={resolved.key} segments={resolved.segments} data={viewData} onSave={save} onDelete={remove} onUpload={upload} />;
   else if (!path || path === 'dashboard') content = <AdminDashboard data={viewData} name={owner.name} />;
   else if (path === 'laporan') content = <AdminReports />;

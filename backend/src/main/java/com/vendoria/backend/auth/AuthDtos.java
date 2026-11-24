@@ -79,12 +79,17 @@ final class AuthDtos {
 			@JsonProperty("foto_profil") String fotoProfil,
 			@JsonProperty("created_at") Instant createdAt,
 			// true bila akun tertaut Google (google_sub terisi): email dikelola Google, tak boleh diubah di sini
-			@JsonProperty("akun_google") boolean akunGoogle) {
+			@JsonProperty("akun_google") boolean akunGoogle,
+			@JsonProperty("login_event") String loginEvent) {
 
 		static UserResponse from(Pengguna p) {
 			return new UserResponse(p.getUserId(), p.getNama(), p.getEmail(), p.getNoTelp(), p.getRole(),
 					p.getStatusVerifikasi(), p.getFotoProfil(), p.getCreatedAt(),
-					p.getGoogleSub() != null);
+					p.getGoogleSub() != null, null);
+		}
+
+		UserResponse withLoginEvent(String event) {
+			return new UserResponse(userId, nama, email, noTelp, role, statusVerifikasi, fotoProfil, createdAt, akunGoogle, event);
 		}
 	}
 }

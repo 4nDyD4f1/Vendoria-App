@@ -101,7 +101,7 @@ export default function UserKycPage({ backTo = '/akun', backLabel = 'Akun Saya' 
   const StatusIcon = status === 'terverifikasi' ? CheckCircle2 : status === 'ditolak' ? XCircle : Clock;
 
   return <div className="kyc-user-page">
-    <nav className="kyc-breadcrumb" aria-label="Breadcrumb"><Link to="/">Beranda</Link><span>/</span><Link to={backTo}>{backLabel}</Link><span>/</span><span>Verifikasi KYC</span></nav>
+    <nav className="kyc-breadcrumb" aria-label="Breadcrumb"><Link to={backTo.startsWith('/vendor/') ? '/vendor/dashboard' : '/'}>{backTo.startsWith('/vendor/') ? 'Dashboard' : 'Beranda'}</Link><span>/</span><Link to={backTo}>{backLabel}</Link><span>/</span><span>Verifikasi KYC</span></nav>
     <header className="kyc-page-heading"><div><p className="kyc-eyebrow">KEAMANAN IDENTITAS</p><h1>Verifikasi KYC Identitas</h1><p>Lengkapi identitas dan dokumen untuk verifikasi akun Anda.</p></div><span className={`kyc-status kyc-status-${status}`}><StatusIcon size={16} />{kycStatus[status]}</span></header>
     {error && <p role="alert" className="kyc-error">{error}</p>}
     {notice && <p role="status" className="kyc-notice">{notice}</p>}

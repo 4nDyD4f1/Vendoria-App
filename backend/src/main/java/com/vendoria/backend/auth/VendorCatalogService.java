@@ -91,11 +91,7 @@ class VendorCatalogService {
     return photos.read(files.isEmpty()?null:files.getFirst());
   }
   private void actor(Long id,boolean lock) {
-    if (id == null) throw new ResponseStatusException(HttpStatus.UNAUTHORIZED,"Belum login");
-    var users=jdbc.queryForList("select role,status_akun from pengguna where user_id=?"+(lock?" for update":""),id);
-    if (users.isEmpty()) throw new ResponseStatusException(HttpStatus.UNAUTHORIZED,"Sesi tidak valid. Silakan masuk kembali");
-    if (!"vendor".equals(users.getFirst().get("role")) || !Pengguna.AKTIF.equals(users.getFirst().get("status_akun")))
-      throw new ResponseStatusException(HttpStatus.FORBIDDEN,"Hanya akun vendor aktif yang dapat mengelola katalog");
+    VendorBusinessPolicy.requireReady(jdbc,id,lock);
   }
   private Vendor vendor(Long actorId) {
     var rows=jdbc.query("select vendor_id,nama_vendor,status_aktif from vendor where user_id=?",(rs,n)->new Vendor(rs.getString(1),rs.getString(2),rs.getBoolean(3)),actorId);

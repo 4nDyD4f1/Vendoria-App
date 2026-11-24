@@ -145,6 +145,8 @@ export default function DesignNode({ node, ancestors = [], insideControl = false
     className: `${classes} design-node${isGrid ? ' design-grid' : ''}${productsGrid ? ' products-grid' : ''}${layoutBlock ? ' design-layout-block' : ''}${wideBlock ? ' design-wide-block' : ''}${absoluteBadge ? ' design-absolute-badge' : ''}${flowBlock ? ' design-flow-block' : ''}${control ? ' design-control' : ''}${pressed ? ' interface-filter-active' : ''}${read ? ' interface-read' : ''}`,
     style,
   };
+  const liveNode = context.renderNode?.(node, props);
+  if (liveNode !== undefined) return liveNode;
   if (node.props?.['data-wishlist-grid']) props.className += ' wishlist-live-grid';
   if (context.screen.key === 'home' && homeSearchFields[node.id]) return <HomeSearchField node={node} props={props} />;
   if (node.props?.['data-wishlist-item']) props.className += ' wishlist-live-item';
@@ -220,6 +222,7 @@ export default function DesignNode({ node, ancestors = [], insideControl = false
     };
   }
   if (control && /wishlist/i.test(name) && !/^Button - Wishlist,/.test(name)) {
+    if (!context.preview) return null;
     const item = wishlistItemFor(ancestors, context.currentProduct);
     return <WishlistButton active={context.wishlist.some(saved => saved.key === item?.key)} item={item} buttonProps={props} overlay={classes.includes('absolute')} />;
   }

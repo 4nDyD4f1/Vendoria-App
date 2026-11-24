@@ -15,11 +15,18 @@ import './interface.css';
 import { useWishlist } from './useWishlist';
 import { wishlistItemFor } from './wishlistData';
 import LiveWishlist from './LiveWishlist';
+import PreviewWishlist from './PreviewWishlist';
 import RentalGuideTabs from './RentalGuideTabs';
 import AccountTabs from './AccountTabs';
 import { accountTabs } from './accountDesign';
 import UserKycPage from '../kyc/UserKycPage';
 import RequireAuth from '../../components/RequireAuth';
+import LiveCatalog from './LiveCatalog';
+import LiveCart from './LiveCart';
+import LivePayment from './LivePayment';
+import LiveBooking from './LiveBooking';
+import LiveOrders from './LiveOrders';
+import { useCart } from './useCart';
 
 const loaders = import.meta.glob('./designs/[0-9]*.json', { import: 'default' });
 const loaded = new Map();
@@ -28,10 +35,16 @@ function loadDesign(nodeId) {
   return loaded.get(nodeId);
 }
 function ScreenContent({ screen, preview, initialRentalTab, initialAccountTab, initialAccountModal }) {
+  if (screen.key === 'catalog' && !preview) return <LiveCatalog loadDesign={loadDesign} />;
   if (['kyc', 'kyc-pending', 'kyc-verified', 'kyc-rejected'].includes(screen.key) && !preview) return <RequireAuth><UserKycPage /></RequireAuth>;
   if (screen.key === 'account-profile' && !preview) return <AccountTabs loadDesign={loadDesign} initialTab={initialAccountTab} initialModal={initialAccountModal} />;
   if (screen.key === 'rental-guide' && !preview) return <RentalGuideTabs loadDesign={loadDesign} initialTab={initialRentalTab} />;
-  if (screen.key === 'wishlist' || screen.key === 'wishlist-empty' && !preview) return <LiveWishlist loadDesign={loadDesign} />;
+  if (screen.key === 'checkout' && !preview) return <RequireAuth role="customer"><LiveCart /></RequireAuth>;
+  if (['payment-bank', 'payment-qr', 'payment-wallet'].includes(screen.key) && !preview) return <RequireAuth role="customer"><LivePayment /></RequireAuth>;
+  if (screen.key === 'booking-confirmed' && !preview) return <RequireAuth role="customer"><LiveBooking /></RequireAuth>;
+  if (['orders', 'order-detail', 'order-handover', 'order-return'].includes(screen.key) && !preview) return <RequireAuth role="customer"><LiveOrders mode={screen.key} /></RequireAuth>;
+  if (['wishlist', 'wishlist-empty'].includes(screen.key) && !preview) return <RequireAuth role="customer"><LiveWishlist /></RequireAuth>;
+  if (screen.key === 'wishlist' && preview) return <PreviewWishlist loadDesign={loadDesign} />;
   const tree = use(loadDesign(screen.nodeId));
   return <DesignNode node={tree} />;
 }
@@ -54,6 +67,7 @@ export default function InterfacePage() {
   const [selected, setSelected] = useState({});
   const { items: wishlist, toggle: toggleWishlist } = useWishlist(user, preview);
   const [cart, setCart] = useState([]);
+  const liveCart = useCart(preview ? null : user);
   const [quantity, setQuantity] = useState(1);
   const [rentalDates, setRentalDates] = useState({});
   const [hidden, setHidden] = useState({});
@@ -162,7 +176,6 @@ export default function InterfacePage() {
     if (/^lihat semua \(/.test(t)) return '/vendor/3';
     if (/^langkah 1|1 langkah 1/.test(t)) return '/keranjang';
     if (/langkah 2/.test(t)) return '/pembayaran/bank';
-    if (/langkah 3/.test(t)) return '/pembayaran/konfirmasi';
     if (/langkah 4/.test(t)) return '/booking/terkonfirmasi';
     if (/^lihat detail|^detail pesanan/.test(t)) return '/pesanan/VND-261011-8227';
     if (/^lihat bukti|^unggah foto serah|mulai masa sewa/.test(t)) return '/pesanan/VND-261011-8227/serah-terima';
@@ -204,6 +217,7 @@ export default function InterfacePage() {
     }
     if (/Switch/.test(name)) { setFields(current => ({ ...current, [node.id]: !(current[node.id] ?? true) })); return; }
     if (/wishlist/i.test(name) && !/^Button - Wishlist,/.test(name)) {
+      if (!preview) { notify('Pilih alat dari katalog untuk menyimpannya ke wishlist.'); go('/catalog'); return; }
       const active = toggleWishlist(wishlistItemFor(ancestors, currentProduct));
       notify(active ? 'Alat disimpan ke wishlist.' : 'Alat dihapus dari wishlist.');
       return;
@@ -236,7 +250,7 @@ export default function InterfacePage() {
     if (text === 'keluar') { if (preview) go('/'); else logout().then(() => navigate('/')); return; }
     if (/kirim bukti pembayaran/i.test(label)) {
       if (!Object.keys(uploads).length) { notify('Pilih bukti pembayaran terlebih dahulu.'); return; }
-      go('/pembayaran/konfirmasi'); return;
+      go('/pembayaran/bank'); return;
     }
     if (/kirim dokumen/i.test(label)) {
       if (Object.keys(uploads).length < 2) { notify('Unggah foto KTP dan swafoto terlebih dahulu.'); return; }
@@ -328,6 +342,8 @@ export default function InterfacePage() {
   // Vendor/admin pages and their descendants are public; other access checks remain in place.
   const publicBackoffice = /^\/(?:vendor|admin)(?:\/|$)/.test(location.pathname);
   const enforceAccess = !preview && !publicBackoffice;
+  if (!preview && location.pathname === '/wishlist/kosong') return <Navigate to="/wishlist" replace />;
+  if (!preview && /^\/notifikasi(?:\/menu)?\/?$/.test(location.pathname)) return <Navigate to="/" replace state={{ customerNotificationsOpen: true }} />;
   if (!preview && ['rental-faq', 'rental-policy'].includes(screen.key)) return <Navigate to="/cara-sewa" replace state={{ rentalTab: screen.key }} />;
   // Menu akun berbagi satu path (/akun); alamat lama diarahkan ke sana dengan menu yang sesuai.
   if (!preview && ['account-add-address', 'account-add-refund'].includes(screen.key)) return <Navigate to="/akun" replace state={{ accountTab: screen.key === 'account-add-address' ? 'account-address' : 'account-refund', accountModal: screen.key === 'account-add-address' ? 'address' : 'refund' }} />;
@@ -345,13 +361,13 @@ export default function InterfacePage() {
         else if (!event.shiftKey && document.activeElement === elements.at(-1)) { event.preventDefault(); elements[0]?.focus(); }
       }
     }}>
-      {!screen.backoffice && <InterfaceHeader preview={preview} go={go} activeLabel={headerStates[screen.nodeId]?.active} cartCount={cart.length || headerStates[screen.nodeId]?.cart || 0} unread={Object.keys(read).length ? Math.max(0, (headerStates[screen.nodeId]?.unread || 15) - Object.keys(read).length) : headerStates[screen.nodeId]?.unread || 0} />}
+      {!screen.backoffice && <InterfaceHeader preview={preview} go={go} activeLabel={headerStates[screen.nodeId]?.active} cartCount={preview ? cart.length || headerStates[screen.nodeId]?.cart || 0 : liveCart.count} unread={Object.keys(read).length ? Math.max(0, (headerStates[screen.nodeId]?.unread || 15) - Object.keys(read).length) : headerStates[screen.nodeId]?.unread || 0} />}
       <main className={`design-surface ${screen.backoffice ? '' : 'customer-surface'}`}>
         <Suspense fallback={<div className="px-10 py-20" role="status">Memuat halaman…</div>}><ScreenContent key={['rental-guide', 'account-profile'].includes(screen.key) && !preview ? location.key : stableKey} screen={screen} preview={preview} initialRentalTab={location.state?.rentalTab} initialAccountTab={location.state?.accountTab} initialAccountModal={location.state?.accountModal} /></Suspense>
         {messages.length > 0 && <div className="mx-10 p-5 rounded-2xl border border-[#ede1d9] bg-white">{messages.map((message, index) => <p key={index} className="text-sm mb-2">{message}</p>)}</div>}
       </main>
       {!screen.backoffice && <DesignNode node={footer} />}
-      {screen.key === 'notification-menu' && <div className="interface-notification-popup"><DesignNode node={notificationMenu} /></div>}
+      {preview && screen.key === 'notification-menu' && <div className="interface-notification-popup"><DesignNode node={notificationMenu} /></div>}
       <input ref={fileInput} hidden type="file" onChange={event => {
         const files = [...(event.target.files || [])];
         const allowed = fileInput.current.accept.split(',');
