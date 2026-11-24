@@ -100,4 +100,27 @@ class AdminClaimDatabaseTest {
 		mvc.perform(post("/api/admin/claims/0/decision").header("X-Admin-Claims", "1").session(session(admin))
 				.contentType(MediaType.APPLICATION_JSON).content("{\"status\":\"disetujui\"}")).andExpect(status().isNotFound());
 	}
+
+	@Test
+	void approvalNeedsCompensationAmountAndRecordsItAsRefund() throws Exception {
+		decide("{\"status\":\"disetujui\"}").andExpect(status().isBadRequest()); // nilai wajib
+		decide("{\"status\":\"disetujui\",\"amount\":0}").andExpect(status().isBadRequest());
+		decide("{\"status\":\"disetujui\",\"amount\":1000001}").andExpect(status().isBadRequest()); // melebihi total sewa 1.000.000
+		assertEquals("diajukan", jdbc.queryForObject("select status from klaim where klaim_id=?", String.class, claim));
+		assertEquals(0, jdbc.queryForObject("select count(*) from pengembalian_dana where klaim_id=?", Integer.class, claim));
+
+		decide("{\"status\":\"disetujui\",\"amount\":200000,\"note\":\"Tenda sobek\"}").andExpect(status().isOk())
+				.andExpect(jsonPath("$.status").value("disetujui")).andExpect(jsonPath("$.compensation").value(200000));
+		var refund = jdbc.queryForMap("select jumlah,status,alasan from pengembalian_dana where klaim_id=?", claim);
+		assertEquals(200000L, ((Number) refund.get("jumlah")).longValue());
+		assertEquals("menunggu", refund.get("status"));
+		decide("{\"status\":\"disetujui\",\"amount\":1}").andExpect(status().isConflict());
+		assertEquals(1, jdbc.queryForObject("select count(*) from pengembalian_dana where klaim_id=?", Integer.class, claim)); // tidak ganda
+	}
+
+	@Test
+	void rejectionRecordsNoCompensation() throws Exception {
+		decide("{\"status\":\"ditolak\",\"note\":\"Bukti kurang\",\"amount\":500}").andExpect(status().isOk()).andExpect(jsonPath("$.compensation").isEmpty());
+		assertEquals(0, jdbc.queryForObject("select count(*) from pengembalian_dana where klaim_id=?", Integer.class, claim));
+	}
 }

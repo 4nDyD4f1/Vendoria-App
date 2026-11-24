@@ -11,7 +11,7 @@ export default function VendorDashboard({ data, business }) {
   const rented = data.orders.filter(order => order.status === 'Berlangsung').length;
   const confirmed = data.orders.filter(order => order.status === 'Dikonfirmasi').length;
   const inspections = data.handovers.filter(item => item.type === 'Pengembalian' && item.status === 'Menunggu inspeksi').length;
-  const claims = data.claims.filter(item => item.status === 'Ditinjau').length;
+  const claims = data.claims.filter(item => ['Diajukan', 'Ditinjau'].includes(item.status)).length;
   const metrics = [
     { label: 'Pesanan Baru', value: pending, detail: 'Perlu diproses', icon: vendorAssets.bell, to: '/vendor/pesanan' },
     { label: 'Sedang Disewa', value: rented, detail: 'Masa sewa berjalan', icon: vendorAssets.calendar, to: '/vendor/pesanan' },

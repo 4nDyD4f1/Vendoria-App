@@ -1,5 +1,3 @@
-import { initialData as vendorData } from '../vendor/vendorData';
-
 const field = (key, label, type = 'text', extra = {}) => ({ key, label, type, ...extra });
 const status = (options = ['Aktif', 'Nonaktif']) => field('status', 'Status', 'select', { options });
 const notes = field('notes', 'Catatan', 'textarea', { optional: true });
@@ -7,12 +5,11 @@ const accountEmail = field('email', 'Email akun', 'email', { maxLength: 255, loc
 const accountPhone = field('phone', 'Nomor WhatsApp', 'tel', { optional: true, maxLength: 30 });
 const accountPassword = field('password', 'Kata sandi', 'password', { secret: true, maxLength: 72 });
 const accountNotes = { ...notes, maxLength: 4000 };
-const categoryOptions = ['Tenda & kanopi', 'Sound system', 'Lighting & FX', 'Dekorasi', 'Kursi & meja', 'Panggung & genset'];
 
 export const adminResources = {
   kyc: { path: 'kyc', title: 'Verifikasi KYC', singular: 'pengajuan KYC', prefix: 'KYC', description: 'Tinjau identitas customer dan vendor sebelum akun terverifikasi.', columns: [['id', 'No. pengajuan'], ['name', 'Nama pemohon'], ['type', 'Jenis akun'], ['date', 'Tanggal pengajuan'], ['status', 'Status']], fields: [field('name', 'Nama pemohon'), field('type', 'Jenis akun', 'select', { options: ['Customer', 'Vendor'] }), field('email', 'Email', 'email'), field('phone', 'Nomor WhatsApp', 'tel'), field('identity', 'Nomor identitas'), field('city', 'Domisili'), field('date', 'Tanggal pengajuan', 'date'), status(['Menunggu', 'Terverifikasi', 'Ditolak']), notes] },
   claims: { path: 'klaim', title: 'Kelola klaim', singular: 'klaim', prefix: 'KLM', live: true, description: 'Tinjau klaim yang masuk, lalu putuskan untuk menyetujui atau menolaknya.', columns: [], fields: [] }, // halaman khusus: AdminClaimsPage
-  catalog: { path: 'katalog', title: 'Katalog alat', singular: 'alat', prefix: 'ALT', numericIds: true, description: 'Kelola alat dari seluruh vendor, termasuk peninjauan dan penangguhan.', columns: [['name', 'Nama alat'], ['vendor', 'Vendor'], ['category', 'Kategori'], ['price', 'Harga / hari'], ['status', 'Status']], fields: [field('name', 'Nama alat'), field('vendor', 'Nama vendor'), field('category', 'Kategori', 'select', { options: categoryOptions }), field('stock', 'Stok unit', 'number', { min: 0 }), field('price', 'Harga sewa per hari (Rp)', 'number', { min: 0 }), status(['Aktif', 'Menunggu review', 'Ditangguhkan', 'Draft']), field('description', 'Deskripsi alat', 'textarea', { optional: true }), notes] },
+  catalog: { path: 'katalog', title: 'Katalog alat', singular: 'alat', prefix: 'ALT', live: true, noCreate: true, noDelete: true, editable: ['status'], description: 'Pantau alat dari seluruh vendor. Admin hanya dapat mengubah status alat; data lainnya dikelola vendor.', columns: [['name', 'Nama alat'], ['vendor', 'Vendor'], ['category', 'Kategori'], ['price', 'Harga / hari'], ['status', 'Status']], fields: [field('name', 'Nama alat'), field('vendor', 'Nama vendor'), field('category', 'Kategori'), field('stock', 'Stok unit', 'number', { min: 0 }), field('price', 'Harga sewa per hari (Rp)', 'number', { min: 0 }), status(['Aktif', 'Nonaktif', 'Arsip']), field('description', 'Deskripsi alat', 'textarea', { optional: true })] },
   categories: { path: 'kategori', title: 'Kategori katalog', singular: 'kategori', prefix: 'CAT', live: true, description: 'Atur kategori agar pelanggan lebih mudah menemukan perlengkapan acara. Jumlah alat dihitung dari katalog vendor.', columns: [['name', 'Nama kategori'], ['count', 'Jumlah alat']], fields: [field('name', 'Nama kategori')] },
   customers: { path: 'pengguna/pengguna', title: 'Pengguna customer', singular: 'customer', prefix: 'CST', live: true, description: 'Kelola profil dan status akun penyewa perlengkapan acara.', columns: [['name', 'Nama customer'], ['email', 'Email'], ['phone', 'Nomor WhatsApp'], ['status', 'Status']], fields: [field('name', 'Nama lengkap', 'text', { maxLength: 120 }), accountEmail, accountPhone, status(), accountPassword, accountNotes], extraDetailFields: [field('verification', 'Verifikasi identitas')] },
   vendors: { path: 'pengguna/vendor', title: 'Pengguna vendor', singular: 'vendor', prefix: 'VDR', live: true, description: 'Kelola akun pemilik dan informasi bisnis vendor. Keputusan KYC dilakukan melalui halaman Verifikasi KYC.', columns: [['name', 'Nama bisnis'], ['owner', 'Pemilik'], ['city', 'Kota'], ['verification', 'Verifikasi'], ['status', 'Status akun']], fields: [field('name', 'Nama bisnis', 'text', { maxLength: 150 }), field('owner', 'Nama pemilik', 'text', { maxLength: 120 }), accountEmail, accountPhone, field('city', 'Kota operasional', 'text', { optional: true, maxLength: 100 }), field('address', 'Alamat bisnis', 'textarea', { optional: true, maxLength: 2000 }), field('description', 'Deskripsi bisnis', 'textarea', { optional: true, maxLength: 10000 }), { ...status(), label: 'Status akun' }, field('businessStatus', 'Status bisnis', 'select', { options: ['Aktif', 'Nonaktif'], defaultValue: 'Nonaktif' }), accountPassword, accountNotes], extraDetailFields: [field('verification', 'Verifikasi identitas')] },
@@ -30,7 +27,7 @@ export const adminInitialData = {
     { id: 'KYC-1037', name: 'Griya Kursi Nusantara', type: 'Vendor', email: 'griya@example.test', phone: '081200000106', identity: '3671 •••• •••• 0016', city: 'Tangerang', date: '2026-11-19', status: 'Terverifikasi', notes: '' },
   ],
   claims: [], // data nyata dari backend (claimsApi.js), bukan data contoh
-  catalog: vendorData.catalog.map((record, index) => ({ ...record, id: String(index + 1), vendor: index === 6 ? 'Karya Audio Pro Bogor' : 'Roder Bogor Tenda Megah', status: record.status === 'Perawatan' ? 'Menunggu review' : record.status, notes: '' })),
+  catalog: [], // data nyata dari backend (catalogApi.js), bukan data contoh
   categories: [], // data nyata dari backend (categoriesApi.js), bukan data contoh
   customers: ['Bagas Arya Pratama', 'Nadia Putri', 'Rizky Ramadhan', 'Alya Maharani', 'Dimas Pratama', 'Salsabila Zahra'].map((name, index) => ({ id: `CST-00${index + 1}`, name, email: `${name.split(' ')[0].toLowerCase()}@example.test`, phone: `08120000020${index}`, city: index === 2 ? 'Depok' : 'Bogor', status: index === 4 ? 'Nonaktif' : 'Aktif', notes: '' })),
   vendors: [
@@ -42,29 +39,6 @@ export const adminInitialData = {
   administrators: [], // data nyata dari backend (administratorsApi.js), bukan data contoh
   payouts: [], // data nyata dari backend (reportsApi.js), bukan data contoh
 };
-
-// Data contoh dashboard (dari desain Figma node 89:2); belum ada endpoint transaksi/laporan.
-export const dashboardTransactions = [
-  { id: '#261012-8821', customer: 'Bagas Arya Pratama', vendor: 'Roder Bogor Tenda Megah', total: 21450000, status: 'Menunggu Pembayaran' },
-  { id: '#261120-1000', customer: 'Siti Rahmawati', vendor: 'Karya Audio Pro Bogor', total: 600000, status: 'Selesai' },
-  { id: '#261118-1737', customer: 'Bagas Arya Pratama', vendor: 'Roder Bogor Tenda Megah', total: 1000000, status: 'Selesai' },
-  { id: '#261005-7712', customer: 'Bagas Arya Pratama', vendor: 'Karya Audio Pro Bogor', total: 5000000, status: 'Terkonfirmasi' },
-  { id: '#261116-2474', customer: 'Anisa Putri', vendor: 'Luminary Stage Lighting Bogor', total: 1350000, status: 'Selesai' },
-  { id: '#260928-4019', customer: 'Bagas Arya Pratama', vendor: 'Roder Bogor Tenda Megah', total: 10600000, status: 'Sedang Disewa' },
-];
-
-// value = nilai sewa (juta rupiah), count = jumlah transaksi
-export const weeklyVolume = [
-  { label: 'M-7', value: 24, count: 6 }, { label: 'M-6', value: 9, count: 3 }, { label: 'M-5', value: 11, count: 7 }, { label: 'M-4', value: 12, count: 7 },
-  { label: 'M-3', value: 17, count: 5 }, { label: 'M-2', value: 17, count: 7 }, { label: 'M-1', value: 8, count: 4 }, { label: 'Ini', value: 41, count: 10 },
-];
-
-export const adminNotifications = [
-  { id: 1, title: 'Pengajuan KYC baru', body: 'Identitas Nadia Putri menunggu peninjauan.', time: '10 menit lalu', path: '/admin/kyc/KYC-1042', read: false },
-  { id: 2, title: 'Klaim perlu ditinjau', body: 'Klaim KLM-891 memerlukan keputusan admin.', time: '30 menit lalu', path: '/admin/klaim/KLM-891', read: false },
-  { id: 3, title: 'Katalog menunggu review', body: 'Periksa informasi alat yang diajukan vendor.', time: '1 jam lalu', path: '/admin/katalog/6', read: false },
-  { id: 4, title: 'Pencairan dana selesai', body: 'Pencairan PCR-2038 selesai pada data contoh.', time: 'Kemarin', path: '/admin/laporan/pencairan/PCR-2038', read: true },
-];
 
 export function resolveAdminResource(pathname) {
   const relative = pathname.replace(/^\/admin\/?/, '').replace(/\/$/, '').replace(/^pengguna\/customer(?=\/|$)/, 'pengguna/pengguna');
