@@ -40,13 +40,6 @@ export const adminInitialData = {
   payouts: [], // data nyata dari backend (reportsApi.js), bukan data contoh
 };
 
-export const adminNotifications = [
-  { id: 1, title: 'Pengajuan KYC baru', body: 'Identitas Nadia Putri menunggu peninjauan.', time: '10 menit lalu', path: '/admin/kyc/KYC-1042', read: false },
-  { id: 2, title: 'Klaim perlu ditinjau', body: 'Klaim KLM-891 memerlukan keputusan admin.', time: '30 menit lalu', path: '/admin/klaim/KLM-891', read: false },
-  { id: 3, title: 'Katalog menunggu review', body: 'Periksa informasi alat yang diajukan vendor.', time: '1 jam lalu', path: '/admin/katalog/6', read: false },
-  { id: 4, title: 'Pencairan dana selesai', body: 'Pencairan PCR-2038 selesai pada data contoh.', time: 'Kemarin', path: '/admin/laporan/pencairan/PCR-2038', read: true },
-];
-
 export function resolveAdminResource(pathname) {
   const relative = pathname.replace(/^\/admin\/?/, '').replace(/\/$/, '').replace(/^pengguna\/customer(?=\/|$)/, 'pengguna/pengguna');
   const entry = Object.entries(adminResources).sort((a, b) => b[1].path.length - a[1].path.length).find(([, resource]) => relative === resource.path || relative.startsWith(`${resource.path}/`));

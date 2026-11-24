@@ -21,7 +21,8 @@ import AdminPayoutsPage from './AdminPayoutsPage';
 import { listPayouts } from './reportsApi';
 import { listAccounts } from './accountsApi';
 import { listKyc, kycStatus } from '../kyc/kycApi';
-import { adminInitialData, adminNotifications, adminResources, resolveAdminResource } from './adminData';
+import { adminInitialData, adminResources, resolveAdminResource } from './adminData';
+import { dismissNotifications, listNotifications, readNotifications } from './notificationsApi';
 import { deleteAdministrator, listAdministrators, saveAdministrator } from './administratorsApi';
 import { deleteCategories, listCategories, saveCategory } from './categoriesApi';
 import '../interface/interface.css';
@@ -40,7 +41,7 @@ export default function AdminWorkspace() {
   const path = location.pathname.replace(/^\/admin\/?/, '').replace(/\/$/, '');
   const resolved = resolveAdminResource(location.pathname);
   const [data, setData] = useState(() => ({ ...structuredClone(adminInitialData), kyc: [], customers: [], vendors: [] }));
-  const [notifications, setNotifications] = useState(() => structuredClone(adminNotifications));
+  const [notifications, setNotifications] = useState([]);
   const [toast, setToast] = useState('');
   const [kycPendingCount, setKycPendingCount] = useState(0);
   const { user } = useAuth();
@@ -93,6 +94,16 @@ export default function AdminWorkspace() {
     listPayouts().then(value => { if (!lifecycle.signal.aborted) payoutsLoaded(value); }).catch(() => {});
     return () => lifecycle.abort();
   }, [onPayoutsPage, payoutsLoaded]);
+  // Notifikasi = antrean KYC/klaim/pencairan yang menunggu (server); dimuat ulang tiap pindah halaman agar ikut keputusan terbaru.
+  const loadNotifications = useCallback(() => listNotifications().then(setNotifications), []);
+  useEffect(() => { loadNotifications().catch(() => {}); }, [location.pathname, loadNotifications]);
+  const changeNotifications = (send, apply, ids) => {
+    if (!ids.length) return;
+    setNotifications(apply);
+    send(ids).catch(error => { notify(error.message); loadNotifications().catch(() => {}); });
+  };
+  const readNotification = ids => { const unreadIds = notifications.filter(item => !item.read && ids.includes(item.id)).map(item => item.id); changeNotifications(readNotifications, current => current.map(item => unreadIds.includes(item.id) ? { ...item, read: true } : item), unreadIds); };
+  const deleteNotification = id => { changeNotifications(dismissNotifications, current => current.filter(item => item.id !== id), [id]); notify('Notifikasi dihapus.'); };
   const kycLoaded = useCallback(value => {
     setKycPendingCount(value.counts.menunggu || 0);
     setData(current => ({ ...current, kyc: value.items.map(item => ({ id: String(item.kyc_id), name: item.nama, email: item.email, phone: item.no_telp || '', type: item.role === 'vendor' ? 'Vendor' : 'Customer', date: item.diajukan_pada.slice(0, 10), status: item.status === 'menunggu' ? 'Menunggu' : kycStatus[item.status] })) }));
@@ -164,7 +175,7 @@ export default function AdminWorkspace() {
   else if (!path || path === 'dashboard') content = <AdminDashboard data={viewData} name={owner.name} />;
   else if (path === 'laporan') content = <AdminReports />;
   else if (path === 'pencarian') content = <AdminSearch key={location.search} data={viewData} />;
-  else if (['notifikasi', 'notifikasi-menu'].includes(path)) content = <VendorNotifications notifications={notifications} onRead={ids => setNotifications(current => current.map(item => ids.includes(item.id) ? { ...item, read: true } : item))} onDelete={id => { setNotifications(current => current.filter(item => item.id !== id)); notify('Notifikasi dihapus dari pratinjau.'); }} />;
+  else if (['notifikasi', 'notifikasi-menu'].includes(path)) content = <VendorNotifications notifications={notifications} onRead={readNotification} onDelete={deleteNotification} />;
   else content = <><PageHeading title="Halaman tidak ditemukan" /><section className="v-card"><EmptyState title="Alamat workspace tidak tersedia" description="Gunakan menu di samping untuk membuka halaman admin."><Link className="v-button v-button-primary" to="/admin">Kembali ke dashboard</Link></EmptyState></section></>;
 
   const userCounts = { customers: data.customers.length, vendors: data.vendors.length, administrators: data.administrators.length };
@@ -186,7 +197,6 @@ export default function AdminWorkspace() {
         <VendorProfileMenu owner={owner} roleLabel="Administrator" menuLabel="Menu akun admin" />
       </div>
     </div></header>
-    {path.startsWith('notifikasi') && <div className="v-preview-strip"><span><i />Pratinjau frontend</span><p>Data contoh · Perubahan akan kembali saat halaman dimuat ulang.</p></div>}
     <main id="admin-main" className="a-main" tabIndex={-1}>
       {subTabs && <nav className="a-tabs" aria-label="Bagian halaman">{subTabs.map(([label, to, key]) => { const here = key ? key === resolved?.key : to === `/admin${path ? `/${path}` : ''}`; return <Link key={to} to={to} className={here ? 'is-active' : undefined} aria-current={here ? 'page' : undefined}>{label}</Link>; })}</nav>}
       <WorkspaceResourceContext.Provider value={{ resources: resourceConfig, rootPath: '/admin' }}>{content}</WorkspaceResourceContext.Provider>
