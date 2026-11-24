@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Bell, Building2, Check, ClipboardList, CreditCard, FileCheck2, FolderTree, Package, Search, ShieldCheck, Users, X } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
+import { Bell, Building2, ClipboardList, CreditCard, FileCheck2, FolderTree, Package, Search, ShieldCheck, Users, X } from 'lucide-react';
 import WorkspaceResource from '../vendor/VendorResource';
 import VendorProfileMenu from '../vendor/VendorProfileMenu';
 import { VendorNotifications } from '../vendor/VendorActivity';
@@ -11,10 +11,11 @@ import { useAuth } from '../../AuthContext';
 import AdminDashboard from './AdminDashboard';
 import AdminReports from './AdminReports';
 import AdminSearch from './AdminSearch';
-import AdminReviewDialog from './AdminReviewDialog';
 import AdminKycPage from '../kyc/AdminKycPage';
 import AdminAccountPage from './AdminAccountPage';
 import AdminClaimsPage from './AdminClaimsPage';
+import AdminCatalogPage from './AdminCatalogPage';
+import { listCatalog } from './catalogApi';
 import { listClaims } from './claimsApi';
 import AdminPayoutsPage from './AdminPayoutsPage';
 import { listPayouts } from './reportsApi';
@@ -36,12 +37,10 @@ const resourceIcons = { kyc: FileCheck2, claims: ClipboardList, catalog: Package
 
 export default function AdminWorkspace() {
   const location = useLocation();
-  const navigate = useNavigate();
   const path = location.pathname.replace(/^\/admin\/?/, '').replace(/\/$/, '');
   const resolved = resolveAdminResource(location.pathname);
   const [data, setData] = useState(() => ({ ...structuredClone(adminInitialData), kyc: [], customers: [], vendors: [] }));
   const [notifications, setNotifications] = useState(() => structuredClone(adminNotifications));
-  const [action, setAction] = useState(null);
   const [toast, setToast] = useState('');
   const [kycPendingCount, setKycPendingCount] = useState(0);
   const { user } = useAuth();
@@ -52,8 +51,7 @@ export default function AdminWorkspace() {
   const unread = notifications.filter(item => !item.read).length;
   const title = resolved ? adminResources[resolved.key].title : pageTitles[path] || (path.startsWith('notifikasi') ? 'Notifikasi' : 'Halaman admin');
   const viewData = { ...data, categories: data.categories };
-  const categoryOptions = [...new Set([...data.categories.map(item => item.name), ...data.catalog.map(item => item.category)])];
-  const resourceConfig = Object.fromEntries(Object.entries(adminResources).map(([key, resource]) => [key, { ...resource, icon: resourceIcons[key], fields: resource.fields.map(field => key === 'catalog' && field.key === 'category' ? { ...field, options: categoryOptions } : field) }]));
+  const resourceConfig = Object.fromEntries(Object.entries(adminResources).map(([key, resource]) => [key, { ...resource, icon: resourceIcons[key] }]));
 
   useEffect(() => { const previous = document.title; document.title = `${title} — Admin Vendoria`; window.scrollTo(0, 0); return () => { document.title = previous; }; }, [location.pathname, title]);
   useEffect(() => () => { clearTimeout(timer.current); objectUrls.current.forEach(url => URL.revokeObjectURL(url)); }, []);
@@ -65,6 +63,7 @@ export default function AdminWorkspace() {
   const onKycPage = resolved?.key === 'kyc';
   const onClaimsPage = resolved?.key === 'claims';
   const onPayoutsPage = resolved?.key === 'payouts';
+  const onCatalogPage = resolved?.key === 'catalog';
   const onAccountPage = ['customers', 'vendors'].includes(resolved?.key);
   const accountsLoaded = useCallback(value => setData(current => ({ ...current, customers: value.customers, vendors: value.vendors })), []);
   useEffect(() => {
@@ -80,6 +79,13 @@ export default function AdminWorkspace() {
     listClaims().then(value => { if (!lifecycle.signal.aborted) claimsLoaded(value); }).catch(() => {});
     return () => lifecycle.abort();
   }, [onClaimsPage, claimsLoaded]);
+  const catalogLoaded = useCallback(catalog => setData(current => ({ ...current, catalog })), []);
+  useEffect(() => {
+    if (onCatalogPage) return;
+    const lifecycle = new AbortController();
+    listCatalog().then(value => { if (!lifecycle.signal.aborted) catalogLoaded(value); }).catch(() => {});
+    return () => lifecycle.abort();
+  }, [onCatalogPage, catalogLoaded]);
   const payoutsLoaded = useCallback(payouts => setData(current => ({ ...current, payouts })), []);
   useEffect(() => {
     if (onPayoutsPage) return;
@@ -137,7 +143,7 @@ export default function AdminWorkspace() {
     notify(failed ? failed.reason.message : `${ids.length} administrator dihapus.`);
   };
   const save = (key, record) => {
-    if (['kyc', 'claims', 'payouts', 'customers', 'vendors'].includes(key)) return;
+    if (['kyc', 'claims', 'catalog', 'payouts', 'customers', 'vendors'].includes(key)) return;
     if (key === 'administrators') return saveAdmin(record);
     if (key === 'categories') return saveCategoryRecord(record);
     const resource = adminResources[key];
@@ -146,30 +152,8 @@ export default function AdminWorkspace() {
     setData(current => ({ ...current, [key]: updated ? current[key].map(item => item.id === next.id ? next : item) : [next, ...current[key]] }));
     notify(`${resource.singular[0].toUpperCase() + resource.singular.slice(1)} ${updated ? 'diperbarui' : 'ditambahkan'} pada data contoh.`);
   };
-  const remove = (key, ids) => { if (['kyc', 'claims', 'payouts', 'customers', 'vendors'].includes(key)) return; if (key === 'administrators') return removeAdmins(ids); if (key === 'categories') return removeCategoryRecords(ids); setData(current => ({ ...current, [key]: current[key].filter(item => !ids.includes(item.id)) })); notify(`${ids.length} data dihapus dari pratinjau.`); };
+  const remove = (key, ids) => { if (['kyc', 'claims', 'catalog', 'payouts', 'customers', 'vendors'].includes(key)) return; if (key === 'administrators') return removeAdmins(ids); if (key === 'categories') return removeCategoryRecords(ids); setData(current => ({ ...current, [key]: current[key].filter(item => !ids.includes(item.id)) })); notify(`${ids.length} data dihapus dari pratinjau.`); };
   const upload = file => { const url = URL.createObjectURL(file); objectUrls.current.push(url); return url; };
-  const routeRecord = resolved?.key === 'catalog' && resolved.segments[2] === 'suspend' ? data.catalog.find(item => item.id === resolved.segments[1]) : null;
-  const routeAction = routeRecord ? { resourceKey: 'catalog', id: routeRecord.id, title: 'Tangguhkan alat', nextStatus: 'Ditangguhkan', requiresNote: true } : null;
-  const activeAction = (action?.path === location.pathname ? action : null) || routeAction;
-  const reviewRecord = activeAction && data[activeAction.resourceKey].find(item => item.id === activeAction.id);
-  const closeReview = () => { setAction(null); if (routeAction) navigate(`/admin/katalog/${routeAction.id}`, { replace: true }); };
-  const renderActions = (key, record) => {
-    const choices = key === 'catalog' ? record.status === 'Ditangguhkan' ? [['Aktifkan alat', 'Aktif', false]] : [...(record.status === 'Menunggu review' ? [['Setujui alat', 'Aktif', false]] : []), ['Tangguhkan alat', 'Ditangguhkan', true]] : [];
-    return choices.map(([label, nextStatus, requiresNote]) => <button className={`v-button ${requiresNote ? 'v-button-danger' : 'v-button-secondary'}`} type="button" key={label} onClick={() => setAction({ path: location.pathname, resourceKey: key, id: record.id, title: label, nextStatus, requiresNote })}>{requiresNote ? <X size={16} /> : <Check size={16} />}{label}</button>);
-  };
-
-  let content;
-  if (onKycPage) content = <AdminKycPage segments={resolved.segments} onLoaded={kycLoaded} />;
-  else if (onClaimsPage) content = <AdminClaimsPage segments={resolved.segments} onLoaded={claimsLoaded} />;
-  else if (onPayoutsPage) content = <AdminPayoutsPage segments={resolved.segments} onLoaded={payoutsLoaded} />;
-  else if (onAccountPage) content = <AdminAccountPage key={resolved.key} resourceKey={resolved.key} segments={resolved.segments} onLoaded={accountsLoaded} notify={notify} />;
-  else if (resolved) content = <WorkspaceResource key={resolved.key} resourceKey={resolved.key} segments={resolved.segments} data={viewData} onSave={save} onDelete={remove} onUpload={upload} />;
-  else if (!path || path === 'dashboard') content = <AdminDashboard data={viewData} name={owner.name} />;
-  else if (path === 'laporan') content = <AdminReports />;
-  else if (path === 'pencarian') content = <AdminSearch key={location.search} data={viewData} />;
-  else if (['notifikasi', 'notifikasi-menu'].includes(path)) content = <VendorNotifications notifications={notifications} onRead={ids => setNotifications(current => current.map(item => ids.includes(item.id) ? { ...item, read: true } : item))} onDelete={id => { setNotifications(current => current.filter(item => item.id !== id)); notify('Notifikasi dihapus dari pratinjau.'); }} />;
-  else content = <><PageHeading title="Halaman tidak ditemukan" /><section className="v-card"><EmptyState title="Alamat workspace tidak tersedia" description="Gunakan menu di samping untuk membuka halaman admin."><Link className="v-button v-button-primary" to="/admin">Kembali ke dashboard</Link></EmptyState></section></>;
-
   const userCounts = { customers: data.customers.length, vendors: data.vendors.length, administrators: data.administrators.length };
   const listView = resolved && !resolved.segments[1];
   const subTabs = !listView && path !== 'laporan' ? null
@@ -189,13 +173,12 @@ export default function AdminWorkspace() {
         <VendorProfileMenu owner={owner} roleLabel="Administrator" menuLabel="Menu akun admin" />
       </div>
     </div></header>
-    {!onAdminPage && !onCategoryPage && !onKycPage && !onClaimsPage && !onPayoutsPage && !onAccountPage && path !== 'laporan' && <div className="v-preview-strip"><span><i />Pratinjau frontend</span><p>Data contoh · Perubahan akan kembali saat halaman dimuat ulang.</p></div>}
+    {!onAdminPage && !onCategoryPage && !onKycPage && !onClaimsPage && !onCatalogPage && !onPayoutsPage && !onAccountPage && path !== 'laporan' && <div className="v-preview-strip"><span><i />Pratinjau frontend</span><p>Data contoh · Perubahan akan kembali saat halaman dimuat ulang.</p></div>}
     <main id="admin-main" className="a-main" tabIndex={-1}>
       {subTabs && <nav className="a-tabs" aria-label="Bagian halaman">{subTabs.map(([label, to, key]) => { const here = key ? key === resolved?.key : to === `/admin${path ? `/${path}` : ''}`; return <Link key={to} to={to} className={here ? 'is-active' : undefined} aria-current={here ? 'page' : undefined}>{label}</Link>; })}</nav>}
-      <WorkspaceResourceContext.Provider value={{ resources: resourceConfig, rootPath: '/admin', renderActions }}>{content}</WorkspaceResourceContext.Provider>
+      <WorkspaceResourceContext.Provider value={{ resources: resourceConfig, rootPath: '/admin' }}>{content}</WorkspaceResourceContext.Provider>
     </main>
     <WorkspaceFooter />
-    {activeAction && reviewRecord && <AdminReviewDialog key={`${activeAction.resourceKey}:${activeAction.id}:${activeAction.nextStatus}`} action={activeAction} record={reviewRecord} onClose={closeReview} onConfirm={note => { setData(current => ({ ...current, [activeAction.resourceKey]: current[activeAction.resourceKey].map(item => item.id === activeAction.id ? { ...item, status: activeAction.nextStatus, notes: note || item.notes } : item) })); notify(`Status diubah menjadi ${activeAction.nextStatus} pada data contoh.`); closeReview(); }} />}
     {toast && <div className="v-toast" role="status">{toast}<button type="button" aria-label="Tutup pemberitahuan" onClick={() => setToast('')}><X size={15} /></button></div>}
   </div>;
 }
