@@ -5,6 +5,7 @@ import { useAuth } from '../../AuthContext';
 import { kycStatus } from '../kyc/kycApi';
 import UserKycPage from '../kyc/UserKycPage';
 import { BackLink, PageHeading, Status } from './VendorUi';
+import PayoutAccountCard from './PayoutAccountCard';
 import {
   configureVendorTwoFactor,
   getVendorSecurity,
@@ -265,6 +266,7 @@ function BusinessSettingsForm({ data, onSaved, notify }) {
         </div>
       </section>
     </div>
+    <PayoutAccountCard notify={notify} />
   </>;
 }
 
