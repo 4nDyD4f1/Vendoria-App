@@ -61,9 +61,11 @@ class VendorOrdersService {
 			""";
 
 	private final JdbcTemplate jdbc;
+	private final HandoverEvidencePolicy handoverEvidence;
 
-	VendorOrdersService(JdbcTemplate jdbc) {
+	VendorOrdersService(JdbcTemplate jdbc, HandoverEvidencePolicy handoverEvidence) {
 		this.jdbc = jdbc;
+		this.handoverEvidence = handoverEvidence;
 	}
 
 	@Transactional(readOnly = true)
@@ -188,6 +190,10 @@ class VendorOrdersService {
 				}
 			}
 		}
+
+		// All entry points use the same guard; /orders/action cannot bypass the inspection workflow.
+		if ("berjalan".equals(nextStatus)) handoverEvidence.requireComplete(orderId, "serah_terima");
+		if ("dikembalikan".equals(nextStatus) || "selesai".equals(nextStatus)) handoverEvidence.requireComplete(orderId, "pengembalian");
 
 		jdbc.update("update pemesanan set status_pesanan=? where order_id=? and vendor_id=?",
 				nextStatus, orderId, vendorId);
@@ -322,19 +328,7 @@ class VendorOrdersService {
 	}
 
 	private void actor(Long id, boolean lock) {
-		if (id == null) {
-			throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Belum login");
-		}
-		var users = jdbc.queryForList(
-				"select role, status_akun from pengguna where user_id=?" + (lock ? " for update" : ""), id);
-		if (users.isEmpty()) {
-			throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Sesi tidak valid. Silakan masuk kembali");
-		}
-		if (!"vendor".equals(users.getFirst().get("role"))
-				|| !Pengguna.AKTIF.equals(users.getFirst().get("status_akun"))) {
-			throw new ResponseStatusException(HttpStatus.FORBIDDEN,
-					"Hanya akun vendor aktif yang dapat mengelola pesanan");
-		}
+		VendorBusinessPolicy.requireReady(jdbc, id, lock);
 	}
 
 	private VendorInfo vendor(Long actorId) {

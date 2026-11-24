@@ -60,10 +60,11 @@ class AdminAccountService {
         args.add(id); args.add(role); jdbc.update(sql+" where user_id=? and role=?",args.toArray());
       }
       if("vendor".equals(role)) jdbc.update("""
-          insert into vendor(user_id,nama_vendor,kota,alamat,deskripsi,status_aktif) values (?,?,?,?,?,?)
+          insert into vendor(user_id,nama_vendor,kota,alamat,deskripsi) values (?,?,?,?,?)
           on conflict(user_id) do update set nama_vendor=excluded.nama_vendor,kota=excluded.kota,
-            alamat=excluded.alamat,deskripsi=excluded.deskripsi,status_aktif=excluded.status_aktif
-          """,id,input.name(),input.city(),input.address(),input.description(),"Aktif".equals(input.businessStatus()));
+            alamat=excluded.alamat,deskripsi=excluded.deskripsi
+          """,id,input.name(),input.city(),input.address(),input.description());
+      if("vendor".equals(role)) VendorBusinessPolicy.sync(jdbc,id);
     } catch(DataIntegrityViolationException e) { throw duplicate(); }
     return find(role,id,false);
   }
@@ -120,7 +121,7 @@ class AdminAccountService {
       if(input.name().length()>120) throw bad("Nama customer maksimal 120 karakter");
       if(nonblank(input.owner())||nonblank(input.city())||nonblank(input.address())||nonblank(input.description())||input.businessStatus()!=null)
         throw bad("Data bisnis hanya tersedia untuk akun vendor");
-    } else if(!nonblank(input.owner()) || input.businessStatus()==null) throw bad("Nama pemilik dan status bisnis vendor wajib diisi");
+    } else if(!nonblank(input.owner())) throw bad("Nama pemilik vendor wajib diisi");
   }
   private static boolean nonblank(String text) { return text!=null&&!text.isBlank(); }
   private static String role(String kind) {

@@ -58,6 +58,8 @@ class AccountSecurityServiceTest {
 			assertNull(request.getSession().getAttribute(AuthController.SESSION_USER_ID));
 			String challengeCode = code();
 			var verified = service.verify(request, challengeCode);
+			assertNotNull(verified.user().loginEvent());
+			assertEquals(verified.user().loginEvent(), request.getSession().getAttribute("login_event"));
 			assertEquals(7L, request.getSession().getAttribute(AuthController.SESSION_USER_ID));
 			assertEquals(AccountSecurityService.destination(role), verified.redirect());
 			assertThrows(ResponseStatusException.class, () -> service.verify(request, challengeCode));
@@ -68,7 +70,11 @@ class AccountSecurityServiceTest {
 	@Test
 	void withoutTwoFactorLoginCreatesFreshSessionImmediately() {
 		MockHttpServletRequest request = new MockHttpServletRequest();
-		assertInstanceOf(AuthDtos.UserResponse.class, service.startLogin(7L, request));
+		var first = assertInstanceOf(AuthDtos.UserResponse.class, service.startLogin(7L, request));
+		assertNotNull(first.loginEvent());
+		assertNotEquals(request.getSession().getId(), first.loginEvent());
+		var next = assertInstanceOf(AuthDtos.UserResponse.class, service.startLogin(7L, request));
+		assertNotEquals(first.loginEvent(), next.loginEvent());
 		assertEquals(7L, request.getSession().getAttribute(AuthController.SESSION_USER_ID));
 		verifyNoInteractions(mailer);
 	}

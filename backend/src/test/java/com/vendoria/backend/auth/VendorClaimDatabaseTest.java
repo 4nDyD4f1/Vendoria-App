@@ -44,8 +44,8 @@ class VendorClaimDatabaseTest {
 					overriding system value values (?, ?, ?, '081234567890', 'test-hash', ?, 'terverifikasi')
 					""", id, "Pengguna Uji " + id, "vclaim-test-" + id + "-" + token + "@example.test", id == customer ? "customer" : "vendor");
 		}
-		long vendorId = jdbc.queryForObject("insert into vendor(user_id, nama_vendor) values (?, 'Vendor Klaim A') returning vendor_id", Long.class, vendorUser);
-		jdbc.update("insert into vendor(user_id, nama_vendor) values (?, 'Vendor Klaim B')", otherVendorUser);
+		long vendorId = jdbc.queryForObject("insert into vendor(user_id, nama_vendor, kota, alamat, deskripsi) values (?, 'Vendor Klaim A', 'Bogor', 'Alamat uji', 'Penyewaan alat') returning vendor_id", Long.class, vendorUser);
+		jdbc.update("insert into vendor(user_id, nama_vendor, kota, alamat, deskripsi) values (?, 'Vendor Klaim B', 'Bogor', 'Alamat uji', 'Penyewaan alat')", otherVendorUser);
 		long order = jdbc.queryForObject("""
 				insert into pemesanan(user_id, vendor_id, kode_pemesanan, tanggal_mulai_sewa, tanggal_selesai_sewa, total_biaya_sewa, total_dp)
 				values (?, ?, ?, current_date + 1, current_date + 3, 1000000, 250000) returning order_id

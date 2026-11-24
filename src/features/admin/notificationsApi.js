@@ -4,7 +4,7 @@ const BASE = '/api/admin/notifications';
 const headers = { 'X-Admin-Notifications': '1' };
 
 // 'time' = teks relatif untuk tampilan; createdAt tetap ISO dari server.
-function ago(iso) {
+export function ago(iso) {
   const minutes = Math.max(0, Math.floor((Date.now() - new Date(iso)) / 60000));
   if (minutes < 1) return 'Baru saja';
   if (minutes < 60) return `${minutes} menit lalu`;

@@ -65,6 +65,7 @@ class VendorPayoutService {
   // shortcut: maks 500 pencairan terbaru tanpa paging server, filter di frontend; upgrade bila pencairan vendor > 500.
   @Transactional(readOnly=true)
   Listing list(Long actorId) {
+    VendorBusinessPolicy.requireReady(jdbc,actorId,false);
     Long vendorId=vendor(actorId,false);
     if(vendorId==null) return new Listing(new AccountState(false,null),available(null),List.of());
     List<Payout> items=jdbc.query("""
@@ -76,7 +77,7 @@ class VendorPayoutService {
     return new Listing(new AccountState(true,findAccount(vendorId)),available(vendorId),items);
   }
 
-  private Available available(Long vendorId) {
+  Available available(Long vendorId) {
     if(vendorId==null) return new Available(0,0,0,0,0,feePercent.doubleValue());
     var sum=jdbc.queryForMap("select coalesce(sum(kotor),0) as kotor,coalesce(sum(biaya),0) as biaya,coalesce(sum(potongan),0) as potongan,coalesce(sum(bersih),0) as bersih,count(*) as jumlah from ("+eligible+") e",vendorId);
     return new Available(((Number)sum.get("bersih")).longValue(),((Number)sum.get("jumlah")).intValue(),((Number)sum.get("kotor")).longValue(),
@@ -86,6 +87,7 @@ class VendorPayoutService {
   /** Cairkan dana: ajukan pencairan untuk seluruh pesanan yang memenuhi syarat sekaligus. */
   @Transactional
   Requested request(Long actorId) {
+    VendorBusinessPolicy.requireReady(jdbc,actorId,true);
     Long vendorId=vendor(actorId,true);
     if(vendorId==null) throw new ResponseStatusException(HttpStatus.CONFLICT,"Simpan profil bisnis lebih dulu");
     jdbc.queryForObject("select vendor_id from vendor where vendor_id=? for update",Long.class,vendorId); // serialkan permintaan ganda vendor yang sama

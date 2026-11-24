@@ -60,7 +60,7 @@ export default function VendorProfileMenu({ owner, roleLabel = 'Pemilik', menuLa
       if (event.key === 'ArrowDown' || event.key === 'ArrowUp') { event.preventDefault(); event.stopPropagation(); setOpenRoute(location.key); menu.current?.querySelector('[role=menuitem]')?.focus(); }
     }}>
       <span className="v-profile-avatar">{owner.foto_profil ? <img src={owner.foto_profil} alt="" referrerPolicy="no-referrer" /> : portal ? <img src={vendorAssets.profile} alt="" /> : initials}</span>
-      <div><strong>{portal ? businessName.trim().split(/\s+/).slice(0, 2).join(' ') : owner.name.trim().split(/\s+/)[0]}</strong>{!portal && <small>{roleLabel}</small>}</div>
+      <div><strong title={portal ? businessName : owner.name}>{portal ? businessName : owner.name.trim().split(/\s+/)[0]}</strong>{!portal && <small>{roleLabel}</small>}</div>
       {!portal && <ChevronDown size={14} className="v-profile-chevron" aria-hidden="true" />}
     </button>
     {open && <div className="v-profile-dropdown" id={menuId} ref={menu} role="menu" aria-label={menuLabel}>

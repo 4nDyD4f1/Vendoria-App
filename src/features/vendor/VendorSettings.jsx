@@ -215,7 +215,7 @@ function BusinessSettingsForm({ data, onSaved, notify }) {
           <div className="v-heading-icon"><Building2 size={20} /></div>
           <div>
             <h2>Informasi bisnis</h2>
-            <p>Informasi usaha yang tersimpan di profil vendor Anda.</p>
+            <p>Isi nama, kota, alamat, dan tentang bisnis agar profil lengkap. Bisnis aktif otomatis setelah KYC terverifikasi.</p>
           </div>
         </div>
         {formError && <p className="v-field-error" role="alert" style={{ marginBottom: 16 }}>{formError}</p>}
@@ -256,7 +256,7 @@ function BusinessSettingsForm({ data, onSaved, notify }) {
           <Status>{business?.status_aktif ? 'Aktif' : 'Belum aktif'}</Status>
         </div>
         <dl>
-          <div><dt>Status bisnis</dt><dd>{business?.status_aktif ? 'Aktif di marketplace' : 'Belum diaktifkan'}</dd></div>
+          <div><dt>Status bisnis</dt><dd>{business?.status_aktif ? 'Aktif di marketplace' : 'Menunggu KYC terverifikasi dan profil bisnis lengkap'}</dd></div>
           <div><dt>Rating</dt><dd>{business?.rating != null ? `${business.rating} / 5.0` : 'Belum ada rating'}</dd></div>
           <div><dt>Email akun</dt><dd>{owner.email}</dd></div>
           <div><dt>Nomor WhatsApp</dt><dd>{owner.no_telp || 'Belum diisi'}</dd></div>

@@ -17,4 +17,11 @@ final class CustomerGuard {
       throw new ResponseStatusException(HttpStatus.FORBIDDEN,"Hanya untuk akun customer aktif");
     return (String)row.get("nama");
   }
+
+  /** KYC decisions use the same user-row lock, so verification cannot change during checkout/payment. */
+  static void lockVerified(JdbcTemplate jdbc, Long userId) {
+    lock(jdbc, userId);
+    String status = jdbc.queryForObject("select status_verifikasi from pengguna where user_id=?", String.class, userId);
+    if (!"terverifikasi".equals(status)) throw new KycRequiredException(status == null ? "belum_diverifikasi" : status);
+  }
 }

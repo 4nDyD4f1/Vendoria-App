@@ -7,6 +7,8 @@ export class ApiError extends Error {
   constructor(status, body) {
     super(body?.message || 'Terjadi kesalahan. Coba lagi.');
     this.status = status;
+    this.code = body?.code;
+    this.verification = body?.status_verifikasi;
     this.errors = body?.errors ?? {}; // { field: pesan } untuk 400 validasi
   }
 }

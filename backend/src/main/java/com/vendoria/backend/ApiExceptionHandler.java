@@ -14,6 +14,12 @@ import org.springframework.web.server.ResponseStatusException;
 @RestControllerAdvice
 class ApiExceptionHandler {
 
+	@ExceptionHandler(com.vendoria.backend.auth.KycRequiredException.class)
+	ResponseEntity<Map<String, Object>> kycRequired(com.vendoria.backend.auth.KycRequiredException e) {
+		return ResponseEntity.status(HttpStatus.FORBIDDEN).cacheControl(org.springframework.http.CacheControl.noStore())
+				.body(Map.of("message", e.getReason(), "code", "KYC_REQUIRED", "status_verifikasi", e.verification()));
+	}
+
 	@ExceptionHandler(org.springframework.web.multipart.MaxUploadSizeExceededException.class)
 	ResponseEntity<Map<String, Object>> uploadTooLarge() {
 		return ResponseEntity.status(HttpStatus.PAYLOAD_TOO_LARGE).body(Map.of("message", "Ukuran unggahan terlalu besar. Maksimal 5 MB per gambar"));

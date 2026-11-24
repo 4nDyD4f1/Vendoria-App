@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
+import { Link } from 'react-router-dom';
 import { X } from 'lucide-react';
 import { money } from './vendorData';
 import {
@@ -214,6 +215,7 @@ export default function OrderProcessModal({ orderId, onClose, onCompleted }) {
           {!detail ? !error && <p role="status" className="vendor-orders-muted">Memuat detail pesanan…</p> : <>
             <OrderDetailSections detail={detail} />
             <p className="vendor-orders-hint">{transitionGuidance(order)}</p>
+            {['dikonfirmasi', 'berjalan', 'dikembalikan'].includes(order.status_pesanan) && <p className="vendor-orders-hint"><Link className="v-text-button" to={`/vendor/serah-terima/${order.order_id}`} onClick={onClose}>Buka pemeriksaan &amp; bukti serah terima</Link> · Empat foto dan catatan kondisi setiap alat wajib lengkap sebelum tahap berikutnya.</p>}
             {canWriteNote && <label className="v-field vendor-orders-note">
               <span>Catatan pemrosesan / pembatalan (opsional)</span>
               <textarea

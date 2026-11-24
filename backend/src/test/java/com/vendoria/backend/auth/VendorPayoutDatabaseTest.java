@@ -46,8 +46,8 @@ class VendorPayoutDatabaseTest {
 					overriding system value values (?, ?, ?, '081234567890', 'test-hash', ?, 'terverifikasi')
 					""", id, id == vendorUser ? "Budi Pemilik" : "Pengguna Uji " + id, "payout-test-" + id + "-" + token + "@example.test", id == customer ? "customer" : "vendor");
 		}
-		vendorId = jdbc.queryForObject("insert into vendor(user_id, nama_vendor) values (?, 'Roder Tenda') returning vendor_id", Long.class, vendorUser);
-		jdbc.update("insert into vendor(user_id, nama_vendor) values (?, 'Vendor Lain')", otherVendorUser);
+		vendorId = jdbc.queryForObject("insert into vendor(user_id, nama_vendor, kota, alamat, deskripsi) values (?, 'Roder Tenda', 'Bogor', 'Alamat uji', 'Penyewaan alat') returning vendor_id", Long.class, vendorUser);
+		jdbc.update("insert into vendor(user_id, nama_vendor, kota, alamat, deskripsi) values (?, 'Vendor Lain', 'Bogor', 'Alamat uji', 'Penyewaan alat')", otherVendorUser);
 	}
 
 	private long order(String status, long total, String suffix) {

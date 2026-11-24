@@ -1,0 +1,36 @@
+.customer-notifications { position: relative; flex-shrink: 0; }
+.customer-notifications-trigger { width: 40px; height: 40px; display: grid; place-items: center; border: 0; border-radius: 50%; color: #3a2a21; background: transparent; cursor: pointer; }
+.customer-notifications-trigger:hover,.customer-notifications-trigger[aria-expanded=true] { background: #efe3d9; }
+.customer-notifications-trigger:focus-visible { outline: 2px solid #a58163; outline-offset: 3px; }
+.customer-notifications-panel { position: fixed; z-index: 100; display: flex; flex-direction: column; overflow: hidden; border: 1px solid #e7dbd2; border-radius: 20px; background: #fffdfb; color: #3a2a21; box-shadow: 0 16px 48px #3a2a2126; font-family: inherit; outline: none; }
+.customer-notifications-panel button { font: inherit; cursor: pointer; }
+.customer-notifications-panel button:focus-visible { outline: 2px solid #a58163; outline-offset: -3px; }
+.customer-notifications-heading { display: flex; justify-content: space-between; align-items: center; padding: 20px 20px 14px; }
+.customer-notifications-heading h2 { margin: 0; font-size: 17px; font-weight: 700; line-height: 1.5; }
+.customer-notifications-heading p { margin: 3px 0 0; color: #8b7668; font-size: 11px; }
+.customer-notifications-heading > button { display: grid; place-items: center; width: 32px; height: 32px; background: #f7efe8; border: 0; border-radius: 50%; color: #6f6058; }
+.customer-notifications-toolbar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; padding: 12px 20px; background: #faf6f2; border-block: 1px solid #eee4dc; font-size: 10px; color: #827064; }
+.customer-notifications-toolbar button { display: flex; align-items: center; gap: 5px; padding: 4px 0; border: 0; background: transparent; color: #6c4931; font-size: 10px; font-weight: 600; }
+.customer-notifications-toolbar button:disabled { opacity: .45; cursor: default; }
+.customer-notifications-list { min-height: 0; overflow-y: auto; overscroll-behavior: contain; max-height: 420px; }
+.customer-notifications-item { display: flex; align-items: flex-start; gap: 12px; width: 100%; text-align: left; padding: 16px 20px; background: transparent; border: 0; border-bottom: 1px solid #f1e9e2; color: inherit; }
+.customer-notifications-item.is-unread { background: #fcf5ee; }
+.customer-notifications-item:hover { background: #f5ebe2; }
+.customer-notifications-item:disabled { cursor: wait; }
+.customer-notifications-icon { flex: 0 0 34px; width: 34px; height: 34px; display: grid; place-items: center; background: #efe3d8; color: #8b6245; border-radius: 10px; }
+.customer-notifications-copy { display: flex; flex: 1; min-width: 0; flex-direction: column; gap: 5px; }
+.customer-notifications-copy strong { font-size: 12px; font-weight: 600; line-height: 1.6; }
+.customer-notifications-copy > span { font-size: 11px; color: #6f6058; line-height: 1.7; overflow-wrap: anywhere; }
+.customer-notifications-copy time { color: #978477; font-size: 10px; line-height: 1.5; }
+.customer-notifications-dot { flex: 0 0 7px; width: 7px; height: 7px; border-radius: 50%; background: #a77953; margin-top: 7px; }
+.customer-notifications-empty { display: flex; align-items: center; flex-direction: column; gap: 10px; padding: 36px 28px; text-align: center; color: #8b7668; font-size: 12px; line-height: 1.7; }
+.customer-notifications-empty strong { color: #3a2a21; font-size: 13px; font-weight: 600; }
+.customer-notifications-footer { flex-shrink: 0; margin: 0; padding: 12px 20px; border-top: 1px solid #eee4dc; color: #8b7668; font-size: 10px; line-height: 1.7; }
+.customer-notifications-error { padding: 12px 20px; background: #fff1ee; color: #9c3a30; font-size: 11px; line-height: 1.6; }
+.customer-notifications-error p { margin: 0 0 6px; }
+.customer-notifications-error button { border: 0; background: transparent; color: inherit; font-weight: 600; padding: 4px 0; }
+@media(max-width: 900px) {
+  .vendoria-interface .interface-header-actions:has(.customer-notifications) { display: flex; margin-left: auto; }
+  .vendoria-interface .interface-header-actions:has(.customer-notifications) > button,.vendoria-interface .interface-header-actions:has(.customer-notifications) > .interface-profile-wrap { display: none; }
+  .customer-notifications-trigger { width: 36px; height: 36px; }
+}

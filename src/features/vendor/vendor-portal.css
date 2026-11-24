@@ -19,7 +19,7 @@
 .vendor-portal .v-user-menu{gap:7px;min-height:40px;height:40px;padding:0 0 0 10px;border:0;border-left:1px solid var(--v-line);border-radius:0}
 .vendor-portal .v-user-menu>.v-profile-avatar{width:30px;height:30px;background:#ede1d9;border-radius:99px}
 .vendor-portal .v-user-menu>.v-profile-avatar img{width:auto;height:auto;max-width:none;object-fit:contain}
-.vendor-portal .v-user-menu strong{font-size:11px;max-width:120px;line-height:22px;color:var(--v-ink)}
+.vendor-portal .v-user-menu strong{white-space:nowrap;font-size:11px;max-width:120px;line-height:22px;color:var(--v-ink)}
 .vp-profile-link{display:block;padding:10px 12px;border-radius:8px;font-size:11px}
 .vp-profile-link:hover,.vp-profile-link:focus-visible{background:var(--v-soft)}
 .vendor-portal .vp-main{padding:24px 32px 80px;max-width:1272px}

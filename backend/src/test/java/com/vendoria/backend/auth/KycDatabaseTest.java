@@ -5,13 +5,10 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.UUID;
 import javax.sql.DataSource;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.io.TempDir;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
@@ -19,8 +16,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.mock.web.MockHttpSession;
 import org.springframework.mock.web.MockMultipartFile;
 import org.springframework.test.annotation.DirtiesContext;
-import org.springframework.test.context.DynamicPropertyRegistry;
-import org.springframework.test.context.DynamicPropertySource;
 import org.springframework.test.context.transaction.AfterTransaction;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
@@ -32,8 +27,7 @@ import org.springframework.web.context.WebApplicationContext;
 @Transactional
 @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_CLASS)
 class KycDatabaseTest {
-	@TempDir static Path storage;
-	@DynamicPropertySource static void properties(DynamicPropertyRegistry registry) { registry.add("app.kyc.storage-root", () -> storage.toString()); }
+	@Autowired InMemoryBlobStore blobs;
 	@Autowired DataSource dataSource;
 	@Autowired WebApplicationContext context;
 	private JdbcTemplate jdbc;
@@ -152,6 +146,6 @@ class KycDatabaseTest {
 
 	@AfterTransaction
 	void rollbackLeavesNoDocumentBundles() throws Exception {
-		try (var entries = Files.list(storage)) { assertEquals(1, entries.count()); }
+		assertTrue(blobs.blobs.isEmpty());
 	}
 }

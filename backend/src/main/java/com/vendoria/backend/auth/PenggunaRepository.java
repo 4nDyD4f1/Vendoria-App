@@ -25,7 +25,7 @@ interface PenggunaRepository extends JpaRepository<Pengguna, Long> {
 	int updateProfile(Long id, String nama, String email, String noTelp);
 
 	// native karena updated_at tidak dipetakan di entity; kata sandi diubah terpisah lewat updatePassword
-	@Modifying
+	@Modifying(clearAutomatically = true, flushAutomatically = true)
 	@Transactional
 	@Query(value = "update pengguna set nama = :nama, email = :email, status_akun = :status, "
 			+ "catatan_admin = :catatan, updated_at = now() where user_id = :id and role = 'admin'", nativeQuery = true)

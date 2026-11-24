@@ -155,4 +155,22 @@ class AccountSecurityDatabaseTest {
 		mvc.perform(post("/api/account/security/two-factor").contentType(MediaType.APPLICATION_JSON).content("{\"enabled\":true}"))
 				.andExpect(status().isUnauthorized());
 	}
+
+    @Test void loginNoticeIdentifierIsStableAcrossMeAndRotatesOnEverySuccessfulLogin() throws Exception {
+        String body = "{\"email\":\"" + email + "\",\"password\":\"TestPassword123\"}";
+        String previous = null;
+        for (int attempt = 0; attempt < 2; attempt++) {
+            var login = mvc.perform(post("/api/auth/login").contentType(MediaType.APPLICATION_JSON).content(body))
+                .andExpect(status().isOk()).andExpect(jsonPath("$.login_event").isNotEmpty()).andReturn();
+            var authenticated = (MockHttpSession) login.getRequest().getSession(false);
+            String event = com.jayway.jsonpath.JsonPath.read(login.getResponse().getContentAsString(), "$.login_event");
+            assertNotEquals(authenticated.getId(), event);
+            if (previous != null) assertNotEquals(previous, event);
+            mvc.perform(get("/api/auth/me").session(authenticated)).andExpect(status().isOk())
+                .andExpect(header().string("Cache-Control", "no-store"))
+                .andExpect(jsonPath("$.login_event").value(event));
+            mvc.perform(post("/api/auth/logout").session(authenticated)).andExpect(status().isNoContent());
+            previous = event;
+        }
+    }
 }

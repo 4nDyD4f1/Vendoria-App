@@ -67,6 +67,7 @@ class VendorSettingsService {
 					""", actorId, req.namaVendor());
 		}
 
+		VendorBusinessPolicy.sync(jdbc, actorId);
 		return new SettingsResponse(actor(actorId, false).profile, business(actorId));
 	}
 
@@ -82,6 +83,7 @@ class VendorSettingsService {
 				  alamat = excluded.alamat,
 				  deskripsi = excluded.deskripsi
 				""", actorId, req.namaVendor(), req.kota(), req.alamat(), req.deskripsi());
+		VendorBusinessPolicy.sync(jdbc, actorId);
 		return new SettingsResponse(actor(actorId, false).profile, business(actorId));
 	}
 

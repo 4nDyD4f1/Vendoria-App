@@ -6,17 +6,22 @@ import header from './designs/header.json';
 import { descendants } from './designTree';
 import { useWishlist } from './useWishlist';
 import './wishlist.css';
+import CustomerNotifications from './CustomerNotifications';
 
 const logo = descendants(header, node => node.tag === 'img')[0].props.src;
 const links = [['Beranda', '/'], ['Katalog', '/catalog'], ['Cara Sewa', '/cara-sewa'], ['Pesanan Saya', '/pesanan']];
 
 export default function InterfaceHeader({ preview, go, activeLabel, cartCount = 0, unread = 3 }) {
   const { user, loading, logout } = useAuth();
-  const { items: wishlist } = useWishlist(user, preview);
+  const { items: wishlist, ready: wishlistReady } = useWishlist(user, preview);
   const location = useLocation();
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const [profileOpen, setProfileOpen] = useState(false);
+  const [notificationState, setNotificationState] = useState(null);
+  const customer = !preview && user?.role === 'customer';
+  const notificationOpen = notificationState?.key === location.key ? notificationState.open : Boolean(location.state?.customerNotificationsOpen);
+  const setNotificationOpen = value => { setNotificationState({ key: location.key, open: value }); if (value) setProfileOpen(false); };
   const active = location.pathname;
   const guestActions = (
     <div className="flex items-center gap-4" style={{ fontFamily: "'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif", lineHeight: 1.5 }}>
@@ -33,11 +38,11 @@ export default function InterfaceHeader({ preview, go, activeLabel, cartCount = 
       <div className="interface-header-actions">
         {loading && !preview ? null : user || preview ? <>
           <button type="button" aria-label="Cari" onClick={() => go('/catalog?search=1')}><Search size={18} strokeWidth={1.7} /></button>
-          <button type="button" className="interface-bell" aria-label={`Notifikasi, ${unread} belum dibaca`} onClick={() => go('/notifikasi/menu')}><Bell size={18} strokeWidth={1.7} />{unread > 0 && <span>{unread}</span>}</button>
-          <button type="button" className="interface-bell" aria-label={`Wishlist, ${wishlist.length} alat`} onClick={() => go('/wishlist')}><Heart size={18} strokeWidth={1.7} />{wishlist.length > 0 && <span>{wishlist.length}</span>}</button>
+          {customer ? <CustomerNotifications key={user.user_id} open={notificationOpen} onOpenChange={setNotificationOpen} /> : <button type="button" className="interface-bell" aria-label={`Notifikasi, ${unread} belum dibaca`} onClick={() => go('/notifikasi/menu')}><Bell size={18} strokeWidth={1.7} />{unread > 0 && <span>{unread}</span>}</button>}
+          <button type="button" className="interface-bell" aria-label={wishlistReady ? `Wishlist, ${wishlist.length} alat` : 'Wishlist'} onClick={() => go('/wishlist')}><Heart size={18} strokeWidth={1.7} />{wishlistReady && wishlist.length > 0 && <span>{wishlist.length}</span>}</button>
           <button type="button" className="interface-bell" aria-label={`Keranjang, ${cartCount} item`} onClick={() => go('/keranjang')}><ShoppingCart size={18} strokeWidth={1.7} />{cartCount > 0 && <span>{cartCount}</span>}</button>
           <div className="interface-profile-wrap">
-            <button type="button" className="interface-profile" aria-expanded={profileOpen} onClick={() => setProfileOpen(value => !value)}><span>{user?.foto_profil ? <img src={user.foto_profil} alt="" referrerPolicy="no-referrer" /> : <User size={16} strokeWidth={1.7} />}</span>{user?.nama?.trim().split(/\s+/)[0] || 'Profil'}</button>
+            <button type="button" className="interface-profile" aria-expanded={profileOpen} onClick={() => { setNotificationOpen(false); setProfileOpen(value => !value); }}><span>{user?.foto_profil ? <img src={user.foto_profil} alt="" referrerPolicy="no-referrer" /> : <User size={16} strokeWidth={1.7} />}</span>{user?.nama?.trim().split(/\s+/)[0] || 'Profil'}</button>
             {profileOpen && <div className="interface-profile-menu">
               <button type="button" onClick={() => { setProfileOpen(false); go('/akun'); }}>Pengaturan Akun</button>
               <button type="button" onClick={() => { setProfileOpen(false); go('/kyc'); }}>Verifikasi KYC</button>
@@ -52,7 +57,7 @@ export default function InterfaceHeader({ preview, go, activeLabel, cartCount = 
     </div>
     {open && <div className="interface-mobile-menu">
       {links.map(([label, href]) => <button type="button" key={href} onClick={() => { setOpen(false); go(href); }}>{label}</button>)}
-      {user || preview ? [['Wishlist', '/wishlist'], ['Keranjang', '/keranjang'], ['Notifikasi', '/notifikasi'], ['Profil Saya', '/akun']].map(([label, href]) => <button type="button" key={href} onClick={() => { setOpen(false); go(href); }}>{label}</button>) : guestActions}
+      {user || preview ? [['Wishlist', '/wishlist'], ['Keranjang', '/keranjang'], ['Notifikasi', '/notifikasi'], ['Profil Saya', '/akun']].map(([label, href]) => <button type="button" key={href} onClick={() => { setOpen(false); if (customer && label === 'Notifikasi') setNotificationOpen(true); else go(href); }}>{label}</button>) : guestActions}
     </div>}
   </header>;
 }

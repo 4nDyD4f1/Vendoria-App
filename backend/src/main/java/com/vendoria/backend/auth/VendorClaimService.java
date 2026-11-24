@@ -58,11 +58,7 @@ class VendorClaimService {
   }
   /** vendor_id akun vendor aktif; null bila profil bisnis belum dibuat. */
   private Long vendor(Long id,boolean lock) {
-    if(id==null) throw new ResponseStatusException(HttpStatus.UNAUTHORIZED,"Belum login");
-    var users=jdbc.queryForList("select role,status_akun from pengguna where user_id=?"+(lock?" for update":""),id);
-    if(users.isEmpty()) throw new ResponseStatusException(HttpStatus.UNAUTHORIZED,"Sesi tidak valid");
-    if(!"vendor".equals(users.getFirst().get("role")) || !Pengguna.AKTIF.equals(users.getFirst().get("status_akun")))
-      throw new ResponseStatusException(HttpStatus.FORBIDDEN,"Hanya akun vendor aktif yang dapat mengelola klaim");
+    VendorBusinessPolicy.requireReady(jdbc,id,lock);
     var vendors=jdbc.queryForList("select vendor_id from vendor where user_id=?",Long.class,id);
     return vendors.isEmpty()?null:vendors.getFirst();
   }

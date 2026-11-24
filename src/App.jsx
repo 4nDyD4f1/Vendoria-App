@@ -3,6 +3,9 @@ import { lazy, Suspense } from 'react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import RequireAuth from './components/RequireAuth';
+import RoleRouteBoundary from './components/RoleRouteBoundary';
+import PaymentRouteBoundary from './components/PaymentRouteBoundary';
+import KycLoginNotice from './features/kyc/KycLoginNotice';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import ForgotPasswordPage from './pages/ForgotPasswordPage';
@@ -10,7 +13,7 @@ import OtpVerificationPage from './pages/OtpVerificationPage';
 import TwoFactorVerificationPage from './pages/TwoFactorVerificationPage';
 import ResetPasswordPage from './pages/ResetPasswordPage';
 import VendorListPage from './pages/VendorListPage';
-import { AuthProvider } from './AuthContext';
+import { AuthProvider, useAuth } from './AuthContext';
 const InterfacePage = lazy(() => import('./features/interface/InterfacePage'));
 const InterfaceReviewPage = lazy(() => import('./features/interface/InterfaceReviewPage'));
 const VendorWorkspace = lazy(() => import('./features/vendor/VendorWorkspace'));
@@ -18,8 +21,9 @@ const AdminWorkspace = lazy(() => import('./features/admin/AdminWorkspace'));
 
 function VendorArea() {
   const { pathname } = useLocation();
+  const { user } = useAuth();
   // Numeric vendor profiles and contacts belong to the customer-facing directory.
-  return /^\/vendor\/\d+(?:\/|$)/.test(pathname) ? <InterfacePage /> : <VendorWorkspace />;
+  return /^\/vendor\/\d+(?:\/|$)/.test(pathname) ? <InterfacePage /> : <RequireAuth role="vendor"><VendorWorkspace key={user?.user_id} /></RequireAuth>;
 }
 
 // Layout wrapper for standard public/logged-in pages (Navbar membaca status login dari AuthContext)
@@ -39,6 +43,8 @@ function App() {
   return (
     <AuthProvider>
     <Router>
+      <RoleRouteBoundary>
+      <PaymentRouteBoundary>
       <Suspense fallback={<div className="p-10" role="status">Memuat halaman…</div>}>
       <Routes>
         {/* Auth Pages (AuthLayout handles its own header & footer) */}
@@ -62,6 +68,9 @@ function App() {
         <Route path="*" element={<InterfacePage />} />
       </Routes>
       </Suspense>
+      <KycLoginNotice />
+      </PaymentRouteBoundary>
+      </RoleRouteBoundary>
     </Router>
     </AuthProvider>
   );

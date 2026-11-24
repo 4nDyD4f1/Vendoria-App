@@ -94,7 +94,7 @@ class VendorSettingsDatabaseTest {
 				.andExpect(jsonPath("$.business.nama_vendor").value("Roder Megah"))
 				.andExpect(jsonPath("$.business.status_aktif").value(false));
 
-		jdbc.update("update vendor set status_aktif=true, rating=4.9 where user_id=?", vendorUser);
+		jdbc.update("update vendor set rating=4.9 where user_id=?", vendorUser);
 
 		mvc.perform(put("/api/vendor/settings/business")
 				.header("X-Vendor-Settings", "1")

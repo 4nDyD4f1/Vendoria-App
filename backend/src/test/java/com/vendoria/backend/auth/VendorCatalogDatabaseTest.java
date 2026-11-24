@@ -8,7 +8,6 @@ import java.nio.file.*;
 import java.util.*;
 import javax.sql.DataSource;
 import org.junit.jupiter.api.*;
-import org.junit.jupiter.api.io.TempDir;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
@@ -28,8 +27,7 @@ import org.springframework.web.context.WebApplicationContext;
 @Transactional
 @DirtiesContext(classMode=DirtiesContext.ClassMode.AFTER_CLASS)
 class VendorCatalogDatabaseTest {
-  @TempDir static Path storage;
-  @DynamicPropertySource static void properties(DynamicPropertyRegistry registry) { registry.add("app.catalog.storage-root",()->storage.toString()); }
+  @Autowired InMemoryBlobStore blobs;
   @Autowired DataSource dataSource;
   @Autowired WebApplicationContext context;
   private JdbcTemplate jdbc;
@@ -50,7 +48,10 @@ class VendorCatalogDatabaseTest {
   private String data() { return """
       {"name":"Alat Fixture","category":"%s","stock":4,"price":125000.25,"deposit":25000.50,"status":"aktif","description":"Deskripsi fixture","condition":"Baik"}
       """.formatted(category); }
-  private long profile(long user) { return jdbc.queryForObject("insert into vendor(user_id,nama_vendor) values (?,'Bisnis Fixture') returning vendor_id",Long.class,user); }
+  private long profile(long user) {
+    jdbc.update("update pengguna set status_verifikasi='terverifikasi' where user_id=?",user);
+    return jdbc.queryForObject("insert into vendor(user_id,nama_vendor,kota,alamat,deskripsi,status_aktif) values (?,'Bisnis Fixture','Bogor','Alamat uji','Penyewaan alat',true) returning vendor_id",Long.class,user);
+  }
   private long create(long user) throws Exception {
     mvc.perform(multipart("/api/vendor/catalog").header("X-Catalog-Request","1").file(json(data())).file(KycDocumentStoreTest.image("photo")).session(session(user)))
         .andExpect(result -> assertEquals(201,result.getResponse().getStatus(),result.getResponse().getContentAsString()+" "+result.getResolvedException()))
@@ -61,14 +62,18 @@ class VendorCatalogDatabaseTest {
   @Test void requiresActiveVendorRoleAndNeverCreatesProfileOnRead() throws Exception {
     mvc.perform(get("/api/vendor/catalog")).andExpect(status().isUnauthorized());
     for(long id:new long[]{customer,admin}) mvc.perform(get("/api/vendor/catalog").session(session(id))).andExpect(status().isForbidden());
-    mvc.perform(get("/api/vendor/catalog").session(session(vendorUser))).andExpect(status().isOk()).andExpect(jsonPath("$.vendor").isEmpty()).andExpect(jsonPath("$.items").isEmpty());
+    mvc.perform(get("/api/vendor/catalog").session(session(vendorUser))).andExpect(status().isForbidden());
     assertEquals(0,jdbc.queryForObject("select count(*) from vendor where user_id=?",Integer.class,vendorUser));
     jdbc.update("update pengguna set status_akun='Nonaktif' where user_id=?",vendorUser);
     mvc.perform(get("/api/vendor/catalog").session(session(vendorUser))).andExpect(status().isForbidden());
   }
-  @Test void setupIsIdempotentAndDoesNotAutoActivateBusiness() throws Exception {
+  @Test void legacySetupCannotBypassReadinessOrReplaceCompleteProfile() throws Exception {
+    mvc.perform(post("/api/vendor/catalog/setup").header("X-Catalog-Request","1").session(session(vendorUser)).contentType(MediaType.APPLICATION_JSON).content("{\"name\":\"Usaha Baru\"}"))
+        .andExpect(status().isForbidden());
+    assertEquals(0,jdbc.queryForObject("select count(*) from vendor where user_id=?",Integer.class,vendorUser));
+    profile(vendorUser);
     for(String name:new String[]{"Usaha Baru","Nama Pengganti"}) mvc.perform(post("/api/vendor/catalog/setup").header("X-Catalog-Request","1").session(session(vendorUser)).contentType(MediaType.APPLICATION_JSON).content("{\"name\":\""+name+"\"}"))
-        .andExpect(status().isOk()).andExpect(jsonPath("$.vendor.name").value("Usaha Baru")).andExpect(jsonPath("$.vendor.active").value(false));
+        .andExpect(status().isOk()).andExpect(jsonPath("$.vendor.name").value("Bisnis Fixture")).andExpect(jsonPath("$.vendor.active").value(true));
     assertEquals(1,jdbc.queryForObject("select count(*) from vendor where user_id=?",Integer.class,vendorUser));
   }
   @Test void createPersistsAllFieldsPhotoAndSessionOwnership() throws Exception {
@@ -102,7 +107,7 @@ class VendorCatalogDatabaseTest {
     assertEquals(0,jdbc.queryForObject("select count(*) from foto_item where item_id=?",Integer.class,id));
     // Verify the deferred cleanup against the database's current references.
     for(var synchronization:TransactionSynchronizationManager.getSynchronizations()) synchronization.afterCommit();
-    try(var files=Files.list(storage)) { assertEquals(0,files.count()); }
+    assertTrue(blobs.blobs.isEmpty());
   }
   @Test void invalidFieldsUnknownCategoriesDisguisedPhotosAndMissingHeaderCannotWrite() throws Exception {
     profile(vendorUser);
@@ -131,5 +136,5 @@ class VendorCatalogDatabaseTest {
     mvc.perform(multipart("/api/vendor/catalog/"+id).with(r->{r.setMethod("PUT");return r;}).header("X-Catalog-Request","1").file(json(data().replace("aktif","arsip"))).session(session(vendorUser)))
         .andExpect(status().isOk()).andExpect(jsonPath("$.status").value("arsip"));
   }
-  @AfterTransaction void rollbackRemovesUploadedFiles() throws Exception { try(var files=Files.list(storage)) { assertEquals(0,files.count()); } }
+  @AfterTransaction void rollbackRemovesUploadedFiles() throws Exception { assertTrue(blobs.blobs.isEmpty()); }
 }

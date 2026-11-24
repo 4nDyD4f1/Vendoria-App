@@ -24,6 +24,7 @@ import org.springframework.web.context.WebApplicationContext;
 class VendorOrdersDatabaseTest {
 	@Autowired DataSource dataSource;
 	@Autowired WebApplicationContext context;
+	@Autowired HandoverPhotoStore handoverPhotos;
 	private JdbcTemplate jdbc;
 	private MockMvc mvc;
 	private long vendorUser, otherVendorUser, customer, admin;
@@ -63,7 +64,7 @@ class VendorOrdersDatabaseTest {
 
 	private long vendorProfile(long userId, String name) {
 		return jdbc.queryForObject(
-				"insert into vendor(user_id, nama_vendor) values (?, ?) returning vendor_id",
+				"insert into vendor(user_id, nama_vendor, kota, alamat, deskripsi) values (?, ?, 'Bogor', 'Alamat uji', 'Penyewaan alat') returning vendor_id",
 				Long.class, userId, name);
 	}
 
@@ -94,11 +95,7 @@ class VendorOrdersDatabaseTest {
 			mvc.perform(get("/api/vendor/orders").session(session(id))).andExpect(status().isForbidden());
 		}
 		mvc.perform(get("/api/vendor/orders").session(session(vendorUser)))
-				.andExpect(status().isOk())
-				.andExpect(header().string("Cache-Control", "no-store"))
-				.andExpect(jsonPath("$.vendor").isEmpty())
-				.andExpect(jsonPath("$.items").isEmpty())
-				.andExpect(jsonPath("$.counts.semua").value(0));
+				.andExpect(status().isForbidden());
 		assertEquals(0, jdbc.queryForObject("select count(*) from vendor where user_id=?", Integer.class, vendorUser));
 
 		jdbc.update("update pengguna set status_akun='Nonaktif' where user_id=?", vendorUser);
@@ -171,6 +168,18 @@ class VendorOrdersDatabaseTest {
 		long v1 = vendorProfile(vendorUser, "Vendor Proses");
 		long i1 = item(v1, "Kursi Crossback");
 		long o1 = order(v1, i1, "VND-PRC-" + token.substring(0, 8), "menunggu_konfirmasi");
+		// Both APIs now enforce real inspection evidence before advancing the rental lifecycle.
+		for (String type : new String[] {"serah_terima", "pengembalian"}) {
+			for (int photo = 1; photo <= 4; photo++) {
+				String locator = handoverPhotos.save(handoverPhotos.normalize(VendorHandoversDatabaseTest.image(photo)));
+				org.springframework.transaction.support.TransactionSynchronizationManager.registerSynchronization(
+					new org.springframework.transaction.support.TransactionSynchronization() {
+						@Override public void afterCompletion(int completion) { handoverPhotos.remove(locator); }
+					});
+				jdbc.update("insert into cek_barang(order_id,item_id,tipe_inspeksi,foto_kondisi,catatan_kondisi,diperiksa_oleh) values (?,?,?,?,?,?)",
+					o1, i1, type, locator, "Kondisi lengkap dan diperiksa", vendorUser);
+			}
+		}
 
 		String[] steps = {"dikonfirmasi", "berjalan", "dikembalikan"};
 		String[] expectedFrom = {"menunggu_konfirmasi", "dikonfirmasi", "berjalan"};

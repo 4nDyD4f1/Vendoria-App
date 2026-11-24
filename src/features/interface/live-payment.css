@@ -1,0 +1,21 @@
+/* /pembayaran/bank dan /booking/terkonfirmasi; memakai token & kelas .cart-* dari live-cart.css */
+.pay-orders ul { list-style: none; margin: 16px 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+.pay-orders li { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; padding: 16px 18px; border-radius: 16px; background: #fbf7f3; }
+.pay-orders li > div { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.pay-orders li > div span { font-size: 12px; color: var(--soft); }
+.pay-orders dl { margin: 0; display: flex; gap: 28px; flex-wrap: wrap; }
+.pay-orders dl div { display: flex; flex-direction: column; gap: 2px; text-align: right; }
+.pay-orders dt { font-size: 12px; color: var(--soft); }
+.pay-orders dd { margin: 0; font-weight: 600; }
+.pay-orders em { display: inline-flex; align-items: center; gap: 4px; font-style: normal; color: #3d6039; }
+.pay-note { display: flex; gap: 10px; align-items: flex-start; margin: 0; padding: 12px 14px; border-radius: 12px; background: #f5ede8; font-size: 12px; line-height: 1.6; color: var(--muted); }
+.pay-note svg { flex: none; margin-top: 2px; }
+.pay-amount { margin: 0; font-size: 34px; font-weight: 600; letter-spacing: -.8px; line-height: 1.1; }
+.pay-sub { margin: -8px 0 0; font-size: 13px; color: var(--muted); }
+.booking-pending .cart-done-icon { background: #fff6e6; color: #8a5a12; }
+.booking-failed .cart-done-icon { background: #fff3ef; color: #9c493c; }
+.booking-ref { font-size: 12px; overflow-wrap: anywhere; }
+.booking-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+.booking-secondary { display: inline-flex; align-items: center; padding: 15px 20px; border: 1px solid #ddcfc4; border-radius: 14px; background: white; color: var(--ink); font: inherit; font-size: 14px; font-weight: 600; text-decoration: none; cursor: pointer; }
+.booking-secondary:disabled { opacity: .5; cursor: not-allowed; }
+@media (max-width: 560px) { .pay-orders dl div { text-align: left; } .pay-amount { font-size: 28px; } }
