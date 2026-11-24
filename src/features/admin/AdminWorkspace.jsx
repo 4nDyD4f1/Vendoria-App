@@ -154,6 +154,19 @@ export default function AdminWorkspace() {
   };
   const remove = (key, ids) => { if (['kyc', 'claims', 'catalog', 'payouts', 'customers', 'vendors'].includes(key)) return; if (key === 'administrators') return removeAdmins(ids); if (key === 'categories') return removeCategoryRecords(ids); setData(current => ({ ...current, [key]: current[key].filter(item => !ids.includes(item.id)) })); notify(`${ids.length} data dihapus dari pratinjau.`); };
   const upload = file => { const url = URL.createObjectURL(file); objectUrls.current.push(url); return url; };
+  let content;
+  if (onKycPage) content = <AdminKycPage segments={resolved.segments} onLoaded={kycLoaded} />;
+  else if (onClaimsPage) content = <AdminClaimsPage segments={resolved.segments} onLoaded={claimsLoaded} />;
+  else if (onCatalogPage) content = <AdminCatalogPage segments={resolved.segments} onLoaded={catalogLoaded} notify={notify} />;
+  else if (onPayoutsPage) content = <AdminPayoutsPage segments={resolved.segments} onLoaded={payoutsLoaded} />;
+  else if (onAccountPage) content = <AdminAccountPage key={resolved.key} resourceKey={resolved.key} segments={resolved.segments} onLoaded={accountsLoaded} notify={notify} />;
+  else if (resolved) content = <WorkspaceResource key={resolved.key} resourceKey={resolved.key} segments={resolved.segments} data={viewData} onSave={save} onDelete={remove} onUpload={upload} />;
+  else if (!path || path === 'dashboard') content = <AdminDashboard data={viewData} name={owner.name} />;
+  else if (path === 'laporan') content = <AdminReports />;
+  else if (path === 'pencarian') content = <AdminSearch key={location.search} data={viewData} />;
+  else if (['notifikasi', 'notifikasi-menu'].includes(path)) content = <VendorNotifications notifications={notifications} onRead={ids => setNotifications(current => current.map(item => ids.includes(item.id) ? { ...item, read: true } : item))} onDelete={id => { setNotifications(current => current.filter(item => item.id !== id)); notify('Notifikasi dihapus dari pratinjau.'); }} />;
+  else content = <><PageHeading title="Halaman tidak ditemukan" /><section className="v-card"><EmptyState title="Alamat workspace tidak tersedia" description="Gunakan menu di samping untuk membuka halaman admin."><Link className="v-button v-button-primary" to="/admin">Kembali ke dashboard</Link></EmptyState></section></>;
+
   const userCounts = { customers: data.customers.length, vendors: data.vendors.length, administrators: data.administrators.length };
   const listView = resolved && !resolved.segments[1];
   const subTabs = !listView && path !== 'laporan' ? null
