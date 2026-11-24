@@ -29,6 +29,7 @@ function ClaimModal({ claim, process, onClose, onProcessed }) {
         <div><dt>Deposit (DP) pesanan</dt><dd>{money(claim.amount)}</dd></div>
         {claim.decidedAt && <div><dt>Diputuskan admin</dt><dd>{formatOrderDateTime(claim.decidedAt)}</dd></div>}
         <div className="vendor-orders-detail-wide"><dt>Perihal klaim</dt><dd>{claim.reason}</dd></div>
+        {claim.compensation != null && <div className="vendor-orders-detail-wide"><dt>Ganti rugi disetujui (dipotong dari pencairan)</dt><dd>{money(claim.compensation)}</dd></div>}
         {claim.note && <div className="vendor-orders-detail-wide"><dt>Catatan admin</dt><dd>{claim.note}</dd></div>}
       </dl>}
     {error && <p role="alert" className="v-field-error">{error}</p>}

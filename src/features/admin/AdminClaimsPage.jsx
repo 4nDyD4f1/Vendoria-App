@@ -9,6 +9,7 @@ import '../kyc/admin-kyc.css';
 
 function ClaimModal({ claim, process, onClose, onDecided }) {
   const [note, setNote] = useState('');
+  const [amount, setAmount] = useState('');
   const [error, setError] = useState('');
   const [busy, setBusy] = useState(false);
   const pending = useRef(false);
@@ -16,8 +17,9 @@ function ClaimModal({ claim, process, onClose, onDecided }) {
   const decide = async decision => {
     if (pending.current) return;
     if (decision === 'ditolak' && !note.trim()) { setError('Alasan penolakan wajib diisi.'); return; }
+    if (decision === 'disetujui' && !(Number(amount) > 0)) { setError('Nilai ganti rugi wajib diisi untuk menyetujui klaim.'); return; }
     pending.current = true; setBusy(true); setError('');
-    try { await decideClaim(claim.id, decision, note.trim()); onDecided(decision); }
+    try { await decideClaim(claim.id, decision, note.trim(), decision === 'disetujui' ? Number(amount) : undefined); onDecided(decision); }
     catch (reason) { setError(reason.message); pending.current = false; setBusy(false); }
   };
   return <Modal title={`Detail klaim ${claim.id}`} onClose={onClose}>
@@ -28,8 +30,10 @@ function ClaimModal({ claim, process, onClose, onDecided }) {
       <div><dt>Deposit (DP) pesanan</dt><dd>{money(claim.amount)}</dd></div>
       {claim.decidedBy && <div><dt>Diputuskan oleh</dt><dd>{claim.decidedBy}</dd></div>}
       <div className="kyc-full-field"><dt>Perihal klaim</dt><dd>{claim.reason}</dd></div>
+      {claim.compensation != null && <div><dt>Ganti rugi disetujui</dt><dd>{money(claim.compensation)}</dd></div>}
       {!deciding && claim.note && <div className="kyc-full-field"><dt>Catatan admin</dt><dd>{claim.note}</dd></div>}
     </dl>
+    {deciding && <label className="v-field kyc-review-note">Nilai ganti rugi (Rp) <small>(wajib bila disetujui; dipotong dari pencairan vendor)</small><input type="number" min="1" step="1" inputMode="numeric" value={amount} onChange={event => setAmount(event.target.value)} disabled={busy} placeholder="Contoh: 200000" /></label>}
     {deciding && <label className="v-field kyc-review-note">Catatan keputusan <small>(wajib untuk penolakan)</small><textarea value={note} onChange={event => setNote(event.target.value)} maxLength={2000} rows={3} disabled={busy} placeholder="Tuliskan alasan keputusan" /></label>}
     {error && <p role="alert" className="kyc-error">{error}</p>}
     {deciding && <div className="v-modal-actions"><button type="button" className="v-button v-button-danger" disabled={busy} onClick={() => decide('ditolak')}><X size={16} />Tolak</button><button type="button" className="v-button v-button-primary" disabled={busy} onClick={() => decide('disetujui')}><Check size={16} />Setujui</button></div>}

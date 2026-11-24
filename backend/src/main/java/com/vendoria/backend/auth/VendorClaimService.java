@@ -17,7 +17,8 @@ class VendorClaimService {
   // Hanya maju, tidak pernah mundur. 'ditinjau' tidak punya langkah vendor: tinggal menunggu keputusan admin (AdminClaimService).
   private static final Map<String,String> NEXT=Map.of("diajukan","ditinjau","disetujui","selesai","ditolak","selesai");
   private static final String SELECT="""
-      select k.klaim_id,p.kode_pemesanan,c.nama as customer,k.alasan,k.diajukan_pada::date as tanggal,p.total_dp,k.status,k.keputusan_admin,k.diputuskan_pada
+      select k.klaim_id,p.kode_pemesanan,c.nama as customer,k.alasan,k.diajukan_pada::date as tanggal,p.total_dp,k.status,k.keputusan_admin,k.diputuskan_pada,
+      (select sum(r.jumlah) from pengembalian_dana r where r.klaim_id=k.klaim_id) as ganti_rugi
       from klaim k
       join pemesanan p on p.order_id=k.order_id
       join pengguna c on c.user_id=k.user_id
@@ -52,7 +53,8 @@ class VendorClaimService {
     var decided=rs.getTimestamp("diputuskan_pada");
     String status=rs.getString("status");
     return new Claim("KLM-"+rs.getLong("klaim_id"),rs.getString("kode_pemesanan"),rs.getString("customer"),rs.getString("alasan"),rs.getString("tanggal"),
-        rs.getBigDecimal("total_dp").longValue(),status,rs.getString("keputusan_admin"),decided==null?null:decided.toInstant().toString(),NEXT.get(status));
+        rs.getBigDecimal("total_dp").longValue(),status,rs.getString("keputusan_admin"),decided==null?null:decided.toInstant().toString(),NEXT.get(status),
+        rs.getBigDecimal("ganti_rugi")==null?null:rs.getBigDecimal("ganti_rugi").longValue());
   }
   /** vendor_id akun vendor aktif; null bila profil bisnis belum dibuat. */
   private Long vendor(Long id,boolean lock) {

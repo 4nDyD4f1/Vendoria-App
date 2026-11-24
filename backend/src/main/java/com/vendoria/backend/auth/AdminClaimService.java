@@ -1,5 +1,6 @@
 package com.vendoria.backend.auth;
 
+import java.math.BigDecimal;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
@@ -17,7 +18,8 @@ class AdminClaimService {
   private static final String SELECT="""
       select k.klaim_id,p.kode_pemesanan,c.nama as customer,v.nama_vendor,k.alasan,k.diajukan_pada::date as tanggal,
         p.total_dp,case when k.status='diajukan' then 'ditinjau' else k.status end as status,
-        k.keputusan_admin,a.nama as pemutus,k.diputuskan_pada
+        k.keputusan_admin,a.nama as pemutus,k.diputuskan_pada,
+        (select sum(r.jumlah) from pengembalian_dana r where r.klaim_id=k.klaim_id) as ganti_rugi
       from klaim k
       join pemesanan p on p.order_id=k.order_id
       join vendor v on v.vendor_id=p.vendor_id
@@ -34,12 +36,20 @@ class AdminClaimService {
   @Transactional
   Claim decide(Long actorId,Long id,Decision decision) {
     admin(actorId,true);
-    var rows=jdbc.queryForList("select status from klaim where klaim_id=? for update",String.class,id);
+    var rows=jdbc.queryForList("select k.status,k.order_id,p.total_biaya_sewa from klaim k join pemesanan p on p.order_id=k.order_id where k.klaim_id=? for update of k",id);
     if(rows.isEmpty()) throw new ResponseStatusException(HttpStatus.NOT_FOUND,"Klaim tidak ditemukan");
-    if(!List.of("diajukan","ditinjau").contains(rows.getFirst())) throw new ResponseStatusException(HttpStatus.CONFLICT,"Klaim ini sudah diputuskan. Muat ulang daftar");
+    if(!List.of("diajukan","ditinjau").contains(rows.getFirst().get("status"))) throw new ResponseStatusException(HttpStatus.CONFLICT,"Klaim ini sudah diputuskan. Muat ulang daftar");
     String note=decision.note()==null||decision.note().isBlank()?null:decision.note();
     if("ditolak".equals(decision.status()) && note==null) throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"Alasan penolakan wajib diisi");
+    boolean approved="disetujui".equals(decision.status());
+    if(approved) {
+      if(decision.amount()==null) throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"Nilai ganti rugi wajib diisi saat menyetujui klaim");
+      if(BigDecimal.valueOf(decision.amount()).compareTo((BigDecimal)rows.getFirst().get("total_biaya_sewa"))>0)
+        throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"Nilai ganti rugi tidak boleh melebihi total sewa pesanan");
+    }
     jdbc.update("update klaim set status=?,keputusan_admin=?,diputuskan_oleh=?,diputuskan_pada=now() where klaim_id=?",decision.status(),note,actorId,id);
+    // Ganti rugi dicatat sebagai pengembalian_dana (menunggu) milik klaim ini; nilainya memotong pencairan vendor (VendorPayoutService).
+    if(approved) jdbc.update("insert into pengembalian_dana(order_id,klaim_id,jumlah,alasan) values (?,?,?,?)",rows.getFirst().get("order_id"),id,decision.amount(),note==null?"Klaim disetujui":note);
     return jdbc.queryForObject(SELECT+"where k.klaim_id=?",AdminClaimService::claim,id);
   }
 
@@ -47,7 +57,8 @@ class AdminClaimService {
     var decided=rs.getTimestamp("diputuskan_pada");
     return new Claim("KLM-"+rs.getLong("klaim_id"),rs.getString("kode_pemesanan"),rs.getString("customer"),rs.getString("nama_vendor"),
         rs.getString("alasan"),rs.getString("tanggal"),rs.getBigDecimal("total_dp").longValue(),rs.getString("status"),
-        rs.getString("keputusan_admin"),rs.getString("pemutus"),decided==null?null:decided.toInstant().toString());
+        rs.getString("keputusan_admin"),rs.getString("pemutus"),decided==null?null:decided.toInstant().toString(),
+        rs.getBigDecimal("ganti_rugi")==null?null:rs.getBigDecimal("ganti_rugi").longValue());
   }
   private void admin(Long id,boolean lock) {
     if(id==null) throw new ResponseStatusException(HttpStatus.UNAUTHORIZED,"Belum login");
