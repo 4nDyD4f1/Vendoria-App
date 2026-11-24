@@ -1,0 +1,20 @@
+# {$DOMAIN} diisi dari .env. Caddy mengurus sertifikat HTTPS (Let's Encrypt) otomatis; port 80 & 443 harus terbuka.
+{$DOMAIN} {
+	encode zstd gzip
+
+	# Sama dengan proxy Vite di lokal: satu origin untuk browser, jadi cookie sesi (SameSite=Lax) tetap jalan.
+	# '/login' adalah halaman React, jadi hanya callback '/login/oauth2/*' yang diteruskan.
+	@backend path /api/* /oauth2/* /login/oauth2/*
+	handle @backend {
+		reverse_proxy backend:8080
+	}
+
+	handle {
+		root * /srv
+		@assets path /assets/*
+		header @assets Cache-Control "public, max-age=31536000, immutable"
+		header Cache-Control "no-cache"
+		try_files {path} /index.html
+		file_server
+	}
+}

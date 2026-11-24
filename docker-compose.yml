@@ -1,0 +1,64 @@
+# Produksi di satu VPS: PostgreSQL + Spring Boot + Caddy (frontend & HTTPS). Lihat docs/DEPLOY-VPS.md.
+name: vendoria
+
+services:
+  db:
+    image: postgres:18-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: db_vendoria
+      POSTGRES_USER: vendoria
+      POSTGRES_PASSWORD: ${DB_PASSWORD:?isi DB_PASSWORD di .env}
+    volumes:
+      - pgdata:/var/lib/postgresql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U vendoria -d db_vendoria"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+    # tidak ada "ports": database hanya terjangkau dari container lain
+
+  backend:
+    build: ./backend
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    env_file: .env
+    # "environment" menang atas env_file, jadi nilai penting di bawah tidak bisa tertimpa salah ketik di .env
+    environment:
+      DB_URL: jdbc:postgresql://db:5432/db_vendoria
+      DB_USER: vendoria
+      KYC_STORAGE_DIR: /data/kyc
+      SESSION_COOKIE_SECURE: "true"
+      FORWARD_HEADERS_STRATEGY: framework
+      FRONTEND_URL: https://${DOMAIN:?isi DOMAIN di .env}
+      CORS_ORIGINS: https://${DOMAIN}
+      GOOGLE_REDIRECT_URI: https://${DOMAIN}/login/oauth2/code/google
+      JAVA_OPTS: -Xms192m -Xmx512m
+    volumes:
+      - kyc:/data/kyc   # berisi KUNCI enkripsi KYC: jangan dihapus, sertakan di backup
+    mem_limit: 900m
+
+  web:
+    build:
+      context: .
+      dockerfile: deploy/Dockerfile.web
+    restart: unless-stopped
+    depends_on:
+      - backend
+    environment:
+      DOMAIN: ${DOMAIN}
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    volumes:
+      - caddy_data:/data   # sertifikat HTTPS
+      - caddy_config:/config
+
+volumes:
+  pgdata:
+  kyc:
+  caddy_data:
+  caddy_config:
