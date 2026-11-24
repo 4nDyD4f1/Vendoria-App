@@ -5,6 +5,8 @@ import VendorDashboard from './VendorDashboard';
 import VendorResource from './VendorResource';
 import VendorCatalogPage from './VendorCatalogPage';
 import VendorOrdersPage from './VendorOrdersPage';
+import VendorClaimsPage from './VendorClaimsPage';
+import { claimLabels } from './vendorClaimsApi';
 import RequireAuth from '../../components/RequireAuth';
 import { useAuth } from '../../AuthContext';
 import VendorSettings from './VendorSettings';
@@ -27,11 +29,13 @@ export default function VendorWorkspace() {
   const segments = location.pathname.replace(/^\/vendor\/?/, '').split('/').filter(Boolean);
   const page = segments[0] || 'dashboard';
   const resourceKey = Object.keys(resources).find(key => resources[key].path === page);
-  const [data, setData] = useState(() => ({ ...structuredClone(initialData), catalog: [] }));
+  const [data, setData] = useState(() => ({ ...structuredClone(initialData), catalog: [], claims: [] }));
   const [catalogVendor, setCatalogVendor] = useState(null);
   const [ordersVendor, setOrdersVendor] = useState(null);
   const [settingsVendor, setSettingsVendor] = useState(null);
   const catalogLoaded = useCallback(value => { setCatalogVendor(value.vendor); setData(current => ({ ...current, catalog: value.items })); }, []);
+  // Klaim = data nyata (vendorClaimsApi.js); status diganti label tampilan untuk dashboard & pencarian.
+  const claimsLoaded = useCallback(items => setData(current => ({ ...current, claims: items.map(item => ({ id: item.id, order: item.order, customer: item.customer, reason: item.reason, date: item.date, amount: item.amount, status: claimLabels[item.status], notes: item.note || '' })) })), []);
   const settingsLoaded = useCallback(value => { setSettingsVendor(value.business); }, []);
   const ordersLoaded = useCallback(value => {
     setOrdersVendor(value.vendor);
@@ -67,20 +71,21 @@ export default function VendorWorkspace() {
 
   const notify = message => { setToast(message); clearTimeout(timer.current); timer.current = setTimeout(() => setToast(''), 4500); };
   const save = (key, record) => {
-    if (['catalog', 'orders'].includes(key)) return;
+    if (['catalog', 'orders', 'claims'].includes(key)) return;
     const updated = Boolean(record.id);
     const next = { ...record, id: record.id || `${resources[key].prefix}-${String(++counters.current[key]).padStart(3, '0')}` };
     setData(current => ({ ...current, [key]: updated ? current[key].map(item => item.id === next.id ? next : item) : [next, ...current[key]] }));
     notify(`${resources[key].singular[0].toUpperCase() + resources[key].singular.slice(1)} ${updated ? 'diperbarui' : 'ditambahkan'} pada data contoh.`);
   };
-  const remove = (key, ids) => { if (['catalog', 'orders'].includes(key)) return; setData(current => ({ ...current, [key]: current[key].filter(record => !ids.includes(record.id)) })); notify(`${ids.length} data dihapus dari pratinjau.`); };
+  const remove = (key, ids) => { if (['catalog', 'orders', 'claims'].includes(key)) return; setData(current => ({ ...current, [key]: current[key].filter(record => !ids.includes(record.id)) })); notify(`${ids.length} data dihapus dari pratinjau.`); };
   const onUpload = file => { const url = URL.createObjectURL(file); objectUrls.current.push(url); return url; };
   const readNotifications = ids => setNotifications(current => current.map(item => ids.includes(item.id) ? { ...item, read: true } : item));
-  const livePages = ['katalog', 'pesanan', 'pengaturan', 'profil-bisnis', 'kyc', 'keamanan'];
+  const livePages = ['katalog', 'pesanan', 'klaim', 'pengaturan', 'profil-bisnis', 'kyc', 'keamanan'];
 
   let content;
   if (resourceKey === 'catalog') content = <RequireAuth role="vendor"><VendorCatalogPage segments={segments} onLoaded={catalogLoaded} notify={notify} onUpload={onUpload} /></RequireAuth>;
   else if (resourceKey === 'orders') content = <RequireAuth role="vendor"><VendorOrdersPage segments={segments} onLoaded={ordersLoaded} notify={notify} /></RequireAuth>;
+  else if (resourceKey === 'claims') content = <RequireAuth role="vendor"><VendorClaimsPage segments={segments} onLoaded={claimsLoaded} notify={notify} /></RequireAuth>;
   else if (resourceKey) content = <VendorResource key={resourceKey} resourceKey={resourceKey} segments={segments} data={data} onSave={save} onDelete={remove} onUpload={onUpload} />;
   else if (page === 'dashboard') content = <VendorDashboard data={data} business={settings.business} />;
   else if (['pengaturan', 'profil-bisnis', 'kyc', 'keamanan'].includes(page)) content = <RequireAuth role="vendor"><VendorSettings key={page} page={page} onLoaded={settingsLoaded} notify={notify} /></RequireAuth>;
