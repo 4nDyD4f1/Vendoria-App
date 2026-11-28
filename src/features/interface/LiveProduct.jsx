@@ -10,6 +10,7 @@ import CatalogWishlistButton from './CatalogWishlistButton';
 import AddToCartButton from './AddToCartButton';
 import { useCart } from './useCart';
 import './live-product.css';
+import Skeleton from '../../components/Skeleton';
 
 const tabs = [['product', '', 'Deskripsi & Spesifikasi'], ['product-condition', '/kondisi', 'Kondisi Barang & SOP Serah Terima'], ['product-reviews', '/ulasan', 'Ulasan Penyewa'], ['product-policy', '/kebijakan', 'Kebijakan Deposit & Klaim']];
 const sop = [
@@ -73,7 +74,7 @@ function Reviews({ item }) {
     return () => { active = false; };
   }, [item.id]);
   if (state.error) return <p className="product-text" role="alert">{state.error}</p>;
-  if (!state.items) return <p className="product-text" role="status">Memuat ulasan…</p>;
+  if (!state.items) return <Skeleton variant="text" label="Memuat ulasan…" />;
   return <ul className="product-reviews">{state.items.map((review, index) => <li key={index}>
     <p className="product-line"><strong>{review.author}</strong>
       <span className="product-stars" role="img" aria-label={`${review.rating} dari 5 bintang`}>{[1, 2, 3, 4, 5].map(value => <Star key={value} size={13} className={value <= review.rating ? 'live-catalog-star' : undefined} aria-hidden="true" />)}</span>
@@ -139,7 +140,7 @@ export default function LiveProduct({ id, tab, fallback }) {
   }, [id, retry]);
 
   const { item, error } = state;
-  if (state.loading) return <p className="live-catalog-status" role="status">Memuat detail alat…</p>;
+  if (state.loading) return <Skeleton variant="detail" label="Memuat detail alat…" />;
   // The home page still links to the Figma sample products, which have no database row.
   if (error?.status === 404 && catalogProducts.some(sample => String(sample.id) === id)) return fallback;
   if (error) return <div className="live-catalog-status" role="alert"><Package size={30} /><p>{error.message}</p>{error.status !== 404 && <button type="button" onClick={() => { setState({ loading: true }); setRetry(value => value + 1); }}>Coba lagi</button>} <Link to="/catalog">Kembali ke katalog</Link></div>;

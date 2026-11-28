@@ -1,3 +1,4 @@
+import { blogPosts } from '../../data/blogPosts';
 // Each entry corresponds to one non-authentication frame on Figma's "versi revisi" page.
 // Keep distinct states addressable so they can be reviewed without changing source code.
 export const screens = [
@@ -76,6 +77,9 @@ export function resolveScreen(pathname) {
   const exact = screens.find(screen => screen.path === pathname);
   if (exact) return exact;
   if (pathname === '/cara-sewa/serah-terima') return screenByKey['rental-guide'];
+  // Artikel tidak punya frame Figma; nodeId hanya menentukan menu header yang menyala.
+  const post = blogPosts.find(item => pathname === `/blog/${item.slug}`);
+  if (post) return { key: 'blog', path: pathname, nodeId: screenByKey.home.nodeId, title: post.title };
   if (/^\/product\/[^/]+/.test(pathname)) {
     return screenByKey[({ kondisi: 'product-condition', ulasan: 'product-reviews', kebijakan: 'product-policy' })[pathname.split('/')[3]] || 'product'];
   }

@@ -22,12 +22,15 @@ import { accountTabs } from './accountDesign';
 import UserKycPage from '../kyc/UserKycPage';
 import RequireAuth from '../../components/RequireAuth';
 import LiveCatalog from './LiveCatalog';
+import LiveHome from './LiveHome';
+import BlogArticle from './BlogArticle';
 import LiveProduct from './LiveProduct';
 import LiveCart from './LiveCart';
 import LivePayment from './LivePayment';
 import LiveBooking from './LiveBooking';
 import LiveOrders from './LiveOrders';
 import { useCart } from './useCart';
+import Skeleton from '../../components/Skeleton';
 
 const loaders = import.meta.glob('./designs/[0-9]*.json', { import: 'default' });
 const loaded = new Map();
@@ -39,6 +42,8 @@ function DesignScreen({ screen }) {
   return <DesignNode node={use(loadDesign(screen.nodeId))} />;
 }
 function ScreenContent({ screen, preview, initialRentalTab, initialAccountTab, initialAccountModal, productId: id }) {
+  if (screen.key === 'home' && !preview) return <LiveHome loadDesign={loadDesign} />;
+  if (screen.key === 'blog') return <BlogArticle slug={id} />;
   if (screen.key === 'catalog' && !preview) return <LiveCatalog loadDesign={loadDesign} />;
   if (screen.key.startsWith('product') && !preview) return <LiveProduct key={id} id={id} tab={screen.key} fallback={<DesignScreen screen={screen} />} />;
   if (['kyc', 'kyc-pending', 'kyc-verified', 'kyc-rejected'].includes(screen.key) && !preview) return <RequireAuth><UserKycPage /></RequireAuth>;
@@ -135,7 +140,6 @@ export default function InterfacePage() {
     const t = normalized(label);
     const role = screen.backoffice ? screen.role : 'customer';
     const inHeader = ancestors.some(n => n.name === 'Header' || n.name?.startsWith('Navigation'));
-    if (screen.key === 'home' && node.id === '84:3505') return '/catalog';
     if (/Ke halaman utama/.test(name)) return '/';
     if (/^Button - Cari$/.test(name)) return role === 'vendor' ? '/vendor/pencarian' : '/catalog?search=1';
     if (/^Button - Notifikasi/.test(name)) return role === 'vendor' ? '/vendor/notifikasi-menu' : '/notifikasi/menu';
@@ -354,7 +358,7 @@ export default function InterfacePage() {
   // Menu akun berbagi satu path (/akun); alamat lama diarahkan ke sana dengan menu yang sesuai.
   if (!preview && ['account-add-address', 'account-add-refund'].includes(screen.key)) return <Navigate to="/akun" replace state={{ accountTab: screen.key === 'account-add-address' ? 'account-address' : 'account-refund', accountModal: screen.key === 'account-add-address' ? 'address' : 'refund' }} />;
   if (!preview && accountTabs.some(tab => tab.key === screen.key) && screen.key !== 'account-profile') return <Navigate to="/akun" replace state={{ ...location.state, accountTab: screen.key }} />;
-  if (enforceAccess && screen.role && loading) return <div className="vendoria-interface p-10" role="status">Memuat halaman…</div>;
+  if (enforceAccess && screen.role && loading) return <Skeleton variant="page" label="Memuat halaman…" />;
   if (enforceAccess && screen.role && !user) return <Navigate to="/login" replace />;
   if (enforceAccess && unauthorizedRole) return <div className="vendoria-interface p-10"><h1 className="text-2xl mb-4">Halaman khusus {screen.role}</h1><Link to="/">Kembali ke Beranda</Link></div>;
 
@@ -369,7 +373,7 @@ export default function InterfacePage() {
     }}>
       {!screen.backoffice && <InterfaceHeader preview={preview} go={go} activeLabel={headerStates[screen.nodeId]?.active} cartCount={preview ? cart.length || headerStates[screen.nodeId]?.cart || 0 : liveCart.count} unread={Object.keys(read).length ? Math.max(0, (headerStates[screen.nodeId]?.unread || 15) - Object.keys(read).length) : headerStates[screen.nodeId]?.unread || 0} />}
       <main className={`design-surface ${screen.backoffice ? '' : 'customer-surface'}`}>
-        <Suspense fallback={<div className="px-10 py-20" role="status">Memuat halaman…</div>}><ScreenContent key={['rental-guide', 'account-profile'].includes(screen.key) && !preview ? location.key : screen.key.startsWith('product') && !preview ? 'product' : stableKey} productId={location.pathname.split('/')[2]} screen={screen} preview={preview} initialRentalTab={location.state?.rentalTab} initialAccountTab={location.state?.accountTab} initialAccountModal={location.state?.accountModal} /></Suspense>
+        <Suspense fallback={<Skeleton variant="page" label="Memuat halaman…" />}><ScreenContent key={['rental-guide', 'account-profile'].includes(screen.key) && !preview ? location.key : screen.key.startsWith('product') && !preview ? 'product' : stableKey} productId={location.pathname.split('/')[2]} screen={screen} preview={preview} initialRentalTab={location.state?.rentalTab} initialAccountTab={location.state?.accountTab} initialAccountModal={location.state?.accountModal} /></Suspense>
         {messages.length > 0 && <div className="mx-10 p-5 rounded-2xl border border-[#ede1d9] bg-white">{messages.map((message, index) => <p key={index} className="text-sm mb-2">{message}</p>)}</div>}
       </main>
       {!screen.backoffice && <DesignNode node={footer} />}

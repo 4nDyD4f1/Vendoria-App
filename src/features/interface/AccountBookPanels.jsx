@@ -7,6 +7,7 @@ import DesignNode from './DesignNode';
 import { InterfaceContext } from './InterfaceContext';
 import { accountFields } from './accountDesign';
 import { accountCards, addressCards, holdsAccounts, holdsAddresses, recordIdOf, replaceNode } from './accountBook';
+import Skeleton from '../../components/Skeleton';
 
 // Daftar dari backend; null = memuat. Gagal muat ditampilkan, bukan diganti data contoh.
 function useList(path) {
@@ -21,7 +22,7 @@ function useList(path) {
 }
 
 const Status = ({ state, empty, children }) => state.error ? <p className="account-profile-message account-profile-error" role="alert">{state.error}</p>
-  : state.items === null ? <p className="account-profile-message" role="status">Memuat…</p>
+  : state.items === null ? <Skeleton variant="list" label="Memuat…" />
     : state.items.length === 0 ? <p className="account-profile-message" role="status">{empty}</p> : children;
 
 export function AccountAddressPanel({ content, page, modalTree, initialModal }) {

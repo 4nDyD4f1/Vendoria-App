@@ -6,6 +6,7 @@ import CheckoutHead, { money } from './CheckoutSteps';
 import { useCheckoutKyc } from '../kyc/useCheckoutKyc';
 import './live-cart.css';
 import './live-payment.css';
+import Skeleton from '../../components/Skeleton';
 
 const heading = settling => <CheckoutHead current={1} crumb="Pembayaran" title={settling ? 'Pelunasan Sewa' : 'Pembayaran Deposit'} subtitle={settling ? 'Lunasi biaya sewa agar vendor bisa menyerahkan alat.' : 'Bayar deposit untuk mengamankan jadwal dan alat sewa Anda.'} />;
 
@@ -29,7 +30,7 @@ export default function LivePayment() {
   const what = settling ? 'Pelunasan sewa' : 'Deposit';
   const head = heading(settling);
 
-  if (!state.ready) return <div className="cart-page">{head}<div className="cart-empty" role="status"><LoaderCircle className="wishlist-spinner" size={28} /><p>Memuat tagihan…</p></div></div>;
+  if (!state.ready) return <div className="cart-page">{head}<Skeleton variant="detail" label="Memuat tagihan…" /></div>;
   if (!state.data || !Number(state.data.amountDue)) return <div className="cart-page">{head}
     <div className="cart-empty"><Wallet size={34} /><h2>{state.error ? 'Tagihan tidak ditemukan' : 'Tidak ada tagihan yang harus dibayar'}</h2>
       <p>{state.error || 'Tagihan pesanan ini sudah dibayar.'}</p>

@@ -401,7 +401,7 @@
                                       "style": 222,
                                       "id": "101:2406",
                                       "children": [
-                                        "Ditahan di Escrow"
+                                        "Dijaga Vendoria"
                                       ]
                                     }
                                   ]
@@ -417,7 +417,7 @@
                                       "style": 223,
                                       "id": "101:2409",
                                       "children": [
-                                        "Deposit tidak langsung diterima vendor. Dana aman di rekening bersama selama masa sewa."
+                                        "Deposit tidak langsung diterima vendor. Dana dijaga selama masa sewa."
                                       ]
                                     }
                                   ]
@@ -465,7 +465,7 @@
                                       "style": 222,
                                       "id": "101:2416",
                                       "children": [
-                                        "Rilis 3 Jam"
+                                        "Ditransfer Admin"
                                       ]
                                     }
                                   ]
@@ -481,7 +481,7 @@
                                       "style": 223,
                                       "id": "101:2418",
                                       "children": [
-                                        "Setelah foto pengembalian valid tanpa klaim, deposit dikembalikan otomatis maksimal 3 jam."
+                                        "Setelah pesanan selesai tanpa kerusakan, admin mentransfer deposit ke rekening refund."
                                       ]
                                     }
                                   ]
@@ -529,7 +529,7 @@
                                       "style": 222,
                                       "id": "101:2425",
                                       "children": [
-                                        "Dibekukan Saat Klaim"
+                                        "Tertahan Saat Laporan"
                                       ]
                                     }
                                   ]
@@ -545,7 +545,7 @@
                                       "style": 223,
                                       "id": "101:2427",
                                       "children": [
-                                        "Bila klaim diajukan, nominal sengketa dibekukan hingga Admin memutuskan."
+                                        "Selama laporan ditinjau, pesanan tertahan hingga Admin memutuskan."
                                       ]
                                     }
                                   ]
@@ -647,7 +647,7 @@
                                       "style": 378,
                                       "id": "101:2440",
                                       "children": [
-                                        "100% deposit dikembalikan otomatis maksimal 3 jam setelah foto pengembalian valid."
+                                        "100% deposit dikembalikan, ditransfer admin ke rekening refund Anda."
                                       ]
                                     }
                                   ]
@@ -693,7 +693,7 @@
                                       "style": 378,
                                       "id": "101:2446",
                                       "children": [
-                                        "Deposit dipotong sesuai nilai klaim yang diputuskan Admin, sisanya dikembalikan."
+                                        "Deposit tidak dikembalikan. Bila klaim ditolak, deposit dikembalikan penuh."
                                       ]
                                     }
                                   ]
@@ -739,7 +739,7 @@
                                       "style": 378,
                                       "id": "101:2452",
                                       "children": [
-                                        "100% deposit dikembalikan beserta kompensasi prioritas pada pemesanan berikutnya."
+                                        "Hanya bisa sebelum sewa lunas. 100% deposit dikembalikan."
                                       ]
                                     }
                                   ]
@@ -769,7 +769,7 @@
                                       "style": 135,
                                       "id": "101:2456",
                                       "children": [
-                                        "Pembatalan oleh customer"
+                                        "Pesanan batal otomatis"
                                       ]
                                     }
                                   ]
@@ -785,7 +785,7 @@
                                       "style": 378,
                                       "id": "101:2458",
                                       "children": [
-                                        "Sebelum H-3 dikembalikan 100%. H-3 sampai H-1 dipotong 25%. Hari H tidak dapat dikembalikan."
+                                        "Vendor tidak konfirmasi 24 jam: deposit dikembalikan. Deposit tidak dibayar 24 jam: pesanan hangus."
                                       ]
                                     }
                                   ]

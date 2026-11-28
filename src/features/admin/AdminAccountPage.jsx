@@ -3,6 +3,7 @@ import { useAuth } from '../../AuthContext';
 import WorkspaceResource from '../vendor/VendorResource';
 import { PageHeading } from '../vendor/VendorUi';
 import { listAccounts } from './accountsApi';
+import Skeleton from '../../components/Skeleton';
 
 export default function AdminAccountPage({ resourceKey, segments, onLoaded }) {
   const { user } = useAuth();
@@ -20,6 +21,6 @@ export default function AdminAccountPage({ resourceKey, segments, onLoaded }) {
     const life = alive.current; setResult({ data: null, error: '' });
     listAccounts().then(data => { if (!life.signal.aborted) commit(data); }).catch(error => { if (!life.signal.aborted) setResult({ data: null, error: error.message }); });
   }}>Coba lagi</button></section></>;
-  if (!result.data) return <p role="status">Memuat data pengguna…</p>;
+  if (!result.data) return <Skeleton variant="list" label="Memuat data pengguna…" />;
   return <WorkspaceResource resourceKey={resourceKey} segments={segments} data={result.data} />;
 }

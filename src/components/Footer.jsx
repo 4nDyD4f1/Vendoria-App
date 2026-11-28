@@ -41,7 +41,7 @@ export default function Footer() {
             <ul className="space-y-2 text-xs">
               {['Audio & Sound System', 'Stage Lighting & LED', 'Tenda & Kanopi', 'Panggung & Genset', 'Furnitur & Dekorasi'].map((item) => (
                 <li key={item}>
-                  <Link to="/catalog" className="hover:text-white transition-colors">
+                  <Link inert to="/catalog" className="hover:text-white transition-colors">
                     {item}
                   </Link>
                 </li>
@@ -57,7 +57,7 @@ export default function Footer() {
             <ul className="space-y-2 text-xs">
               {['Cara Pemesanan', 'Verifikasi KTP & KYC', 'Panduan Serah Terima', 'Kebijakan Pengembalian', 'Pusat Bantuan Pelanggan'].map((item) => (
                 <li key={item}>
-                  <Link to="/kyc" className="hover:text-white transition-colors">
+                  <Link inert to="/kyc" className="hover:text-white transition-colors">
                     {item}
                   </Link>
                 </li>
@@ -77,7 +77,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-2">
                 <Mail size={14} className="shrink-0 text-[#C4A882]" />
-                <a href="mailto:halo@vendoria.id" className="hover:text-white transition-colors">halo@vendoria.id</a>
+                <a inert href="mailto:halo@vendoria.id" className="hover:text-white transition-colors">halo@vendoria.id</a>
               </li>
               <li className="flex items-center gap-2">
                 <Phone size={14} className="shrink-0 text-[#C4A882]" />
@@ -91,12 +91,12 @@ export default function Footer() {
         {/* Bottom Copyright Bar */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-[#A39384]">
           <div>
-            © 2025 Vendoria Indonesia. Hak Cipta Dilindungi.
+            © 2026 Vendoria Indonesia. Hak Cipta Dilindungi.
           </div>
           <div className="flex items-center gap-5">
-            <a href="#" className="hover:text-white transition-colors">Syarat & Ketentuan</a>
-            <a href="#" className="hover:text-white transition-colors">Kebijakan Privasi</a>
-            <a href="#" className="hover:text-white transition-colors">Gabung Vendor Mitra</a>
+            <a inert href="#" className="hover:text-white transition-colors">Syarat & Ketentuan</a>
+            <a inert href="#" className="hover:text-white transition-colors">Kebijakan Privasi</a>
+            <a inert href="#" className="hover:text-white transition-colors">Gabung Vendor Mitra</a>
           </div>
         </div>
 

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { api, apiUrl } from '../../api';
+import Skeleton from '../../components/Skeleton';
 
 const phases = [['serah_terima', 'Foto serah terima (awal)'], ['pengembalian', 'Foto pengembalian (akhir)']];
 const grid = { display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(110px, 1fr))', gap: 8, marginTop: 6 };
@@ -17,7 +18,7 @@ export default function ClaimHandover({ orderId }) {
   }, [orderId]);
 
   if (state.error) return <p role="alert" className="kyc-error">Bukti serah terima tidak dapat dimuat: {state.error}</p>;
-  if (!state.data) return <p role="status">Memuat bukti serah terima…</p>;
+  if (!state.data) return <Skeleton variant="detail" label="Memuat bukti serah terima…" />;
   const { evidence = [], items = [] } = state.data;
   const name = id => items.find(item => item.itemId === id)?.name || 'Alat';
   return <section aria-label="Bukti serah terima">{phases.map(([type, title]) => {

@@ -29,6 +29,7 @@ import '../interface/interface.css';
 import '../vendor/vendor.css';
 import './admin.css';
 import './admin-shell.css';
+import Skeleton from '../../components/Skeleton';
 
 // Menu atas sesuai desain Figma. Halaman turunan (kategori, pencairan, pengguna/*) menyalakan menu induknya.
 const nav = [['Dashboard', '', []], ['Verifikasi KYC', 'kyc', ['kyc']], ['Kelola Klaim', 'klaim', ['klaim']], ['Kelola Katalog', 'katalog', ['katalog', 'kategori']], ['Laporan', 'laporan', ['laporan']], ['Pengguna', 'pengguna/pengguna', ['pengguna']]];
@@ -42,6 +43,8 @@ export default function AdminWorkspace() {
   const resolved = resolveAdminResource(location.pathname);
   const [data, setData] = useState(() => ({ ...structuredClone(adminInitialData), kyc: [], customers: [], vendors: [] }));
   const [notifications, setNotifications] = useState([]);
+  const [notificationsReady, setNotificationsReady] = useState(false);
+  const [categoriesReady, setCategoriesReady] = useState(false);
   const [toast, setToast] = useState('');
   const [kycPendingCount, setKycPendingCount] = useState(0);
   const { user } = useAuth();
@@ -95,7 +98,7 @@ export default function AdminWorkspace() {
     return () => lifecycle.abort();
   }, [onPayoutsPage, payoutsLoaded]);
   // Notifikasi = antrean KYC/klaim/pencairan yang menunggu (server); dimuat ulang tiap pindah halaman agar ikut keputusan terbaru.
-  const loadNotifications = useCallback(() => listNotifications().then(setNotifications), []);
+  const loadNotifications = useCallback(() => listNotifications().then(setNotifications).finally(() => setNotificationsReady(true)), []);
   useEffect(() => { loadNotifications().catch(() => {}); }, [location.pathname, loadNotifications]);
   const changeNotifications = (send, apply, ids) => {
     if (!ids.length) return;
@@ -126,7 +129,8 @@ export default function AdminWorkspace() {
   };
   useEffect(() => {
     let stale = false;
-    listCategories().then(categories => { if (!stale) setData(current => ({ ...current, categories })); }, error => { if (!stale && onCategoryPage) notify(error.message); });
+    listCategories().then(categories => { if (!stale) setData(current => ({ ...current, categories })); }, error => { if (!stale && onCategoryPage) notify(error.message); })
+      .finally(() => { if (!stale) setCategoriesReady(true); });
     return () => { stale = true; };
   }, [onCategoryPage]); // eslint-disable-line react-hooks/exhaustive-deps
   const saveCategoryRecord = async record => {
@@ -172,11 +176,12 @@ export default function AdminWorkspace() {
   else if (onCatalogPage) content = <AdminCatalogPage segments={resolved.segments} onLoaded={catalogLoaded} notify={notify} />;
   else if (onPayoutsPage) content = <AdminPayoutsPage segments={resolved.segments} onLoaded={payoutsLoaded} />;
   else if (onAccountPage) content = <AdminAccountPage key={resolved.key} resourceKey={resolved.key} segments={resolved.segments} onLoaded={accountsLoaded} />;
+  else if (onCategoryPage && !categoriesReady) content = <Skeleton label="Memuat kategori…" />;
   else if (resolved) content = <WorkspaceResource key={resolved.key} resourceKey={resolved.key} segments={resolved.segments} data={viewData} onSave={save} onDelete={remove} onUpload={upload} />;
   else if (!path || path === 'dashboard') content = <AdminDashboard data={viewData} name={owner.name} />;
   else if (path === 'laporan') content = <AdminReports />;
   else if (path === 'pencarian') content = <AdminSearch key={location.search} data={viewData} />;
-  else if (['notifikasi', 'notifikasi-menu'].includes(path)) content = <VendorNotifications notifications={notifications} onRead={readNotification} onDelete={deleteNotification} />;
+  else if (['notifikasi', 'notifikasi-menu'].includes(path)) content = notificationsReady ? <VendorNotifications notifications={notifications} onRead={readNotification} onDelete={deleteNotification} /> : <Skeleton label="Memuat notifikasi…" />;
   else content = <><PageHeading title="Halaman tidak ditemukan" /><section className="v-card"><EmptyState title="Alamat workspace tidak tersedia" description="Gunakan menu di samping untuk membuka halaman admin."><Link className="v-button v-button-primary" to="/admin">Kembali ke dashboard</Link></EmptyState></section></>;
 
   const userCounts = { customers: data.customers.length, vendors: data.vendors.length, administrators: data.administrators.length };

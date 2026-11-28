@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { money } from './vendorData';
 import { vendorAssets } from './vendorAssets';
 import { getVendorDashboard } from './vendorDashboardApi';
+import Skeleton from '../../components/Skeleton';
 
 const compactMoney = value => value >= 1000000 ? `Rp${new Intl.NumberFormat('id-ID', { maximumFractionDigits: 1 }).format(value / 1000000)} jt` : money(value);
 const verificationLabels = { terverifikasi: 'Terverifikasi', menunggu: 'Menunggu verifikasi', ditolak: 'Verifikasi ditolak', belum_diverifikasi: 'Belum diverifikasi' };
@@ -33,7 +34,7 @@ export default function VendorDashboard({ ownerName }) {
     { title: `Ajukan pencairan ${compactMoney(balance)}`, detail: 'Saldo dari pesanan yang telah selesai', to: '/vendor/pencairan' },
   ];
   return <div className="vp-dashboard" data-figma-node="86:2">
-    <div className="vp-welcome"><div><p className="vp-eyebrow">PORTAL VENDOR</p><h1>Selamat datang, {summary?.business || ownerName}</h1><p className="vp-welcome-description">Berikut ringkasan aktivitas yang perlu diperhatikan hari ini.</p></div><Link className="vp-verified" to="/vendor/kyc" aria-label="Lihat status verifikasi akun">{summary ? verificationLabels[summary.verification] || summary.verification : 'Memuat…'}</Link></div>
+    <div className="vp-welcome"><div><p className="vp-eyebrow">PORTAL VENDOR</p><h1>Selamat datang, {summary?.business || ownerName}</h1><p className="vp-welcome-description">Berikut ringkasan aktivitas yang perlu diperhatikan hari ini.</p></div><Link className="vp-verified" to="/vendor/kyc" aria-label="Lihat status verifikasi akun">{summary ? verificationLabels[summary.verification] || summary.verification : error ? '—' : <Skeleton variant="inline" label="Memuat…" />}</Link></div>
     {error && <p role="alert" className="v-field-error" style={{ marginBottom: 16 }}>{error}</p>}
     <div className="vp-metrics">{metrics.map(metric => <Link className="vp-metric" to={metric.to} key={metric.label}><span className="vp-metric-label">{metric.label}</span><strong>{metric.value}</strong><p>{metric.detail}</p><span className="vp-metric-icon"><img src={metric.icon} alt="" /></span></Link>)}</div>
     <div className="vp-dashboard-grid">

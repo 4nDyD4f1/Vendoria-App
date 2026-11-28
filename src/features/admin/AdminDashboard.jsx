@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Bell, CalendarDays, Check, ChevronRight, Lock, Sparkles, Users } from 'lucide-react';
 import { money } from '../vendor/vendorData';
 import { getDashboard } from './dashboardApi';
+import Skeleton from '../../components/Skeleton';
 
 const chip = { Selesai: 'green', Terkonfirmasi: 'green', 'Menunggu Pembayaran': 'amber', 'Menunggu Konfirmasi': 'amber', Dibatalkan: 'red' };
 
@@ -64,7 +65,7 @@ export default function AdminDashboard({ data, name }) {
         <section className="a-panel"><p className="a-eyebrow">PRIORITAS HARI INI</p><h2>Perlu Tindakan</h2>
           <ol className="a-actions">{actions.map(([title, note, to], index) => <li key={to}><span className="a-step">{index + 1}</span><div><strong>{title}</strong><small>{note}</small></div><Link to={to}>Tinjau<ChevronRight size={18} aria-hidden="true" /></Link></li>)}</ol>
         </section>
-        <section className="a-panel"><p className="a-eyebrow">8 MINGGU TERAKHIR</p><h2>Volume Transaksi</h2>{summary ? <VolumeChart weekly={summary.weekly} /> : <p role={error ? 'alert' : 'status'}>{error || 'Memuat data…'}</p>}</section>
+        <section className="a-panel"><p className="a-eyebrow">8 MINGGU TERAKHIR</p><h2>Volume Transaksi</h2>{summary ? <VolumeChart weekly={summary.weekly} /> : error ? <p role="alert">{error}</p> : <Skeleton label="Memuat data…" count={3} />}</section>
       </div>
       <div className="a-dash-col">
         <section className="a-panel"><p className="a-eyebrow">TERBARU</p><h2>Transaksi Terakhir</h2>

@@ -3,6 +3,7 @@ import { createPortal } from 'react-dom';
 import { Link } from 'react-router-dom';
 import { X } from 'lucide-react';
 import { money } from './vendorData';
+import Skeleton from '../../components/Skeleton';
 import {
   actOnVendorOrder,
   claimStatusLabels,
@@ -219,7 +220,7 @@ export default function OrderProcessModal({ orderId, onClose, onCompleted }) {
         {error && <p role="alert" className="vendor-orders-error">{error}</p>}
 
         <div className="vendor-orders-modal-body">
-          {!detail ? !error && <p role="status" className="vendor-orders-muted">Memuat detail pesanan…</p> : <>
+          {!detail ? !error && <Skeleton variant="detail" label="Memuat detail pesanan…" /> : <>
             <OrderDetailSections detail={detail} />
             <p className="vendor-orders-hint">{transitionGuidance(order)}</p>
             {['dikonfirmasi', 'berjalan', 'dikembalikan'].includes(order.status_pesanan) && <p className="vendor-orders-hint"><Link className="v-text-button" to={`/vendor/serah-terima/${order.order_id}`} onClick={onClose}>Buka pemeriksaan &amp; bukti serah terima</Link> · Empat foto dan catatan kondisi setiap alat wajib lengkap sebelum tahap berikutnya.</p>}

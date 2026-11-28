@@ -9,6 +9,7 @@ import CatalogCard from './CatalogCard';
 import { useWishlist } from './useWishlist';
 import { useCart } from './useCart';
 import './live-catalog.css';
+import Skeleton from '../../components/Skeleton';
 
 const sortLabels = { popular: 'Paling populer', 'price-low': 'Harga terendah', 'price-high': 'Harga tertinggi', rating: 'Rating tertinggi' };
 const empty = { items: [], cities: [], categories: [], total: 0, available: 0, page: 1, size: 12 };
@@ -107,7 +108,7 @@ export default function LiveCatalog({ loadDesign }) {
     if (node.id === '84:4843') return <div {...props} className={`${props.className} live-catalog-grid`} aria-busy={loading}>
       {cart.error && <div className="live-catalog-status" role="alert"><p>Keranjang: {cart.error}</p><button type="button" onClick={cart.reload}>Muat ulang keranjang</button></div>}
       {wishlist.error && <div className="live-catalog-status" role="alert"><p>Wishlist: {wishlist.error}</p><button type="button" onClick={() => wishlist.refresh().catch(() => {})}>Muat ulang wishlist</button></div>}
-      {loading ? <p className="live-catalog-status" role="status">Memuat katalog…</p> : error ? <div className="live-catalog-status" role="alert"><p>{error}</p><button type="button" onClick={() => setRetry(value => value + 1)}>Coba lagi</button></div> : !data.items.length ? <div className="live-catalog-status" role="status"><Package size={30} /><h2>{data.available ? 'Tidak ada alat yang sesuai' : 'Belum ada alat siap sewa'}</h2><p>{data.available ? 'Coba kota, kategori, atau kata kunci lain.' : 'Alat akan muncul setelah vendor aktif menambahkan barang aktif dengan stok tersedia.'}</p><button type="button" onClick={() => { setDraft(''); setParams({}); }}>Bersihkan filter</button></div> : data.items.map(item => <CatalogCard key={item.id} item={item} />)}
+      {loading ? <Skeleton variant="cards" label="Memuat katalog…" /> : error ? <div className="live-catalog-status" role="alert"><p>{error}</p><button type="button" onClick={() => setRetry(value => value + 1)}>Coba lagi</button></div> : !data.items.length ? <div className="live-catalog-status" role="status"><Package size={30} /><h2>{data.available ? 'Tidak ada alat yang sesuai' : 'Belum ada alat siap sewa'}</h2><p>{data.available ? 'Coba kota, kategori, atau kata kunci lain.' : 'Alat akan muncul setelah vendor aktif menambahkan barang aktif dengan stok tersedia.'}</p><button type="button" onClick={() => { setDraft(''); setParams({}); }}>Bersihkan filter</button></div> : data.items.map(item => <CatalogCard key={item.id} item={item} />)}
     </div>;
     if (node.id === '84:5352') return <nav className="live-catalog-pagination" aria-label="Halaman katalog">
       <button type="button" disabled={loading || data.page <= 1} onClick={() => update({ page: data.page - 1 }, false)} aria-label="Halaman sebelumnya"><ChevronLeft size={16} /></button>
@@ -120,7 +121,7 @@ export default function LiveCatalog({ loadDesign }) {
     const id = ancestors.at(-1)?.id;
     if (id === '84:4778') return `${data.available} Alat Siap Sewa`;
     if (id === '84:4783') return 'Perlengkapan event dari vendor di berbagai kota. Pilih kota sesuai kebutuhan acaramu.';
-    if (id === '84:4842') return loading ? 'Memuat hasil katalog…' : error ? 'Katalog belum dapat dimuat' : `Menampilkan ${data.items.length} dari ${data.total} alat event${city ? ` di ${city}` : ''}`;
+    if (id === '84:4842') return loading ? <Skeleton variant="inline" label="Memuat hasil katalog…" /> : error ? 'Katalog belum dapat dimuat' : `Menampilkan ${data.items.length} dari ${data.total} alat event${city ? ` di ${city}` : ''}`;
     return parent.formatText(text, ancestors);
   } };
   // Old /catalog?item= links used to open a popup.

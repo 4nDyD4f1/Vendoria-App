@@ -25,6 +25,7 @@ import { getVendorSettings } from './vendorSettingsApi';
 import '../interface/interface.css';
 import './vendor.css';
 import './vendor-portal.css';
+import Skeleton from '../../components/Skeleton';
 
 const navigation = [['Dashboard', 'dashboard'], ['Katalog', 'katalog'], ['Pesanan', 'pesanan'], ['Serah Terima', 'serah-terima'], ['Klaim', 'klaim'], ['Pencairan', 'pencairan']];
 const titles = Object.fromEntries([...navigation, ['Profil bisnis', 'profil-bisnis'], ['Profil pemilik', 'pengaturan'], ['Verifikasi KYC', 'kyc'], ['Keamanan', 'keamanan'], ['Pencarian', 'pencarian']].map(([label, path]) => [path, label]));
@@ -90,6 +91,7 @@ export default function VendorWorkspace() {
     }));
   }, []);
   const [notifications, setNotifications] = useState([]);
+  const [notificationsReady, setNotificationsReady] = useState(false);
   const [toast, setToast] = useState('');
   const timer = useRef(null);
   const objectUrls = useRef([]);
@@ -111,7 +113,7 @@ export default function VendorWorkspace() {
   const remove = (key, ids) => { if (['catalog', 'orders', 'handovers', 'claims', 'payouts'].includes(key)) return; setData(current => ({ ...current, [key]: current[key].filter(record => !ids.includes(record.id)) })); notify(`${ids.length} data dihapus dari pratinjau.`); };
   const onUpload = file => { const url = URL.createObjectURL(file); objectUrls.current.push(url); return url; };
   // Notifikasi = pesanan/klaim/pencairan yang perlu ditindak (server); dimuat ulang tiap pindah halaman agar ikut perkembangan terbaru.
-  const loadNotifications = useCallback(() => listVendorNotifications().then(setNotifications), []);
+  const loadNotifications = useCallback(() => listVendorNotifications().then(setNotifications).finally(() => setNotificationsReady(true)), []);
   useEffect(() => { loadNotifications().catch(() => {}); }, [location.pathname, loadNotifications]);
   const changeNotifications = (send, apply, ids) => {
     if (!ids.length) return;
@@ -130,7 +132,7 @@ export default function VendorWorkspace() {
   else if (resourceKey) content = <VendorResource key={resourceKey} resourceKey={resourceKey} segments={segments} data={data} onSave={save} onDelete={remove} onUpload={onUpload} />;
   else if (page === 'dashboard') content = <RequireAuth role="vendor"><VendorDashboard ownerName={user?.nama || 'Vendor'} /></RequireAuth>;
   else if (['pengaturan', 'profil-bisnis', 'kyc', 'keamanan'].includes(page)) content = <RequireAuth role="vendor"><VendorSettings key={page} page={page} onLoaded={settingsLoaded} notify={notify} /></RequireAuth>;
-  else if (['notifikasi', 'notifikasi-menu'].includes(page)) content = <VendorNotifications notifications={notifications} onRead={readNotifications} onDelete={deleteNotification} />;
+  else if (['notifikasi', 'notifikasi-menu'].includes(page)) content = notificationsReady ? <VendorNotifications notifications={notifications} onRead={readNotifications} onDelete={deleteNotification} /> : <Skeleton label="Memuat notifikasi…" />;
   else if (page === 'pencarian') content = <RequireAuth role="vendor"><VendorSearch onLoaded={searchLoaded} /></RequireAuth>;
   else content = <><PageHeading title="Halaman tidak ditemukan" /><section className="v-card"><EmptyState title="Alamat workspace tidak tersedia" description="Gunakan navigasi di atas untuk membuka halaman vendor."><Link className="v-button v-button-primary" to="/vendor/dashboard">Kembali ke dashboard</Link></EmptyState></section></>;
 

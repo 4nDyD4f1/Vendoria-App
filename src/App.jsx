@@ -13,6 +13,7 @@ import TwoFactorVerificationPage from './pages/TwoFactorVerificationPage';
 import ResetPasswordPage from './pages/ResetPasswordPage';
 import VendorListPage from './pages/VendorListPage';
 import { AuthProvider, useAuth } from './AuthContext';
+import Skeleton from './components/Skeleton';
 const InterfacePage = lazy(() => import('./features/interface/InterfacePage'));
 const InterfaceReviewPage = lazy(() => import('./features/interface/InterfaceReviewPage'));
 const VendorWorkspace = lazy(() => import('./features/vendor/VendorWorkspace'));
@@ -44,7 +45,7 @@ function App() {
     <Router>
       <RoleRouteBoundary>
       <PaymentRouteBoundary>
-      <Suspense fallback={<div className="p-10" role="status">Memuat halaman…</div>}>
+      <Suspense fallback={<Skeleton variant="page" label="Memuat halaman…" />}>
       <Routes>
         {/* Auth Pages (AuthLayout handles its own header & footer) */}
         <Route path="/login" element={<LoginPage />} />

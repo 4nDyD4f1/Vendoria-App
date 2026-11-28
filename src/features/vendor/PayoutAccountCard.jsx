@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Landmark } from 'lucide-react';
 import { getPayoutAccount, payoutBanks, savePayoutAccount } from './vendorPayoutsApi';
+import Skeleton from '../../components/Skeleton';
 
 // Rekening tujuan pencairan dana vendor (satu rekening). Nomor lengkap tidak pernah dikembalikan server.
 export default function PayoutAccountCard({ notify }) {
@@ -46,7 +47,7 @@ export default function PayoutAccountCard({ notify }) {
       <div><h2>Rekening pencairan</h2><p>Dana hasil sewa dikirim ke rekening ini. Nama pemilik harus sama dengan nama akun atau nama bisnis Anda.</p></div>
     </div>
     {state.error && <p className="v-field-error" role="alert">{state.error}</p>}
-    {!value && !state.error && <p role="status">Memuat rekening…</p>}
+    {!value && !state.error && <Skeleton variant="text" label="Memuat rekening…" />}
     {value && !value.business && <p className="v-modal-copy">Simpan profil bisnis di atas terlebih dahulu, lalu tautkan rekening pencairan.</p>}
     {value?.account && <dl className="vendor-orders-details" style={{ marginTop: 16 }}>
       <div><dt>Bank</dt><dd>{value.account.bank}</dd></div>

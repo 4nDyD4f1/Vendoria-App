@@ -10,6 +10,7 @@ import CartPendingPayment from './CartPendingPayment';
 import { paymentFromCart, paymentOrders } from './paymentEntry';
 import { useCheckoutKyc } from '../kyc/useCheckoutKyc';
 import './live-cart.css';
+import Skeleton from '../../components/Skeleton';
 
 const money = value => `Rp${Number(value).toLocaleString('id-ID')}`;
 const iso = date => `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
@@ -115,7 +116,7 @@ export default function LiveCart() {
 
   const head = <CheckoutHead current={0} crumb="Keranjang" title="Keranjang & Checkout" subtitle="Tinjau alat, lengkapi data acara, lalu lanjut ke pembayaran deposit." />;
 
-  if (!cart.ready) return <div className="cart-page">{head}<div className="cart-empty" role="status"><LoaderCircle className="wishlist-spinner" size={28} /><p>Memuat keranjang…</p></div></div>;
+  if (!cart.ready) return <div className="cart-page">{head}<Skeleton variant="detail" label="Memuat keranjang…" /></div>;
   if (cart.error && !cart.items.length) return <div className="cart-page">{head}{pendingPayment}<div className="cart-error" role="alert"><p>{cart.error}</p><button type="button" onClick={cart.reload}>Muat ulang keranjang</button></div></div>;
   if (!cart.items.length) return <div className="cart-page">{head}{pendingPayment}{!pendingPayment && <div className="cart-empty"><ShoppingCart size={34} /><h2>Keranjang masih kosong</h2><p>Pilih alat dari katalog, lalu tekan “Tambah ke keranjang” pada kartu atau detail alat.</p><Link className="cart-primary" to="/catalog">Jelajahi katalog <ArrowRight size={16} /></Link></div>}</div>;
 
@@ -164,7 +165,7 @@ export default function LiveCart() {
 
           <div className="cart-saved">
             <label className={`cart-check${saved.length ? '' : ' is-disabled'}`}><input type="checkbox" checked={useSaved} disabled={!saved.length} onChange={event => toggleSaved(event.target.checked)} /><span>Gunakan alamat tersimpan</span></label>
-            {addresses.items === null && <small>Memuat alamat tersimpan…</small>}
+            {addresses.items === null && <Skeleton variant="inline" label="Memuat alamat tersimpan…" />}
             {addresses.error && <small className="cart-field-error" role="alert">{addresses.error}</small>}
             {addresses.items && !saved.length && !addresses.error && <small>Belum ada alamat tersimpan. <Link to="/akun/alamat">Tambahkan di Akun › Alamat Acara</Link></small>}
             {useSaved && <div className="cart-saved-pick">

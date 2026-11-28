@@ -3,6 +3,7 @@ import { Navigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../AuthContext';
 import { authDestination } from '../authDestination';
 import { canEnterPayment, clearPaymentEntry, paymentOrders } from '../features/interface/paymentEntry';
+import Skeleton from './Skeleton';
 
 export default function PaymentRouteBoundary({ children }) {
   const { user, loading } = useAuth();
@@ -11,7 +12,7 @@ export default function PaymentRouteBoundary({ children }) {
   useEffect(() => { if (!payment) clearPaymentEntry(); }, [payment, location.key]);
 
   if (!payment) return children;
-  if (loading) return <div className="p-10" role="status">Memuat akun...</div>;
+  if (loading) return <Skeleton variant="page" label="Memuat akun..." />;
   if (!user) return <Navigate to="/login" replace />;
   if (user.role !== 'customer') return <Navigate to={authDestination(user.role)} replace />;
   const orders = paymentOrders(new URLSearchParams(location.search).get('orders'));

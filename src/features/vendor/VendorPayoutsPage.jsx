@@ -6,6 +6,7 @@ import { money } from './vendorData';
 import { formatOrderDateTime } from './vendorOrdersApi';
 import { listVendorPayouts, payoutLabels, requestVendorPayout } from './vendorPayoutsApi';
 import './vendor-orders.css';
+import Skeleton from '../../components/Skeleton';
 
 const accountText = payout => payout.bank ? `${payout.bank} ${payout.account}` : '—';
 
@@ -112,7 +113,7 @@ export default function VendorPayoutsPage({ segments, onLoaded, notify }) {
         <button type="button" className="v-button v-button-secondary" onClick={() => setRefresh(value => value + 1)}><RefreshCw size={16} />Muat ulang</button>
       </div>
       {error ? <p className="vendor-orders-error vendor-orders-list-error" role="alert">{error}</p>
-        : !listing ? <p role="status" className="vendor-orders-loading">Memuat pencairan…</p>
+        : !listing ? <Skeleton variant="list" label="Memuat pencairan…" />
           : !shown.length ? <EmptyState title={items.length ? 'Tidak ada hasil yang cocok' : 'Belum ada pencairan'} description={items.length ? 'Coba kata kunci lain atau ubah filter status.' : 'Pencairan yang Anda ajukan lewat tombol Cairkan dana akan muncul di sini.'} />
             : <div className="v-table-scroll" tabIndex={0} role="region" aria-label="Tabel Pencairan"><table className="v-table"><caption className="v-sr-only">Daftar pencairan dana vendor</caption>
               <thead><tr><th scope="col">No. pencairan</th><th scope="col">Pesanan</th><th scope="col">Diajukan</th><th scope="col">Rekening</th><th scope="col">Dana diterima</th><th scope="col">Status</th><th scope="col" className="v-actions-cell">Operasi</th></tr></thead>

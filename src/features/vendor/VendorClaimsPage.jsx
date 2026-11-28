@@ -9,6 +9,7 @@ import { claimFilters, claimLabels, confirmVendorReturn, listVendorClaims, proce
 import ClaimEvidence from '../shared/ClaimEvidence';
 import { isCustomerReport, reportTypes } from '../shared/reportTypes';
 import './vendor-orders.css';
+import Skeleton from '../../components/Skeleton';
 
 function ClaimModal({ claim, process, onClose, onProcessed, onChanged }) {
   const [error, setError] = useState('');
@@ -103,7 +104,7 @@ export default function VendorClaimsPage({ segments, onLoaded, notify }) {
         <button type="button" className="v-button v-button-secondary" onClick={() => setRefresh(value => value + 1)}><RefreshCw size={16} />Muat ulang</button>
       </div>
       {error ? <p className="vendor-orders-error vendor-orders-list-error" role="alert">{error}</p>
-        : !claims ? <p role="status" className="vendor-orders-loading">Memuat klaim…</p>
+        : !claims ? <Skeleton variant="list" label="Memuat klaim…" />
           : !shown.length ? <EmptyState title={claims.length ? 'Tidak ada hasil yang cocok' : 'Belum ada klaim'} description={claims.length ? 'Coba kata kunci lain atau pilih status lain.' : 'Klaim customer atas pesanan Anda akan muncul di sini.'} />
             : <div className="v-table-scroll" tabIndex={0} role="region" aria-label="Tabel Klaim"><table className="v-table"><caption className="v-sr-only">Daftar klaim vendor</caption>
               <thead><tr><th scope="col">No. klaim</th><th scope="col">Pesanan</th><th scope="col">Pelanggan</th><th scope="col">Perihal</th><th scope="col">Deposit</th><th scope="col">Status</th><th scope="col" className="v-actions-cell">Operasi</th></tr></thead>

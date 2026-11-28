@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { EmptyState, Modal, Status } from '../vendor/VendorUi';
 import { money } from '../vendor/vendorData';
 import { completeRefund, listRefunds } from './reportsApi';
+import Skeleton from '../../components/Skeleton';
 
 const labels = { menunggu: 'Menunggu', diproses: 'Diproses', berhasil: 'Selesai', gagal: 'Gagal', dibatalkan: 'Dibatalkan' };
 
@@ -29,7 +30,7 @@ export default function AdminRefunds() {
 
   return <section className="v-card" aria-label="Pengembalian dana customer" style={{ marginTop: 24 }}>
     <div className="admin-kyc-toolbar"><h2>Pengembalian dana ke customer</h2></div>
-    {state.error ? <p className="kyc-error admin-kyc-list-error" role="alert">{state.error}</p> : !state.items ? <p role="status" className="admin-kyc-loading">Memuat pengembalian dana…</p> : !state.items.length ? <EmptyState title="Belum ada pengembalian dana" description="Deposit jaminan yang harus dikembalikan akan muncul di sini." />
+    {state.error ? <p className="kyc-error admin-kyc-list-error" role="alert">{state.error}</p> : !state.items ? <Skeleton variant="list" label="Memuat pengembalian dana…" /> : !state.items.length ? <EmptyState title="Belum ada pengembalian dana" description="Deposit jaminan yang harus dikembalikan akan muncul di sini." />
       : <div className="v-table-scroll"><table className="v-table"><thead><tr><th>Pesanan</th><th>Customer</th><th>Jumlah</th><th>Alasan</th><th>Rekening tujuan</th><th>Status</th><th>Operasi</th></tr></thead><tbody>{state.items.map(item => <tr key={item.id}>
         <td>{item.order}</td><td>{item.customer}</td><td className="v-number">{money(item.amount)}</td><td>{item.reason}</td>
         <td>{item.account ? `${item.bank} ${item.account} · ${item.owner}` : 'Customer belum mengisi rekening'}</td>
