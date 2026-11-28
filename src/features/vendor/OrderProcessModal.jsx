@@ -16,15 +16,15 @@ import {
   paymentTypeLabels,
 } from './vendorOrdersApi';
 
-export function OrderStatusBadge({ status }) {
-  return <span className={`vendor-order-status vendor-order-status-${status}`}><i aria-hidden="true" />{orderStatusLabels[status] || status}</span>;
+export function OrderStatusBadge({ status, awaiting }) {
+  return <span className={`vendor-order-status vendor-order-status-${awaiting ? 'menunggu_pembayaran' : status}`}><i aria-hidden="true" />{awaiting ? 'Menunggu pelunasan' : orderStatusLabels[status] || status}</span>;
 }
 
 export function OrderDetailSections({ detail }) {
   const { order } = detail;
   return <>
     <div className="vendor-orders-summary-row">
-      <OrderStatusBadge status={order.status_pesanan} />
+      <OrderStatusBadge status={order.status_pesanan} awaiting={order.awaiting_settlement} />
       <p>Dipesan pada {formatOrderDateTime(order.tanggal_pemesanan)}</p>
     </div>
 
@@ -37,7 +37,7 @@ export function OrderDetailSections({ detail }) {
       <div><dt>Periode sewa</dt><dd>{formatOrderDate(order.tanggal_mulai_sewa)} – {formatOrderDate(order.tanggal_selesai_sewa)}</dd></div>
       <div className="vendor-orders-detail-wide"><dt>Lokasi acara</dt><dd>{order.lokasi_acara || 'Belum diisi'}</dd></div>
       <div><dt>Total biaya sewa</dt><dd className="v-number">{money(order.total_biaya_sewa)}</dd></div>
-      <div><dt>Minimal DP</dt><dd className="v-number">{money(order.total_dp)}</dd></div>
+      <div><dt>Deposit jaminan</dt><dd className="v-number">{money(order.total_dp)}</dd></div>
       <div><dt>Pembayaran terverifikasi</dt><dd className="v-number">{money(detail.verified_payment_total)}</dd></div>
     </dl>
 
@@ -107,6 +107,12 @@ function transitionGuidance(order) {
   if (order.can_process) {
     return `Langkah proses berikutnya: ${order.next_action_label} (${orderStatusLabels[order.status_pesanan]} → ${orderStatusLabels[order.next_status]}).`;
   }
+  if (order.report_open) {
+    return 'Pelanggan melaporkan pesanan ini. Pesanan tidak dapat diproses sampai laporan selesai; beri tanggapan di halaman Klaim.';
+  }
+  if (order.awaiting_settlement) {
+    return 'Menunggu pelunasan dari pelanggan. Alat baru boleh diserahkan setelah biaya sewa dibayar penuh.';
+  }
   if (order.status_pesanan === 'menunggu_pembayaran') {
     return 'Pesanan masih menunggu pembayaran dari pelanggan sehingga belum dapat diproses. Anda masih dapat membatalkan pesanan ini jika diperlukan.';
   }
@@ -124,6 +130,7 @@ export default function OrderProcessModal({ orderId, onClose, onCompleted }) {
   const [error, setError] = useState('');
   const [note, setNote] = useState('');
   const [busyAction, setBusyAction] = useState('');
+  const [confirmCancel, setConfirmCancel] = useState(false);
   const pending = useRef(false);
   const dialog = useRef(null);
   const host = document.querySelector('.vendor-workspace') || document.body;
@@ -230,23 +237,25 @@ export default function OrderProcessModal({ orderId, onClose, onCompleted }) {
           </>}
         </div>
 
+        {confirmCancel && <p className="vendor-orders-hint" role="alert">Batalkan pesanan ini? {order.status_pesanan === 'menunggu_pembayaran' ? '' : 'Deposit pelanggan akan dikembalikan. '}Tindakan ini tidak bisa diurungkan.</p>}
         {detail && <div className="vendor-orders-modal-actions">
+          {confirmCancel && <button type="button" className="v-button v-button-secondary" disabled={busy} onClick={() => setConfirmCancel(false)}>Tidak jadi</button>}
           <button
             type="button"
             className="v-button v-button-danger"
             disabled={busy || !order.can_cancel}
-            onClick={() => submit('batalkan')}
+            onClick={() => { if (confirmCancel) submit('batalkan'); else setConfirmCancel(true); }}
           >
-            {busyAction === 'batalkan' ? 'Membatalkan…' : 'Batalkan'}
+            {busyAction === 'batalkan' ? 'Membatalkan…' : confirmCancel ? 'Ya, batalkan pesanan' : 'Batalkan'}
           </button>
-          <button
+          {!confirmCancel && <button
             type="button"
             className="v-button v-button-primary"
             disabled={busy || !order.can_process}
             onClick={() => submit('proses')}
           >
             {busyAction === 'proses' ? 'Memproses…' : 'Proses'}
-          </button>
+          </button>}
         </div>}
       </section>
     </div>,

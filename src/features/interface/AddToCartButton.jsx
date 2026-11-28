@@ -2,10 +2,10 @@ import { useId, useRef, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Check, LoaderCircle, Plus, ShoppingCart } from 'lucide-react';
 import { useAuth } from '../../AuthContext';
-import { addToCart, useCart } from './useCart';
+import { addToCart, setCartQuantity, useCart } from './useCart';
 import './catalog-cart.css';
 
-export default function AddToCartButton({ item, compact = false }) {
+export default function AddToCartButton({ item, compact = false, quantity }) {
   const { user, loading } = useAuth();
   const navigate = useNavigate();
   const cart = useCart(user);
@@ -24,7 +24,7 @@ export default function AddToCartButton({ item, compact = false }) {
     pending.current = true;
     setState({ pending: true, message: '', success: false, celebrate: false });
     try {
-      await addToCart(item.id);
+      await (quantity ? setCartQuantity(item.id, quantity) : addToCart(item.id));
       setState({ pending: false, message: 'Ditambahkan ke keranjang!', success: true, celebrate: true });
     } catch (failure) {
       setState({ pending: false, message: failure.message, success: false, celebrate: false });

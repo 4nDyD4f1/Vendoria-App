@@ -3,7 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Bell, Heart, Menu, Search, ShoppingCart, User, X } from 'lucide-react';
 import { useAuth } from '../../AuthContext';
 import header from './designs/header.json';
-import { descendants } from './designTree';
+import { descendants } from './treeWalk';
 import { useWishlist } from './useWishlist';
 import './wishlist.css';
 import CustomerNotifications from './CustomerNotifications';

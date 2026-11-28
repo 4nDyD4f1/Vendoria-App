@@ -49,6 +49,7 @@ class VendorNotificationDatabaseTest {
 		otherId = jdbc.queryForObject("insert into vendor(user_id, nama_vendor) values (?, 'Vendor Lain') returning vendor_id", Long.class, otherVendorUser);
 		newOrder = order(vendorId, "menunggu_konfirmasi", "A");
 		serahOrder = order(vendorId, "dikonfirmasi", "B");
+		settle(serahOrder);
 		order(vendorId, "berjalan", "C"); // tidak ada tindakan vendor
 		order(otherId, "menunggu_konfirmasi", "D"); // milik vendor lain
 		long claimOrder = order(vendorId, "berjalan", "E");
@@ -64,6 +65,10 @@ class VendorNotificationDatabaseTest {
 				insert into pemesanan(user_id, vendor_id, kode_pemesanan, tanggal_mulai_sewa, tanggal_selesai_sewa, total_biaya_sewa, total_dp, status_pesanan)
 				values (?, ?, ?, current_date + 1, current_date + 3, 100000, 0, ?) returning order_id
 				""", Long.class, customer, vendor, "VND-VN" + suffix + "-" + token.substring(0, 6), status);
+	}
+
+	private void settle(long order) {
+		jdbc.update("insert into pembayaran(order_id,jenis,metode,jumlah,status,referensi_eksternal) values (?,'pelunasan','payment_gateway',?,'terverifikasi',?)", order, 100000, "SETTLE-" + order + "-" + token);
 	}
 
 	private long payout(long order, String status, String paidAt) {
@@ -99,16 +104,32 @@ class VendorNotificationDatabaseTest {
 				.andExpect(jsonPath(id("pencairan:" + paid + ":berhasil")).isNotEmpty())
 				.andExpect(jsonPath(id("pencairan:" + failed + ":gagal")).isNotEmpty())
 				.andExpect(jsonPath(id("pencairan:" + oldPaid + ":berhasil")).isEmpty()) // berhasil > 7 hari tidak ditampilkan
-				.andExpect(jsonPath("$.length()").value(6)); // pesanan berjalan dan milik vendor lain tidak muncul
+				.andExpect(jsonPath(id("pesanan:" + serahOrder + ":lunas") + ".title").value("Uang masuk: pelunasan sewa"))
+				.andExpect(jsonPath("$.length()").value(7)); // pesanan berjalan dan milik vendor lain tidak muncul
 		list(otherVendorUser).andExpect(jsonPath("$.length()").value(1));
+	}
+
+	@Test
+	void unverifiedVendorGetsKycReminderEvenWithoutBusinessProfile() throws Exception {
+		long fresh = vendorUser + 3;
+		jdbc.update("insert into pengguna(user_id, nama, email, password_hash, role) overriding system value values (?, 'Vendor Baru', ?, 'test-hash', 'vendor')",
+				fresh, "vnotif-fresh-" + token + "@example.test");
+		list(fresh).andExpect(jsonPath("$.length()").value(1)).andExpect(jsonPath(id("kyc:0:belum") + ".path").value("/vendor/kyc"));
+		send("read", fresh, true, "{\"ids\":[\"kyc:0:belum\"]}").andExpect(status().isNoContent());
+		list(fresh).andExpect(jsonPath(id("kyc:0:belum") + ".read").value(true));
+		send("dismiss", fresh, true, "{\"ids\":[\"kyc:0:belum\"]}").andExpect(status().isNoContent());
+		list(fresh).andExpect(jsonPath("$.length()").value(0));
+		list(vendorUser).andExpect(jsonPath(id("kyc:0:belum")).isEmpty());
 	}
 
 	@Test
 	void stageChangesReplaceNotification() throws Exception {
 		jdbc.update("update pemesanan set status_pesanan='dikonfirmasi' where order_id=?", newOrder);
+		list(vendorUser).andExpect(jsonPath(id("pesanan:" + newOrder + ":serah")).isEmpty()); // belum dilunasi
+		settle(newOrder);
 		list(vendorUser).andExpect(jsonPath(id("pesanan:" + newOrder + ":konfirmasi")).isEmpty()).andExpect(jsonPath(id("pesanan:" + newOrder + ":serah")).isNotEmpty());
 		jdbc.update("update klaim set status='disetujui', diputuskan_pada=now() where klaim_id=?", claim);
-		list(vendorUser).andExpect(jsonPath(id("klaim:" + claim + ":buka")).isEmpty()).andExpect(jsonPath(id("klaim:" + claim + ":putusan") + ".title").value("Klaim diputuskan: Disetujui"));
+		list(vendorUser).andExpect(jsonPath(id("klaim:" + claim + ":buka")).isEmpty()).andExpect(jsonPath(id("klaim:" + claim + ":putusan") + ".title").value("Deposit jaminan menjadi hak Anda"));
 	}
 
 	@Test

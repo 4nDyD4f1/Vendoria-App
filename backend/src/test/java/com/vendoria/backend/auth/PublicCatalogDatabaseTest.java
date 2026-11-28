@@ -55,6 +55,19 @@ class PublicCatalogDatabaseTest {
     long item(long vendor,long category,String name,int price,String status,int stock) {
         return jdbc.queryForObject("insert into item(vendor_id,kategori_id,nama_barang,harga_sewa_per_hari,stok_total,status,deskripsi_barang,kondisi_barang,minimal_dp) values (?,?,?,?,?,?,?,'Baik',25) returning item_id",Long.class,vendor,category,name,price,stock,status,"Deskripsi "+token);
     }
+    @Test void reviewsArePublicPerVendorWithMaskedNames() throws Exception {
+        long customer=jdbc.queryForObject("insert into pengguna(nama,email,password_hash,role) values ('Budi  Santoso',?,'fixture','customer') returning user_id",Long.class,UUID.randomUUID()+"@example.test");
+        long order=jdbc.queryForObject("insert into pemesanan(user_id,vendor_id,kode_pemesanan,tanggal_mulai_sewa,tanggal_selesai_sewa,total_biaya_sewa,total_dp,status_pesanan) values (?,?,?,current_date,current_date+1,200,0,'selesai') returning order_id",
+            Long.class,customer,vendorA,"VND-RV-"+UUID.randomUUID().toString().substring(0,8));
+        jdbc.update("insert into detail_item(order_id,item_id,jumlah_sewa,harga_saat_sewa,subtotal) values (?,?,1,200,200)",order,first);
+        jdbc.update("insert into ulasan(order_id,user_id,vendor_id,rating,komentar) values (?,?,?,4,'Suara jernih')",order,customer,vendorA);
+        mvc.perform(get("/api/catalog/"+third+"/reviews")).andExpect(status().isOk())
+            .andExpect(jsonPath("$.length()").value(1)).andExpect(jsonPath("$[0].author").value("Budi S."))
+            .andExpect(jsonPath("$[0].rating").value(4)).andExpect(jsonPath("$[0].comment").value("Suara jernih"))
+            .andExpect(jsonPath("$[0].items").value("Audio 100% "+token));
+        mvc.perform(get("/api/catalog/"+second+"/reviews")).andExpect(jsonPath("$.length()").value(0));
+        mvc.perform(get("/api/catalog/0/reviews")).andExpect(status().isNotFound());
+    }
     @Test void anonymousListingAndDetailsReadRealFieldsWithoutPrivateOwnerData() throws Exception {
         mvc.perform(get("/api/catalog").param("q",token)).andExpect(status().isOk()).andExpect(header().string("Cache-Control","no-store"))
             .andExpect(jsonPath("$.total").value(3)).andExpect(jsonPath("$.items.length()").value(3))

@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
+import { cappedDeposit } from './deposit';
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { ArrowRight, CalendarDays, Check, Clock, LoaderCircle, MapPin, Minus, Package, Plus, ShieldCheck, ShoppingCart, Star, Trash2 } from 'lucide-react';
 import { useAuth } from '../../AuthContext';
@@ -67,7 +68,13 @@ export default function LiveCart() {
   const unavailable = cart.items.length - usable.length;
   const perDay = usable.reduce((sum, entry) => sum + Number(entry.item.price) * entry.quantity, 0);
   const total = perDay * days;
-  const deposit = Math.min(usable.reduce((sum, entry) => sum + Number(entry.item.deposit) * entry.quantity, 0), total);
+  // Satu pesanan per vendor, jadi batas deposit dihitung per vendor.
+  const orders = vendors.map(entries => entries.filter(entry => entry.available)).map(entries => ({
+    set: entries.reduce((sum, entry) => sum + Number(entry.item.deposit) * entry.quantity, 0),
+    rent: entries.reduce((sum, entry) => sum + Number(entry.item.price) * entry.quantity, 0) * days,
+  }));
+  const deposit = orders.reduce((sum, order) => sum + cappedDeposit(order.set, order.rent), 0);
+  const capped = days > 0 && orders.some(order => order.set > cappedDeposit(order.set, order.rent));
 
   const run = async (id, action) => {
     setNotice(''); setBusy(current => [...current, id]);
@@ -184,8 +191,9 @@ export default function LiveCart() {
           <div><dt>Jaminan deposit escrow</dt><dd>{days ? money(deposit) : '—'}</dd></div>
           <div><dt>Logistik &amp; pemasangan</dt><dd>Dibayar saat pelunasan</dd></div>
           <div className="cart-pay"><dt>Bayar sekarang (deposit)</dt><dd>{days ? money(deposit) : '—'}</dd></div>
+          {capped && <div><dt>Deposit dibatasi maksimal 60% dari biaya sewa</dt><dd /></div>}
         </dl>
-        <p className="cart-remaining"><Clock size={15} />{days ? `Sisa tagihan ${money(total - deposit)} dilunasi maksimal H-1 acara.` : 'Pilih tanggal sewa untuk melihat total pembayaran.'}</p>
+        <p className="cart-remaining"><Clock size={15} />{days ? `Setelah vendor konfirmasi, sewa ${money(total)} dilunasi penuh sebelum serah terima. Deposit jaminan tidak mengurangi tagihan.` : 'Pilih tanggal sewa untuk melihat total pembayaran.'}</p>
         {submit.error && <p className="cart-alert" role="alert">{submit.error}</p>}
         {kyc.notice}
         <button className="cart-primary" type="submit" disabled={!canSubmit}>{submit.pending ? <LoaderCircle className="wishlist-spinner" size={16} /> : null}Buat Pesanan &amp; Lanjut Bayar<ArrowRight size={16} /></button>

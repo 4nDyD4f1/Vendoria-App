@@ -1,0 +1,54 @@
+.product-page { padding: 24px 40px 80px; }
+.product-page h1,.product-page h2,.product-page h3,.product-page p,.product-page ul,.product-page ol,.product-page dl,.product-page dd { margin: 0; }
+.product-breadcrumb,.product-chips,.product-line { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: 12px; color: #6f6058; }
+.product-breadcrumb span { color: #3a2a21; font-weight: 500; }
+.product-chips { margin-top: 14px !important; }
+.product-chips span,.product-badge { display: inline-flex; align-items: center; gap: 6px; padding: 5px 12px; border-radius: 99px; background: white; font-size: 11px; }
+.product-badge { align-self: flex-start; background: #e4efe5; color: #3f6b45; }
+.product-layout { display: grid; grid-template-columns: minmax(0,1fr) 380px; gap: 24px; align-items: start; margin-top: 24px; }
+.product-main { display: flex; flex-direction: column; gap: 24px; min-width: 0; }
+.product-photo { height: 460px; border-radius: 24px; overflow: hidden; background: #f1e9e2; }
+.product-photo img { width: 100%; height: 100%; object-fit: cover; }
+.product-card,.product-booking { background: white; border: 1px solid #ede1d9; border-radius: 24px; padding: 24px; }
+.product-card { display: flex; flex-direction: column; gap: 14px; font-size: 13px; }
+.product-card h2,.product-related > h2 { font-size: 18px; font-weight: 600; }
+.product-card h3 { font-size: 14px; font-weight: 600; }
+.product-card ul { list-style: disc; padding-left: 18px; }
+.product-card ol { list-style: decimal; padding-left: 18px; }
+.product-card li { margin-bottom: 8px; }
+.product-card li span { display: block; color: #6f6058; }
+.product-text { white-space: pre-wrap; overflow-wrap: anywhere; line-height: 24px; color: #6f6058; }
+.product-tabs { display: flex; flex-wrap: wrap; gap: 8px; }
+.product-tabs a { padding: 8px 11px; border-radius: 99px; background: #f5ede8; font-size: 11px; font-weight: 500; }
+.product-tabs a[aria-current] { background: #3a2a21; color: white; }
+.product-specs div,.product-booking dl div { display: flex; justify-content: space-between; gap: 12px; padding: 8px 0; border-bottom: 1px solid #ede1d9; }
+.product-score { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.product-score strong { font-size: 24px; }
+.product-card .product-reviews { list-style: none; padding: 0; }
+.product-card .product-reviews li { display: flex; flex-direction: column; gap: 6px; padding: 14px 0; margin: 0; border-top: 1px solid #ede1d9; }
+.product-reviews small { color: #6f6058; }
+.product-card .product-reviews li span.product-stars { display: inline-flex; gap: 2px; color: #cdbfb4; }
+.product-related { display: flex; flex-direction: column; gap: 8px; }
+.product-booking { position: sticky; top: 16px; display: flex; flex-direction: column; gap: 14px; font-size: 12px; }
+.product-booking h1 { font-size: 24px; line-height: 34px; font-weight: 600; overflow-wrap: anywhere; }
+.product-category { font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: #6f6058; }
+.product-price strong { font-size: 26px; font-weight: 700; margin-right: 4px; }
+.product-dates { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px; }
+.product-dates label { display: flex; flex-direction: column; gap: 4px; color: #6f6058; }
+.product-dates input { width: 100%; min-width: 0; padding: 10px; border: 1px solid #e7dbd2; border-radius: 12px; background: #fdfaf7; font: inherit; color: #3a2a21; }
+.product-quantity,.product-quantity > div { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.product-quantity button { display: grid; place-items: center; width: 32px; height: 32px; border: 1px solid #ddcfc4; border-radius: 10px; background: white; color: #3a2a21; cursor: pointer; }
+.product-quantity button:disabled { opacity: .4; cursor: default; }
+.product-quantity output { min-width: 24px; text-align: center; font-weight: 600; }
+.product-booking dd { font-weight: 600; white-space: nowrap; }
+.product-actions { display: flex; align-items: center; gap: 10px; }
+.product-actions > :first-child { flex: 1; }
+.vendoria-interface .product-actions .live-catalog-cart { margin-top: 0; }
+.product-booking ul { display: flex; flex-wrap: wrap; gap: 8px 16px; padding: 0; list-style: none; color: #6f6058; }
+.product-booking li { display: inline-flex; align-items: center; gap: 5px; }
+@media(max-width: 900px) {
+  .product-page { padding: 20px 16px 56px; }
+  .product-layout { grid-template-columns: minmax(0,1fr); }
+  .product-booking { position: static; grid-row: 1; }
+  .product-photo { height: 280px; }
+}

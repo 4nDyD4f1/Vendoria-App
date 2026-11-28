@@ -5,7 +5,6 @@ import Footer from './components/Footer';
 import RequireAuth from './components/RequireAuth';
 import RoleRouteBoundary from './components/RoleRouteBoundary';
 import PaymentRouteBoundary from './components/PaymentRouteBoundary';
-import KycLoginNotice from './features/kyc/KycLoginNotice';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import ForgotPasswordPage from './pages/ForgotPasswordPage';
@@ -68,7 +67,6 @@ function App() {
         <Route path="*" element={<InterfacePage />} />
       </Routes>
       </Suspense>
-      <KycLoginNotice />
       </PaymentRouteBoundary>
       </RoleRouteBoundary>
     </Router>

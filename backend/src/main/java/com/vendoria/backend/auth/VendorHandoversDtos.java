@@ -26,11 +26,15 @@ final class VendorHandoversDtos {
         Action { note = note == null ? null : note.trim(); }
     }
     record Summary(long orderId, String code, String customer, LocalDate start, LocalDate end, String venue,
-                   String status, int itemsCount, int handoverPhotos, int returnPhotos, boolean hasOpenClaim) {}
+                   String status, int itemsCount, int handoverPhotos, int returnPhotos, boolean hasOpenClaim, boolean awaitingSettlement, boolean reportOpen) {}
     record Listing(VendorOrdersDtos.VendorInfo vendor, List<Summary> items, long total, int page, int size) {}
+    record Damage(@NotBlank @Size(max=1000) String reason) {
+        Damage { reason = reason == null ? null : reason.trim(); }
+    }
     record Item(long itemId, String name, int quantity) {}
     record Evidence(long id, long itemId, String type, String note, String examiner, Instant recordedAt,
                     boolean available, String photoUrl) {}
     record Detail(Summary order, List<Item> items, List<Evidence> evidence, List<VendorOrdersDtos.StatusHistory> history,
-                  boolean handoverComplete, boolean returnComplete, int photosPerItem, boolean evidenceProtected) {}
+                  boolean handoverComplete, boolean returnComplete, int photosPerItem, boolean evidenceProtected,
+                  java.math.BigDecimal deposit, String claimStatus) {}
 }

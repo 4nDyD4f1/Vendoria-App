@@ -94,7 +94,7 @@ const OtpVerificationPage = () => {
       await api('/api/auth/forgot-password', { method: 'POST', body: { email } });
       setOtp(Array(6).fill(''));
       setDeadline(Date.now() + RESEND_SECONDS * 1000);
-      setInfo('Kode baru telah dikirim ke email Anda.');
+      setInfo('Jika email terdaftar, kode baru sudah dikirim.');
     } catch (err) {
       setError(err.message); // mis. 429 "Coba lagi dalam N detik"
     } finally {
@@ -106,7 +106,7 @@ const OtpVerificationPage = () => {
     <AuthLayout badgeText="Pemulihan Akun Aman" heading="Kembalikan akses akunmu dengan proses verifikasi yang terlindungi.">
       <div className="auth-content">
         <StepIndicator currentStep={2} />
-        <div className="auth-heading"><p className="auth-eyebrow">PEMULIHAN AKUN</p><h2>Verifikasi kode OTP</h2><p>Masukkan kode 6 digit yang telah dikirim ke <strong>{email}</strong>.</p></div>
+        <div className="auth-heading"><p className="auth-eyebrow">PEMULIHAN AKUN</p><h2>Verifikasi kode OTP</h2><p>Jika email terdaftar, kode 6 digit sudah dikirim. Masukkan kode untuk <strong>{email}</strong>.</p></div>
         <form onSubmit={handleSubmit} className="auth-form">
           <div className="auth-otp-boxes" onPaste={handlePaste} role="group" aria-label="Kode OTP 6 digit">
             {otp.map((digit, index) => <input key={index} ref={(el) => (inputRefs.current[index] = el)} type="text" inputMode="numeric" autoComplete={index === 0 ? 'one-time-code' : 'off'} maxLength={1} value={digit} onChange={(e) => handleChange(index, e.target.value)} onKeyDown={(e) => handleKeyDown(index, e)} aria-label={`Digit OTP ${index + 1}`} className="auth-input" />)}

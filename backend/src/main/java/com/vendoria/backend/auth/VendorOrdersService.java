@@ -55,7 +55,8 @@ class VendorOrdersService {
 			            from detail_item d join item i on i.item_id = d.item_id
 			            where d.order_id = p.order_id), '') as equipment_summary,
 			  coalesce((select sum(d.jumlah_sewa) from detail_item d where d.order_id = p.order_id), 0) as item_count,
-			  exists(select 1 from klaim k where k.order_id = p.order_id and k.status in ('diajukan', 'ditinjau')) as has_open_claim
+			  exists(select 1 from klaim k where k.order_id = p.order_id and k.status in ('diajukan', 'ditinjau')) as has_open_claim,
+			""" + "  " + OrderMoney.SETTLED + " as settled,\n  " + OrderMoney.OPEN_REPORT + " as report_open\n" + """
 			from pemesanan p
 			join pengguna c on c.user_id = p.user_id
 			""";
@@ -167,10 +168,17 @@ class VendorOrdersService {
 			throw conflict("Status pesanan sudah berubah. Muat ulang data pesanan");
 		}
 
+		if (Boolean.TRUE.equals(jdbc.queryForObject("select " + OrderMoney.OPEN_REPORT + " from pemesanan p where p.order_id=?", Boolean.class, orderId))) {
+			throw conflict("Pesanan sedang dilaporkan pelanggan dan menunggu penyelesaian");
+		}
+
 		String nextStatus;
 		if ("batalkan".equals(request.action())) {
 			if (!CANCELLABLE_STATUSES.contains(currentStatus)) {
 				throw conflict("Pesanan dengan status saat ini tidak dapat dibatalkan oleh vendor");
+			}
+			if ("dikonfirmasi".equals(currentStatus) && !OrderMoney.awaitingSettlement(jdbc, orderId)) {
+				throw conflict("Pesanan yang sudah dilunasi customer tidak dapat dibatalkan");
 			}
 			nextStatus = "dibatalkan";
 		} else {
@@ -192,7 +200,10 @@ class VendorOrdersService {
 		}
 
 		// All entry points use the same guard; /orders/action cannot bypass the inspection workflow.
-		if ("berjalan".equals(nextStatus)) handoverEvidence.requireComplete(orderId, "serah_terima");
+		if ("berjalan".equals(nextStatus)) {
+			OrderMoney.requireSettled(jdbc, orderId);
+			handoverEvidence.requireComplete(orderId, "serah_terima");
+		}
 		if ("dikembalikan".equals(nextStatus) || "selesai".equals(nextStatus)) handoverEvidence.requireComplete(orderId, "pengembalian");
 
 		jdbc.update("update pemesanan set status_pesanan=? where order_id=? and vendor_id=?",
@@ -202,6 +213,13 @@ class VendorOrdersService {
 				insert into riwayat_status_pesanan(order_id, status_sebelumnya, status_baru, diubah_oleh, catatan)
 				values (?, ?, ?, ?, ?)
 				""", orderId, currentStatus, nextStatus, actorId, note);
+
+		if ("dibatalkan".equals(nextStatus)) {
+			OrderMoney.refundDeposit(jdbc, orderId, "Pesanan dibatalkan, deposit dikembalikan");
+		} else if ("selesai".equals(nextStatus) && !Boolean.TRUE.equals(jdbc.queryForObject(
+				"select " + OrderMoney.FORFEITED + " from pemesanan p where p.order_id=?", Boolean.class, orderId))) {
+			OrderMoney.refundDeposit(jdbc, orderId, "Pengembalian deposit jaminan");
+		}
 
 		return detail(vendorId, orderId);
 	}
@@ -289,10 +307,12 @@ class VendorOrdersService {
 		boolean hasOpenClaim = rs.getBoolean("has_open_claim");
 		String candidateNext = NEXT_STATUS.get(status);
 		boolean blockedByClaim = "dikembalikan".equals(status) && hasOpenClaim;
-		boolean canProcess = candidateNext != null && !blockedByClaim;
+		boolean awaitingSettlement = "dikonfirmasi".equals(status) && !rs.getBoolean("settled");
+		boolean reportOpen = rs.getBoolean("report_open");
+		boolean canProcess = candidateNext != null && !blockedByClaim && !awaitingSettlement && !reportOpen;
 		String nextStatus = canProcess ? candidateNext : null;
 		String nextLabel = nextStatus == null ? null : NEXT_ACTION_LABELS.get(nextStatus);
-		boolean canCancel = CANCELLABLE_STATUSES.contains(status);
+		boolean canCancel = CANCELLABLE_STATUSES.contains(status) && !("dikonfirmasi".equals(status) && !awaitingSettlement) && !reportOpen;
 
 		Date start = rs.getDate("tanggal_mulai_sewa");
 		Date end = rs.getDate("tanggal_selesai_sewa");
@@ -315,7 +335,9 @@ class VendorOrdersService {
 				canProcess,
 				canCancel,
 				nextStatus,
-				nextLabel);
+				nextLabel,
+				awaitingSettlement,
+				reportOpen);
 	}
 
 	private static Map<String, Long> zeroCounts() {

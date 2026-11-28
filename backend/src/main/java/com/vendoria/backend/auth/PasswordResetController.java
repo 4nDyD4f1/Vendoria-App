@@ -30,7 +30,7 @@ class PasswordResetController {
 	MessageResponse forgotPassword(@Valid @RequestBody ForgotRequest req, HttpServletRequest http) {
 		throttle.checkIp(http.getRemoteAddr());
 		service.requestOtp(req.email());
-		return new MessageResponse("Kode verifikasi telah dikirim ke email Anda");
+		return new MessageResponse("Jika email terdaftar, kode verifikasi sudah dikirim");
 	}
 
 	@PostMapping("/verify-otp")

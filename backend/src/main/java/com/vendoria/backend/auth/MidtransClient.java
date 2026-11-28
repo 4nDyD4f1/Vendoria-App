@@ -1,5 +1,8 @@
 package com.vendoria.backend.auth;
 
+import java.net.http.HttpClient;
+import java.time.Duration;
+import org.springframework.http.client.JdkClientHttpRequestFactory;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.util.Base64;
@@ -27,10 +30,18 @@ class MidtransClient {
         autoConfirm = sandboxAutoConfirm && !production; // production tak pernah boleh melunasi tanpa settlement
 
         String sandbox = production ? "" : "sandbox.";
-        snap = RestClient.create("https://app." + sandbox + "midtrans.com/snap/v1");
-        core = RestClient.create("https://api." + sandbox + "midtrans.com/v2");
-        simulator = RestClient.create("https://simulator.sandbox.midtrans.com/bca/va");
+        Duration wait = Duration.ofSeconds(10);
+        snap = client("https://app." + sandbox + "midtrans.com/snap/v1", wait);
+        core = client("https://api." + sandbox + "midtrans.com/v2", wait);
+        simulator = client("https://simulator.sandbox.midtrans.com/bca/va", wait);
         auth = serverKey.isBlank() ? null : "Basic " + Base64.getEncoder().encodeToString((serverKey.trim() + ":").getBytes(StandardCharsets.UTF_8));
+    }
+
+    /** Batas waktu wajib: panggilan ini dilakukan sambil memegang koneksi database. */
+    static RestClient client(String baseUrl, Duration readTimeout) {
+        var factory = new JdkClientHttpRequestFactory(HttpClient.newBuilder().connectTimeout(Duration.ofSeconds(5)).build());
+        factory.setReadTimeout(readTimeout);
+        return RestClient.builder().baseUrl(baseUrl).requestFactory(factory).build();
     }
 
     /** Hanya sandbox: backend melunasi sendiri VA BCA lewat simulator Midtrans (lihat MidtransSandboxPayer). */

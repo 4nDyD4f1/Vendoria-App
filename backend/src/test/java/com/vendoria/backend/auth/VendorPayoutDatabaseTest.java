@@ -51,10 +51,13 @@ class VendorPayoutDatabaseTest {
 	}
 
 	private long order(String status, long total, String suffix) {
-		return jdbc.queryForObject("""
+		long order = jdbc.queryForObject("""
 				insert into pemesanan(user_id, vendor_id, kode_pemesanan, tanggal_mulai_sewa, tanggal_selesai_sewa, total_biaya_sewa, total_dp, status_pesanan)
 				values (?, ?, ?, current_date + 1, current_date + 3, ?, 0, ?) returning order_id
 				""", Long.class, customer, vendorId, "VND-PO" + suffix + "-" + token.substring(0, 6), total, status);
+		// pencairan hanya untuk pesanan yang sewanya lunas
+		if (total > 0) jdbc.update("insert into pembayaran(order_id,jenis,metode,jumlah,status,referensi_eksternal) values (?,'pelunasan','payment_gateway',?,'terverifikasi',?)", order, total, "PO-" + order + "-" + token);
+		return order;
 	}
 
 	private MockHttpSession session(long id) {
@@ -107,11 +110,11 @@ class VendorPayoutDatabaseTest {
 		jdbc.update("insert into pengembalian_dana(order_id, klaim_id, jumlah) values (?, ?, 100000)", compensated, claimE);
 		long tooMuch = order("selesai", 1000, "G"); // bersih <= 0: tidak ada yang bisa dicairkan
 		long claimG = jdbc.queryForObject("insert into klaim(order_id, user_id, alasan, status) values (?, ?, 'Rusak', 'disetujui') returning klaim_id", Long.class, tooMuch, customer);
-		jdbc.update("insert into pengembalian_dana(order_id, klaim_id, jumlah) values (?, ?, 950)", tooMuch, claimG);
+		jdbc.update("insert into pengembalian_dana(order_id, klaim_id, jumlah) values (?, ?, 1000)", tooMuch, claimG);
 
 		mvc.perform(get("/api/vendor/payouts").session(session(vendorUser))).andExpect(status().isOk())
-				.andExpect(jsonPath("$.available.gross").value(1900000)).andExpect(jsonPath("$.available.fee").value(114000)) // 6%
-				.andExpect(jsonPath("$.available.claimDeduction").value(100000)).andExpect(jsonPath("$.available.amount").value(1686000))
+				.andExpect(jsonPath("$.available.gross").value(1900000)).andExpect(jsonPath("$.available.fee").value(108000)) // 6% dari sewa dikurangi pengembalian
+				.andExpect(jsonPath("$.available.claimDeduction").value(100000)).andExpect(jsonPath("$.available.amount").value(1692000))
 				.andExpect(jsonPath("$.available.orders").value(3)).andExpect(jsonPath("$.available.feePercent").value(6.0))
 				.andExpect(jsonPath("$.account.account").isEmpty());
 		request(vendorUser, false).andExpect(status().isForbidden());
@@ -120,7 +123,7 @@ class VendorPayoutDatabaseTest {
 		assertEquals(0, jdbc.queryForObject("select count(*) from pencairan_dana where vendor_id=?", Integer.class, vendorId));
 
 		saveAccount(vendorUser, true, ACCOUNT).andExpect(status().isOk());
-		request(vendorUser, true).andExpect(status().isOk()).andExpect(jsonPath("$.orders").value(3)).andExpect(jsonPath("$.amount").value(1686000));
+		request(vendorUser, true).andExpect(status().isOk()).andExpect(jsonPath("$.orders").value(3)).andExpect(jsonPath("$.amount").value(1692000));
 		var row = jdbc.queryForMap("select status,bank,nomor_rekening,nama_pemilik,jumlah,jumlah_kotor,biaya_platform,persen_biaya,potongan_klaim from pencairan_dana where order_id=?", done);
 		assertEquals("menunggu", row.get("status"));
 		assertEquals(940000L, ((Number) row.get("jumlah")).longValue()); // 1.000.000 - 6%
@@ -128,7 +131,7 @@ class VendorPayoutDatabaseTest {
 		assertEquals(60000L, ((Number) row.get("biaya_platform")).longValue());
 		assertEquals(6.0, ((Number) row.get("persen_biaya")).doubleValue());
 		var cut = jdbc.queryForMap("select jumlah,biaya_platform,potongan_klaim from pencairan_dana where order_id=?", compensated);
-		assertEquals(276000L, ((Number) cut.get("jumlah")).longValue()); // 400.000 - 24.000 - 100.000
+		assertEquals(282000L, ((Number) cut.get("jumlah")).longValue()); // (400.000 - 100.000) - 6%
 		assertEquals(100000L, ((Number) cut.get("potongan_klaim")).longValue());
 		assertEquals(0, jdbc.queryForObject("select count(*) from pencairan_dana where order_id=?", Integer.class, tooMuch));
 		assertEquals("BCA", row.get("bank"));

@@ -31,7 +31,7 @@ class CustomerNotificationDatabaseTest {
         jdbc=new JdbcTemplate(source); token=UUID.randomUUID().toString();
         mvc=MockMvcBuilders.webAppContextSetup(context).defaultRequest(get("/").with(r->{r.setRemoteAddr(token);return r;})).build();
         customer=-Math.max(10L,(UUID.randomUUID().getMostSignificantBits() & Long.MAX_VALUE)-10); other=customer+1; vendorUser=customer+2; admin=customer+3;
-        for(long id:new long[]{customer,other,vendorUser,admin}) jdbc.update("insert into pengguna(user_id,nama,email,password_hash,role) overriding system value values (?,'Customer notification fixture',?,'fixture',?)",
+        for(long id:new long[]{customer,other,vendorUser,admin}) jdbc.update("insert into pengguna(user_id,nama,email,password_hash,role,status_verifikasi) overriding system value values (?,'Customer notification fixture',?,'fixture',?,'terverifikasi')",
             id,"cnotif-"+id+"-"+token+"@example.test",id==vendorUser?"vendor":id==admin?"admin":"customer");
         vendor=jdbc.queryForObject("insert into vendor(user_id,nama_vendor) values (?,'Notification fixture vendor') returning vendor_id",Long.class,vendorUser);
     }
@@ -60,9 +60,18 @@ class CustomerNotificationDatabaseTest {
         list(Long.MAX_VALUE).andExpect(status().isUnauthorized());
     }
     @Test void emptyAccountHasNoInventedKycOrUnreadCount() throws Exception {
-        jdbc.update("update pengguna set status_verifikasi='terverifikasi' where user_id=?",customer);
         list(customer).andExpect(status().isOk()).andExpect(header().string("Cache-Control","no-store"))
             .andExpect(jsonPath("$.items").isEmpty()).andExpect(jsonPath("$.unread").value(0)).andExpect(jsonPath("$.total").value(0));
+    }
+    @Test void unverifiedCustomerGetsOwnKycReminderUntilVerificationStarts() throws Exception {
+        jdbc.update("update pengguna set status_verifikasi='belum_diverifikasi' where user_id=?",customer);
+        list(customer).andExpect(jsonPath("$.total").value(1)).andExpect(jsonPath("$.unread").value(1))
+            .andExpect(jsonPath("$.items[0].id").value("c:k:0:none")).andExpect(jsonPath("$.items[0].kind").value("kyc"));
+        assertEquals(0,service.list(other).total());
+        read(customer,ids("c:k:0:none")).andExpect(status().isNoContent());
+        list(customer).andExpect(jsonPath("$.items[0].read").value(true)).andExpect(jsonPath("$.unread").value(0));
+        jdbc.update("update pengguna set status_verifikasi='menunggu' where user_id=?",customer);
+        assertEquals(0,service.list(customer).total());
     }
     @Test void onlyOwnersOrdersKycPaymentsRefundsAndClaimsAreIncluded() throws Exception {
         long own=order(customer,"dikonfirmasi"); order(other,"berjalan");

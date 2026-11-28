@@ -54,7 +54,7 @@ export default function AdminWorkspace() {
   const viewData = { ...data, categories: data.categories };
   const resourceConfig = Object.fromEntries(Object.entries(adminResources).map(([key, resource]) => [key, { ...resource, icon: resourceIcons[key] }]));
 
-  useEffect(() => { const previous = document.title; document.title = `${title} — Admin Vendoria`; window.scrollTo(0, 0); return () => { document.title = previous; }; }, [location.pathname, title]);
+  useEffect(() => { const previous = document.title; document.title = `${title} | Admin Vendoria`; window.scrollTo(0, 0); return () => { document.title = previous; }; }, [location.pathname, title]);
   useEffect(() => () => { clearTimeout(timer.current); objectUrls.current.forEach(url => URL.revokeObjectURL(url)); }, []);
 
   const notify = message => { setToast(message); clearTimeout(timer.current); timer.current = setTimeout(() => setToast(''), 4500); };

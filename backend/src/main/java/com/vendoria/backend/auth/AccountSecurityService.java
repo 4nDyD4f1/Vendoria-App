@@ -40,7 +40,7 @@ class AccountSecurityService {
 				throttle.recordFailure(user.getEmail());
 				throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Password saat ini salah");
 			}
-			changePassword(user, encoder.encode(req.password()));
+			changePassword(session, user, encoder.encode(req.password()));
 			throttle.recordSuccess(user.getEmail());
 			return SecurityResponse.from(current(user.getUserId()));
 		}
@@ -76,7 +76,7 @@ class AccountSecurityService {
 			return new VerifiedResponse(establishSession(user, request), destination(user.getRole()));
 		}
 		if (!Objects.equals(userId(session), user.getUserId())) throw EmailOtpService.invalid();
-		if (challenge.purpose() == Purpose.PASSWORD) changePassword(user, challenge.newPasswordHash());
+		if (challenge.purpose() == Purpose.PASSWORD) changePassword(session, user, challenge.newPasswordHash());
 		else if (repo.updateTwoFactor(user.getUserId(), user.getPasswordHash(), AuthService.normalize(user.getEmail()),
 				challenge.purpose() == Purpose.ENABLE) != 1) throw EmailOtpService.invalid();
 		return new VerifiedResponse(null, "vendor".equals(user.getRole()) ? "/vendor/keamanan" : "/akun/keamanan");
@@ -88,11 +88,13 @@ class AccountSecurityService {
 		HttpSession session = request.getSession(true);
 		session.setMaxInactiveInterval(30 * 24 * 60 * 60);
 		session.setAttribute(AuthController.SESSION_USER_ID, user.getUserId());
+		SessionPasswordGuard.stamp(session, user.getPasswordHash());
 		return AuthDtos.UserResponse.from(user).withLoginEvent(AuthController.loginEvent(session));
 	}
 
-	private void changePassword(Pengguna user, String hash) {
+	private void changePassword(HttpSession session, Pengguna user, String hash) {
 		if (repo.changeOwnPassword(user.getUserId(), user.getPasswordHash(), hash) != 1) throw EmailOtpService.invalid();
+		SessionPasswordGuard.stamp(session, hash); // sesi yang mengganti password tetap masuk
 	}
 
 	private Pengguna current(Long id) {

@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { Link, useLocation, useSearchParams } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, CalendarDays, ChevronRight, LoaderCircle, MapPin, Package, RefreshCw, Search, ShieldCheck, Star } from 'lucide-react';
 import { useAuth } from '../../AuthContext';
+import OrderReport from './OrderReport';
 import { api, apiUrl } from '../../api';
 import './live-orders.css';
 
@@ -48,7 +49,7 @@ function useOrderResource(url, owner) {
     accept: data => { ++control.current.sequence; setState({ url, owner, data, error: '', status: 0, loading: false }); } };
 }
 
-function Status({ value }) { return <span className={`co-status co-status-${value}`}>{label(value)}</span>; }
+function Status({ value, awaiting }) { return <span className={`co-status co-status-${awaiting ? 'menunggu_pembayaran' : value}`}>{awaiting ? 'Menunggu pelunasan' : label(value)}</span>; }
 function LoadState({ resource, children }) {
   return <>{resource.error && <div className="co-error" role="alert"><p>{resource.error}</p>
     {[401, 403].includes(resource.status) ? <Link to="/login">Masuk kembali</Link> : <button type="button" onClick={resource.status === 409 ? () => window.location.reload() : resource.refresh}>{resource.status === 409 ? 'Muat ulang halaman' : 'Coba lagi'}</button>}</div>}
@@ -63,6 +64,7 @@ function Breadcrumb({ detail = false }) {
   return <nav className="co-breadcrumb" aria-label="Breadcrumb"><Link to="/">Beranda</Link><ChevronRight size={13} />{detail ? <><Link to="/pesanan">Pesanan Saya</Link><ChevronRight size={13} /><span>Detail pesanan</span></> : <span>Pesanan Saya</span>}</nav>;
 }
 function PayLink({ order }) {
+  if (order.awaitingSettlement) return <Link className="co-primary" to={`/keranjang?orders=${encodeURIComponent(order.orderId)}`}>Bayar pelunasan <ArrowRight size={15} /></Link>;
   return order.status === 'menunggu_pembayaran' ? <Link className="co-primary" to={`/keranjang?orders=${encodeURIComponent(order.orderId)}`}>Bayar deposit <ArrowRight size={15} /></Link> : null;
 }
 
@@ -89,7 +91,7 @@ function OrdersList({ owner }) {
     <LoadState resource={resource}>{data && <>
       <div className="co-summary"><p><strong>{data.total}</strong> pesanan{query ? ` cocok dengan “${query}”` : ''}</p><p><ShieldCheck size={17} />Deposit terverifikasi pesanan aktif <strong>{money(data.escrow)}</strong></p></div>
       {data.items.length ? <div className="co-list">{data.items.map(order => <article className="co-card" key={order.orderId}>
-        <div className="co-card-top"><div><Link className="co-code" to={detailPath(order)}>#{order.code}</Link><p className="co-muted">Dipesan {date(order.orderedAt, true)}</p></div><Status value={order.status} /></div>
+        <div className="co-card-top"><div><Link className="co-code" to={detailPath(order)}>#{order.code}</Link><p className="co-muted">Dipesan {date(order.orderedAt, true)}</p></div><Status value={order.status} awaiting={order.awaitingSettlement} /></div>
         <div className="co-card-body"><div className="co-package"><Package size={25} /></div><div className="co-order-info"><h2>{order.equipmentSummary || 'Rincian alat belum tersedia'}</h2><p>{order.vendorName}{order.vendorCity ? ` · ${order.vendorCity}` : ''}</p><p><CalendarDays size={15} />{date(order.startDate)} – {date(order.endDate)}</p>{order.location && <p><MapPin size={15} />{order.location}</p>}</div><dl className="co-card-totals"><div><dt>Total sewa</dt><dd>{money(order.totalRental)}</dd></div><div><dt>Deposit</dt><dd>{money(order.totalDp)}</dd></div><div><dt>Pembayaran terverifikasi</dt><dd>{money(order.paid)}</dd></div></dl></div>
         <div className="co-card-actions">{order.hasOpenClaim && <span className="co-muted">Klaim sedang diproses</span>}<Link className="co-secondary" to={detailPath(order)}>Lihat detail <ChevronRight size={15} /></Link><PayLink order={order} />{order.canReview && <Link className="co-secondary" to={`${detailPath(order)}/pengembalian`}>Beri ulasan <Star size={15} /></Link>}</div>
       </article>)}</div> : <section className="co-empty" role="status"><Package size={36} /><h2>{query || status !== 'semua' ? 'Tidak ada pesanan yang sesuai' : 'Belum ada pesanan'}</h2><p>{query || status !== 'semua' ? 'Coba kata kunci atau status yang berbeda.' : 'Pilih alat di katalog untuk memulai penyewaan Anda.'}</p>{query || status !== 'semua' ? <button className="co-secondary" type="button" onClick={() => { setDraft({ query: '', value: '' }); setParams({}); }}>Bersihkan filter</button> : <Link className="co-primary" to="/catalog">Cari alat</Link>}</section>}
@@ -114,7 +116,10 @@ function ReviewForm({ order, owner, onSaved }) {
     } catch (error) { if (mounted.current) setState({ busy: false, error: error.message }); }
     finally { pending.current = false; }
   }}><h2>Beri ulasan penyewaan</h2><p className="co-muted">Ulasan dapat dikirim satu kali setelah pesanan selesai.</p>
-    <label>Penilaian<select value={rating} disabled={state.busy} onChange={event => setRating(event.target.value)}>{[5, 4, 3, 2, 1].map(value => <option key={value} value={value}>{value} bintang</option>)}</select></label>
+    <fieldset className="co-stars" disabled={state.busy}><legend>Penilaian</legend><div>{[1, 2, 3, 4, 5].map(value => <label key={value} title={`${value} bintang`}>
+      <input type="radio" name="rating" value={value} aria-label={`${value} bintang`} checked={Number(rating) === value} onChange={() => setRating(String(value))} />
+      <Star size={20 + value * 5} className={value <= Number(rating) ? 'is-on' : undefined} aria-hidden="true" />
+    </label>)}</div></fieldset>
     <label>Pengalaman Anda (opsional)<textarea rows={4} maxLength={1000} value={comment} disabled={state.busy} onChange={event => setComment(event.target.value)} /></label>
     {state.error && <p className="co-error" role="alert">{state.error}</p>}<button className="co-primary" type="submit" disabled={state.busy}>{state.busy && <LoaderCircle size={16} className="co-spinner" />}Kirim ulasan</button>
   </form>;
@@ -137,7 +142,7 @@ function OrderDetail({ owner, reference, mode }) {
   const order = data?.order;
   const [notice, setNotice] = useState('');
   return <div className="co-page"><Breadcrumb detail /><Link className="co-back" to="/pesanan"><ArrowLeft size={16} />Kembali ke pesanan</Link>
-    <header className="co-heading"><div><p className="co-eyebrow">PENYEWAAN ANDA</p><h1>{mode === 'order-handover' ? 'Serah Terima Pesanan' : mode === 'order-return' ? 'Pengembalian & Ulasan' : 'Detail Pesanan'}</h1><p>{order ? `#${order.code}` : 'Rincian penyewaan Anda.'}</p></div>{order && <Status value={order.status} />}</header>
+    <header className="co-heading"><div><p className="co-eyebrow">PENYEWAAN ANDA</p><h1>{mode === 'order-handover' ? 'Serah Terima Pesanan' : mode === 'order-return' ? 'Pengembalian & Ulasan' : 'Detail Pesanan'}</h1><p>{order ? `#${order.code}` : 'Rincian penyewaan Anda.'}</p></div>{order && <Status value={order.status} awaiting={order.awaitingSettlement} />}</header>
     <LoadState resource={resource}>{data && <>
       <nav className="co-tabs" aria-label="Bagian detail pesanan">{[['order-detail', '', 'Detail'], ['order-handover', '/serah-terima', 'Serah terima'], ['order-return', '/pengembalian', 'Pengembalian & ulasan']].map(([key, suffix, title]) => <Link key={key} to={`${detailPath(order)}${suffix}`} aria-current={mode === key ? 'page' : undefined}>{title}</Link>)}</nav>
       <p className="co-notice" role="status">{notice}</p>
@@ -151,8 +156,9 @@ function OrderDetail({ owner, reference, mode }) {
         {data.claims.length > 0 && <section className="co-card"><h2>Klaim</h2><ul className="co-records">{data.claims.map(claim => <li key={claim.id}><div><strong>KLM-{claim.id} · {label(claim.status)}</strong><p className="co-note">{claim.reason}</p><p>{date(claim.filedAt, true)}</p></div></li>)}</ul></section>}
         {data.refunds.length > 0 && <section className="co-card"><h2>Pengembalian dana</h2><ul className="co-records">{data.refunds.map(refund => <li key={refund.id}><div><strong>{money(refund.amount)} · {label(refund.status)}</strong><p className="co-note">{refund.reason}</p><p>{date(refund.refundedAt || refund.requestedAt, true)}</p></div></li>)}</ul></section>}
         {data.review ? <section className="co-card"><h2>Ulasan Anda</h2><p className="co-review-rating"><Star size={18} />{data.review.rating} / 5</p>{data.review.comment && <p className="co-note">{data.review.comment}</p>}<p className="co-muted">{date(data.review.at, true)}</p></section> : order.canReview && <section className="co-card"><ReviewForm owner={owner} order={order} onSaved={saved => { resource.accept(saved); setNotice('Ulasan berhasil disimpan.'); }} /></section>}
-      </div><aside className="co-card co-payment-summary"><h2>Ringkasan biaya</h2><dl className="co-details"><div><dt>Total sewa</dt><dd>{money(order.totalRental)}</dd></div><div><dt>Deposit yang ditagihkan</dt><dd>{money(order.totalDp)}</dd></div><div><dt>Pembayaran terverifikasi</dt><dd>{money(order.paid)}</dd></div></dl><PayLink order={order} />
+      </div><aside className="co-card co-payment-summary"><h2>Ringkasan biaya</h2><dl className="co-details"><div><dt>Total sewa</dt><dd>{money(order.totalRental)}</dd></div><div><dt>Deposit jaminan</dt><dd>{money(order.totalDp)}</dd></div><div><dt>Pembayaran terverifikasi</dt><dd>{money(order.paid)}</dd></div></dl><p className="co-muted">Deposit tidak mengurangi biaya sewa. Dikembalikan setelah alat diperiksa tanpa masalah.</p><PayLink order={order} />
         {data.vendorPhone && <a className="co-secondary" href={`tel:${data.vendorPhone.replace(/[^+0-9]/g, '')}`}>Hubungi vendor</a>}
+        {['dikonfirmasi', 'berjalan', 'dikembalikan'].includes(order.status) && !order.awaitingSettlement && <Link className="co-secondary" to={`${detailPath(order)}/lapor`}>Laporkan Pesanan</Link>}
         {order.status === 'menunggu_konfirmasi' && <p className="co-muted">Menunggu konfirmasi pesanan oleh vendor.</p>}
       </aside></div>
     </>}</LoadState>
@@ -165,5 +171,6 @@ export default function LiveOrders({ mode }) {
   const owner = String(user.user_id);
   let reference;
   try { reference = decodeURIComponent(pathname.split('/')[2] || ''); } catch { reference = ''; }
+  if (mode !== 'orders' && pathname.split('/')[3] === 'lapor') return <OrderReport key={`${owner}:${reference}`} reference={reference} />;
   return mode === 'orders' ? <OrdersList key={owner} owner={owner} /> : <OrderDetail key={`${owner}:${reference}:${mode}`} owner={owner} reference={reference} mode={mode} />;
 }

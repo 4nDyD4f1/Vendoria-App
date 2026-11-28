@@ -1,5 +1,6 @@
 package com.vendoria.backend.auth;
 
+import java.math.BigDecimal;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -27,7 +28,8 @@ class VendorHandoversService {
           (select count(*) from detail_item d where d.order_id=p.order_id) as items_count,
           (select count(*) from cek_barang b where b.order_id=p.order_id and b.tipe_inspeksi='serah_terima') as handover_photos,
           (select count(*) from cek_barang b where b.order_id=p.order_id and b.tipe_inspeksi='pengembalian') as return_photos,
-          exists(select 1 from klaim k where k.order_id=p.order_id and k.status in ('diajukan','ditinjau')) as has_open_claim
+          exists(select 1 from klaim k where k.order_id=p.order_id and k.status in ('diajukan','ditinjau')) as has_open_claim,
+        """ + "  " + OrderMoney.AWAITING + " as awaiting_settlement,\n  " + OrderMoney.OPEN_REPORT + " as report_open\n" + """
         from pemesanan p join pengguna c on c.user_id=p.user_id
         """;
     private final JdbcTemplate jdbc;
@@ -95,6 +97,7 @@ class VendorHandoversService {
         String status = owner(actorId, orderId, true);
         expected(status, input.expectedStatus());
         if (!HandoverEvidencePolicy.editable(input.type(), status)) throw conflict("Bukti tahap ini sudah dikunci atau belum dapat diunggah");
+        if ("serah_terima".equals(input.type())) OrderMoney.requireSettled(jdbc, orderId);
         if (!Boolean.TRUE.equals(jdbc.queryForObject("select exists(select 1 from detail_item where order_id=? and item_id=?)", Boolean.class, orderId, input.itemId())))
             throw bad("Alat tidak termasuk pesanan ini");
         var existing = jdbc.queryForList("select foto_kondisi from cek_barang where order_id=? and item_id=? and tipe_inspeksi=?", String.class, orderId, input.itemId(), input.type());
@@ -131,6 +134,23 @@ class VendorHandoversService {
             @Override public void afterCommit() { clean(locator); }
         });
         return detail(orderId);
+    }
+
+    /** Laporan kerusakan: admin yang memutuskan apakah deposit jaminan hangus untuk vendor. */
+    @Transactional
+    Detail reportDamage(Long actorId, long orderId, Damage input) {
+        String status = owner(actorId, orderId, true);
+        if (!"dikembalikan".equals(status)) throw conflict("Kerusakan hanya dapat dilaporkan saat memeriksa pengembalian");
+        if (Boolean.TRUE.equals(jdbc.queryForObject("select exists(select 1 from klaim where order_id=? and jenis='kerusakan')", Boolean.class, orderId)))
+            throw conflict("Pesanan ini sudah memiliki laporan klaim");
+        if (heldDeposit(orderId).signum() <= 0) throw conflict("Pesanan ini tidak punya deposit jaminan");
+        // klaim.user_id = customer pemilik pesanan (dipakai daftar klaim sebagai nama pelanggan)
+        jdbc.update("insert into klaim(order_id,user_id,alasan) select order_id,user_id,? from pemesanan where order_id=?", input.reason(), orderId);
+        return detail(orderId);
+    }
+
+    private BigDecimal heldDeposit(long orderId) {
+        return jdbc.queryForObject("select " + OrderMoney.HELD_DEPOSIT + " from pemesanan p where p.order_id=?", BigDecimal.class, orderId);
     }
 
     @Transactional
@@ -177,7 +197,8 @@ class VendorHandoversService {
             where r.order_id=? order by r.diubah_pada,r.riwayat_id
             """, (rs, n) -> new VendorOrdersDtos.StatusHistory(rs.getLong("riwayat_id"), rs.getString("status_sebelumnya"),
                 rs.getString("status_baru"), rs.getString("examiner"), rs.getString("catatan"), rs.getTimestamp("diubah_pada").toInstant()), orderId);
-        return new Detail(order, items, evidence, history, policy.complete(orderId, "serah_terima"), policy.complete(orderId, "pengembalian"), HandoverEvidencePolicy.PHOTOS_PER_ITEM, hasClaims(orderId));
+        return new Detail(order, items, evidence, history, policy.complete(orderId, "serah_terima"), policy.complete(orderId, "pengembalian"), HandoverEvidencePolicy.PHOTOS_PER_ITEM, hasClaims(orderId),
+            heldDeposit(orderId), jdbc.queryForList("select status from klaim where order_id=? and jenis='kerusakan' order by diajukan_pada desc,klaim_id desc limit 1", String.class, orderId).stream().findFirst().orElse(null));
     }
 
     private boolean hasClaims(long orderId) {
@@ -216,7 +237,8 @@ class VendorHandoversService {
     private static Summary summary(ResultSet rs, int n) throws SQLException {
         return new Summary(rs.getLong("order_id"), rs.getString("kode_pemesanan"), rs.getString("customer"),
             rs.getDate("tanggal_mulai_sewa").toLocalDate(), rs.getDate("tanggal_selesai_sewa").toLocalDate(), rs.getString("lokasi_acara"),
-            rs.getString("status_pesanan"), rs.getInt("items_count"), rs.getInt("handover_photos"), rs.getInt("return_photos"), rs.getBoolean("has_open_claim"));
+            rs.getString("status_pesanan"), rs.getInt("items_count"), rs.getInt("handover_photos"), rs.getInt("return_photos"), rs.getBoolean("has_open_claim"),
+            rs.getBoolean("awaiting_settlement"), rs.getBoolean("report_open"));
     }
     private static void expected(String status, String expected) {
         if (!status.equals(expected)) throw conflict("Status pesanan sudah berubah. Muat ulang sebelum melanjutkan");

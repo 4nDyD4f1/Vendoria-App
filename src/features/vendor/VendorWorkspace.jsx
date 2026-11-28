@@ -97,7 +97,7 @@ export default function VendorWorkspace() {
   const unread = notifications.filter(item => !item.read).length;
   const title = titles[page] || (['notifikasi', 'notifikasi-menu'].includes(page) ? 'Notifikasi' : 'Halaman vendor');
 
-  useEffect(() => { const previousTitle = document.title; document.title = `${title} — Vendor Vendoria`; window.scrollTo(0, 0); return () => { document.title = previousTitle; }; }, [location.pathname, title]);
+  useEffect(() => { const previousTitle = document.title; document.title = `${title} | Vendor Vendoria`; window.scrollTo(0, 0); return () => { document.title = previousTitle; }; }, [location.pathname, title]);
   useEffect(() => () => { clearTimeout(timer.current); objectUrls.current.forEach(url => URL.revokeObjectURL(url)); }, []);
 
   const notify = message => { setToast(message); clearTimeout(timer.current); timer.current = setTimeout(() => setToast(''), 4500); };

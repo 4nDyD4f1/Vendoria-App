@@ -22,6 +22,7 @@ import { accountTabs } from './accountDesign';
 import UserKycPage from '../kyc/UserKycPage';
 import RequireAuth from '../../components/RequireAuth';
 import LiveCatalog from './LiveCatalog';
+import LiveProduct from './LiveProduct';
 import LiveCart from './LiveCart';
 import LivePayment from './LivePayment';
 import LiveBooking from './LiveBooking';
@@ -34,8 +35,12 @@ function loadDesign(nodeId) {
   if (!loaded.has(nodeId)) loaded.set(nodeId, loaders[`./designs/${nodeId.replace(':', '-')}.json`]());
   return loaded.get(nodeId);
 }
-function ScreenContent({ screen, preview, initialRentalTab, initialAccountTab, initialAccountModal }) {
+function DesignScreen({ screen }) {
+  return <DesignNode node={use(loadDesign(screen.nodeId))} />;
+}
+function ScreenContent({ screen, preview, initialRentalTab, initialAccountTab, initialAccountModal, productId: id }) {
   if (screen.key === 'catalog' && !preview) return <LiveCatalog loadDesign={loadDesign} />;
+  if (screen.key.startsWith('product') && !preview) return <LiveProduct key={id} id={id} tab={screen.key} fallback={<DesignScreen screen={screen} />} />;
   if (['kyc', 'kyc-pending', 'kyc-verified', 'kyc-rejected'].includes(screen.key) && !preview) return <RequireAuth><UserKycPage /></RequireAuth>;
   if (screen.key === 'account-profile' && !preview) return <AccountTabs loadDesign={loadDesign} initialTab={initialAccountTab} initialModal={initialAccountModal} />;
   if (screen.key === 'rental-guide' && !preview) return <RentalGuideTabs loadDesign={loadDesign} initialTab={initialRentalTab} />;
@@ -45,8 +50,7 @@ function ScreenContent({ screen, preview, initialRentalTab, initialAccountTab, i
   if (['orders', 'order-detail', 'order-handover', 'order-return'].includes(screen.key) && !preview) return <RequireAuth role="customer"><LiveOrders mode={screen.key} /></RequireAuth>;
   if (['wishlist', 'wishlist-empty'].includes(screen.key) && !preview) return <RequireAuth role="customer"><LiveWishlist /></RequireAuth>;
   if (screen.key === 'wishlist' && preview) return <PreviewWishlist loadDesign={loadDesign} />;
-  const tree = use(loadDesign(screen.nodeId));
-  return <DesignNode node={tree} />;
+  return <DesignScreen screen={screen} />;
 }
 function normalized(value) { return value.toLowerCase().replace(/\([^)]*\)/g, '').trim(); }
 function productId(ancestors) {
@@ -81,7 +85,7 @@ export default function InterfacePage() {
   const notificationTimer = useRef(null);
   const objectUrls = useRef([]);
   const contentRef = useRef(null);
-  const lastScreen = useRef(screen.key);
+  const lastScreen = useRef({ key: screen.key, path: location.pathname });
   const [messages, setMessages] = useState([]);
   const [faqExpanded, setFaqExpanded] = useState({});
   const currentProduct = products.find(p => String(p.id) === location.pathname.split('/')[2]);
@@ -90,16 +94,19 @@ export default function InterfacePage() {
 
   useEffect(() => {
     const previousTitle = document.title;
-    document.title = `${screen.title} — Vendoria`;
-    if (lastScreen.current !== screen.key) {
+    document.title = `${screen.title} | Vendoria`;
+    const previous = lastScreen.current;
+    if (previous.key !== screen.key) {
       setFilter({});
       setSelected({});
       setDialog(null);
-      lastScreen.current = screen.key;
-      if (!/product-|account-|payment-|rental-|kyc/.test(screen.key)) window.scrollTo(0, 0);
     }
+    // Sibling tabs of one area keep the reader's place; every other new address starts at the top.
+    const area = key => /^(product|account|payment|rental|kyc)(-|$)/.exec(key)?.[1];
+    if (previous.path !== location.pathname && !(area(screen.key) && area(screen.key) === area(previous.key))) window.scrollTo(0, 0);
+    lastScreen.current = { key: screen.key, path: location.pathname };
     return () => { document.title = previousTitle; };
-  }, [screen.key, screen.title]);
+  }, [screen.key, screen.title, location.pathname]);
   useEffect(() => () => {
     clearTimeout(notificationTimer.current);
     objectUrls.current.forEach(url => URL.revokeObjectURL(url));
@@ -159,7 +166,7 @@ export default function InterfacePage() {
       'lihat profil vendor': '/vendor/3', 'kontak vendor': '/vendor/3/kontak', 'hubungi vendor': '/vendor/3/kontak', 'hubungi pic vendor': '/vendor/3/kontak',
       'sewa sekarang': '/keranjang', 'sewa sekaligus': '/keranjang', 'pindahkan semua ke keranjang': '/keranjang', wishlist: '/wishlist', 'buka wishlist': '/wishlist', 'mode kosong': '/wishlist/kosong', keranjang: '/keranjang',
       'virtual account': '/pembayaran/bank', 'qris dinamis': '/pembayaran/qris', 'e-wallet langsung': '/pembayaran/e-wallet', 'lihat pesanan saya': '/pesanan',
-      'simulasikan verifikasi berhasil': '/booking/terkonfirmasi', 'buka tiket mediasi': '/klaim/KLM-891', 'simulasikan klaim': '/klaim/ajukan',
+      'simulasikan verifikasi berhasil': '/booking/terkonfirmasi', 'buka tiket mediasi': '/klaim/KLM-891',
       'simulasikan disetujui': '/klaim/KLM-891/keputusan', 'simulasikan disetujui sebagian': '/klaim/KLM-891/keputusan', 'simulasikan ditolak': '/klaim/KLM-891/keputusan',
       'tambah alamat': '/akun/alamat/tambah', 'tambah rekening': '/akun/rekening/tambah', 'cek status rekening': '/akun/rekening',
       'lihat detail kyc': role === 'vendor' ? '/vendor/kyc' : '/kyc', profil: '/akun', 'pengaturan akun': role === 'vendor' ? '/vendor/pengaturan' : '/akun',
@@ -180,7 +187,6 @@ export default function InterfacePage() {
     if (/^lihat detail|^detail pesanan/.test(t)) return '/pesanan/VND-261011-8227';
     if (/^lihat bukti|^unggah foto serah|mulai masa sewa/.test(t)) return '/pesanan/VND-261011-8227/serah-terima';
     if (/^foto pengembalian|^unggah foto pengembalian|^tulis ulasan|^beri ulasan/.test(t)) return '/pesanan/VND-261011-8227/pengembalian';
-    if (/^ajukan klaim/.test(t)) return '/klaim/ajukan';
     if (t === 'edit' && role === 'admin') return screen.key.includes('categor') ? '/admin/kategori/tambah' : '/admin/katalog/1/edit';
     if (t === 'edit' && screen.key === 'account-address') return '/akun/alamat/tambah';
     if (/kembali ke pengaturan/.test(t)) return '/vendor/pengaturan';
@@ -363,7 +369,7 @@ export default function InterfacePage() {
     }}>
       {!screen.backoffice && <InterfaceHeader preview={preview} go={go} activeLabel={headerStates[screen.nodeId]?.active} cartCount={preview ? cart.length || headerStates[screen.nodeId]?.cart || 0 : liveCart.count} unread={Object.keys(read).length ? Math.max(0, (headerStates[screen.nodeId]?.unread || 15) - Object.keys(read).length) : headerStates[screen.nodeId]?.unread || 0} />}
       <main className={`design-surface ${screen.backoffice ? '' : 'customer-surface'}`}>
-        <Suspense fallback={<div className="px-10 py-20" role="status">Memuat halaman…</div>}><ScreenContent key={['rental-guide', 'account-profile'].includes(screen.key) && !preview ? location.key : stableKey} screen={screen} preview={preview} initialRentalTab={location.state?.rentalTab} initialAccountTab={location.state?.accountTab} initialAccountModal={location.state?.accountModal} /></Suspense>
+        <Suspense fallback={<div className="px-10 py-20" role="status">Memuat halaman…</div>}><ScreenContent key={['rental-guide', 'account-profile'].includes(screen.key) && !preview ? location.key : screen.key.startsWith('product') && !preview ? 'product' : stableKey} productId={location.pathname.split('/')[2]} screen={screen} preview={preview} initialRentalTab={location.state?.rentalTab} initialAccountTab={location.state?.accountTab} initialAccountModal={location.state?.accountModal} /></Suspense>
         {messages.length > 0 && <div className="mx-10 p-5 rounded-2xl border border-[#ede1d9] bg-white">{messages.map((message, index) => <p key={index} className="text-sm mb-2">{message}</p>)}</div>}
       </main>
       {!screen.backoffice && <DesignNode node={footer} />}

@@ -18,7 +18,7 @@ import org.springframework.web.server.ResponseStatusException;
 import com.vendoria.backend.auth.CustomerPaymentDtos.*;
 
 /**
- * /pembayaran/bank + /booking/terkonfirmasi: bayar deposit pesanan lewat Midtrans Snap.
+ * /pembayaran/bank + /booking/terkonfirmasi: bayar deposit (jaminan) lalu pelunasan sewa lewat Midtrans Snap.
  * Satu transaksi Midtrans (order_id = ref) membayar semua pesanan yang dipilih; tiap pesanan punya satu baris
  * pembayaran dengan referensi_eksternal = ref-orderId. Status dibaca dari API Midtrans, bukan dari klien/redirect.
  */
@@ -49,16 +49,16 @@ class CustomerPaymentService {
         CustomerGuard.lockVerified(jdbc, actorId);
         var orders = load(actorId, ids, true);
         if (orders.isEmpty() || !ids.isEmpty() && orders.size() != new HashSet<>(ids).size()) throw missing();
-        if (orders.stream().anyMatch(o -> !UNPAID.equals(o.status()))) throw conflict("Ada pesanan yang sudah dibayar atau tidak lagi menunggu pembayaran");
-        if (orders.stream().anyMatch(o -> o.deposit().signum() <= 0)) throw conflict("Pesanan tanpa deposit tidak dapat dibayar lewat gateway");
+        if (orders.stream().anyMatch(o -> o.kind() == null)) throw conflict("Ada pesanan yang sudah dibayar atau tidak lagi menunggu pembayaran");
+        if (orders.stream().anyMatch(o -> o.due().signum() <= 0)) throw conflict("Pesanan tanpa deposit tidak dapat dibayar lewat gateway");
 
         String ref = "VND-PAY-" + DateTimeFormatter.ofPattern("yyMMddHHmmss").format(LocalDateTime.now()) + "-" + (1000 + RANDOM.nextInt(9000));
         for (var o : orders) jdbc.update("""
-            insert into pembayaran(order_id,jenis,metode,jumlah,status,referensi_eksternal) values (?,'deposit','payment_gateway',?,'menunggu',?)
-            """, o.orderId(), o.deposit(), ref + "-" + o.orderId());
+            insert into pembayaran(order_id,jenis,metode,jumlah,status,referensi_eksternal) values (?,?,'payment_gateway',?,'menunggu',?)
+            """, o.orderId(), o.kind(), o.due(), ref + "-" + o.orderId());
 
         var user = jdbc.queryForMap("select nama,email from pengguna where user_id=?", actorId);
-        var items = orders.stream().map(o -> Map.<String, Object>of("id", o.code(), "price", rupiah(o.deposit()), "quantity", 1, "name", "Deposit " + o.code())).toList();
+        var items = orders.stream().map(o -> Map.<String, Object>of("id", o.code(), "price", rupiah(o.due()), "quantity", 1, "name", ("deposit".equals(o.kind()) ? "Deposit " : "Pelunasan ") + o.code())).toList();
         String back = frontendUrl + "/pembayaran/bank?orders=" + String.join(",", orders.stream().map(o -> String.valueOf(o.orderId())).toList());
         var body = new HashMap<>(Map.<String, Object>of(
             "transaction_details", Map.of("order_id", ref, "gross_amount", rupiah(due(orders))),
@@ -79,11 +79,11 @@ class CustomerPaymentService {
             """, Long.class, ref + "-%", actorId);
         if (ids.isEmpty()) throw missing();
         sync(ref);
-        var payments = jdbc.queryForList("select status,jumlah from pembayaran where referensi_eksternal like ?", ref + "-%");
+        var payments = jdbc.queryForList("select status,jumlah,jenis from pembayaran where referensi_eksternal like ?", ref + "-%");
         var states = payments.stream().map(r -> (String) r.get("status")).toList();
         String state = states.stream().allMatch("terverifikasi"::equals) ? "paid" : states.contains("menunggu") ? "pending" : "failed";
         BigDecimal amount = payments.stream().map(r -> (BigDecimal) r.get("jumlah")).reduce(BigDecimal.ZERO, BigDecimal::add);
-        return new Confirmation(ref, state, amount, load(actorId, ids, false));
+        return new Confirmation(ref, state, (String) payments.getFirst().get("jenis"), amount, load(actorId, ids, false));
     }
 
     /** Menyamakan baris pembayaran 'menunggu' milik ref dengan status di Midtrans. Aman dipanggil berulang / dari webhook publik. */
@@ -91,10 +91,14 @@ class CustomerPaymentService {
     void sync(String ref) {
         if (ref == null || !REF.matcher(ref).matches()) return;
         // Kunci dulu: return-URL dan webhook bisa datang bersamaan; yang kedua melihat baris sudah tak 'menunggu'.
-        var rows = jdbc.queryForList("select pembayaran_id,order_id,jumlah from pembayaran where referensi_eksternal like ? and status='menunggu' order by order_id for update", ref + "-%");
+        var rows = jdbc.queryForList("select pembayaran_id,order_id,jumlah,jenis from pembayaran where referensi_eksternal like ? and status='menunggu' order by order_id for update", ref + "-%");
         if (rows.isEmpty()) return;
         var s = midtrans.status(ref);
-        if (s == null) return;
+        if (s == null) {
+            // Belum pernah dibuka di Midtrans, dan halaman Snap hanya berlaku 60 menit: tak mungkin dibayar lagi.
+            jdbc.update("update pembayaran set status='gagal' where referensi_eksternal like ? and status='menunggu' and dibuat_pada<now()-interval '2 hours'", ref + "-%");
+            return;
+        }
         String ts = String.valueOf(s.get("transaction_status")), fraud = String.valueOf(s.get("fraud_status"));
         boolean paid = ts.equals("settlement") || ts.equals("capture") && (fraud.equals("null") || fraud.equals("accept"));
         boolean failed = Set.of("deny", "cancel", "expire", "failure").contains(ts);
@@ -102,12 +106,26 @@ class CustomerPaymentService {
             BigDecimal sum = rows.stream().map(r -> (BigDecimal) r.get("jumlah")).reduce(BigDecimal.ZERO, BigDecimal::add);
             if (new BigDecimal(String.valueOf(s.get("gross_amount"))).compareTo(sum) != 0) { log.warn("Nominal Midtrans {} tidak cocok dengan tagihan {}", ref, sum); return; }
             for (var r : rows) {
-                jdbc.update("update pembayaran set status='terverifikasi',dibayar_pada=now(),diverifikasi_pada=now() where pembayaran_id=?", r.get("pembayaran_id"));
-                if (jdbc.update("update pemesanan set status_pesanan='menunggu_konfirmasi' where order_id=? and status_pesanan=?", r.get("order_id"), UNPAID) > 0)
-                    jdbc.update("insert into riwayat_status_pesanan(order_id,status_sebelumnya,status_baru,catatan) values (?,?,'menunggu_konfirmasi','Deposit dibayar lewat Midtrans')", r.get("order_id"), UNPAID);
+                settle(r);
             }
         } else if (failed) {
             for (var r : rows) jdbc.update("update pembayaran set status='gagal' where pembayaran_id=?", r.get("pembayaran_id"));
+        }
+    }
+
+    private void settle(Map<String, Object> r) {
+        Object order = r.get("order_id"), payment = r.get("pembayaran_id"), kind = r.get("jenis");
+        String status = jdbc.queryForObject("select status_pesanan from pemesanan where order_id=? for update", String.class, order);
+        boolean duplicate = Boolean.TRUE.equals(jdbc.queryForObject(
+            "select exists(select 1 from pembayaran where order_id=? and jenis=? and status='terverifikasi')", Boolean.class, order, kind));
+        jdbc.update("update pembayaran set status='terverifikasi',dibayar_pada=now(),diverifikasi_pada=now() where pembayaran_id=?", payment);
+        // Uang yang terlanjur masuk untuk pesanan batal atau tagihan yang sudah lunas harus kembali ke customer.
+        if ("dibatalkan".equals(status) || duplicate) {
+            jdbc.update("insert into pengembalian_dana(order_id,pembayaran_id,jumlah,alasan) values (?,?,?,?)",
+                order, payment, r.get("jumlah"), duplicate ? "Pembayaran ganda" : "Pesanan sudah dibatalkan");
+        } else if ("deposit".equals(kind) && UNPAID.equals(status)) {
+            jdbc.update("update pemesanan set status_pesanan='menunggu_konfirmasi' where order_id=?", order);
+            jdbc.update("insert into riwayat_status_pesanan(order_id,status_sebelumnya,status_baru,catatan) values (?,?,'menunggu_konfirmasi','Deposit dibayar lewat Midtrans')", order, UNPAID);
         }
     }
 
@@ -116,13 +134,20 @@ class CustomerPaymentService {
         String where = ids.isEmpty() ? "and p.status_pesanan='" + UNPAID + "'" : "and p.order_id in (" + String.join(",", Collections.nCopies(ids.size(), "?")) + ")";
         var args = new ArrayList<Object>(); args.add(actorId); args.addAll(ids);
         return jdbc.query("""
-            select p.order_id,p.kode_pemesanan,v.nama_vendor,p.total_biaya_sewa,p.total_dp,p.status_pesanan
+            select p.order_id,p.kode_pemesanan,v.nama_vendor,p.total_biaya_sewa,p.total_dp,p.status_pesanan,
+              (select coalesce(sum(b.jumlah),0) from pembayaran b where b.order_id=p.order_id and b.jenis='pelunasan' and b.status='terverifikasi') as settled
             from pemesanan p join vendor v on v.vendor_id=p.vendor_id where p.user_id=?
             """ + where + " order by p.order_id" + (lock ? " for update of p" : ""),
-            (rs, n) -> new Order(rs.getLong(1), rs.getString(2), rs.getString(3), rs.getBigDecimal(4), rs.getBigDecimal(5), rs.getString(6)), args.toArray());
+            (rs, n) -> order(rs.getLong(1), rs.getString(2), rs.getString(3), rs.getBigDecimal(4), rs.getBigDecimal(5), rs.getString(6), rs.getBigDecimal(7)), args.toArray());
+    }
+    private static Order order(long id, String code, String vendor, BigDecimal total, BigDecimal deposit, String status, BigDecimal settled) {
+        BigDecimal remaining = total.subtract(settled).max(BigDecimal.ZERO);
+        String kind = UNPAID.equals(status) ? "deposit" : "dikonfirmasi".equals(status) && remaining.signum() > 0 ? "pelunasan" : null;
+        BigDecimal due = kind == null ? BigDecimal.ZERO : "deposit".equals(kind) ? deposit : remaining;
+        return new Order(id, code, vendor, total, deposit, status, kind, due);
     }
     private static BigDecimal due(List<Order> orders) {
-        return orders.stream().filter(o -> UNPAID.equals(o.status())).map(Order::deposit).reduce(BigDecimal.ZERO, BigDecimal::add);
+        return orders.stream().map(Order::due).reduce(BigDecimal.ZERO, BigDecimal::add);
     }
     private static long rupiah(BigDecimal v) { return v.setScale(0, RoundingMode.HALF_UP).longValue(); }
 

@@ -27,10 +27,10 @@ export default function VendorCatalogPage({ segments, onLoaded, notify, onUpload
       : field.key === 'status' ? { ...field, options: ['Aktif', 'Nonaktif', 'Arsip'] }
       : field.key === 'name' ? { ...field, maxLength: 180 }
       : field.key === 'stock' ? { ...field, max: 2147483647 }
-      : field.key === 'price' ? { ...field, decimal: true, step: .01, max: 999999999999.99 }
+      : field.key === 'price' ? { ...field, min: 1, decimal: true, step: .01, max: 999999999999.99 }
       : field.key === 'description' ? { ...field, maxLength: 10000 } : field).concat([
         { key: 'condition', label: 'Kondisi barang', type: 'textarea', optional: true, maxLength: 5000 },
-        { key: 'deposit', label: 'Minimal DP (Rp)', type: 'number', min: 0, max: 999999999999.99, step: .01, decimal: true, defaultValue: 0 },
+        { key: 'deposit', label: 'Deposit jaminan (Rp), ditagih maks. 60% biaya sewa', type: 'number', min: 1, max: 999999999999.99, step: .01, decimal: true },
       ]),
   } } }), [result.data?.categories]);
   const retry = () => { setResult({ data: null, error: '' }); const life = alive.current; getVendorCatalog().then(value => { if (!life.signal.aborted) commit(value); }).catch(error => { if (!life.signal.aborted) setResult({ data: null, error: error.message }); }); };

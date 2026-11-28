@@ -260,7 +260,7 @@ export default function VendorOrdersPage({ segments, onLoaded, notify }) {
                         {formatOrderDate(record.tanggal_mulai_sewa)} – {formatOrderDate(record.tanggal_selesai_sewa)}
                       </td>
                       <td className="v-number">{money(record.total_biaya_sewa)}</td>
-                      <td><OrderStatusBadge status={record.status_pesanan} /></td>
+                      <td><OrderStatusBadge status={record.status_pesanan} awaiting={record.awaiting_settlement} /></td>
                       <td>
                         <div className="v-row-actions vendor-orders-row-actions">
                           <Link

@@ -8,12 +8,13 @@ import jakarta.validation.constraints.Size;
 final class CustomerPaymentDtos {
     private CustomerPaymentDtos() {}
 
-    record Order(long orderId, String code, String vendorName, BigDecimal total, BigDecimal deposit, String status) {}
-    /** amountDue = jumlah deposit seluruh pesanan yang masih menunggu pembayaran. */
+    /** kind: deposit | pelunasan | null (tidak ada tagihan); due = nominal tagihan saat ini. */
+    record Order(long orderId, String code, String vendorName, BigDecimal total, BigDecimal deposit, String status, String kind, BigDecimal due) {}
+    /** amountDue = jumlah seluruh tagihan pesanan yang dipilih. */
     record Summary(List<Order> orders, BigDecimal amountDue) {}
-    /** orderIds kosong = semua pesanan customer yang masih menunggu pembayaran. */
+    /** orderIds kosong = semua pesanan customer yang masih menunggu deposit. */
     record PayRequest(@Size(max = 20) List<@Positive Long> orderIds) {}
     record Pay(String redirectUrl, String reference) {}
-    /** state: paid | pending | failed. */
-    record Confirmation(String reference, String state, BigDecimal amount, List<Order> orders) {}
+    /** state: paid | pending | failed; kind: deposit | pelunasan. */
+    record Confirmation(String reference, String state, String kind, BigDecimal amount, List<Order> orders) {}
 }

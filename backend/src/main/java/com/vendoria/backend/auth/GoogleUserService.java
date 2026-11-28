@@ -62,6 +62,9 @@ class GoogleUserService {
 			if (p.getGoogleSub() != null) {
 				throw new GoogleLoginException("akun_google_berbeda");
 			}
+			// Pendaftaran tidak memverifikasi email: password lama bisa milik orang lain yang mendaftar duluan memakai email ini.
+			// Admin tak pernah mendaftar sendiri, dan 2FA email sudah membuktikan kepemilikan, jadi keduanya dikecualikan.
+			if (!"admin".equals(p.getRole()) && !p.isTwoFactorEmail()) repo.retirePassword(p.getUserId(), unusableHash());
 			repo.linkGoogle(p.getUserId(), sub);
 			return p;
 		}
@@ -73,9 +76,13 @@ class GoogleUserService {
 		if (nama.length() > 120) {
 			nama = nama.substring(0, 120);
 		}
+		return repo.saveAndFlush(Pengguna.dariGoogle(nama, mail, unusableHash(), sub));
+	}
+
+	/** BCrypt dari rahasia acak: bukan password siapa pun. */
+	private String unusableHash() {
 		byte[] secret = new byte[32];
 		random.nextBytes(secret);
-		String unusableHash = encoder.encode(Base64.getEncoder().encodeToString(secret));
-		return repo.saveAndFlush(Pengguna.dariGoogle(nama, mail, unusableHash, sub));
+		return encoder.encode(Base64.getEncoder().encodeToString(secret));
 	}
 }

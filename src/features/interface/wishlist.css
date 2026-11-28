@@ -50,7 +50,6 @@
 .catalog-wishlist-button:disabled { opacity: .5; cursor: wait; }
 .catalog-wishlist-feedback { position: absolute; top: 44px; right: 0; width: 220px; max-width: calc(100vw - 48px); z-index: 5; padding: 10px 12px; border: 1px solid #eadbd8; border-radius: 10px; background: white; color: #6f6058; font-size: 11px; line-height: 1.7; box-shadow: 0 6px 20px #3a2a211a; }
 .catalog-wishlist-feedback.is-success { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
-.live-catalog-save { display: flex; align-items: center; gap: 10px; color: #6f6058; font-size: 12px; margin-top: 20px; }
 .wishlist-spinner { animation: wishlist-spin 1s linear infinite; }
 @keyframes wishlist-spin { to { transform: rotate(360deg); } }
 @media (prefers-reduced-motion: reduce) {
