@@ -5,6 +5,7 @@ import { useAuth } from '../../AuthContext';
 import { apiUrl } from '../../api';
 import { useWishlist } from './useWishlist';
 import './wishlist-page.css';
+import Skeleton from '../../components/Skeleton';
 
 const money = value => `Rp${Number(value).toLocaleString('id-ID')}`;
 function SavedPhoto({ entry }) {
@@ -55,7 +56,7 @@ export default function LiveWishlist() {
       <div><span className="wishlist-page-eyebrow"><Heart size={14} /> PILIHAN FAVORITMU</span><h1>Wishlist Alat Event <span>{wishlist.ready ? `${wishlist.items.length} alat` : '…'}</span></h1><p>Simpan alat favorit dan cek harga serta ketersediaannya sebelum merencanakan acara.</p></div>
       <Link className="wishlist-page-primary" to="/catalog">Jelajahi katalog <ArrowRight size={16} /></Link>
     </section>
-    {wishlist.loading ? <div className="wishlist-page-empty" role="status"><LoaderCircle className="wishlist-spinner" size={28} /><p>Memuat wishlist…</p></div> : <>
+    {wishlist.loading ? <Skeleton variant="cards" label="Memuat wishlist…" /> : <>
       {wishlist.error && <div className="wishlist-page-error" role="alert"><p>{wishlist.error}</p><button type="button" onClick={() => wishlist.accountChanged ? window.location.reload() : wishlist.refresh().catch(() => {})}>{wishlist.accountChanged ? 'Muat ulang halaman' : 'Muat ulang wishlist'}</button>{[401, 403].includes(wishlist.errorStatus) && <Link to="/login" state={{ message: 'Masuk kembali jika sesi akun Anda telah berakhir.' }}>Masuk kembali</Link>}</div>}
       <p className="wishlist-page-notice" role="status">{notice}</p>
       {wishlist.ready && wishlist.items.length > 0 && <>

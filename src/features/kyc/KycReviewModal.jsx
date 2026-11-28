@@ -3,6 +3,7 @@ import { createPortal } from 'react-dom';
 import { Check, X } from 'lucide-react';
 import { decideKyc, getKyc, kycStatus } from './kycApi';
 import PrivateKycImage from './PrivateKycImage';
+import Skeleton from '../../components/Skeleton';
 
 export default function KycReviewModal({ id, onClose, onDecided }) {
   const [detail, setDetail] = useState(null);
@@ -61,7 +62,7 @@ export default function KycReviewModal({ id, onClose, onDecided }) {
       <div className="v-modal-heading"><div><p className="v-eyebrow">PEMERIKSAAN IDENTITAS</p><h2 id="kyc-review-title">Pengajuan KYC-{id}</h2></div><button type="button" className="v-icon-button" aria-label="Tutup pemeriksaan KYC" onClick={onClose}><X size={20} /></button></div>
       {error && <p role="alert" className="kyc-error">{error}</p>}
       <div className="kyc-review-body">
-      {!detail ? !error && <p role="status">Memuat data pengajuan…</p> : <>
+      {!detail ? !error && <Skeleton variant="detail" label="Memuat data pengajuan…" /> : <>
         <div className="kyc-review-summary"><span className={`kyc-status kyc-status-${record.status}`}>{kycStatus[record.status]}</span><p>Diajukan {new Date(record.diajukan_pada).toLocaleString('id-ID')}</p></div>
         <dl className="kyc-details"><div><dt>Nama akun</dt><dd>{record.nama}</dd></div><div><dt>Jenis akun</dt><dd>{record.role === 'vendor' ? 'Vendor' : 'Customer'}</dd></div><div><dt>Email</dt><dd>{record.email}</dd></div><div><dt>Nomor WhatsApp</dt><dd>{record.no_telp || 'Belum diisi'}</dd></div>
           {identity && <><div><dt>Nama pada KTP</dt><dd>{identity.nama}</dd></div><div><dt>NIK</dt><dd>{identity.nik}</dd></div><div><dt>Tempat lahir</dt><dd>{identity.tempat_lahir}</dd></div><div><dt>Tanggal lahir</dt><dd>{identity.tanggal_lahir}</dd></div><div className="kyc-full-field"><dt>Alamat KTP</dt><dd>{identity.alamat}</dd></div></>}

@@ -11,13 +11,13 @@ export default function WorkspaceFooter() {
   return <footer className="w-footer">
     <div className="w-footer-grid">
       <div className="w-footer-brand">
-        <Link className="w-footer-logo" to="/admin" aria-label="Vendoria, ke dashboard admin"><img src="/assets/figma/admin-footer-logo.svg" alt="" /><span>Vendoria</span></Link>
+        <Link inert className="w-footer-logo" to="/admin" aria-label="Vendoria, ke dashboard admin"><img src="/assets/figma/admin-footer-logo.svg" alt="" /><span>Vendoria</span></Link>
         <p>Marketplace rental perlengkapan event terpercaya dengan jaminan inspeksi kondisi terverifikasi.</p>
         <span className="w-footer-pill"><ShieldCheck size={14} aria-hidden="true" />Kondisi terverifikasi & tepat waktu</span>
       </div>
-      {columns.map(([title, links]) => <nav key={title} aria-label={title}><h2>{title}</h2><ul>{links.map(([label, to]) => <li key={label}><Link to={to}>{label}</Link></li>)}</ul></nav>)}
+      {columns.map(([title, links]) => <nav key={title} aria-label={title}><h2>{title}</h2><ul>{links.map(([label, to]) => <li key={label}><Link inert to={to}>{label}</Link></li>)}</ul></nav>)}
       <div><h2>Kontak Operasional</h2><p>Jl. Pajajaran No. 88<br />Baranangsiang, Kota Bogor</p><p>halo@vendoria.id<br />+62 812-8800-4420</p></div>
     </div>
-    <div className="w-footer-bottom"><span>© 2025 Vendoria Indonesia. Hak Cipta Dilindungi.</span><span><Link to="/admin">Dashboard</Link><Link to="/admin/pengguna/admin">Administrator</Link><Link to="/admin/notifikasi">Notifikasi</Link></span></div>
+    <div className="w-footer-bottom"><span>© 2026 Vendoria Indonesia. Hak Cipta Dilindungi.</span><span><Link inert to="/admin">Dashboard</Link><Link inert to="/admin/pengguna/admin">Administrator</Link><Link inert to="/admin/notifikasi">Notifikasi</Link></span></div>
   </footer>;
 }

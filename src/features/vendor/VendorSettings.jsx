@@ -6,6 +6,7 @@ import { kycStatus } from '../kyc/kycApi';
 import UserKycPage from '../kyc/UserKycPage';
 import { BackLink, PageHeading, Status } from './VendorUi';
 import PayoutAccountCard from './PayoutAccountCard';
+import Skeleton from '../../components/Skeleton';
 import {
   configureVendorTwoFactor,
   getVendorSecurity,
@@ -296,7 +297,7 @@ function SecuritySettings({ notify }) {
       <section className="v-card v-settings-form" role="alert"><p>{loadError}</p></section>
     </>;
   }
-  if (!security) return <p role="status">Memuat pengaturan keamanan…</p>;
+  if (!security) return <Skeleton variant="detail" label="Memuat pengaturan keamanan…" />;
 
   const create = security.password_dibuat !== true;
 
@@ -468,7 +469,7 @@ export default function VendorSettings({ page, onLoaded, notify }) {
     </>;
   }
 
-  if (!result.data) return <p role="status">Memuat pengaturan akun…</p>;
+  if (!result.data) return <Skeleton variant="detail" label="Memuat pengaturan akun…" />;
 
   const handleSaved = updated => {
     setResult({ data: updated, error: '' });

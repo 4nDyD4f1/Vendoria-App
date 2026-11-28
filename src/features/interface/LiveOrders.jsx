@@ -5,6 +5,7 @@ import { useAuth } from '../../AuthContext';
 import OrderReport from './OrderReport';
 import { api, apiUrl } from '../../api';
 import './live-orders.css';
+import Skeleton from '../../components/Skeleton';
 
 const statuses = {
   semua: 'Semua', menunggu_pembayaran: 'Menunggu pembayaran', menunggu_konfirmasi: 'Menunggu konfirmasi',
@@ -53,7 +54,7 @@ function Status({ value, awaiting }) { return <span className={`co-status co-sta
 function LoadState({ resource, children }) {
   return <>{resource.error && <div className="co-error" role="alert"><p>{resource.error}</p>
     {[401, 403].includes(resource.status) ? <Link to="/login">Masuk kembali</Link> : <button type="button" onClick={resource.status === 409 ? () => window.location.reload() : resource.refresh}>{resource.status === 409 ? 'Muat ulang halaman' : 'Coba lagi'}</button>}</div>}
-    {!resource.data && resource.loading && <div className="co-empty" role="status"><LoaderCircle className="co-spinner" size={28} /><p>Memuat pesanan…</p></div>}
+    {!resource.data && resource.loading && <Skeleton variant="list" label="Memuat pesanan…" />}
     {resource.data && children}</>;
 }
 function Photo({ src, name }) {

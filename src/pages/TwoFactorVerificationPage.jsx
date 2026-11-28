@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import AuthLayout from '../components/AuthLayout';
 import { useAuth } from '../AuthContext';
 import { api } from '../api';
+import Skeleton from '../components/Skeleton';
 
 const purposeCopy = {
   login: 'menyelesaikan login', enable: 'mengaktifkan autentikasi 2 langkah',
@@ -88,7 +89,7 @@ export default function TwoFactorVerificationPage() {
       <div className="auth-heading"><p className="auth-eyebrow">VERIFIKASI KEAMANAN</p><h2>Verifikasi kode OTP</h2>
         {challenge && <p>Masukkan kode 6 digit yang dikirim ke <strong>{challenge.email}</strong> untuk {purposeCopy[challenge.purpose]}.</p>}
       </div>
-      {loading && <p role="status">Memuat verifikasi…</p>}
+      {loading && <Skeleton variant="text" label="Memuat verifikasi…" />}
       {challenge && <form onSubmit={handleSubmit} className="auth-form">
         <div className="auth-otp-boxes" onPaste={handlePaste} role="group" aria-label="Kode OTP 6 digit">
           {otp.map((digit, index) => <input key={index} ref={element => { inputRefs.current[index] = element; }} type="text" inputMode="numeric" autoComplete={index === 0 ? 'one-time-code' : 'off'} maxLength={1} value={digit} disabled={submitting || resending} onChange={event => handleChange(index, event.target.value)} onKeyDown={event => { if (event.key === 'Backspace' && !otp[index] && index > 0) inputRefs.current[index - 1]?.focus(); }} aria-label={`Digit OTP ${index + 1}`} className="auth-input" />)}

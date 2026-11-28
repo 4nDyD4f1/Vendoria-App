@@ -9,6 +9,7 @@ import { OrderStatusBadge } from './OrderProcessModal';
 import { actOnHandover, deleteHandoverEvidence, getVendorHandover, listVendorHandovers, reportDamage, uploadHandoverEvidence } from './vendorHandoversApi';
 import './vendor-orders.css';
 import './vendor-handovers.css';
+import Skeleton from '../../components/Skeleton';
 
 const filters = ['semua', 'dikonfirmasi', 'berjalan', 'dikembalikan', 'selesai'];
 const phaseLabels = { serah_terima: 'Penyerahan alat', pengembalian: 'Pengembalian alat' };
@@ -96,7 +97,7 @@ function HandoverDetail({ orderId, notify, onChanged }) {
       <button className="v-button v-button-secondary" type="button" disabled={busy} onClick={() => setRefresh(value => value + 1)}><RefreshCw size={16} />Muat ulang</button>
     </PageHeading>
     {error && <p className="vendor-orders-error" role="alert">{error}</p>}
-    {!detail && !error && <p role="status">Memuat serah terima…</p>}
+    {!detail && !error && <Skeleton variant="list" label="Memuat serah terima…" />}
     {detail && <>
       <section className="v-card vh-summary"><OrderStatusBadge status={order.status} awaiting={order.awaitingSettlement} /><dl><div><dt>Pelanggan</dt><dd>{order.customer}</dd></div><div><dt>Periode sewa</dt><dd>{formatOrderDate(order.start)} – {formatOrderDate(order.end)}</dd></div><div><dt>Lokasi</dt><dd>{order.venue || 'Belum diisi'}</dd></div></dl><Link to={`/vendor/pesanan/${order.orderId}`} className="v-text-button">Lihat pesanan <ExternalLink size={14} /></Link></section>
       <section className="v-card vh-phase"><h2>{phaseLabels[view]}</h2><p className="vh-muted">Ambil 4 foto berbeda untuk setiap jenis alat: tampak keseluruhan, sisi lain, kelengkapan, serta fungsi atau kondisi detail. JPG/PNG maksimal 5 MB dan 12 megapiksel. Bukti penyerahan dikunci saat sewa dimulai; bukti pengembalian dikunci saat pesanan selesai.</p>
@@ -160,7 +161,7 @@ function HandoverList({ onLoaded }) {
         <select aria-label="Filter status pesanan" value={status} onChange={event => { setStatus(event.target.value); setPage(1); }}>{filters.map(value => <option key={value} value={value}>{value === 'semua' ? 'Semua tahap' : orderStatusLabels[value]}</option>)}</select>
         <button className="v-button v-button-secondary" type="button" onClick={() => setRefresh(value => value + 1)}><RefreshCw size={16} />Muat ulang</button>
       </div>
-      {error ? <p className="vendor-orders-error" role="alert">{error}</p> : loading ? <p className="vendor-orders-loading" role="status">Memuat serah terima…</p> : !listing?.items.length ? <EmptyState title="Belum ada serah terima" description="Pesanan yang telah dikonfirmasi akan muncul otomatis. Anda tidak perlu membuat catatan pesanan secara manual." /> : <div className="v-table-scroll" role="region" aria-label="Daftar serah terima" tabIndex={0}><table className="v-table"><thead><tr><th>Pesanan</th><th>Pelanggan</th><th>Jadwal sewa</th><th>Status</th><th>Bukti awal / akhir</th><th>Aksi</th></tr></thead><tbody>{listing.items.map(order => <tr key={order.orderId}>
+      {error ? <p className="vendor-orders-error" role="alert">{error}</p> : loading ? <Skeleton variant="list" label="Memuat serah terima…" /> : !listing?.items.length ? <EmptyState title="Belum ada serah terima" description="Pesanan yang telah dikonfirmasi akan muncul otomatis. Anda tidak perlu membuat catatan pesanan secara manual." /> : <div className="v-table-scroll" role="region" aria-label="Daftar serah terima" tabIndex={0}><table className="v-table"><thead><tr><th>Pesanan</th><th>Pelanggan</th><th>Jadwal sewa</th><th>Status</th><th>Bukti awal / akhir</th><th>Aksi</th></tr></thead><tbody>{listing.items.map(order => <tr key={order.orderId}>
         <td><Link className="v-record-id" to={`/vendor/serah-terima/${order.orderId}`}>{order.code}</Link></td><td>{order.customer}</td><td>{formatOrderDate(order.start)} – {formatOrderDate(order.end)}</td><td><OrderStatusBadge status={order.status} awaiting={order.awaitingSettlement} /></td><td>{order.handoverPhotos} / {order.returnPhotos}<small className="vendor-orders-subtext">{order.itemsCount} jenis alat · 4 foto / jenis / tahap</small></td><td><Link className="v-button v-button-secondary" to={`/vendor/serah-terima/${order.orderId}`}>Buka pemeriksaan</Link></td>
       </tr>)}</tbody></table></div>}
       {!loading && !error && listing && <Pagination count={listing.total} page={page} size={size} onPage={setPage} onSize={value => { setSize(value); setPage(1); }} />}

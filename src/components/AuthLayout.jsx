@@ -1,3 +1,4 @@
+import { useLayoutEffect } from 'react';
 import { Camera, Lock, ShieldCheck, User } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import InterfaceHeader from '../features/interface/InterfaceHeader';
@@ -19,16 +20,21 @@ function AuthFooter() {
   return <footer className="auth-footer">
     <div className="auth-footer-columns">
       <div><Brand /><p className="auth-footer-description">Marketplace rental perlengkapan event terpercaya dengan jaminan inspeksi kondisi terverifikasi.</p><span className="auth-footer-badge"><ShieldCheck size={14} />Kondisi terverifikasi &amp; tepat waktu</span></div>
-      <div><h3>Sewa Alat</h3>{categories.map(label => <Link key={label} to="/catalog">{label}</Link>)}</div>
-      <div><h3>Bantuan &amp; Panduan</h3>{guides.map(label => <Link key={label} to="/cara-sewa">{label}</Link>)}</div>
+      <div><h3>Sewa Alat</h3>{categories.map(label => <Link inert key={label} to="/catalog">{label}</Link>)}</div>
+      <div><h3>Bantuan &amp; Panduan</h3>{guides.map(label => <Link inert key={label} to="/cara-sewa">{label}</Link>)}</div>
       <div><h3>Kontak Operasional</h3><p>Jl. Pajajaran No. 88<br />Baranangsiang, Kota Bogor</p><p>halo@vendoria.id<br />+62 812-8800-4420</p></div>
     </div>
-    <div className="auth-footer-bottom"><span>© 2025 Vendoria Indonesia. Hak Cipta Dilindungi.</span><div><span>Syarat &amp; Ketentuan</span><span>Kebijakan Privasi</span><Link to="/register">Gabung Vendor Mitra</Link></div></div>
+    <div className="auth-footer-bottom"><span>© 2026 Vendoria Indonesia. Hak Cipta Dilindungi.</span><div><span>Syarat &amp; Ketentuan</span><span>Kebijakan Privasi</span><Link inert to="/register">Gabung Vendor Mitra</Link></div></div>
   </footer>;
 }
 export default function AuthLayout({ children, badgeText = 'Vendoria Secure', heading = 'Selamat Datang', variant = 'recovery' }) {
   const navigate = useNavigate();
-  return <div className={`vendoria-interface vendoria-auth auth-${variant}`}>
+  // These routes sit outside InterfacePage, so nothing else resets the scroll when entering or leaving them.
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+    return () => window.scrollTo(0, 0);
+  }, []);
+  return<div className={`vendoria-interface vendoria-auth auth-${variant}`}>
     <InterfaceHeader go={navigate} activeLabel="" />
     <main className="auth-main">
       <div className="auth-card">

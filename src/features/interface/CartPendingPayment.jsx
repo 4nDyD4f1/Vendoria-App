@@ -6,6 +6,7 @@ import { api } from '../../api';
 import { money } from './CheckoutSteps';
 import { paymentFromCart } from './paymentEntry';
 import { useCheckoutKyc } from '../kyc/useCheckoutKyc';
+import Skeleton from '../../components/Skeleton';
 
 // An existing unpaid order is reviewed in the cart before entering payment again.
 export default function CartPendingPayment({ orders }) {
@@ -25,7 +26,7 @@ export default function CartPendingPayment({ orders }) {
   const settling = unpaid.length > 0 && unpaid.every(order => order.kind === 'pelunasan');
   return <section className="cart-card cart-pending-payment" aria-labelledby="cart-pending-title">
     <h2 id="cart-pending-title">Lanjutkan pembayaran pesanan</h2>
-    {state.loading ? <p role="status"><LoaderCircle className="wishlist-spinner" size={16} /> Memuat pesanan...</p>
+    {state.loading ? <Skeleton count={2} label="Memuat pesanan..." />
       : state.error ? <p className="cart-alert" role="alert">{state.error}</p>
         : <><p>Tinjau pesanan yang sudah dibuat sebelum melanjutkan {settling ? 'pelunasan sewa' : 'pembayaran deposit'}.</p>
           <ul>{state.data.orders.map(order => <li key={order.orderId}><div><strong>#{order.code}</strong><span>{order.vendorName}</span></div><strong>{order.kind ? money(order.due) : 'Tidak menunggu pembayaran'}</strong></li>)}</ul>

@@ -1,12 +1,13 @@
 import { Navigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../AuthContext';
 import { authDestination } from '../authDestination';
+import Skeleton from './Skeleton';
 
 // Resolve the session before mounting a page outside the user's workspace.
 export default function RoleRouteBoundary({ children }) {
   const { user, loading } = useAuth();
   const { pathname } = useLocation();
-  if (loading) return <div className="p-10" role="status">Memuat akun...</div>;
+  if (loading) return <Skeleton variant="page" label="Memuat akun..." />;
 
   if (user && /^\/(login|register)\/?$/i.test(pathname)) return <Navigate to={authDestination(user.role)} replace />;
 

@@ -453,7 +453,7 @@
                                       "style": 2155,
                                       "id": "101:1909",
                                       "children": [
-                                        "Pilih alat di katalog, tentukan tanggal sewa dan jumlah unit, lalu klik Sewa Sekarang. Isi detail acara di keranjang dan bayar deposit dalam 24 jam."
+                                        "Pilih alat di katalog dan masukkan ke keranjang, isi tanggal sewa serta detail acara, lalu klik Buat Pesanan dan bayar deposit dalam 24 jam. KYC harus sudah disetujui."
                                       ]
                                     }
                                   ]
@@ -527,7 +527,7 @@
                                   "style": 108,
                                   "id": "101:1918",
                                   "children": [
-                                    "DEPOSIT & ESCROW"
+                                    "DEPOSIT JAMINAN"
                                   ]
                                 }
                               ]
@@ -549,7 +549,7 @@
                                       "style": 76,
                                       "id": "101:1921",
                                       "children": [
-                                        "Apa itu deposit escrow?"
+                                        "Apa itu deposit jaminan?"
                                       ]
                                     },
                                     {

@@ -9,19 +9,11 @@ import WishlistButton from './WishlistButton';
 import { wishlistItemFor } from './wishlistData';
 import './catalog-card.css';
 
-const categoryText = value => value.replace(/\([^)]*\)/g, '').trim().toLowerCase();
-const homeSearchFields = {
-  '84:3483': { kind: 'event', fieldId: '84:3487', options: ['Pernikahan', 'Seminar', 'Pesta', 'Konser', 'Pameran'] },
-  '84:3495': { kind: 'location', fieldId: '84:3498', options: ['Bogor & Sekitarnya', 'Semua lokasi', 'Bogor', 'Depok', 'Jakarta', 'Tangerang', 'Bekasi'] },
-};
-
-function HomeSearchField({ node, props }) {
-  const context = useContext(InterfaceContext);
-  const { kind, fieldId, options } = homeSearchFields[node.id];
-  const key = `${context.screen.key}:${fieldId}`;
-  return <CatalogDropdown kind={kind} options={options} value={context.fields[key] ?? options[0]} onChange={value => context.setFields(current => ({ ...current, [key]: value }))} containerProps={props} />;
-}
-
+// Buttons the owner removed from the homepage.
+const homeRemoved = /^(Baca artikel|Daftar Area Operasional|Lihat Selengkapnya Testimoni|Baca Panduan Lengkap)$/i;
+// Hero search bar, "PILIHAN TERBAIK DI BOGOR", both pairs of slider arrows and the page dots.
+const homeHidden = new Set(['84:3512', '84:3574', '84:3575', '84:3770', '84:3925']);
+const categoryText =value => value.replace(/\([^)]*\)/g, '').trim().toLowerCase();
 function fieldLabel(node, ancestors) {
   const direct = node.name?.split(' - ')[1];
   if (direct) return direct;
@@ -124,6 +116,7 @@ export default function DesignNode({ node, ancestors = [], insideControl = false
   const catalogCard = context.screen.key === 'catalog' && name === 'ProductCard';
   if (context.hidden[node.id]) return null;
   if (!context.preview && context.screen.key.startsWith('product') && name === 'Button' && label.trim() === 'Sewa Sekarang') return null;
+  if (context.screen.key === 'home' && (homeHidden.has(node.id) || (/^(Button|Link)/.test(name) && homeRemoved.test(label.trim())))) return null;
   if (/^Sticky placeholder/.test(name)) return null;
   if (name === 'ProductCard' && !context.matchesProduct(node)) return null;
   const isGrid = /(?:^| )(?:inline-)?grid(?: |$)/.test(classes);
@@ -149,7 +142,6 @@ export default function DesignNode({ node, ancestors = [], insideControl = false
   const liveNode = context.renderNode?.(node, props);
   if (liveNode !== undefined) return liveNode;
   if (node.props?.['data-wishlist-grid']) props.className += ' wishlist-live-grid';
-  if (context.screen.key === 'home' && homeSearchFields[node.id]) return <HomeSearchField node={node} props={props} />;
   if (node.props?.['data-wishlist-item']) props.className += ' wishlist-live-item';
   if (catalogCard) props.className += ' catalog-product-card';
   if (context.screen.key === 'catalog' && name === 'Button' && /^(Semua|Tenda & kanopi|Sound system|Lighting & FX|Dekorasi & pelaminan|Kursi & meja|Panggung) \(\d+\)$/.test(label)) {
@@ -204,6 +196,7 @@ export default function DesignNode({ node, ancestors = [], insideControl = false
       if (!pressed) props.className += ' interface-filter-idle';
     }
     tag = target ? 'a' : 'button';
+    if (ancestors.some(n => n.name === 'Footer')) props.inert = true; // footer: same look, nothing to click
     if (target) props.href = context.href(target);
     else props.type = context.submitNodeId === node.id ? 'submit' : 'button';
     props['aria-label'] = context.controlLabels?.[node.id] ?? (name.includes(' - ') ? name.split(' - ')[1] : label || 'Buka pilihan');

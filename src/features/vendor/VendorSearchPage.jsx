@@ -4,6 +4,7 @@ import { ArrowRight, Search } from 'lucide-react';
 import { EmptyState, PageHeading, Pagination } from './VendorUi';
 import { searchVendorWorkspace } from './vendorSearchApi';
 import './vendor-search.css';
+import Skeleton from '../../components/Skeleton';
 
 const kinds = [['all', 'Semua kategori'], ['catalog', 'Katalog'], ['orders', 'Pesanan'], ['handovers', 'Serah terima'], ['claims', 'Klaim'], ['payouts', 'Pencairan']];
 const positive = (value, fallback, max) => /^\d+$/.test(value || '') && Number(value) > 0 && Number(value) <= max ? Number(value) : fallback;
@@ -61,7 +62,7 @@ export default function VendorSearchPage({ onLoaded }) {
       </div>
       <div aria-live="polite" aria-atomic="true"><p className="v-search-count">{busy ? 'Mencari…' : current.error ? 'Pencarian belum berhasil' : `${result.total} hasil${q.trim() ? ` untuk “${q.trim()}”` : ''}`}</p></div>
       <div aria-busy={busy}>
-        {busy ? <EmptyState title="Memuat hasil pencarian" description="Mohon tunggu sebentar." /> : current.error ? <div role="alert"><EmptyState title="Pencarian tidak dapat dimuat" description={current.error}><button type="button" className="v-button v-button-secondary" onClick={() => setRetry(value => value + 1)}>Coba lagi</button></EmptyState></div> : !result.vendor ? <EmptyState title="Profil bisnis belum tersedia" description="Lengkapi profil bisnis untuk mulai mengelola data vendor."><Link className="v-button v-button-secondary" to="/vendor/profil-bisnis">Buka profil bisnis</Link></EmptyState> : result.items.length ? <>
+        {busy ? <Skeleton label="Memuat hasil pencarian" /> : current.error ? <div role="alert"><EmptyState title="Pencarian tidak dapat dimuat" description={current.error}><button type="button" className="v-button v-button-secondary" onClick={() => setRetry(value => value + 1)}>Coba lagi</button></EmptyState></div> : !result.vendor ? <EmptyState title="Profil bisnis belum tersedia" description="Lengkapi profil bisnis untuk mulai mengelola data vendor."><Link className="v-button v-button-secondary" to="/vendor/profil-bisnis">Buka profil bisnis</Link></EmptyState> : result.items.length ? <>
           <div className="v-search-results">{result.items.map(item => <Link key={`${item.kind}-${item.id}`} to={item.path}><span className="v-search-kind">{item.label}</span><div><strong>{item.title}</strong><small>{item.subtitle}</small><small>{item.status.replaceAll('_', ' ')}</small></div><ArrowRight size={17} /></Link>)}</div>
           <Pagination count={result.total} page={result.page} size={result.size} onPage={value => change({ page: value })} onSize={value => change({ size: value, page: 1 })} />
         </> : <EmptyState title="Tidak ada hasil" description={q.trim() || kind !== 'all' ? 'Coba kata kunci atau kategori yang berbeda.' : 'Data bisnis Anda akan muncul di sini setelah tersedia.'} />}

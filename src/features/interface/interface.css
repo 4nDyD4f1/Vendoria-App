@@ -16,11 +16,6 @@
 .vendoria-interface .design-input::placeholder{color:inherit;opacity:.65}
 .vendoria-interface .design-native-input{background:transparent;border:0;width:100%;height:100%;font-family:inherit;color:inherit;outline:none}
 .vendoria-interface select.design-native-input{font-size:10px}
-@media(max-width:900px){
-  .vendoria-interface [data-node-id="84:3512"]{width:100%}
-  .vendoria-interface [data-node-id="84:3482"]{gap:8px!important}
-  .vendoria-interface [data-node-id="84:3505"]{justify-content:center}
-}
 .vendoria-interface .design-native-input::placeholder{color:inherit;opacity:.6}
 .vendoria-interface .design-date-field .design-native-input{padding:8px 12px;font-size:10px}
 .vendoria-interface .design-date-empty input:not(:focus){color:transparent}
@@ -152,3 +147,8 @@
 .vendoria-interface .design-native-input:disabled{cursor:not-allowed;opacity:1;-webkit-text-fill-color:currentColor}
 .vendoria-interface .profile-incomplete{display:inline-block;margin-left:12px;vertical-align:middle;max-width:100%;font-size:12px;line-height:18px;font-weight:500;letter-spacing:0;color:#b33927;white-space:normal}
 .vendoria-interface .profile-incomplete-sep{margin-right:12px;font-size:20px;font-weight:300;color:#c9b8ab}
+/* Beranda tanpa tombol: dua kolom teks ditengahkan. */
+@media(min-width:901px){.vendoria-interface [data-node-id='84:3786']{height:210px;align-self:center}.vendoria-interface [data-node-id='84:3848']{height:345px;align-self:center}}
+
+/* Hero tanpa kotak pencarian: teks diperbesar agar kolom kiri seimbang dengan foto. */
+@media(min-width:1200px){.vendoria-interface [data-node-id='84:3467'],.vendoria-interface [data-node-id='84:3467'] *{font-size:64px;line-height:76px}.vendoria-interface [data-node-id='84:3470'],.vendoria-interface [data-node-id='84:3470'] *{font-size:16px;line-height:28px}.vendoria-interface [data-node-id='84:3472']{margin-top:8px}}

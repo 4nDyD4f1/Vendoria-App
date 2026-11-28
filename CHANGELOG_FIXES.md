@@ -2,6 +2,34 @@
 
 Terbaru di atas. Cari riwayat dengan `grep -n -i "<gejala>" CHANGELOG_FIXES.md`.
 
+### Fix #27 — Kategori dan notifikasi tampil "Belum ada" selagi masih memuat
+
+| | |
+|---|---|
+| **Tanggal** | 2026-11-28 |
+| **File** | `AdminWorkspace.jsx`, `VendorWorkspace.jsx` |
+| **Masalah** | `/admin/kategori` dan halaman notifikasi admin/vendor menampilkan keadaan kosong sebelum data datang. |
+| **Akar** | Daftar dimulai dari `[]` tanpa penanda sudah dimuat. |
+| **Fix** | Penanda "sudah dimuat"; sebelum itu tampil skeleton. |
+| **Verifikasi** | Browser: skeleton selama request digantung, hilang saat server menjawab error; 35 halaman dengan backend uji selesai memuat. |
+| **Pelajaran** | Keadaan kosong dan keadaan memuat harus dibedakan. |
+| **Log Keyword** | skeleton, "Belum ada kategori" |
+| **Deploy** | Belum (lokal) |
+
+### Fix #26 — Halaman masuk/daftar terbuka di bagian paling bawah
+
+| | |
+|---|---|
+| **Tanggal** | 2026-11-28 |
+| **File** | `src/components/AuthLayout.jsx` |
+| **Masalah** | Tamu menekan keranjang/wishlist: `/login` terbuka tergulir sampai bawah (`scrollY` = batas maksimum: 491 px desktop, 1.526 px ponsel). Keluar dari halaman auth lewat footer juga membawa posisi lama. |
+| **Akar** | Enam halaman auth di luar `InterfacePage`, tempat satu-satunya gulir-ke-atas (Fix #22). Fix #22 tidak mencakupnya. |
+| **Fix** | `useLayoutEffect` di `AuthLayout`: gulir ke atas saat masuk dan saat meninggalkan. |
+| **Verifikasi** | Browser (API tiruan, desktop + ponsel): 11 dari 12 skenario gagal sebelum, 12/12 lulus sesudah; build dan lint lulus. |
+| **Pelajaran** | Fix gulir harus dicek juga pada route di luar `InterfacePage` (auth, `/vendor`). |
+| **Log Keyword** | `scrollTo`, `scrollY`, login scroll bawah |
+| **Deploy** | Belum (lokal) |
+
 ### Fix #25 — Deposit dipotong diam-diam sebesar seluruh biaya sewa
 
 | | |

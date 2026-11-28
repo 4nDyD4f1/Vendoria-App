@@ -1,0 +1,27 @@
+.sk-wrap{position:relative;width:100%;min-width:0;grid-column:1/-1}
+.sk{display:block;max-width:100%;border-radius:10px;background:linear-gradient(90deg,#ece3dc 25%,#f8f4f0 45%,#ece3dc 65%);background-size:300% 100%;animation:sk-shimmer 1.4s ease-in-out infinite}
+@keyframes sk-shimmer{from{background-position:100% 0}to{background-position:0 0}}
+@media(prefers-reduced-motion:reduce){.sk{animation:none}}
+.sk-label{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+
+.sk-line{height:12px;margin:10px 0}
+.sk-hero{height:260px;border-radius:22px}
+.sk-photo{height:170px;border-radius:16px}
+.sk-thumb{width:48px;height:48px;flex-shrink:0;border-radius:14px}
+.sk-image{width:100%;aspect-ratio:4/3;border-radius:16px}
+
+.sk-page{max-width:1200px;margin:0 auto;padding:32px 24px}
+.sk-page>.sk-hero{margin:22px 0}
+.sk-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(230px,100%),1fr));gap:24px}
+.sk-card{padding:8px;border:1px solid #f1e9e2;border-radius:24px;background:#fff}
+.sk-card>.sk-line{margin-inline:8px}
+.sk-list{display:grid;gap:12px;padding-block:8px}
+.sk-row{display:flex;align-items:center;gap:14px;padding:14px;border:1px solid #f1e9e2;border-radius:18px;background:#fff}
+.sk-row>div{flex:1;min-width:0}
+.sk-row .sk-line{margin:7px 0}
+.sk-detail{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:24px;align-items:start;padding-block:8px}
+.sk-text{padding-block:4px}
+.sk-inline{position:relative;display:inline-block;width:96px;max-width:100%;vertical-align:middle}
+.sk-inline>.sk{display:block;height:11px;border-radius:99px}
+/* directly under the page surface there is no padding of its own */
+.design-surface>.sk-wrap:not(.sk-page){width:min(100%,1200px);margin-inline:auto;padding:24px}

@@ -16,6 +16,7 @@ import {
   setupOrdersVendor,
 } from './vendorOrdersApi';
 import './vendor-orders.css';
+import Skeleton from '../../components/Skeleton';
 
 function OrderDetailPage({ orderId, notify, onUpdated }) {
   const [detail, setDetail] = useState(null);
@@ -43,7 +44,7 @@ function OrderDetailPage({ orderId, notify, onUpdated }) {
     </>;
   }
 
-  if (!detail) return <p role="status">Memuat detail pesanan…</p>;
+  if (!detail) return <Skeleton variant="detail" label="Memuat detail pesanan…" />;
 
   return <div className="vendor-orders">
     <BackLink to="/vendor/pesanan">Kembali ke pesanan</BackLink>
@@ -130,7 +131,7 @@ export default function VendorOrdersPage({ segments, onLoaded, notify }) {
     </>;
   }
 
-  if (!result) return <p role="status">Memuat daftar pesanan…</p>;
+  if (!result) return <Skeleton variant="list" label="Memuat daftar pesanan…" />;
 
   if (!result.vendor) {
     return <>
@@ -211,7 +212,7 @@ export default function VendorOrdersPage({ segments, onLoaded, notify }) {
       </div>
 
       {error ? <p className="vendor-orders-error vendor-orders-list-error" role="alert">{error}</p>
-        : loading ? <p role="status" className="vendor-orders-loading">Memuat pesanan…</p>
+        : loading ? <Skeleton variant="list" label="Memuat pesanan…" />
           : !result.items.length ? <EmptyState
               title={query ? 'Tidak ada hasil yang cocok' : 'Belum ada pesanan'}
               description={query ? 'Coba kode pesanan, nama pelanggan, atau kata kunci lain.' : 'Pesanan dengan status ini akan muncul di sini.'}

@@ -1,9 +1,10 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Building2, CheckCircle2, Clock, LoaderCircle, LockKeyhole, ShieldCheck } from 'lucide-react';
+import { Building2, CheckCircle2, Clock, LockKeyhole, ShieldCheck } from 'lucide-react';
 import { useAuth } from '../../AuthContext';
 import { api } from '../../api';
 import './vendor-business-gate.css';
+import Skeleton from '../../components/Skeleton';
 
 const fields = { nama_vendor: 'Nama bisnis', kota: 'Kota operasional', alamat: 'Alamat bisnis', deskripsi: 'Tentang bisnis' };
 
@@ -30,7 +31,7 @@ export default function VendorBusinessGate({ children }) {
     return () => { ++requests.current; clearInterval(timer); window.removeEventListener('focus', focus); };
   }, [load]);
   const current = state.key === key;
-  if (!current) return <p className="vb-loading" role="status"><LoaderCircle className="vb-spinner" size={20} />Memeriksa kesiapan bisnis…</p>;
+  if (!current) return <Skeleton variant="detail" label="Memeriksa kesiapan bisnis…" />;
   if (state.error) return <section className="v-card vb-gate" role="alert"><h1>Kesiapan bisnis belum dapat diperiksa</h1><p>{state.error}</p><div className="vb-actions">{[401, 403].includes(state.status) ? <Link className="v-button v-button-primary" to="/login">Masuk kembali</Link> : <button className="v-button v-button-primary" type="button" onClick={state.status === 409 ? () => window.location.reload() : load}>{state.status === 409 ? 'Muat ulang halaman' : 'Coba lagi'}</button>}</div></section>;
   const { data } = state;
   if (data.ready) return children;

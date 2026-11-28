@@ -1,0 +1,42 @@
+/* Beranda: katalog pilihan dari database dan kartu artikel; halaman artikel. */
+.vendoria-interface [data-node-id='84:3566']{height:auto!important}
+.vendoria-interface [data-node-id='84:3567']{height:auto!important}
+.vendoria-interface [data-node-id='84:3769']{justify-content:center;height:auto;width:100%}
+
+.vendoria-interface .home-chips{display:flex;gap:4px;max-width:100%;overflow-x:auto;padding:6px;margin-bottom:24px;background:#ede1d9;border-radius:999px;flex-shrink:0}
+.vendoria-interface .home-chips button{flex-shrink:0;min-height:42px;padding:0 18px;border-radius:999px;font-size:11px;color:#6f6058;cursor:pointer}
+.vendoria-interface .home-chips button:hover{background:#f5ede8}
+.vendoria-interface .home-chips button[aria-pressed=true]{background:#3a2a21;color:#fff}
+.vendoria-interface .home-products{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;width:100%}
+
+.vendoria-interface .home-articles{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:24px;width:100%}
+.vendoria-interface .home-article{position:relative;display:flex;flex-direction:column;background:#fff;border:1px solid #f1e9e2;border-radius:22px;overflow:hidden;transition:transform .25s cubic-bezier(.2,.7,.3,1),box-shadow .25s ease,border-color .25s ease}
+.vendoria-interface .home-article img{width:100%;height:170px;object-fit:cover}
+.vendoria-interface .home-article-body{padding:18px;display:flex;flex-direction:column;gap:8px}
+.vendoria-interface .home-article-meta{font-size:10px;line-height:18px;letter-spacing:1px;text-transform:uppercase;color:#6f6058}
+.vendoria-interface .home-article h3{font-size:17px;line-height:26px;font-weight:500;color:#3a2a21}
+.vendoria-interface .home-article h3 a::after{content:'';position:absolute;inset:0}
+.vendoria-interface .home-article h3 a:focus-visible{outline:none}
+.vendoria-interface .home-article h3 a:focus-visible::after{outline:2px solid #9a775c;outline-offset:-3px;border-radius:22px}
+.vendoria-interface .home-article-body>p:last-child{font-size:11px;line-height:22px;color:#6f6058}
+@media(hover:hover) and (pointer:fine){.vendoria-interface .home-article:hover{transform:translateY(-5px);border-color:#d9c3b2;box-shadow:0 16px 32px -12px #3a2a2133,0 5px 12px #3a2a210a}}
+@media(prefers-reduced-motion:reduce){.vendoria-interface .home-article{transition:none}.vendoria-interface .home-article:hover{transform:none}}
+
+.vendoria-interface .page-wrap{width:100%;max-width:960px;margin:0 auto;padding:24px 24px 64px;color:#3a2a21}
+.vendoria-interface .page-breadcrumb{display:flex;flex-wrap:wrap;gap:8px;font-size:11px;color:#6f6058;margin-bottom:24px}
+.vendoria-interface .page-breadcrumb a:hover{text-decoration:underline}
+.vendoria-interface .page-button{display:inline-block;margin-top:24px;padding:12px 24px;border-radius:999px;background:#3a2a21;color:#fff;font-size:13px}
+.vendoria-interface .page-button:hover{background:#513b2e}
+.vendoria-interface .page-subtitle{font-size:22px;font-weight:500;margin:48px 0 18px}
+
+.vendoria-interface .blog-article{background:#fff;border:1px solid #f1e9e2;border-radius:28px;padding:clamp(20px,5vw,48px)}
+.vendoria-interface .blog-article h1{font-size:clamp(26px,4vw,38px);line-height:1.3;font-weight:500;margin:8px 0 24px}
+.vendoria-interface .blog-article img{width:100%;height:clamp(200px,38vw,400px);object-fit:cover;border-radius:18px;margin-bottom:24px}
+.vendoria-interface .blog-article h2{font-size:19px;font-weight:600;margin:28px 0 8px}
+.vendoria-interface .blog-article p,.vendoria-interface .blog-article li{font-size:14px;line-height:1.9;color:#54463d}
+.vendoria-interface .blog-article .home-article-meta{font-size:11px}
+.vendoria-interface .blog-article .blog-intro{font-size:15px}
+.vendoria-interface .blog-article ul{list-style:disc;padding-left:20px;margin-top:8px}
+
+@media(max-width:900px){.vendoria-interface .home-products{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.vendoria-interface .home-products{grid-template-columns:minmax(0,1fr)}.vendoria-interface .home-chips{border-radius:18px}.vendoria-interface .page-wrap{padding-inline:16px}}

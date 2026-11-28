@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { AlertCircle, Bell, CheckCheck, CreditCard, Package, ShieldCheck, Wallet, X } from 'lucide-react';
 import { api } from '../../api';
 import './customer-notifications.css';
+import Skeleton from '../../components/Skeleton';
 
 const base = '/api/customer/notifications';
 const headers = { 'X-Customer-Notifications': '1' };
@@ -90,7 +91,7 @@ export default function CustomerNotifications({ open, onOpenChange }) {
       <div className="customer-notifications-toolbar"><span>{data?.total > 50 ? '50 notifikasi terbaru' : 'Aktivitas akun Anda'}</span><button type="button" disabled={busy || !unread} onClick={() => read()}><CheckCheck size={14} />Tandai semua dibaca</button></div>
       {error && <div className="customer-notifications-error" role="alert"><p>{error}</p><button type="button" onClick={refresh} disabled={loading}>Coba lagi</button></div>}
       <div className="customer-notifications-list" aria-busy={loading || busy}>
-        {loading && !data ? <p className="customer-notifications-empty" role="status">Memuat notifikasi…</p> : data?.items.length ? data.items.map(item => {
+        {loading && !data ? <Skeleton variant="list" label="Memuat notifikasi…" /> : data?.items.length ? data.items.map(item => {
           const Icon = icons[item.kind] || Bell;
           return <button type="button" key={item.id} className={`customer-notifications-item${item.read ? '' : ' is-unread'}`} disabled={busy} onClick={() => { read(item); const settle = /^c:o:(\d+):settle$/.exec(item.id); const target = item.kind === 'kyc' ? '/kyc' : settle && `/keranjang?orders=${settle[1]}`; if (target) { onOpenChange(false); navigate(target); } }} aria-label={`${item.title}${item.read ? ', sudah dibaca' : ', tandai dibaca'}`}>
             <span className="customer-notifications-icon"><Icon size={18} /></span><span className="customer-notifications-copy"><strong>{item.title}</strong><span>{item.body}</span><time dateTime={item.createdAt}>{time(item.createdAt)}</time></span>{!item.read && <span className="customer-notifications-dot" aria-label="Belum dibaca" />}

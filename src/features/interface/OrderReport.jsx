@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowLeft, LoaderCircle } from 'lucide-react';
 import { api } from '../../api';
 import { needsUnits } from '../shared/reportTypes';
+import Skeleton from '../../components/Skeleton';
 
 const effects = {
   tidak_sampai: 'Bila disetujui, biaya sewa dan deposit dikembalikan 100% dan pesanan dibatalkan.',
@@ -56,7 +57,7 @@ export default function OrderReport({ reference }) {
     <Link className="co-back" to={`/pesanan/${encodeURIComponent(reference)}`}><ArrowLeft size={16} />Kembali ke detail pesanan</Link>
     <header className="co-heading"><div><p className="co-eyebrow">PENYEWAAN ANDA</p><h1>Laporkan Pesanan</h1><p>{form ? `#${form.code} · ${form.vendorName}` : 'Sampaikan masalah pada pesanan Anda.'}</p></div></header>
     {state.error && <p className="co-error" role="alert">{state.error}</p>}
-    {!form && !state.error && <div className="co-empty" role="status"><LoaderCircle className="co-spinner" size={28} /><p>Memuat pesanan…</p></div>}
+    {!form && !state.error && <Skeleton variant="list" label="Memuat pesanan…" />}
     {form?.report ? <section className="co-card" role="status"><h2>Laporan KLM-{form.report.id}</h2>
       <p><strong>{options.find(option => option.type === form.report.type)?.label}</strong> · {statusText[form.report.status] || form.report.status}</p>
       <p className="co-note">{form.report.description}</p>

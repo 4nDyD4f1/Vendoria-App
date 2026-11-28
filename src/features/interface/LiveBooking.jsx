@@ -1,10 +1,11 @@
 import { useCallback, useEffect, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
-import { ArrowRight, Check, Clock, LoaderCircle, XCircle } from 'lucide-react';
+import { ArrowRight, Check, Clock, XCircle } from 'lucide-react';
 import { api } from '../../api';
 import CheckoutHead, { money } from './CheckoutSteps';
 import './live-cart.css';
 import './live-payment.css';
+import Skeleton from '../../components/Skeleton';
 
 const statusLabel = { menunggu_pembayaran: 'Menunggu pembayaran', menunggu_konfirmasi: 'Menunggu konfirmasi vendor', dikonfirmasi: 'Dikonfirmasi vendor' };
 
@@ -27,7 +28,7 @@ export default function LiveBooking() {
   const current = paid ? 2 : 1;
   const head = <CheckoutHead current={current} crumb="Booking" title={paid ? settling ? 'Pelunasan Diterima' : 'Booking Terkonfirmasi' : 'Status Pembayaran'} subtitle={paid ? settling ? 'Biaya sewa Anda sudah lunas.' : 'Deposit Anda sudah kami terima.' : 'Kami memeriksa pembayaran Anda ke Midtrans.'} />;
 
-  if (!state.ready) return <div className="cart-page">{head}<div className="cart-empty" role="status"><LoaderCircle className="wishlist-spinner" size={28} /><p>Memeriksa status pembayaran…</p></div></div>;
+  if (!state.ready) return <div className="cart-page">{head}<Skeleton variant="detail" label="Memeriksa status pembayaran…" /></div>;
   if (!state.data) return <div className="cart-page">{head}<div className="cart-empty"><XCircle size={34} /><h2>Pembayaran tidak ditemukan</h2><p>{state.error}</p><Link className="cart-primary" to="/pesanan">Lihat pesanan saya <ArrowRight size={16} /></Link></div></div>;
 
   return <div className="cart-page">{head}

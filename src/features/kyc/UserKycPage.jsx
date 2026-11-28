@@ -4,6 +4,7 @@ import { Camera, CheckCircle2, Clock, FileCheck2, RefreshCw, ShieldCheck, Upload
 import { useAuth } from '../../AuthContext';
 import { getMyKyc, kycStatus, submitKyc } from './kycApi';
 import './kyc.css';
+import Skeleton from '../../components/Skeleton';
 
 function UploadField({ kind, label, file, onFile, disabled }) {
   const [preview, setPreview] = useState(null);
@@ -105,7 +106,7 @@ export default function UserKycPage({ backTo = '/akun', backLabel = 'Akun Saya' 
     <header className="kyc-page-heading"><div><p className="kyc-eyebrow">KEAMANAN IDENTITAS</p><h1>Verifikasi KYC Identitas</h1><p>Lengkapi identitas dan dokumen untuk verifikasi akun Anda.</p></div><span className={`kyc-status kyc-status-${status}`}><StatusIcon size={16} />{kycStatus[status]}</span></header>
     {error && <p role="alert" className="kyc-error">{error}</p>}
     {notice && <p role="status" className="kyc-notice">{notice}</p>}
-    {!result ? <section className="kyc-card"><p role="status">{error ? 'Pengaturan KYC belum dapat dimuat.' : 'Memuat status KYC…'}</p>{error && <button type="button" className="kyc-button" onClick={() => window.location.reload()}>Coba lagi</button>}</section> : <div className="kyc-user-layout">
+    {!result ? <section className="kyc-card">{error ? <p role="status">Pengaturan KYC belum dapat dimuat.</p> : <Skeleton variant="detail" label="Memuat status KYC…" />}{error && <button type="button" className="kyc-button" onClick={() => window.location.reload()}>Coba lagi</button>}</section> : <div className="kyc-user-layout">
       {locked ? <section className="kyc-card kyc-current-status"><StatusIcon size={42} strokeWidth={1.4} /><h2>{status === 'menunggu' ? 'Verifikasi KYC sedang ditinjau' : 'Identitas Anda terverifikasi'}</h2><p>{status === 'menunggu' ? 'Dokumen sudah diterima. Status akan diperbarui setelah admin menyelesaikan pemeriksaan.' : 'Verifikasi identitas Anda telah disetujui.'}</p>
         {result.latest && <dl className="kyc-details"><div><dt>No. pengajuan</dt><dd>KYC-{result.latest.submission.kyc_id}</dd></div><div><dt>Diajukan pada</dt><dd>{new Date(result.latest.submission.diajukan_pada).toLocaleString('id-ID')}</dd></div>{result.latest.catatan_admin && <div><dt>Catatan admin</dt><dd>{result.latest.catatan_admin}</dd></div>}</dl>}
         <Link to={backTo} className="kyc-button">{backTo === '/akun' ? 'Kembali ke Akun' : `Kembali ke ${backLabel}`}</Link>

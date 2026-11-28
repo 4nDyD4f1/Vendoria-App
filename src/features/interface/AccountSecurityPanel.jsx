@@ -5,6 +5,7 @@ import { api } from '../../api';
 import DesignNode from './DesignNode';
 import { InterfaceContext } from './InterfaceContext';
 import { accountFields } from './accountDesign';
+import Skeleton from '../../components/Skeleton';
 
 const passwordIds = { current_password: '109:14725', password: '109:14731', confirm_password: '109:14737' };
 
@@ -52,7 +53,7 @@ export default function AccountSecurityPanel({ content, page }) {
     finally { pending.current = false; setBusy(false); }
   };
 
-  if (!security) return <p role={loadingError ? 'alert' : 'status'}>{loadingError || 'Memuat pengaturan keamanan…'}</p>;
+  if (!security) return loadingError ? <p role="alert">{loadingError}</p> : <Skeleton variant="detail" label="Memuat pengaturan keamanan…" />;
   const create = security.password_dibuat !== true;
   const [passwordSection] = content.children;
   const securityContext = {

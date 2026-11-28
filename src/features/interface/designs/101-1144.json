@@ -197,7 +197,7 @@
                               "style": 875,
                               "id": "101:1230",
                               "children": [
-                                "100% Escrow Aman"
+                                "Deposit Terjaga"
                               ]
                             }
                           ]
@@ -229,7 +229,7 @@
                               "style": 875,
                               "id": "101:1235",
                               "children": [
-                                "Rilis Deposit 3 Jam"
+                                "Refund Admin"
                               ]
                             }
                           ]
@@ -393,7 +393,7 @@
                                       "style": 152,
                                       "id": "101:1262",
                                       "children": [
-                                        "Cari & Tentukan Perlengkapan"
+                                        "Verifikasi KYC & Pilih Alat"
                                       ]
                                     }
                                   ]
@@ -409,7 +409,7 @@
                                       "style": 1585,
                                       "id": "101:1265",
                                       "children": [
-                                        "Cari berdasarkan kata kunci dan kategori, lalu pilih tanggal sewa di halaman detail alat."
+                                        "Masuk, selesaikan verifikasi KYC, lalu pilih alat dan tanggal sewa."
                                       ]
                                     }
                                   ]
@@ -463,7 +463,7 @@
                                           "style": 70,
                                           "id": "101:1274",
                                           "children": [
-                                            "Tips: pilih tanggal acara di halaman detail alat untuk memastikan jadwal bebas bentrok."
+                                            "Tips: ajukan KYC lebih awal, pesanan baru bisa dibuat setelah disetujui."
                                           ]
                                         }
                                       ]
@@ -519,7 +519,7 @@
                                       "style": 152,
                                       "id": "101:1281",
                                       "children": [
-                                        "Pesan & Bayar Deposit Escrow"
+                                        "Bayar Deposit & Lunasi Sewa"
                                       ]
                                     }
                                   ]
@@ -535,7 +535,7 @@
                                       "style": 378,
                                       "id": "101:1283",
                                       "children": [
-                                        "Isi detail acara, lalu bayar deposit maksimal 24 jam setelah pesanan dibuat."
+                                        "Bayar deposit dalam 24 jam, lalu lunasi sewa setelah vendor mengonfirmasi."
                                       ]
                                     }
                                   ]
@@ -551,7 +551,7 @@
                                       "style": 177,
                                       "id": "101:1285",
                                       "children": [
-                                        "Dana Tertahan Aman"
+                                        "Dua Kali Bayar"
                                       ]
                                     }
                                   ]
@@ -595,7 +595,7 @@
                                               "style": 135,
                                               "id": "101:1291",
                                               "children": [
-                                                "Diteruskan pasca acara"
+                                                "Setelah dikonfirmasi"
                                               ]
                                             }
                                           ]
@@ -635,7 +635,7 @@
                                               "style": 135,
                                               "id": "101:1296",
                                               "children": [
-                                                "100% Refundable instan"
+                                                "Maks. 60% dari sewa"
                                               ]
                                             }
                                           ]
@@ -693,7 +693,7 @@
                                       "style": 152,
                                       "id": "101:1303",
                                       "children": [
-                                        "Serah Terima & Dokumentasi Foto 2 Arah"
+                                        "Serah Terima & Foto Kondisi"
                                       ]
                                     }
                                   ]
@@ -709,7 +709,7 @@
                                       "style": 378,
                                       "id": "101:1305",
                                       "children": [
-                                        "Penyewa dan vendor memeriksa unit bersama dan mengunggah foto kondisi."
+                                        "Vendor mengunggah foto kondisi sebelum barang diserahkan kepada Anda."
                                       ]
                                     }
                                   ]
@@ -725,7 +725,7 @@
                                       "style": 177,
                                       "id": "101:1307",
                                       "children": [
-                                        "Inspeksi 4 Sudut"
+                                        "Contoh 4 Foto"
                                       ]
                                     }
                                   ]
@@ -851,7 +851,7 @@
                                       "style": 152,
                                       "id": "101:1322",
                                       "children": [
-                                        "Selesai Acara, Ulasan & Rilis Deposit"
+                                        "Pengembalian, Deposit & Ulasan"
                                       ]
                                     }
                                   ]
@@ -867,7 +867,7 @@
                                       "style": 378,
                                       "id": "101:1324",
                                       "children": [
-                                        "Kembalikan alat, unggah foto pengembalian, lalu beri ulasan."
+                                        "Kembalikan alat, vendor memeriksa dan memfoto kondisinya, lalu beri ulasan."
                                       ]
                                     }
                                   ]
@@ -883,7 +883,7 @@
                                       "style": 177,
                                       "id": "101:1326",
                                       "children": [
-                                        "Pelepasan Otomatis"
+                                        "Deposit Kembali"
                                       ]
                                     }
                                   ]
@@ -921,7 +921,7 @@
                                           "style": 70,
                                           "id": "101:1332",
                                           "children": [
-                                            "Tanpa klaim, deposit dikirim ke rekening Anda maksimal 3 jam setelah foto pengembalian valid."
+                                            "Tanpa kerusakan, admin mentransfer deposit ke rekening refund Anda."
                                           ]
                                         }
                                       ]
@@ -997,7 +997,7 @@
                                   "style": 76,
                                   "id": "101:1344",
                                   "children": [
-                                    "Inspeksi Digital 100% Sah"
+                                    "Foto Kondisi Tercatat"
                                   ]
                                 }
                               ]
@@ -1013,7 +1013,7 @@
                                   "style": 78,
                                   "id": "101:1346",
                                   "children": [
-                                    "Foto bertanda waktu menjadi bukti kondisi barang"
+                                    "Foto vendor menjadi bukti kondisi barang"
                                   ]
                                 }
                               ]
@@ -1085,7 +1085,7 @@
                                   "style": 78,
                                   "id": "101:1356",
                                   "children": [
-                                    "Mediasi Admin dan dana dibekukan sampai keputusan"
+                                    "Admin memutuskan; pesanan tertahan sampai selesai"
                                   ]
                                 }
                               ]

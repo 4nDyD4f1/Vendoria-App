@@ -5,6 +5,7 @@ import { resources } from './vendorData';
 import VendorResource from './VendorResource';
 import { PageHeading } from './VendorUi';
 import { deleteCatalogItems, getVendorCatalog, saveCatalogItem, setupCatalogVendor } from './vendorCatalogApi';
+import Skeleton from '../../components/Skeleton';
 
 export default function VendorCatalogPage({ segments, onLoaded, notify, onUpload }) {
   const { user } = useAuth();
@@ -35,7 +36,7 @@ export default function VendorCatalogPage({ segments, onLoaded, notify, onUpload
   } } }), [result.data?.categories]);
   const retry = () => { setResult({ data: null, error: '' }); const life = alive.current; getVendorCatalog().then(value => { if (!life.signal.aborted) commit(value); }).catch(error => { if (!life.signal.aborted) setResult({ data: null, error: error.message }); }); };
   if (result.error) return <><PageHeading title="Katalog alat" /><section className="v-card v-settings-form" role="alert"><p>{result.error}</p><button type="button" className="v-button v-button-secondary" onClick={retry}>Coba lagi</button></section></>;
-  if (!result.data) return <p role="status">Memuat katalog Anda…</p>;
+  if (!result.data) return <Skeleton variant="list" label="Memuat katalog Anda…" />;
   if (!result.data.vendor) return <><PageHeading title="Siapkan katalog Anda" description="Isi nama bisnis yang memiliki perlengkapan ini." /><form className="v-card v-settings-form" onSubmit={async event => {
     event.preventDefault(); if (setupBusy) return;
     const name = new FormData(event.currentTarget).get('name').trim();
