@@ -18,13 +18,24 @@ class AdminNotificationService {
         k.diajukan_pada as waktu,'/admin/kyc/KYC-'||k.kyc_id as tautan
       from kyc_verifikasi k join pengguna u on u.user_id=k.user_id where k.status='menunggu'
       union all
-      select 'klaim:'||k.klaim_id,'Klaim perlu ditinjau','Klaim KLM-'||k.klaim_id||' pada pesanan '||p.kode_pemesanan||' menunggu keputusan admin.',
+      select 'klaim:'||k.klaim_id,case k.jenis when 'kerusakan' then 'Klaim perlu ditinjau' else 'Laporan pesanan dari customer' end,'Klaim KLM-'||k.klaim_id||' pada pesanan '||p.kode_pemesanan||' menunggu keputusan admin.',
         k.diajukan_pada,'/admin/klaim/KLM-'||k.klaim_id
       from klaim k join pemesanan p on p.order_id=k.order_id where k.status in ('diajukan','ditinjau')
       union all
       select 'pencairan:'||d.pencairan_id,'Pencairan dana menunggu','Vendor '||v.nama_vendor||' mengajukan pencairan PCR-'||d.pencairan_id||'.',
         d.diajukan_pada,'/admin/laporan/pencairan/PCR-'||d.pencairan_id
       from pencairan_dana d join vendor v on v.vendor_id=d.vendor_id where d.status='menunggu'
+      union all
+      select 'retur:'||k.klaim_id,'Menunggu barang kembali',
+        'KLM-'||k.klaim_id||' pesanan '||p.kode_pemesanan||': dana customer tertahan sampai barang dikonfirmasi kembali.',
+        coalesce(k.diputuskan_pada,k.diajukan_pada),'/admin/klaim/KLM-'||k.klaim_id
+      from klaim k join pemesanan p on p.order_id=k.order_id
+      where k.jenis='tidak_sesuai' and k.status='disetujui' and k.barang_kembali_pada is null
+      union all
+      select 'refund:'||r.pengembalian_id,'Pengembalian dana menunggu transfer',
+        """ + OrderMoney.rupiah("r.jumlah") + """
+          ||' untuk '||c.nama||' (pesanan '||p.kode_pemesanan||').',r.diajukan_pada,'/admin/laporan/pencairan'
+      from pengembalian_dana r join pemesanan p on p.order_id=r.order_id join pengguna c on c.user_id=p.user_id where r.status='menunggu'
       """;
   private final JdbcTemplate jdbc;
   AdminNotificationService(JdbcTemplate jdbc) { this.jdbc=jdbc; }

@@ -15,10 +15,16 @@ import com.vendoria.backend.auth.VendorClaimDtos.*;
 @Service
 class VendorClaimService {
   // Hanya maju, tidak pernah mundur. 'ditinjau' tidak punya langkah vendor: tinggal menunggu keputusan admin (AdminClaimService).
-  private static final Map<String,String> NEXT=Map.of("diajukan","ditinjau","disetujui","selesai","ditolak","selesai");
+  // 'disetujui' sengaja akhir: statusnya penanda deposit hangus.
+  private static final Map<String,String> NEXT=Map.of("diajukan","ditinjau","ditolak","selesai");
   private static final String SELECT="""
       select k.klaim_id,p.kode_pemesanan,c.nama as customer,k.alasan,k.diajukan_pada::date as tanggal,p.total_dp,k.status,k.keputusan_admin,k.diputuskan_pada,
-      (select sum(r.jumlah) from pengembalian_dana r where r.klaim_id=k.klaim_id) as ganti_rugi
+      coalesce((select sum(r.jumlah) from pengembalian_dana r where r.klaim_id=k.klaim_id),
+        case when k.status='disetujui' and k.jenis='kerusakan' then """ + OrderMoney.HELD_DEPOSIT + """
+         end) as ganti_rugi,
+      k.jenis,(select i.nama_barang from item i where i.item_id=k.item_id) as item_name,k.jumlah_unit,k.tanggapan_vendor,
+      k.foto_pelapor is not null as has_photo,k.foto_vendor is not null as has_vendor_photo,
+      (k.jenis='tidak_sesuai' and k.status='disetujui' and k.barang_kembali_pada is null) as awaiting_return
       from klaim k
       join pemesanan p on p.order_id=k.order_id
       join pengguna c on c.user_id=k.user_id
@@ -54,7 +60,11 @@ class VendorClaimService {
     String status=rs.getString("status");
     return new Claim("KLM-"+rs.getLong("klaim_id"),rs.getString("kode_pemesanan"),rs.getString("customer"),rs.getString("alasan"),rs.getString("tanggal"),
         rs.getBigDecimal("total_dp").longValue(),status,rs.getString("keputusan_admin"),decided==null?null:decided.toInstant().toString(),NEXT.get(status),
-        rs.getBigDecimal("ganti_rugi")==null?null:rs.getBigDecimal("ganti_rugi").longValue());
+        rs.getBigDecimal("ganti_rugi")==null?null:rs.getBigDecimal("ganti_rugi").longValue(),
+        rs.getString("jenis"),rs.getString("item_name"),(Integer)rs.getObject("jumlah_unit"),rs.getString("tanggapan_vendor"),
+        rs.getBoolean("has_photo")?"/api/claims/"+rs.getLong("klaim_id")+"/photos/pelapor":null,
+        rs.getBoolean("has_vendor_photo")?"/api/claims/"+rs.getLong("klaim_id")+"/photos/vendor":null,
+        rs.getBoolean("awaiting_return"));
   }
   /** vendor_id akun vendor aktif; null bila profil bisnis belum dibuat. */
   private Long vendor(Long id,boolean lock) {

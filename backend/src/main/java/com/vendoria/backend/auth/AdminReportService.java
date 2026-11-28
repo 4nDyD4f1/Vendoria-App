@@ -75,7 +75,46 @@ class AdminReportService {
     return new Payout("PCR-"+rs.getLong("pencairan_id"),rs.getString("kode_pemesanan"),rs.getString("nama_vendor"),rs.getBigDecimal("jumlah").longValue(),
         status,rs.getString("referensi_transfer"),iso(rs.getTimestamp("diajukan_pada")),iso(rs.getTimestamp("dicairkan_pada")),rs.getString("pemroses"),
         rs.getString("bank"),number==null?null:pending?number:RefundAccountService.mask(number),rs.getString("nama_pemilik"),
-        rs.getBigDecimal("kotor").longValue(),rs.getBigDecimal("biaya_platform").longValue(),rs.getBigDecimal("persen_biaya").doubleValue(),rs.getBigDecimal("potongan_klaim").longValue());
+        rs.getBigDecimal("kotor").longValue(),rs.getBigDecimal("biaya_platform").longValue(),rs.getBigDecimal("persen_biaya").doubleValue(),rs.getBigDecimal("potongan_klaim").longValue(),VendorPayoutService.deposit(rs));
+  }
+
+  private static final String REFUND_SELECT="""
+      select r.pengembalian_id,p.kode_pemesanan,c.nama,r.jumlah,r.alasan,r.status,r.referensi_transfer,r.diajukan_pada,r.dikembalikan_pada,
+        a.bank,a.nomor_rekening,a.nama_pemilik
+      from pengembalian_dana r join pemesanan p on p.order_id=r.order_id join pengguna c on c.user_id=p.user_id
+      left join lateral (select * from rekening_refund x where x.user_id=p.user_id order by x.utama desc,x.rekening_id limit 1) a on true
+      """;
+
+  // shortcut: maks 1000 pengembalian terbaru tanpa paging server; upgrade bila > 1000.
+  @Transactional(readOnly=true)
+  List<Refund> refunds(Long actorId) {
+    admin(actorId);
+    return jdbc.query(REFUND_SELECT+"order by r.diajukan_pada desc,r.pengembalian_id desc limit 1000",AdminReportService::refund);
+  }
+
+  /** Admin sudah mentransfer manual ke rekening refund customer. */
+  @Transactional
+  Refund completeRefund(Long actorId,Long id,RefundDone input) {
+    adminForUpdate(actorId);
+    var rows=jdbc.queryForList("""
+        select r.status,exists(select 1 from rekening_refund a join pemesanan p on p.user_id=a.user_id where p.order_id=r.order_id) as has_account
+        from pengembalian_dana r where r.pengembalian_id=? for update of r
+        """,id);
+    if(rows.isEmpty()) throw new ResponseStatusException(HttpStatus.NOT_FOUND,"Pengembalian dana tidak ditemukan");
+    if(!List.of("menunggu","diproses").contains(rows.getFirst().get("status"))) throw new ResponseStatusException(HttpStatus.CONFLICT,"Pengembalian ini sudah selesai. Muat ulang daftar");
+    if(!Boolean.TRUE.equals(rows.getFirst().get("has_account"))) throw new ResponseStatusException(HttpStatus.CONFLICT,"Customer belum menambahkan rekening refund");
+    try {
+      jdbc.update("update pengembalian_dana set status='berhasil',referensi_transfer=?,diproses_oleh=?,dikembalikan_pada=now() where pengembalian_id=?",input.reference(),actorId,id);
+    } catch(DataIntegrityViolationException e) { throw new ResponseStatusException(HttpStatus.CONFLICT,"Referensi transfer sudah dipakai"); }
+    return jdbc.queryForObject(REFUND_SELECT+"where r.pengembalian_id=?",AdminReportService::refund,id);
+  }
+
+  private static Refund refund(ResultSet rs,int n) throws SQLException {
+    String status=rs.getString("status"),number=rs.getString("nomor_rekening");
+    boolean pending="menunggu".equals(status)||"diproses".equals(status);
+    return new Refund(rs.getLong("pengembalian_id"),rs.getString("kode_pemesanan"),rs.getString("nama"),rs.getBigDecimal("jumlah").longValue(),
+        rs.getString("alasan"),status,rs.getString("referensi_transfer"),iso(rs.getTimestamp("diajukan_pada")),iso(rs.getTimestamp("dikembalikan_pada")),
+        rs.getString("bank"),number==null?null:pending?number:RefundAccountService.mask(number),rs.getString("nama_pemilik"));
   }
   private static String iso(Timestamp t) { return t==null?null:t.toInstant().toString(); }
   private void admin(Long id) { check(id,false); }

@@ -30,6 +30,7 @@ function RequestModal({ listing, onClose, onDone }) {
       <div><dt>Jumlah pesanan</dt><dd>{available.orders} pesanan selesai</dd></div>
       <div><dt>Biaya platform ({available.feePercent}%)</dt><dd>− {money(available.fee)}</dd></div>
       <div><dt>Potongan klaim disetujui</dt><dd>− {money(available.claimDeduction)}</dd></div>
+      <div><dt>Deposit jaminan (kerusakan)</dt><dd>+ {money(available.deposit || 0)}</dd></div>
       <div className="vendor-orders-detail-wide"><dt>Dana yang Anda terima</dt><dd><strong>{money(available.amount)}</strong></dd></div>
       <div className="vendor-orders-detail-wide"><dt>Rekening tujuan</dt><dd>{account.account.bank} {account.account.masked} · {account.account.owner}</dd></div>
     </dl>
@@ -46,6 +47,7 @@ function DetailModal({ payout, onClose }) {
       <div><dt>Total sewa</dt><dd>{money(payout.gross)}</dd></div>
       <div><dt>Biaya platform ({payout.feePercent}%)</dt><dd>− {money(payout.fee)}</dd></div>
       <div><dt>Potongan klaim</dt><dd>− {money(payout.claimDeduction)}</dd></div>
+      <div><dt>Deposit jaminan (kerusakan)</dt><dd>+ {money(payout.deposit || 0)}</dd></div>
       <div><dt>Dana diterima</dt><dd><strong>{money(payout.amount)}</strong></dd></div>
       <div><dt>No. pesanan</dt><dd>{payout.order}</dd></div>
       <div><dt>Diajukan</dt><dd>{formatOrderDateTime(payout.requestedAt)}</dd></div>

@@ -135,7 +135,7 @@ class EmailOtpService {
 		return digest(user.getUserId() + ":" + user.getEmail() + ":" + user.getPasswordHash());
 	}
 
-	private static String digest(String value) {
+	static String digest(String value) {
 		try { return HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256").digest(value.getBytes(StandardCharsets.UTF_8))); }
 		catch (NoSuchAlgorithmException e) { throw new IllegalStateException(e); }
 	}

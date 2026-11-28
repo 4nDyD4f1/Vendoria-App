@@ -74,7 +74,10 @@ class AdminClaimDatabaseTest {
 				.andExpect(header().string("Cache-Control", "no-store"))
 				.andExpect(jsonPath("$[?(@.id=='KLM-" + claim + "')].status").value("ditinjau"))
 				.andExpect(jsonPath("$[?(@.id=='KLM-" + claim + "')].vendor").value("Vendor Klaim"))
-				.andExpect(jsonPath("$[?(@.id=='KLM-" + claim + "')].amount").value(250000));
+				.andExpect(jsonPath("$[?(@.id=='KLM-" + claim + "')].amount").value(250000))
+				// dipakai dialog klaim untuk memuat foto serah terima & pengembalian pesanan itu
+				.andExpect(jsonPath("$[?(@.id=='KLM-" + claim + "')].orderId").value(
+						jdbc.queryForObject("select order_id from klaim where klaim_id=?", Long.class, claim).intValue()));
 		assertEquals("diajukan", jdbc.queryForObject("select status from klaim where klaim_id=?", String.class, claim)); // tampilan saja, data tak diubah
 	}
 
@@ -102,20 +105,13 @@ class AdminClaimDatabaseTest {
 	}
 
 	@Test
-	void approvalNeedsCompensationAmountAndRecordsItAsRefund() throws Exception {
-		decide("{\"status\":\"disetujui\"}").andExpect(status().isBadRequest()); // nilai wajib
-		decide("{\"status\":\"disetujui\",\"amount\":0}").andExpect(status().isBadRequest());
-		decide("{\"status\":\"disetujui\",\"amount\":1000001}").andExpect(status().isBadRequest()); // melebihi total sewa 1.000.000
-		assertEquals("diajukan", jdbc.queryForObject("select status from klaim where klaim_id=?", String.class, claim));
+	void approvalForfeitsHeldDepositWithoutRefundingTheCustomer() throws Exception {
+		jdbc.update("insert into pembayaran(order_id,jenis,metode,jumlah,status,referensi_eksternal) select order_id,'deposit','payment_gateway',250000,'terverifikasi',? from klaim where klaim_id=?",
+				"DEP-" + token, claim);
+		decide("{\"status\":\"disetujui\",\"note\":\"Tenda sobek\"}").andExpect(status().isOk())
+				.andExpect(jsonPath("$.status").value("disetujui")).andExpect(jsonPath("$.compensation").value(250000));
 		assertEquals(0, jdbc.queryForObject("select count(*) from pengembalian_dana where klaim_id=?", Integer.class, claim));
-
-		decide("{\"status\":\"disetujui\",\"amount\":200000,\"note\":\"Tenda sobek\"}").andExpect(status().isOk())
-				.andExpect(jsonPath("$.status").value("disetujui")).andExpect(jsonPath("$.compensation").value(200000));
-		var refund = jdbc.queryForMap("select jumlah,status,alasan from pengembalian_dana where klaim_id=?", claim);
-		assertEquals(200000L, ((Number) refund.get("jumlah")).longValue());
-		assertEquals("menunggu", refund.get("status"));
-		decide("{\"status\":\"disetujui\",\"amount\":1}").andExpect(status().isConflict());
-		assertEquals(1, jdbc.queryForObject("select count(*) from pengembalian_dana where klaim_id=?", Integer.class, claim)); // tidak ganda
+		decide("{\"status\":\"disetujui\"}").andExpect(status().isConflict());
 	}
 
 	@Test

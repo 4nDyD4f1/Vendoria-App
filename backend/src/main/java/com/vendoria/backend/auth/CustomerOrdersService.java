@@ -33,7 +33,8 @@ class CustomerOrdersService {
           coalesce((select sum(d.jumlah_sewa) from detail_item d where d.order_id=p.order_id),0) as item_count,
           coalesce((select sum(b.jumlah) from pembayaran b where b.order_id=p.order_id and b.status='terverifikasi'),0) as paid,
           exists(select 1 from klaim k where k.order_id=p.order_id and k.status in ('diajukan','ditinjau')) as has_open_claim,
-          exists(select 1 from ulasan r where r.order_id=p.order_id) as reviewed
+          exists(select 1 from ulasan r where r.order_id=p.order_id) as reviewed,
+        """ + "  " + OrderMoney.AWAITING + " as awaiting_settlement\n" + """
         from pemesanan p join vendor v on v.vendor_id=p.vendor_id
         """;
     private final JdbcTemplate jdbc;
@@ -176,7 +177,7 @@ class CustomerOrdersService {
             rs.getString("equipment_summary"), rs.getInt("item_count"), rs.getDate("tanggal_mulai_sewa").toLocalDate(),
             rs.getDate("tanggal_selesai_sewa").toLocalDate(), rs.getString("lokasi_acara"), rs.getBigDecimal("total_biaya_sewa"),
             rs.getBigDecimal("total_dp"), rs.getBigDecimal("paid"), status, instant(rs.getTimestamp("tanggal_pemesanan")),
-            rs.getBoolean("has_open_claim"), reviewed, "selesai".equals(status) && !reviewed);
+            rs.getBoolean("has_open_claim"), reviewed, "selesai".equals(status) && !reviewed, rs.getBoolean("awaiting_settlement"));
     }
 
     private void customer(Long id) {

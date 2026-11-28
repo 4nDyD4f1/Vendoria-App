@@ -56,8 +56,9 @@ class PasswordResetServiceTest {
 	}
 
 	@Test
-	void emailTakTerdaftarDitolak404TanpaKirimEmail() {
-		assertEquals(HttpStatus.NOT_FOUND, status(assertThrows(ResponseStatusException.class, () -> service.requestOtp("hantu@mail.com"))));
+	void emailTakTerdaftarDijawabSamaTanpaKirimEmail() {
+		service.requestOtp("hantu@mail.com"); // sama seperti email terdaftar: tidak ada galat
+		assertThrows(com.vendoria.backend.TooManyRequestsException.class, () -> service.requestOtp("hantu@mail.com")); // jeda kirim ulang juga sama
 		verify(mailer, never()).sendOtp(any(), any(), any());
 	}
 

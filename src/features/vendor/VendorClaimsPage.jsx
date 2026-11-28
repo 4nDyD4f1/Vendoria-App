@@ -5,11 +5,15 @@ import SlidingTabs from '../interface/SlidingTabs';
 import { EmptyState, Modal, PageHeading, Pagination, Status } from './VendorUi';
 import { money } from './vendorData';
 import { formatOrderDate, formatOrderDateTime } from './vendorOrdersApi';
-import { claimFilters, claimLabels, listVendorClaims, processVendorClaim } from './vendorClaimsApi';
+import { claimFilters, claimLabels, confirmVendorReturn, listVendorClaims, processVendorClaim, respondVendorClaim } from './vendorClaimsApi';
+import ClaimEvidence from '../shared/ClaimEvidence';
+import { isCustomerReport, reportTypes } from '../shared/reportTypes';
 import './vendor-orders.css';
 
-function ClaimModal({ claim, process, onClose, onProcessed }) {
+function ClaimModal({ claim, process, onClose, onProcessed, onChanged }) {
   const [error, setError] = useState('');
+  const [reply, setReply] = useState('');
+  const [photo, setPhoto] = useState(null);
   const [busy, setBusy] = useState(false);
   const pending = useRef(false);
   const run = async () => {
@@ -18,6 +22,13 @@ function ClaimModal({ claim, process, onClose, onProcessed }) {
     try { await processVendorClaim(claim.id, claim.status); onProcessed(claimLabels[claim.next]); }
     catch (reason) { setError(reason.message); pending.current = false; setBusy(false); }
   };
+  const act = async (send, message) => {
+    if (pending.current) return;
+    pending.current = true; setBusy(true); setError('');
+    try { await send(); onChanged(message); }
+    catch (reason) { setError(reason.message); pending.current = false; setBusy(false); }
+  };
+  const canReply = !process && isCustomerReport(claim) && !claim.response && ['diajukan', 'ditinjau'].includes(claim.status);
   return <Modal title={`${process ? 'Proses' : 'Detail'} klaim ${claim.id}`} onClose={onClose} narrow={process}>
     {process
       ? <p className="v-modal-copy">Status klaim berubah dari <strong>{claimLabels[claim.status]}</strong> menjadi <strong>{claimLabels[claim.next]}</strong>. Status hanya bisa maju dan tidak dapat dikembalikan.</p>
@@ -26,12 +37,21 @@ function ClaimModal({ claim, process, onClose, onProcessed }) {
         <div><dt>Tanggal pengajuan</dt><dd>{formatOrderDate(claim.date)}</dd></div>
         <div><dt>No. pesanan</dt><dd>{claim.order}</dd></div>
         <div><dt>Pelanggan</dt><dd>{claim.customer}</dd></div>
-        <div><dt>Deposit (DP) pesanan</dt><dd>{money(claim.amount)}</dd></div>
+        <div><dt>Deposit jaminan</dt><dd>{money(claim.amount)}</dd></div>
         {claim.decidedAt && <div><dt>Diputuskan admin</dt><dd>{formatOrderDateTime(claim.decidedAt)}</dd></div>}
+        {claim.type && <div><dt>Jenis</dt><dd>{reportTypes[claim.type]}{claim.item ? ` · ${claim.item} × ${claim.units}` : ''}</dd></div>}
         <div className="vendor-orders-detail-wide"><dt>Perihal klaim</dt><dd>{claim.reason}</dd></div>
-        {claim.compensation != null && <div className="vendor-orders-detail-wide"><dt>Ganti rugi disetujui (dipotong dari pencairan)</dt><dd>{money(claim.compensation)}</dd></div>}
+        <ClaimEvidence claim={claim} className="vendor-orders-detail-wide" />
+        {claim.compensation != null && <div className="vendor-orders-detail-wide"><dt>{isCustomerReport(claim) ? 'Dikembalikan ke pelanggan' : 'Deposit untuk Anda (masuk pencairan)'}</dt><dd>{money(claim.compensation)}</dd></div>}
         {claim.note && <div className="vendor-orders-detail-wide"><dt>Catatan admin</dt><dd>{claim.note}</dd></div>}
       </dl>}
+    {canReply && <form onSubmit={event => { event.preventDefault(); if (reply.trim()) act(() => respondVendorClaim(claim.id, reply.trim(), photo), `Tanggapan ${claim.id} terkirim.`); }}>
+      <label className="v-field"><span>Tanggapan Anda (sekali kirim)</span><textarea value={reply} onChange={event => setReply(event.target.value)} maxLength={1000} rows={3} required disabled={busy} /></label>
+      <label className="v-field"><span>Foto pendukung (opsional)</span><input type="file" accept="image/jpeg,image/png" disabled={busy} onChange={event => setPhoto(event.target.files?.[0] || null)} /></label>
+      <button type="submit" className="v-button v-button-primary" disabled={busy || !reply.trim()}>Kirim tanggapan</button>
+    </form>}
+    {!process && claim.awaitingReturn && <><p className="v-modal-copy">Konfirmasi setelah barang benar-benar Anda terima kembali. Pesanan akan dibatalkan dan dana pelanggan dikembalikan.</p>
+      <button type="button" className="v-button v-button-primary" disabled={busy} onClick={() => act(() => confirmVendorReturn(claim.id), `Barang untuk ${claim.id} dikonfirmasi diterima.`)}>Barang sudah saya terima kembali</button></>}
     {error && <p role="alert" className="v-field-error">{error}</p>}
     {process && <div className="v-modal-actions"><button type="button" className="v-button v-button-secondary" disabled={busy} onClick={onClose}>Batal</button><button type="button" className="v-button v-button-primary" disabled={busy} onClick={run}>{busy ? 'Memproses…' : `Proses ke ${claimLabels[claim.next]}`}</button></div>}
   </Modal>;
@@ -89,7 +109,7 @@ export default function VendorClaimsPage({ segments, onLoaded, notify }) {
               <thead><tr><th scope="col">No. klaim</th><th scope="col">Pesanan</th><th scope="col">Pelanggan</th><th scope="col">Perihal</th><th scope="col">Deposit</th><th scope="col">Status</th><th scope="col" className="v-actions-cell">Operasi</th></tr></thead>
               <tbody>{shown.map(claim => <tr key={claim.id}>
                 <td><span className="v-record-id">{claim.id}</span><small className="vendor-orders-subtext">{formatOrderDate(claim.date)}</small></td>
-                <td>{claim.order}</td><td>{claim.customer}</td><td>{claim.reason}</td>
+                <td>{claim.order}</td><td>{claim.customer}</td><td>{claim.type && <small className="vendor-orders-subtext">{reportTypes[claim.type]}</small>}{claim.reason}</td>
                 <td className="v-number">{money(claim.amount)}</td>
                 <td><Status>{claimLabels[claim.status]}</Status></td>
                 <td><div className="v-row-actions vendor-orders-row-actions">
@@ -100,6 +120,7 @@ export default function VendorClaimsPage({ segments, onLoaded, notify }) {
       {claims && !error && <Pagination count={filtered.length} page={current} onPage={setPage} size={size} onSize={value => { setSize(value); setPage(1); }} />}
     </section>
     {targetClaim && (!target.process || targetClaim.next) && <ClaimModal key={`${targetClaim.id}:${target.process}`} claim={targetClaim} process={target.process} onClose={close}
+      onChanged={message => { close(); notify(message); setRefresh(value => value + 1); }}
       onProcessed={label => { close(); notify(`Klaim ${targetClaim.id} diproses menjadi ${label}.`); setRefresh(value => value + 1); }} />}
   </div>;
 }

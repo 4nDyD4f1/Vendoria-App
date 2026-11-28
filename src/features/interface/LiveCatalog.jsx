@@ -1,63 +1,17 @@
 import { use, useContext, useEffect, useRef, useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
-import { ArrowRight, ChevronLeft, ChevronRight, LocateFixed, MapPin, Package, Search, ShieldCheck, Star, X } from 'lucide-react';
-import { api, apiUrl } from '../../api';
+import { Navigate, useSearchParams } from 'react-router-dom';
+import { ArrowRight, ChevronLeft, ChevronRight, LocateFixed, Package, Search } from 'lucide-react';
+import { api } from '../../api';
 import { InterfaceContext } from './InterfaceContext';
 import DesignNode from './DesignNode';
 import CatalogDropdown from './CatalogDropdown';
-import CatalogWishlistButton from './CatalogWishlistButton';
-import AddToCartButton from './AddToCartButton';
+import CatalogCard from './CatalogCard';
 import { useWishlist } from './useWishlist';
 import { useCart } from './useCart';
 import './live-catalog.css';
 
 const sortLabels = { popular: 'Paling populer', 'price-low': 'Harga terendah', 'price-high': 'Harga tertinggi', rating: 'Rating tertinggi' };
-const money = value => `Rp${Number(value).toLocaleString('id-ID')}`;
 const empty = { items: [], cities: [], categories: [], total: 0, available: 0, page: 1, size: 12 };
-
-function Photo({ item }) {
-  const [failed, setFailed] = useState(false);
-  return item.image && !failed
-    ? <img src={apiUrl(item.image)} alt={item.name} loading="lazy" onError={() => setFailed(true)} />
-    : <div className="live-catalog-photo-empty"><Package size={32} aria-hidden="true" /><span>Foto belum tersedia</span></div>;
-}
-
-function ItemDialog({ id, onClose }) {
-  const dialog = useRef(null);
-  const [state, setState] = useState({ loading: true });
-  useEffect(() => {
-    const request = new AbortController();
-    api(`/api/catalog/${encodeURIComponent(id)}`).then(item => { if (!request.signal.aborted) setState({ item }); })
-      .catch(error => { if (!request.signal.aborted) setState({ error: error.message }); });
-    return () => request.abort();
-  }, [id]);
-  useEffect(() => {
-    const previous = document.activeElement;
-    const element = dialog.current;
-    element.showModal();
-    return () => { element.close(); previous?.focus({ preventScroll: true }); };
-  }, []);
-  const item = state.item;
-  return <dialog ref={dialog} className="live-catalog-dialog" aria-labelledby="catalog-detail-title" onCancel={event => { event.preventDefault(); onClose(); }} onClick={event => { if (event.target === dialog.current) onClose(); }}>
-    <div className="live-catalog-detail">
-      <button type="button" className="live-catalog-close" aria-label="Tutup detail alat" onClick={onClose}><X size={20} /></button>
-      <h2 id="catalog-detail-title">{item?.name || 'Detail alat'}</h2>
-      {state.loading && <p role="status">Memuat detail alat…</p>}
-      {state.error && <p role="alert">{state.error}</p>}
-      {item && <>
-        <div className="live-catalog-detail-photo"><Photo item={item} /></div>
-        <p>{item.category}</p>
-        <p>{item.vendor}{item.verified && <ShieldCheck size={16} aria-label="Vendor terverifikasi" />} · {item.city || 'Kota belum diisi'}</p>
-        <p><strong>{money(item.price)}</strong> /hari</p>
-        <dl><div><dt>Stok</dt><dd>{item.stock} unit</dd></div><div><dt>Minimal DP</dt><dd>{money(item.deposit)}</dd></div><div><dt>Kondisi</dt><dd>{item.condition || 'Belum diisi'}</dd></div></dl>
-        <h3>Deskripsi</h3><p className="live-catalog-description">{item.description || 'Deskripsi belum diisi oleh vendor.'}</p>
-        <p>{item.reviewCount ? `${Number(item.rating || 0).toLocaleString('id-ID')} · ${item.reviewCount} ulasan vendor` : 'Belum ada ulasan vendor'}</p>
-        <div className="live-catalog-save"><CatalogWishlistButton item={item} /><span>Simpan alat ke wishlist</span></div>
-        <AddToCartButton item={item} />
-      </>}
-    </div>
-  </dialog>;
-}
 
 export default function LiveCatalog({ loadDesign }) {
   const parent = useContext(InterfaceContext);
@@ -153,14 +107,7 @@ export default function LiveCatalog({ loadDesign }) {
     if (node.id === '84:4843') return <div {...props} className={`${props.className} live-catalog-grid`} aria-busy={loading}>
       {cart.error && <div className="live-catalog-status" role="alert"><p>Keranjang: {cart.error}</p><button type="button" onClick={cart.reload}>Muat ulang keranjang</button></div>}
       {wishlist.error && <div className="live-catalog-status" role="alert"><p>Wishlist: {wishlist.error}</p><button type="button" onClick={() => wishlist.refresh().catch(() => {})}>Muat ulang wishlist</button></div>}
-      {loading ? <p className="live-catalog-status" role="status">Memuat katalog…</p> : error ? <div className="live-catalog-status" role="alert"><p>{error}</p><button type="button" onClick={() => setRetry(value => value + 1)}>Coba lagi</button></div> : !data.items.length ? <div className="live-catalog-status" role="status"><Package size={30} /><h2>{data.available ? 'Tidak ada alat yang sesuai' : 'Belum ada alat siap sewa'}</h2><p>{data.available ? 'Coba kota, kategori, atau kata kunci lain.' : 'Alat akan muncul setelah vendor aktif menambahkan barang aktif dengan stok tersedia.'}</p><button type="button" onClick={() => { setDraft(''); setParams({}); }}>Bersihkan filter</button></div> : data.items.map(item => <article key={item.id} className="live-catalog-card">
-        <div className="live-catalog-photo-wrap"><button type="button" className="live-catalog-photo" onClick={() => update({ item: item.id }, false)} aria-label={`Lihat detail ${item.name}`}><Photo item={item} /><span className="live-catalog-stock">{item.stock === 1 ? 'Sisa 1 unit' : 'Tersedia'}</span></button><CatalogWishlistButton item={item} overlay /></div>
-        <div className="live-catalog-card-body"><p className="live-catalog-category">{item.category}</p><h2><button type="button" onClick={() => update({ item: item.id }, false)}>{item.name}</button></h2>
-          <p className="live-catalog-vendor">{item.verified && <ShieldCheck size={14} aria-label="Vendor terverifikasi" />}{item.vendor}</p>
-          <p className="live-catalog-meta"><Star size={13} aria-hidden="true" />{item.reviewCount ? `${Number(item.rating || 0).toLocaleString('id-ID')} (${item.reviewCount})` : 'Belum ada ulasan'}<MapPin size={13} aria-hidden="true" />{item.city || 'Kota belum diisi'}</p>
-          <div className="live-catalog-price"><span><strong>{money(item.price)}</strong> /hari</span><div className="live-catalog-card-actions"><button type="button" onClick={() => update({ item: item.id }, false)}>Lihat <ArrowRight size={14} /></button><AddToCartButton key={parent.user?.user_id || 'guest'} item={item} compact /></div></div>
-        </div>
-      </article>)}
+      {loading ? <p className="live-catalog-status" role="status">Memuat katalog…</p> : error ? <div className="live-catalog-status" role="alert"><p>{error}</p><button type="button" onClick={() => setRetry(value => value + 1)}>Coba lagi</button></div> : !data.items.length ? <div className="live-catalog-status" role="status"><Package size={30} /><h2>{data.available ? 'Tidak ada alat yang sesuai' : 'Belum ada alat siap sewa'}</h2><p>{data.available ? 'Coba kota, kategori, atau kata kunci lain.' : 'Alat akan muncul setelah vendor aktif menambahkan barang aktif dengan stok tersedia.'}</p><button type="button" onClick={() => { setDraft(''); setParams({}); }}>Bersihkan filter</button></div> : data.items.map(item => <CatalogCard key={item.id} item={item} />)}
     </div>;
     if (node.id === '84:5352') return <nav className="live-catalog-pagination" aria-label="Halaman katalog">
       <button type="button" disabled={loading || data.page <= 1} onClick={() => update({ page: data.page - 1 }, false)} aria-label="Halaman sebelumnya"><ChevronLeft size={16} /></button>
@@ -176,5 +123,7 @@ export default function LiveCatalog({ loadDesign }) {
     if (id === '84:4842') return loading ? 'Memuat hasil katalog…' : error ? 'Katalog belum dapat dimuat' : `Menampilkan ${data.items.length} dari ${data.total} alat event${city ? ` di ${city}` : ''}`;
     return parent.formatText(text, ancestors);
   } };
-  return <InterfaceContext.Provider value={context}><DesignNode node={tree} />{detailId && <ItemDialog key={detailId} id={detailId} onClose={() => update({ item: '' }, false)} />}</InterfaceContext.Provider>;
+  // Old /catalog?item= links used to open a popup.
+  if (detailId) return <Navigate to={`/product/${encodeURIComponent(detailId)}`} replace />;
+  return <InterfaceContext.Provider value={context}><DesignNode node={tree} /></InterfaceContext.Provider>;
 }

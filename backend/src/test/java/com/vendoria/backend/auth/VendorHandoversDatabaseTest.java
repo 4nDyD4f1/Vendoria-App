@@ -65,6 +65,7 @@ class VendorHandoversDatabaseTest {
             values (?,?,?,current_date,current_date+1,1000000,250000,?) returning order_id
             """, Long.class, customer, owner, "VND-HO-" + suffix + token.substring(0, 8), status);
         jdbc.update("insert into detail_item(order_id,item_id,jumlah_sewa,harga_saat_sewa,subtotal) values (?,?,2,500000,1000000)", id, equipment);
+        jdbc.update("insert into pembayaran(order_id,jenis,metode,jumlah,status,referensi_eksternal) values (?,'pelunasan','payment_gateway',?,'terverifikasi',?)", id, 1000000, "SETTLE-" + id + "-" + token);
         return id;
     }
     private MockHttpSession session(long id) { var result = new MockHttpSession(); result.setAttribute(AuthController.SESSION_USER_ID, id); return result; }
@@ -231,7 +232,7 @@ class VendorHandoversDatabaseTest {
     @AfterEach void cleanCommittedConcurrencyFixtures() throws Exception {
         if (TestTransaction.isActive()) return;
         var locators = jdbc.queryForList("select foto_kondisi from cek_barang where order_id in (?,?)", String.class, order, otherOrder);
-        for (String table : new String[] {"cek_barang", "riwayat_status_pesanan", "detail_item", "pemesanan"})
+        for (String table : new String[] {"cek_barang", "riwayat_status_pesanan", "detail_item", "pembayaran", "pemesanan"})
             jdbc.update("delete from " + table + " where order_id in (?,?)", order, otherOrder);
         jdbc.update("delete from item where item_id in (?,?)", item, otherItem);
         jdbc.update("delete from kategori where kategori_id=?", category);

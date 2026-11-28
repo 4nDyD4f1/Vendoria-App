@@ -16,5 +16,5 @@ final class VendorDashboardDtos {
 
   /** id = kunci ('pesanan:12:konfirmasi', 'klaim:3:buka', 'pencairan:7:berhasil'); path = halaman vendor tujuan; createdAt = ISO. */
   record Notification(String id, String title, String body, String createdAt, String path, boolean read) {}
-  record Ids(@NotEmpty @Size(max=100) List<@NotBlank @Pattern(regexp="(pesanan|klaim|pencairan):[0-9]{1,18}:[a-z]{3,10}") String> ids) {}
+  record Ids(@NotEmpty @Size(max=100) List<@NotBlank @Pattern(regexp="(pesanan|klaim|pencairan|kyc):[0-9]{1,18}:[a-z]{3,10}") String> ids) {}
 }

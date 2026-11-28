@@ -1,6 +1,6 @@
 import { products } from '../../data/mockData';
 import catalogEntries from './catalogEntries.json';
-import { descendants, nodeText } from './designTree';
+import { descendants, nodeText } from './treeWalk';
 
 // Use a product identity across screens rather than the Figma button's node ID.
 export function wishlistItemFor(ancestors, currentProduct) {

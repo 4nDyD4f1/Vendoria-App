@@ -8,7 +8,13 @@ final class AdminReportDtos {
   /** amount = dana bersih yang ditransfer (gross - fee - claimDeduction). status: menunggu | diproses | berhasil | gagal | dibatalkan. account = nomor lengkap hanya selama masih perlu ditransfer (menunggu/diproses), selebihnya tersamarkan; bank/account/owner null untuk pencairan lama. */
   record Payout(String id, String order, String vendor, long amount, String status, String reference,
       String requestedAt, String paidAt, String processedBy, String bank, String account, String owner,
-      long gross, long fee, double feePercent, long claimDeduction) {}
+      long gross, long fee, double feePercent, long claimDeduction, long deposit) {}
+  /** Pengembalian dana ke customer. account = nomor lengkap hanya selama belum ditransfer; null bila customer belum mengisi rekening refund. */
+  record Refund(long id, String order, String customer, long amount, String reason, String status, String reference,
+      String requestedAt, String refundedAt, String bank, String account, String owner) {}
+  record RefundDone(@NotBlank @Size(max=150) String reference) {
+    RefundDone { reference=reference==null?null:reference.trim(); }
+  }
   /** reference (nomor/bukti transfer bank) wajib saat status berhasil. */
   record PayoutDecision(@NotBlank @Pattern(regexp="diproses|berhasil|gagal|dibatalkan") String status, @Size(max=150) String reference) {
     PayoutDecision { reference=reference==null||reference.isBlank()?null:reference.trim(); }

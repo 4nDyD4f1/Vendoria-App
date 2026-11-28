@@ -22,8 +22,10 @@ class AdminDashboardService {
     admin(actorId);
     long gmv=money("select coalesce(sum(total_biaya_sewa),0) from pemesanan where status_pesanan<>'dibatalkan' and tanggal_pemesanan>=now()-interval '30 days'");
     long escrow=money("""
-        select coalesce(sum(b.jumlah),0) from pembayaran b join pemesanan p on p.order_id=b.order_id
-        where b.jenis='deposit' and b.status='terverifikasi' and p.status_pesanan not in ('selesai','dibatalkan')
+        select coalesce((select sum(b.jumlah) from pembayaran b join pemesanan p on p.order_id=b.order_id
+            where b.status='terverifikasi' and p.status_pesanan not in ('selesai','dibatalkan')),0)
+          - coalesce((select sum(r.jumlah) from pengembalian_dana r join pemesanan p on p.order_id=r.order_id
+            where r.status='berhasil' and p.status_pesanan not in ('selesai','dibatalkan')),0)
         """);
     // minggu ke-n mundur dari minggu berjalan (n=0); urut dari terlama
     List<Week> weekly=new ArrayList<>(jdbc.query("""

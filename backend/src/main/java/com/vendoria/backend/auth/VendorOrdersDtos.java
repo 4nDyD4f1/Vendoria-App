@@ -49,7 +49,9 @@ final class VendorOrdersDtos {
 			@JsonProperty("can_process") boolean canProcess,
 			@JsonProperty("can_cancel") boolean canCancel,
 			@JsonProperty("next_status") String nextStatus,
-			@JsonProperty("next_action_label") String nextActionLabel) {}
+			@JsonProperty("next_action_label") String nextActionLabel,
+			@JsonProperty("awaiting_settlement") boolean awaitingSettlement,
+			@JsonProperty("report_open") boolean reportOpen) {}
 
 	record Listing(
 			VendorInfo vendor,

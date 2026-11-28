@@ -1,6 +1,7 @@
 package com.vendoria.backend.auth;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.security.SecureRandom;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -22,6 +23,8 @@ class CustomerCartService {
     static final int LIMIT = 50, MAX_DAYS = 60;
     static final List<String> EVENT_CATEGORIES = List.of("Festival & Konser", "Pernikahan", "Acara Korporat", "Wisuda & Kampus", "Ulang Tahun & Pribadi", "Lainnya");
     private static final SecureRandom RANDOM = new SecureRandom();
+    /** Deposit paling banyak 60% dari biaya sewa pesanan; sama dengan src/features/interface/deposit.js. */
+    private static final BigDecimal DEPOSIT_CAP = new BigDecimal("0.60");
     private final JdbcTemplate jdbc;
     private final PublicCatalogService catalog;
     CustomerCartService(JdbcTemplate jdbc, PublicCatalogService catalog) { this.jdbc = jdbc; this.catalog = catalog; }
@@ -84,10 +87,17 @@ class CustomerCartService {
             String name = (String) r.get("nama_barang");
             int qty = ((Number) r.get("jumlah")).intValue(), stock = ((Number) r.get("stok_total")).intValue();
             if (!Boolean.TRUE.equals(r.get("ok"))) throw conflict(name + " sudah tidak tersedia. Hapus dari keranjang untuk melanjutkan");
+            if (((BigDecimal) r.get("harga_sewa_per_hari")).signum() <= 0) throw conflict(name + " belum punya harga sewa. Hapus dari keranjang atau minta vendor mengisinya");
+            if (((BigDecimal) r.get("minimal_dp")).signum() <= 0) throw conflict(name + " belum punya deposit jaminan. Hapus dari keranjang atau minta vendor mengisinya");
             long booked = jdbc.queryForObject("""
-                select coalesce(sum(d.jumlah_sewa),0) from detail_item d join pemesanan p on p.order_id=d.order_id
-                where d.item_id=? and p.status_pesanan not in ('selesai','dibatalkan') and p.tanggal_mulai_sewa<? and p.tanggal_selesai_sewa>?
-                """, Long.class, r.get("item_id"), in.endDate(), in.startDate());
+                select coalesce(max(dipakai),0) from (
+                  select sum(d.jumlah_sewa) as dipakai
+                  from generate_series(?::date, ?::date - 1, interval '1 day') as hari(tanggal)
+                  join pemesanan p on p.tanggal_mulai_sewa<=hari.tanggal::date and p.tanggal_selesai_sewa>hari.tanggal::date
+                    and p.status_pesanan not in ('selesai','dibatalkan')
+                  join detail_item d on d.order_id=p.order_id and d.item_id=?
+                  group by hari.tanggal) per_hari
+                """, Long.class, in.startDate(), in.endDate(), r.get("item_id"));
             if (booked + qty > stock) throw conflict("Stok " + name + " pada tanggal tersebut tinggal " + Math.max(0, stock - booked) + " unit");
         }
 
@@ -100,7 +110,7 @@ class CustomerCartService {
                 total = total.add(((BigDecimal) r.get("harga_sewa_per_hari")).multiply(qty).multiply(BigDecimal.valueOf(days)));
                 deposit = deposit.add(((BigDecimal) r.get("minimal_dp")).multiply(qty));
             }
-            deposit = deposit.min(total); // CHECK pemesanan: total_dp <= total_biaya_sewa
+            deposit = deposit.min(total.multiply(DEPOSIT_CAP).setScale(0, RoundingMode.CEILING));
             long orderId = 0; String code = null;
             for (int attempt = 0; attempt < 5 && orderId == 0; attempt++) {
                 code = "VND-" + DateTimeFormatter.ofPattern("yyMMdd").format(today) + "-" + (1000 + RANDOM.nextInt(9000));

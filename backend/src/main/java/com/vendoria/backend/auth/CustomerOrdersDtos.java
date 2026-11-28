@@ -13,7 +13,7 @@ final class CustomerOrdersDtos {
     /** paid = DP/pelunasan terverifikasi; escrow = DP terverifikasi pesanan yang belum selesai/dibatalkan. */
     record Summary(long orderId, String code, String vendorName, String vendorCity, String equipmentSummary, int itemCount,
         LocalDate startDate, LocalDate endDate, String location, BigDecimal totalRental, BigDecimal totalDp, BigDecimal paid,
-        String status, Instant orderedAt, boolean hasOpenClaim, boolean reviewed, boolean canReview) {}
+        String status, Instant orderedAt, boolean hasOpenClaim, boolean reviewed, boolean canReview, boolean awaitingSettlement) {}
     record Listing(List<Summary> items, long total, int page, int size, Map<String, Long> counts, BigDecimal escrow, String userId) {}
 
     record Item(long itemId, String name, String category, int quantity, BigDecimal price, BigDecimal subtotal, String photoUrl) {}

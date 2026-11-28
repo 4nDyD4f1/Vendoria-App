@@ -48,7 +48,7 @@ const ForgotPasswordPage = () => {
       await api('/api/auth/forgot-password', { method: 'POST', body: { email: email.trim() } });
       navigate('/otp-verification', { state: { email: email.trim() } });
     } catch (err) {
-      setError(err.message); // 404 email tidak terdaftar, 429 terlalu sering, 502/503 email gagal
+      setError(err.message); // 429 terlalu sering, 502/503 email gagal
     } finally {
       setSubmitting(false);
     }

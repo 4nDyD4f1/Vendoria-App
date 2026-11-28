@@ -35,7 +35,8 @@ services:
       FRONTEND_URL: https://${DOMAIN:?isi DOMAIN di .env}
       CORS_ORIGINS: https://${DOMAIN}
       GOOGLE_REDIRECT_URI: https://${DOMAIN}/login/oauth2/code/google
-      JAVA_OPTS: -Xms192m -Xmx512m
+      # zona waktu menentukan "hari ini" (checkout, laporan) dan current_date di database
+      JAVA_OPTS: -Xms192m -Xmx512m -Duser.timezone=Asia/Jakarta
     volumes:
       - kyc:/data/kyc   # berisi KUNCI enkripsi KYC: jangan dihapus, sertakan di backup
     mem_limit: 900m

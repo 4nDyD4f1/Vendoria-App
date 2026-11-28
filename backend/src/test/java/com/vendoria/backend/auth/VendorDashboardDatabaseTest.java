@@ -83,6 +83,7 @@ class VendorDashboardDatabaseTest {
 		order(vendorId, "dikembalikan", 100000, "E");
 		order(vendorId, "dibatalkan", 900000, "F");
 		long done = order(vendorId, "selesai", 1000000, "G");
+		jdbc.update("insert into pembayaran(order_id,jenis,metode,jumlah,status,referensi_eksternal) values (?,'pelunasan','payment_gateway',1000000,'terverifikasi',?)", done, "VD-" + token);
 		order(otherId, "menunggu_konfirmasi", 100000, "H"); // milik vendor lain
 		long claimOrder = order(vendorId, "berjalan", 100000, "I");
 		jdbc.update("insert into klaim(order_id, user_id, alasan) values (?, ?, 'Rusak')", claimOrder, customer);

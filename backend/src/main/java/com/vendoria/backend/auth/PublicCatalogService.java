@@ -66,6 +66,26 @@ class PublicCatalogService {
         if (rows.isEmpty()) throw new ResponseStatusException(HttpStatus.NOT_FOUND,"Alat tidak tersedia");
         return rows.getFirst();
     }
+    /** Ulasan untuk vendor alat ini, sama dengan jumlah dan rata-rata yang ditampilkan katalog. */
+    @Transactional(readOnly=true)
+    List<Review> reviews(long id) {
+        get(id); // aturan visibilitas yang sama dengan detail alat
+        // shortcut: 20 ulasan terbaru tanpa paging; tambah paging bila penyewa perlu membaca yang lebih lama.
+        return jdbc.query("""
+            select r.rating,r.komentar,r.tanggal_ulasan,u.nama,
+              (select string_agg(x.nama_barang,', ' order by d.order_detail_id) from detail_item d join item x on x.item_id=d.item_id
+                where d.order_id=r.order_id and x.status='aktif') as items
+            from ulasan r join item i on i.vendor_id=r.vendor_id join pengguna u on u.user_id=r.user_id
+            where i.item_id=? order by r.tanggal_ulasan desc,r.order_id desc limit 20
+            """,(rs,n)->new Review(masked(rs.getString("nama")),rs.getInt("rating"),rs.getString("komentar"),
+                rs.getTimestamp("tanggal_ulasan").toInstant(),rs.getString("items")),id);
+    }
+    /** Halaman publik: hanya nama depan dan inisial nama belakang. */
+    static String masked(String name) {
+        String[] parts=name==null?new String[0]:name.trim().split("\\s+");
+        if (parts.length==0 || parts[0].isEmpty()) return "Penyewa";
+        return parts.length==1?parts[0]:parts[0]+" "+parts[parts.length-1].substring(0,1).toUpperCase(java.util.Locale.ROOT)+".";
+    }
     @Transactional(readOnly=true)
     List<Item> available(List<Long> ids) {
         if (ids.isEmpty()) return List.of();

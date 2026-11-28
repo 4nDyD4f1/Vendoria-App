@@ -29,5 +29,13 @@ class AdminReportController {
     throttle.checkIp(request.getRemoteAddr());
     return ResponseEntity.ok().cacheControl(CacheControl.noStore()).body(service.decidePayout(id(request),id,decision));
   }
+  @GetMapping("/refunds") ResponseEntity<List<Refund>> refunds(HttpServletRequest request) {
+    return ResponseEntity.ok().cacheControl(CacheControl.noStore()).body(service.refunds(id(request)));
+  }
+  @PostMapping("/refunds/{id}/complete") ResponseEntity<Refund> completeRefund(@PathVariable Long id,@Valid @RequestBody RefundDone input,HttpServletRequest request) {
+    if(!"1".equals(request.getHeader("X-Admin-Payouts"))) throw new ResponseStatusException(HttpStatus.FORBIDDEN,"Permintaan pengembalian dana tidak valid");
+    throttle.checkIp(request.getRemoteAddr());
+    return ResponseEntity.ok().cacheControl(CacheControl.noStore()).body(service.completeRefund(id(request),id,input));
+  }
   private static Long id(HttpServletRequest request) { return AccountSecurityService.userId(request.getSession(false)); }
 }

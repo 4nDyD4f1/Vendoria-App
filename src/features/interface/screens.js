@@ -52,7 +52,6 @@ export const screens = [
   ['order-detail', '/pesanan/VND-261011-8227', '103:8519', 'Detail pesanan', 'customer'],
   ['order-handover', '/pesanan/VND-261011-8227/serah-terima', '103:9459', 'Serah terima pesanan', 'customer'],
   ['order-return', '/pesanan/VND-261011-8227/pengembalian', '106:10412', 'Pengembalian & ulasan', 'customer'],
-  ['claim-new', '/klaim/ajukan', '106:11374', 'Ajukan klaim', 'customer'],
   ['claim-ticket', '/klaim/KLM-891', '106:11949', 'Tiket mediasi', 'customer'],
   ['claim-decision', '/klaim/KLM-891/keputusan', '106:12530', 'Keputusan klaim', 'customer'],
   ['wishlist-empty', '/wishlist/kosong', '109:13149', 'Wishlist kosong'],

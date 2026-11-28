@@ -38,6 +38,10 @@ class VendorHandoversController {
         mutation(request);
         return noStore(service.deleteEvidence(id(request), orderId, evidenceId, expectedStatus));
     }
+    @PostMapping("/{orderId}/damage")
+    ResponseEntity<Detail> damage(@PathVariable long orderId, @Valid @RequestBody Damage input, HttpServletRequest request) {
+        mutation(request); return noStore(service.reportDamage(id(request), orderId, input));
+    }
     @PostMapping("/{orderId}/action")
     ResponseEntity<Detail> action(@PathVariable long orderId, @Valid @RequestBody Action input, HttpServletRequest request) {
         mutation(request); return noStore(service.action(id(request), orderId, input));

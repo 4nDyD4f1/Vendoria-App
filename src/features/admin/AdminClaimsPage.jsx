@@ -3,23 +3,43 @@ import { Check, Eye, RefreshCw, Search, X } from 'lucide-react';
 import { Navigate, useNavigate } from 'react-router-dom';
 import { EmptyState, Modal, PageHeading, Pagination, Status } from '../vendor/VendorUi';
 import { money, shortDate } from '../vendor/vendorData';
-import { claimStatusLabels, decideClaim, listClaims } from './claimsApi';
+import { confirmAdminReturn, claimStatusLabels, decideClaim, listClaims } from './claimsApi';
 import '../kyc/kyc.css';
 import '../kyc/admin-kyc.css';
+import ClaimEvidence from '../shared/ClaimEvidence';
+import ClaimHandover from './ClaimHandover';
+import { isCustomerReport, needsUnits, reportTypes } from '../shared/reportTypes';
+
+const decisionEffects = {
+  tidak_sampai: 'Setujui: sewa dan deposit dikembalikan 100%, pesanan dibatalkan, vendor tidak mendapat apa-apa.',
+  tidak_sesuai: 'Setujui: customer mengembalikan barang dulu; setelah diterima, sewa dan deposit dikembalikan 100%.',
+  kurang: 'Setujui: dana senilai unit yang kurang dikembalikan ke customer; sisanya hak vendor.',
+  tidak_berfungsi: 'Setujui: dana senilai unit bermasalah untuk sisa hari sewa dikembalikan ke customer.',
+  lainnya: 'Setujui: tentukan nominal yang adil untuk dikembalikan ke customer.',
+};
 
 function ClaimModal({ claim, process, onClose, onDecided }) {
   const [note, setNote] = useState('');
+  const [units, setUnits] = useState(String(claim.units || ''));
   const [amount, setAmount] = useState('');
   const [error, setError] = useState('');
   const [busy, setBusy] = useState(false);
   const pending = useRef(false);
   const deciding = process && claim.status === 'Ditinjau';
+  const report = isCustomerReport(claim);
   const decide = async decision => {
     if (pending.current) return;
     if (decision === 'ditolak' && !note.trim()) { setError('Alasan penolakan wajib diisi.'); return; }
-    if (decision === 'disetujui' && !(Number(amount) > 0)) { setError('Nilai ganti rugi wajib diisi untuk menyetujui klaim.'); return; }
+    if (decision === 'disetujui' && claim.type === 'lainnya' && !(Number(amount) > 0)) { setError('Isi nominal pengembalian.'); return; }
+    const extra = decision !== 'disetujui' ? {} : needsUnits(claim.type) ? { units: Number(units) } : claim.type === 'lainnya' ? { amount: Number(amount) } : {};
     pending.current = true; setBusy(true); setError('');
-    try { await decideClaim(claim.id, decision, note.trim(), decision === 'disetujui' ? Number(amount) : undefined); onDecided(decision); }
+    try { await decideClaim(claim.id, decision, note.trim(), extra); onDecided(decision); }
+    catch (reason) { setError(reason.message); pending.current = false; setBusy(false); }
+  };
+  const returned = async () => {
+    if (pending.current) return;
+    pending.current = true; setBusy(true); setError('');
+    try { await confirmAdminReturn(claim.id); onDecided('disetujui'); }
     catch (reason) { setError(reason.message); pending.current = false; setBusy(false); }
   };
   return <Modal title={`Detail klaim ${claim.id}`} onClose={onClose}>
@@ -27,13 +47,19 @@ function ClaimModal({ claim, process, onClose, onDecided }) {
     <dl className="kyc-details">
       <div><dt>No. pesanan</dt><dd>{claim.order}</dd></div><div><dt>Tanggal pengajuan</dt><dd>{shortDate(claim.date)}</dd></div>
       <div><dt>Customer</dt><dd>{claim.customer}</dd></div><div><dt>Vendor</dt><dd>{claim.vendor}</dd></div>
-      <div><dt>Deposit (DP) pesanan</dt><dd>{money(claim.amount)}</dd></div>
+      <div><dt>Deposit jaminan</dt><dd>{money(claim.amount)}</dd></div>
       {claim.decidedBy && <div><dt>Diputuskan oleh</dt><dd>{claim.decidedBy}</dd></div>}
       <div className="kyc-full-field"><dt>Perihal klaim</dt><dd>{claim.reason}</dd></div>
-      {claim.compensation != null && <div><dt>Ganti rugi disetujui</dt><dd>{money(claim.compensation)}</dd></div>}
+      {claim.type && <div><dt>Jenis</dt><dd>{reportTypes[claim.type]}{claim.item ? ` · ${claim.item} × ${claim.units}` : ''}</dd></div>}
+      <ClaimEvidence claim={claim} className="kyc-full-field" />
+      {claim.compensation != null && <div><dt>{report ? 'Dikembalikan ke customer' : 'Deposit diberikan ke vendor'}</dt><dd>{money(claim.compensation)}</dd></div>}
       {!deciding && claim.note && <div className="kyc-full-field"><dt>Catatan admin</dt><dd>{claim.note}</dd></div>}
     </dl>
-    {deciding && <label className="v-field kyc-review-note">Nilai ganti rugi (Rp) <small>(wajib bila disetujui; dipotong dari pencairan vendor)</small><input type="number" min="1" step="1" inputMode="numeric" value={amount} onChange={event => setAmount(event.target.value)} disabled={busy} placeholder="Contoh: 200000" /></label>}
+    {claim.orderId && <ClaimHandover orderId={claim.orderId} />}
+    {deciding && <p className="v-modal-copy">{report ? decisionEffects[claim.type] : 'Setujui: seluruh deposit jaminan diberikan ke vendor. Tolak: deposit kembali ke customer setelah pesanan selesai.'}</p>}
+    {deciding && needsUnits(claim.type) && <label className="v-field kyc-review-note">Jumlah unit yang disetujui<input type="number" min="1" value={units} onChange={event => setUnits(event.target.value)} disabled={busy} /></label>}
+    {deciding && claim.type === 'lainnya' && <label className="v-field kyc-review-note">Nominal pengembalian (Rp)<input type="number" min="1" step="1" inputMode="numeric" value={amount} onChange={event => setAmount(event.target.value)} disabled={busy} /></label>}
+    {claim.awaitingReturn && <><p className="v-modal-copy">Menunggu barang kembali ke vendor. Bila sudah ada bukti barang kembali, konfirmasi di sini.</p><button type="button" className="v-button v-button-primary" disabled={busy} onClick={returned}>Barang sudah kembali</button></>}
     {deciding && <label className="v-field kyc-review-note">Catatan keputusan <small>(wajib untuk penolakan)</small><textarea value={note} onChange={event => setNote(event.target.value)} maxLength={2000} rows={3} disabled={busy} placeholder="Tuliskan alasan keputusan" /></label>}
     {error && <p role="alert" className="kyc-error">{error}</p>}
     {deciding && <div className="v-modal-actions"><button type="button" className="v-button v-button-danger" disabled={busy} onClick={() => decide('ditolak')}><X size={16} />Tolak</button><button type="button" className="v-button v-button-primary" disabled={busy} onClick={() => decide('disetujui')}><Check size={16} />Setujui</button></div>}

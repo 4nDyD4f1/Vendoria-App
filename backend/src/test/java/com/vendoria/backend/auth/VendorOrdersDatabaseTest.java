@@ -168,6 +168,7 @@ class VendorOrdersDatabaseTest {
 		long v1 = vendorProfile(vendorUser, "Vendor Proses");
 		long i1 = item(v1, "Kursi Crossback");
 		long o1 = order(v1, i1, "VND-PRC-" + token.substring(0, 8), "menunggu_konfirmasi");
+		jdbc.update("insert into pembayaran(order_id,jenis,metode,jumlah,status,referensi_eksternal) values (?,'pelunasan','payment_gateway',?,'terverifikasi',?)", o1, 1000000, "SETTLE-" + o1 + "-" + token);
 		// Both APIs now enforce real inspection evidence before advancing the rental lifecycle.
 		for (String type : new String[] {"serah_terima", "pengembalian"}) {
 			for (int photo = 1; photo <= 4; photo++) {

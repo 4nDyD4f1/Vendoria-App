@@ -14,4 +14,6 @@ export const uploadHandoverEvidence = (id, input, photo) => {
 };
 export const deleteHandoverEvidence = (id, evidenceId, expectedStatus) =>
   api(`${base}/${encodeURIComponent(id)}/evidence/${encodeURIComponent(evidenceId)}?${new URLSearchParams({ expectedStatus })}`, { method: 'DELETE', headers });
+export const reportDamage = (id, reason) =>
+  api(`${base}/${encodeURIComponent(id)}/damage`, { method: 'POST', headers, body: { reason } });
 export const actOnHandover = (id, input) => api(`${base}/${encodeURIComponent(id)}/action`, { method: 'POST', headers, body: input });

@@ -12,16 +12,15 @@ final class VendorCatalogDtos {
   record Input(
       @NotBlank @Size(max=180) String name,
       @NotBlank @Size(max=100) String category,
-      @NotNull @DecimalMin("0") @Digits(integer=12,fraction=2) BigDecimal price,
+      @NotNull @DecimalMin(value="1",message="Harga sewa harus lebih dari 0") @Digits(integer=12,fraction=2) BigDecimal price,
       @NotNull @Min(0) Integer stock,
       @NotBlank @Pattern(regexp="aktif|nonaktif|arsip") String status,
       @Size(max=10000) String description,
       @Size(max=5000) String condition,
-      @DecimalMin("0") @Digits(integer=12,fraction=2) BigDecimal deposit,
+      @NotNull(message="Deposit jaminan wajib diisi") @DecimalMin(value="1",message="Deposit jaminan harus lebih dari 0") @Digits(integer=12,fraction=2) BigDecimal deposit,
       @JsonProperty("remove_image") Boolean removeImage) {
     Input {
       name = trim(name); category = trim(category); description = trim(description); condition = trim(condition);
-      deposit = deposit == null ? BigDecimal.ZERO : deposit;
       removeImage = Boolean.TRUE.equals(removeImage);
     }
   }

@@ -1,13 +1,6 @@
 import styles from './designStyles';
 
-export function nodeText(node) {
-  if (typeof node === 'string' || typeof node === 'number') return String(node);
-  return (node?.children || []).map(nodeText).filter(Boolean).join(' ');
-}
-export function descendants(node, predicate) {
-  if (!node || typeof node !== 'object') return [];
-  return [...(predicate(node) ? [node] : []), ...(node.children || []).flatMap(child => descendants(child, predicate))];
-}
+export { descendants, nodeText } from './treeWalk';
 export function nodeClass(node) { return styles[node.style] || ''; }
 
 // Flexible tracks preserve Figma's column ratios at 1280px while allowing narrower viewports.

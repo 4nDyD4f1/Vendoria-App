@@ -69,8 +69,8 @@ class PasswordResetService {
 	/** Email harus terdaftar (sesuai kebutuhan produk), kalau tidak 404. */
 	void requestOtp(String rawEmail) {
 		String email = AuthService.normalize(rawEmail);
-		Pengguna p = repo.findByEmail(email)
-				.orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Email tidak terdaftar"));
+		// Email tak terdaftar diperlakukan sama (jeda dan kuota ikut dihitung) agar tak bisa dipakai menebak akun.
+		Pengguna p = repo.findByEmail(email).orElse(null);
 		long now = nowMillis.getAsLong();
 
 		Otp prev = otps.get(email);
@@ -86,6 +86,7 @@ class PasswordResetService {
 
 		String code = String.format("%06d", random.nextInt(1_000_000));
 		otps.put(email, new Otp(code, now + OTP_TTL_MS, 0, now));
+		if (p == null) return;
 		try {
 			mailer.sendOtp(p.getEmail(), code, UUID.randomUUID().toString());
 		} catch (RuntimeException e) {

@@ -123,6 +123,7 @@ export default function DesignNode({ node, ancestors = [], insideControl = false
   const isCard = /^(ProductCard|ArticleCard|OrderCard|HandoverCard|Article)$/.test(name);
   const catalogCard = context.screen.key === 'catalog' && name === 'ProductCard';
   if (context.hidden[node.id]) return null;
+  if (!context.preview && context.screen.key.startsWith('product') && name === 'Button' && label.trim() === 'Sewa Sekarang') return null;
   if (/^Sticky placeholder/.test(name)) return null;
   if (name === 'ProductCard' && !context.matchesProduct(node)) return null;
   const isGrid = /(?:^| )(?:inline-)?grid(?: |$)/.test(classes);

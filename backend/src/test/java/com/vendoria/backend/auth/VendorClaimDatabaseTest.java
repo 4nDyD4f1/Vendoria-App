@@ -96,7 +96,9 @@ class VendorClaimDatabaseTest {
 		assertEquals("ditinjau", dbStatus());
 
 		jdbc.update("update klaim set status='disetujui' where klaim_id=?", claim); // keputusan admin
-		process(vendorUser, claim, true, from("disetujui")).andExpect(status().isOk()).andExpect(jsonPath("$.status").value("selesai"));
+		process(vendorUser, claim, true, from("disetujui")).andExpect(status().isConflict()); // penanda deposit hangus, tidak berubah lagi
+		jdbc.update("update klaim set status='ditolak' where klaim_id=?", claim);
+		process(vendorUser, claim, true, from("ditolak")).andExpect(status().isOk()).andExpect(jsonPath("$.status").value("selesai"));
 		process(vendorUser, claim, true, from("selesai")).andExpect(status().isConflict());
 		assertEquals("selesai", dbStatus());
 		process(vendorUser, 0, true, from("diajukan")).andExpect(status().isNotFound());

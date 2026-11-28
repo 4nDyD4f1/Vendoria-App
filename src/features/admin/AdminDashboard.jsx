@@ -45,7 +45,7 @@ export default function AdminDashboard({ data, name }) {
     ['KYC Menunggu', pending, 'Perlu ditinjau', Bell],
     ['Klaim Terbuka', openClaims, 'Menunggu keputusan', CalendarDays],
     ['GMV Bulan Ini', dash(summary?.gmv30, money), '30 hari terakhir', Sparkles],
-    ['Deposit Ditahan di Escrow', dash(summary?.escrow, money), 'DP terverifikasi, pesanan berjalan', Lock],
+    ['Dana Ditahan di Escrow', dash(summary?.escrow, money), 'Deposit & pelunasan pesanan berjalan', Lock],
     ['Vendor Aktif', activeVendors, 'Akun dan bisnis aktif', Users],
   ];
   const actions = [

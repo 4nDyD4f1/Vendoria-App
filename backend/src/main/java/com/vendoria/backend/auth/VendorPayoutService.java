@@ -18,27 +18,28 @@ import com.vendoria.backend.auth.VendorPayoutDtos.*;
 /**
  * Rekening pencairan vendor (rekening_vendor) dan permintaan pencairan dana (pencairan_dana).
  * Satu pencairan = satu pesanan selesai; admin yang memprosesnya.
- * Dana bersih = total sewa - biaya platform (persen app.payout.fee-percent, dibulatkan ke rupiah) - ganti rugi klaim yang disetujui (pengembalian_dana).
+ * Dana bersih = (total sewa - pengembalian ke customer) - biaya platform atas sisanya (persen app.payout.fee-percent, dibulatkan) + deposit jaminan yang hangus.
  */
 @Service
 class VendorPayoutService {
   private final JdbcTemplate jdbc;
   private final BigDecimal feePercent;
-  /** Pesanan yang bisa dicairkan (satu parameter: vendor_id): selesai, tanpa klaim aktif (ditahan sampai admin memutuskan), belum punya pencairan berlaku, bersih > 0. */
+  /** Pesanan yang bisa dicairkan (satu parameter: vendor_id): selesai, sewanya lunas, tanpa klaim aktif (ditahan sampai admin memutuskan), belum punya pencairan berlaku, bersih > 0. */
   private final String eligible;
   VendorPayoutService(JdbcTemplate jdbc,@Value("${app.payout.fee-percent:6}") BigDecimal feePercent) {
     if(feePercent.signum()<0 || feePercent.compareTo(BigDecimal.valueOf(100))>0) throw new IllegalArgumentException("app.payout.fee-percent harus 0-100");
     this.jdbc=jdbc; this.feePercent=feePercent;
-    String fee="round(p.total_biaya_sewa*"+feePercent.toPlainString()+"/100,0)"; // persen dari konfigurasi, bukan input pengguna
+    String fee="round(greatest(p.total_biaya_sewa-c.potongan,0)*"+feePercent.toPlainString()+"/100,0)"; // persen dari konfigurasi, bukan input pengguna
     this.eligible="""
-        select p.order_id,p.vendor_id,p.total_biaya_sewa as kotor,%1$s as biaya,c.potongan,p.total_biaya_sewa-%1$s-c.potongan as bersih
+        select p.order_id,p.vendor_id,p.total_biaya_sewa as kotor,%1$s as biaya,c.potongan,h.hangus,p.total_biaya_sewa-%1$s-c.potongan+h.hangus as bersih
         from pemesanan p
         cross join lateral (select coalesce(sum(r.jumlah),0) as potongan from pengembalian_dana r
           where r.order_id=p.order_id and r.klaim_id is not null and r.status in ('menunggu','diproses','berhasil')) c
-        where p.vendor_id=? and p.status_pesanan='selesai' and p.total_biaya_sewa>0 and p.total_biaya_sewa-%1$s-c.potongan>0
+        cross join lateral (select case when %2$s then %3$s else 0 end as hangus) h
+        where p.vendor_id=? and p.status_pesanan='selesai' and p.total_biaya_sewa>0 and p.total_biaya_sewa-%1$s-c.potongan+h.hangus>0 and %4$s
           and not exists(select 1 from klaim k where k.order_id=p.order_id and k.status in ('diajukan','ditinjau'))
           and not exists(select 1 from pencairan_dana d where d.order_id=p.order_id and d.status in ('menunggu','diproses','berhasil'))
-        """.formatted(fee);
+        """.formatted(fee,OrderMoney.FORFEITED,OrderMoney.HELD_DEPOSIT,OrderMoney.SETTLED);
   }
 
   @Transactional(readOnly=true)
@@ -78,10 +79,10 @@ class VendorPayoutService {
   }
 
   Available available(Long vendorId) {
-    if(vendorId==null) return new Available(0,0,0,0,0,feePercent.doubleValue());
-    var sum=jdbc.queryForMap("select coalesce(sum(kotor),0) as kotor,coalesce(sum(biaya),0) as biaya,coalesce(sum(potongan),0) as potongan,coalesce(sum(bersih),0) as bersih,count(*) as jumlah from ("+eligible+") e",vendorId);
+    if(vendorId==null) return new Available(0,0,0,0,0,feePercent.doubleValue(),0);
+    var sum=jdbc.queryForMap("select coalesce(sum(kotor),0) as kotor,coalesce(sum(biaya),0) as biaya,coalesce(sum(potongan),0) as potongan,coalesce(sum(hangus),0) as hangus,coalesce(sum(bersih),0) as bersih,count(*) as jumlah from ("+eligible+") e",vendorId);
     return new Available(((Number)sum.get("bersih")).longValue(),((Number)sum.get("jumlah")).intValue(),((Number)sum.get("kotor")).longValue(),
-        ((Number)sum.get("biaya")).longValue(),((Number)sum.get("potongan")).longValue(),feePercent.doubleValue());
+        ((Number)sum.get("biaya")).longValue(),((Number)sum.get("potongan")).longValue(),feePercent.doubleValue(),((Number)sum.get("hangus")).longValue());
   }
 
   /** Cairkan dana: ajukan pencairan untuk seluruh pesanan yang memenuhi syarat sekaligus. */
@@ -116,7 +117,12 @@ class VendorPayoutService {
     String number=rs.getString("nomor_rekening");
     return new Payout("PCR-"+rs.getLong("pencairan_id"),rs.getString("kode_pemesanan"),rs.getBigDecimal("jumlah").longValue(),rs.getString("status"),
         rs.getString("bank"),number==null?null:mask(number),rs.getString("nama_pemilik"),rs.getString("referensi_transfer"),iso(rs.getTimestamp("diajukan_pada")),iso(rs.getTimestamp("dicairkan_pada")),
-        rs.getBigDecimal("kotor").longValue(),rs.getBigDecimal("biaya_platform").longValue(),rs.getBigDecimal("persen_biaya").doubleValue(),rs.getBigDecimal("potongan_klaim").longValue());
+        rs.getBigDecimal("kotor").longValue(),rs.getBigDecimal("biaya_platform").longValue(),rs.getBigDecimal("persen_biaya").doubleValue(),rs.getBigDecimal("potongan_klaim").longValue(),
+        deposit(rs));
+  }
+  /** Deposit hangus tidak punya kolom sendiri: selisih jumlah transfer dengan kotor - biaya - potongan. */
+  static long deposit(ResultSet rs) throws SQLException {
+    return rs.getBigDecimal("jumlah").subtract(rs.getBigDecimal("kotor")).add(rs.getBigDecimal("biaya_platform")).add(rs.getBigDecimal("potongan_klaim")).longValue();
   }
   private static String iso(Timestamp t) { return t==null?null:t.toInstant().toString(); }
   /** 8830-•••••-7992: 4 digit awal dan 4 digit akhir. */

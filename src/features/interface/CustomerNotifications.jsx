@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useId, useLayoutEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
+import { useNavigate } from 'react-router-dom';
 import { AlertCircle, Bell, CheckCheck, CreditCard, Package, ShieldCheck, Wallet, X } from 'lucide-react';
 import { api } from '../../api';
 import './customer-notifications.css';
@@ -15,6 +16,7 @@ export default function CustomerNotifications({ open, onOpenChange }) {
   const mounted = useRef(false);
   const sequence = useRef(0);
   const id = useId();
+  const navigate = useNavigate();
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
@@ -90,7 +92,7 @@ export default function CustomerNotifications({ open, onOpenChange }) {
       <div className="customer-notifications-list" aria-busy={loading || busy}>
         {loading && !data ? <p className="customer-notifications-empty" role="status">Memuat notifikasi…</p> : data?.items.length ? data.items.map(item => {
           const Icon = icons[item.kind] || Bell;
-          return <button type="button" key={item.id} className={`customer-notifications-item${item.read ? '' : ' is-unread'}`} disabled={busy} onClick={() => read(item)} aria-label={`${item.title}${item.read ? ', sudah dibaca' : ', tandai dibaca'}`}>
+          return <button type="button" key={item.id} className={`customer-notifications-item${item.read ? '' : ' is-unread'}`} disabled={busy} onClick={() => { read(item); const settle = /^c:o:(\d+):settle$/.exec(item.id); const target = item.kind === 'kyc' ? '/kyc' : settle && `/keranjang?orders=${settle[1]}`; if (target) { onOpenChange(false); navigate(target); } }} aria-label={`${item.title}${item.read ? ', sudah dibaca' : ', tandai dibaca'}`}>
             <span className="customer-notifications-icon"><Icon size={18} /></span><span className="customer-notifications-copy"><strong>{item.title}</strong><span>{item.body}</span><time dateTime={item.createdAt}>{time(item.createdAt)}</time></span>{!item.read && <span className="customer-notifications-dot" aria-label="Belum dibaca" />}
           </button>;
         }) : !error && <div className="customer-notifications-empty" role="status"><Bell size={28} /><strong>Belum ada notifikasi</strong><span>Kabar pesanan, pembayaran, dan akunmu akan muncul di sini.</span></div>}

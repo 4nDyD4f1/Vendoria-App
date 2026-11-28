@@ -1,6 +1,5 @@
 package com.vendoria.backend.auth;
 
-import java.math.BigDecimal;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
@@ -16,10 +15,15 @@ import com.vendoria.backend.auth.AdminClaimDtos.*;
 class AdminClaimService {
   // Klaim yang masuk ('diajukan') langsung tampil sebagai 'ditinjau' di dashboard admin.
   private static final String SELECT="""
-      select k.klaim_id,p.kode_pemesanan,c.nama as customer,v.nama_vendor,k.alasan,k.diajukan_pada::date as tanggal,
+      select k.klaim_id,p.order_id,p.kode_pemesanan,c.nama as customer,v.nama_vendor,k.alasan,k.diajukan_pada::date as tanggal,
         p.total_dp,case when k.status='diajukan' then 'ditinjau' else k.status end as status,
         k.keputusan_admin,a.nama as pemutus,k.diputuskan_pada,
-        (select sum(r.jumlah) from pengembalian_dana r where r.klaim_id=k.klaim_id) as ganti_rugi
+        coalesce((select sum(r.jumlah) from pengembalian_dana r where r.klaim_id=k.klaim_id),
+          case when k.status='disetujui' and k.jenis='kerusakan' then """ + OrderMoney.HELD_DEPOSIT + """
+         end) as ganti_rugi,
+      k.jenis,(select i.nama_barang from item i where i.item_id=k.item_id) as item_name,k.jumlah_unit,k.tanggapan_vendor,
+      k.foto_pelapor is not null as has_photo,k.foto_vendor is not null as has_vendor_photo,
+      (k.jenis='tidak_sesuai' and k.status='disetujui' and k.barang_kembali_pada is null) as awaiting_return
       from klaim k
       join pemesanan p on p.order_id=k.order_id
       join vendor v on v.vendor_id=p.vendor_id
@@ -27,7 +31,8 @@ class AdminClaimService {
       left join pengguna a on a.user_id=k.diputuskan_oleh
       """;
   private final JdbcTemplate jdbc;
-  AdminClaimService(JdbcTemplate jdbc) { this.jdbc=jdbc; }
+  private final OrderReportService reports;
+  AdminClaimService(JdbcTemplate jdbc,OrderReportService reports) { this.jdbc=jdbc; this.reports=reports; }
 
   // shortcut: tanpa paging server (maks 500 terbaru), filter & halaman di frontend; upgrade bila klaim > 500.
   @Transactional(readOnly=true)
@@ -36,20 +41,14 @@ class AdminClaimService {
   @Transactional
   Claim decide(Long actorId,Long id,Decision decision) {
     admin(actorId,true);
-    var rows=jdbc.queryForList("select k.status,k.order_id,p.total_biaya_sewa from klaim k join pemesanan p on p.order_id=k.order_id where k.klaim_id=? for update of k",id);
+    var rows=jdbc.queryForList("select k.status,k.jenis from klaim k where k.klaim_id=? for update",id);
     if(rows.isEmpty()) throw new ResponseStatusException(HttpStatus.NOT_FOUND,"Klaim tidak ditemukan");
     if(!List.of("diajukan","ditinjau").contains(rows.getFirst().get("status"))) throw new ResponseStatusException(HttpStatus.CONFLICT,"Klaim ini sudah diputuskan. Muat ulang daftar");
     String note=decision.note()==null||decision.note().isBlank()?null:decision.note();
     if("ditolak".equals(decision.status()) && note==null) throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"Alasan penolakan wajib diisi");
-    boolean approved="disetujui".equals(decision.status());
-    if(approved) {
-      if(decision.amount()==null) throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"Nilai ganti rugi wajib diisi saat menyetujui klaim");
-      if(BigDecimal.valueOf(decision.amount()).compareTo((BigDecimal)rows.getFirst().get("total_biaya_sewa"))>0)
-        throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"Nilai ganti rugi tidak boleh melebihi total sewa pesanan");
-    }
+    // Laporan kerusakan 'disetujui' = deposit hangus untuk vendor (OrderMoney.FORFEITED). Laporan customer: lihat OrderReportService.
+    if("disetujui".equals(decision.status()) && !"kerusakan".equals(rows.getFirst().get("jenis"))) reports.approve(id,actorId,decision.units(),decision.amount());
     jdbc.update("update klaim set status=?,keputusan_admin=?,diputuskan_oleh=?,diputuskan_pada=now() where klaim_id=?",decision.status(),note,actorId,id);
-    // Ganti rugi dicatat sebagai pengembalian_dana (menunggu) milik klaim ini; nilainya memotong pencairan vendor (VendorPayoutService).
-    if(approved) jdbc.update("insert into pengembalian_dana(order_id,klaim_id,jumlah,alasan) values (?,?,?,?)",rows.getFirst().get("order_id"),id,decision.amount(),note==null?"Klaim disetujui":note);
     return jdbc.queryForObject(SELECT+"where k.klaim_id=?",AdminClaimService::claim,id);
   }
 
@@ -58,7 +57,11 @@ class AdminClaimService {
     return new Claim("KLM-"+rs.getLong("klaim_id"),rs.getString("kode_pemesanan"),rs.getString("customer"),rs.getString("nama_vendor"),
         rs.getString("alasan"),rs.getString("tanggal"),rs.getBigDecimal("total_dp").longValue(),rs.getString("status"),
         rs.getString("keputusan_admin"),rs.getString("pemutus"),decided==null?null:decided.toInstant().toString(),
-        rs.getBigDecimal("ganti_rugi")==null?null:rs.getBigDecimal("ganti_rugi").longValue());
+        rs.getBigDecimal("ganti_rugi")==null?null:rs.getBigDecimal("ganti_rugi").longValue(),
+        rs.getString("jenis"),rs.getString("item_name"),(Integer)rs.getObject("jumlah_unit"),rs.getString("tanggapan_vendor"),
+        rs.getBoolean("has_photo")?"/api/claims/"+rs.getLong("klaim_id")+"/photos/pelapor":null,
+        rs.getBoolean("has_vendor_photo")?"/api/claims/"+rs.getLong("klaim_id")+"/photos/vendor":null,
+        rs.getBoolean("awaiting_return"),rs.getLong("order_id"));
   }
   private void admin(Long id,boolean lock) {
     if(id==null) throw new ResponseStatusException(HttpStatus.UNAUTHORIZED,"Belum login");

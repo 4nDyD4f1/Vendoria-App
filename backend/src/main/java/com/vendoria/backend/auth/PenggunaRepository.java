@@ -38,6 +38,11 @@ interface PenggunaRepository extends JpaRepository<Pengguna, Long> {
 
 	@Modifying
 	@Transactional
+	@Query(value = "update pengguna set password_hash = :hash, password_dibuat = false, updated_at = now() where user_id = :id", nativeQuery = true)
+	int retirePassword(Long id, String hash);
+
+	@Modifying
+	@Transactional
 	@Query(value = "update pengguna set foto_profil = :url, updated_at = now() where user_id = :id", nativeQuery = true)
 	int updateFoto(Long id, String url);
 
