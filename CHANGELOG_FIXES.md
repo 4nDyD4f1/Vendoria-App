@@ -2,6 +2,20 @@
 
 Terbaru di atas. Cari riwayat dengan `grep -n -i "<gejala>" CHANGELOG_FIXES.md`.
 
+### Fix #28 — Katalog: ruang kosong besar, footer menimpa isi, pagination tidak ke atas
+
+| | |
+|---|---|
+| **Tanggal** | 2026-11-29 |
+| **File** | `LiveCatalog.jsx`, `live-catalog.css` |
+| **Masalah** | Halaman berisi sedikit alat menyisakan 1.096 px kosong; di lebar 1.000 px footer menimpa isi (-290 px) sehingga "Halaman berikutnya" tak bisa diklik; klik pagination tidak menggeser scroll. |
+| **Akar** | Wadah hasil dari Figma dikunci 1.583 px (3 baris kartu). Gulir-ke-atas hanya dipicu `pathname`, sedangkan pagination hanya mengubah query. |
+| **Fix** | Tinggi wadah `auto`; tombol pagination memanggil `scrollTo(0,0)`. |
+| **Verifikasi** | Browser (16 alat tiruan; 1440/1000/390 px). Sebelum: ruang berlebih di desktop, footer menimpa di 1000 px, 6/6 klik pagination tak menggeser scroll. Sesudah: 21/21 lulus (ruang sebelum footer tetap 80/80/40 px di 1, 4, 12 alat dan 0 hasil). |
+| **Pelajaran** | Tinggi tetap dari Figma harus dilepas bila isinya data nyata; uji dengan jumlah data lebih sedikit dan lebih banyak dari desain. |
+| **Log Keyword** | pagination, `grid-rows-[_1583px]`, ruang kosong katalog |
+| **Deploy** | Belum (di server) |
+
 ### Fix #27 — Kategori dan notifikasi tampil "Belum ada" selagi masih memuat
 
 | | |
