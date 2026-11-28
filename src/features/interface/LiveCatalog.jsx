@@ -60,6 +60,8 @@ export default function LiveCatalog({ loadDesign }) {
       return next;
     });
   };
+  // A new page of results starts at the top; filters and sorting keep the reader's place.
+  const goToPage = number => { update({ page: number }, false); window.scrollTo(0, 0); };
   const chooseCity = value => {
     locationAttempt.current += 1;
     setLocating(false); setLocationNote(''); update({ city: value === 'Semua lokasi' ? '' : value });
@@ -111,9 +113,9 @@ export default function LiveCatalog({ loadDesign }) {
       {loading ? <Skeleton variant="cards" label="Memuat katalog…" /> : error ? <div className="live-catalog-status" role="alert"><p>{error}</p><button type="button" onClick={() => setRetry(value => value + 1)}>Coba lagi</button></div> : !data.items.length ? <div className="live-catalog-status" role="status"><Package size={30} /><h2>{data.available ? 'Tidak ada alat yang sesuai' : 'Belum ada alat siap sewa'}</h2><p>{data.available ? 'Coba kota, kategori, atau kata kunci lain.' : 'Alat akan muncul setelah vendor aktif menambahkan barang aktif dengan stok tersedia.'}</p><button type="button" onClick={() => { setDraft(''); setParams({}); }}>Bersihkan filter</button></div> : data.items.map(item => <CatalogCard key={item.id} item={item} />)}
     </div>;
     if (node.id === '84:5352') return <nav className="live-catalog-pagination" aria-label="Halaman katalog">
-      <button type="button" disabled={loading || data.page <= 1} onClick={() => update({ page: data.page - 1 }, false)} aria-label="Halaman sebelumnya"><ChevronLeft size={16} /></button>
+      <button type="button" disabled={loading || data.page <= 1} onClick={() => goToPage(data.page - 1)} aria-label="Halaman sebelumnya"><ChevronLeft size={16} /></button>
       <span aria-live="polite" aria-atomic="true">Halaman <strong>{data.page}</strong> dari {totalPages}</span>
-      <button type="button" disabled={loading || data.page >= totalPages} onClick={() => update({ page: data.page + 1 }, false)} aria-label="Halaman berikutnya"><ChevronRight size={16} /></button>
+      <button type="button" disabled={loading || data.page >= totalPages} onClick={() => goToPage(data.page + 1)} aria-label="Halaman berikutnya"><ChevronRight size={16} /></button>
     </nav>;
     return undefined;
   };

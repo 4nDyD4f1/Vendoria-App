@@ -77,3 +77,6 @@
 .live-catalog-cart:disabled { opacity: .6; cursor: wait; }
 .live-catalog-cart.is-done { background: #edf6eb; color: #3d6039; }
 .live-catalog-cart-error { color: #9c493c; font-size: 12px; }
+/* The Figma frame locks the results area to three rows of cards (1583px); live results can be any number. */
+.vendoria-interface [data-node-id='84:4838']{grid-template-rows:none!important;height:auto!important}
+.vendoria-interface [data-node-id='84:4839']{height:auto!important}
